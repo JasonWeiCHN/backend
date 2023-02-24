@@ -67,7 +67,7 @@ public class PostgreCon {
         }
     }
 
-    public static Connection getConnection(){
+    public static Connection getConnection() {
         String url = "jdbc:postgresql://localhost:5432/jason";
         String user = "postgres";
         String password = "19871227";

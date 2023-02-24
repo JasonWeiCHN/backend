@@ -7,7 +7,7 @@ import java.sql.*;
 import java.util.List;
 import java.util.ArrayList;
 
-public class UserDaoImpl implements UserDao{
+public class UserDaoImpl implements UserDao {
     @Override
     public User findById(int id) {
         User user = null;
@@ -145,7 +145,7 @@ public class UserDaoImpl implements UserDao{
             connection = PostgreCon.getConnection();
 
 
-            String sql =  "INSERT INTO public.user(username, password, email, phone, firstname, lastname, gender, role, dateofbirth, country, city, streetaddress, zipcode, lastlogintime, creationtime, modificationtime, status, avatar, timezone, language, occupation, company, interests, education, biography, authenticationtoken, socialmedialinks)" +
+            String sql = "INSERT INTO public.user(username, password, email, phone, firstname, lastname, gender, role, dateofbirth, country, city, streetaddress, zipcode, lastlogintime, creationtime, modificationtime, status, avatar, timezone, language, occupation, company, interests, education, biography, authenticationtoken, socialmedialinks)" +
                     "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             statement = connection.prepareStatement(sql);
 
