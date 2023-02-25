@@ -5,24 +5,16 @@ import lombok.Data;
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Date;
-import java.util.Map;
 
 @Data
-@Entity
-@Table(name = "user")
 public class User {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int userId;
 
-    @Column(nullable = false)
     private String username;
 
-    @Column(nullable = false)
     private String password;
 
-    @Column(nullable = false)
     private String email;
 
     private String phone;
@@ -35,7 +27,6 @@ public class User {
 
     private String role;
 
-    @Temporal(TemporalType.DATE)
     private Date dateOfBirth;
 
     private String country;
@@ -48,7 +39,6 @@ public class User {
 
     private Timestamp lastLoginTime;
 
-    @Column(nullable = false)
     private Timestamp creationTime;
 
     private Timestamp modificationTime;

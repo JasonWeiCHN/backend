@@ -2,11 +2,13 @@ package com.wei.backend2.dao;
 
 import com.wei.backend2.entity.User;
 import com.wei.backend2.util.PostgreCon;
+import org.springframework.stereotype.Component;
 
 import java.sql.*;
 import java.util.List;
 import java.util.ArrayList;
 
+@Component
 public class UserDaoImpl implements UserDao {
     @Override
     public User findById(int id) {
@@ -22,7 +24,7 @@ public class UserDaoImpl implements UserDao {
             resultSet = statement.executeQuery();
             if (resultSet.next()) {
                 user = new User();
-                user.setUserId(resultSet.getInt("user_id"));
+                user.setUserId(resultSet.getInt("userid"));
                 user.setUsername(resultSet.getString("username"));
                 user.setPassword(resultSet.getString("password"));
                 user.setEmail(resultSet.getString("email"));
@@ -80,28 +82,28 @@ public class UserDaoImpl implements UserDao {
         ResultSet resultSet = null;
         try {
             connection = PostgreCon.getConnection();
-            String sql = "SELECT * FROM user";
+            String sql = "SELECT * FROM public.user";
             statement = connection.prepareStatement(sql);
             resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 User user = new User();
-                user.setUserId(resultSet.getInt("user_id"));
+                user.setUserId(resultSet.getInt("userid"));
                 user.setUsername(resultSet.getString("username"));
                 user.setPassword(resultSet.getString("password"));
                 user.setEmail(resultSet.getString("email"));
                 user.setPhone(resultSet.getString("phone"));
-                user.setFirstName(resultSet.getString("first_name"));
-                user.setLastName(resultSet.getString("last_name"));
+                user.setFirstName(resultSet.getString("firstname"));
+                user.setLastName(resultSet.getString("lastname"));
                 user.setGender(resultSet.getString("gender"));
                 user.setRole(resultSet.getString("role"));
-                user.setDateOfBirth(resultSet.getDate("date_of_birth"));
+                user.setDateOfBirth(resultSet.getDate("dateofbirth"));
                 user.setCountry(resultSet.getString("country"));
                 user.setCity(resultSet.getString("city"));
-                user.setStreetAddress(resultSet.getString("street_address"));
-                user.setZipCode(resultSet.getString("zip_code"));
-                user.setLastLoginTime(resultSet.getTimestamp("last_login_time"));
-                user.setCreationTime(resultSet.getTimestamp("creation_time"));
-                user.setModificationTime(resultSet.getTimestamp("modification_time"));
+                user.setStreetAddress(resultSet.getString("streetaddress"));
+                user.setZipCode(resultSet.getString("zipcode"));
+                user.setLastLoginTime(resultSet.getTimestamp("lastlogintime"));
+                user.setCreationTime(resultSet.getTimestamp("creationtime"));
+                user.setModificationTime(resultSet.getTimestamp("modificationtime"));
                 user.setStatus(resultSet.getString("status"));
                 user.setAvatar(resultSet.getString("avatar"));
                 user.setTimezone(resultSet.getString("timezone"));
@@ -111,8 +113,8 @@ public class UserDaoImpl implements UserDao {
                 user.setInterests(resultSet.getString("interests"));
                 user.setEducation(resultSet.getString("education"));
                 user.setBiography(resultSet.getString("biography"));
-                user.setAuthenticationToken(resultSet.getString("authentication_token"));
-                user.setSocialMediaLinks(resultSet.getString("social_media_links"));
+                user.setAuthenticationToken(resultSet.getString("authenticationtoken"));
+                user.setSocialMediaLinks(resultSet.getString("socialmedialinks"));
                 users.add(user);
             }
         } catch (SQLException e) {
@@ -284,7 +286,7 @@ public class UserDaoImpl implements UserDao {
     public static void main(String[] args) {
         User user = new User();
 //        user.setUserId(1);
-        user.setUsername("testuser");
+        user.setUsername("testuser2");
         user.setPassword("testpassword");
         user.setEmail("testuser@example.com");
         user.setPhone("1234567890");
