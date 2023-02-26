@@ -16,6 +16,7 @@ import java.sql.Statement;
  * connectPostgreSQL 可以废弃 测试用的方法
  */
 public class PostgreCon {
+    @Deprecated
     public static void createUserTable() {
         String url = "jdbc:postgresql://localhost:5432/jason";
         String user = "postgres";
@@ -83,6 +84,7 @@ public class PostgreCon {
 
     public static void main(String[] args) throws IOException {
 //        createUserTable();
-        executeSqlFromFile("/db/create_user_table.sql");
+//        executeSqlFromFile("/db/create_user_table.sql");
+        executeSqlFromFile("/db/create_image_table.sql");
     }
 }

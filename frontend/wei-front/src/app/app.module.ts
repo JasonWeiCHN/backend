@@ -18,9 +18,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatNativeDateModule } from '@angular/material/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AddImageComponent } from './pages/image/pages/add-image/add-image.component';
 
 @NgModule({
-  declarations: [AppComponent, UserComponent, AddUserComponent],
+  declarations: [AppComponent, UserComponent, AddUserComponent, AddImageComponent],
   imports: [
     RouterModule,
     MatTableModule,
