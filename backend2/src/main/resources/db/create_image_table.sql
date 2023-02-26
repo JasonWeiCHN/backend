@@ -5,6 +5,6 @@ CREATE TABLE IF NOT EXISTS public.image (
    name VARCHAR(255) NOT NULL,
    hash VARCHAR(255) NOT NULL,
    category VARCHAR(255),
-   created_time TIMESTAMP NOT NULL DEFAULT NOW(),
+   create_time TIMESTAMP NOT NULL DEFAULT NOW(),
    update_time TIMESTAMP NOT NULL DEFAULT NOW()
 );
