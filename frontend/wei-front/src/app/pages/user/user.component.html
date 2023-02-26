@@ -1,32 +1,33 @@
-<p>user works!</p>
-<button mat-raised-button color="primary">Primary</button>
+<wei-add-user></wei-add-user>
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-
-	<!--- Note that these columns can be defined in any order.
-		  The actual rendered columns are set as a property on the row definition" -->
-
-	<!-- Position Column -->
+	<!-- position column -->
 	<ng-container matColumnDef="position">
 		<th mat-header-cell *matHeaderCellDef> No.</th>
 		<td mat-cell *matCellDef="let element"> {{element.position}} </td>
 	</ng-container>
 
-	<!-- Name Column -->
+	<!-- name column -->
 	<ng-container matColumnDef="name">
-		<th mat-header-cell *matHeaderCellDef> Name</th>
+		<th mat-header-cell *matHeaderCellDef> 姓名</th>
 		<td mat-cell *matCellDef="let element"> {{element.name}} </td>
 	</ng-container>
 
-	<!-- Weight Column -->
-	<ng-container matColumnDef="weight">
-		<th mat-header-cell *matHeaderCellDef> Weight</th>
-		<td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+	<!-- phone column -->
+	<ng-container matColumnDef="phone">
+		<th mat-header-cell *matHeaderCellDef> 电话</th>
+		<td mat-cell *matCellDef="let element"> {{element.phone}} </td>
 	</ng-container>
 
-	<!-- Symbol Column -->
-	<ng-container matColumnDef="symbol">
-		<th mat-header-cell *matHeaderCellDef> Symbol</th>
-		<td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+	<!-- email column -->
+	<ng-container matColumnDef="email">
+		<th mat-header-cell *matHeaderCellDef> 邮箱</th>
+		<td mat-cell *matCellDef="let element"> {{element.email}} </td>
+	</ng-container>
+
+	<!-- creation time column -->
+	<ng-container matColumnDef="creationTime">
+		<th mat-header-cell *matHeaderCellDef> 创建时间</th>
+		<td mat-cell *matCellDef="let element"> {{element.creationTime}} </td>
 	</ng-container>
 
 	<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
