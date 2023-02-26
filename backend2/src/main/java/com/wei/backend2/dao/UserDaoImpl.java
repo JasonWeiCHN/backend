@@ -159,7 +159,12 @@ public class UserDaoImpl implements UserDao {
             statement.setString(6, user.getLastName());
             statement.setString(7, user.getGender());
             statement.setString(8, user.getRole());
-            statement.setDate(9, new java.sql.Date(user.getDateOfBirth().getTime()));
+            if (user.getDateOfBirth() != null) {
+                statement.setDate(9, new java.sql.Date(user.getDateOfBirth().getTime()));
+            } else {
+                // 如果生日没传 设Type 为 DATE 的 NULL 值
+                statement.setNull(9, Types.DATE);
+            }
             statement.setString(10, user.getCountry());
             statement.setString(11, user.getCity());
             statement.setString(12, user.getStreetAddress());
