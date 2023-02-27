@@ -3,9 +3,11 @@ package com.wei.backend2.service;
 import com.wei.backend2.dao.ImageDaoImpl;
 import com.wei.backend2.entity.Image;
 import com.wei.backend2.request.AddImageRequest;
+import org.apache.commons.io.IOUtils;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.poi.xssf.usermodel.*;
+import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
@@ -20,10 +22,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.*;
 import java.util.List;
-import java.util.UUID;
 
 @Service
 public class ImageServiceImpl implements ImageService{
@@ -176,6 +176,97 @@ public class ImageServiceImpl implements ImageService{
         }
     }
 
+// 方法1
+//    private List<AddImageRequest> readRequestsFromExcel(MultipartFile file) throws IOException {
+//        Workbook workbook = null;
+//        try {
+//            InputStream is = file.getInputStream();
+//            if (file.getOriginalFilename().endsWith(".xlsx")) {
+//                workbook = new XSSFWorkbook(is);
+//            } else if (file.getOriginalFilename().endsWith(".xls")) {
+//                workbook = new HSSFWorkbook(is);
+//            }
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//
+//        List<AddImageRequest> requests = new ArrayList<>();
+//
+//        Sheet sheet = workbook.getSheetAt(0);
+//        Iterator<Row> iterator = sheet.iterator();
+//        while (iterator.hasNext()) {
+//            Row currentRow = iterator.next();
+//            if (currentRow.getRowNum() == 0) {
+//                continue;
+//            }
+//
+//            String name = currentRow.getCell(0).getStringCellValue();
+//            String category = currentRow.getCell(1).getStringCellValue();
+//            byte[] fileBytes = currentRow.getCell(2).getBinaryCellValue();
+//
+//            MultipartFile multipartFile = new MockMultipartFile(
+//                    currentRow.getCell(2).getStringCellValue(),
+//                    currentRow.getCell(2).getStringCellValue(),
+//                    null,
+//                    fileBytes
+//            );
+//
+//            requests.add(new AddImageRequest(name, category, multipartFile));
+//        }
+//
+//        return requests;
+//    }
+
+// 方法2
+//    private List<AddImageRequest> readRequestsFromExcel(MultipartFile file) throws IOException {
+//        Workbook workbook = null;
+//        try {
+//            InputStream is = file.getInputStream();
+//            if (file.getOriginalFilename().endsWith(".xlsx")) {
+//                workbook = new XSSFWorkbook(is);
+//            } else if (file.getOriginalFilename().endsWith(".xls")) {
+//                workbook = new HSSFWorkbook(is);
+//            }
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//
+//        List<AddImageRequest> requests = new ArrayList<>();
+//
+//        Sheet sheet = workbook.getSheetAt(0);
+//        Iterator<Row> iterator = sheet.iterator();
+//        while (iterator.hasNext()) {
+//            Row currentRow = iterator.next();
+//            if (currentRow.getRowNum() == 0) {
+//                continue;
+//            }
+//
+//            String name = currentRow.getCell(0).getStringCellValue();
+//            String category = currentRow.getCell(1).getStringCellValue();
+//            Cell fileCell = currentRow.getCell(2);
+//            MultipartFile multipartFile = null;
+//            if (fileCell.getCellType() != CellType.BLANK) {
+//                byte[] fileBytes = null;
+//                try {
+//                    fileBytes = IOUtils.toByteArray(fileCell.getBinaryStream());
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//                multipartFile = new MockMultipartFile(
+//                        fileCell.getStringCellValue(),
+//                        fileCell.getStringCellValue(),
+//                        null,
+//                        fileBytes
+//                );
+//            }
+//
+//            requests.add(new AddImageRequest(name, category, multipartFile));
+//        }
+//
+//        return requests;
+//    }
+
+    // 方法3 搞不定啊！
     private List<AddImageRequest> readRequestsFromExcel(MultipartFile file) {
         Workbook workbook = null;
         try {
@@ -207,5 +298,8 @@ public class ImageServiceImpl implements ImageService{
 
         return requests;
     }
+
+    // 方法4 待定
+
 }
 
