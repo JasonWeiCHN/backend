@@ -19,9 +19,10 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatNativeDateModule } from '@angular/material/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddImageComponent } from './pages/image/pages/add-image/add-image.component';
+import { AddImageByExcelComponent } from './pages/excel/pages/add-image-by-excel/add-image-by-excel.component';
 
 @NgModule({
-  declarations: [AppComponent, UserComponent, AddUserComponent, AddImageComponent],
+  declarations: [AppComponent, UserComponent, AddUserComponent, AddImageComponent, AddImageByExcelComponent],
   imports: [
     RouterModule,
     MatTableModule,

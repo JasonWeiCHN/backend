@@ -35,5 +35,16 @@ public class ImageController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to add image!");
         }
     }
+
+    @PostMapping("/add-by-excel")
+    public ResponseEntity<String> addImageByExcel(@RequestParam("file") MultipartFile file) {
+        boolean isSuccess = imageService.addImageByExcel(file);
+
+        if (isSuccess) {
+            return ResponseEntity.ok("Images added successfully!");
+        } else {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to add images!");
+        }
+    }
 }
 
