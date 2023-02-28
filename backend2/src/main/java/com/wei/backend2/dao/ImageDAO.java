@@ -4,7 +4,7 @@ import com.wei.backend2.entity.Image;
 
 import java.util.List;
 
-public interface ImageDao {
+public interface ImageDAO {
     Image findById(int id);
     List<Image> findAll();
     void save(Image image);

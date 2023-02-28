@@ -85,6 +85,7 @@ public class PostgreCon {
     public static void main(String[] args) throws IOException {
 //        createUserTable();
 //        executeSqlFromFile("/db/create_user_table.sql");
-        executeSqlFromFile("/db/create_image_table.sql");
+//        executeSqlFromFile("/db/create_image_table.sql");
+        executeSqlFromFile("/db/create_good_table.sql");
     }
 }

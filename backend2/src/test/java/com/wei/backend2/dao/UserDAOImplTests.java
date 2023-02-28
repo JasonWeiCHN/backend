@@ -12,12 +12,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest
-public class UserDaoImplTests {
-    private UserDao userDao;
+public class UserDAOImplTests {
+    private UserDAO userDao;
 
     @BeforeEach
     public void setUp() {
-        userDao = new UserDaoImpl();
+        userDao = new UserDAOImpl();
     }
 
     @Test

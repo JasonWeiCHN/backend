@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 @Component
-public class ImageDaoImpl implements ImageDao {
+public class ImageDAOImpl implements ImageDAO {
 
     @Override
     public Image findById(int id) {

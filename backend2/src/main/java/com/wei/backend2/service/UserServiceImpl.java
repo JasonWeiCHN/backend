@@ -1,6 +1,6 @@
 package com.wei.backend2.service;
 
-import com.wei.backend2.dao.UserDaoImpl;
+import com.wei.backend2.dao.UserDAOImpl;
 import com.wei.backend2.dto.UserDTO;
 import com.wei.backend2.entity.User;
 import com.wei.backend2.request.AddUserRequest;
@@ -13,15 +13,15 @@ import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
-    private UserDaoImpl userDao;
+    private final UserDAOImpl userDAO;
 
-    public UserServiceImpl(UserDaoImpl userDao) {
-        this.userDao = userDao;
+    public UserServiceImpl(UserDAOImpl userDAO) {
+        this.userDAO = userDAO;
     }
 
     @Override
     public List<UserDTO> getUsers() {
-        List<User> userList = userDao.findAll();
+        List<User> userList = userDAO.findAll();
         List<UserDTO> userDTOList = new ArrayList<>();
         for (User user : userList) {
             UserDTO userDTO = new UserDTO();
@@ -64,7 +64,7 @@ public class UserServiceImpl implements UserService {
         user.setBiography(addUserRequest.getBiography());
         user.setAuthenticationToken(addUserRequest.getAuthenticationToken());
         user.setSocialMediaLinks(addUserRequest.getSocialMediaLinks());
-        userDao.save(user);
+        userDAO.save(user);
     }
 
     private String formatDate(Timestamp timestamp) {

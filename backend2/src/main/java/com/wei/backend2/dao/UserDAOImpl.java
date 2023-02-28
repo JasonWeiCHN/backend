@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 @Component
-public class UserDaoImpl implements UserDao {
+public class UserDAOImpl implements UserDAO {
     @Override
     public User findById(int id) {
         User user = null;
@@ -318,7 +318,7 @@ public class UserDaoImpl implements UserDao {
         user.setBiography("I am a software developer.");
         user.setAuthenticationToken("token123");
         user.setSocialMediaLinks("token123;32423423424@qqqq.com");
-        UserDaoImpl userDaoImpl = new UserDaoImpl();
+        UserDAOImpl userDaoImpl = new UserDAOImpl();
         userDaoImpl.save(user);
     }
 }

@@ -3,7 +3,7 @@ package com.wei.backend2.dao;
 import com.wei.backend2.entity.User;
 import java.util.List;
 
-public interface UserDao {
+public interface UserDAO {
     User findById(int id);
     List<User> findAll();
     void save(User user);
