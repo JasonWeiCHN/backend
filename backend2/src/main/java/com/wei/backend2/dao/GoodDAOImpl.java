@@ -19,7 +19,7 @@ public class GoodDAOImpl implements GoodDAO {
 
         try {
             connection = PostgreCon.getConnection();
-            String sql = "INSERT INTO goods(name, hash, category, create_time, update_time) VALUES (?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO good(name, hash, category, create_time, update_time) VALUES (?, ?, ?, ?, ?)";
             statement = connection.prepareStatement(sql);
             statement.setString(1, good.getName());
             statement.setString(2, good.getHash());

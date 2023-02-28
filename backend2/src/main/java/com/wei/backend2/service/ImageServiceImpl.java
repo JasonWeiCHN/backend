@@ -30,11 +30,15 @@ public class ImageServiceImpl implements ImageService{
 
     @Override
     public boolean addImage(AddImageRequest request) {
-        String fileName = StringUtils.cleanPath(request.getFile().getOriginalFilename());
-        String hash = UUID.randomUUID().toString();
+        saveImage(request);
+        return true;
+    }
 
+    public Image saveImage(AddImageRequest request) {
+        String hash = UUID.randomUUID().toString();
         // 生成图片保存路径
         String imgPath = "images/" + hash;
+        // 保存图片
         SaveImageFile.saveImage(request.getFile(), imgPath);
 
         // 保存图片信息到数据库
@@ -47,8 +51,9 @@ public class ImageServiceImpl implements ImageService{
         image.setUpdateTime(timestamp);
         imageDAO.save(image);
 
-        return true;
+        return image;
     }
+
 
     @Override
     public boolean addImageByExcel(MultipartFile file) {

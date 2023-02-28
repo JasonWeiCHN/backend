@@ -13,7 +13,6 @@ public class AddImageRequest {
         this.name = null;
         this.category = null;
         this.file = null;
-
     }
 
     public AddImageRequest(String name, String category, MultipartFile file) {
