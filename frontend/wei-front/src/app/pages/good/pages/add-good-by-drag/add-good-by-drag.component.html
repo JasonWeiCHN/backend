@@ -1,0 +1,33 @@
+<h3>商品上传 - 拖拽</h3>
+<div class="drop-zone" (dragover)="onDragOver($event)" (drop)="onDrop($event)">
+    <p>拖动图片到此处</p>
+</div>
+<div *ngIf="goodForm">
+    <form [formGroup]="goodForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" formControlName="name">
+        </div>
+        <div>
+            <label for="category">Category:</label>
+            <input type="text" id="category" formControlName="category">
+        </div>
+        <div>
+            <label for="file">Image:</label>
+            <input type="file" id="file" (change)="onFileSelected($event)">
+        </div>
+        <div>
+            <label for="price">Price:</label>
+            <input type="number" id="price" formControlName="price">
+        </div>
+        <div>
+            <label for="description">Description:</label>
+            <textarea id="description" formControlName="description"></textarea>
+        </div>
+        <div>
+            <label for="keywords">Keywords:</label>
+            <input type="text" id="keywords" formControlName="keywords">
+        </div>
+        <button type="submit" [disabled]="!goodForm.valid">Submit</button>
+    </form>
+</div>
