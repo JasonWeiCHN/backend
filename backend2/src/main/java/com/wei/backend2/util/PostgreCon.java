@@ -86,6 +86,6 @@ public class PostgreCon {
 //        createUserTable();
 //        executeSqlFromFile("/db/create_user_table.sql");
 //        executeSqlFromFile("/db/create_image_table.sql");
-        executeSqlFromFile("/db/create_good_table.sql");
+//        executeSqlFromFile("/db/create_good_table.sql");
     }
 }
