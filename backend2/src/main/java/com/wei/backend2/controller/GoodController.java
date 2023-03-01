@@ -16,16 +16,26 @@ public class GoodController {
     private GoodService goodService;
 
     @PostMapping("/add")
-    public ResponseEntity<String> addGood(@RequestParam("file") MultipartFile file,
-                                          @RequestParam("name") String name,
-                                          @RequestParam("category") String category) {
-
-        AddGoodRequest good = new AddGoodRequest(name, category, file);
-        boolean isSuccess = goodService.addGood(good);
+    public ResponseEntity<String> addGood(@ModelAttribute AddGoodRequest goodRequest) {
+        boolean isSuccess = goodService.addGood(goodRequest);
         if (isSuccess) {
             return ResponseEntity.ok("Good added successfully!");
         } else {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to add good!");
         }
     }
+
+//    @PostMapping("/add")
+//    public ResponseEntity<String> addGood(@RequestParam("file") MultipartFile file,
+//                                          @RequestParam("name") String name,
+//                                          @RequestParam("category") String category) {
+//
+//        AddGoodRequest good = new AddGoodRequest(name, category, file);
+//        boolean isSuccess = goodService.addGood(good);
+//        if (isSuccess) {
+//            return ResponseEntity.ok("Good added successfully!");
+//        } else {
+//            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to add good!");
+//        }
+//    }
 }

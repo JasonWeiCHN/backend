@@ -19,13 +19,17 @@ public class GoodDAOImpl implements GoodDAO {
 
         try {
             connection = PostgreCon.getConnection();
-            String sql = "INSERT INTO good(name, hash, category, create_time, update_time) VALUES (?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO public.good(name, hash, category, price, description, keywords, create_time, update_time) " +
+                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             statement = connection.prepareStatement(sql);
             statement.setString(1, good.getName());
             statement.setString(2, good.getHash());
             statement.setString(3, good.getCategory());
-            statement.setTimestamp(4, new java.sql.Timestamp(good.getCreateTime().getTime()));
-            statement.setTimestamp(5, new java.sql.Timestamp(good.getUpdateTime().getTime()));
+            statement.setString(4, good.getPrice());
+            statement.setString(5, good.getDescription());
+            statement.setString(6, good.getKeywords());
+            statement.setTimestamp(7, new java.sql.Timestamp(good.getCreateTime().getTime()));
+            statement.setTimestamp(8, new java.sql.Timestamp(good.getUpdateTime().getTime()));
             statement.executeUpdate();
         } catch (SQLException e) {
             // 处理异常
@@ -43,6 +47,7 @@ public class GoodDAOImpl implements GoodDAO {
             }
         }
     }
+
 
     @Override
     public void updateGood(Good good) {

@@ -20,21 +20,24 @@ public class GoodServiceImpl implements GoodService {
     private GoodDAO goodDAO;
 
     @Override
-    public boolean addGood(AddGoodRequest good) {
+    public boolean addGood(AddGoodRequest goodRequest) {
         // 保存商品图片
         AddImageRequest imageRequest = new AddImageRequest();
-        imageRequest.setName(good.getName());
-        imageRequest.setCategory(good.getCategory());
-        imageRequest.setFile(good.getFile());
+        imageRequest.setName(goodRequest.getName());
+        imageRequest.setCategory(goodRequest.getCategory());
+        imageRequest.setFile(goodRequest.getFile());
 
         Image image = imageService.saveImage(imageRequest);
 
         // 获取图片哈希值并创建 Good 对象
         String hash = image.getHash();
         Good newGood = new Good();
-        newGood.setName(good.getName());
-        newGood.setCategory(good.getCategory());
+        newGood.setName(goodRequest.getName());
+        newGood.setCategory(goodRequest.getCategory());
         newGood.setHash(hash);
+        newGood.setPrice(goodRequest.getPrice());
+        newGood.setDescription(goodRequest.getDescription());
+        newGood.setKeywords(goodRequest.getKeywords());
         newGood.setCreateTime(new Timestamp(System.currentTimeMillis()));
         newGood.setUpdateTime(new Timestamp(System.currentTimeMillis()));
 

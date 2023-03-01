@@ -18,6 +18,9 @@ export class AddGoodComponent implements OnInit {
     this.goodForm = this.formBuilder.group({
       name: ['', Validators.required],
       category: ['', Validators.required],
+      price: [''],
+      description: [''],
+      keywords: [''],
     });
   }
 
@@ -31,7 +34,9 @@ export class AddGoodComponent implements OnInit {
     formData.append('file', this.selectedFile);
     formData.append('name', this.goodForm.get('name')?.value);
     formData.append('category', this.goodForm.get('category')?.value);
-
+    formData.append('price', this.goodForm.get('price')?.value);
+    formData.append('description', this.goodForm.get('description')?.value);
+    formData.append('keywords', this.goodForm.get('keywords')?.value);
     this.goodHttpService.addGood(formData).subscribe(
       response => {
         console.log(response);
@@ -41,15 +46,4 @@ export class AddGoodComponent implements OnInit {
       }
     );
   }
-
-  // public onSubmit() {
-  //   this.goodHttpService.addGood({ ...this.goodForm.value, file: this.selectedFile }).subscribe(
-  //     response => {
-  //       console.log(response);
-  //     },
-  //     error => {
-  //       console.log(error);
-  //     }
-  //   );
-  // }
 }
