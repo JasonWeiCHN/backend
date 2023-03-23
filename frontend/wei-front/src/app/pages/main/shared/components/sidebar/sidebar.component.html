@@ -1,0 +1,9 @@
+<aside class="wei-sidebar">
+    <nav class="wei-sidebar__nav">
+        <ul class="wei-sidebar__list">
+            <li *ngFor="let item of items" class="wei-sidebar__item">
+                <a [routerLink]="item.link" class="wei-sidebar__link">{{ item.label }}</a>
+            </li>
+        </ul>
+    </nav>
+</aside>
