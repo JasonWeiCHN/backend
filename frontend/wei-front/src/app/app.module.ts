@@ -22,6 +22,9 @@ import { AddImageComponent } from './pages/image/pages/add-image/add-image.compo
 import { AddImageByExcelComponent } from './pages/excel/pages/add-image-by-excel/add-image-by-excel.component';
 import { AddGoodComponent } from './pages/good/pages/add-good/add-good.component';
 import { AddGoodByDragComponent } from './pages/good/pages/add-good-by-drag/add-good-by-drag.component';
+import { MainComponent } from './pages/main/main.component';
+import {MainModule} from "./pages/main/main.module";
+import {appRoutes} from "./app.routes";
 
 @NgModule({
   declarations: [
@@ -32,24 +35,26 @@ import { AddGoodByDragComponent } from './pages/good/pages/add-good-by-drag/add-
     AddImageByExcelComponent,
     AddGoodComponent,
     AddGoodByDragComponent,
+    MainComponent,
   ],
-  imports: [
-    RouterModule,
-    MatTableModule,
-    BrowserAnimationsModule,
-    BrowserModule,
-    MatIconModule,
-    MatButtonModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatDatepickerModule,
-    MatInputModule,
-    MatSnackBarModule,
-    MatNativeDateModule,
-  ],
+    imports: [
+        RouterModule.forRoot(appRoutes),
+        MatTableModule,
+        BrowserAnimationsModule,
+        BrowserModule,
+        MatIconModule,
+        MatButtonModule,
+        HttpClientModule,
+        ReactiveFormsModule,
+        MatCardModule,
+        MatFormFieldModule,
+        MatSelectModule,
+        MatDatepickerModule,
+        MatInputModule,
+        MatSnackBarModule,
+        MatNativeDateModule,
+        MainModule,
+    ],
   providers: [
     {
       provide: platformBrowserDynamic,

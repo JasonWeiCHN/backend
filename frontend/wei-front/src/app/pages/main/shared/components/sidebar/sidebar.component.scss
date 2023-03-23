@@ -1,0 +1,25 @@
+.wei-sidebar {
+  position: fixed;
+
+  top: 60px;
+  bottom: 0;
+  left: 0;
+
+  width: 200px;
+
+  border-right: 1px solid #ddd;
+  background: #fefefe;
+
+  ul li {
+    list-style: none;
+
+    a {
+      display: block;
+
+      margin-bottom: 12px;
+
+      color: #333;
+      text-decoration: none
+    }
+  }
+}
