@@ -1,6 +1,7 @@
 package com.wei.backend2.entity;
 
-import javax.persistence.*;
+
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "user_info")
