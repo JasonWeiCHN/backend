@@ -23,8 +23,10 @@ import { AddImageByExcelComponent } from './pages/excel/pages/add-image-by-excel
 import { AddGoodComponent } from './pages/good/pages/add-good/add-good.component';
 import { AddGoodByDragComponent } from './pages/good/pages/add-good-by-drag/add-good-by-drag.component';
 import { MainComponent } from './pages/main/main.component';
-import {MainModule} from "./pages/main/main.module";
-import {appRoutes} from "./app.routes";
+import { MainModule } from './pages/main/main.module';
+import { appRoutes } from './app.routes';
+import { TaskComponent } from './pages/task/task.component';
+import {TaskModule} from "./pages/task/task.module";
 
 @NgModule({
   declarations: [
@@ -35,7 +37,7 @@ import {appRoutes} from "./app.routes";
     AddImageByExcelComponent,
     AddGoodComponent,
     AddGoodByDragComponent,
-    MainComponent,
+    MainComponent
   ],
     imports: [
         RouterModule.forRoot(appRoutes),
@@ -54,6 +56,7 @@ import {appRoutes} from "./app.routes";
         MatSnackBarModule,
         MatNativeDateModule,
         MainModule,
+        TaskModule,
     ],
   providers: [
     {

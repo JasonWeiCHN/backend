@@ -7,8 +7,10 @@ import { Component } from '@angular/core';
 })
 export class SidebarComponent {
   public items = [
-    { label: '控制台', link: '/user' },
-    { label: '用户管理', link: '/user' },
+    { label: '控制', link: '/user' },
+    { label: '图片', link: '/image' },
+    { label: '用户', link: '/user' },
+    { label: '任务', link: '/task' },
     { label: '设置', link: '/user' }
   ];
 }
