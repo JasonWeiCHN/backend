@@ -5,6 +5,8 @@ import com.wei.backend2.repositories.TaskRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class TaskService {
 
@@ -15,15 +17,26 @@ public class TaskService {
         return taskRepository.save(task);
     }
 
-//    public static void main(String[] args) {
-//        TaskService taskService = new TaskService();
-//        Task task = new Task();
-//        task.setTaskCode("T001");
-//        task.setTitle("完成项目计划书");
-//        task.setDescription("编写并完成项目计划书");
-//        task.setAssignedTo("张三");
-//        task.setStatus("待处理");
-//        taskService.createTask(task);
-//    }
+    public Task getTask(Long taskId) {
+        return taskRepository.findByTaskId(taskId);
+    }
+
+    public List<Task> getAllTasks() {
+        return taskRepository.findAll();
+    }
+
+    public Task updateTask(Long taskId, Task taskDetails) {
+        Task task = taskRepository.findByTaskId(taskId);
+        task.setTitle(taskDetails.getTitle());
+        task.setDescription(taskDetails.getDescription());
+        task.setAssignedTo(taskDetails.getAssignedTo());
+        task.setStatus(taskDetails.getStatus());
+        return taskRepository.save(task);
+    }
+
+    public void deleteTask(Long taskId) {
+        taskRepository.deleteByTaskId(taskId);
+    }
+
 
 }

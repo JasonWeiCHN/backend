@@ -1,0 +1,30 @@
+<mat-card>
+    <mat-card-title>New Task</mat-card-title>
+    <mat-card-content>
+        <form (ngSubmit)="onSubmit()" #taskForm="ngForm">
+            <mat-form-field>
+                <input matInput placeholder="Task Code" [(ngModel)]="task.taskCode" name="taskCode" required>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Title" [(ngModel)]="task.title" name="title" required>
+            </mat-form-field>
+            <mat-form-field>
+                <textarea matInput placeholder="Description" [(ngModel)]="task.description" name="description"></textarea>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Assigned To" [(ngModel)]="task.assignedTo" name="assignedTo" required>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-select placeholder="Status" [(ngModel)]="task.status" name="status" required>
+                    <mat-option value="To Do">To Do</mat-option>
+                    <mat-option value="In Progress">In Progress</mat-option>
+                    <mat-option value="Done">Done</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <div class="button-row">
+                <button mat-raised-button color="primary" type="submit" [disabled]="!taskForm.valid">Create</button>
+                <button mat-raised-button type="button" routerLink="/tasks">Cancel</button>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>

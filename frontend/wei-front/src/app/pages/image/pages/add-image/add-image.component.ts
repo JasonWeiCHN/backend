@@ -7,23 +7,6 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./add-image.component.scss'],
 })
 export class AddImageComponent {
-  // public selectedFile!: File;
-  //
-  // constructor(private http: HttpClient) {}
-  //
-  // public onFileSelected(event: any): void {
-  //   this.selectedFile = event.target.files[0];
-  // }
-  //
-  // public onUpload(): void {
-  //   const fd = new FormData();
-  //   fd.append('file', this.selectedFile, this.selectedFile.name);
-  //
-  //   this.http.post('http://localhost:8080/images/add', fd).subscribe(res => {
-  //     console.log(res);
-  //   });
-  // }
-
   private selectedFile!: File;
 
   constructor(private http: HttpClient) {}

@@ -5,10 +5,14 @@
   bottom: 0;
   left: 0;
 
-  width: 200px;
+  width: 80px;
 
   border-right: 1px solid #ddd;
   background: #fefefe;
+
+  ul {
+    padding-inline-start: 20px;
+  }
 
   ul li {
     list-style: none;
@@ -20,6 +24,10 @@
 
       color: #333;
       text-decoration: none
+    }
+
+    a:hover {
+      color: #646cff;
     }
   }
 }
