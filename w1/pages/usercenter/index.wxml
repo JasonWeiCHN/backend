@@ -8,6 +8,10 @@
   bind:gotoUserEditPage="gotoUserEditPage"
 />
 <view class="content-wrapper">
+  <view wx:for="{{tasks}}" wx:key="item">
+    {{item.assignedTo}}
+    {{item.description}}
+  </view>
   <view class="order-group-wrapper">
     <t-order-group orderTagInfos="{{orderTagInfos}}" bind:onClickTop="jumpAllOrder" bind:onClickItem="jumpNav" />
   </view>

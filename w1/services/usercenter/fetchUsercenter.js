@@ -16,3 +16,17 @@ export function fetchUserCenter() {
     resolve('real api');
   });
 }
+
+export function fetchTasks() {
+  return new Promise((resolve, reject) => {
+    wx.request({
+      url: 'http://localhost:8080/tasks/',
+      success: (res) => {
+        resolve(res.data);
+      },
+      fail: (err) => {
+        reject(err);
+      },
+    });
+  });
+}
