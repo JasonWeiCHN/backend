@@ -1,0 +1,52 @@
+server:
+  port: 8081
+spring:
+  profiles:
+    active: '@springProfile@'
+  application:
+    name: backend2-api
+
+name: abc
+person:
+  name: ${name}
+  age: 20
+
+#arr
+address:
+  - beijing
+  - shanghai
+address2: [beijing,shanghai]
+#纯量
+msg1: 'hello \n world'  #不会识别转义字符，会原样输出
+msg2: "hello \n world"  #会识别转义字符
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/jason
+#    username: postgres
+#    password: P@ssw0rd11
+#    driverClassName: org.postgresql.Driver
+#    hikari:
+#      #数据库连接的超时时间
+#      connection-timeout: 10000
+#      validation-timeout: 3000
+#      #空闲连接最大时间，1分钟
+#      idle-timeout: 60000
+#      login-timeout: 5
+#      max-lifetime: 60000
+#      maximum-pool-size: 10
+#      #最小空闲连接数量
+#      minimum-idle: 5
+#      read-only: false
+#  jackson:
+#    time-zone: GMT+8
+#  jpa:
+#    properties:
+#      open-in-view: true
+#      hibernate:
+#        show_sql: false
+#        format_sql: true
+#        dialect: org.hibernate.dialect.PostgreSQLDialect
+#        temp:
+#          use_jdbc_metadata_defaults: false
+#        hbm2ddl:
+#          auto: update
+#    database: postgresql

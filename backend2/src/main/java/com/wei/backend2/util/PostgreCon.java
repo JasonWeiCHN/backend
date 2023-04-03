@@ -20,7 +20,7 @@ public class PostgreCon {
     public static void createUserTable() {
         String url = "jdbc:postgresql://localhost:5432/jason";
         String user = "postgres";
-        String password = "19871227";
+        String password = "P@ssw0rd11";
 
         try (Connection conn = DriverManager.getConnection(url, user, password);
              Statement stmt = conn.createStatement()) {
@@ -56,7 +56,7 @@ public class PostgreCon {
 
             String url = "jdbc:postgresql://localhost:5432/jason";
             String user = "postgres";
-            String password = "19871227";
+            String password = "P@ssw0rd11";
 
             try (Connection conn = DriverManager.getConnection(url, user, password);
                  Statement stmt = conn.createStatement()) {
@@ -71,7 +71,7 @@ public class PostgreCon {
     public static Connection getConnection() {
         String url = "jdbc:postgresql://localhost:5432/jason";
         String user = "postgres";
-        String password = "19871227";
+        String password = "P@ssw0rd11";
         try {
             Connection conn = DriverManager.getConnection(url, user, password);
             System.out.println("Connected to the PostgreSQL server successfully.");
