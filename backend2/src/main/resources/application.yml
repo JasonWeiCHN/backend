@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 8080
 spring:
   profiles:
     active: '@springProfile@'
@@ -12,7 +12,17 @@ spring:
     password: P@ssw0rd11
     driverClassName: org.postgresql.Driver
     hikari:
-      maximum-pool-size: 200
+      #数据库连接的超时时间
+      connection-timeout: 10000
+      validation-timeout: 3000
+      #空闲连接最大时间，1分钟
+      idle-timeout: 60000
+      login-timeout: 5
+      max-lifetime: 60000
+      maximum-pool-size: 10
+      #最小空闲连接数量
+      minimum-idle: 5
+      read-only: false
   jackson:
     time-zone: GMT+8
   jpa:
