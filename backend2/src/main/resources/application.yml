@@ -1,0 +1,29 @@
+server:
+  port: 8081
+spring:
+  profiles:
+    active: '@springProfile@'
+  application:
+    name: backend2-api
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/jason
+    username: postgres
+    password: P@ssw0rd11
+    driverClassName: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 200
+  jackson:
+    time-zone: GMT+8
+  jpa:
+    properties:
+      open-in-view: true
+      hibernate:
+        show_sql: false
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        temp:
+          use_jdbc_metadata_defaults: false
+        hbm2ddl:
+          auto: update
+    database: postgresql
