@@ -1,6 +1,14 @@
 <view style="text-align: center; color: #b9b9b9" wx:if="{{pageLoading}}">
   <t-loading theme="circular" size="40rpx" text="加载中..." inherit-color />
 </view>
+<view class="list">
+  <block wx:for="{{list}}" wx:key="id">
+    <view class="list-item">
+      <image class="list-item-image" src="{{item.image}}" />
+      <view class="list-item-text">{{item.text}}</view>
+    </view>
+  </block>
+</view>
 <view class="home-page-header">
   <view class="search" bind:tap="navToSearchPage">
     <t-search

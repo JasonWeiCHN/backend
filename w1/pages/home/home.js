@@ -15,6 +15,26 @@ Page({
     interval: 5000,
     navigation: { type: 'dots' },
     swiperImageProps: { mode: 'scaleToFill' },
+    list: [
+      {
+        id: 1,
+        image:
+          'https://we-retail-static-1300977798.cos.ap-guangzhou.myqcloud.com/retail-ui/components-exp/avatar/avatar-1.jpg',
+        text: '第一项',
+      },
+      {
+        id: 2,
+        image:
+          'https://we-retail-static-1300977798.cos.ap-guangzhou.myqcloud.com/retail-ui/components-exp/avatar/avatar-2.jpg',
+        text: '第二项',
+      },
+      {
+        id: 3,
+        image:
+          'https://we-retail-static-1300977798.cos.ap-guangzhou.myqcloud.com/retail-ui/components-exp/avatar/avatar-3.jpg',
+        text: '第三项',
+      },
+    ],
   },
 
   goodListPagination: {
