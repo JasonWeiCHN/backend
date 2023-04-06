@@ -1,0 +1,14 @@
+.open-ai {
+    padding: 24rpx;
+}
+
+.open-ai .origin-item {
+    font-size: 36rpx;
+    margin-bottom: 24rpx;
+    color: #3b3d44;
+}
+
+.open-ai .translate-item {
+    font-size: 36rpx;
+    color: #353740;
+}

@@ -15,6 +15,7 @@
     </view>
   </block>
 </view>
+<view style="font-size: 36rpx" bind:tap="navToOpenAiLearning">open ai learning</view>
 <!--
 <view class="home-page-header">
   <view class="search" bind:tap="navToSearchPage">

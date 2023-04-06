@@ -186,4 +186,10 @@ Page({
       url: `/pages/goods/details/index`,
     });
   },
+
+  navToOpenAiLearning() {
+    wx.navigateTo({
+      url: `/pages/open-ai/index`,
+    });
+  },
 });
