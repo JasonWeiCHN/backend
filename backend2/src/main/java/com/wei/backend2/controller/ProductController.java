@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/product")
-//@Api(tags = "product Controller")
+@Api(tags = "product Controller")
 public class ProductController {
     private ProductService productService;
 
@@ -20,13 +20,13 @@ public class ProductController {
     }
 
     @GetMapping("/findAll")
-//    @ApiOperation(value = "Find all product information")
+    @ApiOperation(value = "Find all product information")
     public List<Product> findAll(){
         return productService.findAll();
     }
 
     @PostMapping("/savePro")
-//    @ApiOperation(value = "Add product")
+    @ApiOperation(value = "Add product")
     public void saveProduct(@RequestBody AddProduct product){
         productService.saveProduct(product);
     }
