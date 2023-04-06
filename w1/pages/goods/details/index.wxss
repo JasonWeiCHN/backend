@@ -340,3 +340,16 @@ page {
   font-size: 28rpx;
   font-weight: 400;
 }
+
+.list {
+  padding: 20rpx;
+}
+
+.list .list-item {
+  margin-bottom: 24rpx;
+}
+
+.list .list-item .text{
+  /*text-indent: 2em; 首行空两格*/
+  font-size: 28rpx;
+}
