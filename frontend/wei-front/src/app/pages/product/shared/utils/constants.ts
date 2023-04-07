@@ -101,9 +101,22 @@ export const data = [
   [false, 'Photofeed', 'China', 'HL Mountain Frame', '14/07/2020', '94-5088099', true, '106', 1, 4],
 ];
 
+export const data1 = [
+  [1, 'Product A', 'Category A', 100, 10, '2023-04-07T12:34:56.789', '2023-04-07T12:34:56.789'],
+  [2, 'Product B', 'Category B', 200, 20, '2023-04-06T12:34:56.789', '2023-04-06T12:34:56.789'],
+  [3, 'Product C', 'Category C', 300, 30, '2023-04-05T12:34:56.789', '2023-04-05T12:34:56.789'],
+  [4, 'Product D', 'Category D', 400, 40, '2023-04-04T12:34:56.789', '2023-04-04T12:34:56.789'],
+  [5, 'Product E', 'Category E', 500, 50, '2023-04-03T12:34:56.789', '2023-04-03T12:34:56.789'],
+  [6, 'Product F', 'Category F', 600, 60, '2023-04-02T12:34:56.789', '2023-04-02T12:34:56.789'],
+  [7, 'Product G', 'Category G', 700, 70, '2023-04-01T12:34:56.789', '2023-04-01T12:34:56.789'],
+  [8, 'Product H', 'Category H', 800, 80, '2023-03-31T12:34:56.789', '2023-03-31T12:34:56.789'],
+  [9, 'Product I', 'Category I', 900, 90, '2023-03-30T12:34:56.789', '2023-03-30T12:34:56.789'],
+  [10, 'Product J', 'Category J', 1000, 100, '2023-03-29T12:34:56.789', '2023-03-29T12:34:56.789'],
+];
+
 export const SELECTED_CLASS = 'selected';
 export const ODD_ROW_CLASS = 'odd';
 
 export function getData() {
-  return data;
+  return data1;
 }
