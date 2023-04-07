@@ -20,7 +20,9 @@ export class ProductComponent implements OnInit {
   changeCheckboxCell = changeCheckboxCell;
   progressBarRenderer = progressBarRenderer;
   starsRenderer = starsRenderer;
-  colHeaders = ['Company name', 'Country', 'Name', 'Sell date', 'Order ID', 'In stock', 'Qty', 'Progress', 'Rating'];
+  // colHeaders = ['Company name', 'Country', 'Name', 'Sell date', 'Order ID', 'In stock', 'Qty', 'Progress', 'Rating'];
+  colHeaders = ['ID', 'Product Name', 'Category', 'Price', 'Available', 'Create Time', 'Update Time'];
+
   hiddenColumns = {
     indicators: true,
   };
