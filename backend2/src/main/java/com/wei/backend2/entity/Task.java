@@ -28,6 +28,5 @@ public class Task {
     @Column(name = "status", nullable = false)
     private String status;
 
-    // getters and setters
 }
 

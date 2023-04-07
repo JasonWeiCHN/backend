@@ -11,6 +11,7 @@ export class SidebarComponent {
     { label: '图片', link: '/image' },
     { label: '用户', link: '/user' },
     { label: '任务', link: '/task' },
-    { label: '设置', link: '/user' }
+    { label: '产品', link: '/product' },
+    { label: '设置', link: '/user' },
   ];
 }

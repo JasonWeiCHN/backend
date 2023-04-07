@@ -25,8 +25,9 @@ import { AddGoodByDragComponent } from './pages/good/pages/add-good-by-drag/add-
 import { MainComponent } from './pages/main/main.component';
 import { MainModule } from './pages/main/main.module';
 import { appRoutes } from './app.routes';
-import { TaskComponent } from './pages/task/task.component';
-import {TaskModule} from "./pages/task/task.module";
+import { TaskModule } from './pages/task/task.module';
+import { HotTableModule } from '@handsontable/angular';
+import { ProductComponent } from './pages/product/product.component';
 
 @NgModule({
   declarations: [
@@ -37,27 +38,29 @@ import {TaskModule} from "./pages/task/task.module";
     AddImageByExcelComponent,
     AddGoodComponent,
     AddGoodByDragComponent,
-    MainComponent
+    MainComponent,
+    ProductComponent,
   ],
-    imports: [
-        RouterModule.forRoot(appRoutes),
-        MatTableModule,
-        BrowserAnimationsModule,
-        BrowserModule,
-        MatIconModule,
-        MatButtonModule,
-        HttpClientModule,
-        ReactiveFormsModule,
-        MatCardModule,
-        MatFormFieldModule,
-        MatSelectModule,
-        MatDatepickerModule,
-        MatInputModule,
-        MatSnackBarModule,
-        MatNativeDateModule,
-        MainModule,
-        TaskModule,
-    ],
+  imports: [
+    RouterModule.forRoot(appRoutes),
+    HotTableModule.forRoot(),
+    MatTableModule,
+    BrowserAnimationsModule,
+    BrowserModule,
+    MatIconModule,
+    MatButtonModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatInputModule,
+    MatSnackBarModule,
+    MatNativeDateModule,
+    MainModule,
+    TaskModule,
+  ],
   providers: [
     {
       provide: platformBrowserDynamic,

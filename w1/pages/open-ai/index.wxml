@@ -1,0 +1,8 @@
+<view class="open-ai">
+    <view class="origin-item">
+        The OpenAI API can be applied to virtually any task that involves understanding or generating natural language, code, or images. We offer a spectrum of models with different levels of power suitable for different tasks, as well as the ability to fine-tune your own custom models. These models can be used for everything from content generation to semantic search and classification.
+    </view>
+    <view class="translate-item">
+        OpenAI API可以应用于几乎任何涉及理解或生成自然语言、代码或图像的任务。我们提供一系列不同功率水平的模型，适用于不同的任务，同时也提供了微调自定义模型的能力。这些模型可用于从内容生成到语义搜索和分类的各种任务。
+    </view>
+</view>
