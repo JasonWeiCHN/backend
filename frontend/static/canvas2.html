@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Canvas Demo</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    // 设置画布的大小
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    // 股票价格的初始值和变化率
+    let price = 50;
+    let changeRate = 0.1;
+
+    // 记录股票价格的历史数据
+    let priceHistory = [];
+
+    // 每帧的更新函数
+    function update() {
+        // 更新股票价格
+        price += changeRate;
+
+        // 如果按下了 W 键，股票价格增加的速度加快
+        if (wPressed) {
+            changeRate += 0.05;
+        } else {
+            changeRate -= 0.01;
+        }
+
+        // 限制股票价格的变化率在一定范围内
+        if (changeRate > 1) {
+            changeRate = 1;
+        }
+        if (changeRate < 0) {
+            changeRate = 0;
+        }
+
+        // 将股票价格记录到历史数据中
+        priceHistory.push(price);
+
+        // 绘制股票价格的曲线
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.beginPath();
+        ctx.moveTo(0, canvas.height - priceHistory[0]);
+
+        for (let i = 1; i < priceHistory.length; i++) {
+            ctx.lineTo(i, canvas.height - priceHistory[i]);
+        }
+
+        ctx.strokeStyle = "red";
+        ctx.lineWidth = 5;
+        ctx.stroke();
+
+        // 每秒钟更新 60 次画布
+        setTimeout(function () {
+            requestAnimationFrame(update);
+        }, 1000 / 60);
+    }
+
+    // 监听键盘按下事件
+    let wPressed = false;
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "w") {
+            wPressed = true;
+        }
+    });
+
+    // 监听键盘松开事件
+    document.addEventListener("keyup", function (event) {
+        if (event.key === "w") {
+            wPressed = false;
+        }
+    });
+
+    // 开始更新画布
+    update();
+
+
+</script>
+</body>
+</html>

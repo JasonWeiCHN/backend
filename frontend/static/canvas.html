@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #myCanvas {
+            border: 1px solid #000000;
+        }
+    </style>
+</head>
+<body>
+<canvas id="myCanvas"></canvas>
+<script>
+    // 获取canvas元素和上下文对象
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+
+    // 设置画布的大小
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    // 定义变量
+    var x = 0; // 线条的起点横坐标
+    var y = canvas.height / 2; // 线条的起点纵坐标
+    var lineSpeed = 5; // 线条的移动速度
+    var lastX = x; // 上一个线条的终点横坐标
+    var lastY = y; // 上一个线条的终点纵坐标
+
+    // 创建线性渐变对象
+    var gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+    gradient.addColorStop(0, "red");
+    gradient.addColorStop(0.5, "orange");
+    gradient.addColorStop(1, "yellow");
+
+    // 设置线条的样式
+    ctx.lineWidth = 32; // 线条的宽度
+    ctx.lineCap = "round"; // 线条的端点样式
+    ctx.lineJoin = "round"; // 线条的连接点样式
+    ctx.strokeStyle = gradient; // 线条的颜色样式
+
+    // 监听键盘事件
+    document.addEventListener("keydown", function (event) {
+        // 如果按下的是W键，则向上移动线条
+        if (event.code === "KeyW") {
+            y -= 5;
+        }
+        // 如果按下的是S键，则向下移动线条
+        if (event.code === "KeyS") {
+            y += 5;
+        }
+    });
+
+    // 定时更新画布，实现线条移动效果
+    setInterval(function () {
+        // 绘制线条
+        ctx.beginPath();
+        ctx.moveTo(lastX, lastY);
+        ctx.lineTo(x, y);
+        ctx.stroke();
+
+        // 保存当前线条的终点坐标
+        lastX = x;
+        lastY = y;
+
+        // 更新线条的起点坐标
+        x += lineSpeed;
+    }, 50);
+</script>
+</body>
+</html>
