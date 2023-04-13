@@ -10,6 +10,8 @@ import {FormlyFieldConfig} from "@ngx-formly/core";
 export class AppComponent {
   title = "learning";
 
+  myValue = '123';
+
   form = new FormGroup({});
   model = { email: 'email@gmail.com' };
   fields: FormlyFieldConfig[] = [
@@ -39,6 +41,10 @@ export class AppComponent {
         placeholder: 'Enter age',
         required: true,
       }
+    },
+    {
+      key: 'custom-input',
+      type: 'custom-input',
     }
   ];
 
