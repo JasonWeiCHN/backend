@@ -30,6 +30,15 @@ export class AppComponent {
         placeholder: 'Enter name',
         required: true,
       }
+    },
+    {
+      key: 'age',
+      type: 'number',
+      props: {
+        label: 'Your age',
+        placeholder: 'Enter age',
+        required: true,
+      }
     }
   ];
 

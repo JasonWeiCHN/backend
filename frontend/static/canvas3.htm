@@ -22,7 +22,7 @@
     // 初始值和变化率
     // let price = canvas.height / 2;
     let price = 300;
-    let changeRate = 0.1;
+    let changeRate = 0;
 
     // 记录历史数据
     let priceHistory = [];
@@ -44,17 +44,26 @@
             gradient.addColorStop(0, "red");
             gradient.addColorStop(1, "blue");
             color = gradient;
+        } else if (sPressed) {
+            changeRate -= 0.05;
+            // 创建渐变对象
+            const gradient = ctx.createLinearGradient(0, canvas.height - priceHistory[0], 0, canvas.height - price);
+            gradient.addColorStop(0, "red");
+            gradient.addColorStop(1, "green");
+            color = gradient;
         } else {
-            changeRate -= 0.01;
+            // 默认变换率, 可以理解为不按键时的变化情况, 注意此设置会导致曲线一开始就不是平行前进
+            // changeRate -= 0.01;
+            // changeRate = 0;
             color = "red";
         }
 
         // 限制变化率在一定范围内
-        if (changeRate > 1) {
-            changeRate = 1;
+        if (changeRate > 5) {
+            changeRate = 5;
         }
-        if (changeRate < 0) {
-            changeRate = 0;
+        if (changeRate < -3) {
+            changeRate = -3;
         }
 
         // 记录到历史数据中
@@ -82,9 +91,12 @@
 
     // 监听键盘按下事件
     let wPressed = false;
+    let sPressed = false;
     document.addEventListener("keydown", function (event) {
         if (event.key === "w") {
             wPressed = true;
+        } else if (event.key === "s") {
+            sPressed = true;
         }
     });
 
@@ -92,12 +104,13 @@
     document.addEventListener("keyup", function (event) {
         if (event.key === "w") {
             wPressed = false;
+        } else if (event.key === "s") {
+            sPressed = false;
         }
     });
 
     // 开始更新画布
     update();
-
 
 
 </script>
