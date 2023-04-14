@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Super Canvas</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    // 设置画布的大小
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    // [项目配置项]
+    // 初始值
+    let price = 300;
+    // 变化率
+    let changeRate = 0;
+    // x 轴的向右偏移量
+    let xOffset = 50;
+    // 初始化线条颜色为红色
+    let color = "red";
+
+    // 记录历史数据
+    let priceHistory = [];
+
+    // 每帧的更新函数
+    function update() {
+        // 更新变化率
+        price += changeRate;
+
+        // 根据变化的正负设置对应的线条颜色
+        color = changeRate >= 0 ? "red" : "blue";
+
+        // 如果按下了 W 键，增加的速度加快
+        if (wPressed) {
+            changeRate += 0.1;
+        } else if (sPressed) {
+            changeRate -= 0.1;
+        } else {
+            // 设置默认的变化率
+            // changeRate = -0.1;
+        }
+
+        // 限制变化率在一定范围内
+        if (changeRate > 12) {
+            changeRate = 12;
+        }
+        if (changeRate < -10) {
+            changeRate = -10;
+        }
+
+        // 记录到历史数据中
+        priceHistory.push(price);
+
+        // 绘制曲线
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        // 添加 x 轴和 y 轴
+        const xScale = 50; // x 轴每个刻度的宽度
+        const yScale = 50; // y 轴每个刻度的高度
+        const xAxisLength = canvas.width - xScale; // x 轴的长度
+        const yAxisLength = canvas.height - yScale; // y 轴的长度
+
+        ctx.beginPath();
+        ctx.strokeStyle = "#555"; // 设置坐标轴颜色为黑色
+        ctx.lineWidth = 2; // 设置坐标轴线宽为 2
+        ctx.moveTo(xScale, yAxisLength);
+        ctx.lineTo(xAxisLength, yAxisLength);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.strokeStyle = "#555"; // 设置坐标轴颜色为黑色
+        ctx.lineWidth = 2; // 设置坐标轴线宽为 2
+        ctx.moveTo(xScale, 0);
+        ctx.lineTo(xScale, yAxisLength);
+        ctx.stroke();
+
+        // 在 x 轴上绘制刻度
+        for (let i = 2; i <= 100; i++) {
+            ctx.beginPath();
+            ctx.moveTo(i * xScale, yAxisLength - 5);
+            ctx.lineTo(i * xScale, yAxisLength + 5);
+            ctx.stroke();
+
+            // 添加标签
+            ctx.font = '12px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText(`${(i-1) * 10} s`, i * xScale, yAxisLength + 20);
+        }
+
+        // 在 y 轴上绘制刻度
+        for (let i = 1; i <= 100; i++) {
+            ctx.beginPath();
+            ctx.moveTo(xScale - 5, yAxisLength - i * yScale);
+            ctx.lineTo(xScale + 5, yAxisLength - i * yScale);
+            ctx.stroke();
+
+            // 添加标签
+            ctx.font = '12px Arial';
+            ctx.textAlign = 'right';
+            ctx.fillText(i * 10, xScale - 10, yAxisLength - i * yScale + 5);
+        }
+
+        // 添加 x 轴参考线
+        ctx.setLineDash([5, 5]); // 设置虚线样式
+        ctx.strokeStyle = "#ccc"; // 设置参考线颜色为灰色
+        for (let i = 1; i <= 100; i++) {
+            ctx.beginPath();
+            ctx.moveTo(i * xScale, 0);
+            ctx.lineTo(i * xScale, yAxisLength);
+            ctx.stroke();
+        }
+
+        // 添加 y 轴参考线
+        for (let i = 1; i <= 100; i++) {
+            ctx.beginPath();
+            ctx.moveTo(xScale, yAxisLength - i * yScale);
+            ctx.lineTo(xAxisLength, yAxisLength - i * yScale);
+            ctx.stroke();
+        }
+
+        // 恢复默认线型
+        ctx.setLineDash([]);
+
+        ctx.beginPath();
+        ctx.moveTo(xOffset, canvas.height - priceHistory[0]);
+
+        for (let i = 1; i < priceHistory.length; i++) {
+            // 根据当前"高度"与上一个"高度"的差值，判断当前"高度"的"变化方向"
+            const currentPrice = priceHistory[i];
+            const prevPrice = priceHistory[i - 1];
+            const priceDiff = currentPrice - prevPrice;
+            const slopeColor = priceDiff >= 0 ? "red" : "blue";
+
+            // 绘制上下坡的颜色
+            if (i === 1) {
+                ctx.strokeStyle = color;
+                ctx.lineWidth = 18;
+                ctx.stroke();
+            }
+            if (slopeColor !== color || i === priceHistory.length - 1) {
+                ctx.strokeStyle = color;
+                ctx.lineWidth = 18;
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(i + xOffset, canvas.height - currentPrice);
+                color = slopeColor;
+
+                // 在切换颜色时，绘制上一条线段
+                ctx.lineTo(i - 1 + xOffset, canvas.height - prevPrice);
+                ctx.stroke();
+            }
+
+            ctx.lineTo(i + xOffset, canvas.height - currentPrice);
+        }
+
+        // 每秒钟更新 60 次画布
+        setTimeout(function () {
+            requestAnimationFrame(update);
+        }, 1000 / 60);
+    }
+
+    // 监听键盘按下事件
+    let wPressed = false;
+    let sPressed = false;
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "w") {
+            wPressed = true;
+        } else if (event.key === "s") {
+            sPressed = true;
+        }
+    });
+
+    // 监听键盘松开事件
+    document.addEventListener("keyup", function (event) {
+        if (event.key === "w") {
+            wPressed = false;
+        } else if (event.key === "s") {
+            sPressed = false;
+        }
+    });
+
+    // 开始更新画布
+    update();
+</script>
+</body>
+</html>
