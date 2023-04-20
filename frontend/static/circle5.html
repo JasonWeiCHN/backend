@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Canvas 圆环图</title>
+    <style>
+        canvas {
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+<canvas id="chart" width="400" height="400"></canvas>
+<script>
+    const canvas = document.getElementById('chart');
+    const ctx = canvas.getContext('2d');
+    const data = [30, 20, 10, 40];
+    const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00'];
+    const cx = canvas.width / 2;
+    const cy = canvas.height / 2;
+    const radius = Math.min(cx, cy) * 0.8;
+    const total = data.reduce((acc, val) => acc + val, 0);
+    let startAngle = -Math.PI / 2;
+    let endAngle = 0;
+
+    for (let i = 0; i < data.length; i++) {
+        const ratio = data[i] / total;
+        endAngle = startAngle + ratio * 2 * Math.PI;
+        ctx.beginPath();
+        ctx.arc(cx, cy, radius, startAngle, endAngle);
+        ctx.lineWidth = 50;
+        ctx.strokeStyle = colors[i];
+        ctx.lineCap = "round";
+        ctx.stroke();
+        startAngle = endAngle;
+    }
+</script>
+</body>
+</html>

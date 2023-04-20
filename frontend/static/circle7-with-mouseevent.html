@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas 圆环图</title>
+    <style>
+        canvas {
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+<div style="position: relative;">
+    <canvas id="chart1" width="400" height="400" style="position: absolute; top: 0; left: 0;"></canvas>
+    <canvas id="chart2" width="400" height="400" style="position: absolute; top: 0; left: 0;"></canvas>
+</div>
+<script>
+    const data = [30, 20, 10, 40];
+    const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00'];
+    const canvas1 = document.getElementById('chart1');
+    const canvas2 = document.getElementById('chart2');
+    const cx = canvas1.width / 2;
+    const cy = canvas1.height / 2;
+    const radius = Math.min(cx, cy) * 0.8;
+    const total = data.reduce((acc, val) => acc + val, 0);
+    let startAngle = -Math.PI / 2;
+    let endAngle = 0;
+
+    // 绘制底部环形图
+    const ctx1 = canvas1.getContext('2d');
+    ctx1.lineWidth = 50;
+    ctx1.lineCap = "butt";
+    for (let i = 0; i < data.length; i++) {
+        const ratio = data[i] / total;
+        endAngle = startAngle + ratio * 2 * Math.PI;
+        ctx1.beginPath();
+        ctx1.arc(cx, cy, radius, startAngle, endAngle);
+        ctx1.strokeStyle = colors[i];
+        ctx1.stroke();
+        startAngle = endAngle;
+    }
+
+    // 绘制连接环形图的圆形
+    const ctx2 = canvas2.getContext('2d');
+    for (let i = 0; i < data.length; i++) {
+        const ratio = data[i] / total;
+        endAngle = startAngle + ratio * 2 * Math.PI;
+        const x = cx + radius * Math.cos(endAngle);
+        const y = cy + radius * Math.sin(endAngle);
+        ctx2.beginPath();
+        ctx2.arc(x, y, 25, 0, 2 * Math.PI);
+        ctx2.fillStyle = colors[i];
+        ctx2.fill();
+        startAngle = endAngle;
+    }
+
+    // 将两个 canvas 合并起来
+    const ctx = canvas1.getContext('2d');
+    ctx.drawImage(canvas2, 0, 0);
+
+    // 绘制完所有内容之后
+    // 将 canvas2 移动到 canvas1 下面
+    canvas2.style.zIndex = "-1";
+
+    // 监听鼠标移动事件
+    canvas1.addEventListener('mousemove', (event) => {
+        const x = event.offsetX;
+        const y = event.offsetY;
+
+        // 遍历每个环段，判断鼠标所在的位置是否在该环段的区域内
+        let isInSegment = false;
+        for (let i = 0; i < data.length; i++) {
+            const ratio = data[i] / total;
+            endAngle = startAngle + ratio * 2 * Math.PI;
+            const segmentPath = new Path2D();
+            segmentPath.arc(cx, cy, radius, startAngle, endAngle);
+            if (ctx.isPointInPath(segmentPath, x, y)) {
+                // 如果是，则改变该环段的颜色
+                ctx1.strokeStyle = lightenDarkenColor(colors[i], 20);
+                isInSegment = true;
+            }
+            startAngle = endAngle;
+        }
+
+        // 如果鼠标不在任何一个环段的区域内，则恢复所有环段的颜色
+        if (!isInSegment) {
+            for (let i = 0; i < data.length; i++) {
+                ctx1.strokeStyle = colors[i];
+                startAngle = endAngle;
+            }
+        }
+
+        console.log(isInSegment);
+
+        // 清空 canvas1，并重新绘制环形图和圆形连接点
+        ctx.clearRect(0, 0, canvas1.width, canvas1.height);
+        ctx1.lineWidth = 50;
+        ctx1.lineCap = "butt";
+        startAngle = -Math.PI / 2;
+        for (let i = 0; i < data.length; i++) {
+            const ratio = data[i] / total;
+            endAngle = startAngle + ratio * 2 * Math.PI;
+            ctx1.beginPath();
+            ctx1.arc(cx, cy, radius, startAngle, endAngle);
+            ctx1.strokeStyle = colors[i];
+            ctx1.stroke();
+            startAngle = endAngle;
+        }
+        for (let i = 0; i < data.length; i++) {
+            const ratio = data[i] / total;
+            endAngle = startAngle + ratio * 2 * Math.PI;
+            const x = cx + radius * Math.cos(endAngle);
+            const y = cy + radius * Math.sin(endAngle);
+            ctx2.beginPath();
+            ctx2.arc(x, y, 25, 0, 2 * Math.PI);
+            ctx2.fillStyle = colors[i];
+            ctx2.fill();
+            startAngle = endAngle;
+        }
+        ctx.drawImage(canvas2, 0, 0);
+    });
+
+    // 颜色变浅或变深的函数
+    function lightenDarkenColor(color, amount) {
+        let usePound = false;
+
+        if (color[0] == "#") {
+            color = color.slice(1);
+            usePound = true;
+        }
+
+        const num = parseInt(color, 16);
+
+        let r = (num >> 16) + amount;
+        if (r > 255) r = 255;
+        else if (r < 0) r = 0;
+
+        let b = ((num >> 8) & 0x00FF) + amount;
+        if (b > 255) b = 255;
+        else if (b < 0) b = 0;
+
+        let g = (num & 0x0000FF) + amount;
+        if (g > 255) g = 255;
+        else if (g < 0) g = 0;
+
+        return (usePound ? "#" : "") + (g | (b << 8) | (r << 16)).toString(16);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<canvas id="myCanvas"></canvas>
+<script>
+    // 获取画布元素
+    const canvas = document.getElementById('myCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // 数字数组
+    const data = [10, 20, 30, 40];
+
+    // 设置圆的半径和中心点坐标
+    const radius = Math.min(canvas.width, canvas.height) / 2 - 20; // 修改圆环大小
+    const x = canvas.width / 2;
+    const y = canvas.height / 2;
+
+    // 计算总和
+    const total = data.reduce((acc, val) => acc + val);
+
+    // 设置起始角度和结束角度
+    let startAngle = 0;
+    let endAngle = 0;
+
+    // 设置圆环粗细
+    const lineWidth = 20; // 修改圆环粗细
+
+    // 循环遍历数据并绘制每个部分
+    data.forEach((value, index) => {
+        // 计算当前部分的角度
+        endAngle = startAngle + (value / total) * 2 * Math.PI;
+
+        // 绘制当前部分
+        ctx.beginPath();
+        ctx.arc(x, y, radius, startAngle, endAngle);
+        ctx.lineWidth = lineWidth;
+        ctx.strokeStyle = `hsl(${(index / data.length) * 360}, 70%, 50%)`;
+        ctx.stroke();
+
+        // 更新起始角度
+        startAngle = endAngle;
+    });
+
+    // 绘制内部圆形
+    ctx.beginPath();
+    ctx.arc(x, y, radius - lineWidth / 2, 0, 2 * Math.PI); // 根据圆环粗细绘制内部圆形
+    ctx.fillStyle = 'white';
+    ctx.fill();
+    ctx.strokeStyle = 'white';
+    ctx.lineWidth = lineWidth * 0.1; // 根据圆环粗细绘制内部圆形边框
+    ctx.stroke();
+
+</script>
+</body>
+</html>
