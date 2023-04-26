@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas 圆环图</title>
+    <style>
+        canvas {
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+<div style="position: relative;">
+    <canvas id="chart1" width="400" height="400" style="position: absolute; top: 0; left: 0;"></canvas>
+    <canvas id="chart2" width="400" height="400" style="position: absolute; top: 0; left: 0;"></canvas>
+</div>
+<script>
+    const data = [30, 20, 10, 40];
+    let colors = ['#ec4949', '#5ed95e', '#5959e1', '#e8e86f'];
+    const hoverColors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00'];
+    const canvas1 = document.getElementById('chart1');
+    const canvas2 = document.getElementById('chart2');
+    const cx = canvas1.width / 2;
+    const cy = canvas1.height / 2;
+    const radius = Math.min(cx, cy) * 0.8;
+    const total = data.reduce((acc, val) => acc + val, 0);
+    let startAngle = -Math.PI / 2;
+    let endAngle = 0;
+    const ctx1 = canvas1.getContext('2d');
+    const ctx2 = canvas2.getContext('2d');
+
+    function draw() {
+        // 清空 canvas1，并重新绘制环形图和圆形连接点
+        ctx1.clearRect(0, 0, canvas1.width, canvas1.height); // 这行不能删除 如何删除 你不停的晃动鼠标 图形锯齿化 会越来越严重
+        ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
+        startAngle = -Math.PI / 2; // 流弊 解决了！
+
+        // 阴影
+        // ctx1.shadowBlur = 20;
+        // ctx1.shadowColor = 'rgba(236, 73, 73, 0.3)';
+
+        // 绘制底部环形图
+        ctx1.lineWidth = 50;
+        ctx1.lineCap = "butt";
+        for (let i = 0; i < data.length; i++) {
+            const ratio = data[i] / total;
+            endAngle = startAngle + ratio * 2 * Math.PI;
+            ctx1.beginPath();
+            ctx1.arc(cx, cy, radius, startAngle, endAngle);
+            ctx1.strokeStyle = colors[i];
+            ctx1.stroke();
+            startAngle = endAngle;
+        }
+
+        // 绘制连接环形图的圆形
+        for (let i = 0; i < data.length; i++) {
+            const ratio = data[i] / total;
+            endAngle = startAngle + ratio * 2 * Math.PI;
+            const x = cx + radius * Math.cos(endAngle);
+            const y = cy + radius * Math.sin(endAngle);
+            ctx2.beginPath();
+            ctx2.arc(x, y, 25, 0, 2 * Math.PI);
+            ctx2.fillStyle = colors[i];
+            ctx2.fill();
+            startAngle = endAngle;
+        }
+
+        // 将两个 canvas 合并起来
+        const ctx = canvas1.getContext('2d');
+        ctx.drawImage(canvas2, 0, 0);
+
+        // 绘制完所有内容之后
+        // 将 canvas2 移动到 canvas1 下面
+        canvas2.style.zIndex = "-1";
+    }
+
+    draw();
+
+    canvas1.addEventListener('mousemove', function(event) {
+        const rect = canvas1.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+        const cx = canvas1.width / 2;
+        const cy = canvas1.height / 2;
+        const radius = Math.min(cx, cy) * 0.8;
+        const total = data.reduce((acc, val) => acc + val, 0);
+        let startAngle = -Math.PI / 2;
+        let endAngle = 0;
+        let selected = -1;
+        for (let i = 0; i < data.length; i++) {
+            const ratio = data[i] / total;
+            endAngle = startAngle + ratio * 2 * Math.PI;
+            const dist = Math.sqrt((x - cx) ** 2 + (y - cy) ** 2);
+            if (dist >= radius - 25 && dist <= radius + 25 && Math.atan2(y - cy, x - cx) >= startAngle && Math.atan2(y - cy, x - cx) <= endAngle) {
+                selected = i;
+                break;
+            }
+            startAngle = endAngle;
+        }
+
+        if (selected !== -1) {
+            colors = ['#ec4949', '#5ed95e', '#5959e1', '#e8e86f']; // 不加这行会有bug 可能多条同时变色
+            colors[selected] = hoverColors[selected];
+        } else {
+            colors = ['#ec4949', '#5ed95e', '#5959e1', '#e8e86f'];
+        }
+
+        draw()
+    });
+</script>
+</body>
+</html>
