@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<canvas id="myCanvas" width="300" height="300"></canvas>
+<script>
+    var canvas = document.getElementById('myCanvas');
+    var ctx = canvas.getContext('2d');
+
+    // 定义颜色数组
+    var colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#00ffff'];
+
+    // 定义数据数组
+    var data = [55, 20, 30, 25, 15];
+
+    // 计算数据总和
+    var total = 0;
+    for (var i = 0; i < data.length; i++) {
+        total += data[i];
+    }
+
+    // 定义圆环的位置和大小
+    var x = canvas.width / 2;
+    var y = canvas.height / 2;
+    var radius = Math.min(x, y) * 0.8;
+    var lineWidth = radius * 0.5;
+
+    // 开始绘制圆环
+    var startAngle = 0;
+    for (var i = 0; i < data.length; i++) {
+        // 计算当前数据在圆环中所占的比例
+        var ratio = data[i] / total;
+        var endAngle = startAngle + ratio * Math.PI * 2;
+
+        // 绘制圆环
+        ctx.beginPath();
+        ctx.arc(x, y, radius, startAngle, endAngle);
+        ctx.lineWidth = lineWidth;
+        ctx.strokeStyle = colors[i % colors.length];
+        ctx.lineCap = 'round';
+        ctx.stroke();
+
+        // 更新起始角度
+        startAngle = endAngle;
+    }
+</script>
+</body>
+</html>

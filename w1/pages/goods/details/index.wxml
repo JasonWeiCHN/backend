@@ -1,3 +1,15 @@
+<view class="list" style="height: 100%;">
+  <block wx:for="{{items}}" wx:key="index" data-item="{{item}}">
+    <view class="list-item" wx:if="{{item.type === 'image'}}">
+      <image class="image" src="{{item.src}}" style="width: 100%;"></image>
+    </view>
+    <view class="list-item" wx:if="{{item.type === 'text'}}">
+      <view class="text">{{item.text}}</view>
+    </view>
+  </block>
+</view>
+
+<!--
 <view class="goods-detail-page">
   <view class="goods-head">
     <t-swiper
@@ -151,3 +163,4 @@
   />
 </view>
 <t-toast id="t-toast" />
+ -->

@@ -105,3 +105,55 @@ page {
   --td-tab-item-color: #666;
   --td-tab-track-color: red;
 }
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.list-item {
+  display: flex;
+  flex-direction: row;
+  padding: 20rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.list-item-image-container {
+  position: relative;
+  width: 120rpx;
+  height: 164rpx;
+  margin-right: 20rpx;
+}
+
+.list-item-image {
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.list-item-name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #333;
+  font-size: 28rpx;
+  text-align: center;
+  padding: 6rpx 0;
+}
+
+.list-item-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.list-item-title {
+  margin-bottom: 10rpx;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.list-item-description {
+  font-size: 28rpx;
+  color: #999;
+}

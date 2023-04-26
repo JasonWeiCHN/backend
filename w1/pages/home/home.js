@@ -15,6 +15,56 @@ Page({
     interval: 5000,
     navigation: { type: 'dots' },
     swiperImageProps: { mode: 'scaleToFill' },
+    list: [
+      {
+        id: 1,
+        image:
+          'https://we-retail-static-1300977798.cos.ap-guangzhou.myqcloud.com/retail-ui/components-exp/avatar/avatar-1.jpg',
+        name: '田微',
+        title: '高级工程师',
+        description: '张三是一位资深工程师，有着10年的工作经验。他擅长开发高性能、高可用的分布式系统。',
+      },
+      {
+        id: 2,
+        image:
+          'https://we-retail-static-1300977798.cos.ap-guangzhou.myqcloud.com/retail-ui/components-exp/avatar/avatar-2.jpg',
+        name: '赵广顾',
+        title: '产品经理',
+        description: '李四是一位经验丰富的产品经理，曾在多个行业任职。他善于市场分析和用户研究，成功的产品上线经验。',
+      },
+      {
+        id: 3,
+        image:
+          'https://we-retail-static-1300977798.cos.ap-guangzhou.myqcloud.com/retail-ui/components-exp/avatar/avatar-3.jpg',
+        name: '杨晓英',
+        title: '销售经理',
+        description: '王五是一位多年经验的销售经理，擅长市场开拓和渠道拓展。带领团队完成了多个重大销售业绩目标。',
+      },
+      {
+        id: 4,
+        image:
+          'https://we-retail-static-1300977798.cos.ap-guangzhou.myqcloud.com/retail-ui/components-exp/avatar/avatar-4.jpg',
+        name: '王犇',
+        title: 'java开发工程师',
+        description: '王五是一位多年经验的销售经理，擅长市场开拓和渠道拓展。带领团队完成了多个重大销售业绩目标。',
+      },
+      {
+        id: 5,
+        image:
+          'https://we-retail-static-1300977798.cos.ap-guangzhou.myqcloud.com/retail-ui/components-exp/avatar/avatar-5.jpg',
+        name: '史玉珍',
+        title: '前端开发',
+        description: '王五是一位多年经验的销售经理，擅长市场开拓和渠道拓展。带领团队完成了多个重大销售业绩目标。',
+      },
+      {
+        id: 6,
+        image:
+          'https://we-retail-static-1300977798.cos.ap-guangzhou.myqcloud.com/retail-ui/components-exp/avatar/avatar-1.jpg',
+        name: '萧若然',
+        title: '技术总监',
+        description: '王五是一位多年经验的销售经理，擅长市场开拓和渠道拓展。带领团队完成了多个重大销售业绩目标。',
+      },
+    ],
   },
 
   goodListPagination: {
@@ -27,11 +77,11 @@ Page({
   },
 
   onShow() {
-    this.getTabBar().init();
+    // this.getTabBar().init();
   },
 
   onLoad() {
-    this.init();
+    // this.init();
   },
 
   onReachBottom() {
@@ -126,6 +176,20 @@ Page({
     const { index: promotionID = 0 } = detail || {};
     wx.navigateTo({
       url: `/pages/promotion-detail/index?promotion_id=${promotionID}`,
+    });
+  },
+
+  navToGoodDetail(event) {
+    const { item } = event.currentTarget.dataset;
+    console.log('clicked item:', item);
+    wx.navigateTo({
+      url: `/pages/goods/details/index`,
+    });
+  },
+
+  navToOpenAiLearning() {
+    wx.navigateTo({
+      url: `/pages/open-ai/index`,
     });
   },
 });

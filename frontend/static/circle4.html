@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Canvas Circle Chart</title>
+</head>
+<body>
+<canvas id="circle-chart" width="400" height="400"></canvas>
+<script>
+    const data = [25, 40, 15, 20]; // 数字数组，每个元素代表一个圆环的比例
+
+    const canvas = document.getElementById('circle-chart');
+    const ctx = canvas.getContext('2d');
+
+    const centerX = canvas.width / 2; // 圆心X坐标
+    const centerY = canvas.height / 2; // 圆心Y坐标
+    const radius = Math.min(canvas.width, canvas.height) / 3; // 圆环半径
+    const lineWidth = radius / 2; // 圆环线宽
+
+    let startAngle = -Math.PI / 2; // 圆环起始角度
+    let endAngle = 0; // 圆环结束角度
+
+    // 绘制每个圆环
+    for (let i = 0; i < data.length; i++) {
+        const ratio = data[i] / data.reduce((a, b) => a + b, 0); // 圆环比例
+        const color = getRandomColor(); // 随机颜色
+
+        endAngle = startAngle + ratio * 2 * Math.PI; // 圆环结束角度
+
+        ctx.beginPath();
+        ctx.arc(centerX, centerY, radius, startAngle, endAngle, false);
+        ctx.lineWidth = lineWidth;
+        ctx.strokeStyle = color;
+        ctx.lineCap = 'round';
+        ctx.stroke();
+
+        startAngle = endAngle; // 更新圆环起始角度
+    }
+
+    // 随机获取一个颜色值
+    function getRandomColor() {
+        const r = Math.floor(Math.random() * 256);
+        const g = Math.floor(Math.random() * 256);
+        const b = Math.floor(Math.random() * 256);
+        return `rgb(${r}, ${g}, ${b})`;
+    }
+</script>
+</body>
+</html>

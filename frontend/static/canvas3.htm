@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Canvas Demo</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    // 设置画布的大小
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    // 初始值和变化率
+    // let price = canvas.height / 2;
+    let price = 300;
+    let changeRate = 0;
+
+    // 记录历史数据
+    let priceHistory = [];
+
+    // 初始化线条颜色为红色
+    let color = "red";
+
+    // 每帧的更新函数
+    function update() {
+        // 更新
+        price += changeRate;
+
+        // 如果按下了 W 键，增加的速度加快
+        if (wPressed) {
+            changeRate += 0.05;
+            // changeRate += 0.1; // 上坡加速
+            // 创建渐变对象
+            const gradient = ctx.createLinearGradient(0, canvas.height - priceHistory[0], 0, canvas.height - price);
+            gradient.addColorStop(0, "red");
+            gradient.addColorStop(1, "blue");
+            color = gradient;
+        } else if (sPressed) {
+            changeRate -= 0.05;
+            // 创建渐变对象
+            const gradient = ctx.createLinearGradient(0, canvas.height - priceHistory[0], 0, canvas.height - price);
+            gradient.addColorStop(0, "red");
+            gradient.addColorStop(1, "green");
+            color = gradient;
+        } else {
+            // 默认变换率, 可以理解为不按键时的变化情况, 注意此设置会导致曲线一开始就不是平行前进
+            // changeRate -= 0.01;
+            // changeRate = 0;
+            color = "red";
+        }
+
+        // 限制变化率在一定范围内
+        if (changeRate > 5) {
+            changeRate = 5;
+        }
+        if (changeRate < -3) {
+            changeRate = -3;
+        }
+
+        // 记录到历史数据中
+        priceHistory.push(price);
+
+        // 绘制曲线
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.beginPath();
+        ctx.moveTo(0, canvas.height - priceHistory[0]);
+
+        for (let i = 1; i < priceHistory.length; i++) {
+            ctx.lineTo(i, canvas.height - priceHistory[i]);
+            // ctx.lineTo(i*2, canvas.height - priceHistory[i]); // x轴加速
+        }
+
+        ctx.strokeStyle = color; // 使用变量 color 作为线条颜色
+        ctx.lineWidth = 18; // 增加线条粗细
+        ctx.stroke();
+
+        // 每秒钟更新 60 次画布
+        setTimeout(function () {
+            requestAnimationFrame(update);
+        }, 1000 / 60);
+    }
+
+    // 监听键盘按下事件
+    let wPressed = false;
+    let sPressed = false;
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "w") {
+            wPressed = true;
+        } else if (event.key === "s") {
+            sPressed = true;
+        }
+    });
+
+    // 监听键盘松开事件
+    document.addEventListener("keyup", function (event) {
+        if (event.key === "w") {
+            wPressed = false;
+        } else if (event.key === "s") {
+            sPressed = false;
+        }
+    });
+
+    // 开始更新画布
+    update();
+
+
+</script>
+</body>
+</html>

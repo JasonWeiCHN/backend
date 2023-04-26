@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Canvas Shoot Game</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="600" height="400"></canvas>
+<script>
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+
+    var player = {
+        x: 50,
+        y: canvas.height / 2,
+        width: 50,
+        height: 50,
+        speed: 5,
+        score: 0,
+    };
+
+    var enemies = [];
+    var bullets = [];
+
+    // 定义一个键盘状态对象
+    var keydown = {};
+
+    // 添加事件监听器，记录按键状态
+    window.addEventListener("keydown", function (event) {
+        keydown[event.keyCode] = true;
+    });
+
+    window.addEventListener("keyup", function (event) {
+        keydown[event.keyCode] = false;
+    });
+
+    function draw() {
+        // Clear the canvas
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Draw the background
+        ctx.fillStyle = "#000000";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Draw the player
+        ctx.fillStyle = "#ffffff";
+        ctx.fillRect(player.x, player.y, player.width, player.height);
+
+        // Draw the enemies
+        ctx.fillStyle = "#ff0000";
+        for (var i = 0; i < enemies.length; i++) {
+            ctx.fillRect(
+                enemies[i].x,
+                enemies[i].y,
+                enemies[i].width,
+                enemies[i].height
+            );
+        }
+
+        // Draw the bullets
+        ctx.fillStyle = "#ffffff";
+        for (var i = 0; i < bullets.length; i++) {
+            ctx.beginPath();
+            ctx.arc(
+                bullets[i].x,
+                bullets[i].y,
+                bullets[i].radius,
+                0,
+                Math.PI * 2
+            );
+            ctx.closePath();
+            ctx.fill();
+        }
+
+        // Draw the score
+        ctx.fillStyle = "#ffffff";
+        ctx.font = "bold 24px Arial";
+        ctx.fillText("Score: " + player.score, 10, 30);
+    }
+
+    function movePlayer() {
+        if (keydown[37]) {
+            player.x -= player.speed;
+        }
+        if (keydown[39]) {
+            player.x += player.speed;
+        }
+        if (keydown[38]) {
+            player.y -= player.speed;
+        }
+        if (keydown[40]) {
+            player.y += player.speed;
+        }
+
+        // Check player boundaries
+        if (player.x < 0) {
+            player.x = 0;
+        }
+        if (player.x + player.width > canvas.width) {
+            player.x = canvas.width - player.width;
+        }
+        if (player.y < 0) {
+            player.y = 0;
+        }
+        if (player.y + player.height > canvas.height) {
+            player.y = canvas.height - player.height;
+        }
+    }
+
+    function createEnemy() {
+        var enemy = {
+            x: canvas.width,
+            y: Math.random() * canvas.height,
+            width: 50,
+            height: 50,
+            speed: Math.random() * 5 + 1,
+        };
+        enemies.push(enemy);
+    }
+
+    function moveEnemies() {
+        for (var i = 0; i < enemies.length; i++) {
+            enemies[i].x -= enemies[i].speed;
+            if (enemies[i].x + enemies[i].width < 0) {
+                enemies.splice(i, 1);
+            }
+        }
+    }
+
+    function createBullet() {
+        var bullet = {
+            x: player.x + player.width / 2,
+            y: player.y + player.height / 2,
+            radius: 5,
+            speed: 10,
+        };
+        bullets.push(bullet);
+    }
+
+    function moveBullets() {
+        for (var i = 0; i < bullets.length; i++) {
+            bullets[i].x += bullets[i].speed;
+            if (bullets[i].x > canvas.width) {
+                bullets.splice(i, 1);
+            }
+        }
+    }
+
+    function detectCollisions() {
+        for (var i = 0; i < enemies.length; i++) {
+            if (
+                player.x < enemies[i].x + enemies[i].width &&
+                player.x + player.width > enemies[i].x &&
+                player.y < enemies[i].y + enemies[i].height &&
+                player.y + player.height > enemies[i].y
+            ) {
+                // Collision detected
+                player.score -= 10;
+                enemies.splice(i, 1);
+                break;
+            }
+        }
+        for (var i = 0; i < bullets.length; i++) {
+            for (var j = 0; j < enemies.length; j++) {
+                if (
+                    bullets[i].x < enemies[j].x + enemies[j].width &&
+                    bullets[i].x + bullets[i].radius > enemies[j].x &&
+                    bullets[i].y < enemies[j].y + enemies[j].height &&
+                    bullets[i].y + bullets[i].radius > enemies[j].y
+                ) {
+                    // Collision detected
+                    player.score += 10;
+                    enemies.splice(j, 1);
+                    bullets.splice(i, 1);
+                    break;
+                }
+            }
+        }
+    }
+
+    function gameLoop() {
+        draw();
+        movePlayer();
+        moveEnemies();
+        moveBullets();
+        detectCollisions();
+        if (Math.random() < 0.05) {
+            createEnemy();
+        }
+        if (keydown[32]) {
+            createBullet();
+        }
+        setTimeout(gameLoop, 20);
+    }
+
+    gameLoop();
+</script>
+

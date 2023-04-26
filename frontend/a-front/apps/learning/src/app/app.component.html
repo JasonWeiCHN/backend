@@ -1,0 +1,14 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit(model)">
+  <formly-form [form]="form" [fields]="fields" [model]="model"></formly-form>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<a-front-custom-input [(ngModel)]="myValue"></a-front-custom-input>
+<div>组件外绑定的值 {{ myValue }}</div>
+
+<!--
+<div>原生输入框</div>
+<input [(ngModel)]="myValue" >
+{{ myValue }}
+-->
+<!--<a-front-nx-welcome></a-front-nx-welcome> <router-outlet></router-outlet>-->
