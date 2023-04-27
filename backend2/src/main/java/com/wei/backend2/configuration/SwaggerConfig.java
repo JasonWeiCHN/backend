@@ -6,27 +6,29 @@ import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
-import springfox.documentation.oas.annotations.EnableOpenApi;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 
 @Configuration
-@EnableOpenApi
 public class SwaggerConfig {
     @Bean
     public Docket createRestApi() {
-        return new Docket(DocumentationType.OAS_30)
+        Docket docket =  new Docket(DocumentationType.OAS_30)
                 .apiInfo(apiInfo())
                 // ture 启用Swagger3.0， false 禁用（生产环境要禁用）
                 .enable(false)
+                .groupName("test")
                 .select()
                 // 扫描的路径使用@Api的controller
-                .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
+//                .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
+                .apis(RequestHandlerSelectors.basePackage("com.wei.backend2.controller"))
                 // 指定路径处理PathSelectors.any()代表所有的路径
                 .paths(PathSelectors.any())
                 .build();
+        return docket;
+
     }
 
     /**
@@ -34,10 +36,11 @@ public class SwaggerConfig {
      */
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("Swagger3接口文档")
+                .title("Swagger 接口文档")
                 .description("backend2")
-                .contact(new Contact("backend2", "", ""))
+                .contact(new Contact("backend2", "https://localhost:8080", "hello@163.com"))
                 .version("1.0")
+                .description("接口文档描述")
                 .build();
     }
 }

@@ -2,6 +2,7 @@ package com.wei.backend2.controller;
 
 import com.wei.backend2.entity.Task;
 import com.wei.backend2.service.TaskService;
+import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,6 +13,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/tasks")
 @CrossOrigin(origins = "http://localhost:4200")
+@Api(tags = "task")
 public class TaskController {
     @Autowired
     private TaskService taskService;
