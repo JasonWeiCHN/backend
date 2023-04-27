@@ -1,10 +1,8 @@
-server:
-  port: 8080
 spring:
   profiles:
     active: '@springProfile@'
-  application:
-    name: backend2-api
+#  application:
+#    name: backend2-api
 
   datasource:
     url: jdbc:postgresql://localhost:5432/jason

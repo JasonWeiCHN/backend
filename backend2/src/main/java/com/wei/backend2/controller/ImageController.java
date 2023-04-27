@@ -2,6 +2,8 @@ package com.wei.backend2.controller;
 
 import com.wei.backend2.request.AddImageRequest;
 import com.wei.backend2.service.ImageService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,6 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 @RestController
 @RequestMapping("/images")
 @CrossOrigin(origins = "http://localhost:4200")
+@Api(tags = "image")
 public class ImageController {
 
     @Autowired
@@ -18,6 +21,7 @@ public class ImageController {
 
 
     @PostMapping("/add")
+    @ApiOperation("add images")
     public ResponseEntity<String> addImage(@RequestParam("file") MultipartFile file,
                                            @RequestParam("name") String name,
                                            @RequestParam("category") String category) {
@@ -37,6 +41,7 @@ public class ImageController {
     }
 
     @PostMapping("/add-by-excel")
+    @ApiOperation("add images by excel")
     public ResponseEntity<String> addImageByExcel(@RequestParam("file") MultipartFile file) {
         boolean isSuccess = imageService.addImageByExcel(file);
 

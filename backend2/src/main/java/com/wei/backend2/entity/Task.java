@@ -1,7 +1,7 @@
 package com.wei.backend2.entity;
 import lombok.Data;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Data
 @Entity
