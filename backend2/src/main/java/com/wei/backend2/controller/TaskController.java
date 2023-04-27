@@ -3,6 +3,7 @@ package com.wei.backend2.controller;
 import com.wei.backend2.entity.Task;
 import com.wei.backend2.service.TaskService;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +21,7 @@ public class TaskController {
 
     // 创建任务
     @PostMapping("/add")
+    @ApiOperation("create task")
     public ResponseEntity<Task> createTask(@RequestBody Task task) {
         Task createdTask = taskService.createTask(task);
         return new ResponseEntity<>(createdTask, HttpStatus.CREATED);
@@ -27,6 +29,7 @@ public class TaskController {
 
     // 获取任务
     @GetMapping("/{taskId}")
+    @ApiOperation("get task")
     public ResponseEntity<Task> getTask(@PathVariable Long taskId) {
         Task task = taskService.getTask(taskId);
         if (task == null) {
@@ -37,6 +40,7 @@ public class TaskController {
 
     // 获取所有任务
     @GetMapping("/")
+    @ApiOperation("get all task")
     public ResponseEntity<List<Task>> getAllTasks() {
         List<Task> tasks = taskService.getAllTasks();
         return new ResponseEntity<>(tasks, HttpStatus.OK);
@@ -44,6 +48,7 @@ public class TaskController {
 
     // 更新任务
     @PutMapping("/{taskId}")
+    @ApiOperation("update task")
     public ResponseEntity<Task> updateTask(@PathVariable Long taskId, @RequestBody Task taskDetails) {
         Task updatedTask = taskService.updateTask(taskId, taskDetails);
         if (updatedTask == null) {
@@ -54,6 +59,7 @@ public class TaskController {
 
     // 删除任务
     @DeleteMapping("/{taskId}")
+    @ApiOperation("delete task")
     public ResponseEntity<Void> deleteTask(@PathVariable Long taskId) {
         taskService.deleteTask(taskId);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
