@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/product")
-@Api(tags = "product Controller")
+@Api(tags = "product")
 public class ProductController {
     private ProductService productService;
 

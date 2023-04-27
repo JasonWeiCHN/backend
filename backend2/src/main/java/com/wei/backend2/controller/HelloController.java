@@ -5,9 +5,10 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
-@Api(tags = "hello test")
+@RestController
+@Api(tags = "HelloController")
 public class HelloController {
     @RequestMapping("/")
     @ResponseBody

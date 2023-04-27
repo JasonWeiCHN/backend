@@ -2,20 +2,23 @@ package com.wei.backend2.controller;
 
 import com.wei.backend2.request.AddGoodRequest;
 import com.wei.backend2.service.GoodService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/goods")
 @CrossOrigin(origins = "http://localhost:4200")
+@Api(tags = "Good")
 public class GoodController {
     @Autowired
     private GoodService goodService;
 
     @PostMapping("/add")
+    @ApiOperation("add good")
     public ResponseEntity<String> addGood(@ModelAttribute AddGoodRequest goodRequest) {
         boolean isSuccess = goodService.addGood(goodRequest);
         if (isSuccess) {
