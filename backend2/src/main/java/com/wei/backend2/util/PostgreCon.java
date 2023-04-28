@@ -1,6 +1,9 @@
 package com.wei.backend2.util;
 
 import com.sun.tools.javac.Main;
+import com.wei.backend2.configuration.DatabaseConfig;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
@@ -15,14 +18,17 @@ import java.sql.Statement;
  * executeSqlFromFile 可以调整下 里面有数据库信息的hard code 应该改到配置 而且 密码明文了 应该考虑怎么保护
  * connectPostgreSQL 可以废弃 测试用的方法
  */
+@Component
 public class PostgreCon {
+    private static DatabaseConfig databaseConfig;
+    @Autowired
+    public PostgreCon(DatabaseConfig databaseConfig) {
+        this.databaseConfig = databaseConfig;
+    }
+
     @Deprecated
     public static void createUserTable() {
-        String url = "jdbc:postgresql://localhost:5432/jason";
-        String user = "postgres";
-        String password = "P@ssw0rd11";
-
-        try (Connection conn = DriverManager.getConnection(url, user, password);
+        try (Connection conn = DriverManager.getConnection(databaseConfig.getUrl(), databaseConfig.getUsername(), databaseConfig.getPassword());
              Statement stmt = conn.createStatement()) {
 
             // 加载包含创建表和添加注释的SQL语句的文件
@@ -54,11 +60,7 @@ public class PostgreCon {
             }
             String sql = new String(inputStream.readAllBytes(), StandardCharsets.UTF_8);
 
-            String url = "jdbc:postgresql://localhost:5432/jason";
-            String user = "postgres";
-            String password = "P@ssw0rd11";
-
-            try (Connection conn = DriverManager.getConnection(url, user, password);
+            try (Connection conn = DriverManager.getConnection(databaseConfig.getUrl(), databaseConfig.getUsername(), databaseConfig.getPassword());
                  Statement stmt = conn.createStatement()) {
                 stmt.execute(sql);
                 System.out.println("SQL executed successfully");
@@ -69,11 +71,13 @@ public class PostgreCon {
     }
 
     public static Connection getConnection() {
-        String url = "jdbc:postgresql://localhost:5432/jason";
-        String user = "postgres";
-        String password = "P@ssw0rd11";
+        String url = databaseConfig.getUrl();
+        String user = databaseConfig.getUsername();
+        String password = databaseConfig.getPassword();
+
+
         try {
-            Connection conn = DriverManager.getConnection(url, user, password);
+            Connection conn = DriverManager.getConnection(databaseConfig.getUrl(), databaseConfig.getUsername(), databaseConfig.getPassword());
             System.out.println("Connected to the PostgreSQL server successfully.");
             return conn;
         } catch (SQLException e) {
