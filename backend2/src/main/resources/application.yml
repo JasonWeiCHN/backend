@@ -7,7 +7,8 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/jason
     username: postgres
-    password: P@ssw0rd11
+#    password: P@ssw0rd11
+    password: 19871227
     driverClassName: org.postgresql.Driver
     hikari:
       #数据库连接的超时时间

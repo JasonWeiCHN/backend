@@ -6,7 +6,9 @@ defineProps<{ title: string }>()
   <div class="layout">
     <div class="header">
       <div class="header__left">{{ title }}</div>
-      <div class="header__right">Right</div>
+      <div class="header__right">
+        <img src="" alt="">
+      </div>
     </div>
     <div class="content">
       content
