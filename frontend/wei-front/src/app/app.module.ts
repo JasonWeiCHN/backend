@@ -28,6 +28,7 @@ import { appRoutes } from './app.routes';
 import { TaskModule } from './pages/task/task.module';
 import { HotTableModule } from '@handsontable/angular';
 import { ProductComponent } from './pages/product/product.component';
+import { ArticleComponent } from './pages/article/article.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { ProductComponent } from './pages/product/product.component';
     AddGoodByDragComponent,
     MainComponent,
     ProductComponent,
+    ArticleComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
