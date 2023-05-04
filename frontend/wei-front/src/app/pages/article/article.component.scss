@@ -1,0 +1,12 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.article {
+  p {
+    margin-bottom: 12px;
+  }
+}
