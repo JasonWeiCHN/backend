@@ -1,7 +1,8 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
+    <router-link to="/">Home</router-link>
     <router-link to="/about">About</router-link>
+    <router-link to="/tang">Tang</router-link>
   </nav>
   <router-view />
 </template>
@@ -16,7 +17,11 @@
 }
 
 nav {
-  padding: 30px;
+  //padding: 30px;
+  position: fixed;
+  top: 0;
+  display: flex;
+  flex-direction: column;
 
   a {
     font-weight: bold;
