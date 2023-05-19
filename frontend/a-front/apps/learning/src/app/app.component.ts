@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import {Component} from "@angular/core";
 import {FormGroup} from "@angular/forms";
 import {FormlyFieldConfig} from "@ngx-formly/core";
 
@@ -8,12 +8,10 @@ import {FormlyFieldConfig} from "@ngx-formly/core";
   styleUrls: ["./app.component.scss"],
 })
 export class AppComponent {
-  title = "learning";
-
-  myValue = '123';
+  public title = "learning";
 
   form = new FormGroup({});
-  model = { email: 'email@gmail.com' };
+  model = {email: 'email@gmail.com'};
   fields: FormlyFieldConfig[] = [
     {
       key: 'email',
@@ -22,6 +20,16 @@ export class AppComponent {
         label: 'Email address',
         placeholder: 'Enter email',
         required: true,
+      },
+      hooks: {
+        onInit: (field: FormlyFieldConfig) => {
+          console.log('onInit');
+          console.log(field);
+        },
+        onChanges: (field: FormlyFieldConfig) => {
+          console.log('onChanges');
+          console.log(field.model.email);
+        }
       }
     },
     {
@@ -39,8 +47,27 @@ export class AppComponent {
       props: {
         label: 'Your age',
         placeholder: 'Enter age',
+        required: false,
+      },
+      expressions: {
+        'props.disabled': '!model.name',
+      },
+    },
+    {
+      key: 'Radio',
+      type: 'radio',
+      props: {
+        label: 'Radio',
+        placeholder: 'Placeholder',
+        description: 'Description',
         required: true,
-      }
+        options: [
+          { value: 1, label: 'Option 1' },
+          { value: 2, label: 'Option 2' },
+          { value: 3, label: 'Option 3' },
+          { value: 4, label: 'Option 4', disabled: true },
+        ],
+      },
     },
     {
       key: 'custom-input',
