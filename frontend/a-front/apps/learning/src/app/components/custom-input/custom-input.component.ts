@@ -20,22 +20,22 @@ export class CustomInputComponent implements ControlValueAccessor {
   onTouched = () => {};
 
   writeValue(value: any): void {
-    console.log('writeValue', value);
+    // console.log('writeValue', value);
     this.value = value;
   }
 
   registerOnChange(fn: any): void {
     console.log(fn)
     this.onChange = (value) => {
-      console.log('onChange', value);
+      // console.log('onChange', value);
       fn(value);
     };
   }
 
   registerOnTouched(fn: any): void {
-    console.log(fn)
+    // console.log(fn)
     this.onTouched = () => {
-      console.log('onTouched Bili');
+      // console.log('onTouched Bili');
     };
   }
 

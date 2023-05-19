@@ -1,8 +1,9 @@
 <template>
-  <nav>
+  <nav v-if="$route.name !== 'photo'">
     <router-link to="/">Home</router-link>
     <router-link to="/about">About</router-link>
     <router-link to="/tang">Tang</router-link>
+    <router-link to="/photo">Photo</router-link>
   </nav>
   <router-view />
 </template>

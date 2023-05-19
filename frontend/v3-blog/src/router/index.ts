@@ -22,6 +22,12 @@ const routes: Array<RouteRecordRaw> = [
     component: () =>
       import(/* webpackChunkName: "tang" */ "../views/TangPoetry.vue"),
   },
+  {
+    path: "/photo",
+    name: "photo",
+    component: () =>
+      import(/* webpackChunkName: "tang" */ "../views/PhotoView.vue"),
+  },
 ];
 
 const router = createRouter({
