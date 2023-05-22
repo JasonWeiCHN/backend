@@ -9,7 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
 import { AddUserComponent } from './pages/user/pages/add-user/add-user.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
@@ -29,6 +29,7 @@ import { TaskModule } from './pages/task/task.module';
 import { HotTableModule } from '@handsontable/angular';
 import { ProductComponent } from './pages/product/product.component';
 import { ArticleComponent } from './pages/article/article.component';
+import { NgxEditorModule } from 'ngx-editor';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,9 @@ import { ArticleComponent } from './pages/article/article.component';
     MatNativeDateModule,
     MainModule,
     TaskModule,
+    NgxEditorModule,
+    NgxEditorModule,
+    FormsModule,
   ],
   providers: [
     {
