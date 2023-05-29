@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>图片展示页面</title>
+	<style>
+      #gallery {
+          max-width: 1400px;
+          margin: 0 auto;
+          text-align: center;
+      }
+
+      .image-item {
+          display: inline-block;
+          width: 120px;
+          height: 120px;
+          margin: 6px;
+          background-size: cover;
+          background-position: center;
+      }
+	</style>
+	<style>
+      .search-bar {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+		      max-width: 1400px;
+          height: 48px;
+          margin: 0 auto 12px;
+          padding: 0 12px;
+      }
+
+      .search-bar input[type="text"],
+      .category-select {
+          height: 100%;
+          border: 1px solid #ced4da;
+          border-radius: 4px;
+          outline: none;
+          font-size: 16px;
+          padding: 8px 12px;
+      }
+
+      .search-bar input[type="text"] {
+		      box-sizing: border-box;
+          flex: 1;
+          margin-right: 12px;
+      }
+
+      .search-bar input[type="text"]:focus,
+      .category-select:focus {
+          border-color: #80bdff;
+          box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+      }
+
+      .category-select {
+          width: 200px;
+      }
+	</style>
+	<style>
+      #thumbnail {
+          width: 480px;
+          height: 480px;
+          margin: 0 auto;
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+      }
+	</style>
+</head>
+<body>
+<div class="search-bar">
+	<input id="search" type="text" placeholder="搜索">
+	<select id="typeSelect" class="category-select">
+		<option value="all">全部分类</option>
+		<option value="category1">分类1</option>
+		<option value="category2">分类2</option>
+		<!-- 添加其他分类选项 -->
+	</select>
+</div>
+
+<div id="thumbnail"></div>
+
+<div id="gallery"></div>
+
+<script>
+    // 假设您有一个图片URL列表，您可以将它们替换为您自己的图片URL
+    const imageUrls = [
+        'https://cdn.midjourney.com/2b2fc2b3-a75d-472c-8db5-efaa051ed83e/0_0.webp',
+        'https://cdn.midjourney.com/4afa0caf-d843-43e0-8323-176042309923/0_3.webp',
+        'https://cdn.midjourney.com/c66c5d91-9074-465f-bb18-39031897d8ed/0_2.webp',
+        'https://cdn.midjourney.com/771f6e2b-1d85-48ab-816b-17010140fe56/0_2.webp',
+        'https://cdn.midjourney.com/121c038d-d5a0-4a82-9668-b24d7e0b98af/0_0.webp',
+        'https://cdn.midjourney.com/8e5b0dfb-0401-41a9-9056-8f80f3456f18/0_3.webp',
+        'https://cdn.midjourney.com/a33e0170-ee4c-49ec-b407-f5dcf0885b73/0_1.webp',
+        'https://cdn.midjourney.com/661cdb82-1db2-4ef5-b5d6-39383cdcadb0/0_3.webp',
+        'https://t7.baidu.com/it/u=4162611394,4275913936&fm=193&f=GIF',
+    ];
+
+    const gallery = document.getElementById('gallery');
+    const thumbnail = document.getElementById('thumbnail');
+    thumbnail.style.backgroundImage = `url(${imageUrls[0]})`; // 初始化缩略图展示区的背景图像
+
+    // 更新缩略图展示区的背景图像
+    function updateThumbnail(imageUrl) {
+        thumbnail.style.backgroundImage = `url(${imageUrl})`;
+    }
+
+    // 根据屏幕宽度计算每行可容纳的图片数量
+    function calculateColumns() {
+        const screenWidth = window.innerWidth ||
+            document.documentElement.clientWidth ||
+            document.body.clientWidth;
+        return Math.floor(screenWidth / 132); // 120px图片宽度 + 12px间距
+    }
+
+    // 创建并展示图片
+    function displayImages() {
+        console.log('displayImages');
+        const columns = calculateColumns();
+        const imageItems = imageUrls.map((imageUrl) => {
+            const imageItem = document.createElement('div');
+            imageItem.classList.add('image-item');
+            imageItem.style.backgroundImage = `url(${imageUrl})`;
+            return imageItem;
+        });
+
+        gallery.innerHTML = ''; // 清空原有图片
+        imageItems.forEach((imageItem, index) => {
+            const row = Math.floor(index / columns) + 1;
+            imageItem.style.order = index;
+            imageItem.style.gridColumn = `span ${columns}`;
+            imageItem.style.gridRow = `${row}`;
+            gallery.appendChild(imageItem);
+
+            // 添加点击事件监听器
+            imageItem.addEventListener('click', () => {
+                const imageUrl = imageUrls[index];
+                updateThumbnail(imageUrl);
+            });
+        });
+    }
+
+    // 监听窗口大小变化，响应式地重新布局图片
+    window.addEventListener('resize', displayImages);
+
+    // 初始加载时显示图片
+    displayImages();
+</script>
+<script>
+	const search = document.getElementById('search');
+	const typeSelect = document.getElementById('typeSelect');
+
+  search.addEventListener('input', displayImages);
+  typeSelect.addEventListener('change', displayImages);
+</script>
+</body>
+</html>

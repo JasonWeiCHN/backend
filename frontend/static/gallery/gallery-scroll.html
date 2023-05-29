@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>图片展示页面</title>
+	<style>
+      #gallery {
+          max-width: 1400px;
+          margin: 0 auto;
+		      text-align: center;
+      }
+
+      .image-item {
+          display: inline-block;
+          width: 120px;
+          height: 120px;
+          margin: 6px;
+          background-size: cover;
+          background-position: center;
+      }
+	</style>
+</head>
+<body>
+<div id="gallery"></div>
+
+<script>
+    // 假设您有一个图片URL列表，您可以将它们替换为您自己的图片URL
+    const imageUrls =[
+        'https://cdn.midjourney.com/2b2fc2b3-a75d-472c-8db5-efaa051ed83e/0_0.webp',
+        'https://cdn.midjourney.com/4afa0caf-d843-43e0-8323-176042309923/0_3.webp',
+        'https://cdn.midjourney.com/c66c5d91-9074-465f-bb18-39031897d8ed/0_2.webp',
+        'https://cdn.midjourney.com/771f6e2b-1d85-48ab-816b-17010140fe56/0_2.webp',
+        'https://cdn.midjourney.com/121c038d-d5a0-4a82-9668-b24d7e0b98af/0_0.webp',
+        'https://cdn.midjourney.com/8e5b0dfb-0401-41a9-9056-8f80f3456f18/0_3.webp',
+        'https://cdn.midjourney.com/a33e0170-ee4c-49ec-b407-f5dcf0885b73/0_1.webp',
+        'https://cdn.midjourney.com/661cdb82-1db2-4ef5-b5d6-39383cdcadb0/0_3.webp',
+        'https://t7.baidu.com/it/u=4162611394,4275913936&fm=193&f=GIF',
+        'https://cdn.midjourney.com/2b2fc2b3-a75d-472c-8db5-efaa051ed83e/0_0.webp',
+        'https://cdn.midjourney.com/4afa0caf-d843-43e0-8323-176042309923/0_3.webp',
+        'https://cdn.midjourney.com/c66c5d91-9074-465f-bb18-39031897d8ed/0_2.webp',
+        'https://cdn.midjourney.com/771f6e2b-1d85-48ab-816b-17010140fe56/0_2.webp',
+        'https://cdn.midjourney.com/121c038d-d5a0-4a82-9668-b24d7e0b98af/0_0.webp',
+        'https://cdn.midjourney.com/8e5b0dfb-0401-41a9-9056-8f80f3456f18/0_3.webp',
+        'https://cdn.midjourney.com/a33e0170-ee4c-49ec-b407-f5dcf0885b73/0_1.webp',
+        'https://cdn.midjourney.com/661cdb82-1db2-4ef5-b5d6-39383cdcadb0/0_3.webp',
+        'https://t7.baidu.com/it/u=4162611394,4275913936&fm=193&f=GIF',
+        'https://cdn.midjourney.com/2b2fc2b3-a75d-472c-8db5-efaa051ed83e/0_0.webp',
+        'https://cdn.midjourney.com/4afa0caf-d843-43e0-8323-176042309923/0_3.webp',
+        'https://cdn.midjourney.com/c66c5d91-9074-465f-bb18-39031897d8ed/0_2.webp',
+        'https://cdn.midjourney.com/771f6e2b-1d85-48ab-816b-17010140fe56/0_2.webp',
+        'https://cdn.midjourney.com/121c038d-d5a0-4a82-9668-b24d7e0b98af/0_0.webp',
+        'https://cdn.midjourney.com/8e5b0dfb-0401-41a9-9056-8f80f3456f18/0_3.webp',
+        'https://cdn.midjourney.com/a33e0170-ee4c-49ec-b407-f5dcf0885b73/0_1.webp',
+        'https://cdn.midjourney.com/661cdb82-1db2-4ef5-b5d6-39383cdcadb0/0_3.webp',
+        'https://t7.baidu.com/it/u=4162611394,4275913936&fm=193&f=GIF',
+        'https://cdn.midjourney.com/2b2fc2b3-a75d-472c-8db5-efaa051ed83e/0_0.webp',
+        'https://cdn.midjourney.com/8e5b0dfb-0401-41a9-9056-8f80f3456f18/0_3.webp',
+        'https://cdn.midjourney.com/a33e0170-ee4c-49ec-b407-f5dcf0885b73/0_1.webp',
+        'https://cdn.midjourney.com/661cdb82-1db2-4ef5-b5d6-39383cdcadb0/0_3.webp',
+        'https://t7.baidu.com/it/u=4162611394,4275913936&fm=193&f=GIF',
+        'https://cdn.midjourney.com/2b2fc2b3-a75d-472c-8db5-efaa051ed83e/0_0.webp',
+        'https://cdn.midjourney.com/8e5b0dfb-0401-41a9-9056-8f80f3456f18/0_3.webp',
+        'https://cdn.midjourney.com/a33e0170-ee4c-49ec-b407-f5dcf0885b73/0_1.webp',
+        'https://cdn.midjourney.com/661cdb82-1db2-4ef5-b5d6-39383cdcadb0/0_3.webp',
+        'https://t7.baidu.com/it/u=4162611394,4275913936&fm=193&f=GIF',
+        'https://cdn.midjourney.com/2b2fc2b3-a75d-472c-8db5-efaa051ed83e/0_0.webp',
+        'https://cdn.midjourney.com/8e5b0dfb-0401-41a9-9056-8f80f3456f18/0_3.webp',
+        'https://cdn.midjourney.com/a33e0170-ee4c-49ec-b407-f5dcf0885b73/0_1.webp',
+        'https://cdn.midjourney.com/661cdb82-1db2-4ef5-b5d6-39383cdcadb0/0_3.webp',
+        'https://t7.baidu.com/it/u=4162611394,4275913936&fm=193&f=GIF',
+        'https://cdn.midjourney.com/2b2fc2b3-a75d-472c-8db5-efaa051ed83e/0_0.webp',
+        'https://cdn.midjourney.com/8e5b0dfb-0401-41a9-9056-8f80f3456f18/0_3.webp',
+        'https://cdn.midjourney.com/a33e0170-ee4c-49ec-b407-f5dcf0885b73/0_1.webp',
+        'https://cdn.midjourney.com/661cdb82-1db2-4ef5-b5d6-39383cdcadb0/0_3.webp',
+        'https://t7.baidu.com/it/u=4162611394,4275913936&fm=193&f=GIF',
+        'https://cdn.midjourney.com/2b2fc2b3-a75d-472c-8db5-efaa051ed83e/0_0.webp',
+        'https://cdn.midjourney.com/8e5b0dfb-0401-41a9-9056-8f80f3456f18/0_3.webp',
+        'https://cdn.midjourney.com/a33e0170-ee4c-49ec-b407-f5dcf0885b73/0_1.webp',
+        'https://cdn.midjourney.com/661cdb82-1db2-4ef5-b5d6-39383cdcadb0/0_3.webp',
+        'https://t7.baidu.com/it/u=4162611394,4275913936&fm=193&f=GIF',
+        'https://cdn.midjourney.com/2b2fc2b3-a75d-472c-8db5-efaa051ed83e/0_0.webp',
+        'https://cdn.midjourney.com/8e5b0dfb-0401-41a9-9056-8f80f3456f18/0_3.webp',
+        'https://cdn.midjourney.com/a33e0170-ee4c-49ec-b407-f5dcf0885b73/0_1.webp',
+        'https://cdn.midjourney.com/661cdb82-1db2-4ef5-b5d6-39383cdcadb0/0_3.webp',
+        'https://t7.baidu.com/it/u=4162611394,4275913936&fm=193&f=GIF',
+        'https://cdn.midjourney.com/2b2fc2b3-a75d-472c-8db5-efaa051ed83e/0_0.webp',
+        'https://cdn.midjourney.com/8e5b0dfb-0401-41a9-9056-8f80f3456f18/0_3.webp',
+        'https://cdn.midjourney.com/a33e0170-ee4c-49ec-b407-f5dcf0885b73/0_1.webp',
+        'https://cdn.midjourney.com/661cdb82-1db2-4ef5-b5d6-39383cdcadb0/0_3.webp',
+        'https://t7.baidu.com/it/u=4162611394,4275913936&fm=193&f=GIF',
+        'https://cdn.midjourney.com/2b2fc2b3-a75d-472c-8db5-efaa051ed83e/0_0.webp',
+        'https://cdn.midjourney.com/4afa0caf-d843-43e0-8323-176042309923/0_3.webp',
+        'https://cdn.midjourney.com/c66c5d91-9074-465f-bb18-39031897d8ed/0_2.webp',
+        'https://cdn.midjourney.com/771f6e2b-1d85-48ab-816b-17010140fe56/0_2.webp',
+        'https://cdn.midjourney.com/121c038d-d5a0-4a82-9668-b24d7e0b98af/0_0.webp',
+        'https://cdn.midjourney.com/8e5b0dfb-0401-41a9-9056-8f80f3456f18/0_3.webp',
+        'https://cdn.midjourney.com/a33e0170-ee4c-49ec-b407-f5dcf0885b73/0_1.webp',
+        'https://cdn.midjourney.com/661cdb82-1db2-4ef5-b5d6-39383cdcadb0/0_3.webp',
+        'https://t7.baidu.com/it/u=4162611394,4275913936&fm=193&f=GIF',
+        'https://cdn.midjourney.com/2b2fc2b3-a75d-472c-8db5-efaa051ed83e/0_0.webp',
+        'https://cdn.midjourney.com/8e5b0dfb-0401-41a9-9056-8f80f3456f18/0_3.webp',
+        'https://cdn.midjourney.com/a33e0170-ee4c-49ec-b407-f5dcf0885b73/0_1.webp',
+        'https://cdn.midjourney.com/661cdb82-1db2-4ef5-b5d6-39383cdcadb0/0_3.webp',
+        'https://t7.baidu.com/it/u=4162611394,4275913936&fm=193&f=GIF',
+        'https://cdn.midjourney.com/2b2fc2b3-a75d-472c-8db5-efaa051ed83e/0_0.webp',
+        'https://cdn.midjourney.com/8e5b0dfb-0401-41a9-9056-8f80f3456f18/0_3.webp',
+        'https://cdn.midjourney.com/a33e0170-ee4c-49ec-b407-f5dcf0885b73/0_1.webp',
+        'https://cdn.midjourney.com/661cdb82-1db2-4ef5-b5d6-39383cdcadb0/0_3.webp',
+        'https://t7.baidu.com/it/u=4162611394,4275913936&fm=193&f=GIF',
+        'https://cdn.midjourney.com/2b2fc2b3-a75d-472c-8db5-efaa051ed83e/0_0.webp',
+        'https://cdn.midjourney.com/4afa0caf-d843-43e0-8323-176042309923/0_3.webp',
+        'https://cdn.midjourney.com/c66c5d91-9074-465f-bb18-39031897d8ed/0_2.webp',
+        'https://cdn.midjourney.com/771f6e2b-1d85-48ab-816b-17010140fe56/0_2.webp',
+        'https://cdn.midjourney.com/121c038d-d5a0-4a82-9668-b24d7e0b98af/0_0.webp',
+        'https://cdn.midjourney.com/8e5b0dfb-0401-41a9-9056-8f80f3456f18/0_3.webp',
+        'https://cdn.midjourney.com/a33e0170-ee4c-49ec-b407-f5dcf0885b73/0_1.webp',
+        'https://cdn.midjourney.com/661cdb82-1db2-4ef5-b5d6-39383cdcadb0/0_3.webp',
+        'https://t7.baidu.com/it/u=4162611394,4275913936&fm=193&f=GIF',
+        'https://cdn.midjourney.com/2b2fc2b3-a75d-472c-8db5-efaa051ed83e/0_0.webp',
+        'https://cdn.midjourney.com/8e5b0dfb-0401-41a9-9056-8f80f3456f18/0_3.webp',
+        'https://cdn.midjourney.com/a33e0170-ee4c-49ec-b407-f5dcf0885b73/0_1.webp',
+        'https://cdn.midjourney.com/661cdb82-1db2-4ef5-b5d6-39383cdcadb0/0_3.webp',
+        'https://t7.baidu.com/it/u=4162611394,4275913936&fm=193&f=GIF',
+        'https://cdn.midjourney.com/2b2fc2b3-a75d-472c-8db5-efaa051ed83e/0_0.webp',
+        'https://cdn.midjourney.com/8e5b0dfb-0401-41a9-9056-8f80f3456f18/0_3.webp',
+        'https://cdn.midjourney.com/a33e0170-ee4c-49ec-b407-f5dcf0885b73/0_1.webp',
+        'https://cdn.midjourney.com/661cdb82-1db2-4ef5-b5d6-39383cdcadb0/0_3.webp',
+        'https://t7.baidu.com/it/u=4162611394,4275913936&fm=193&f=GIF',
+        'https://cdn.midjourney.com/2b2fc2b3-a75d-472c-8db5-efaa051ed83e/0_0.webp',
+        'https://cdn.midjourney.com/4afa0caf-d843-43e0-8323-176042309923/0_3.webp',
+        'https://cdn.midjourney.com/c66c5d91-9074-465f-bb18-39031897d8ed/0_2.webp',
+        'https://cdn.midjourney.com/771f6e2b-1d85-48ab-816b-17010140fe56/0_2.webp',
+        'https://cdn.midjourney.com/121c038d-d5a0-4a82-9668-b24d7e0b98af/0_0.webp',
+        'https://cdn.midjourney.com/8e5b0dfb-0401-41a9-9056-8f80f3456f18/0_3.webp',
+        'https://cdn.midjourney.com/a33e0170-ee4c-49ec-b407-f5dcf0885b73/0_1.webp',
+        'https://cdn.midjourney.com/661cdb82-1db2-4ef5-b5d6-39383cdcadb0/0_3.webp',
+        'https://t7.baidu.com/it/u=4162611394,4275913936&fm=193&f=GIF',
+        'https://cdn.midjourney.com/2b2fc2b3-a75d-472c-8db5-efaa051ed83e/0_0.webp',
+        'https://cdn.midjourney.com/8e5b0dfb-0401-41a9-9056-8f80f3456f18/0_3.webp',
+        'https://cdn.midjourney.com/a33e0170-ee4c-49ec-b407-f5dcf0885b73/0_1.webp',
+        'https://cdn.midjourney.com/661cdb82-1db2-4ef5-b5d6-39383cdcadb0/0_3.webp',
+        'https://t7.baidu.com/it/u=4162611394,4275913936&fm=193&f=GIF',
+        'https://cdn.midjourney.com/2b2fc2b3-a75d-472c-8db5-efaa051ed83e/0_0.webp',
+        'https://cdn.midjourney.com/8e5b0dfb-0401-41a9-9056-8f80f3456f18/0_3.webp',
+        'https://cdn.midjourney.com/a33e0170-ee4c-49ec-b407-f5dcf0885b73/0_1.webp',
+        'https://cdn.midjourney.com/661cdb82-1db2-4ef5-b5d6-39383cdcadb0/0_3.webp',
+        'https://t7.baidu.com/it/u=4162611394,4275913936&fm=193&f=GIF',
+        'https://cdn.midjourney.com/2b2fc2b3-a75d-472c-8db5-efaa051ed83e/0_0.webp',
+        'https://cdn.midjourney.com/4afa0caf-d843-43e0-8323-176042309923/0_3.webp',
+        'https://cdn.midjourney.com/c66c5d91-9074-465f-bb18-39031897d8ed/0_2.webp',
+        'https://cdn.midjourney.com/771f6e2b-1d85-48ab-816b-17010140fe56/0_2.webp',
+        'https://cdn.midjourney.com/121c038d-d5a0-4a82-9668-b24d7e0b98af/0_0.webp',
+        'https://cdn.midjourney.com/8e5b0dfb-0401-41a9-9056-8f80f3456f18/0_3.webp',
+        'https://cdn.midjourney.com/a33e0170-ee4c-49ec-b407-f5dcf0885b73/0_1.webp',
+        'https://cdn.midjourney.com/661cdb82-1db2-4ef5-b5d6-39383cdcadb0/0_3.webp',
+        'https://t7.baidu.com/it/u=4162611394,4275913936&fm=193&f=GIF',
+        'https://cdn.midjourney.com/2b2fc2b3-a75d-472c-8db5-efaa051ed83e/0_0.webp',
+        'https://cdn.midjourney.com/8e5b0dfb-0401-41a9-9056-8f80f3456f18/0_3.webp',
+        'https://cdn.midjourney.com/a33e0170-ee4c-49ec-b407-f5dcf0885b73/0_1.webp',
+        'https://cdn.midjourney.com/661cdb82-1db2-4ef5-b5d6-39383cdcadb0/0_3.webp',
+        'https://t7.baidu.com/it/u=4162611394,4275913936&fm=193&f=GIF',
+        'https://cdn.midjourney.com/2b2fc2b3-a75d-472c-8db5-efaa051ed83e/0_0.webp',
+        'https://cdn.midjourney.com/8e5b0dfb-0401-41a9-9056-8f80f3456f18/0_3.webp',
+        'https://cdn.midjourney.com/a33e0170-ee4c-49ec-b407-f5dcf0885b73/0_1.webp',
+        'https://cdn.midjourney.com/661cdb82-1db2-4ef5-b5d6-39383cdcadb0/0_3.webp',
+        'https://t7.baidu.com/it/u=4162611394,4275913936&fm=193&f=GIF',
+        'https://cdn.midjourney.com/2b2fc2b3-a75d-472c-8db5-efaa051ed83e/0_0.webp',
+        'https://cdn.midjourney.com/4afa0caf-d843-43e0-8323-176042309923/0_3.webp',
+        'https://cdn.midjourney.com/c66c5d91-9074-465f-bb18-39031897d8ed/0_2.webp',
+        'https://cdn.midjourney.com/771f6e2b-1d85-48ab-816b-17010140fe56/0_2.webp',
+        'https://cdn.midjourney.com/121c038d-d5a0-4a82-9668-b24d7e0b98af/0_0.webp',
+        'https://cdn.midjourney.com/8e5b0dfb-0401-41a9-9056-8f80f3456f18/0_3.webp',
+        'https://cdn.midjourney.com/a33e0170-ee4c-49ec-b407-f5dcf0885b73/0_1.webp',
+        'https://cdn.midjourney.com/661cdb82-1db2-4ef5-b5d6-39383cdcadb0/0_3.webp',
+        'https://t7.baidu.com/it/u=4162611394,4275913936&fm=193&f=GIF',
+    ];
+
+    const gallery = document.getElementById('gallery');
+    let visibleImages = 0;
+
+    // 根据屏幕宽度计算每行可容纳的图片数量
+    function calculateColumns() {
+        const screenWidth = window.innerWidth ||
+            document.documentElement.clientWidth ||
+            document.body.clientWidth;
+        return Math.floor(screenWidth / 132); // 120px图片宽度 + 12px间距
+    }
+
+    // 创建并展示可见的图片
+    function displayVisibleImages() {
+        const columns = calculateColumns();
+
+        for (let i = visibleImages; i < imageUrls.length; i++) {
+            const imageItem = document.createElement('div');
+            imageItem.classList.add('image-item');
+            imageItem.style.backgroundImage = `url(${imageUrls[i]})`;
+
+            const row = Math.floor(i / columns) + 1;
+            imageItem.style.order = i;
+            imageItem.style.gridColumn = `span ${columns}`;
+            imageItem.style.gridRow = `${row}`;
+
+            gallery.appendChild(imageItem);
+            visibleImages++;
+
+            // 如果已经展示了足够多的图片，停止添加新图片
+            if (visibleImages >= imageUrls.length) {
+                break;
+            }
+        }
+    }
+
+    // 检查元素是否在可视区域内
+    function isElementInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+
+    // 滚动事件处理程序，用于加载更多图片
+    function scrollHandler() {
+        const imageItems = document.querySelectorAll('.image-item');
+
+        imageItems.forEach((imageItem) => {
+            if (isElementInViewport(imageItem) && imageItem.style.backgroundImage === '') {
+                const imageIndex = parseInt(imageItem.style.order);
+                imageItem.style.backgroundImage = `url(${imageUrls[imageIndex]})`;
+            }
+        });
+
+        if (visibleImages < imageUrls.length && isElementInViewport(imageItems[imageItems.length - 1])) {
+            displayVisibleImages();
+        }
+    }
+
+    // 监听窗口大小变化，响应式地重新布局图片
+    window.addEventListener('resize', () => {
+        visibleImages = 0;
+        gallery.innerHTML = '';
+        displayVisibleImages();
+    });
+
+    // 监听滚动事件
+    window.addEventListener('scroll', scrollHandler);
+
+    // 初始加载时显示可见的图片
+    displayVisibleImages();
+</script>
+</body>
+</html>

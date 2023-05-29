@@ -1,0 +1,50 @@
+.photo {
+  min-height: 100vh;
+
+  &__nav {
+    width: 120px;
+    min-height: 100vh;
+    padding-top: 60px;
+    padding-left: 12px;
+    padding-right: 12px;
+    border-right: 1px solid #dbdbdb;
+  }
+
+  &__container {
+    position: relative;
+
+    &__column {
+      width: 80px;
+      float: left;
+
+      .img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+//.photo {
+//  min-height: 100vh;
+//
+//  &__nav {
+//    width: 120px;
+//    min-height: 100vh;
+//    padding-top: 60px;
+//    padding-left: 12px;
+//    padding-right: 12px;
+//    border-right: 1px solid #dbdbdb;
+//  }
+//
+//  &__container {
+//    display: grid;
+//    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); // 优质代码
+//    grid-gap: 12px;
+//    padding-left: 120px;
+//  }
+//
+//  .img {
+//    max-width: 100%;
+//    margin: 6px;
+//  }
+//}
