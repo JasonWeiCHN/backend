@@ -7,7 +7,6 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
-import springfox.documentation.oas.annotations.EnableOpenApi;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
@@ -26,7 +25,7 @@ public class SwaggerConfig {
                 .select()
                 // 扫描的路径使用@Api的controller
                 .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
-//                .apis(RequestHandlerSelectors.basePackage("com.wei.backend2.controller"))
+                //.apis(RequestHandlerSelectors.basePackage("com.wei.backend2.controller"))
                 // 指定路径处理PathSelectors.any()代表所有的路径
                 .paths(PathSelectors.any())
                 .build();
