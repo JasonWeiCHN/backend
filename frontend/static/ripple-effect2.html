@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+      .ripple-effect {
+          position: relative;
+          width: 200px;
+          height: 200px;
+          background-color: lightblue;
+          cursor: pointer;
+          overflow: hidden;
+      }
+
+      .ripple-effect .content {
+          position: relative;
+          z-index: 2;
+      }
+
+      .ripple-effect::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 0;
+          height: 0;
+          border-radius: 50%;
+          background-color: rgba(255, 255, 255, 0.4);
+          opacity: 0;
+          pointer-events: none;
+          animation: ripple 1s linear;
+      }
+
+      @keyframes ripple {
+          0% {
+              opacity: 1;
+              width: 0;
+              height: 0;
+          }
+          100% {
+              opacity: 0;
+              width: 400%;
+              height: 400%;
+          }
+      }
+	</style>
+</head>
+<body>
+<div class="ripple-effect" onclick="createRipple(event)">
+	<span class="content">123</span>
+</div>
+<script>
+    function createRipple(event) {
+        const ripple = document.createElement("div");
+        ripple.classList.add("ripple-effect");
+        event.target.appendChild(ripple);
+
+        const diameter = Math.max(event.target.clientWidth, event.target.clientHeight);
+        ripple.style.width = ripple.style.height = diameter * 2 + "px";
+
+        const x = event.offsetX - diameter;
+        const y = event.offsetY - diameter;
+        ripple.style.left = x + "px";
+        ripple.style.top = y + "px";
+
+        ripple.addEventListener("animationend", () => {
+            ripple.remove();
+        });
+    }
+</script>
+</body>
+</html>
