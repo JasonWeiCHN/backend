@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+      .ripple-effect {
+          position: relative;
+          width: 200px;
+          height: 200px;
+          background-color: lightblue;
+          cursor: pointer;
+          overflow: hidden;
+      }
+
+      .ripple-effect::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 0;
+          height: 0;
+          border-radius: 50%;
+          background-color: rgba(255, 255, 255, 0.4);
+          opacity: 0;
+          pointer-events: none;
+          animation: ripple 0.6s linear;
+      }
+
+      @keyframes ripple {
+          0% {
+              opacity: 1;
+              width: 0;
+              height: 0;
+          }
+          100% {
+              opacity: 0;
+              width: 200%;
+              height: 200%;
+          }
+      }
+	</style>
+</head>
+<body>
+	<div class="ripple-effect" onclick="createRipple(event)"></div>
+  <script>
+      function createRipple(event) {
+          const ripple = document.createElement("div");
+          ripple.classList.add("ripple-effect");
+          event.target.appendChild(ripple);
+
+          const diameter = Math.max(event.target.clientWidth, event.target.clientHeight);
+          ripple.style.width = ripple.style.height = diameter + "px";
+
+          const x = event.offsetX - diameter / 2;
+          const y = event.offsetY - diameter / 2;
+          ripple.style.left = x + "px";
+          ripple.style.top = y + "px";
+
+          ripple.addEventListener("animationend", () => {
+              ripple.remove();
+          });
+      }
+  </script>
+</body>
+</html>
