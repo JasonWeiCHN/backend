@@ -30,7 +30,7 @@ import { HotTableModule } from '@handsontable/angular';
 import { ProductComponent } from './pages/product/product.component';
 import { ArticleComponent } from './pages/article/article.component';
 import { NgxEditorModule } from 'ngx-editor';
-import { PhotoGridViewComponent } from './pages/image/components/photo-grid-view/photo-grid-view.component';
+import { PhotoGridViewComponent } from './pages/image/shared/components/photo-grid-view/photo-grid-view.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +67,7 @@ import { PhotoGridViewComponent } from './pages/image/components/photo-grid-view
     NgxEditorModule,
     NgxEditorModule,
     FormsModule,
+    PhotoGridViewComponent,
     PhotoGridViewComponent,
   ],
   providers: [

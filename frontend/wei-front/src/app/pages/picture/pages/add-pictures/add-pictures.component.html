@@ -1,0 +1,32 @@
+<h3>批量图片上传</h3>
+<div id="drop-zone" (dragover)="handleDragOver($event)" (drop)="handleFileSelect($event)">
+	拖拽图片到这里进行上传
+</div>
+<div id="progress-bar">
+	<div [style.width.%]="progress" class="progress-bar"></div>
+</div>
+<button (click)="addImageForm()">添加图片表单</button>
+<div #container></div>
+<ng-template #imageFormTemplate let-imageForm>
+	<form [formGroup]="imageForm">
+		<img [src]="imageForm.get('preview').value" alt="Preview" width="100">
+		<label for="name">图片名：</label>
+		<input type="text" id="name" formControlName="name">
+		<br>
+		<label for="category">图片分类：</label>
+		<select id="category" formControlName="category">
+			<option value="category1">Category 1</option>
+			<option value="category2">Category 2</option>
+			<option value="category3">Category 3</option>
+		</select>
+		<br>
+		<div formArrayName="searchKeys">
+			<div *ngFor="let control of imageForm.get('searchKeys').controls; let i = index">
+				<input type="text" [formControlName]="i">
+				<button (click)="removeSearchKey(imageForm, i)">移除</button>
+			</div>
+		</div>
+		<button (click)="addSearchKey(imageForm)">添加搜索关键词</button>
+	</form>
+</ng-template>
+
