@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Back Office Portal</title>
+    <meta charset="UTF-8" />
+    <style>
+      @font-face {
+        font-family: 'Inter';
+        src:
+        url('./assets/fonts/inter/regular/Inter-Regular.ttf') format('truetype'),
+        url('./assets/fonts/inter/regular/Inter-Regular.eot') format('truetype'),
+        url('./assets/fonts/inter/regular/Inter-Regular.woff') format('truetype'),
+        url('./assets/fonts/inter/regular/Inter-Regular.woff2') format('truetype');
+        font-weight: normal;
+        font-display: swap;
+      }
+
+      body {
+        font-family: 'Inter', Arial, sans-serif;
+        background: #ffffff;
+      }
+
+      .workspace {
+        max-width: 1152px;
+        padding-top: 64px;
+        margin: auto;
+      }
+
+      .workspace__logo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 48px;
+      }
+
+      .workspace__logo__suggestion {
+        font-family: 'Inter';
+        font-size: 16px;
+        color: #1E46BD;
+      }
+
+      .workspace__container {
+        border-bottom: 2px solid #dedede;
+        margin-top: 64px;
+      }
+
+      .workspace__container__title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 32px;
+      }
+
+      .workspace__container__card {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 40px;
+      }
+
+      .workspace__container__card__content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 222px;
+        height: 126px;
+        padding: 24px;
+        margin: 0 24px 24px 0;
+        background: #ffffff;
+        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 16px;
+        cursor: pointer;
+      }
+
+      .workspace__container__card__content:hover {
+          background-color: #e6ecfb;
+      }
+
+      .workspace__container__card__content__header {
+        display: flex;
+        align-items: center;
+      }
+
+      .workspace__container__card__content__header__title {
+        width: 157px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        color: #191919;
+        word-break: break-word;
+      }
+
+      .workspace__container__card__content__header__description {
+        margin-top: 12px;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        color: #737373;
+      }
+
+      .workspace .main-title {
+        font-size: 28px;
+        color: #191919;
+      }
+
+      .workspace button {
+        padding: 14px 16px;
+        border: none;
+        height: 48px;
+        background: #e6ecfb;
+        border-radius: 8px;
+        cursor: pointer;
+        width: 218px;
+      }
+
+      .workspace button:hover {
+        background-color: #d3dcf8;
+      }
+
+      .workspace .hidden {
+        display: none;
+      }
+
+      .workspace .mr15 {
+        margin-right: 15px;
+      }
+
+      .workspace__footer {
+          text-align: center;
+          margin-top: 12px
+      }
+
+      .workspace__footer__copyright {
+          height: 16px;
+          font-size: 12px;
+          line-height: 16px;
+          margin-top: 8px;
+          color: #191919;
+      }
+
+      .workspace__footer a {
+        color: #4169e1;
+        font-size: 14px
+      }
+
+      .workspace__footer a:hover {
+        color: #1e46bd;
+      }
+
+      @media (min-width: 1400px) {
+        .workspace__container__card__content:nth-child(4n) {
+            margin-right: 0;
+        }
+      }
+
+      @media (min-width: 992px) and (max-width: 1399px) {
+        .workspace__container__card__content:nth-child(3n) {
+            margin-right: 0;
+        }
+
+        .workspace {
+            width: 858px;
+        }
+      }
+
+      @media (min-width: 692px) and (max-width: 991px) {
+        .workspace {
+            width: 572px;
+        }
+
+        .workspace__container__card__content:nth-child(2n) {
+            margin-right: 0;
+        }
+      }
+
+      @media (max-width: 691px) {
+        .workspace {
+            width: 290px;
+        }
+
+        .workspace__logo__suggestion {
+            display: none;
+        }
+
+        .workspace__container__card__content:nth-child(n) {
+            margin-right: 0;
+        }
+      }
+
+      .workspace__container__card__content {
+        /* 其他样式代码... */
+        position: relative; /* 添加此行 */
+        overflow: hidden; /* 添加此行 */
+      }
+
+      .workspace__container__card__content .ripple-effect {
+        /* 添加此段代码 */
+        position: absolute;
+        background-color: rgba(112, 141, 226, 0.3);
+        border-radius: 50%;
+        transform: scale(0);
+        pointer-events: none;
+        transition: transform 0.5s ease;
+        z-index: 1;
+      }
+
+      .workspace__container__card__content .ripple-effect.animate {
+        /* 添加此段代码 */
+        transform: scale(1);
+      }
+  </style>
+    <script>
+      function setRecentlyUsedCard() {
+        var targetElement = document.getElementById("recently-used-card");
+        var element = document.getElementById("recently-used");
+        var local = localStorage.getItem('workspace');
+        var applications = local ? local.split(';') : [];
+        targetElement.innerText = '';
+        if (applications.length > 0) {
+          element.classList.remove("hidden");
+        } else {
+          element.classList.add("hidden");
+        }
+        for (var i = 0; i< applications.length; i++) {
+          var sourceElement = document.getElementById(applications[i]);
+          if(sourceElement){
+            var cloneElement = sourceElement.cloneNode(true);
+            cloneElement.removeAttribute('id')
+            targetElement.appendChild(cloneElement);
+          }
+        }
+      }
+
+      window.onload = function () {
+        setRecentlyUsedCard();
+      }
+
+      function cardClick(url) {
+        if (url) {
+          var local = localStorage.getItem('workspace');
+          var applications = local ? local.split(';') : [];
+          applications.unshift(url);
+          var data = applications.filter(function (value, index, self) {
+            return self.indexOf(value) === index;
+          }).slice(0, 5);
+          localStorage.setItem('workspace', data.join(';'));
+
+          // 添加水波特效的代码
+          var targetElement = event.target.closest('.workspace__container__card__content');
+          if (targetElement) {
+            var rippleElement = targetElement.querySelector('.ripple-effect');
+            if (!rippleElement) {
+              rippleElement = document.createElement('span');
+              rippleElement.classList.add('ripple-effect');
+              targetElement.appendChild(rippleElement);
+            }
+            rippleElement.classList.remove('animate');
+            // 下面可以调节波纹的大小
+            var diameter = Math.max(targetElement.clientWidth, targetElement.clientHeight)*3.5
+            rippleElement.style.width = rippleElement.style.height = diameter + 'px';
+            var rect = targetElement.getBoundingClientRect();
+            var left = event.clientX - rect.left - diameter / 2;
+            var top = event.clientY - rect.top - diameter / 2;
+            rippleElement.style.left = left + 'px';
+            rippleElement.style.top = top + 'px';
+
+            // 突然消失
+            // setTimeout(function () {
+            //   rippleElement.classList.add('animate');
+            //   setTimeout(function () {
+            //     rippleElement.remove();
+            //   }, 500); // 等待0.5秒后移除波纹效果
+            // }, 0);
+
+            // 渐渐消失
+            // setTimeout(function () {
+            //   rippleElement.classList.add('animate');
+            //   setTimeout(function () {
+            //     rippleElement.style.transition = 'opacity 0.5s ease';
+            //     rippleElement.style.opacity = '0';
+            //     setTimeout(function () {
+            //       rippleElement.remove();
+            //     }, 500); // 等待0.5秒后移除波纹效果
+            //   }, 300); // 等待0.5秒后开始淡出效果
+            // }, 0);
+
+            // 一边缩小一边消失
+            setTimeout(function () {
+              rippleElement.classList.add('animate');
+              setTimeout(function () {
+                rippleElement.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
+                rippleElement.style.transform = 'scale(0)';
+                rippleElement.style.opacity = '0';
+                setTimeout(function () {
+                  rippleElement.remove();
+                }, 500); // 等待0.5秒后移除波纹效果
+              }, 500); // 等待0.5秒后开始淡出效果
+            }, 0);
+
+          }
+
+          // window.location.href = url;  // 注释或删除这一行
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="workspace">
+      <div class="workspace__logo">
+        <img
+          alt="logo"
+          src="./assets/icon/qima-workspace.svg"
+        />
+        <button class="workspace__logo__suggestion">Suggest a new feature</button>
+      </div>
+
+      <div id="recently-used" class="workspace__container hidden">
+        <div class="workspace__container__title">
+          <div class="main-title">Recently used</div>
+        </div>
+        <div id="recently-used-card" class="workspace__container__card"></div>
+      </div>
+
+      <div class="workspace__container">
+        <div class="workspace__container__title">
+          <div class="main-title">Order Management</div>
+        </div>
+        <div class="workspace__container__card">
+          <div id ='https://sso.qima.com/inspection/audit' class="workspace__container__card__content" onclick="cardClick('https://sso.qima.com/inspection/audit')">
+            <div class="workspace__container__card__content__header">
+              <img
+                alt="logo"
+                class="mr15"
+                src="./assets/icon/orderManagement/audits.svg"
+              />
+              <span class="workspace__container__card__content__header__title">Audits</span>
+            </div>
+            <span class="workspace__container__card__content__header__description">
+              Manage all audit orders for every step of the sites. From remote audit, to onsite audit, desktop review for the sites
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="workspace__footer">
+        <a href="" target="_blank">Contact Us</a>
+        <span> - </span>
+        <a href="" target="_blank" >Terms &amp; Conditions</a>
+        <div class="workspace__footer__copyright">© QIMA 2023</div>
+      </div>
+    </div>
+  </body>
+</html>
