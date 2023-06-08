@@ -20,13 +20,13 @@
 			<option value="category3">Category 3</option>
 		</select>
 		<br>
-		<div formArrayName="searchKeys">
-			<div *ngFor="let control of imageForm.get('searchKeys').controls; let i = index">
+		<div formArrayName="searchKey">
+			<div *ngFor="let control of imageForm.get('searchKey').controls; let i = index">
 				<input type="text" [formControlName]="i">
 				<button (click)="removeSearchKey(imageForm, i)">移除</button>
 			</div>
 		</div>
 		<button (click)="addSearchKey(imageForm)">添加搜索关键词</button>
+		<button type="button" (click)="createPicture(imageForm)">上传图片</button>
 	</form>
 </ng-template>
-

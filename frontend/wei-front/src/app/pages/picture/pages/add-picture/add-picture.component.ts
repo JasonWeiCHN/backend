@@ -63,7 +63,7 @@ export class AddPictureComponent {
     const imageForm = this.fb.group({
       name: [imageName],
       category: [''],
-      searchKeys: this.fb.array([]),
+      searchKey: this.fb.array([]),
     });
 
     this.imageForms.push(imageForm);
@@ -77,20 +77,20 @@ export class AddPictureComponent {
   }
 
   addSearchKey(imageForm: FormGroup): void {
-    const searchKeys = imageForm.get('searchKeys') as FormArray;
-    searchKeys.push(new FormControl(''));
+    const searchKey = imageForm.get('searchKey') as FormArray;
+    searchKey.push(new FormControl(''));
   }
 
   removeSearchKey(imageForm: FormGroup, index: number): void {
-    const searchKeys = imageForm.get('searchKeys') as FormArray;
-    searchKeys.removeAt(index);
+    const searchKey = imageForm.get('searchKey') as FormArray;
+    searchKey.removeAt(index);
   }
 
   addImageForm(): void {
     const imageForm = this.fb.group({
       name: [''],
       category: [''],
-      searchKeys: this.fb.array([]),
+      searchKey: this.fb.array([]),
     });
 
     this.imageForms.push(imageForm);
