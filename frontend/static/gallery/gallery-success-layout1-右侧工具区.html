@@ -4,13 +4,13 @@
 	<meta charset="UTF-8">
 	<title>图片展示页面</title>
 	<style>
-			body {
-					margin: 0;
-					padding: 0 400px 0 0;
-			}
+      body {
+          margin: 0;
+          padding: 0 400px 0 0;
+      }
 
       #gallery {
-		      min-width: 150px;
+          min-width: 150px;
           max-width: 1000px;
           margin: 0 auto;
           text-align: center;
@@ -35,7 +35,7 @@
           /*background-color: lightgray;*/
           padding: 12px;
           box-sizing: border-box;
-		      border-left: 1px solid #ced4da;
+          border-left: 1px solid #ced4da;
       }
 
       .search-bar input[type="text"],
@@ -48,7 +48,7 @@
           outline: none;
           font-size: 16px;
           padding: 8px 12px;
-		      margin-bottom: 12px;
+          margin-bottom: 12px;
       }
 
       .search-bar input[type="text"]:focus,
@@ -72,9 +72,14 @@
 	<div class="search-bar">
 		<select id="typeSelect" class="category-select">
 			<option value="all">全部分类</option>
-			<option value="category1">分类1</option>
-			<option value="category2">分类2</option>
-			<!-- 添加其他分类选项 -->
+			<option value="beauty">美女</option>
+			<option value="man">男人</option>
+			<option value="robot">机器人</option>
+			<option value="scenery">风景</option>
+			<option value="flower">花</option>
+			<option value="animal">动物</option>
+			<option value="food">食物</option>
+			<option value="sourceMaterial">素材</option>
 		</select>
 		<input id="search" type="text" placeholder="搜索">
 	</div>
@@ -87,15 +92,116 @@
 <script>
     // 假设您有一个图片URL列表，您可以将它们替换为您自己的图片URL
     const imageUrls = [
-        'https://cdn.midjourney.com/2b2fc2b3-a75d-472c-8db5-efaa051ed83e/0_0.webp',
-        'https://cdn.midjourney.com/4afa0caf-d843-43e0-8323-176042309923/0_3.webp',
-        'https://cdn.midjourney.com/c66c5d91-9074-465f-bb18-39031897d8ed/0_2.webp',
-        'https://cdn.midjourney.com/771f6e2b-1d85-48ab-816b-17010140fe56/0_2.webp',
-        'https://cdn.midjourney.com/121c038d-d5a0-4a82-9668-b24d7e0b98af/0_0.webp',
-        'https://cdn.midjourney.com/8e5b0dfb-0401-41a9-9056-8f80f3456f18/0_3.webp',
-        'https://cdn.midjourney.com/a33e0170-ee4c-49ec-b407-f5dcf0885b73/0_1.webp',
-        'https://cdn.midjourney.com/661cdb82-1db2-4ef5-b5d6-39383cdcadb0/0_3.webp',
-        'https://t7.baidu.com/it/u=4162611394,4275913936&fm=193&f=GIF',
+		    {
+		        url: ' https://cdn.midjourney.com/0ca55a60-1134-40e1-9060-1bcc7371e9fc/0_1.png',
+		        category: 'food',
+		        searchKey: '食物 糖'
+		    },
+        {
+            url: 'https://cdn.midjourney.com/331b33b6-90cf-4837-bd77-973418be6cf3/0_0.webp',
+            category: 'beauty',
+            searchKey: '美女 印第安人 羽毛'
+        },
+        {
+            url: 'https://cdn.midjourney.com/68386b71-53ab-4e29-b60d-270cf340d772/0_3.webp',
+            category: 'beauty',
+            searchKey: '美女'
+        },
+        {
+            url: 'https://cdn.midjourney.com/9c1cea62-372c-4f50-b9c9-8d8424b77d49/0_3.webp',
+            category: 'scenery',
+            searchKey: '风景 绘画 街景 天际线'
+        },
+		    {
+            url: 'https://cdn.midjourney.com/f8b24c2d-b28d-43cc-b0a4-046fe8c3fa87/0_1.webp',
+            category: 'scenery',
+            searchKey: '风景 绘画 国画 荷叶'
+        },
+        {
+          url: 'https://cdn.midjourney.com/cbfa6862-cad4-4b75-b927-3ee0e97b5a33/0_1.webp',
+          category: 'robot',
+          searchKey: '机器人'
+        },
+		    {
+		        url: 'https://cdn.midjourney.com/25152f60-5fc6-4540-8d3c-9c27420e0100/0_1.webp',
+		        category: 'animal',
+		        searchKey: '动物 鹿'
+		    },
+		    {
+		        url: 'https://cdn.midjourney.com/0a60bdd2-5adc-4095-833e-00494760bbda/0_1.webp',
+		        category: 'flower',
+		        searchKey: '花 玫瑰'
+		    },
+        {
+            url: 'https://cdn.midjourney.com/a8e3b700-a1d9-4294-bb18-2baf0bdc3ec4/0_2.webp',
+            category: 'food',
+            searchKey: '食物 水果'
+        },
+		    {
+            url: 'https://cdn.midjourney.com/0f037acd-9046-4c35-ad6a-ed416d93055c/0_3.webp',
+            category: 'food',
+            searchKey: '食物 面包'
+        },
+        {
+            url: 'https://cdn.midjourney.com/27b903ef-affd-44a4-984f-fb9fea1276ba/0_1.webp',
+            category: 'sourceMaterial',
+            searchKey: '素材 狼 战士'
+        },
+        {
+            url: 'https://cdn.midjourney.com/b339b0c0-1426-4648-bf71-aeea773fd8c3/0_3.webp',
+            category: 'scenery',
+            searchKey: '风景 绘画 街景 小巷 炫彩'
+        },
+        {
+            url: 'https://cdn.midjourney.com/edd3595e-3820-486d-8f70-d65838ac30e7/0_2.webp',
+            category: 'beauty',
+            searchKey: '美女 粉色'
+        },
+        {
+            url: 'https://cdn.midjourney.com/2b2fc2b3-a75d-472c-8db5-efaa051ed83e/0_0.webp',
+            category: 'animal',
+            searchKey: '动物 老鼠 可爱 带王冠 萌 有趣 华丽'
+        },
+        {
+            url: 'https://cdn.midjourney.com/4afa0caf-d843-43e0-8323-176042309923/0_3.webp',
+            category: 'beauty',
+            searchKey: '美女 黑白 照片 欧美 酷'
+        },
+        {
+            url: 'https://cdn.midjourney.com/c66c5d91-9074-465f-bb18-39031897d8ed/0_2.webp',
+            category: 'scenery',
+            searchKey: '花 黄色'
+        },
+        {
+            url: 'https://cdn.midjourney.com/771f6e2b-1d85-48ab-816b-17010140fe56/0_2.webp',
+            category: 'beauty',
+            searchKey: '美女 线稿 科幻 单色'
+        },
+        {
+            url: 'https://cdn.midjourney.com/121c038d-d5a0-4a82-9668-b24d7e0b98af/0_0.webp',
+            category: 'scenery',
+            searchKey: '风景 绘画 船'
+        },
+        {
+            url: 'https://cdn.midjourney.com/8e5b0dfb-0401-41a9-9056-8f80f3456f18/0_3.webp',
+            category: 'sourceMaterial',
+            searchKey: '素材 立绘 3D 女孩 可爱'
+        },
+        {
+            url: 'https://cdn.midjourney.com/a33e0170-ee4c-49ec-b407-f5dcf0885b73/0_1.webp',
+            category: 'man',
+            searchKey: '男人 战士 军人'
+        },
+        {
+            url: 'https://cdn.midjourney.com/661cdb82-1db2-4ef5-b5d6-39383cdcadb0/0_3.webp',
+            category: 'animal',
+            searchKey: '动物 狮子'
+        },
+        {
+            url: 'https://t7.baidu.com/it/u=4162611394,4275913936&fm=193&f=GIF',
+            category: 'animal',
+            searchKey: '动物 狗'
+        }
     ];
 
     const gallery = document.getElementById('gallery');
@@ -117,12 +223,20 @@
 
     // 创建并展示图片
     function displayImages() {
-        console.log('displayImages');
+        const searchValue = search.value.toLowerCase();
+        const selectedCategory = typeSelect.value;
+
+        const filteredImages = imageUrls.filter(image => {
+            const categoryMatch = selectedCategory === 'all' || image.category === selectedCategory;
+            const searchMatch = image.searchKey.toLowerCase().includes(searchValue);
+            return categoryMatch && searchMatch;
+        });
+
         const columns = calculateColumns();
-        const imageItems = imageUrls.map((imageUrl) => {
+        const imageItems = filteredImages.map((image, index) => {
             const imageItem = document.createElement('div');
             imageItem.classList.add('image-item');
-            imageItem.style.backgroundImage = `url(${imageUrl})`;
+            imageItem.style.backgroundImage = `url(${image.url})`;
             return imageItem;
         });
 
@@ -136,11 +250,14 @@
 
             // 添加点击事件监听器
             imageItem.addEventListener('click', () => {
-                const imageUrl = imageUrls[index];
+                const imageUrl = filteredImages[index].url;
                 updateThumbnail(imageUrl);
             });
         });
     }
+
+    search.addEventListener('input', displayImages);
+    typeSelect.addEventListener('change', displayImages);
 
     // 监听窗口大小变化，响应式地重新布局图片
     window.addEventListener('resize', displayImages);
@@ -149,11 +266,11 @@
     displayImages();
 </script>
 <script>
-	const search = document.getElementById('search');
-	const typeSelect = document.getElementById('typeSelect');
+    const search = document.getElementById('search');
+    const typeSelect = document.getElementById('typeSelect');
 
-  search.addEventListener('input', displayImages);
-  typeSelect.addEventListener('change', displayImages);
+    search.addEventListener('input', displayImages);
+    typeSelect.addEventListener('change', displayImages);
 </script>
 </body>
 </html>
