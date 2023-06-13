@@ -18,6 +18,14 @@ body, html {
   align-items: center;
   overflow-y: scroll;
   overflow-x: hidden;
+
+  .image-form {
+    width: 80%;
+    margin: 0 auto 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 #progress-bar {
