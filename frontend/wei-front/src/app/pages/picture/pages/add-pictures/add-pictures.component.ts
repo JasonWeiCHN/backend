@@ -23,6 +23,11 @@ export class AddPicturesComponent {
   handleDragOver(event: DragEvent): void {
     event.preventDefault();
     event.stopPropagation();
+
+    const files = event.dataTransfer?.files;
+    if (files) {
+      this.uploadFiles(files);
+    }
   }
 
   handleFileSelect(event: DragEvent): void {
@@ -91,24 +96,22 @@ export class AddPicturesComponent {
     // 添加拖拽的文件
     formData.append('file', file);
 
-
     // 构建HTTP请求头
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'multipart/form-data');
 
     // 发送HTTP POST请求
     this.http.post('http://localhost:8080/pictures/add', formData, { headers }).subscribe(
-        (response) => {
-          // 处理成功响应
-          console.log('图片上传成功', response);
-        },
-        (error) => {
-          // 处理错误响应
-          console.error('图片上传失败', error);
-        }
+      response => {
+        // 处理成功响应
+        console.log('图片上传成功', response);
+      },
+      error => {
+        // 处理错误响应
+        console.error('图片上传失败', error);
+      }
     );
   }
-
 
   renderAllImageForms(): void {
     this.container.clear();

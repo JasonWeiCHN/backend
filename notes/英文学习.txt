@@ -1,0 +1,26 @@
+create a method with a specific name
+创建一个专有名字的方法
+
+Process this logic within the component
+在组件内部处理这个逻辑
+
+We only need a small amount of code to complete this task
+只需要很少的代码我们就能完成这个工作
+
+Even if we know that inspectors.
+Cannot really be disabled since we need some able bodied people to perform the inspection.
+There are still some, uh, some cases where it could be useful like you want.
+You don't want to have some screen glare so you have to take care of those.
+Contrast the application.
+You don't want to.
+You want to be able to still interact with the app.
+The well on the desktop on on mobile, so on the desktop you may more use tabulation for instance.
+Uh.
+We have some aging populations, so you want to make sure that they're still able to use the application, so you make must make it.
+Uh, as easy as possible for them.
+So yeah, there's a lot of reason for why we we need some accessibility.
+Uh, besides, it's some web standards. Some things that we should all strive to to respect in the deaf community, deaf community.
+Also, there are some regulation in different parts of the world.
+On the so regulation is getting bored most strict. So since we are a global company, we need to to be aware of a subjects on the try to to care about them.
+So yeah, it will bunch of reasons to to try on the be more accessible. It doesn't cost a lot the changes that I enumerated as quite easy to implement or it's a good start for accessibility. Transact us perfect.
+But if it was respected everywhere, uh, on our applications, it would be a good start I think.
