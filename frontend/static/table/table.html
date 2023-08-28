@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+      .table-wrapper {
+          overflow-x: auto;
+          position: relative;
+      }
+
+      .table {
+          border-collapse: collapse;
+          width: 100%;
+      }
+
+      .table th,
+      .table td {
+          padding: 8px;
+          text-align: left;
+          border-bottom: 1px solid #ddd;
+          position: relative;
+      }
+
+      .resize-handle {
+          width: 6px;
+          cursor: col-resize;
+          background-color: #f4f4f4;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          z-index: 1;
+      }
+
+      .reference-line {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          background-color: #ddd;
+          width: 1px;
+          display: none;
+      }
+	</style>
+</head>
+<body>
+<div class="table-wrapper">
+	<table class="table">
+		<colgroup>
+			<col style="width: 100px;">
+			<col style="width: 200px;">
+			<col style="width: 150px;">
+		</colgroup>
+		<thead>
+		<tr>
+			<th>
+				列1
+				<div class="resize-handle"></div>
+			</th>
+			<th>
+				列2
+				<div class="resize-handle"></div>
+			</th>
+			<th>
+				列3
+				<div class="resize-handle"></div>
+			</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>内容1</td>
+			<td>内容2</td>
+			<td>内容3</td>
+		</tr>
+		</tbody>
+	</table>
+	<div class="reference-line"></div>
+</div>
+
+<script>
+    const resizeHandles = document.querySelectorAll('.resize-handle');
+    const table = document.querySelector('.table');
+    const cols = table.getElementsByTagName('col');
+    const referenceLine = document.querySelector('.reference-line');
+    let draggingHandle = null;
+    let startX = 0;
+    let startWidth = 0;
+    let columnIndex = 0;
+
+    // 绑定拖拽事件
+    resizeHandles.forEach((handle, index) => {
+        handle.addEventListener('mousedown', startDrag);
+        handle.addEventListener('touchstart', startDrag);
+
+        function startDrag(e) {
+            draggingHandle = handle;
+            startX = e.pageX || e.touches[0].pageX;
+            startWidth = cols[index].offsetWidth;
+            columnIndex = index;
+
+            document.addEventListener('mousemove', resizeColumn);
+            document.addEventListener('touchmove', resizeColumn);
+            document.addEventListener('mouseup', stopDrag);
+            document.addEventListener('touchend', stopDrag);
+
+            referenceLine.style.display = 'block';
+        }
+
+        function resizeColumn(e) {
+            if (!draggingHandle) return;
+            const pageX = e.pageX || e.touches[0].pageX;
+            const diffX = pageX - startX;
+
+            referenceLine.style.left = (pageX - table.getBoundingClientRect().left) + 'px';
+        }
+
+        function stopDrag(e) {
+            if (!draggingHandle) return;
+            const pageX = e.pageX || e.changedTouches[0].pageX;
+            const diffX = pageX - startX;
+            const newWidth = startWidth + diffX;
+
+            draggingHandle = null;
+            document.removeEventListener('mousemove', resizeColumn);
+            document.removeEventListener('touchmove', resizeColumn);
+            document.removeEventListener('mouseup', stopDrag);
+            document.removeEventListener('touchend', stopDrag);
+
+            referenceLine.style.display = 'none';
+
+            if (newWidth > 0) {
+                cols[columnIndex].style.width = newWidth + 'px';
+            }
+        }
+    });
+</script>
+</body>
+</html>

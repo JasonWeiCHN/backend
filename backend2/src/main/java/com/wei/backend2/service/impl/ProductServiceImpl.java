@@ -6,7 +6,6 @@ import com.wei.backend2.repositories.ProductRepository;
 import com.wei.backend2.service.ProductService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
