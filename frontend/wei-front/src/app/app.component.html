@@ -5,6 +5,18 @@
 <!--<wei-front-add-image></wei-front-add-image>-->
 <!--<wei-user></wei-user>-->
 <wei-front-banner></wei-front-banner>
+<wei-front-classifier></wei-front-classifier>
+<div style="display: flex; flex-wrap: wrap">
+  <wei-front-item-card
+    style="margin-right: 12px; margin-bottom: 12px"
+    *ngFor="let item of games; let index = index;"
+    [itemCardDescription] = "item.description"
+    [itemCardImageUrl] = "item.imageUrl"
+    [itemCardTitle] = "item.title"
+    [itemCardDate] = "item.date"
+    [itemCardDetail]= "item.detail"
+  ></wei-front-item-card>
+</div>
 
 <!-- 开启下面标签 可以看到原来的后台管理项目 -->
 <!--<router-outlet></router-outlet>-->

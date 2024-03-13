@@ -1,0 +1,60 @@
+.item-card {
+  $root: &;
+  position: relative;
+  width: 300px;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &__hover-detail {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    color: #d8d8d8;
+    background-color: rgba(0, 0, 0, .8);
+  }
+
+  &__img-container {
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    &__des {
+      padding: 6px;
+      font-size: 13px;
+      color: rgba(255, 255, 255, .5);
+
+      .title {
+        color: #ffffff;
+        font-size: 15px;
+        margin-bottom: 4px;
+      }
+    }
+  }
+
+  &__background {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    background-image: url(https://clan.cloudflare.steamstatic.com/images/44182194/3f73aa495313169cc31e92e9ce2d45deb1b2c257_400x225.png);
+    opacity: .4;
+    filter: blur(10px);
+  }
+
+  &:hover {
+    #{$root}__hover-detail {
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 12px;
+    }
+  }
+}

@@ -1,8 +1,4 @@
 spring:
-  profiles:
-    active: '@springProfile@'
-#  application:
-#    name: backend2-api
   servlet:
     multipart:
       max-file-size: 10MB
@@ -10,19 +6,15 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/jason
     username: postgres
-#    password: P@ssw0rd11
-    password: 19871227
+    password: 'P@ssw0rd11'
     driverClassName: org.postgresql.Driver
     hikari:
-      #数据库连接的超时时间
       connection-timeout: 10000
       validation-timeout: 3000
-      #空闲连接最大时间，1分钟
       idle-timeout: 60000
       login-timeout: 5
       max-lifetime: 60000
       maximum-pool-size: 10
-      #最小空闲连接数量
       minimum-idle: 5
       read-only: false
   jackson:

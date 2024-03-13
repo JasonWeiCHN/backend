@@ -32,6 +32,8 @@ import { ArticleComponent } from './pages/article/article.component';
 import { NgxEditorModule } from 'ngx-editor';
 import { PhotoGridViewComponent } from './pages/image/shared/components/photo-grid-view/photo-grid-view.component';
 import { BannerComponent } from './components/banner/banner.component';
+import { ItemCardComponent } from './components/item-card/item-card.component';
+import { ClassifierComponent } from './components/classifier/classifier.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +72,9 @@ import { BannerComponent } from './components/banner/banner.component';
     FormsModule,
     PhotoGridViewComponent,
     PhotoGridViewComponent,
-    BannerComponent
+    BannerComponent,
+    ItemCardComponent,
+    ClassifierComponent,
   ],
   providers: [
     {

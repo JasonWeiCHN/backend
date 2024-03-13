@@ -1,0 +1,17 @@
+<div class="item-card">
+  <div class="item-card__hover-detail">
+    {{ detail }}
+  </div>
+  <div class="item-card__img-container">
+    <img [src]="imageUrl" alt="">
+    <div class="item-card__img-container__des">
+      <div class="title">{{ title }}</div>
+      <div class="">{{ description }}</div>
+      <div class="">{{ date }}</div>
+    </div>
+  </div>
+  <div
+    class="item-card__background"
+    [style.background-image]="'url(' + imageUrl + ')'">
+  </div>
+</div>
