@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { IItemCard } from './shared/interfaces/item-card.interface';
 
 @Component({
   selector: 'wei-front-item-card',
@@ -9,18 +10,6 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./item-card.component.scss'],
 })
 export class ItemCardComponent {
-  @Input('itemCardDetail')
-  public detail: string | undefined;
-
-  @Input('itemCardImageUrl')
-  public imageUrl: string | undefined;
-
-  @Input('itemCardTitle')
-  public title: string | undefined;
-
-  @Input('itemCardDescription')
-  public description: string | undefined;
-
-  @Input('itemCardDate')
-  public date: string | undefined;
+  @Input()
+  public data: IItemCard | undefined;
 }

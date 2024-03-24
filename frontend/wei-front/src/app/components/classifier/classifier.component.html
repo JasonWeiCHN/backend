@@ -1,5 +1,5 @@
 <div class="classifier">
-  <div class="classifier__item" *ngFor="let item of classifierItems">
+  <div class="classifier__item" *ngFor="let item of data" (click) = "onItemClick(item)">
     <div>{{ item.name }}</div>
     <div *ngIf="item.description">Description: {{ item.description }}</div>
   </div>

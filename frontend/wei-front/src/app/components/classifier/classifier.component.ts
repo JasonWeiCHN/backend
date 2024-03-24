@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IClassifierItem } from './shared/interfaces/classifier.interface';
 
@@ -10,11 +10,17 @@ import { IClassifierItem } from './shared/interfaces/classifier.interface';
   styleUrls: ['./classifier.component.scss'],
 })
 export class ClassifierComponent {
-  public classifierItems: IClassifierItem[] = [];
+  @Output('classifierItemClick')
+  public readonly itemClick: EventEmitter<IClassifierItem> = new EventEmitter<IClassifierItem>();
+
+  public data: IClassifierItem[] = [];
 
   constructor() {
-    // 添加新数据到 classifierItems 数组
     this.addClassifierItems();
+  }
+
+  public onItemClick(item: IClassifierItem): void {
+    this.itemClick.emit(item);
   }
 
   private addClassifierItems(): void {
@@ -46,10 +52,9 @@ export class ClassifierComponent {
     ];
 
     newData.forEach((item, index) => {
-      // 检查是否已存在该项，避免重复添加
-      if (!this.classifierItems.some(existingItem => existingItem.name === item)) {
-        this.classifierItems.push({
-          id: this.classifierItems.length + index + 1,
+      if (!this.data.some(existingItem => existingItem.name === item)) {
+        this.data.push({
+          id: `${this.data.length + index + 1}`,
           name: item
         });
       }

@@ -1,17 +1,17 @@
-<div class="item-card">
+<div *ngIf="data" class="item-card">
   <div class="item-card__hover-detail">
-    {{ detail }}
+    {{ data.detail }}
   </div>
   <div class="item-card__img-container">
-    <img [src]="imageUrl" alt="">
+    <img [src]="data.imageUrl" alt="">
     <div class="item-card__img-container__des">
-      <div class="title">{{ title }}</div>
-      <div class="">{{ description }}</div>
-      <div class="">{{ date }}</div>
+      <div class="title">{{ data.title }}</div>
+      <div class="">{{ data.description }}</div>
+      <div class="">{{ data.date }}</div>
     </div>
   </div>
   <div
     class="item-card__background"
-    [style.background-image]="'url(' + imageUrl + ')'">
+    [style.background-image]="'url(' + data.imageUrl + ')'">
   </div>
 </div>

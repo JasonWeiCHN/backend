@@ -1,5 +1,6 @@
 .classifier {
   display: flex;
+  flex-wrap: wrap;
 
   &__item {
     box-sizing: border-box;

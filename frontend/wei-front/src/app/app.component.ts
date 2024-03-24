@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { IItemCard } from './components/item-card/shared/interfaces/item-card.interface';
+import { IClassifierItem } from './components/classifier/shared/interfaces/classifier.interface';
 
 @Component({
   selector: 'wei-root',
@@ -6,17 +8,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'wei-front';
+  public title = 'wei-front';
+  public activeTypeId = '1';
 
-  data: any[] = [
+  public data: any[] = [
     ['', 'Tesla', 'Mercedes', 'Toyota', 'Volvo'],
     ['2019', 10, 11, 12, 13],
     ['2020', 20, 11, 14, 13],
     ['2021', 30, 15, 12, 13],
   ];
 
-  games: any[] = [
+  public cards: IItemCard[] = [
     {
+      id: '',
+      typeId: '1',
       imageUrl: 'https://clan.cloudflare.steamstatic.com/images/44182194/3f73aa495313169cc31e92e9ce2d45deb1b2c257_400x225.png',
       title: '背包乱斗 v0.9.1 版本更新 ',
       description: '平衡调整',
@@ -24,6 +29,8 @@ export class AppComponent {
       detail: '特别好玩有趣，背包自走棋，你值得拥有！'
     },
     {
+      id: '',
+      typeId: '3',
       imageUrl: 'https://clan.akamai.steamstatic.com/images/4437469/c3c6ed62a98c6c0952d9847d40b9cb453ef7c405_400x225.png',
       title: '圣剑归来',
       description: '特别特别特别逗',
@@ -31,6 +38,8 @@ export class AppComponent {
       detail: '很少有《Warframe》粉丝会忘记在去年 TennoLive 演示中《Warframe：1999》的惊艳亮相——尤其是我们的第一个原型战甲亚瑟的出现。'
     },
     {
+      id: '',
+      typeId: '5',
       imageUrl: 'https://clan.akamai.steamstatic.com/images/4437469/d3f472f8f5b1f111b39fdb39d9676fed2b941f25_400x225.png',
       title: 'TennoCon 2024 虚拟礼包',
       description: '你在家享受 TennoCon 2024 体验的最佳方式。',
@@ -38,4 +47,12 @@ export class AppComponent {
       detail: 'TennoCon 2024 虚拟礼包是提升你在家享受 TennoCon 2024 体验的最佳方式，可立即为你的军械库添加专属的 TennoCon 物品。今年的礼包以《Warframe：1999》的热潮为主题，带来用于装点你的轨道飞行器的全新展示图和让人想要拥抱的亚瑟玩偶，以及更多精彩内容！'
     }
   ]
+
+  public onClassifierItemClick(item: IClassifierItem) {
+    this.activeTypeId = item.id;
+  }
+
+  public onCardClick(item: IItemCard) {
+    console.log(item);
+  }
 }

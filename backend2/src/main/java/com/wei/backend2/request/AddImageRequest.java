@@ -1,4 +1,4 @@
-package c wei.backend2.request;
+package com.wei.backend2.request;
 
 import lombok.Data;
 import org.springframework.web.multipart.MultipartFile;
