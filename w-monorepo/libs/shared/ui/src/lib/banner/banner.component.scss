@@ -1,0 +1,23 @@
+.banner {
+  width: 100%;
+  padding: 0 16px;
+
+  font-size: 14px;
+  font-weight: normal;
+  font-family: "Motiva Sans", Sans-serif, serif;
+
+  background: #171d25;
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    max-width: 940px;
+    height: 100px;
+    margin: 0 auto;
+
+    color: #dcdedf;
+    font-size: 24px;
+  }
+}

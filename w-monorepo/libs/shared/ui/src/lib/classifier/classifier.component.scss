@@ -1,0 +1,19 @@
+.classifier {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    box-sizing: border-box;
+    padding-bottom: 4px;
+    margin: 0 8px 4px 0;
+    cursor: pointer;
+    white-space: nowrap;
+    font-size: 13px;
+    color: #d8dbd8;
+    border-bottom: 2px solid transparent;
+
+    &:hover {
+      border-bottom: 2px solid #ffffff;
+    }
+  }
+}

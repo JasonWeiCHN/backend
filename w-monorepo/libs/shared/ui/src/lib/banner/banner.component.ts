@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'lib-banner',
+  selector: 'w-banner',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './banner.component.html',
-  styleUrl: './banner.component.css',
+  styleUrl: './banner.component.scss',
 })
 export class BannerComponent {}

@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@w-monorepo/interfaces": ["libs/shared/interfaces/src/index.ts"],
       "@w-monorepo/ui": ["libs/shared/ui/src/index.ts"]
     }
   },
