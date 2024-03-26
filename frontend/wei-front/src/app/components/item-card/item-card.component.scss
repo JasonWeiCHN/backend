@@ -20,8 +20,9 @@
 
   &__img-container {
     img {
-      width: 100%;
-      height: auto;
+      width: 300px;
+      height: 165px;
+      object-fit: cover;
     }
 
     &__des {

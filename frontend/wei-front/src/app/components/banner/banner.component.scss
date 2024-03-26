@@ -1,7 +1,6 @@
 .banner {
-    min-width: 940px;
-    padding-left: 16px;
-    padding-right: 16px;
+    width: 100%;
+    padding: 0 16px;
     
     font-size: 14px;
     font-weight: normal;
@@ -13,17 +12,12 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        
-        width: 940px;
+
+        max-width: 940px;
         height: 100px;
         margin: 0 auto;
         
         color: #dcdedf;
-        
-        .left {
-            .title {
-                font-size: 24px;
-            }
-        }
+        font-size: 24px;
     }
 }

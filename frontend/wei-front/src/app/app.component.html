@@ -4,18 +4,29 @@
 <!--<wei-front-add-image-by-excel></wei-front-add-image-by-excel>-->
 <!--<wei-front-add-image></wei-front-add-image>-->
 <!--<wei-user></wei-user>-->
-<wei-front-banner></wei-front-banner>
-<wei-front-classifier (classifierItemClick)="onClassifierItemClick($event)"></wei-front-classifier>
-<div style="display: flex; flex-wrap: wrap">
-  <ng-container *ngFor="let item of cards; let index = index;">
-    <wei-front-item-card
-      *ngIf="item.typeId === activeTypeId"
-      style="margin-right: 12px; margin-bottom: 12px"
-      (click)="onCardClick(item)"
-      [data] = "item"
-    ></wei-front-item-card>
-  </ng-container>
+
+<!-- 下面是前端项目 -->
+<div class="w-app">
+  <wei-front-banner></wei-front-banner>
+  <div style="max-width: 940px; margin: 24px auto 0">
+    <div style="margin-bottom: 12px">
+      <wei-front-classifier (classifierItemClick)="onClassifierItemClick($event)"></wei-front-classifier>
+    </div>
+    <div style="display: flex; flex-wrap: wrap">
+      <ng-container *ngFor="let item of cards; let index = index;">
+        <wei-front-item-card
+          *ngIf="item.typeId === activeTypeId"
+          style="margin-right: 12px; margin-bottom: 12px"
+          (click)="onCardClick(item)"
+          [data] = "item"
+        ></wei-front-item-card>
+      </ng-container>
+    </div>
+  </div>
 </div>
+
+
+
 
 <!-- 开启下面标签 可以看到原来的后台管理项目 -->
 <!--<router-outlet></router-outlet>-->

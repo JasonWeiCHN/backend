@@ -54,7 +54,7 @@ export class ClassifierComponent {
     newData.forEach((item, index) => {
       if (!this.data.some(existingItem => existingItem.name === item)) {
         this.data.push({
-          id: `${this.data.length + index + 1}`,
+          id: `${index + 1}`,
           name: item
         });
       }
