@@ -1,12 +1,19 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { NxWelcomeComponent } from './nx-welcome.component';
-import { BannerComponent, ClassifierComponent, IClassifierItem, IItemCard, ItemCardComponent } from '@w-monorepo/ui';
+import {
+  BannerComponent,
+  ClassifierComponent,
+  IClassifierItem,
+  IItemCard,
+  ItemCardComponent,
+  SlideshowComponent
+} from '@w-monorepo/ui';
 import { NgForOf, NgIf } from '@angular/common';
 
 @Component({
   standalone: true,
-  imports: [NxWelcomeComponent, RouterModule, BannerComponent, ClassifierComponent, ItemCardComponent, NgForOf, NgIf],
+  imports: [NxWelcomeComponent, RouterModule, BannerComponent, ClassifierComponent, ItemCardComponent, NgForOf, NgIf, SlideshowComponent],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
@@ -14,6 +21,12 @@ import { NgForOf, NgIf } from '@angular/common';
 export class AppComponent {
   title = 'static';
   public activeTypeId = '1';
+
+  public slideImages: string[] = [
+    'https://img2.baidu.com/it/u=1050575848,3504429509&fm=253&app=138&size=w931&n=0&f=JPEG&fmt=auto?sec=1711558800&t=47e2ac62986ebf7d77749a8418a65389',
+    'assets/images/666.jpg',
+    'https://clan.cloudflare.steamstatic.com/images/44182194/3f73aa495313169cc31e92e9ce2d45deb1b2c257_400x225.png',
+  ];
 
   public cards: IItemCard[] = [
     {

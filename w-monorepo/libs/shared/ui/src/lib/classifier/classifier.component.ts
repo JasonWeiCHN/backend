@@ -37,7 +37,7 @@ export class ClassifierComponent {
       '巴托尼亚',
       '黑暗精灵',
       '震旦天朝',
-      '恐店',
+      '恐虐',
       '诺斯卡',
       '斯卡文鼠人',
       '奸奇',
@@ -47,7 +47,7 @@ export class ClassifierComponent {
       '绿皮',
       '基斯里夫',
       '纳垢',
-      '色敬',
+      '色孽',
       '吸血鬼海岸',
       '木精灵'
     ];

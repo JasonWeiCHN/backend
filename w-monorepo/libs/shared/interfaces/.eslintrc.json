@@ -21,11 +21,10 @@
           "error",
           {
             "type": "element",
-            "prefix": "w",
+            "prefix": "lib",
             "style": "kebab-case"
           }
-        ],
-        "@angular-eslint/no-output-rename": "off"
+        ]
       }
     },
     {

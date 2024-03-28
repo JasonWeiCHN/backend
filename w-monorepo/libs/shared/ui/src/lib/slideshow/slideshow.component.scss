@@ -1,0 +1,61 @@
+// 移入公共样式
+%no-select {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+
+  -webkit-user-select: none;
+  /* Safari */
+
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+
+  -moz-user-select: none;
+  /* Firefox */
+
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+
+  user-select: none;
+  /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
+
+}
+
+.slideshow {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  background: #171d25;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .previous,.next {
+    @extend %no-select;
+
+    box-sizing: border-box;
+    position: absolute;
+    padding: 6px;
+    font-size: 36px;
+    color: #416680;
+    top: calc(50% - 24px); /* 50% 居中偏移，再向上偏移 24px */
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: color 0.5s ease, border-color 0.5s ease; /* 添加过渡效果 */
+
+    &:hover {
+      color: #ffffff; /* 鼠标悬停时的颜色 */
+      border-color: #ffffff; /* 鼠标悬停时的边框颜色 */
+    }
+  }
+
+  .previous {
+    left: -36px;
+  }
+
+  .next {
+    right: -36px;
+  }
+}

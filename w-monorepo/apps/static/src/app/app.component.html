@@ -1,7 +1,8 @@
 <div class="w-app">
   <w-banner></w-banner>
   <div style="max-width: 940px; margin: 24px auto 0">
-    <div style="margin-bottom: 12px">
+    <w-slideshow [images]="slideImages"></w-slideshow>
+    <div style="margin: 12px 0">
       <w-classifier (classifierItemClick)="onClassifierItemClick($event)"></w-classifier>
     </div>
     <div style="display: flex; flex-wrap: wrap">
