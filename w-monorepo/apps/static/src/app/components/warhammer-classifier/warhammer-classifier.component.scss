@@ -1,0 +1,47 @@
+.warhammer-classifier {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 6px;
+    margin: 0 12px 16px;
+    border-bottom: 1px solid #d8d8d8;
+
+    .title {
+      color: #d8dbd8;
+      margin-bottom: 6px;
+    }
+
+    .img-box {
+      display: flex;
+      flex-direction: row;
+
+      &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+        margin: 0 4px;
+
+        &__title {
+          color: #d8d8d8;
+        }
+
+        img {
+          width: 40px;
+          height: 40px;
+        }
+
+        &:hover {
+          .img-box__item__title {
+            color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+}

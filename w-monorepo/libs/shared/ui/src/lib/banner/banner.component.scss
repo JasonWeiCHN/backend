@@ -17,7 +17,13 @@
     height: 100px;
     margin: 0 auto;
 
-    color: #dcdedf;
-    font-size: 24px;
+    color: #dbdbdb;
+    font-size: 18px;
+
+    .left {
+      .title {
+        font-size: 24px;
+      }
+    }
   }
 }
