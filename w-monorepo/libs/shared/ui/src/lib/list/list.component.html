@@ -1,6 +1,14 @@
 <div class="list">
-  <w-item-card
-    [data] = "data"
-    [mode]= "mode"
-  ></w-item-card>
+  <div *ngFor="let item of data" class="list__item">
+    <w-item-card
+      [data] = "item"
+      [mode]= "mode"
+    ></w-item-card>
+    <div class="list__item__details">
+      <div>{{ item.title }}</div>
+      <div>{{ item.views }}</div>
+      <div>{{ item.publisher }}</div>
+      <div>{{ item.date }}</div>
+    </div>
+  </div>
 </div>

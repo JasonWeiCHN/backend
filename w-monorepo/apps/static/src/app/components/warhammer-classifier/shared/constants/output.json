@@ -4,7 +4,7 @@
         "file": {
             "id": "Harbinger_of_Disaster",
             "name": "Harbinger_of_Disaster",
-            "nameCN": "厄运使者",
+            "nameCN": "灾厄先驱",
             "path": "assets/images/icons/Beastmen/Harbinger_of_Disaster.png"
         }
     },
@@ -13,7 +13,7 @@
         "file": {
             "id": "Slaughterhorn_Tribe",
             "name": "Slaughterhorn_Tribe",
-            "nameCN": "杀戮之角部落",
+            "nameCN": "屠灭之角部落",
             "path": "assets/images/icons/Beastmen/Slaughterhorn_Tribe.png"
         }
     },
@@ -33,7 +33,7 @@
         "file": {
             "id": "Warherd_of_the_Shadowgave",
             "name": "Warherd_of_the_Shadowgave",
-            "nameCN": "暗影掠群",
+            "nameCN": "影孽战兽群",
             "path": "assets/images/icons/Beastmen/Warherd_of_the_Shadowgave.png"
         }
     },

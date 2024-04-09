@@ -4,5 +4,14 @@
   min-height: 120px;
   padding: 8px;
 
-  border: 1px solid #dfdfdf;
+  &__item {
+    display: flex;
+    margin-bottom: 12px;
+    color: #d8d8d8;
+    border: 1px solid #d8d8d8;
+
+    &__details {
+      margin-left: 12px;
+    }
+  }
 }

@@ -7,18 +7,6 @@ export const WARHAMMER_CLASSIFIERS: IWarhammerClassifier[] = [
     "nameCN": "野兽人",
     "files": [
       {
-        "id": "Harbinger_of_Disaster",
-        "name": "Harbinger_of_Disaster",
-        "nameCN": "厄运使者",
-        "path": "assets/images/icons/Beastmen/Harbinger_of_Disaster.png"
-      },
-      {
-        "id": "Slaughterhorn_Tribe",
-        "name": "Slaughterhorn_Tribe",
-        "nameCN": "杀戮之角部落",
-        "path": "assets/images/icons/Beastmen/Slaughterhorn_Tribe.png"
-      },
-      {
         "id": "Warherd_of_the_One_Eye",
         "name": "Warherd_of_the_One-Eye",
         "nameCN": "独眼战兽群",
@@ -27,10 +15,22 @@ export const WARHAMMER_CLASSIFIERS: IWarhammerClassifier[] = [
         "path": "assets/images/icons/Beastmen/Warherd_of_the_One-Eye.png"
       },
       {
+        "id": "Harbinger_of_Disaster",
+        "name": "Harbinger_of_Disaster",
+        "nameCN": "灾厄先驱",
+        "path": "assets/images/icons/Beastmen/Harbinger_of_Disaster.png"
+      },
+      {
         "id": "Warherd_of_the_Shadowgave",
         "name": "Warherd_of_the_Shadowgave",
-        "nameCN": "暗影掠群",
+        "nameCN": "影孽战兽群",
         "path": "assets/images/icons/Beastmen/Warherd_of_the_Shadowgave.png"
+      },
+      {
+        "id": "Slaughterhorn_Tribe",
+        "name": "Slaughterhorn_Tribe",
+        "nameCN": "屠灭之角部落",
+        "path": "assets/images/icons/Beastmen/Slaughterhorn_Tribe.png"
       }
     ]
   },
@@ -725,7 +725,7 @@ export const WARHAMMER_CLASSIFIERS_MAP: IWarhammerClassifierMap = {
     "file": {
       "id": "Harbinger_of_Disaster",
       "name": "Harbinger_of_Disaster",
-      "nameCN": "厄运使者",
+      "nameCN": "灾厄先驱",
       "path": "assets/images/icons/Beastmen/Harbinger_of_Disaster.png"
     }
   },
@@ -734,7 +734,7 @@ export const WARHAMMER_CLASSIFIERS_MAP: IWarhammerClassifierMap = {
     "file": {
       "id": "Slaughterhorn_Tribe",
       "name": "Slaughterhorn_Tribe",
-      "nameCN": "杀戮之角部落",
+      "nameCN": "屠灭之角部落",
       "path": "assets/images/icons/Beastmen/Slaughterhorn_Tribe.png"
     }
   },
@@ -754,7 +754,7 @@ export const WARHAMMER_CLASSIFIERS_MAP: IWarhammerClassifierMap = {
     "file": {
       "id": "Warherd_of_the_Shadowgave",
       "name": "Warherd_of_the_Shadowgave",
-      "nameCN": "暗影掠群",
+      "nameCN": "影孽战兽群",
       "path": "assets/images/icons/Beastmen/Warherd_of_the_Shadowgave.png"
     }
   },
