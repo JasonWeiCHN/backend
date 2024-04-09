@@ -5,7 +5,7 @@
       <div
         *ngFor="let file of item.files"
         class="img-box__item"
-        (click)="onImgBoxClick(file)"
+        (click)="onImgBoxClick(file, item.id)"
       >
         <img class="" [src]="file.path" [alt]="file.name" [title]="file.name">
         <span class="img-box__item__title">{{file.nameCN}}</span>

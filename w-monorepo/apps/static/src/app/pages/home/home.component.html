@@ -1,0 +1,34 @@
+<div class="home">
+  <!--    <w-slideshow [icons]="slideImages"></w-slideshow>-->
+  <div style="margin: 12px 0">
+    <st-warhammer-classifier></st-warhammer-classifier>
+    <w-classifier (classifierItemClick)="onClassifierItemClick($event)"></w-classifier>
+  </div>
+  <!--
+  <section>
+    <div class="subtitle">
+      必读好文章
+    </div>
+  </section>
+  <section>
+    <div class="subtitle">
+     优质全面战争UP主推荐
+    </div>
+  </section>
+  -->
+  <section>
+    <div class="subtitle">
+      相关视频
+    </div>
+    <div style="display: flex; flex-wrap: wrap">
+      <ng-container *ngFor="let item of cards; let index = index;">
+        <w-item-card
+          *ngIf="item.typeId === activeTypeId"
+          style="margin-right: 12px; margin-bottom: 12px"
+          (click)="onCardClick(item)"
+          [data] = "item"
+        ></w-item-card>
+      </ng-container>
+    </div>
+  </section>
+</div>
