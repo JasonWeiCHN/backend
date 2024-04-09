@@ -1,5 +1,9 @@
-<h1>{{ title }}</h1>
-{{ data | json }}
+<div class="article">
+  <h3 *ngIf="data">{{ data.file.nameCN }}</h3>
+  {{ data | json }}
+  <w-list></w-list>
+</div>
+
 
 <!--
 <blockquote class="quote" style="line-height:unset;font-size:unset;color: #ffffff">

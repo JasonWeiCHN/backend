@@ -63,3 +63,23 @@
     }
   }
 }
+
+.item-card--list {
+  width: 240px;
+  height: 140px;
+
+  .item-card__img-container {
+    img {
+      width: 240px;
+      height: 140px;
+    }
+
+    &__des {
+     display: none;
+    }
+  }
+
+  .item-card__background {
+    display: none;
+  }
+}

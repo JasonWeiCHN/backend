@@ -1,10 +1,15 @@
-<div *ngIf="data" class="item-card">
+<div
+  *ngIf="data"
+  class="item-card"
+  [class.item-card--list]="mode === eItemCardMode.LIST"
+>
   <div class="item-card__hover-detail">
     {{ data.detail }}
   </div>
   <div class="item-card__img-container">
     <img [src]="data.imageUrl" alt="">
-    <div class="item-card__img-container__des">
+    <div
+      class="item-card__img-container__des">
       <div class="title">{{ data.title }}</div>
       <div class="">{{ data.description }}</div>
       <div class="">{{ data.date }}</div>
