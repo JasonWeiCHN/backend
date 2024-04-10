@@ -1,0 +1,43 @@
+.navigation-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: #d8d8d8;
+
+  &__item {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    padding-bottom: 6px;
+    cursor: pointer;
+
+    &.active::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60%;
+      height: 2px;
+      background-color: #d8d8d8;
+    }
+  }
+
+  &__item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #ffffff;
+    transition: width 0.1s ease-in-out, left 0.1s ease-in-out; /* 添加过渡效果 */
+  }
+
+  &__item:hover::after {
+    color: #ffffff;
+    width: 60%;
+    left: 50%;
+  }
+}

@@ -1,17 +1,58 @@
+@keyframes rotateAndScale {
+  0% {
+    transform: scale(1) rotate(0deg); /* 开始时为原始大小和0度旋转 */
+  }
+  100% {
+    transform: scale(1.2) rotate(360deg); /* 结束时放大并顺时针旋转360度 */
+  }
+}
+
 .list {
+  $root: &;
   box-sizing: border-box;
   width: 100%;
   min-height: 120px;
-  padding: 8px;
 
   &__item {
     display: flex;
+    justify-content: space-between;
+    padding: 8px;
     margin-bottom: 12px;
+    cursor: pointer;
     color: #d8d8d8;
     border: 1px solid #d8d8d8;
 
     &__details {
-      margin-left: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      max-width: 360px;
+      margin-left: 16px;
+
+      &__title {
+        font-size: 16px;
+      }
+    }
+
+    &__navigate {
+      align-self: center;
+      width: 80px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    &:hover {
+      background: #2A475E;
+
+      #{$root}__item__details {
+        &__title {
+          color: burlywood;
+        }
+      }
+
+      #{$root}__item__navigate {
+        animation: rotateAndScale 0.3s forwards;
+      }
     }
   }
 }

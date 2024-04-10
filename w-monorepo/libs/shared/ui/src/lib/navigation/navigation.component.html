@@ -1,0 +1,10 @@
+<div class="navigation-bar">
+  <div
+    *ngFor="let item of items"
+    class="navigation-bar__item"
+    [class.active]="item === activeItem"
+    (click)="activateItem(item)"
+  >
+    {{ item }}
+  </div>
+</div>

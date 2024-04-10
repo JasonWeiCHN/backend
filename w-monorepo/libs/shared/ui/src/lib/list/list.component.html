@@ -1,14 +1,21 @@
 <div class="list">
   <div *ngFor="let item of data" class="list__item">
-    <w-item-card
-      [data] = "item"
-      [mode]= "mode"
-    ></w-item-card>
-    <div class="list__item__details">
-      <div>{{ item.title }}</div>
-      <div>{{ item.views }}</div>
-      <div>{{ item.publisher }}</div>
-      <div>{{ item.date }}</div>
+    <div style="display: flex">
+      <w-item-card
+        [data] = "item"
+        [mode]= "mode"
+      ></w-item-card>
+      <div class="list__item__details">
+        <div class="list__item__details__title">{{ item.title }}</div>
+        <div>
+          <div>{{ item.views }}</div>
+          <div>{{ item.publisher }}</div>
+          <div>{{ item.date }}</div>
+        </div>
+      </div>
+    </div>
+    <div class="list__item__navigate">
+      进入
     </div>
   </div>
 </div>

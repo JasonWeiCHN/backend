@@ -13,3 +13,5 @@ export * from './lib/item-card/shared/interfaces/item-card.interface';
 export * from './lib/slideshow/slideshow.component';
 
 export * from './lib/list/list.component';
+
+export * from './lib/navigation/navigation.component';

@@ -9,6 +9,7 @@
   background: #171d25;
 
   .content {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -18,12 +19,30 @@
     margin: 0 auto;
 
     color: #dbdbdb;
-    font-size: 18px;
+    font-size: 16px;
 
     .left {
       .title {
-        font-size: 24px;
+        font-size: 20px;
       }
+    }
+
+    .navigation-container {
+      display: none;
     }
   }
 }
+
+.banner--navigation {
+  .content {
+    .navigation-container {
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
+
+

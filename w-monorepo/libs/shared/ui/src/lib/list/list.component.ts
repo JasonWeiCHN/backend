@@ -3,9 +3,6 @@ import { CommonModule } from '@angular/common';
 import { ItemCardComponent } from '../item-card/item-card.component';
 import { IItemCard } from '../item-card/shared/interfaces/item-card.interface';
 import { EItemCardMode } from '../item-card/shared/enums/item-card.enum';
-import {
-  WARHAMMER_CLASSIFIERS
-} from '../../../../../../apps/static/src/app/components/warhammer-classifier/shared/constants/warhammer-classifier.constants';
 
 @Component({
   selector: 'w-list',
@@ -42,5 +39,5 @@ export class ListComponent {
     }
   ];
 
-  public mode: EItemCardMode = EItemCardMode.LIST;
+  protected readonly mode: EItemCardMode = EItemCardMode.LIST;
 }
