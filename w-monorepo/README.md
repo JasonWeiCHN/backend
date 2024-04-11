@@ -65,5 +65,12 @@ It will show tasks that you can run with Nx.
 ## 开发日志
 - 公共样式没有设计 可以extend的那种
 ```
+创建项目
+npx nx g @nx/angular:app inventory --directory=apps/inventory --dry-run
+
+创建lib
+nx g @nx/angular:library products --directory=libs/products --standalone
+
+创建组件
 nx g @nx/angular:component product-list --directory=libs/products/src/lib/product-list --standalone --export
 ```

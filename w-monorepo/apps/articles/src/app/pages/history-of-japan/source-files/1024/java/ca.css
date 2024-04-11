@@ -1,0 +1,245 @@
+BODY
+{
+    MARGIN-LEFT: 0px;
+    MARGIN-RIGHT: 0px
+}
+.text
+{
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+    FONT-SIZE: 0.8em
+}
+.newstext
+{
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+    FONT-SIZE: 0.8em
+}
+.prtext
+{
+    COLOR: black;
+    FONT-FAMILY: Arial, Helvetica;
+    FONT-SIZE: 0.8em
+}
+.smalltext
+{
+    COLOR: black;
+    FONT-FAMILY: Arial, Helvetica;
+    FONT-SIZE: 0.7em
+}
+.wsmalltext
+{
+    COLOR: white;
+    FONT-FAMILY: Arial, Helvetica;
+    FONT-SIZE: 0.7em
+}
+.smalltext2
+{
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+    FONT-SIZE: 0.71em
+}
+.eresource
+{
+    COLOR: white;
+    FONT-FAMILY: Arial, Helvetica;
+    FONT-SIZE: 0.75em
+}
+.wtext
+{
+    COLOR: white;
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+    FONT-SIZE: 0.75em
+}
+.bullet
+{
+    FONT-FAMILY: Arial, Helvetica
+}
+.secthdr
+{
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+    FONT-SIZE: 0.7em;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+.tabhdr
+{
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+    FONT-SIZE: 0.75em;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+.peheader
+{
+    COLOR: black;
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+    FONT-SIZE: 0.7em;
+    FONT-WEIGHT: bold
+}
+.desthdr
+{
+    COLOR: black;
+    FONT-FAMILY: Arial, Helvetica;
+    FONT-SIZE: 0.8em;
+    FONT-WEIGHT: bold
+}
+.header
+{
+    FONT-FAMILY: Arial,Helvetica;
+    FONT-WEIGHT: bold
+}
+.nulink
+{
+    TEXT-DECORATION: none
+}
+.nulink:hover
+{
+    COLOR: orange
+}
+.tabhdrlink
+{
+    COLOR: black;
+    TEXT-DECORATION: none
+}
+.wtabhdrlink
+{
+    COLOR: white;
+    TEXT-DECORATION: none
+}
+.wtabhdrlink:visited
+{
+    COLOR: white;
+    TEXT-DECORATION: none
+}
+.tabhdrlink:visited
+{
+    COLOR: black
+}
+.tabhdrlink:link
+{
+    COLOR: black
+}
+.tabhdrlink:hover
+{
+    COLOR: orange
+}
+.svclink
+{
+    FONT-FAMILY: Verdana, Arial, Helvetica
+}
+.destlink
+{
+    FONT-FAMILY: Verdana, Arial, Helvetica;
+    FONT-SIZE: 0.8em
+}
+.tablink
+{
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+A:hover
+{
+    COLOR: orange
+}
+A.menubartext
+{
+    COLOR: white;
+    FONT-FAMILY: Verdana,Arial,Helvetica;
+    FONT-SIZE: 10px;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+TD.clsMenuBarItem A
+{
+    COLOR: white;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+A.clsMenuBarItem
+{
+    COLOR: white;
+    FONT-SIZE: 11pt;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+A.clsMenuBarItem:visited
+{
+    COLOR: white;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+TD.clsMenuBarItem
+{
+    COLOR: white;
+    CURSOR: hand;
+    FONT-FAMILY: Verdana,Arial,Helvetica;
+    FONT-SIZE: 10px;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+TD.clsMenuBarItem A:hover
+{
+    COLOR: orange
+}
+.clsMenuBarItem
+{
+    COLOR: white;
+    CURSOR: hand;
+    FONT-FAMILY: Verdana,Arial,Helvetica;
+    FONT-SIZE: 10px;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+.clsMenuBarItem:hover
+{
+    COLOR: orange
+}
+DIV.clsMenu
+{
+    BACKGROUND-IMAGE: url(..\..\1024\art\Darkwood_tiled.gif);
+    BORDER-TOP: white 1px solid;
+    FONT-FAMILY: Verdana,Arial,Helvetica;
+    FONT-SIZE: 10px;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 8px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+DIV.clsMenuGray
+{
+    BACKGROUND-COLOR: gray;
+    BORDER-TOP: white 1px solid;
+    FONT-FAMILY: Verdana,Arial,Helvetica;
+    FONT-SIZE: 10px;
+    PADDING-BOTTOM: 5px;
+    PADDING-LEFT: 8px;
+    PADDING-RIGHT: 5px;
+    PADDING-TOP: 5px
+}
+DIV.clsMenu A
+{
+    COLOR: white;
+    FONT-FAMILY: Verdana,Arial,Helvetica;
+    FONT-SIZE: 9pt;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+DIV.clsMenuGray A
+{
+    COLOR: white;
+    FONT-FAMILY: Verdana,Arial,Helvetica;
+    FONT-WEIGHT: bold;
+    TEXT-DECORATION: none
+}
+DIV.clsMenu A:hover
+{
+    COLOR: orange
+}
+DIV.clsMenu_blk A:hover
+{
+    COLOR: orange
+}
+.dllist
+{
+    FONT-SIZE: 12px
+}
