@@ -3,7 +3,9 @@ export interface IImageFile {
   name: string;
   nameCN?: string;
   path: string;
-  heroName?: string;
+  heroName: string;
+  heroNameEN?: string;
+  heroAvatarPath: string;
   description?: string;
 }
 

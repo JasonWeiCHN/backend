@@ -61,9 +61,21 @@ It will show tasks that you can run with Nx.
 - [Subscribe to the Nx Youtube Channel](https://www.youtube.com/@nxdevtools)
 - [Follow us on Twitter](https://twitter.com/nxdevtools)
 
+## 设计
+
+- 萌新上路 / 高手进阶 / 欢乐整活
 
 ## 开发日志
+
+- id 维护
 - 公共样式没有设计 可以extend的那种
+- 列表滚动加载
+- 页面数据采集
+- 提交表单
+- 缩略图 服务器
+
+- [bug] tab 路由没有入 url 匹配
+
 ```
 创建项目
 npx nx g @nx/angular:app inventory --directory=apps/inventory --dry-run

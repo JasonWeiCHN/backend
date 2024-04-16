@@ -16,7 +16,7 @@ export class ClassifierComponent {
 
   public data: IClassifierItem[] = [];
 
-  constructor() {
+  public constructor() {
     this.addClassifierItems();
   }
 

@@ -56,3 +56,35 @@
     }
   }
 }
+
+.list--article {
+  .list__item {
+    &__details {
+      max-width: 80%;
+
+      &__content {
+        .heat {
+          width: 100px;
+        }
+
+        .publisher {
+          width: 270px;
+        }
+      }
+    }
+
+    &:hover {
+      .heat {
+        color: #f3abab;
+      }
+
+      .des {
+        color: #a5eea8;
+      }
+
+      .publisher {
+        color: #b3eee0;
+      }
+    }
+  }
+}

@@ -1,17 +1,15 @@
 export * from './lib/ui/ui.component';
 
-export * from './lib/banner/banner.component';
+export * from './lib/banner/index';
 
-export * from './lib/item-card/item-card.component';
+export * from './lib/classifier/index';
 
-export * from './lib/classifier/classifier.component';
-
-export * from './lib/classifier/shared/interfaces/classifier.interface';
-
-export * from './lib/item-card/shared/interfaces/item-card.interface';
+export * from './lib/item-card/index';
 
 export * from './lib/slideshow/slideshow.component';
 
-export * from './lib/list/list.component';
+export * from './lib/list/index';
 
 export * from './lib/navigation/navigation.component';
+
+export * from './lib/navigation/index'

@@ -2,9 +2,9 @@
   <div
     *ngFor="let item of items"
     class="navigation-bar__item"
-    [class.active]="item === activeItem"
-    (click)="activateItem(item)"
+    [class.active]="item.id === activeItemId"
+    (click)="onItemClick(item)"
   >
-    {{ item }}
+    {{ item.label }}
   </div>
 </div>

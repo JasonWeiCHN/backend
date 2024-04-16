@@ -13,7 +13,7 @@ import { WARHAMMER_CLASSIFIERS } from './shared/constants/warhammer-classifier.c
   styleUrl: './warhammer-classifier.component.scss',
 })
 export class WarhammerClassifierComponent {
-  constructor(private _router: Router) { }
+  public constructor(private _router: Router) { }
 
   public data: IWarhammerClassifier[] = WARHAMMER_CLASSIFIERS;
 
