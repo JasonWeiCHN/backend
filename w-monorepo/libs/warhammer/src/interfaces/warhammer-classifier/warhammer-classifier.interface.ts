@@ -9,10 +9,17 @@ export interface IImageFile {
   description?: string;
 }
 
-export interface IWarhammerClassifier {
+export interface IImageFileUpload extends IImageFile {
+  warhammerClassifierId: string;
+}
+
+export interface IWarhammerClassifierBase {
   id: string;
   directory: string;
   nameCN: string;
+}
+
+export interface IWarhammerClassifier extends IWarhammerClassifierBase {
   files: IImageFile[];
 }
 
@@ -22,6 +29,9 @@ export interface IClan {
     id: string;
     name: string;
     nameCN: string;
+    heroName: string;
+    heroAvatarPath: string;
+    heroNameEN?: string;
     path: string;
     description?: string;
     heroNames?: string[];

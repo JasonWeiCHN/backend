@@ -1,0 +1,22 @@
+<div class="race">
+  <h2>种族</h2>
+  <button (click)="saveAllWarhammerClassifiers()">Save All WarhammerClassifiers</button>
+
+  <h2>种族</h2>
+  <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Directory</th>
+      <th>NameCN</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let classifier of warhammerClassifiers">
+      <td>{{ classifier.id }}</td>
+      <td>{{ classifier.directory }}</td>
+      <td>{{ classifier.nameCN }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

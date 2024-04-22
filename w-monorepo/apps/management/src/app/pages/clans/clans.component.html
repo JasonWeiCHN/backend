@@ -1,0 +1,58 @@
+<div class="clans">
+  <h1>注意 这不是种族 而是 派系</h1>
+  <h2>
+    通过数组（数据源）自动上传
+  </h2>
+  <button (click)="uploadAllFiles()">Upload All Files</button>
+  <h2>
+    单条数据上传
+  </h2>
+  <div>
+    <h3>Warhammer Classifier Selector</h3>
+    <select [(ngModel)]="selectedClassifierId">
+      <option value="" disabled selected>Select Warhammer Classifier</option>
+      <option
+        *ngFor="let classifier of warhammerClassifiers"
+        [value]="classifier.id">
+        {{ classifier.nameCN }}
+      </option>
+    </select>
+    <p *ngIf="selectedClassifierId">Selected Classifier ID: {{ selectedClassifierId }}</p>
+  </div>
+  <div>
+    <h3>Upload Image File</h3>
+    html
+    Copy code
+    <form (submit)="onSubmit()">
+      <label for="id">ID:</label>
+      <input type="text" id="id" name="name" [(ngModel)]="imageFileUpload.id" required>
+
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" [(ngModel)]="imageFileUpload.name" required>
+
+      <label for="nameCN">Chinese Name:</label>
+      <input type="text" id="nameCN" name="nameCN" [(ngModel)]="imageFileUpload.nameCN" required>
+
+      <label for="path">Path:</label>
+      <input type="text" id="path" name="path" [(ngModel)]="imageFileUpload.path" required>
+
+      <label for="heroName">Hero Name:</label>
+      <input type="text" id="heroName" name="heroName" [(ngModel)]="imageFileUpload.heroName" required>
+
+      <label for="heroAvatarPath">Hero Avatar Path:</label>
+      <input type="text" id="heroAvatarPath" name="heroAvatarPath" [(ngModel)]="imageFileUpload.heroAvatarPath"
+             required>
+
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" [(ngModel)]="imageFileUpload.description" required></textarea>
+
+      <div>
+        <label for="warhammerClassifierId">Warhammer Classifier ID:</label>
+        <input type="text" id="warhammerClassifierId" name="warhammerClassifierId" [(ngModel)]="selectedClassifierId"
+               required>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>

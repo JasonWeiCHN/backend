@@ -3,7 +3,7 @@ export interface IItemCard {
   typeId?: string;
   sourceUrl?: string;
   publisher?: string;
-  views?: number;
+  views?: number | string;
   imageUrl: string;
   title: string;
   description: string;

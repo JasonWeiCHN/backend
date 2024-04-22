@@ -1,0 +1,41 @@
+.m-header {
+  position: fixed;
+  z-index: 9999;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  top: 0;
+  right: 0;
+  left: 0;
+
+  height: 60px;
+
+  padding: 0 8px;
+
+  background: #24292f;
+  color: #fff;
+
+  &__left, &__center, &__right, &__user {
+    display: flex;
+    align-items: center;
+  }
+
+  &__left {
+    .logo {
+      width: 48px;
+      height: 48px;
+    }
+  }
+
+  &__right {
+    .avatar {
+      width: 48px;
+      height: 48px;
+      margin-right: 12px;
+      border-radius: 50%;
+    }
+  }
+}

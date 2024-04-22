@@ -2,25 +2,31 @@
   "name": "management",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "prefix": "app",
+  "prefix": "m",
   "sourceRoot": "apps/management/src",
   "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:application",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/management",
         "index": "apps/management/src/index.html",
         "browser": "apps/management/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "apps/management/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
           "apps/management/src/favicon.ico",
           "apps/management/src/assets"
         ],
-        "styles": ["apps/management/src/styles.scss"],
+        "styles": [
+          "apps/management/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -70,7 +76,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
         "jestConfig": "apps/management/jest.config.ts"
       }

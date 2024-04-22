@@ -8,7 +8,7 @@ def transform_to_map(data):
         files = entry['files']
         for file_entry in files:
             file_id = file_entry['id']
-            key = f"{parent_id}_{file_id}"
+            key = f"{file_id}"
             result_map[key] = {
                 'parentId': parent_id,
                 'file': file_entry

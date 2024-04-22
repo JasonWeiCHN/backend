@@ -1,0 +1,34 @@
+.m-sidebar {
+  position: fixed;
+  z-index: 9999;
+
+  top: 60px;
+  bottom: 0;
+  left: 0;
+
+  width: 80px;
+
+  border-right: 1px solid #ddd;
+  background: #fefefe;
+
+  ul {
+    padding-inline-start: 20px;
+  }
+
+  ul li {
+    list-style: none;
+
+    a {
+      display: block;
+
+      margin-bottom: 12px;
+
+      color: #333;
+      text-decoration: none
+    }
+
+    a:hover {
+      color: #646cff;
+    }
+  }
+}

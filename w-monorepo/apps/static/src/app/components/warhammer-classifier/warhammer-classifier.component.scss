@@ -45,4 +45,47 @@
       }
     }
   }
+
+  &--list {
+    display: block;
+    width: 650px;
+    margin: 0 auto;
+  }
+
+  &__item--list {
+    flex-direction: row;
+
+    .title {
+      width: 80px;
+    }
+
+    .img-box__item {
+      position: relative;
+      border: 2px solid transparent;
+      transition: transform 0.3s ease;
+
+      &__title {
+        display: none;
+        position: absolute;
+        width: max-content;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: opacity 0.3s ease;
+        opacity: 0;
+      }
+
+      &:hover {
+        transform: scale(1.1);
+        border-color: #06233a;
+        z-index: 1; /* 这个必须的 如果删除 英雄名字会被第二个卡片遮挡 */
+
+        .img-box__item__title {
+          display: block;
+          opacity: 1;
+        }
+      }
+    }
+  }
 }
+

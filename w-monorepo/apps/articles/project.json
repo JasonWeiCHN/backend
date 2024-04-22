@@ -2,22 +2,31 @@
   "name": "articles",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "prefix": "app",
+  "prefix": "articles",
   "sourceRoot": "apps/articles/src",
   "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/articles",
         "index": "apps/articles/src/index.html",
         "main": "apps/articles/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "apps/articles/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/articles/src/favicon.ico", "apps/articles/src/assets"],
-        "styles": ["apps/articles/src/styles.scss"],
+        "assets": [
+          "apps/articles/src/favicon.ico",
+          "apps/articles/src/assets"
+        ],
+        "styles": [
+          "apps/articles/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -70,7 +79,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
         "jestConfig": "apps/articles/jest.config.ts"
       }

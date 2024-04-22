@@ -12,4 +12,17 @@
     </div>
   </section>
   -->
+  <div style="display: flex; flex-wrap: wrap; justify-content: center">
+    <div
+      *ngFor="let item of data"
+      style="display: flex; margin-right: 12px; margin-bottom: 12px"
+    >
+      <div
+        *ngFor="let file of item.files"
+      >
+        <img style="width: 60px; height: 80px; object-fit: cover;" [src]="file.heroAvatarPath" [alt]="file.name"
+             [title]="file.heroName">
+      </div>
+    </div>
+  </div>
 </div>

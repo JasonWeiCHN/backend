@@ -12,4 +12,12 @@ export * from './lib/list/index';
 
 export * from './lib/navigation/navigation.component';
 
-export * from './lib/navigation/index'
+export * from './lib/navigation/index';
+
+export * from './lib/header/header.component';
+
+export * from './lib/sidebar/sidebar.component';
+
+export * from './lib/sidebar/sidebar.component';
+
+export * from './lib/header/header.component';

@@ -1,34 +1,41 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {
-  IClan,
-  IWarhammerClassifierMap
-} from '../../components/warhammer-classifier/shared/interfaces/warhammer-classifier';
-import {
-  WARHAMMER_CLASSIFIERS_MAP
-} from '../../components/warhammer-classifier/shared/constants/warhammer-classifier.constants';
 import { ActivatedRoute } from '@angular/router';
-import { ListComponent } from '@w-monorepo/ui';
+import { EList, IItemCard, ListComponent } from '@w-monorepo/ui';
+import { ARTICLES_MAP } from '../../shared/constants/articles.constants';
+import { IArticleMap } from '../../shared/interfaces/articles.interface';
+import { IClan, IWarhammerClassifierMap, WARHAMMER_CLASSIFIERS_MAP } from '@w-monorepo/warhammer';
 
 @Component({
   selector: 'st-article',
   standalone: true,
   imports: [CommonModule, ListComponent],
   templateUrl: './article.component.html',
-  styleUrl: './article.component.scss',
+  styleUrl: './article.component.scss'
 })
-export class ArticleComponent implements OnInit{
-  public constructor(
-    private readonly _activatedRoute: ActivatedRoute,
-  ) {}
+export class ArticleComponent implements OnInit {
+  protected articlesMap: IArticleMap = ARTICLES_MAP;
+  protected warhammerClassifiersMap: IWarhammerClassifierMap = WARHAMMER_CLASSIFIERS_MAP;
+  protected title = '';
+  protected clan: IClan | undefined = undefined;
+  protected readonly eList = EList;
+  protected data: IItemCard[] | undefined = undefined;
 
-  public warhammerClassifiersMap: IWarhammerClassifierMap = WARHAMMER_CLASSIFIERS_MAP;
-  public title= ''
-  public data: IClan | undefined = undefined;
+  public constructor(
+    private readonly _activatedRoute: ActivatedRoute
+  ) {
+  }
 
   public ngOnInit(): void {
     const { id } = this._activatedRoute.snapshot.params;
-    console.log(id)
-    this.data = this.warhammerClassifiersMap[id];
+    this.clan = this.warhammerClassifiersMap[id];
+    this.data = this.articlesMap[id];
+    console.log(this.data);
+  }
+
+  public onListItemClick(item: IItemCard): void {
+    if (item.sourceUrl) {
+      window.open(item.sourceUrl, '_blank');
+    }
   }
 }
