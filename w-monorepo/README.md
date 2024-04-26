@@ -86,3 +86,14 @@ nx g @nx/angular:library products --directory=libs/products --standalone
 创建组件
 nx g @nx/angular:component product-list --directory=libs/products/src/lib/product-list --standalone --export
 ```
+
+## 服务器
+
+```
+用户名
+ubuntu
+P@ssw0rd
+
+ssh ubuntu@111.230.29.99
+
+```
