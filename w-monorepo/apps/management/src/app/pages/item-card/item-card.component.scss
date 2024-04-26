@@ -1,0 +1,7 @@
+@import "apps/management/src/app/shared/styles/form.scss";
+@import "apps/management/src/app/shared/styles/table.scss";
+
+.item-card {
+  @extend #table;
+  @extend #form;
+}

@@ -8,13 +8,12 @@ import { WarhammerClassifierComponent } from '../../components/warhammer-classif
   standalone: true,
   imports: [CommonModule, ClassifierComponent, WarhammerClassifierComponent],
   templateUrl: './clans.component.html',
-  styleUrl: './clans.component.scss',
+  styleUrl: './clans.component.scss'
 })
 export class ClansComponent {
   public activeTypeId = '1';
 
   public onClassifierItemClick(item: IClassifierItem) {
-    console.log(item);
     this.activeTypeId = item.id;
   }
 }

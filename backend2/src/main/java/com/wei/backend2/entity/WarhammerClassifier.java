@@ -3,7 +3,6 @@ package com.wei.backend2.entity;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Data
 @Entity
@@ -14,7 +13,4 @@ public class WarhammerClassifier {
 
     private String directory;
     private String nameCN;
-
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "warhammerClassifier", orphanRemoval = true)
-    private List<ImageFile> files;
 }

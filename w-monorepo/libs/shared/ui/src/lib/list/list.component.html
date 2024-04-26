@@ -37,6 +37,7 @@
         <div class="list__item__details__title">{{ item.title }}</div>
         <div class="list__item__details__content">
           <div class="flex items-center break-keep">
+            <!--
             <div
               class="heat flex justify-between items-center mr-2"
             >
@@ -44,7 +45,8 @@
               <span>{{ item.views }}</span>
             </div>
             <div class="mr-2">|</div>
-            <div class="des">{{ item.description || '暂无说明' }}</div>
+            -->
+            <div class="des">简介: {{ item.description || '暂无说明' }}</div>
           </div>
           <div class="publisher flex justify-between items-center">
             <div>{{ item.publisher }}</div>
@@ -53,7 +55,9 @@
         </div>
       </div>
       <div class="list__item__navigate">
-        进入
+        <span>
+           进入
+        </span>
       </div>
     </div>
   </ng-container>

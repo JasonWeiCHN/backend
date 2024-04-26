@@ -1,0 +1,10 @@
+<div class="tag-container">
+  <div
+    *ngFor="let tag of tags; let i = index"
+    class="tag"
+    [class.selected]="i === selectedTagIndex"
+    (click)="selectTag(i)"
+  >
+    {{ tag.name }}
+  </div>
+</div>

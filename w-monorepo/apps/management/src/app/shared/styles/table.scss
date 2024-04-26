@@ -1,0 +1,34 @@
+#table {
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th, td {
+    border: 1px solid #ddd;
+    padding: 4px;
+    text-align: left;
+  }
+
+  tr {
+    cursor: pointer;
+    font-size: 12px;
+  }
+
+  tr:hover {
+    background-color: #f2f2f2;
+  }
+
+  tr:hover td {
+    color: black;
+  }
+
+
+  th:nth-child(1), td:nth-child(1) {
+    width: 100px; /* 设置第一列的列宽 */
+  }
+
+  th:nth-child(2), td:nth-child(2) {
+    width: 150px; /* 设置第二列的列宽 */
+  }
+}

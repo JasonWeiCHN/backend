@@ -1,5 +1,6 @@
 export interface IItemCard {
   id: string;
+  tagIds: string[];
   typeId?: string;
   sourceUrl?: string;
   publisher?: string;

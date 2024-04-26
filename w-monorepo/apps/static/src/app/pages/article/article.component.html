@@ -1,30 +1,22 @@
 <div *ngIf="data" class="article">
-  <!--
-  <h3 *ngIf="clan">{{ clan.file.nameCN }}</h3>
-  {{ clan | json }}
-  <w-list></w-list>
-  -->
+  <div *ngIf="clan" class="identity-information">
+    <div style="display: flex">
+      <div class="image-box">
+        <img [src]="clan.file.heroAvatarPath" [alt]="clan.file.name"
+             [title]="clan.file.heroName">
+      </div>
+      <div class="info">
+        <div style="font-size: 20px">{{ clan.file.heroName }}</div>
+        <div style="font-size: 16px">{{ clan.file.nameCN }}</div>
+      </div>
+    </div>
+    <w-back-button></w-back-button>
+  </div>
+  <!-- 这个功能先开发 不上线 -->
+  <w-tag-selector [tags]="tags" (tagSelected)="onTagSeclet($event)"></w-tag-selector>
   <w-list
     [data]="data"
     [mode]="eList.ARTICLE"
     (listItemClick)="onListItemClick($event)"
   ></w-list>
 </div>
-
-<!--
-<blockquote class="quote" style="line-height:unset;font-size:unset;color: #ffffff">
-  <p>
-    "<i>In that dread desert, beneath the moon's pale
-  gaze, dead men walk. They haunt the shifting dunes of the breathless, windless night, brandish weapons of bronze in
-  mocking challenge and bitter resentment of the life they no longer possess. And sometimes, in ghastly dry voices, like
-  the rustling of sun-baked reeds, they whisper the one word they remember from life. The name of the one who cursed
-  them to their existence, more than death but less than life. They whisper the name, Nagash...</i>"
-    <br>
-</p>
-  <dl>
-    <dd><cite style="font-style:normal;">—Extract from the <i><a href="/wiki/Liber_Necris" title="Liber Necris">Liber
-      Necris</a></i>, translated by <a href="/wiki/Mannfred_von_Carstein" title="Mannfred von Carstein">Mannfred von
-      Carstein</a><sup id="fn_3a_back"><a href="#fn_3a">[3a]</a></sup></cite></dd>
-  </dl>
-</blockquote>
--->

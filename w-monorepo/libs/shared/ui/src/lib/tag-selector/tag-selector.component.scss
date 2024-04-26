@@ -1,0 +1,17 @@
+.tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px; /* 标签之间的间距 */
+}
+
+.tag {
+  cursor: pointer;
+  padding: 4px 6px;
+  margin-bottom: 12px;
+  border-bottom: none;
+
+  &:hover, &.selected {
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff;
+  }
+}

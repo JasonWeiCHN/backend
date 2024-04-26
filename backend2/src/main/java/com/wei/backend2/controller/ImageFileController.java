@@ -11,7 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/imageFile")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 @Api(tags = "imageFile")
 public class ImageFileController {
     private final ImageFileService imageFileService;

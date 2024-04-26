@@ -1,3 +1,5 @@
+@import "libs/shared/ui/src/styles/text.scss";
+
 @keyframes rotateAndScale {
   0% {
     transform: scale(1) rotate(0deg); /* 开始时为原始大小和0度旋转 */
@@ -30,7 +32,20 @@
       margin-left: 16px;
 
       &__title {
+        color: #c4c4a8;
         font-size: 16px;
+      }
+
+      .heat {
+        color: #dc8787;
+      }
+
+      .des {
+        color: #c4c4c4;
+      }
+
+      .publisher {
+        color: #6d9d92;
       }
     }
 
@@ -39,6 +54,11 @@
       width: 80px;
       text-align: center;
       transition: transform 0.3s;
+
+      span {
+        display: none;
+        color: #888888;
+      }
     }
 
     &:hover {
@@ -46,12 +66,17 @@
 
       #{$root}__item__details {
         &__title {
-          color: #fcfca4;
+          color: #fcfcbd;
         }
       }
 
       #{$root}__item__navigate {
         animation: rotateAndScale 0.3s forwards;
+
+        span {
+          display: inline;
+          color: #ffffff;
+        }
       }
     }
   }
@@ -68,10 +93,13 @@
         }
 
         .des {
-          max-width: 480px;
+          @extend #overflow-text;
+
+          max-width: 100%;
         }
 
         .publisher {
+          font-size: 14px;
           width: 270px;
         }
       }
@@ -83,7 +111,7 @@
       }
 
       .des {
-        color: #a5eea8;
+        color: #ffffff;
       }
 
       .publisher {

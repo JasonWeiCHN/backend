@@ -1,6 +1,7 @@
+@import "apps/management/src/app/shared/styles/table.scss";
+@import "apps/management/src/app/shared/styles/form.scss";
+
 .clans {
-  input, textarea {
-    display: block;
-    margin-bottom: 10px; /* 设置输入框之间的垂直间距 */
-  }
+  @extend #table;
+  @extend #form;
 }

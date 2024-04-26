@@ -53,7 +53,7 @@ def save_to_json(data_object, filename):
         json.dump(data_object, json_file, ensure_ascii=False, indent=4)
 
 # 测试
-url = 'https://www.bilibili.com/video/BV1jr421b7fX/?spm_id_from=333.337.search-card.all.click'
+url = 'https://www.bilibili.com/video/BV17z421k7sZ/?vd_source=cf6172bb9e27eef98252db60c4e279fe#reply218464539456'
 data_object = scrape_page(url)
 
 filename = 'video_data.json'

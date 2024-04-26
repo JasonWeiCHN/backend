@@ -1,5 +1,31 @@
 <div class="clans">
-  <h1>注意 这不是种族 而是 派系</h1>
+  <h2>派系列表</h2>
+  <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <!--      <th>NameCN</th>-->
+      <th>Path</th>
+      <th>Hero Name</th>
+      <!--      <th>Hero Name EN</th>-->
+      <th>Hero Avatar Path</th>
+      <!--      <th>Description</th>-->
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let imageFile of imageFiles">
+      <td>{{ imageFile.id }}</td>
+      <td>{{ imageFile.name }}</td>
+      <!--      <td>{{ imageFile.nameCN }}</td>-->
+      <td>{{ imageFile.path }}</td>
+      <td>{{ imageFile.heroName }}</td>
+      <!--      <td>{{ imageFile.heroNameEN }}</td>-->
+      <td>{{ imageFile.heroAvatarPath }}</td>
+      <!--      <td>{{ imageFile.description }}</td>-->
+    </tr>
+    </tbody>
+  </table>
   <h2>
     通过数组（数据源）自动上传
   </h2>

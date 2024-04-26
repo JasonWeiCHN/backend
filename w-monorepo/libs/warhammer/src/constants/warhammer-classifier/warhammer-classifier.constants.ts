@@ -60,7 +60,7 @@ export const WARHAMMER_CLASSIFIERS: IWarhammerClassifier[] = [
       {
         'id': 'Bordeleaux_Errant',
         'name': 'Bordeleaux_Errant',
-        'nameCN': '波尔德洛长征君',
+        'nameCN': '波尔德洛长征军',
         'heroName': '艾博里克·德·波尔德罗',
         'heroAvatarPath': 'assets/images/lords/bretonnia-alberic-de-bordeleaux.png',
         'path': 'assets/images/icons/Bretonnia/Bordeleaux_Errant.png'
@@ -151,7 +151,7 @@ export const WARHAMMER_CLASSIFIERS: IWarhammerClassifier[] = [
         'path': 'assets/images/icons/Dark Elves/Cult_of_Pleasure.png'
       },
       {
-        'id': 'Hag_Graef',
+        'id': 'Har_Ganeth',
         'name': 'Har_Ganeth',
         'nameCN': '哈尔·冈西',
         'heroName': '妖婆赫莉本',
@@ -787,7 +787,7 @@ export const WARHAMMER_CLASSIFIERS: IWarhammerClassifier[] = [
         'path': 'assets/images/icons/Vampire Counts/The_Barrow_Legion.png'
       },
       {
-        'id': 'Sylvania',
+        'id': 'Sylvania_Vlad',
         'name': 'Sylvania',
         'nameCN': '希尔瓦尼亚',
         'heroName': '弗拉德·冯·卡斯坦因',
@@ -796,7 +796,7 @@ export const WARHAMMER_CLASSIFIERS: IWarhammerClassifier[] = [
         'path': 'assets/images/icons/Vampire Counts/Sylvania.png'
       },
       {
-        'id': 'Sylvania',
+        'id': 'Sylvania_Isabella',
         'name': 'Sylvania',
         'nameCN': '希尔瓦尼亚',
         'heroName': '伊莎贝拉·冯·卡斯坦因',
@@ -1001,7 +1001,7 @@ export const WARHAMMER_CLASSIFIERS_MAP: IWarhammerClassifierMap = {
     'file': {
       'id': 'Bordeleaux_Errant',
       'name': 'Bordeleaux_Errant',
-      'nameCN': '波尔德洛长征君',
+      'nameCN': '波尔德洛长征军',
       'heroName': '艾博里克·德·波尔德罗',
       'heroAvatarPath': 'assets/images/lords/bretonnia-alberic-de-bordeleaux.png',
       'path': 'assets/images/icons/Bretonnia/Bordeleaux_Errant.png'
@@ -1793,7 +1793,7 @@ export const WARHAMMER_CLASSIFIERS_MAP: IWarhammerClassifierMap = {
   'Sylvania': {
     'parentId': 'Vampire_Counts',
     'file': {
-      'id': 'Sylvania',
+      'id': 'Sylvania_Isabella',
       'name': 'Sylvania',
       'nameCN': '希尔瓦尼亚',
       'heroName': '伊莎贝拉·冯·卡斯坦因',

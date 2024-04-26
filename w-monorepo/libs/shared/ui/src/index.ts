@@ -21,3 +21,7 @@ export * from './lib/sidebar/sidebar.component';
 export * from './lib/sidebar/sidebar.component';
 
 export * from './lib/header/header.component';
+
+export * from './lib/tag-selector/index';
+
+export * from './lib/back-button/back-button.component';

@@ -30,7 +30,6 @@ export class WarhammerClassifierComponent {
   public data: IWarhammerClassifier[] = WARHAMMER_CLASSIFIERS;
 
   public onImgBoxClick(item: IImageFile): void {
-    console.log(item);
     this._router.navigate([`/article/${item.id}`]);
   }
 

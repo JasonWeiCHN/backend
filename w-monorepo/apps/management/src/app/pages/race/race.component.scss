@@ -1,2 +1,5 @@
+@import "apps/management/src/app/shared/styles/table.scss";
+
 .race {
+  @extend #table;
 }
