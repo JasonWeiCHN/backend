@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EList, IItemCard, ListComponent } from '@w-monorepo/ui';
+import { EArticleTags, EReferer } from '../../shared/enums/articles.enum';
 
 @Component({
   selector: 'st-articles',
@@ -15,159 +16,65 @@ export class ArticlesComponent {
   public data: IItemCard[] = [
     {
       'id': '',
-      'typeId': '1',
-      'imageUrl': 'assets/images/warhammer/One_Eye1.jpg',
-      'sourceUrl': 'https://www.bilibili.com/video/BV1Ux4y1a7ME/?spm_id_from=333.337.search-card.all.click&vd_source=cf6172bb9e27eef98252db60c4e279fe',
-      'title': '战锤3全面战争电影震旦-诺斯卡战争',
-      'views': 70,
-      'description': 'https://www.youtube.com/@Savage-Battles-2020',
-      'publisher': '叶哥的全面战争',
-      'date': '2024-04-14 20:49:47',
-      'detail': '诺斯卡战争',
+      'typeId': '',
+      'imageUrl': '',
+      'title': '【寅子录播】2024年4月27日《全战：战锤3+沙漠大冒险+熔炉密林+看视频》',
+      'publisher': '寅子',
+      'detail': '相关游戏：《全面战争：战锤3》《沙漠大冒险》《熔炉密林》\n寅子2024年4月27日直播录像\n喜欢的关注、三连走一走~！',
+      'description': '相关游戏：《全面战争：战锤3》《沙漠大冒险》《熔炉密林》\n寅子2024年4月27日直播录像\n喜欢的关注、三连走一走~！',
+      'views': 8577,
+      'date': '2024-04-28 04:27:13',
       'tagIds': [
-        'newerTeach',
-        'liveRecording'
-      ]
+        EArticleTags.LIVE_RECORDING
+      ],
+      'referer': EReferer.BILIBILI,
+      'sourceUrl': 'https://www.bilibili.com/video/BV14H4y1V7vx/?spm_id_from=333.337.search-card.all.click'
     },
     {
       'id': '',
-      'typeId': '1',
-      'imageUrl': 'assets/images/warhammer/One_Eye1.jpg',
-      'sourceUrl': 'https://www.bilibili.com/video/BV1rr421V7PE/?spm_id_from=333.337.search-card.all.click&vd_source=cf6172bb9e27eef98252db60c4e279fe',
-      'title': '战锤3 当矮人铁龙手炮兵飞起来~ 万世天朝',
-      'views': 2398,
-      'description': '矮人的铁龙手炮兵飞起来会怎么样？那地面部队都会害怕吧',
-      'publisher': '明曦xmD',
-      'date': '2024-04-14 20:49:47',
-      'detail': '矮人的铁龙手炮兵飞起来会怎么样？那地面部队都会害怕吧',
+      'typeId': '',
+      'imageUrl': '',
+      'title': '【战锤3全战：超凡】腐烂骑士泥头车！',
+      'publisher': '武侍建御雷',
+      'detail': '新版本的纳垢在腐烂骑士的泥头冲锋下，战斗再无以往的便秘感~~~',
+      'description': '新版本的纳垢在腐烂骑士的泥头冲锋下，战斗再无以往的便秘感~~~',
+      'views': 2232,
+      'date': '2024-04-28 02:58:59',
       'tagIds': [
-        'liveRecording'
-      ]
+        EArticleTags.CLIP
+      ],
+      'referer': EReferer.BILIBILI,
+      'sourceUrl': 'https://www.bilibili.com/video/BV1jp421D7TR/?spm_id_from=333.337.search-card.all.click'
     },
     {
       'id': '',
-      'typeId': '1',
-      'imageUrl': 'assets/images/warhammer/One_Eye1.jpg',
-      'sourceUrl': 'https://www.bilibili.com/video/BV1qD421p7re/?spm_id_from=333.337.search-card.all.click&vd_source=cf6172bb9e27eef98252db60c4e279fe',
-      'title': '战锤3全面战争电影人类军队-色孽，绿皮联军战争',
-      'views': 62,
-      'description': 'https://www.youtube.com/@FIRESupportVideos',
-      'publisher': 'R.sir',
-      'date': '2024-04-15 07:00:00',
-      'detail': 'https://www.youtube.com/@FIRESupportVideos',
+      'typeId': '',
+      'imageUrl': '',
+      'title': '《全面战争：战锤3》DLC“腐朽王座”宣布4月30日发售',
+      'publisher': '3DMGAME',
+      'detail': '世嘉官方宣布《全面战争：战锤3》新DLC“腐朽王座”（Thrones of Decay）将于4月30日发售',
+      'description': '世嘉官方宣布《全面战争：战锤3》新DLC“腐朽王座”（Thrones of Decay）将于4月30日发售',
+      'views': 0,
+      'date': '2024-04-19 11:18',
       'tagIds': [
-        'liveRecording',
-        'story'
-      ]
+        EArticleTags.NEWS
+      ],
+      'referer': EReferer.BAI_DU,
+      'sourceUrl': 'https://baijiahao.baidu.com/s?id=1796731551639720285&wfr=spider&for=pc'
     },
     {
-      'id': '',
-      'typeId': '1',
-      'imageUrl': 'assets/images/warhammer/One_Eye1.jpg',
-      'sourceUrl': 'https://www.bilibili.com/video/BV1Um421j7z6/?spm_id_from=333.337.search-card.all.click&vd_source=cf6172bb9e27eef98252db60c4e279fe',
-      'title': '战锤3陆战周赛 老带新赛 蒙斯克 VS 卡卓焉 帝国vs诺斯卡',
-      'views': 33,
-      'description': '嘉宾XWD 对局：帝国VS北佬',
-      'publisher': 'R.sir',
-      'date': '2024-04-15 07:00:00',
-      'detail': '帝国VS北佬',
+      'id': '18',
+      'typeId': '',
+      'imageUrl': '',
+      'title': '【蛋疼】从零开始玩全战，战锤全面战争新手教学',
+      'publisher': '小蛋疼君',
+      'detail': '玩战锤也有些年头了，一直想做一个系统性的新手教学，让新接触这个游戏的朋友可以更快上手。\n预计篇幅在10-15篇左右，我会定时更新直到完结。\n做这个节目真的很费脑，这款游戏我了解的东西太多，要把一个一个细节整理出来需要花不少时间。。\n如果觉得我的视频能帮助到你，别忘了给我点个赞：）',
+      'description': '玩战锤也有些年头了，一直想做一个系统性的新手教学，让新接触这个游戏的朋友可以更快上手。\n预计篇幅在10-15篇左右，我会定时更新直到完结。\n做这个节目真的很费脑，这款游戏我了解的东西太多，要把一个一个细节整理出来需要花不少时间。。\n如果觉得我的视频能帮助到你，别忘了给我点个赞：）',
+      'views': 1087000.0,
+      'date': '2019-10-11 21:11:07',
+      'sourceUrl': 'https://www.bilibili.com/video/BV1fE411o7su/?spm_id_from=333.337.search-card.all.click',
       'tagIds': [
-        'newerTeach'
-      ]
-    },
-    {
-      'id': '',
-      'typeId': '1',
-      'imageUrl': 'assets/images/warhammer/One_Eye1.jpg',
-      'sourceUrl': 'https://www.bilibili.com/video/BV19q421w78C/?spm_id_from=333.1007.tianma.1-2-2.click&vd_source=cf6172bb9e27eef98252db60c4e279fe',
-      'title': '重生之我是哥布林大王（上）【全面战争战锤3】',
-      'views': 32000,
-      'description': '咕噜',
-      'publisher': '机枪卡卡',
-      'date': '2024-04-05 09:23:33',
-      'detail': '咕噜',
-      'tagIds': [
-        'clip',
-        'clansDescription'
-      ]
-    },
-    {
-      'id': '',
-      'typeId': '1',
-      'imageUrl': 'assets/images/warhammer/One_Eye1.jpg',
-      'sourceUrl': 'https://www.bilibili.com/video/BV18F4m1N7LV/?spm_id_from=333.999.0.0&vd_source=cf6172bb9e27eef98252db60c4e279fe',
-      'title': '[全面战争·战锤3·半小时玩一个领主] 死亡大师·斯尼奇',
-      'views': 172,
-      'description': '斯卡文鼠人 死亡大师·斯尼奇',
-      'publisher': '古老游戏玩家',
-      'date': '2024-03-17 09:30:00',
-      'detail': '蜥蜴人派系 库·迦 最后守卫者',
-      'tagIds': [
-        'clansDescription',
-        'liveRecording'
-      ]
-    },
-    {
-      'id': '',
-      'typeId': '1',
-      'imageUrl': 'assets/images/warhammer/One_Eye1.jpg',
-      'sourceUrl': 'https://www.bilibili.com/video/BV1rY4y1M7FP/?spm_id_from=333.337.search-card.all.click&vd_source=cf6172bb9e27eef98252db60c4e279fe',
-      'title': '从零开始（战锤3全面战争）攻略超凡帝国 帝国开局教学',
-      'views': 479000,
-      'description': '[全面战争·战锤3·半小时玩一个领主] ',
-      'publisher': '星云号',
-      'date': '2024-03-17 09:30:00',
-      'detail': '蜥蜴人派系 库·迦 最后守卫者',
-      'tagIds': [
-        'story',
-        'clansDescription'
-      ]
-    },
-    {
-      'id': '',
-      'typeId': '1',
-      'imageUrl': 'assets/images/warhammer/One_Eye1.jpg',
-      'sourceUrl': 'https://www.bilibili.com/video/BV151421Z7oP/?spm_id_from=333.337.search-card.all.click&vd_source=cf6172bb9e27eef98252db60c4e279fe',
-      'title': '[全面战争 · 战锤3] 回到2022年，感受那时的震撼',
-      'views': 500,
-      'description': '第十三代全面战争，震撼开场动画',
-      'publisher': '古老游戏玩家',
-      'date': '2024-03-17 09:30:00',
-      'detail': '',
-      'tagIds': [
-        'newerTeach'
-      ]
-    },
-    {
-      'id': '',
-      'typeId': '1',
-      'imageUrl': 'assets/images/warhammer/One_Eye1.jpg',
-      'sourceUrl': 'https://www.bilibili.com/video/BV1bF4m1F7po/?spm_id_from=333.999.0.0',
-      'title': '[全面战争·战锤3·半小时玩一个领主] 卡扎克·独眼',
-      'views': 334,
-      'description': '[全面战争·战锤3·半小时玩一个领主] ',
-      'publisher': '古老游戏玩家',
-      'date': '2024-03-17 09:30:00',
-      'detail': '蜥蜴人派系 库·迦 最后守卫者',
-      'tagIds': [
-        'clip',
-        'liveRecording'
-      ]
-    },
-    {
-      'id': '',
-      'typeId': '1',
-      'imageUrl': 'assets/images/warhammer/One_Eye2.png',
-      'sourceUrl': 'https://www.bilibili.com/video/BV1bF4m1F7po/?spm_id_from=333.999.0.0',
-      'title': '【lucpass】从零开始的战锤全面战争3 野兽人 兽王卡扎克独眼 第一期 邓肯瓦尔德森林之主',
-      'views': 110000,
-      'description': '[全面战争·战锤3·半小时玩一个领主] ',
-      'publisher': 'LucPass',
-      'date': '2023-12-11 12:21:12',
-      'detail': '蜥蜴人派系 库·迦 最后守卫者',
-      'tagIds': [
-        'newerTeach',
-        'liveRecording'
+        EArticleTags.NEWER_TEACH
       ]
     }
   ];

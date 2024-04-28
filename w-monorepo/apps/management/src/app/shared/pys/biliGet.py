@@ -1,6 +1,13 @@
+from flask import Flask, render_template, request, jsonify
 import requests
-import json
 from bs4 import BeautifulSoup
+import json
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 def scrape_page(url):
     headers = {
@@ -14,26 +21,20 @@ def scrape_page(url):
         "Cache-Control": "max-age=0"
     }
 
-    # 发送GET请求获取页面内容
     response = requests.get(url, headers=headers)
-
-    # 使用BeautifulSoup解析HTML
     soup = BeautifulSoup(response.text, 'html.parser')
 
-    # 提取字段值
     title = soup.find('h1', class_='video-title')['data-title']
     publisher = soup.select_one('.up-detail .up-detail-top .up-name').text.strip()
-    # 检查是否存在详细描述
+
     detail_tag = soup.select_one('.video-desc-container .basic-desc-info .desc-info-text')
-    if detail_tag:
-        detail = detail_tag.text.strip()
-    else:
-        detail = ''
+    detail = detail_tag.text.strip() if detail_tag else ''
+
     views_text = soup.select_one('.view .view-text').text.strip()
     views = parse_views(views_text)
+
     date = soup.select_one('.pubdate-ip .pubdate-ip-text').text.strip()
 
-    # 构建对象
     obj = {
         'typeId': '',
         'imageUrl': '',
@@ -56,24 +57,30 @@ def parse_views(views_text):
         views = int(views_text)
     return views
 
-def save_to_backend(data_object, backend_url):
+@app.route('/save_data', methods=['POST'])
+def save_data():
+    data = request.json
+    url = data.get('url')
+    tags = data.get('tags', [])
+
+    # 将标签数据转换为用分号连接的字符串，或者直接作为字符串
+    if len(tags) > 1:
+        tag_ids = ';'.join(tags)
+    elif len(tags) == 1:
+        tag_ids = tags[0]
+    else:
+        tag_ids = ''
+
+    data_object = scrape_page(url)
+    data_object['tagIds'] = tag_ids  # 将标签作为字符串添加到数据对象中
+
+    backend_url = 'http://localhost:8080/itemCard/saveItemCard'  # 替换成你的后台端点URL
+
     response = requests.post(backend_url, json=data_object)
     if response.status_code == 200:
-        print('Data saved successfully to backend!')
+        return jsonify({'message': 'Data saved successfully to backend!'})
     else:
-        print(f'Failed to save data to backend. Status code: {response.status_code}')
+        return jsonify({'error': f'Failed to save data to backend. Status code: {response.status_code}'})
 
-def save_to_json(data_object, filename):
-    with open(filename, 'w', encoding='utf-8') as json_file:
-        json.dump(data_object, json_file, ensure_ascii=False, indent=4)
-
-# 测试
-url = 'https://www.bilibili.com/video/BV1Cp421X76F/?spm_id_from=333.337.search-card.all.click'
-data_object = scrape_page(url)
-
-filename = 'video_data.json'
-save_to_json(data_object, filename)
-print(f'Data saved to {filename}')
-
-backend_url = 'http://localhost:8080/itemCard/saveItemCard'  # 替换成你的后台端点URL
-save_to_backend(data_object, backend_url)
+if __name__ == '__main__':
+    app.run(debug=True)

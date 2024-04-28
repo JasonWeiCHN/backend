@@ -1,7 +1,40 @@
 import { IArticleMap } from '../interfaces/articles.interface';
+import { EArticleTags, EReferer } from '../enums/articles.enum';
 
 export const ARTICLES_MAP: IArticleMap = {
   'Warherd_of_the_One_Eye': [
+    {
+      'id': '',
+      'typeId': '',
+      'imageUrl': '',
+      'title': '[全面战争·战锤3·半小时玩一个领主] 卡扎克·独眼',
+      'publisher': '古老游戏玩家',
+      'detail': '[全面战争·战锤3·半小时玩一个领主] 卡扎克·独眼',
+      'description': '[全面战争·战锤3·半小时玩一个领主] 卡扎克·独眼',
+      'views': 380,
+      'date': '2024-03-17 09:30:00',
+      'tagIds': [
+        EArticleTags.CLANS_DESCRIPTION
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1ef421f72y/?spm_id_from=333.337.search-card.all.click',
+      'referer': EReferer.BILIBILI
+    },
+    {
+      'id': '',
+      'typeId': '',
+      'imageUrl': '',
+      'title': '战锤3：全面战争-超凡帝国-传奇-野兽人-卡扎克·独眼-3.1版本-4小时42回合短期胜利',
+      'publisher': '紫川家统领',
+      'detail': '1',
+      'description': '1',
+      'views': 1400,
+      'date': '2023-05-28 19:17:34',
+      'tagIds': [
+        EArticleTags.LIVE_RECORDING
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1WL411q7rW/?spm_id_from=333.337.search-card.all.click',
+      'referer': EReferer.BILIBILI
+    },
     {
       'id': '',
       'typeId': '1',
@@ -14,8 +47,25 @@ export const ARTICLES_MAP: IArticleMap = {
       'date': '2023-12-20 08:00:39',
       'sourceUrl': 'https://www.bilibili.com/video/BV1Ge411C7tr/?p=1&vd_source=cf6172bb9e27eef98252db60c4e279fe',
       'tagIds': [
-        'clansDescription'
-      ]
+        EArticleTags.LIVE_RECORDING
+      ],
+      'referer': EReferer.BILIBILI
+    },
+    {
+      'id': '',
+      'typeId': '',
+      'imageUrl': '',
+      'title': '战锤3全面战争电影视频：独眼卡扎克截杀支援基斯里夫的奥斯特援军',
+      'publisher': '萨瓦莉克',
+      'detail': 'https://www.youtube.com/watch?v=bT3uH7Zw7zQ',
+      'description': 'https://www.youtube.com/watch?v=bT3uH7Zw7zQ',
+      'views': 1649,
+      'date': '2023-04-11 10:35:43',
+      'tagIds': [
+        EArticleTags.CLIP
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1SL41127rR/?spm_id_from=333.337.search-card.all.click',
+      'referer': EReferer.BILIBILI
     }
   ],
   'Harbinger_of_Disaster': [
@@ -31,8 +81,9 @@ export const ARTICLES_MAP: IArticleMap = {
       'date': '2024-03-27 11:30:00',
       'sourceUrl': 'https://www.bilibili.com/video/BV12A4m1P7rq/?spm_id_from=333.337.search-card.all.click&vd_source=cf6172bb9e27eef98252db60c4e279fe',
       'tagIds': [
-        'clansDescription'
-      ]
+        EArticleTags.CLANS_DESCRIPTION
+      ],
+      'referer': EReferer.BILIBILI
     },
     {
       'id': '',
@@ -46,8 +97,25 @@ export const ARTICLES_MAP: IArticleMap = {
       'date': '2023-07-01 22:56:29',
       'sourceUrl': 'https://www.bilibili.com/video/BV1pP411e7aQ/?spm_id_from=333.337.search-card.all.click&vd_source=cf6172bb9e27eef98252db60c4e279fe',
       'tagIds': [
-        'clansDescription'
-      ]
+        EArticleTags.LIVE_RECORDING
+      ],
+      'referer': EReferer.BILIBILI
+    },
+    {
+      'id': '',
+      'typeId': '',
+      'imageUrl': '',
+      'title': '战锤3全面战争神器任务 渎神标志（马拉戈·黑暗征兆神器任务）',
+      'publisher': '银色子弹柠檬茶',
+      'detail': '',
+      'description': '',
+      'views': 182,
+      'date': '2023-04-02 13:36:23',
+      'tagIds': [
+        EArticleTags.TASK
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1os4y1U7Bh/?spm_id_from=333.337.search-card.all.click',
+      'referer': EReferer.BILIBILI
     }
   ],
   'Warherd_of_the_Shadowgave': [
@@ -63,9 +131,9 @@ export const ARTICLES_MAP: IArticleMap = {
       'date': '2024-04-02 11:30:00',
       'sourceUrl': 'https://www.bilibili.com/video/BV1cC411j7vF/?spm_id_from=333.337.search-card.all.click',
       'tagIds': [
-        'story',
-        'clansDescription'
-      ]
+        EArticleTags.CLANS_DESCRIPTION
+      ],
+      'referer': EReferer.BILIBILI
     },
     {
       'id': '',
@@ -79,8 +147,9 @@ export const ARTICLES_MAP: IArticleMap = {
       'date': '2022-12-11 22:11:09',
       'sourceUrl': 'https://www.bilibili.com/video/BV1B8411V7zt/?spm_id_from=333.337.search-card.all.click&vd_source=cf6172bb9e27eef98252db60c4e279fe',
       'tagIds': [
-        'clip'
-      ]
+        EArticleTags.LIVE_RECORDING
+      ],
+      'referer': EReferer.BILIBILI
     },
     {
       'id': '',
@@ -94,9 +163,9 @@ export const ARTICLES_MAP: IArticleMap = {
       'date': '2023-12-31 11:30:00',
       'sourceUrl': 'https://www.bilibili.com/video/BV1364y1n7EY/?spm_id_from=333.337.search-card.all.click&vd_source=cf6172bb9e27eef98252db60c4e279fe',
       'tagIds': [
-        'clansDescription',
-        'liveRecording'
-      ]
+        EArticleTags.NEWER_TEACH
+      ],
+      'referer': EReferer.BILIBILI
     }
   ],
   'Slaughterhorn_Tribe': [
@@ -112,8 +181,9 @@ export const ARTICLES_MAP: IArticleMap = {
       'date': '2024-04-12 03:00:00',
       'sourceUrl': 'https://www.bilibili.com/video/BV1hp42197n9/?spm_id_from=333.337.search-card.all.click&vd_source=cf6172bb9e27eef98252db60c4e279fe',
       'tagIds': [
-        'newerTeach'
-      ]
+        EArticleTags.CLANS_DESCRIPTION
+      ],
+      'referer': EReferer.BILIBILI
     },
     {
       'id': '',
@@ -127,8 +197,41 @@ export const ARTICLES_MAP: IArticleMap = {
       'date': '2023-02-08 09:52:16',
       'sourceUrl': 'https://www.bilibili.com/video/BV1G54y1N72T/?spm_id_from=333.337.search-card.all.click&vd_source=cf6172bb9e27eef98252db60c4e279fe',
       'tagIds': [
-        'clip'
-      ]
+        EArticleTags.LIVE_RECORDING
+      ],
+      'referer': EReferer.BILIBILI
+    },
+    {
+      'id': '',
+      'typeId': '',
+      'imageUrl': '',
+      'title': '【全面战争：战锤3】- SFO - 陶诺斯铜牛 无敌野爹人 横扫北美 光速和邦 #1',
+      'publisher': '温酱与夏凉丶',
+      'detail': '感谢舰长无所能の艾小的赞助点播\n\n野爹人为什么叫爹？ 因为他就是无敌的。\n\n交流群：142446829',
+      'description': '感谢舰长无所能の艾小的赞助点播\n\n野爹人为什么叫爹？ 因为他就是无敌的。\n\n交流群：142446829',
+      'views': 3343,
+      'date': '2023-11-10 20:05:30',
+      'tagIds': [
+        EArticleTags.LIVE_RECORDING
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1Je411Q7tU/?spm_id_from=333.337.search-card.all.click',
+      'referer': EReferer.BILIBILI
+    },
+    {
+      'id': '',
+      'typeId': '',
+      'imageUrl': '',
+      'title': '藏起来了，你把最恐怖的恶魔藏起来了 - 铜牛陶诺斯',
+      'publisher': '萝卜肆无忌惮',
+      'detail': '牛头怪有多高？\n男人站起来\n到不了他的腰\n牛魔王嘛\n形象我们不陌生\n不知道你是否近距离\n观察过成年公牛\n那浑身上下的肌肉\n只能用力量两个字来形容\n最后当这些肌肉站立起来\n抡上了斧子\n那真就是一个社会的鞭挞\n牛吃草 但牛头怪 吃人\n他们牙齿甚至\n可以直接撕裂一匹战马\n恐虐曾为战争\n提供了诸多恩赐\n而在所有的牛头人中\n他对于那个男人的青睐\n无疑是独一无二的\n大手一挥一个毁灭引擎诞生了\n他就是深林中的末日野兽\n陶诺斯铜牛',
+      'description': '牛头怪有多高？\n男人站起来\n到不了他的腰\n牛魔王嘛\n形象我们不陌生\n不知道你是否近距离\n观察过成年公牛\n那浑身上下的肌肉\n只能用力量两个字来形容\n最后当这些肌肉站立起来\n抡上了斧子\n那真就是一个社会的鞭挞\n牛吃草 但牛头怪 吃人\n他们牙齿甚至\n可以直接撕裂一匹战马\n恐虐曾为战争\n提供了诸多恩赐\n而在所有的牛头人中\n他对于那个男人的青睐\n无疑是独一无二的\n大手一挥一个毁灭引擎诞生了\n他就是深林中的末日野兽\n陶诺斯铜牛',
+      'views': 91000.0,
+      'date': '2023-10-25 23:30:08',
+      'tagIds': [
+        EArticleTags.STORY
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1ZB4y1R7oF/?spm_id_from=333.337.search-card.all.click',
+      'referer': EReferer.BILIBILI
     }
   ],
   'Couronne': [
@@ -144,9 +247,9 @@ export const ARTICLES_MAP: IArticleMap = {
       'date': '2024-03-16 18:30:00',
       'sourceUrl': 'https://www.bilibili.com/video/BV1rD421j7X6/?spm_id_from=333.337.search-card.all.click&vd_source=cf6172bb9e27eef98252db60c4e279fe',
       'tagIds': [
-        'story',
-        'clip'
-      ]
+        EArticleTags.CLANS_DESCRIPTION
+      ],
+      'referer': EReferer.BILIBILI
     },
     {
       'id': '',
@@ -160,11 +263,76 @@ export const ARTICLES_MAP: IArticleMap = {
       'date': '2022-12-07 18:59:46',
       'sourceUrl': 'https://www.bilibili.com/video/BV1V14y1K7nx/?spm_id_from=333.788&vd_source=cf6172bb9e27eef98252db60c4e279fe',
       'tagIds': [
-        'clip'
-      ]
+        EArticleTags.LIVE_RECORDING
+      ],
+      'referer': EReferer.BILIBILI
+    },
+    {
+      'id': '',
+      'typeId': '',
+      'imageUrl': '',
+      'title': '【战锤3】劳恩国王偷袭玛丽恩堡彰显骑士道（第一集）',
+      'publisher': '伊特沃德Remorse',
+      'detail': '游戏：战锤3\n喜欢的话可以评论三连 如果喜欢我会更完的',
+      'description': '游戏：战锤3\n喜欢的话可以评论三连 如果喜欢我会更完的',
+      'views': 1167,
+      'date': '2024-04-10 11:30:00',
+      'tagIds': [
+        EArticleTags.LIVE_RECORDING
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1Bt421E7ob/?spm_id_from=333.337.search-card.all.click',
+      'referer': EReferer.BILIBILI
+    },
+    {
+      'id': '',
+      'typeId': '',
+      'imageUrl': '',
+      'title': '【游戏】战锤3劳恩',
+      'publisher': '赤色的麦田',
+      'detail': '',
+      'description': '',
+      'views': 25000.0,
+      'date': '2024-04-05 09:24:48',
+      'tagIds': [
+        EArticleTags.NEWER_TEACH
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1hC411L7ti/?spm_id_from=333.337.search-card.all.click',
+      'referer': EReferer.BILIBILI
+    },
+    {
+      'id': '',
+      'typeId': '',
+      'imageUrl': '',
+      'title': '全战战锤3巴托-劳恩国王VS古坟军团-吸血鬼军队不要钱2024年03月03日直播录像',
+      'publisher': '高长恭丶兰陵王',
+      'detail': '',
+      'description': '',
+      'views': 255,
+      'date': '2024-03-15 22:31:08',
+      'tagIds': [
+        EArticleTags.CLIP
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1bC411h7FF/?spm_id_from=333.337.search-card.all.click',
+      'referer': EReferer.BILIBILI
     }
   ],
   'Bordeleaux_Errant': [
+    {
+      'id': '',
+      'typeId': '',
+      'imageUrl': '',
+      'title': '艾博里克·德·波尔德罗 WIKI',
+      'publisher': '全面战争中文维基',
+      'detail': '关于艾博里克·德·波尔德罗',
+      'description': '关于艾博里克',
+      'views': '0',
+      'date': '2024-04-27 18:00:00',
+      'sourceUrl': 'https://totalwar.huijiwiki.com/wiki/%B0%AC%B2%A9%C0%EF%BF%CB%A1%A4%B5%C2%A1%A4%B2%A8%B6%FB%B5%C2%C2%DE',
+      'tagIds': [
+        EArticleTags.CLANS_DESCRIPTION
+      ],
+      'referer': EReferer.HUI_JI_WIKI
+    },
     {
       'id': '',
       'typeId': '',
@@ -177,8 +345,9 @@ export const ARTICLES_MAP: IArticleMap = {
       'date': '2024-03-26 18:00:00',
       'sourceUrl': 'https://www.bilibili.com/video/BV1ww4m1d7TG/?spm_id_from=333.337.search-card.all.click&vd_source=cf6172bb9e27eef98252db60c4e279fe',
       'tagIds': [
-        'story'
-      ]
+        EArticleTags.CLANS_DESCRIPTION
+      ],
+      'referer': EReferer.BILIBILI
     },
     {
       'id': '',
@@ -192,11 +361,44 @@ export const ARTICLES_MAP: IArticleMap = {
       'date': '2023-07-31 11:40:47',
       'sourceUrl': 'https://www.bilibili.com/video/BV1Z841127Ea/?spm_id_from=333.337.search-card.all.click&vd_source=cf6172bb9e27eef98252db60c4e279fe',
       'tagIds': [
-        'clip'
-      ]
+        EArticleTags.LIVE_RECORDING
+      ],
+      'referer': EReferer.BILIBILI
+    },
+    {
+      'id': '',
+      'typeId': '',
+      'imageUrl': '',
+      'title': '跌宕起伏，愣是打出了斜击 艾博里克公爵（波尔德罗）vs 半夕蝶梦（绿皮）——小组赛B组',
+      'publisher': '准备退坑LeonZheng',
+      'detail': '双方都很有想法，然而胜负往往只在一瞬间',
+      'description': '双方都很有想法，然而胜负往往只在一瞬间',
+      'views': 1678,
+      'date': '2021-04-26 23:34:43',
+      'tagIds': [
+        EArticleTags.CLIP
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV135411w7Zy/?spm_id_from=333.337.search-card.all.click',
+      'referer': EReferer.BILIBILI
     }
   ],
   'Carcassonne': [
+    {
+      'id': '',
+      'typeId': '',
+      'imageUrl': '',
+      'title': '巴托人物介绍之六：湖神仙女',
+      'publisher': '爱问1515',
+      'detail': '湖神仙女（the Fay Enchantress），又译作仙子女巫，现名莫吉安娜。',
+      'description': '湖神仙女（the Fay Enchantress），又译作仙子女巫，现名莫吉安娜。',
+      'views': '3706',
+      'date': '2021年11月28日 12:07',
+      'sourceUrl': 'https://www.bilibili.com/read/cv14194535/',
+      'tagIds': [
+        EArticleTags.CLANS_DESCRIPTION
+      ],
+      'referer': EReferer.BILIBILI
+    },
     {
       'id': '',
       'typeId': '',
@@ -209,8 +411,25 @@ export const ARTICLES_MAP: IArticleMap = {
       'date': '2024-04-02 03:00:00',
       'sourceUrl': 'https://www.bilibili.com/video/BV14C411L7Ho/?spm_id_from=333.337.search-card.all.click',
       'tagIds': [
-        'liveRecording'
-      ]
+        EArticleTags.CLANS_DESCRIPTION
+      ],
+      'referer': EReferer.BILIBILI
+    },
+    {
+      'id': '',
+      'typeId': '',
+      'imageUrl': '',
+      'title': '湖神仙女算不算能打啊？',
+      'publisher': 'LESION',
+      'detail': '感觉就是个完全法师的面板呀，偏偏还能烧血，可是真的钻到人堆里烧血能扛得住吗？',
+      'description': '感觉就是个完全法师的面板呀，偏偏还能烧血，可是真的钻到人堆里烧血能扛得住吗？',
+      'views': '0',
+      'date': '2023-02-20 17:28',
+      'sourceUrl': 'https://tieba.baidu.com/p/8273786437',
+      'tagIds': [
+        EArticleTags.CLANS_DESCRIPTION
+      ],
+      'referer': EReferer.TIE_BA
     },
     {
       'id': '',
@@ -224,9 +443,25 @@ export const ARTICLES_MAP: IArticleMap = {
       'date': '2023-05-13 08:00:00',
       'sourceUrl': 'https://www.bilibili.com/video/BV1Lz4y187CS/?spm_id_from=333.337.search-card.all.click&vd_source=cf6172bb9e27eef98252db60c4e279fe',
       'tagIds': [
-        'clansDescription',
-        'clip'
-      ]
+        EArticleTags.LIVE_RECORDING
+      ],
+      'referer': EReferer.BILIBILI
+    },
+    {
+      'id': '',
+      'typeId': '',
+      'imageUrl': '',
+      'title': '我又没有王冠，为什么不能低头',
+      'publisher': '萝卜肆无忌惮',
+      'detail': '湖之女神\n我们巴托最重要的守护神\n她的功绩包括但不限于\n统一巴托尼亚\n建立骑士道文化\n创立圣杯组织\n培养巴托的魔法师\n也就是我们的各个圣女\n以及给予凡人赐福等等\n她的形象非常稳定\n最明显的特征就是\n头带花环 手捧圣杯\n以及披散下来的',
+      'description': '湖之女神\n我们巴托最重要的守护神\n她的功绩包括但不限于\n统一巴托尼亚\n建立骑士道文化\n创立圣杯组织\n培养巴托的魔法师\n也就是我们的各个圣女\n以及给予凡人赐福等等\n她的形象非常稳定\n最明显的特征就是\n头带花环 手捧圣杯\n以及披散下来的',
+      'views': 101000.0,
+      'date': '2023-03-14 21:17:35',
+      'tagIds': [
+        EArticleTags.STORY
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1m84y1A7fX/?spm_id_from=333.337.search-card.all.click',
+      'referer': EReferer.BILIBILI
     },
     {
       'id': '',
@@ -240,9 +475,25 @@ export const ARTICLES_MAP: IArticleMap = {
       'date': '2022-08-18 10:00:00',
       'sourceUrl': 'https://www.bilibili.com/video/BV1yB4y1L7Zg/?spm_id_from=333.337.search-card.all.click&vd_source=cf6172bb9e27eef98252db60c4e279fe',
       'tagIds': [
-        'newerTeach',
-        'clansDescription'
-      ]
+        EArticleTags.LIVE_RECORDING
+      ],
+      'referer': EReferer.BILIBILI
+    },
+    {
+      'id': '',
+      'typeId': '',
+      'imageUrl': '',
+      'title': '湖神仙女莫吉安娜到底是精灵还是巴托人类',
+      'publisher': '吊打专业户',
+      'detail': '我记得巴托的圣女都是从小展露魔法天赋的巴托女孩被教会带走培养的，但是又有人说湖神女巫是个精灵。',
+      'description': '我记得巴托的圣女都是从小展露魔法天赋的巴托女孩被教会带走培养的，但是又有人说湖神女巫是个精灵。',
+      'views': '0',
+      'date': '2023-07-27 12:56',
+      'sourceUrl': 'https://tieba.baidu.com/p/8524011583',
+      'tagIds': [
+        EArticleTags.STORY
+      ],
+      'referer': EReferer.TIE_BA
     }
   ],
   'Chevaliers_de_Lyonesse': [
@@ -258,8 +509,7 @@ export const ARTICLES_MAP: IArticleMap = {
       'date': '2024-04-11 03:00:00',
       'sourceUrl': 'https://www.bilibili.com/video/BV1tt421J7nA/?spm_id_from=333.337.search-card.all.click&vd_source=cf6172bb9e27eef98252db60c4e279fe',
       'tagIds': [
-        'newerTeach',
-        'clansDescription'
+        EArticleTags.CLANS_DESCRIPTION
       ]
     },
     {
@@ -274,7 +524,7 @@ export const ARTICLES_MAP: IArticleMap = {
       'date': '2023-03-28 19:45:25',
       'sourceUrl': 'https://www.bilibili.com/video/BV1F24y1E7iZ/?spm_id_from=333.337.search-card.all.click&vd_source=cf6172bb9e27eef98252db60c4e279fe',
       'tagIds': [
-        'story'
+        EArticleTags.LIVE_RECORDING
       ]
     },
     {
@@ -289,8 +539,7 @@ export const ARTICLES_MAP: IArticleMap = {
       'date': '2020-03-02 12:15:32',
       'sourceUrl': 'https://www.bilibili.com/video/BV1WE411E7PJ/?spm_id_from=333.337.search-card.all.click&vd_source=cf6172bb9e27eef98252db60c4e279fe',
       'tagIds': [
-        'newerTeach',
-        'clansDescription'
+        EArticleTags.LIVE_RECORDING
       ]
     }
   ],
@@ -307,8 +556,7 @@ export const ARTICLES_MAP: IArticleMap = {
       'date': '2024-03-16 12:17:28',
       'sourceUrl': 'https://www.bilibili.com/video/BV1b2421N77K/?spm_id_from=333.337.search-card.all.click&vd_source=cf6172bb9e27eef98252db60c4e279fe',
       'tagIds': [
-        'clip',
-        'story'
+        EArticleTags.CLANS_DESCRIPTION
       ]
     },
     {
@@ -323,7 +571,7 @@ export const ARTICLES_MAP: IArticleMap = {
       'date': '2023-04-08 19:24:40',
       'sourceUrl': 'https://www.bilibili.com/video/BV1Qj411F75B/?spm_id_from=333.337.search-card.all.click',
       'tagIds': [
-        'clip'
+        EArticleTags.LIVE_RECORDING
       ]
     },
     {
@@ -338,8 +586,7 @@ export const ARTICLES_MAP: IArticleMap = {
       'date': '2023-04-09 22:59:38',
       'sourceUrl': 'https://www.bilibili.com/video/BV18X4y1r7T2/?spm_id_from=333.337.search-card.all.click&vd_source=cf6172bb9e27eef98252db60c4e279fe',
       'tagIds': [
-        'clip',
-        'liveRecording'
+        EArticleTags.LIVE_RECORDING
       ]
     },
     {
@@ -354,7 +601,7 @@ export const ARTICLES_MAP: IArticleMap = {
       'date': '2023-07-20 21:06:39',
       'sourceUrl': 'https://www.bilibili.com/video/BV1rV411K7vZ/?spm_id_from=333.337.search-card.all.click',
       'tagIds': [
-        'liveRecording'
+        EArticleTags.LIVE_RECORDING
       ]
     },
     {
@@ -369,7 +616,7 @@ export const ARTICLES_MAP: IArticleMap = {
       'date': '2023-04-16 20:15:11',
       'sourceUrl': 'https://www.bilibili.com/video/BV19o4y1L7EE/?spm_id_from=333.337.search-card.all.click&vd_source=cf6172bb9e27eef98252db60c4e279fe',
       'tagIds': [
-        'newerTeach'
+        EArticleTags.LIVE_RECORDING
       ]
     }
   ],
@@ -386,8 +633,7 @@ export const ARTICLES_MAP: IArticleMap = {
       'date': '2024-03-26 11:30:00',
       'sourceUrl': 'https://www.bilibili.com/video/BV1gm411k7b3/?spm_id_from=333.337.search-card.all.click',
       'tagIds': [
-        'clansDescription',
-        'clip'
+        EArticleTags.CLANS_DESCRIPTION
       ]
     },
     {
@@ -402,8 +648,7 @@ export const ARTICLES_MAP: IArticleMap = {
       'date': '2023-04-09 17:31:33',
       'sourceUrl': 'https://www.bilibili.com/video/BV1e24y1w7Lx/?spm_id_from=333.337.search-card.all.click',
       'tagIds': [
-        'liveRecording',
-        'newerTeach'
+        EArticleTags.LIVE_RECORDING
       ]
     },
     {
@@ -418,7 +663,7 @@ export const ARTICLES_MAP: IArticleMap = {
       'date': '2023-04-15 13:18:55',
       'sourceUrl': 'https://www.bilibili.com/video/BV1Na4y1K7eR/?spm_id_from=333.337.search-card.all.click',
       'tagIds': [
-        'liveRecording'
+        EArticleTags.LIVE_RECORDING
       ]
     }
   ],
@@ -435,7 +680,7 @@ export const ARTICLES_MAP: IArticleMap = {
       'date': '2024-04-01 19:30:00',
       'sourceUrl': 'https://www.bilibili.com/video/BV1ej421d7cm/?spm_id_from=333.337.search-card.all.click',
       'tagIds': [
-        'newerTeach'
+        EArticleTags.CLANS_DESCRIPTION
       ]
     },
     {
@@ -450,7 +695,7 @@ export const ARTICLES_MAP: IArticleMap = {
       'date': '2023-04-14 12:00:00',
       'sourceUrl': 'https://www.bilibili.com/video/BV1X54y1F7AF/?spm_id_from=333.337.search-card.all.click&vd_source=cf6172bb9e27eef98252db60c4e279fe',
       'tagIds': [
-        'liveRecording'
+        EArticleTags.LIVE_RECORDING
       ]
     },
     {
@@ -465,7 +710,7 @@ export const ARTICLES_MAP: IArticleMap = {
       'date': '2023-04-23 22:27:54',
       'sourceUrl': 'https://www.bilibili.com/video/BV1Ec411J75r/?spm_id_from=333.337.search-card.all.click',
       'tagIds': [
-        'newerTeach'
+        EArticleTags.LIVE_RECORDING
       ]
     },
     {
@@ -480,8 +725,7 @@ export const ARTICLES_MAP: IArticleMap = {
       'date': '2023-04-18 18:42:53',
       'sourceUrl': 'https://www.bilibili.com/video/BV1oX4y1q7Zc/?spm_id_from=333.337.search-card.all.click',
       'tagIds': [
-        'clip',
-        'clansDescription'
+        EArticleTags.LIVE_RECORDING
       ]
     }
   ],
@@ -498,8 +742,7 @@ export const ARTICLES_MAP: IArticleMap = {
       'date': '2024-03-15 15:00:00',
       'sourceUrl': 'https://www.bilibili.com/video/BV1TF4m1w7U2/?spm_id_from=333.337.search-card.all.click',
       'tagIds': [
-        'clansDescription',
-        'newerTeach'
+        EArticleTags.CLANS_DESCRIPTION
       ]
     },
     {
@@ -514,7 +757,7 @@ export const ARTICLES_MAP: IArticleMap = {
       'date': '2022-01-22 15:31:20',
       'sourceUrl': 'https://www.bilibili.com/video/BV1BP4y177Ti/?spm_id_from=333.337.search-card.all.click',
       'tagIds': [
-        'newerTeach'
+        EArticleTags.LIVE_RECORDING
       ]
     }
   ],
@@ -531,7 +774,7 @@ export const ARTICLES_MAP: IArticleMap = {
       'date': '2024-03-15 10:00:00',
       'sourceUrl': 'https://www.bilibili.com/video/BV1Zi421R7xo/?spm_id_from=333.337.search-card.all.click',
       'tagIds': [
-        'clansDescription'
+        EArticleTags.CLANS_DESCRIPTION
       ]
     },
     {
@@ -546,7 +789,7 @@ export const ARTICLES_MAP: IArticleMap = {
       'date': '2023-03-27 16:00:00',
       'sourceUrl': 'https://www.bilibili.com/video/BV1Fm4y1r725/?spm_id_from=333.337.search-card.all.click',
       'tagIds': [
-        'clip'
+        EArticleTags.LIVE_RECORDING
       ]
     }
   ],
@@ -563,8 +806,7 @@ export const ARTICLES_MAP: IArticleMap = {
       'date': '2024-03-25 17:20:37',
       'sourceUrl': 'https://www.bilibili.com/video/BV1sr421h76y/?spm_id_from=333.337.search-card.all.click',
       'tagIds': [
-        'story',
-        'newerTeach'
+        EArticleTags.LIVE_RECORDING
       ]
     },
     {
@@ -579,12 +821,11 @@ export const ARTICLES_MAP: IArticleMap = {
       'date': '2024-01-14 20:22:53',
       'sourceUrl': 'https://www.bilibili.com/video/BV1vk4y1S79u/?spm_id_from=333.788&vd_source=cf6172bb9e27eef98252db60c4e279fe',
       'tagIds': [
-        'newerTeach',
-        'story'
+        EArticleTags.LIVE_RECORDING
       ]
     }
   ],
-  'Hag_Graef': [
+  'Har_Ganeth': [
     {
       'id': '',
       'typeId': '',
@@ -597,9 +838,268 @@ export const ARTICLES_MAP: IArticleMap = {
       'date': '2024-04-01 11:30:00',
       'sourceUrl': 'https://www.bilibili.com/video/BV1jr421b7fX/?spm_id_from=333.337.search-card.all.click',
       'tagIds': [
-        'clansDescription',
-        'newerTeach'
+        EArticleTags.CLANS_DESCRIPTION
       ]
     }
-  ]
+  ],
+  'The_Blessed_Dread': [
+    {
+      'id': '',
+      'typeId': '',
+      'imageUrl': '',
+      'title': '[全面战争·战锤3·半小时玩一个领主] 洛克西亚·堕落之心',
+      'publisher': '古老游戏玩家',
+      'detail': '[全面战争·战锤3·半小时玩一个领主] 洛克西亚·堕落之心',
+      'description': '[全面战争·战锤3·半小时玩一个领主] 洛克西亚·堕落之心',
+      'views': 560,
+      'date': '2024-04-10 03:00:00',
+      'tagIds': [
+        EArticleTags.CLANS_DESCRIPTION
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1GF4m1T7Rm/?spm_id_from=333.337.search-card.all.click'
+    },
+    {
+      'id': '',
+      'typeId': '',
+      'imageUrl': '',
+      'title': '【光头战锤小百科】中古战锤——洛克西亚·堕落之心',
+      'publisher': '忠孝两全曼光头',
+      'detail': '洛克西亚·堕落之心，又称海妖领主、章鱼脸、飞翔的河南人，来自卡隆德·卡尔的海盗世家。',
+      'description': '洛克西亚·堕落之心，又称海妖领主、章鱼脸、飞翔的河南人，来自卡隆德·卡尔的海盗世家。',
+      'views': 48000,
+      'date': '2021年07月13日 16:52',
+      'tagIds': [
+        EArticleTags.CLANS_DESCRIPTION
+      ],
+      'sourceUrl': ' https://www.bilibili.com/read/cv12136311/'
+    },
+    {
+      'id': '',
+      'typeId': '',
+      'imageUrl': '',
+      'title': '【lucpass】从零开始的战锤全面战争3 黑暗精灵 洛克西亚堕落之心 破个局',
+      'publisher': 'LucPass',
+      'detail': '黑色方舟海盗大战氏族鼠\r\n剧透 打赢了',
+      'description': '黑色方舟海盗大战氏族鼠\r\n剧透 打赢了',
+      'views': 3750,
+      'date': '2023-08-18 12:30:54',
+      'tagIds': [
+        EArticleTags.LIVE_RECORDING
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV16X4y1W7RX/?spm_id_from=333.337.search-card.all.click'
+    },
+    {
+      'id': '',
+      'typeId': '',
+      'imageUrl': '',
+      'title': '战锤3：全面战争-超凡帝国-传奇-黑暗精灵-洛克西亚·堕落之心-3.0版本-3.5小时51回合短期胜利',
+      'publisher': '紫川家统领',
+      'detail': '1',
+      'description': '1',
+      'views': 835,
+      'date': '2023-04-29 05:53:07',
+      'tagIds': [
+        EArticleTags.LIVE_RECORDING
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1kL411h7Td/?spm_id_from=333.337.search-card.all.click'
+    },
+    {
+      'id': '',
+      'typeId': '',
+      'imageUrl': '',
+      'title': '【全面战争：战锤3】领主对决 -洛克西亚·堕落之心 VS.屠灭亲王 红色乌尔戈',
+      'publisher': 'CBO菜邦',
+      'detail': '【全面战争：战锤3】领主对决 -洛克西亚·堕落之心 VS.屠灭亲王 红色乌尔戈\n\n对决结果 娱乐为主。\n快跟我一起说谢谢 wodwd大佬!\n快跟我一起说谢谢 wodwd大佬!！\n快跟我一起说谢谢 wodwd大佬!!！\n都看到这里了,还不去关注wodwd大佬！！！',
+      'description': '【全面战争：战锤3】领主对决 -洛克西亚·堕落之心 VS.屠灭亲王 红色乌尔戈\n\n对决结果 娱乐为主。\n快跟我一起说谢谢 wodwd大佬!\n快跟我一起说谢谢 wodwd大佬!！\n快跟我一起说谢谢 wodwd大佬!!！\n都看到这里了,还不去关注wodwd大佬！！！',
+      'views': 3221,
+      'date': '2022-07-19 11:19:44',
+      'tagIds': [
+        EArticleTags.CLIP
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1Sg411o7Jv/?spm_id_from=333.337.search-card.all.click'
+    },
+    {
+      'id': '',
+      'typeId': '',
+      'imageUrl': '',
+      'title': '战锤3全面战争神器任务 克拉肯巨妖头盔（洛克西亚·堕落之心神器任务）',
+      'publisher': '银色子弹柠檬茶',
+      'detail': '',
+      'description': '',
+      'views': 204,
+      'date': '2023-03-23 00:41:08',
+      'tagIds': [
+        EArticleTags.TASK
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1Ss4y1n7JN/?spm_id_from=333.337.search-card.all.click'
+    }
+  ],
+  'Hag_Graef': [
+    {
+      'id': '',
+      'typeId': '',
+      'imageUrl': '',
+      'title': '[全面战争·战锤3·半小时玩一个领主] 马鲁斯·黑刃',
+      'publisher': '古老游戏玩家',
+      'detail': '[全面战争·战锤3·半小时玩一个领主] 马鲁斯·黑刃',
+      'description': '[全面战争·战锤3·半小时玩一个领主] 马鲁斯·黑刃',
+      'views': 814,
+      'date': '2024-04-15 11:30:00',
+      'tagIds': [
+        EArticleTags.CLANS_DESCRIPTION
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV19m411B7K3/?spm_id_from=333.337.search-card.all.click'
+    },
+    {
+      'id': '',
+      'typeId': '',
+      'imageUrl': '',
+      'title': '【战锤3全战：超凡】传奇-黑暗精灵-马鲁斯黑刃-40T全天灾#1',
+      'publisher': '武侍建御雷',
+      'detail': '在目前所有的战锤传奇领主中，马鲁斯黑刃是前期战斗力最强的，通过扎坎变身，可以轻松无双大编队的敌人。',
+      'description': '在目前所有的战锤传奇领主中，马鲁斯黑刃是前期战斗力最强的，通过扎坎变身，可以轻松无双大编队的敌人。',
+      'views': 20000.0,
+      'date': '2023-01-13 01:00:36',
+      'tagIds': [
+        EArticleTags.LIVE_RECORDING
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1D84y187kw/?spm_id_from=333.337.search-card.all.click'
+    },
+    {
+      'id': '',
+      'typeId': '',
+      'imageUrl': '',
+      'title': '战锤马鲁斯黑刃破局攻略,8回合拔凯恩神剑',
+      'publisher': '坐牢的鑫子',
+      'detail': '',
+      'description': '',
+      'views': 203,
+      'date': '2024-03-31 00:02:16',
+      'tagIds': [
+        EArticleTags.NEWER_TEACH
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV14m421n782/?vd_source=cf6172bb9e27eef98252db60c4e279fe'
+    },
+    {
+      'id': '',
+      'typeId': '',
+      'imageUrl': '',
+      'title': '【全面战争：战锤三】黑暗精灵领主马鲁斯·黑刃攻击动作',
+      'publisher': 'M_奶茶233',
+      'detail': '',
+      'description': '',
+      'views': 753,
+      'date': '2024-01-20 17:18:57',
+      'tagIds': [
+        EArticleTags.CLIP
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1tW4y1F7EM/?spm_id_from=333.337.search-card.all.click'
+    },
+    {
+      'id': '',
+      'typeId': '',
+      'imageUrl': '',
+      'title': '【罗西】战锤3派系简易攻略：超凡帝国海格丶葛雷夫派系最早全天灾全自动攻略',
+      'publisher': 'GiuseppeRossi47',
+      'detail': '麻烦大家多点点关注~',
+      'description': '麻烦大家多点点关注~',
+      'views': 10000.0,
+      'date': '2022-09-11 00:56:40',
+      'tagIds': [
+        EArticleTags.CLANS_DESCRIPTION
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1KB4y1n7Ds/?spm_id_from=333.337.search-card.all.click'
+    }
+  ],
+  'The_Thousand_Maws': [
+    {
+      'id': '',
+      'typeId': '',
+      'imageUrl': '',
+      'title': '[全面战争·战锤3·半小时玩一个领主] 拉卡斯',
+      'publisher': '古老游戏玩家',
+      'detail': '[全面战争·战锤3·半小时玩一个领主] 拉卡斯',
+      'description': '[全面战争·战锤3·半小时玩一个领主] 拉卡斯',
+      'views': 351,
+      'date': '2024-04-18 19:30:00',
+      'tagIds': [
+        EArticleTags.CLANS_DESCRIPTION
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1Cp421X76F/?spm_id_from=333.337.search-card.all.click'
+    }
+  ],
+  'Karaz_a_Karak': [],
+  'Karak_Kadrin': [],
+  'Clan_Angrund': [],
+  'The_Ancestral_Throng': [],
+  'Ironbrows_Expedition': [],
+  'Reikland': [],
+  'The_Golden_Order': [],
+  'The_Huntsmarshals_Expedition': [],
+  'Cult_of_Sigmar': [],
+  'The_Northern_Provinces': [],
+  'The_Western_Provinces': [],
+  'The_Jade_Court': [],
+  'Grimgors_Ardboyz': [],
+  'Bonerattlaz': [],
+  'Crooked_Moon': [],
+  'The_Bloody_Handz': [],
+  'Broken_Axe': [],
+  'Eataine': [],
+  'Order_of_Loremasters': [],
+  'Avelorn': [],
+  'Nagarythe': [],
+  'Yvresse': [],
+  'Knights_of_Caledor': [],
+  'Exiles_of_Khorne': [],
+  'The_Ice_Court': [],
+  'The_Great_Orthodoxy': [],
+  'Ursun_Revivalists': [],
+  'Daughters_of_the_Forest': [],
+  'Hexoatl': [],
+  'Last_Defenders': [],
+  'Cult_of_Sotek': [],
+  'Tlaqua': [],
+  'Itza': [],
+  'Spirit_of_the_Jungle': [],
+  'Ghosts_of_Pahuax': [],
+  'World_Walkers': [],
+  'Wintertooth': [],
+  'Poxmakers_of_Nurgle': [],
+  'Goldtooth': [],
+  'Disciples_of_the_Maw': [],
+  'Clan_Mors': [],
+  'Clan_Pestilens': [],
+  'Clan_Rictus': [],
+  'Clan_Skryre': [],
+  'Clan_Eshin': [],
+  'Clan_Moulder': [],
+  'Seducers_of_Slaanesh': [],
+  'Khemri': [],
+  'Exiles_of_Nehek': [],
+  'Court_of_Lybaras': [],
+  'Followers_of_Nagash': [],
+  'Oracles_of_Tzeentch': [],
+  'The_Deceivers': [],
+  'The_Awakened': [],
+  'The_Dreadfleet': [],
+  'Pirates_of_Sartosa': [],
+  'The_Drowned': [],
+  'The_Drakenhof_Conclave': [],
+  'The_Barrow_Legion': [],
+  'Sylvania_Vlad': [],
+  'Sylvania_Isabella': [],
+  'Caravan_of_Blue_Roses': [],
+  'Warhost_of_the_Apocalypse': [],
+  'Heralds_of_the_Tempest': [],
+  'The_Decadent_Host': [],
+  'The_Ecstatic_Legions': [],
+  'The_Fecundites': [],
+  'Legion_of_the_Gorequeen': [],
+  'Puppets_of_Misrule': [],
+  'Shadow_Legion': [],
+  'Talsyn': [],
+  'Argwylon': [],
+  'Heralds_of_Ariel': [],
+  'Wargrove_of_Woe': []
 };

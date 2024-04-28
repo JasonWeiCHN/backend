@@ -9,7 +9,7 @@ export interface IImageFile {
   description?: string;
 }
 
-export interface IImageFileUpload extends IImageFile {
+export interface IClanUpload extends IImageFile {
   warhammerClassifierId: string;
 }
 

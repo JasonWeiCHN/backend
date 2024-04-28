@@ -14,7 +14,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let imageFile of imageFiles">
+    <tr *ngFor="let imageFile of clans">
       <td>{{ imageFile.id }}</td>
       <td>{{ imageFile.name }}</td>
       <!--      <td>{{ imageFile.nameCN }}</td>-->
@@ -29,7 +29,7 @@
   <h2>
     通过数组（数据源）自动上传
   </h2>
-  <button (click)="uploadAllFiles()">Upload All Files</button>
+  <button (click)="uploadAllClans()">Upload All Files</button>
   <h2>
     单条数据上传
   </h2>
@@ -51,26 +51,26 @@
     Copy code
     <form (submit)="onSubmit()">
       <label for="id">ID:</label>
-      <input type="text" id="id" name="name" [(ngModel)]="imageFileUpload.id" required>
+      <input type="text" id="id" name="name" [(ngModel)]="clanUpload.id" required>
 
       <label for="name">Name:</label>
-      <input type="text" id="name" name="name" [(ngModel)]="imageFileUpload.name" required>
+      <input type="text" id="name" name="name" [(ngModel)]="clanUpload.name" required>
 
       <label for="nameCN">Chinese Name:</label>
-      <input type="text" id="nameCN" name="nameCN" [(ngModel)]="imageFileUpload.nameCN" required>
+      <input type="text" id="nameCN" name="nameCN" [(ngModel)]="clanUpload.nameCN" required>
 
       <label for="path">Path:</label>
-      <input type="text" id="path" name="path" [(ngModel)]="imageFileUpload.path" required>
+      <input type="text" id="path" name="path" [(ngModel)]="clanUpload.path" required>
 
       <label for="heroName">Hero Name:</label>
-      <input type="text" id="heroName" name="heroName" [(ngModel)]="imageFileUpload.heroName" required>
+      <input type="text" id="heroName" name="heroName" [(ngModel)]="clanUpload.heroName" required>
 
       <label for="heroAvatarPath">Hero Avatar Path:</label>
-      <input type="text" id="heroAvatarPath" name="heroAvatarPath" [(ngModel)]="imageFileUpload.heroAvatarPath"
+      <input type="text" id="heroAvatarPath" name="heroAvatarPath" [(ngModel)]="clanUpload.heroAvatarPath"
              required>
 
       <label for="description">Description:</label>
-      <textarea id="description" name="description" [(ngModel)]="imageFileUpload.description" required></textarea>
+      <textarea id="description" name="description" [(ngModel)]="clanUpload.description" required></textarea>
 
       <div>
         <label for="warhammerClassifierId">Warhammer Classifier ID:</label>

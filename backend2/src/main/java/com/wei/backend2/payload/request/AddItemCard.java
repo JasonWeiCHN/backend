@@ -20,4 +20,5 @@ public class AddItemCard {
     private String publisher;
     private String date;
     private String detail;
+    private String tagIds;
 }

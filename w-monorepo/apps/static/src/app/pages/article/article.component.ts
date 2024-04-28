@@ -5,6 +5,7 @@ import { BackButtonComponent, EList, IItemCard, ITag, ListComponent, TagSelector
 import { ARTICLES_MAP } from '../../shared/constants/articles.constants';
 import { IArticleMap } from '../../shared/interfaces/articles.interface';
 import { IClan, IWarhammerClassifierMap, WARHAMMER_CLASSIFIERS_MAP } from '@w-monorepo/warhammer';
+import { EArticleTags } from '../../shared/enums/articles.enum';
 
 @Component({
   selector: 'st-article',
@@ -14,13 +15,15 @@ import { IClan, IWarhammerClassifierMap, WARHAMMER_CLASSIFIERS_MAP } from '@w-mo
   styleUrl: './article.component.scss'
 })
 export class ArticleComponent implements OnInit {
+  // TODO 优化: 没有数据的应该不显示
   protected tags: ITag[] = [
-    { id: 'all', name: '全部' },
-    { id: 'clansDescription', name: '派系说明' },
-    { id: 'liveRecording', name: '实况录像' },
-    { id: 'newerTeach', name: '萌新教学' },
-    { id: 'clip', name: '剪辑大片' },
-    { id: 'story', name: '讲故事' }
+    { id: EArticleTags.ALL, name: '全部' },
+    { id: EArticleTags.CLANS_DESCRIPTION, name: '派系说明' },
+    { id: EArticleTags.LIVE_RECORDING, name: '实况录像' },
+    { id: EArticleTags.TASK, name: '任务' },
+    { id: EArticleTags.NEWER_TEACH, name: '萌新教学' },
+    { id: EArticleTags.CLIP, name: '剪辑大片' },
+    { id: EArticleTags.STORY, name: '讲故事' }
   ];
   protected articlesMap: IArticleMap = ARTICLES_MAP;
   protected warhammerClassifiersMap: IWarhammerClassifierMap = WARHAMMER_CLASSIFIERS_MAP;

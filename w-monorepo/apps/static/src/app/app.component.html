@@ -1,7 +1,7 @@
 <!--<app-nx-welcome></app-nx-welcome>-->
 <div class="w-app">
-  <w-banner></w-banner>
-  <div style="max-width: 940px; margin: 24px auto 0">
+  <w-banner (click)="onBannerClick()"></w-banner>
+  <div class="page">
     <div
       *ngIf="showNavigation"
       style="margin-bottom: 24px"

@@ -146,7 +146,7 @@
         "path": "assets/images/icons/Dark Elves/Cult_of_Pleasure.png"
       },
       {
-        "id": "Hag_Graef",
+        "id": "Har_Ganeth",
         "name": "Har_Ganeth",
         "nameCN": "哈尔·冈西",
         "heroName": "妖婆赫莉本",
@@ -782,7 +782,7 @@
         "path": "assets/images/icons/Vampire Counts/The_Barrow_Legion.png"
       },
       {
-        "id": "Sylvania",
+        "id": "Sylvania_Vlad",
         "name": "Sylvania",
         "nameCN": "希尔瓦尼亚",
         "heroName": "弗拉德·冯·卡斯坦因",
@@ -791,7 +791,7 @@
         "path": "assets/images/icons/Vampire Counts/Sylvania.png"
       },
       {
-        "id": "Sylvania",
+        "id": "Sylvania_Isabella",
         "name": "Sylvania",
         "nameCN": "希尔瓦尼亚",
         "heroName": "伊莎贝拉·冯·卡斯坦因",

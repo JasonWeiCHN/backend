@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {
+  IClanUpload,
   IImageFile,
-  IImageFileUpload,
   IWarhammerClassifierBase,
   WARHAMMER_CLASSIFIERS,
   WarhammerHttpService
@@ -19,10 +19,10 @@ import { HttpClient } from '@angular/common/http';
   providers: [WarhammerHttpService]
 })
 export class ClansComponent implements OnInit {
-  public imageFiles: IImageFile[] = [];
+  public clans: IImageFile[] = [];
   public warhammerClassifiers: IWarhammerClassifierBase[] = [];
   public selectedClassifierId = '';
-  public imageFileUpload: IImageFileUpload = {
+  public clanUpload: IClanUpload = {
     warhammerClassifierId: '',
     id: '',
     name: '',
@@ -36,14 +36,14 @@ export class ClansComponent implements OnInit {
 
   public ngOnInit(): void {
     this.loadWarhammerClassifiers();
-    this.getAllImageFiles();
+    this.getAllClans();
   }
 
-  public uploadAllFiles(): void {
+  public uploadAllClans(): void {
     WARHAMMER_CLASSIFIERS.forEach(classifier => {
       const warhammerClassifierId = classifier.id;
       classifier.files.forEach(file => {
-        const imageFileUpload: IImageFileUpload = {
+        const iClanUpload: IClanUpload = {
           warhammerClassifierId,
           id: file.id,
           name: file.name,
@@ -51,12 +51,12 @@ export class ClansComponent implements OnInit {
           heroName: file.heroName,
           heroAvatarPath: file.heroAvatarPath
         };
-        this.warhammerHttpService.saveImageFile(imageFileUpload).subscribe(
+        this.warhammerHttpService.saveClan(iClanUpload).subscribe(
           () => {
-            console.log(`File ${file.name} uploaded successfully.`);
+            console.log(`Clan ${file.name} uploaded successfully.`);
           },
           (error) => {
-            console.error(`Error uploading file ${file.name}:`, error);
+            console.error(`Error uploading clan ${file.name}:`, error);
           }
         );
       });
@@ -64,24 +64,24 @@ export class ClansComponent implements OnInit {
   }
 
   public onSubmit(): void {
-    this.imageFileUpload.warhammerClassifierId = this.selectedClassifierId;
-    this.warhammerHttpService.saveImageFile(this.imageFileUpload).subscribe(() => {
+    this.clanUpload.warhammerClassifierId = this.selectedClassifierId;
+    this.warhammerHttpService.saveClan(this.clanUpload).subscribe(() => {
       // Handle success
-      console.log('Image file saved successfully!');
+      console.log('Clan saved successfully!');
     }, error => {
       // Handle error
-      console.error('Failed to save image file:', error);
+      console.error('Failed to save clan:', error);
     });
   }
 
-  private getAllImageFiles(): void {
-    this.http.get<any[]>('http://localhost:8080/imageFile/findAll') //move to warhammerHttpService
+  private getAllClans(): void {
+    this.http.get<any[]>('http://localhost:8080/clan/findAll') //move to warhammerHttpService
       .subscribe(
-        (imageFiles: IImageFile[]) => {
-          this.imageFiles = imageFiles;
+        (clans: IImageFile[]) => {
+          this.clans = clans;
         },
         error => {
-          console.error('Error fetching image files:', error);
+          console.error('Error fetching clans:', error);
         }
       );
   }

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrape and Save</title>
+</head>
+<body>
+<h1>Scrape and Save</h1>
+<form id="saveForm">
+  <label for="url">Enter URL:</label><br>
+  <input style="width: 400px" type="text" id="url" name="url"><br><br>
+
+  <label for="tags">Select Tags:</label><br>
+  <input type="checkbox" id="all" name="tags" value="all">
+  <label for="all">All</label><br>
+  <input type="checkbox" id="clansDescription" name="tags" value="clansDescription">
+  <label for="clansDescription">Clans Description</label><br>
+  <input type="checkbox" id="liveRecording" name="tags" value="liveRecording">
+  <label for="liveRecording">Live Recording</label><br>
+  <input type="checkbox" id="newerTeach" name="tags" value="newerTeach">
+  <label for="newerTeach">Newer Teach</label><br>
+  <input type="checkbox" id="clip" name="tags" value="clip">
+  <label for="clip">Clip</label><br>
+  <input type="checkbox" id="story" name="tags" value="story">
+  <label for="story">Story</label><br><br>
+
+  <input type="button" value="Save" onclick="saveData()">
+</form>
+
+<script>
+  function saveData() {
+    var url = document.getElementById('url').value;
+    var tags = Array.from(document.querySelectorAll('input[name="tags"]:checked')).map(tag => tag.value);
+
+    var data = {
+      url: url,
+      tags: tags
+    };
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '/save_data', true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          alert('Data saved successfully to backend!');
+        } else {
+          alert('Failed to save data to backend. Status code: ' + xhr.status);
+        }
+      }
+    };
+    xhr.send(JSON.stringify(data));
+  }
+</script>
+</body>
+</html>

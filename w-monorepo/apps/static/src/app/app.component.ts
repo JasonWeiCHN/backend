@@ -41,6 +41,10 @@ export class AppComponent {
     label: '文章资料'
   }];
 
+  protected onBannerClick() {
+    this._router.navigate(['']);
+  }
+
   protected onNavigationItemClick(item: INavigationItem) {
     this.navigationItemActive = item.id;
     this._router.navigate([item.path]);

@@ -3,13 +3,12 @@
     <div class="subtitle">
       相关视频
     </div>
-    <div style="display: flex; flex-wrap: wrap">
+    <div class="cards">
       <ng-container *ngFor="let item of cards; let index = index;">
         <w-item-card
           *ngIf="item.typeId === activeTypeId"
-          style="margin-right: 12px; margin-bottom: 12px"
           (click)="onCardClick(item)"
-          [data] = "item"
+          [data]="item"
         ></w-item-card>
       </ng-container>
     </div>

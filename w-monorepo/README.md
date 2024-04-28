@@ -96,4 +96,25 @@ P@ssw0rd
 
 ssh ubuntu@111.230.29.99
 
+检测你当前nginx配置是否正确
+sudo nginx -t
+
+编辑nginx配置
+sudo nano /etc/nginx/sites-available/default
+
+重启ngnix
+sudo systemctl reload nginx
+
+控制台测试
+curl http://localhost
+
+检查 Nginx 日志：
+查看 Nginx 的错误日志文件，通常位于 /var/log/nginx/error.log。
+这里会记录详细的错误信息，帮助您找到问题所在。
+
+ubuntu 移动文件
+sudo mv /home/ubuntu/wgy/browser /var/www
+
+移动完成后，您可以使用 ls 命令检查目标目录中是否已经存在了 browser 目录及其内容：
+ls /var/www
 ```

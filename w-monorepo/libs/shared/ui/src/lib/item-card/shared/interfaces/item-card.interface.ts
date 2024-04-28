@@ -10,4 +10,5 @@ export interface IItemCard {
   description: string;
   date: string;
   detail: string;
+  referer?: string;
 }

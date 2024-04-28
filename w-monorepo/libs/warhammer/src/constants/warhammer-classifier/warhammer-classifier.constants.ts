@@ -1095,6 +1095,17 @@ export const WARHAMMER_CLASSIFIERS_MAP: IWarhammerClassifierMap = {
       'path': 'assets/images/icons/Dark Elves/Cult_of_Pleasure.png'
     }
   },
+  'Har_Ganeth': {
+    'parentId': 'Dark_Elves',
+    'file': {
+      'id': 'Har_Ganeth',
+      'name': 'Har_Ganeth',
+      'nameCN': '哈尔·冈西',
+      'heroName': '妖婆赫莉本',
+      'heroAvatarPath': 'assets/images/lords/dark-elves-crone-hellebron.png',
+      'path': 'assets/images/icons/Dark Elves/Har_Ganeth.png'
+    }
+  },
   'Hag_Graef': {
     'parentId': 'Dark_Elves',
     'file': {

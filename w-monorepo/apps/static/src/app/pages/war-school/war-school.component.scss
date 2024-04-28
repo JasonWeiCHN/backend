@@ -1,0 +1,22 @@
+.war-school {
+  .subtitle {
+    margin-bottom: 12px;
+  }
+
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 920px) {
+  .subtitle {
+    text-align: center;
+  }
+
+  .cards {
+    justify-content: space-evenly;
+    gap: 4px;
+  }
+}

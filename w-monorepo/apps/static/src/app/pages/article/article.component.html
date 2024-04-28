@@ -14,9 +14,14 @@
   </div>
   <!-- 这个功能先开发 不上线 -->
   <w-tag-selector [tags]="tags" (tagSelected)="onTagSeclet($event)"></w-tag-selector>
+
   <w-list
+    *ngIf="data.length"
     [data]="data"
     [mode]="eList.ARTICLE"
     (listItemClick)="onListItemClick($event)"
   ></w-list>
+  <div *ngIf="!data.length">
+    暂无内容
+  </div>
 </div>

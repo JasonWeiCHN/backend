@@ -5,6 +5,8 @@
 
   &__race {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     margin-right: 12px;
     margin-bottom: 12px;
   }

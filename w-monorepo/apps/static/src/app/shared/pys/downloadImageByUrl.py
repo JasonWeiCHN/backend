@@ -17,8 +17,8 @@ def download_and_rename_image(image_url, new_name):
         print("下载图片时出现错误.")
 
 # 你的图片链接和准备取的名字
-image_url = "https://i0.hdslb.com/bfs/archive/a45ff7306284ec747ad23eb3df2e9068e42235c6.png"
-new_name = "One_Eye2"
+image_url = "https://i0.hdslb.com/bfs/archive/2a4864ddb052df65bfc320302cb5a8ce09d044fc.jpg"
+new_name = "扛射教学"
 
 # 调用函数下载图片并重命名
 download_and_rename_image(image_url, new_name)

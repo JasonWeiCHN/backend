@@ -22,6 +22,7 @@
   &__img-container {
     position: absolute;
     z-index: 1;
+
     img {
       width: 300px;
       height: 165px;
@@ -35,9 +36,20 @@
       color: rgba(255, 255, 255, .5);
 
       .title {
+        width: 290px;
         color: #ffffff;
         font-size: 15px;
-        margin-bottom: 4px;
+        white-space: nowrap; /* 防止文本换行 */
+        overflow: hidden; /* 隐藏溢出部分 */
+        text-overflow: ellipsis; /* 使用省略号显示溢出部分 */
+      }
+
+      .description {
+        display: -webkit-box;
+        width: 290px;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        -webkit-line-clamp: 2; /* 设置显示的行数 */
       }
     }
   }
@@ -75,7 +87,7 @@
     }
 
     &__des {
-     display: none;
+      display: none;
     }
   }
 

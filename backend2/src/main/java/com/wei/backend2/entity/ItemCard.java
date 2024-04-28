@@ -25,6 +25,7 @@ public class ItemCard {
     private String description;
     private String publisher;
     private String date;
+    private String tagIds;
 
     @Column(columnDefinition = "TEXT")
     private String detail;
