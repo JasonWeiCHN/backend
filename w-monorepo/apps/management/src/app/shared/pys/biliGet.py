@@ -7,7 +7,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    # 获取Clan数据
+    clans = fetch_clans()
+    return render_template('index.html', clans=clans)
 
 def scrape_page(url):
     headers = {
@@ -25,7 +27,8 @@ def scrape_page(url):
     soup = BeautifulSoup(response.text, 'html.parser')
 
     title = soup.find('h1', class_='video-title')['data-title']
-    publisher = soup.select_one('.up-detail .up-detail-top .up-name').text.strip()
+    publisher_tag = soup.select_one('.up-detail .up-detail-top .up-name')
+    publisher = publisher_tag.text.strip() if publisher_tag else ''
 
     detail_tag = soup.select_one('.video-desc-container .basic-desc-info .desc-info-text')
     detail = detail_tag.text.strip() if detail_tag else ''
@@ -62,6 +65,7 @@ def save_data():
     data = request.json
     url = data.get('url')
     tags = data.get('tags', [])
+    clan_id = data.get('clanId', '')
 
     # 将标签数据转换为用分号连接的字符串，或者直接作为字符串
     if len(tags) > 1:
@@ -73,14 +77,27 @@ def save_data():
 
     data_object = scrape_page(url)
     data_object['tagIds'] = tag_ids  # 将标签作为字符串添加到数据对象中
+    data_object['typeId'] = clan_id  # 添加clan的ID
 
     backend_url = 'http://localhost:8080/itemCard/saveItemCard'  # 替换成你的后台端点URL
+
+    print(data_object)
 
     response = requests.post(backend_url, json=data_object)
     if response.status_code == 200:
         return jsonify({'message': 'Data saved successfully to backend!'})
     else:
         return jsonify({'error': f'Failed to save data to backend. Status code: {response.status_code}'})
+
+def fetch_clans():
+    # 请求后端获取Clan数据
+    backend_url = 'http://localhost:8080/clan/findAll'  # 替换成你的后台端点URL
+    response = requests.get(backend_url)
+    if response.status_code == 200:
+        clans = response.json()
+        return clans
+    else:
+        return []
 
 if __name__ == '__main__':
     app.run(debug=True)

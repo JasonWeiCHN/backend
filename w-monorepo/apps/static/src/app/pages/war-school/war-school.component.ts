@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IItemCard, ItemCardComponent } from '@w-monorepo/ui';
-import { EArticleTags } from '../../shared/enums/articles.enum';
+import { EArticleTags } from '@w-monorepo/warhammer';
 
 @Component({
   selector: 'st-war-school',

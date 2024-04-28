@@ -2,10 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { BackButtonComponent, EList, IItemCard, ITag, ListComponent, TagSelectorComponent } from '@w-monorepo/ui';
-import { ARTICLES_MAP } from '../../shared/constants/articles.constants';
-import { IArticleMap } from '../../shared/interfaces/articles.interface';
-import { IClan, IWarhammerClassifierMap, WARHAMMER_CLASSIFIERS_MAP } from '@w-monorepo/warhammer';
-import { EArticleTags } from '../../shared/enums/articles.enum';
+import {
+  ARTICLES_MAP,
+  EArticleTags,
+  IArticleMap,
+  IClan,
+  IWarhammerClassifierMap,
+  WARHAMMER_CLASSIFIERS_MAP
+} from '@w-monorepo/warhammer';
 
 @Component({
   selector: 'st-article',

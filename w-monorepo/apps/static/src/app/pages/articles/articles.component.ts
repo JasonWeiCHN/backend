@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EList, IItemCard, ListComponent } from '@w-monorepo/ui';
-import { EArticleTags, EReferer } from '../../shared/enums/articles.enum';
+import { EArticleTags, EReferer } from '@w-monorepo/warhammer';
 
 @Component({
   selector: 'st-articles',

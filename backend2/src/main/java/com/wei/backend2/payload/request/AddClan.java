@@ -10,11 +10,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AddClan {
-    private String parentId;
-    private String fileId;
+    private String id;
     private String name;
     private String nameCN;
     private String path;
+    private String heroName;
+    private String heroNameEN;
+    private String heroAvatarPath;
     private String description;
-    private String[] heroNames;
+    private String warhammerClassifierId;
 }

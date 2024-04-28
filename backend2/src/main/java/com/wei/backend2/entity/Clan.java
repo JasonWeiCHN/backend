@@ -10,9 +10,16 @@ import javax.persistence.*;
 @Table(name = "clan")
 public class Clan {
     @Id
-    private String parentId;
+    private String id;
+    private String name;
+    private String nameCN;
+    private String path;
+    private String heroName;
+    private String heroNameEN;
+    private String heroAvatarPath;
+    private String description;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "file_id", referencedColumnName = "id")
-    private ImageFile file;
+    @ManyToOne
+    @JoinColumn(name = "warhammer_classifier_id") // 这里指定外键列名
+    private WarhammerClassifier warhammerClassifier; // 添加关联属性
 }

@@ -21,4 +21,5 @@ public class AddItemCard {
     private String date;
     private String detail;
     private String tagIds;
+    private String referer;
 }

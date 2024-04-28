@@ -1,0 +1,1823 @@
+import { IArticleMap } from '../interfaces/articles.interface';
+
+export const ARTICLES_MAP: IArticleMap = {
+  'Warherd_of_the_One_Eye': [
+    {
+      'id': '1',
+      'typeId': 'Warherd_of_the_One_Eye',
+      'imageUrl': 'assets/images/warhammer/One_Eye1.jpg',
+      'title': '【lucpass】从零开始的战锤全面战争3 野兽人 兽王卡扎克独眼 第二期 艾索洛伦大舞台',
+      'publisher': 'LucPass',
+      'detail': '本期看点大概有\r\n伏击 被伏击\r\n牛头怪 大角兽 混沌卵 独眼巨人\r\n中间丢了一个小时录像 有兴趣可以去直播回放找找',
+      'description': '本期看点大概有\r\n伏击 被伏击\r\n牛头怪 大角兽 混沌卵 独眼巨人\r\n中间丢了一个小时录像 有兴趣可以去直播回放找找',
+      'views': 2602,
+      'date': '2023-12-20 08:00:39',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1Ge411C7tr/?p=1&vd_source=cf6172bb9e27eef98252db60c4e279fe',
+      'referer': 'bilibili'
+    },
+    {
+      'id': '2',
+      'typeId': 'Warherd_of_the_One_Eye',
+      'imageUrl': '',
+      'title': '战锤3全面战争电影视频：独眼卡扎克截杀支援基斯里夫的奥斯特援军',
+      'publisher': '萨瓦莉克',
+      'detail': 'https://www.youtube.com/watch?v=bT3uH7Zw7zQ',
+      'description': 'https://www.youtube.com/watch?v=bT3uH7Zw7zQ',
+      'views': 1649,
+      'date': '2023-04-11 10:35:43',
+      'tagIds': [
+        'clip'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1SL41127rR/?spm_id_from=333.337.search-card.all.click',
+      'referer': 'bilibili'
+    },
+    {
+      'id': '4',
+      'typeId': 'Warherd_of_the_One_Eye',
+      'imageUrl': '',
+      'title': '战锤3：全面战争-超凡帝国-传奇-野兽人-卡扎克·独眼-3.1版本-4小时42回合短期胜利',
+      'publisher': '紫川家统领',
+      'detail': '1',
+      'description': '1',
+      'views': 1400,
+      'date': '2023-05-28 19:17:34',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1WL411q7rW/?spm_id_from=333.337.search-card.all.click',
+      'referer': 'bilibili'
+    },
+    {
+      'id': '6',
+      'typeId': 'Warherd_of_the_One_Eye',
+      'imageUrl': '',
+      'title': '[全面战争·战锤3·半小时玩一个领主] 卡扎克·独眼',
+      'publisher': '古老游戏玩家',
+      'detail': '[全面战争·战锤3·半小时玩一个领主] 卡扎克·独眼',
+      'description': '[全面战争·战锤3·半小时玩一个领主] 卡扎克·独眼',
+      'views': 380,
+      'date': '2024-03-17 09:30:00',
+      'tagIds': [
+        'clansDescription'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1ef421f72y/?spm_id_from=333.337.search-card.all.click',
+      'referer': 'bilibili'
+    }
+  ],
+  'Harbinger_of_Disaster': [
+    {
+      'id': '3',
+      'typeId': 'Harbinger_of_Disaster',
+      'imageUrl': '',
+      'title': '[全面战争·战锤3·半小时玩一个领主] 马拉戈·黑暗征兆',
+      'publisher': '古老游戏玩家',
+      'detail': '[全面战争·战锤3·半小时玩一个领主] 马拉戈·黑暗征兆',
+      'description': '[全面战争·战锤3·半小时玩一个领主] 马拉戈·黑暗征兆',
+      'views': 285,
+      'date': '2024-03-27 11:30:00',
+      'tagIds': [
+        'clansDescription'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV12A4m1P7rq/?spm_id_from=333.337.search-card.all.click&vd_source=cf6172bb9e27eef98252db60c4e279fe',
+      'referer': 'bilibili'
+    },
+    {
+      'id': '5',
+      'typeId': 'Harbinger_of_Disaster',
+      'imageUrl': '',
+      'title': '战锤3：全面战争-超凡帝国-传奇-野兽人-马拉戈·黑暗征兆-3.2小时54回合短期胜利',
+      'publisher': '紫川家统领',
+      'detail': '1',
+      'description': '1',
+      'views': 643,
+      'date': '2023-07-01 22:56:29',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1pP411e7aQ/?spm_id_from=333.337.search-card.all.click&vd_source=cf6172bb9e27eef98252db60c4e279fe',
+      'referer': 'bilibili'
+    },
+    {
+      'id': '12',
+      'typeId': 'Harbinger_of_Disaster',
+      'imageUrl': '',
+      'title': '战锤3全面战争神器任务 渎神标志（马拉戈·黑暗征兆神器任务）',
+      'publisher': '银色子弹柠檬茶',
+      'detail': '',
+      'description': '',
+      'views': 182,
+      'date': '2023-04-02 13:36:23',
+      'tagIds': [
+        'task'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1os4y1U7Bh/?spm_id_from=333.337.search-card.all.click',
+      'referer': 'bilibili'
+    }
+  ],
+  'Slaughterhorn_Tribe': [
+    {
+      'id': '7',
+      'typeId': 'Slaughterhorn_Tribe',
+      'imageUrl': '',
+      'title': '【lucpass】从零开始的战锤全面战争3 野兽人 铜牛陶诺斯 第二期 游击天灾',
+      'publisher': 'LucPass',
+      'detail': '本期看点大概有\r\n铜牛单刷矮人天灾\r\n魔古尔焚烧艾索洛伦',
+      'description': '本期看点大概有\r\n铜牛单刷矮人天灾\r\n魔古尔焚烧艾索洛伦',
+      'views': 2769,
+      'date': '2023-02-08 09:52:16',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1G54y1N72T/?spm_id_from=333.337.search-card.all.click&vd_source=cf6172bb9e27eef98252db60c4e279fe',
+      'referer': 'bilibili'
+    },
+    {
+      'id': '8',
+      'typeId': 'Slaughterhorn_Tribe',
+      'imageUrl': '',
+      'title': '[全面战争·战锤3·半小时玩一个领主] 陶诺斯·铜牛',
+      'publisher': '古老游戏玩家',
+      'detail': '[全面战争·战锤3·半小时玩一个领主] 陶诺斯·铜牛',
+      'description': '[全面战争·战锤3·半小时玩一个领主] 陶诺斯·铜牛',
+      'views': 469,
+      'date': '2024-04-12 03:00:00',
+      'tagIds': [
+        'clansDescription'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1hp42197n9/?spm_id_from=333.337.search-card.all.click&vd_source=cf6172bb9e27eef98252db60c4e279fe',
+      'referer': 'bilibili'
+    },
+    {
+      'id': '15',
+      'typeId': 'Slaughterhorn_Tribe',
+      'imageUrl': '',
+      'title': '【全面战争：战锤3】- SFO - 陶诺斯铜牛 无敌野爹人 横扫北美 光速和邦 #1',
+      'publisher': '温酱与夏凉丶',
+      'detail': '感谢舰长无所能の艾小的赞助点播\n\n野爹人为什么叫爹？ 因为他就是无敌的。\n\n交流群：142446829',
+      'description': '感谢舰长无所能の艾小的赞助点播\n\n野爹人为什么叫爹？ 因为他就是无敌的。\n\n交流群：142446829',
+      'views': 3343,
+      'date': '2023-11-10 20:05:30',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1Je411Q7tU/?spm_id_from=333.337.search-card.all.click',
+      'referer': 'bilibili'
+    },
+    {
+      'id': '17',
+      'typeId': 'Slaughterhorn_Tribe',
+      'imageUrl': '',
+      'title': '藏起来了，你把最恐怖的恶魔藏起来了 - 铜牛陶诺斯',
+      'publisher': '萝卜肆无忌惮',
+      'detail': '牛头怪有多高？\n男人站起来\n到不了他的腰\n牛魔王嘛\n形象我们不陌生\n不知道你是否近距离\n观察过成年公牛\n那浑身上下的肌肉\n只能用力量两个字来形容\n最后当这些肌肉站立起来\n抡上了斧子\n那真就是一个社会的鞭挞\n牛吃草 但牛头怪 吃人\n他们牙齿甚至\n可以直接撕裂一匹战马\n恐虐曾为战争\n提供了诸多恩赐\n而在所有的牛头人中\n他对于那个男人的青睐\n无疑是独一无二的\n大手一挥一个毁灭引擎诞生了\n他就是深林中的末日野兽\n陶诺斯铜牛',
+      'description': '牛头怪有多高？\n男人站起来\n到不了他的腰\n牛魔王嘛\n形象我们不陌生\n不知道你是否近距离\n观察过成年公牛\n那浑身上下的肌肉\n只能用力量两个字来形容\n最后当这些肌肉站立起来\n抡上了斧子\n那真就是一个社会的鞭挞\n牛吃草 但牛头怪 吃人\n他们牙齿甚至\n可以直接撕裂一匹战马\n恐虐曾为战争\n提供了诸多恩赐\n而在所有的牛头人中\n他对于那个男人的青睐\n无疑是独一无二的\n大手一挥一个毁灭引擎诞生了\n他就是深林中的末日野兽\n陶诺斯铜牛',
+      'views': 91000,
+      'date': '2023-10-25 23:30:08',
+      'tagIds': [
+        'story'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1ZB4y1R7oF/?spm_id_from=333.337.search-card.all.click',
+      'referer': 'bilibili'
+    }
+  ],
+  'Warherd_of_the_Shadowgave': [
+    {
+      'id': '9',
+      'typeId': 'Warherd_of_the_Shadowgave',
+      'imageUrl': '',
+      'title': '【战锤全战】魔古尔也能无双？重铸野兽人荣光！',
+      'publisher': 'wodwd-不是wdnmd-',
+      'detail': '视频制作不易，希望大家能多多点赞关注，投币收藏~\n最近考试，下次更新可能就是1.15了~',
+      'description': '视频制作不易，希望大家能多多点赞关注，投币收藏~\n最近考试，下次更新可能就是1.15了~',
+      'views': 3,
+      'date': '2023-12-31 11:30:00',
+      'tagIds': [
+        'newerTeach'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1364y1n7EY/?spm_id_from=333.337.search-card.all.click&vd_source=cf6172bb9e27eef98252db60c4e279fe',
+      'referer': 'bilibili'
+    },
+    {
+      'id': '10',
+      'typeId': 'Warherd_of_the_Shadowgave',
+      'imageUrl': '',
+      'title': '[全面战争·战锤3·半小时玩一个领主] 魔古尔·影孽',
+      'publisher': '古老游戏玩家',
+      'detail': '[全面战争·战锤3·半小时玩一个领主] 魔古尔·影孽',
+      'description': '[全面战争·战锤3·半小时玩一个领主] 魔古尔·影孽',
+      'views': 296,
+      'date': '2024-04-02 11:30:00',
+      'tagIds': [
+        'clansDescription'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1cC411j7vF/?spm_id_from=333.337.search-card.all.click',
+      'referer': 'bilibili'
+    },
+    {
+      'id': '11',
+      'typeId': 'Warherd_of_the_Shadowgave',
+      'imageUrl': '',
+      'title': '【战锤3】- 超凡帝国 - 野兽人 魔古尔·影孽 散步流打法 灭世攻略 #1`',
+      'publisher': '温酱与夏凉丶',
+      'detail': '欢迎来到野爹人的世界!\n你看不到我 但是你时刻都在我的眼中 .\n\n交流群:142446829',
+      'description': '欢迎来到野爹人的世界!\n你看不到我 但是你时刻都在我的眼中 .\n\n交流群:142446829',
+      'views': 1,
+      'date': '2022-12-11 22:11:09',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1B8411V7zt/?spm_id_from=333.337.search-card.all.click&vd_source=cf6172bb9e27eef98252db60c4e279fe',
+      'referer': 'bilibili'
+    }
+  ],
+  'Couronne': [
+    {
+      'id': '13',
+      'typeId': 'Couronne',
+      'imageUrl': '',
+      'title': '【全面战争战锤3劳恩国王档】大人！时代没变！',
+      'publisher': '奈何桃儿',
+      'detail': '',
+      'description': '',
+      'views': 7274,
+      'date': '2022-12-07 18:59:46',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1V14y1K7nx/?spm_id_from=333.788&vd_source=cf6172bb9e27eef98252db60c4e279fe',
+      'referer': 'bilibili'
+    },
+    {
+      'id': '14',
+      'typeId': 'Couronne',
+      'imageUrl': '',
+      'title': '[全面战争·战锤3·半小时玩一个领主] 劳恩·列奥康沃尔',
+      'publisher': '古老游戏玩家',
+      'detail': '[全面战争·战锤3·半小时玩一个领主] 劳恩·列奥康沃尔',
+      'description': '[全面战争·战锤3·半小时玩一个领主] 劳恩·列奥康沃尔',
+      'views': 382,
+      'date': '2024-03-16 18:30:00',
+      'tagIds': [
+        'clansDescription'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1rD421j7X6/?spm_id_from=333.337.search-card.all.click&vd_source=cf6172bb9e27eef98252db60c4e279fe',
+      'referer': 'bilibili'
+    },
+    {
+      'id': '16',
+      'typeId': 'Couronne',
+      'imageUrl': '',
+      'title': '【战锤3】劳恩国王偷袭玛丽恩堡彰显骑士道（第一集）',
+      'publisher': '伊特沃德Remorse',
+      'detail': '游戏：战锤3\n喜欢的话可以评论三连 如果喜欢我会更完的',
+      'description': '游戏：战锤3\n喜欢的话可以评论三连 如果喜欢我会更完的',
+      'views': 1167,
+      'date': '2024-04-10 11:30:00',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1Bt421E7ob/?spm_id_from=333.337.search-card.all.click',
+      'referer': 'bilibili'
+    },
+    {
+      'id': '18',
+      'typeId': 'Couronne',
+      'imageUrl': '',
+      'title': '【游戏】战锤3劳恩',
+      'publisher': '赤色的麦田',
+      'detail': '',
+      'description': '',
+      'views': 25000,
+      'date': '2024-04-05 09:24:48',
+      'tagIds': [
+        'newerTeach'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1hC411L7ti/?spm_id_from=333.337.search-card.all.click',
+      'referer': 'bilibili'
+    },
+    {
+      'id': '20',
+      'typeId': 'Couronne',
+      'imageUrl': '',
+      'title': '全战战锤3巴托-劳恩国王VS古坟军团-吸血鬼军队不要钱2024年03月03日直播录像',
+      'publisher': '高长恭丶兰陵王',
+      'detail': '',
+      'description': '',
+      'views': 255,
+      'date': '2024-03-15 22:31:08',
+      'tagIds': [
+        'clip'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1bC411h7FF/?spm_id_from=333.337.search-card.all.click',
+      'referer': 'bilibili'
+    }
+  ],
+  'Bordeleaux_Errant': [
+    {
+      'id': '19',
+      'typeId': 'Bordeleaux_Errant',
+      'imageUrl': '',
+      'title': '艾博里克·德·波尔德罗 WIKI',
+      'publisher': '全面战争中文维基',
+      'detail': '关于艾博里克·德·波尔德罗',
+      'description': '关于艾博里克',
+      'views': 0,
+      'date': '2024-04-27 18:00:00',
+      'tagIds': [
+        'clansDescription'
+      ],
+      'sourceUrl': 'https://totalwar.huijiwiki.com/wiki/%B0%AC%B2%A9%C0%EF%BF%CB%A1%A4%B5%C2%A1%A4%B2%A8%B6%FB%B5%C2%C2%DE',
+      'referer': 'huijiwiki'
+    },
+    {
+      'id': '21',
+      'typeId': 'Bordeleaux_Errant',
+      'imageUrl': '',
+      'title': '[全面战争·战锤3·半小时玩一个领主] 艾博里克·德·波尔德罗',
+      'publisher': '古老游戏玩家',
+      'detail': '[全面战争·战锤3·半小时玩一个领主] 艾博里克·德·波尔德罗',
+      'description': '[全面战争·战锤3·半小时玩一个领主] 艾博里克·德·波尔德罗',
+      'views': 593,
+      'date': '2024-03-26 18:00:00',
+      'tagIds': [
+        'clansDescription'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1ww4m1d7TG/?spm_id_from=333.337.search-card.all.click&vd_source=cf6172bb9e27eef98252db60c4e279fe',
+      'referer': 'bilibili'
+    },
+    {
+      'id': '22',
+      'typeId': 'Bordeleaux_Errant',
+      'imageUrl': '',
+      'title': '战锤3全面战争：巴托尼亚-艾博里克 传奇难度全图统一 第一期-1',
+      'publisher': '茄子蒜泥儿',
+      'detail': '巴托全图走起',
+      'description': '巴托全图走起',
+      'views': 6368,
+      'date': '2023-07-31 11:40:47',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1Z841127Ea/?spm_id_from=333.337.search-card.all.click&vd_source=cf6172bb9e27eef98252db60c4e279fe',
+      'referer': 'bilibili'
+    },
+    {
+      'id': '24',
+      'typeId': 'Bordeleaux_Errant',
+      'imageUrl': '',
+      'title': '跌宕起伏，愣是打出了斜击 艾博里克公爵（波尔德罗）vs 半夕蝶梦（绿皮）——小组赛B组',
+      'publisher': '准备退坑LeonZheng',
+      'detail': '双方都很有想法，然而胜负往往只在一瞬间',
+      'description': '双方都很有想法，然而胜负往往只在一瞬间',
+      'views': 1678,
+      'date': '2021-04-26 23:34:43',
+      'tagIds': [
+        'clip'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV135411w7Zy/?spm_id_from=333.337.search-card.all.click',
+      'referer': 'bilibili'
+    }
+  ],
+  'Carcassonne': [
+    {
+      'id': '26',
+      'typeId': 'Carcassonne',
+      'imageUrl': '',
+      'title': '湖神仙女算不算能打啊？',
+      'publisher': 'LESION',
+      'detail': '感觉就是个完全法师的面板呀，偏偏还能烧血，可是真的钻到人堆里烧血能扛得住吗？',
+      'description': '感觉就是个完全法师的面板呀，偏偏还能烧血，可是真的钻到人堆里烧血能扛得住吗？',
+      'views': 0,
+      'date': '2023-02-20 17:28',
+      'tagIds': [
+        'clansDescription'
+      ],
+      'sourceUrl': 'https://tieba.baidu.com/p/8273786437',
+      'referer': 'tieba'
+    },
+    {
+      'id': '31',
+      'typeId': 'Carcassonne',
+      'imageUrl': '',
+      'title': '我又没有王冠，为什么不能低头',
+      'publisher': '萝卜肆无忌惮',
+      'detail': '湖之女神\n我们巴托最重要的守护神\n她的功绩包括但不限于\n统一巴托尼亚\n建立骑士道文化\n创立圣杯组织\n培养巴托的魔法师\n也就是我们的各个圣女\n以及给予凡人赐福等等\n她的形象非常稳定\n最明显的特征就是\n头带花环 手捧圣杯\n以及披散下来的',
+      'description': '湖之女神\n我们巴托最重要的守护神\n她的功绩包括但不限于\n统一巴托尼亚\n建立骑士道文化\n创立圣杯组织\n培养巴托的魔法师\n也就是我们的各个圣女\n以及给予凡人赐福等等\n她的形象非常稳定\n最明显的特征就是\n头带花环 手捧圣杯\n以及披散下来的',
+      'views': 101000,
+      'date': '2023-03-14 21:17:35',
+      'tagIds': [
+        'story'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1m84y1A7fX/?spm_id_from=333.337.search-card.all.click',
+      'referer': 'bilibili'
+    },
+    {
+      'id': '23',
+      'typeId': 'Carcassonne',
+      'imageUrl': '',
+      'title': '巴托人物介绍之六：湖神仙女',
+      'publisher': '爱问1515',
+      'detail': '湖神仙女（the Fay Enchantress），又译作仙子女巫，现名莫吉安娜。',
+      'description': '湖神仙女（the Fay Enchantress），又译作仙子女巫，现名莫吉安娜。',
+      'views': 3706,
+      'date': '2021年11月28日 12:07',
+      'tagIds': [
+        'clansDescription'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/read/cv14194535/',
+      'referer': 'bilibili'
+    },
+    {
+      'id': '28',
+      'typeId': 'Carcassonne',
+      'imageUrl': '',
+      'title': '湖神仙女莫吉安娜到底是精灵还是巴托人类',
+      'publisher': '吊打专业户',
+      'detail': '我记得巴托的圣女都是从小展露魔法天赋的巴托女孩被教会带走培养的，但是又有人说湖神女巫是个精灵。',
+      'description': '我记得巴托的圣女都是从小展露魔法天赋的巴托女孩被教会带走培养的，但是又有人说湖神女巫是个精灵。',
+      'views': 0,
+      'date': '2023-07-27 12:56',
+      'tagIds': [
+        'story'
+      ],
+      'sourceUrl': 'https://tieba.baidu.com/p/8524011583',
+      'referer': 'tieba'
+    },
+    {
+      'id': '25',
+      'typeId': 'Carcassonne',
+      'imageUrl': '',
+      'title': '[全面战争·战锤3·半小时玩一个领主] 湖神仙女',
+      'publisher': '古老游戏玩家',
+      'detail': '[全面战争·战锤3·半小时玩一个领主] 湖神仙女',
+      'description': '[全面战争·战锤3·半小时玩一个领主] 湖神仙女',
+      'views': 463,
+      'date': '2024-04-02 03:00:00',
+      'tagIds': [
+        'clansDescription'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV14C411L7Ho/?spm_id_from=333.337.search-card.all.click',
+      'referer': 'bilibili'
+    },
+    {
+      'id': '27',
+      'typeId': 'Carcassonne',
+      'imageUrl': '',
+      'title': '【战锤3】巴托尼亚卡尔卡松 湖神仙女 第一期 3.0全站独家派系详解和破局打法 最适合新手的巴托派系',
+      'publisher': '六月忆风',
+      'detail': '双极难 双倍天灾 30T 适合新手也适合追求极限的玩家。',
+      'description': '双极难 双倍天灾 30T 适合新手也适合追求极限的玩家。',
+      'views': 3,
+      'date': '2023-05-13 08:00:00',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1Lz4y187CS/?spm_id_from=333.337.search-card.all.click&vd_source=cf6172bb9e27eef98252db60c4e279fe',
+      'referer': 'bilibili'
+    },
+    {
+      'id': '32',
+      'typeId': 'Carcassonne',
+      'imageUrl': '',
+      'title': '【战锤3超凡帝国】巴托仙女先行体验',
+      'publisher': '哔哩瞬',
+      'detail': '战锤3全新的超凡帝国战役模式来啦！本次依评论区粉丝之请，先体验了一波巴托。目前过回合时间还是要1分多，期待后续优化。',
+      'description': '战锤3全新的超凡帝国战役模式来啦！本次依评论区粉丝之请，先体验了一波巴托。目前过回合时间还是要1分多，期待后续优化。',
+      'views': 8549,
+      'date': '2022-08-18 10:00:00',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1yB4y1L7Zg/?spm_id_from=333.337.search-card.all.click&vd_source=cf6172bb9e27eef98252db60c4e279fe',
+      'referer': 'bilibili'
+    }
+  ],
+  'The_Legion_of_Azgorh': [
+    {
+      'id': '39',
+      'typeId': 'The_Legion_of_Azgorh',
+      'imageUrl': '',
+      'title': '[全面战争·战锤3·半小时玩一个领主] 德拉兹霍斯',
+      'publisher': '古老游戏玩家',
+      'detail': '[全面战争·战锤3·半小时玩一个领主] 德拉兹霍斯',
+      'description': '[全面战争·战锤3·半小时玩一个领主] 德拉兹霍斯',
+      'views': 211,
+      'date': '2024-03-26 11:30:00',
+      'tagIds': [
+        'clansDescription'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1gm411k7b3/?spm_id_from=333.337.search-card.all.click',
+      'referer': ''
+    },
+    {
+      'id': '41',
+      'typeId': 'The_Legion_of_Azgorh',
+      'imageUrl': '',
+      'title': '【七星】 战锤3混沌矮人德拉兹霍斯·灰烬P1 黑心工厂的崛起，实力坑害畏尾',
+      'publisher': '无忧七星丶',
+      'detail': '喜欢本期视频的话记得点赞投币加关注噢\n难度：双极难\nMOD：战败领主招募\nAI配兵优化',
+      'description': '喜欢本期视频的话记得点赞投币加关注噢\n难度：双极难\nMOD：战败领主招募\nAI配兵优化',
+      'views': 8308,
+      'date': '2023-04-15 13:18:55',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1Na4y1K7eR/?spm_id_from=333.337.search-card.all.click',
+      'referer': ''
+    },
+    {
+      'id': '40',
+      'typeId': 'The_Legion_of_Azgorh',
+      'imageUrl': '',
+      'title': '【战锤3全战：超凡】传奇混沌矮人-德拉兹霍斯-50T全天灾#1',
+      'publisher': '武侍建御雷',
+      'detail': '德拉兹霍斯开局行省首府就有弹道序列建筑，在本地区及相邻地区可释放军队技能“恐震臼炮”！！！',
+      'description': '德拉兹霍斯开局行省首府就有弹道序列建筑，在本地区及相邻地区可释放军队技能“恐震臼炮”！！！',
+      'views': 1,
+      'date': '2023-04-09 17:31:33',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1e24y1w7Lx/?spm_id_from=333.337.search-card.all.click',
+      'referer': ''
+    }
+  ],
+  'Cult_of_Pleasure': [
+    {
+      'id': '49',
+      'typeId': 'Cult_of_Pleasure',
+      'imageUrl': '',
+      'title': '什么莫大妈，请叫女王大人——战锤3 SFO 莫拉丝 战役',
+      'publisher': 'smile菁菁',
+      'detail': '',
+      'description': '',
+      'views': 2,
+      'date': '2024-01-14 20:22:53',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1vk4y1S79u/?spm_id_from=333.788&vd_source=cf6172bb9e27eef98252db60c4e279fe',
+      'referer': ''
+    },
+    {
+      'id': '51',
+      'typeId': 'Cult_of_Pleasure',
+      'imageUrl': '',
+      'title': '[全面战争·战锤3·半小时玩一个领主] 莫拉丝',
+      'publisher': '古老游戏玩家',
+      'detail': '[全面战争·战锤3·半小时玩一个领主] 莫拉丝',
+      'description': '[全面战争·战锤3·半小时玩一个领主] 莫拉丝',
+      'views': 465,
+      'date': '2024-03-25 17:20:37',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1sr421h76y/?spm_id_from=333.337.search-card.all.click',
+      'referer': ''
+    }
+  ],
+  'The_Blessed_Dread': [
+    {
+      'id': '56',
+      'typeId': 'The_Blessed_Dread',
+      'imageUrl': '',
+      'title': '【lucpass】从零开始的战锤全面战争3 黑暗精灵 洛克西亚堕落之心 破个局',
+      'publisher': 'LucPass',
+      'detail': '黑色方舟海盗大战氏族鼠\r\n剧透 打赢了',
+      'description': '黑色方舟海盗大战氏族鼠\r\n剧透 打赢了',
+      'views': 3750,
+      'date': '2023-08-18 12:30:54',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV16X4y1W7RX/?spm_id_from=333.337.search-card.all.click',
+      'referer': ''
+    },
+    {
+      'id': '58',
+      'typeId': 'The_Blessed_Dread',
+      'imageUrl': '',
+      'title': '战锤3全面战争神器任务 克拉肯巨妖头盔（洛克西亚·堕落之心神器任务）',
+      'publisher': '银色子弹柠檬茶',
+      'detail': '',
+      'description': '',
+      'views': 204,
+      'date': '2023-03-23 00:41:08',
+      'tagIds': [
+        'task'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1Ss4y1n7JN/?spm_id_from=333.337.search-card.all.click',
+      'referer': ''
+    },
+    {
+      'id': '52',
+      'typeId': 'The_Blessed_Dread',
+      'imageUrl': '',
+      'title': '[全面战争·战锤3·半小时玩一个领主] 洛克西亚·堕落之心',
+      'publisher': '古老游戏玩家',
+      'detail': '[全面战争·战锤3·半小时玩一个领主] 洛克西亚·堕落之心',
+      'description': '[全面战争·战锤3·半小时玩一个领主] 洛克西亚·堕落之心',
+      'views': 560,
+      'date': '2024-04-10 03:00:00',
+      'tagIds': [
+        'clansDescription'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1GF4m1T7Rm/?spm_id_from=333.337.search-card.all.click',
+      'referer': ''
+    },
+    {
+      'id': '57',
+      'typeId': 'The_Blessed_Dread',
+      'imageUrl': '',
+      'title': '【全面战争：战锤3】领主对决 -洛克西亚·堕落之心 VS.屠灭亲王 红色乌尔戈',
+      'publisher': 'CBO菜邦',
+      'detail': '【全面战争：战锤3】领主对决 -洛克西亚·堕落之心 VS.屠灭亲王 红色乌尔戈\n\n对决结果 娱乐为主。\n快跟我一起说谢谢 wodwd大佬!\n快跟我一起说谢谢 wodwd大佬!！\n快跟我一起说谢谢 wodwd大佬!!！\n都看到这里了,还不去关注wodwd大佬！！！',
+      'description': '【全面战争：战锤3】领主对决 -洛克西亚·堕落之心 VS.屠灭亲王 红色乌尔戈\n\n对决结果 娱乐为主。\n快跟我一起说谢谢 wodwd大佬!\n快跟我一起说谢谢 wodwd大佬!！\n快跟我一起说谢谢 wodwd大佬!!！\n都看到这里了,还不去关注wodwd大佬！！！',
+      'views': 3221,
+      'date': '2022-07-19 11:19:44',
+      'tagIds': [
+        'clip'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1Sg411o7Jv/?spm_id_from=333.337.search-card.all.click',
+      'referer': ''
+    },
+    {
+      'id': '53',
+      'typeId': 'The_Blessed_Dread',
+      'imageUrl': '',
+      'title': '战锤3：全面战争-超凡帝国-传奇-黑暗精灵-洛克西亚·堕落之心-3.0版本-3.5小时51回合短期胜利',
+      'publisher': '紫川家统领',
+      'detail': '1',
+      'description': '1',
+      'views': 835,
+      'date': '2023-04-29 05:53:07',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1kL411h7Td/?spm_id_from=333.337.search-card.all.click',
+      'referer': ''
+    },
+    {
+      'id': '55',
+      'typeId': 'The_Blessed_Dread',
+      'imageUrl': '',
+      'title': '【光头战锤小百科】中古战锤——洛克西亚·堕落之心',
+      'publisher': '忠孝两全曼光头',
+      'detail': '洛克西亚·堕落之心，又称海妖领主、章鱼脸、飞翔的河南人，来自卡隆德·卡尔的海盗世家。',
+      'description': '洛克西亚·堕落之心，又称海妖领主、章鱼脸、飞翔的河南人，来自卡隆德·卡尔的海盗世家。',
+      'views': 48000,
+      'date': '2021年07月13日 16:52',
+      'tagIds': [
+        'clansDescription'
+      ],
+      'sourceUrl': ' https://www.bilibili.com/read/cv12136311/',
+      'referer': ''
+    }
+  ],
+  'Chevaliers_de_Lyonesse': [
+    {
+      'id': '29',
+      'typeId': 'Chevaliers_de_Lyonesse',
+      'imageUrl': '',
+      'title': '[全面战争·战锤3·半小时玩一个领主] 赫潘丝·德·里昂尼斯',
+      'publisher': '古老游戏玩家',
+      'detail': '[全面战争·战锤3·半小时玩一个领主] 赫潘丝·德·里昂尼斯',
+      'description': '[全面战争·战锤3·半小时玩一个领主] 赫潘丝·德·里昂尼斯',
+      'views': 361,
+      'date': '2024-04-11 03:00:00',
+      'tagIds': [
+        'clansDescription'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1tt421J7nA/?spm_id_from=333.337.search-card.all.click&vd_source=cf6172bb9e27eef98252db60c4e279fe',
+      'referer': ''
+    },
+    {
+      'id': '33',
+      'typeId': 'Chevaliers_de_Lyonesse',
+      'imageUrl': '',
+      'title': '【战锤全面战争】双极难贞德赫潘丝凡世帝国直播录像喵~',
+      'publisher': '零星的梦喵',
+      'detail': '贞德前一段时间新出的派系，玩一下喵~\n无mod双极难。\n完了以后发现巴托尼亚经济真的非常好，农业快速经济也多。铁矿金矿搭配工业产值保镖。\n凡世帝国非洲也是很适合的发展地区，有平稳的后方，有两个金矿，敌人也不强。\n兵种上敌人都是大量步兵，投石机农民可以用很久。\n后期就要转骑士了，兵种玩法相对单一喵~\n胜利条件上是独特的骑士道系统，特意去刷一下很快就能通关了喵~',
+      'description': '贞德前一段时间新出的派系，玩一下喵~\n无mod双极难。\n完了以后发现巴托尼亚经济真的非常好，农业快速经济也多。铁矿金矿搭配工业产值保镖。\n凡世帝国非洲也是很适合的发展地区，有平稳的后方，有两个金矿，敌人也不强。\n兵种上敌人都是大量步兵，投石机农民可以用很久。\n后期就要转骑士了，兵种玩法相对单一喵~\n胜利条件上是独特的骑士道系统，特意去刷一下很快就能通关了喵~',
+      'views': 1,
+      'date': '2020-03-02 12:15:32',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1WE411E7PJ/?spm_id_from=333.337.search-card.all.click&vd_source=cf6172bb9e27eef98252db60c4e279fe',
+      'referer': ''
+    },
+    {
+      'id': '30',
+      'typeId': 'Chevaliers_de_Lyonesse',
+      'imageUrl': '',
+      'title': '【全面战争：战锤3】巴托尼亚 ✘赫潘丝·里昂尼斯 灭世攻略 最强攻略 5回合覆灭阿克汉   #1`',
+      'publisher': '温酱与夏凉丶',
+      'detail': '感谢舰长 安德维尔KS的派系点播\n\n里昂尼斯骑士团是巴托最简单的派系\n\n只要掌握好部队搭配和作战方法 轻松破局 \n\n交流群：142446829',
+      'description': '感谢舰长 安德维尔KS的派系点播\n\n里昂尼斯骑士团是巴托最简单的派系\n\n只要掌握好部队搭配和作战方法 轻松破局 \n\n交流群：142446829',
+      'views': 2874,
+      'date': '2023-03-28 19:45:25',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1F24y1E7iZ/?spm_id_from=333.337.search-card.all.click&vd_source=cf6172bb9e27eef98252db60c4e279fe',
+      'referer': ''
+    }
+  ],
+  'Disciples_of_Hashut': [
+    {
+      'id': '35',
+      'typeId': 'Disciples_of_Hashut',
+      'imageUrl': '',
+      'title': 'Lucpass】混沌矮人试玩 战锤全面战争3 哈苏特信徒 铁手阿斯特戈斯 80回合管饱',
+      'publisher': 'LucPass',
+      'detail': '本期内容包括但不限于\r\n水多加面面多加水\r\n雷鸣铳排队枪毙\r\n铁手无双部队看戏\r\n持键小子正常操作\r\n牛牛乱杀\r\n克达熠(yi）部队乱送\r\n12号发终局战役',
+      'description': '本期内容包括但不限于\r\n水多加面面多加水\r\n雷鸣铳排队枪毙\r\n铁手无双部队看戏\r\n持键小子正常操作\r\n牛牛乱杀\r\n克达熠(yi）部队乱送\r\n12号发终局战役',
+      'views': 1,
+      'date': '2023-04-09 22:59:38',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV18X4y1r7T2/?spm_id_from=333.337.search-card.all.click&vd_source=cf6172bb9e27eef98252db60c4e279fe',
+      'referer': ''
+    },
+    {
+      'id': '34',
+      'typeId': 'Disciples_of_Hashut',
+      'imageUrl': '',
+      'title': '[全面战争·战锤3·半小时玩一个领主] 阿斯特戈斯·铁手',
+      'publisher': '古老游戏玩家',
+      'detail': '[全面战争·战锤3·半小时玩一个领主] 阿斯特戈斯·铁手',
+      'description': '[全面战争·战锤3·半小时玩一个领主] 阿斯特戈斯·铁手',
+      'views': 213,
+      'date': '2024-03-16 12:17:28',
+      'tagIds': [
+        'clansDescription'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1b2421N77K/?spm_id_from=333.337.search-card.all.click&vd_source=cf6172bb9e27eef98252db60c4e279fe',
+      'referer': ''
+    },
+    {
+      'id': '37',
+      'typeId': 'Disciples_of_Hashut',
+      'imageUrl': '',
+      'title': '【战锤3铁手#1】9回合13城灭铁皮喵~早期扩张四个方向一起来兵力不足，好难喵。QAQ',
+      'publisher': '零星的梦喵',
+      'detail': '战锤3全面战争 铁手 超凡帝国\r\n难度：传奇极难 无mod 无天灾喵~\r\n咸鱼猫咪想开个早期扩张试试喵~',
+      'description': '战锤3全面战争 铁手 超凡帝国\r\n难度：传奇极难 无mod 无天灾喵~\r\n咸鱼猫咪想开个早期扩张试试喵~',
+      'views': 1573,
+      'date': '2023-04-16 20:15:11',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV19o4y1L7EE/?spm_id_from=333.337.search-card.all.click&vd_source=cf6172bb9e27eef98252db60c4e279fe',
+      'referer': ''
+    },
+    {
+      'id': '36',
+      'typeId': 'Disciples_of_Hashut',
+      'imageUrl': '',
+      'title': '【战锤3全战：超凡】传奇混沌矮人-阿斯特戈斯·铁手-10T全天灾#1',
+      'publisher': '武侍建御雷',
+      'detail': '开局行省建议1哨站+1工厂配置，尽快建造英雄招募建筑，为铁手传奇个人线的“”全英雄容量+2“”做准备！',
+      'description': '开局行省建议1哨站+1工厂配置，尽快建造英雄招募建筑，为铁手传奇个人线的“”全英雄容量+2“”做准备！',
+      'views': 1,
+      'date': '2023-04-08 19:24:40',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1Qj411F75B/?spm_id_from=333.337.search-card.all.click',
+      'referer': ''
+    },
+    {
+      'id': '38',
+      'typeId': 'Disciples_of_Hashut',
+      'imageUrl': '',
+      'title': '【战锤3】混沌矮人 - 阿斯特戈斯铁手 新手向简化攻略 速穿柯日天擒拿铁皮 #1`',
+      'publisher': '温酱与夏凉丶',
+      'detail': '感谢舰长外面世界是我的家的赞助点播\n混沌矮人其实非常简单 整体掌握好战略局势即可轻松破局\n部队作战看个人风格即可 弓箭可以 卑鄙潜伏者也可以\n\n交流群:142446829',
+      'description': '感谢舰长外面世界是我的家的赞助点播\n混沌矮人其实非常简单 整体掌握好战略局势即可轻松破局\n部队作战看个人风格即可 弓箭可以 卑鄙潜伏者也可以\n\n交流群:142446829',
+      'views': 4804,
+      'date': '2023-07-20 21:06:39',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1rV411K7vZ/?spm_id_from=333.337.search-card.all.click',
+      'referer': ''
+    }
+  ],
+  'The_Warhost_of_Zharr': [
+    {
+      'id': '43',
+      'typeId': 'The_Warhost_of_Zharr',
+      'imageUrl': '',
+      'title': '战锤3黑心扎坦第一回合5城~1.5w启动资金~占维利奇老家喵~感谢冬夏看见大佬的换家思路喵~',
+      'publisher': '零星的梦喵',
+      'detail': '难度：传奇极难无mod~\n贴吧冬夏看见大佬的换家流思路直接可以第一回合5座城市1.5w资金开局喵~而且还坑了维利奇，真正的奸奇喵~',
+      'description': '难度：传奇极难无mod~\n贴吧冬夏看见大佬的换家流思路直接可以第一回合5座城市1.5w资金开局喵~而且还坑了维利奇，真正的奸奇喵~',
+      'views': 8048,
+      'date': '2023-04-23 22:27:54',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1Ec411J75r/?spm_id_from=333.337.search-card.all.click',
+      'referer': ''
+    },
+    {
+      'id': '45',
+      'typeId': 'The_Warhost_of_Zharr',
+      'imageUrl': '',
+      'title': '【战锤3】全网首发 - 黑心·扎坦 - 最强攻略 5回合10城速下三关南皋 极限运营 速下妙影',
+      'publisher': '温酱与夏凉丶',
+      'detail': '黑心扎坦 超强超简单的监察头子 \n\n5回合10城下三关 8回合灭三震旦 扫平破局!\n\n麻烦大家点赞投币关注 这对视频推荐量很重要 谢谢大家\n\n交流群:142446829',
+      'description': '黑心扎坦 超强超简单的监察头子 \n\n5回合10城下三关 8回合灭三震旦 扫平破局!\n\n麻烦大家点赞投币关注 这对视频推荐量很重要 谢谢大家\n\n交流群:142446829',
+      'views': 1,
+      'date': '2023-04-14 12:00:00',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1X54y1F7AF/?spm_id_from=333.337.search-card.all.click&vd_source=cf6172bb9e27eef98252db60c4e279fe',
+      'referer': ''
+    },
+    {
+      'id': '42',
+      'typeId': 'The_Warhost_of_Zharr',
+      'imageUrl': '',
+      'title': '[全面战争·战锤3·半小时玩一个领主] 黑心扎坦',
+      'publisher': '古老游戏玩家',
+      'detail': '[全面战争·战锤3·半小时玩一个领主] 黑心扎坦',
+      'description': '[全面战争·战锤3·半小时玩一个领主] 黑心扎坦',
+      'views': 283,
+      'date': '2024-04-01 19:30:00',
+      'tagIds': [
+        'clansDescription'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1ej421d7cm/?spm_id_from=333.337.search-card.all.click',
+      'referer': ''
+    },
+    {
+      'id': '44',
+      'typeId': 'The_Warhost_of_Zharr',
+      'imageUrl': '',
+      'title': '混沌矮人-扎坦黑心全套神器无敌了!战锤全面战争3',
+      'publisher': '星云号',
+      'detail': '他来了他来了，它带着全套神器来抓苦工了，',
+      'description': '他来了他来了，它带着全套神器来抓苦工了，',
+      'views': 2,
+      'date': '2023-04-18 18:42:53',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1oX4y1q7Zc/?spm_id_from=333.337.search-card.all.click',
+      'referer': ''
+    }
+  ],
+  'Naggarond': [
+    {
+      'id': '50',
+      'typeId': 'Naggarond',
+      'imageUrl': '',
+      'title': '【全面战争：战锤3】黑暗精灵 ✘马雷基斯 灭世攻略 世界臣服 强吃速灭白矮人   #1`',
+      'publisher': '温酱与夏凉丶',
+      'detail': '感谢舰长 NorthPolezy 的派系点播\n\n黑精是非常强力并且极致的进攻派系\n\n马雷基斯魔武双修 同时又自诩正统 那么就看看老马如何征服世界\n\n交流群:142446829',
+      'description': '感谢舰长 NorthPolezy 的派系点播\n\n黑精是非常强力并且极致的进攻派系\n\n马雷基斯魔武双修 同时又自诩正统 那么就看看老马如何征服世界\n\n交流群:142446829',
+      'views': 7160,
+      'date': '2023-03-27 16:00:00',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1Fm4y1r725/?spm_id_from=333.337.search-card.all.click',
+      'referer': ''
+    },
+    {
+      'id': '47',
+      'typeId': 'Naggarond',
+      'imageUrl': '',
+      'title': '[全面战争·战锤3·半小时玩一个领主] 马雷基斯',
+      'publisher': '古老游戏玩家',
+      'detail': '[战锤3·半小时玩一个领主] 马雷基斯',
+      'description': '[战锤3·半小时玩一个领主] 马雷基斯',
+      'views': 319,
+      'date': '2024-03-15 10:00:00',
+      'tagIds': [
+        'clansDescription'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1Zi421R7xo/?spm_id_from=333.337.search-card.all.click',
+      'referer': ''
+    }
+  ],
+  'Hag_Graef': [
+    {
+      'id': '59',
+      'typeId': 'Hag_Graef',
+      'imageUrl': '',
+      'title': '战锤马鲁斯黑刃破局攻略,8回合拔凯恩神剑',
+      'publisher': '坐牢的鑫子',
+      'detail': '',
+      'description': '',
+      'views': 203,
+      'date': '2024-03-31 00:02:16',
+      'tagIds': [
+        'newerTeach'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV14m421n782/?vd_source=cf6172bb9e27eef98252db60c4e279fe',
+      'referer': ''
+    },
+    {
+      'id': '63',
+      'typeId': 'Hag_Graef',
+      'imageUrl': '',
+      'title': '【全面战争：战锤三】黑暗精灵领主马鲁斯·黑刃攻击动作',
+      'publisher': 'M_奶茶233',
+      'detail': '',
+      'description': '',
+      'views': 753,
+      'date': '2024-01-20 17:18:57',
+      'tagIds': [
+        'clip'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1tW4y1F7EM/?spm_id_from=333.337.search-card.all.click',
+      'referer': ''
+    },
+    {
+      'id': '60',
+      'typeId': 'Hag_Graef',
+      'imageUrl': '',
+      'title': '【战锤3全战：超凡】传奇-黑暗精灵-马鲁斯黑刃-40T全天灾#1',
+      'publisher': '武侍建御雷',
+      'detail': '在目前所有的战锤传奇领主中，马鲁斯黑刃是前期战斗力最强的，通过扎坎变身，可以轻松无双大编队的敌人。',
+      'description': '在目前所有的战锤传奇领主中，马鲁斯黑刃是前期战斗力最强的，通过扎坎变身，可以轻松无双大编队的敌人。',
+      'views': 20000,
+      'date': '2023-01-13 01:00:36',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1D84y187kw/?spm_id_from=333.337.search-card.all.click',
+      'referer': ''
+    },
+    {
+      'id': '61',
+      'typeId': 'Hag_Graef',
+      'imageUrl': '',
+      'title': '[全面战争·战锤3·半小时玩一个领主] 马鲁斯·黑刃',
+      'publisher': '古老游戏玩家',
+      'detail': '[全面战争·战锤3·半小时玩一个领主] 马鲁斯·黑刃',
+      'description': '[全面战争·战锤3·半小时玩一个领主] 马鲁斯·黑刃',
+      'views': 814,
+      'date': '2024-04-15 11:30:00',
+      'tagIds': [
+        'clansDescription'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV19m411B7K3/?spm_id_from=333.337.search-card.all.click',
+      'referer': ''
+    },
+    {
+      'id': '62',
+      'typeId': 'Hag_Graef',
+      'imageUrl': '',
+      'title': '【罗西】战锤3派系简易攻略：超凡帝国海格丶葛雷夫派系最早全天灾全自动攻略',
+      'publisher': 'GiuseppeRossi47',
+      'detail': '麻烦大家多点点关注~',
+      'description': '麻烦大家多点点关注~',
+      'views': 10000,
+      'date': '2022-09-11 00:56:40',
+      'tagIds': [
+        'clansDescription'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1KB4y1n7Ds/?spm_id_from=333.337.search-card.all.click',
+      'referer': ''
+    }
+  ],
+  'Har_Ganeth': [
+    {
+      'id': '54',
+      'typeId': 'Har_Ganeth',
+      'imageUrl': '',
+      'title': '[全面战争·战锤3·半小时玩一个领主] 妖婆赫莉本',
+      'publisher': '古老游戏玩家',
+      'detail': '[全面战争·战锤3·半小时玩一个领主] 妖婆赫莉本',
+      'description': '[全面战争·战锤3·半小时玩一个领主] 妖婆赫莉本',
+      'views': 270,
+      'date': '2024-04-01 11:30:00',
+      'tagIds': [
+        'clansDescription'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1jr421b7fX/?spm_id_from=333.337.search-card.all.click',
+      'referer': ''
+    }
+  ],
+  'Legion_of_Chaos': [
+    {
+      'id': '46',
+      'typeId': 'Legion_of_Chaos',
+      'imageUrl': '',
+      'title': '[全面战争·战锤3·半小时玩一个领主] 恶魔亲王',
+      'publisher': '古老游戏玩家',
+      'detail': '[战锤3·半小时玩一个领主] 恶魔亲王',
+      'description': '[战锤3·半小时玩一个领主] 恶魔亲王',
+      'views': 888,
+      'date': '2024-03-15 15:00:00',
+      'tagIds': [
+        'clansDescription'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1TF4m1w7U2/?spm_id_from=333.337.search-card.all.click',
+      'referer': ''
+    }
+  ],
+  'The_Thousand_Maws': [
+    {
+      'id': '64',
+      'typeId': 'The_Thousand_Maws',
+      'imageUrl': '',
+      'title': '[全面战争·战锤3·半小时玩一个领主] 拉卡斯',
+      'publisher': '古老游戏玩家',
+      'detail': '[全面战争·战锤3·半小时玩一个领主] 拉卡斯',
+      'description': '[全面战争·战锤3·半小时玩一个领主] 拉卡斯',
+      'views': 351,
+      'date': '2024-04-18 19:30:00',
+      'tagIds': [
+        'clansDescription'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1Cp421X76F/?spm_id_from=333.337.search-card.all.click',
+      'referer': ''
+    }
+  ],
+  'Karaz_a_Karak': [
+    {
+      'id': '68',
+      'typeId': 'Karaz_a_Karak',
+      'imageUrl': '',
+      'title': '[全面战争·战锤3·半小时玩一个领主] 索尔葛林·负怨者',
+      'publisher': '古老游戏玩家',
+      'detail': '[战锤3·半小时玩一个领主] 索尔葛林·负怨者',
+      'description': '[战锤3·半小时玩一个领主] 索尔葛林·负怨者',
+      'views': 549,
+      'date': '2024-03-14 18:30:00',
+      'tagIds': [
+        'clansDescription'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1am411o7kn/?spm_id_from=333.337.search-card.all.click',
+      'referer': ''
+    },
+    {
+      'id': '69',
+      'typeId': 'Karaz_a_Karak',
+      'imageUrl': '',
+      'title': '【战锤英雄战记】4——索尔葛林·负怨者',
+      'publisher': 'LK-朱庇特之子',
+      'detail': '',
+      'description': '',
+      'views': 6667,
+      'date': '2019-05-01 20:25:54',
+      'tagIds': [
+        'story'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1z4411t76t/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    },
+    {
+      'id': '70',
+      'typeId': 'Karaz_a_Karak',
+      'imageUrl': '',
+      'title': '【温酱】- 战锤3 - ` 超凡帝国 ✘至高王 ▎索尔葛林·负怨者 「最强攻略」3回合刚巴得峰 5回合覆灭3兽人 最强开局攻略',
+      'publisher': '温酱与夏凉丶& 明曦xmD',
+      'detail': '本期给大家带来由小铭同学开发的至高王最强攻略 \n3回合拿下刚巴德峰 5回合覆灭3兽人的攻略教程 \n喜欢的小伙伴麻烦三连+关注哦~\n\n交流群：142446829',
+      'description': '本期给大家带来由小铭同学开发的至高王最强攻略 \n3回合拿下刚巴德峰 5回合覆灭3兽人的攻略教程 \n喜欢的小伙伴麻烦三连+关注哦~\n\n交流群：142446829',
+      'views': 5469,
+      'date': '2023-02-01 14:00:00',
+      'tagIds': [
+        'newerTeach'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1td4y1p73Q/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    },
+    {
+      'id': '75',
+      'typeId': 'Karaz_a_Karak',
+      'imageUrl': '',
+      'title': '全面战争战锤神器任务索尔葛林·负怨者仇恨之书',
+      'publisher': '豆沙包Channel',
+      'detail': '游戏：《全面战争:战锤》（ Total War: WARHAMMER ）\n索尔葛林·负怨者 - 仇恨之书：\n\t这真是一处不祥之地，到处散发着死人得恶臭。至于敌人，目前还没有露出一点踪迹···然而如果矮人们完好无损地穿过这片区域然后回家，索尔葛林一定会大为光火。至高王已经发誓，除非我们的仇怨得到报偿，否则无论何人都无法逃脱仇恨之书的审判！',
+      'description': '游戏：《全面战争:战锤》（ Total War: WARHAMMER ）\n索尔葛林·负怨者 - 仇恨之书：\n\t这真是一处不祥之地，到处散发着死人得恶臭。至于敌人，目前还没有露出一点踪迹···然而如果矮人们完好无损地穿过这片区域然后回家，索尔葛林一定会大为光火。至高王已经发誓，除非我们的仇怨得到报偿，否则无论何人都无法逃脱仇恨之书的审判！',
+      'views': 503,
+      'date': '2023-05-02 11:39:52',
+      'tagIds': [
+        'task'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV13L411a75f/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    }
+  ],
+  'Karak_Kadrin': [
+    {
+      'id': '71',
+      'typeId': 'Karak_Kadrin',
+      'imageUrl': '',
+      'title': '[全面战争·战锤3·半小时玩一个领主] 阿格里姆·铁拳',
+      'publisher': '古老游戏玩家',
+      'detail': '[全面战争·战锤3·半小时玩一个领主] 阿格里姆·铁拳',
+      'description': '[全面战争·战锤3·半小时玩一个领主] 阿格里姆·铁拳',
+      'views': 383,
+      'date': '2024-03-25 12:00:00',
+      'tagIds': [
+        'clansDescription'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1kr42187WL/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    }
+  ],
+  'Clan_Angrund': [
+    {
+      'id': '76',
+      'typeId': 'Clan_Angrund',
+      'imageUrl': '',
+      'title': '[全面战争·战锤3·半小时玩一个领主] 贝勒加·铁锤',
+      'publisher': '古老游戏玩家',
+      'detail': '[全面战争·战锤3·半小时玩一个领主] 贝勒加·铁锤',
+      'description': '[全面战争·战锤3·半小时玩一个领主] 贝勒加·铁锤',
+      'views': 393,
+      'date': '2024-04-01 03:00:00',
+      'tagIds': [
+        'clansDescription'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1EH4y1H7kM/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    },
+    {
+      'id': '77',
+      'typeId': 'Clan_Angrund',
+      'imageUrl': '',
+      'title': '战锤3贝勒加战略规划及装备/符文详解，最强前期无双派系',
+      'publisher': '残城之召唤',
+      'detail': '全面战争战锤3最强前期无双派系贝勒加铁锤战略规划及装备/符文详解',
+      'description': '全面战争战锤3最强前期无双派系贝勒加铁锤战略规划及装备/符文详解',
+      'views': 18000,
+      'date': '2022-11-24 21:14:51',
+      'tagIds': [
+        'newerTeach'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1pW4y1W7fT/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    },
+    {
+      'id': '78',
+      'typeId': 'Clan_Angrund',
+      'imageUrl': '',
+      'title': '战锤3全面战争：超凡帝国“贝勒加·铁锤“传奇难度 7回合0伤亡极速攻夺回《卡拉克·八峰山》',
+      'publisher': '茄子蒜泥儿',
+      'detail': '喜欢这期视频的观众，请免费点个赞 感谢您的支持！\n游戏：战锤3：全面战争 超凡帝国\n难度：传奇+极难双最高\n游戏版本：截止目前最新的2.1版本',
+      'description': '喜欢这期视频的观众，请免费点个赞 感谢您的支持！\n游戏：战锤3：全面战争 超凡帝国\n难度：传奇+极难双最高\n游戏版本：截止目前最新的2.1版本',
+      'views': 16000,
+      'date': '2022-09-09 16:22:35',
+      'tagIds': [
+        'newerTeach'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV14a411u7Nb/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    }
+  ],
+  'The_Ancestral_Throng': [
+    {
+      'id': '79',
+      'typeId': 'The_Ancestral_Throng',
+      'imageUrl': '',
+      'title': '[全面战争·战锤3·半小时玩一个领主] 格瑞姆布林戴尔',
+      'publisher': '古老游戏玩家',
+      'detail': '[全面战争·战锤3·半小时玩一个领主] 格瑞姆布林戴尔',
+      'description': '[全面战争·战锤3·半小时玩一个领主] 格瑞姆布林戴尔',
+      'views': 260,
+      'date': '2024-04-09 03:00:00',
+      'tagIds': [
+        'clansDescription'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1uZ421q7pv/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    },
+    {
+      'id': '80',
+      'typeId': 'The_Ancestral_Throng',
+      'imageUrl': '',
+      'title': '战锤3全面战争神器任务 白矮人格瑞姆布林戴尔第一关 白矮人的符文战斧',
+      'publisher': '银色子弹柠檬茶',
+      'detail': '',
+      'description': '',
+      'views': 182,
+      'date': '2022-11-20 21:14:25',
+      'tagIds': [
+        'task'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1iM411C7Mo/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    }
+  ],
+  'Ironbrows_Expedition': [
+    {
+      'id': '81',
+      'typeId': 'Ironbrows_Expedition',
+      'imageUrl': '',
+      'title': '[全面战争·战锤3·半小时玩一个领主] 托雷克·铁眉',
+      'publisher': '古老游戏玩家',
+      'detail': '[全面战争·战锤3·半小时玩一个领主] 托雷克·铁眉',
+      'description': '[全面战争·战锤3·半小时玩一个领主] 托雷克·铁眉',
+      'views': 329,
+      'date': '2024-04-15 03:00:00',
+      'tagIds': [
+        'clansDescription'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1BZ421v72j/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    },
+    {
+      'id': '82',
+      'typeId': 'Ironbrows_Expedition',
+      'imageUrl': '',
+      'title': '【lucpass】从零开始的战锤全面战争3 矮人 托雷克铁眉 第一期 守旧派 但是精益求精',
+      'publisher': 'LucPass',
+      'detail': '_(:з」∠)高伤快装填重矢弩手和碎甲矿工 还有成批量生产的符文',
+      'description': '_(:з」∠)高伤快装填重矢弩手和碎甲矿工 还有成批量生产的符文',
+      'views': 11000,
+      'date': '2023-08-09 05:24:44',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1k94y1r7bo/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    },
+    {
+      'id': '83',
+      'typeId': 'Ironbrows_Expedition',
+      'imageUrl': '',
+      'title': '[全面战争战锤3 超凡帝国 传奇战役】矮人 托雷克铁眉 流程合集',
+      'publisher': '混沌上将卡洛斯',
+      'detail': '-',
+      'description': '-',
+      'views': 11000,
+      'date': '2022-12-29 14:41:00',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1y24y1m7mP/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    }
+  ],
+  'Reikland': [
+    {
+      'id': '84',
+      'typeId': 'Reikland',
+      'imageUrl': '',
+      'title': '[全面战争·战锤3·半小时玩一个领主] 皇帝·卡尔·弗兰兹',
+      'publisher': '古老游戏玩家',
+      'detail': '[战锤3·半小时玩一个领主] 皇帝·卡尔·弗兰兹',
+      'description': '[战锤3·半小时玩一个领主] 皇帝·卡尔·弗兰兹',
+      'views': 422,
+      'date': '2024-03-14 15:04:31',
+      'tagIds': [
+        'clansDescription'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1Zt421V7zv/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    },
+    {
+      'id': '85',
+      'typeId': 'Reikland',
+      'imageUrl': '',
+      'title': '你怎么还不明白？有的人就是天之骄子 - 帝国皇帝',
+      'publisher': '萝卜肆无忌惮',
+      'detail': '在黑暗残忍的中古世界\n鲜血和死亡司空见惯\n人们生活在恐惧和混乱之中\n一场浩大的劫难正在酝酿\n任何规模的战争与之相比\n都会显得相形见绌\n这个星球所有人的生命\n都在接受灭世的考验\n一次决定命运的大会正在召开\n眼看乌央乌央的混沌大军\n马上就要打到门口了\n作为正义的代表\n秩序阵营还在为\n过去的宿怨吵的不可开交\n此时一个巨大的战锤落下\n所有人都望向了同一个方向\n一个男人怒了\n他痛斥了在场所有的人\n他一字一句的诉说着\n却没有任何人打断\n因为 可能有且只有这个男人\n才能真正的让大家团结起来',
+      'description': '在黑暗残忍的中古世界\n鲜血和死亡司空见惯\n人们生活在恐惧和混乱之中\n一场浩大的劫难正在酝酿\n任何规模的战争与之相比\n都会显得相形见绌\n这个星球所有人的生命\n都在接受灭世的考验\n一次决定命运的大会正在召开\n眼看乌央乌央的混沌大军\n马上就要打到门口了\n作为正义的代表\n秩序阵营还在为\n过去的宿怨吵的不可开交\n此时一个巨大的战锤落下\n所有人都望向了同一个方向\n一个男人怒了\n他痛斥了在场所有的人\n他一字一句的诉说着\n却没有任何人打断\n因为 可能有且只有这个男人\n才能真正的让大家团结起来',
+      'views': 87000,
+      'date': '2023-03-03 01:05:40',
+      'tagIds': [
+        'story'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV188411F72F/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    },
+    {
+      'id': '86',
+      'typeId': 'Reikland',
+      'imageUrl': '',
+      'title': '【中古战锤人物志】卡尔·弗兰兹',
+      'publisher': '凤凰王艾纳里昂',
+      'detail': '卡尔·弗兰兹，GW（games workshop）现任帝国皇帝，阿尔道夫亲王和瑞克领选帝侯。人类帝国的领袖、伟大的西格玛教派守护者、政治家、军事家、以及战略家和理论家。',
+      'description': '卡尔·弗兰兹，GW（games workshop）现任帝国皇帝，阿尔道夫亲王和瑞克领选帝侯。人类帝国的领袖、伟大的西格玛教派守护者、政治家、军事家、以及战略家和理论家。',
+      'views': 1649,
+      'date': '2024-04-17 19:00:26',
+      'tagIds': [
+        'story'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1tM4m1D78a/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    },
+    {
+      'id': '87',
+      'typeId': 'Reikland',
+      'imageUrl': '',
+      'title': '【lucpass】从零开始的战锤全面战争3 帝国 人皇卡尔弗兰兹 第一期 内忧外患',
+      'publisher': 'LucPass',
+      'detail': '新年第一个视频当然是帝国\r\n本期看点大概有\r\n瑞克禁卫荣耀冲锋\r\n血战玛莉恩堡\r\n清剿邓肯瓦尔德异端',
+      'description': '新年第一个视频当然是帝国\r\n本期看点大概有\r\n瑞克禁卫荣耀冲锋\r\n血战玛莉恩堡\r\n清剿邓肯瓦尔德异端',
+      'views': 13000,
+      'date': '2024-01-01 15:14:47',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1be411v7bF/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    },
+    {
+      'id': '88',
+      'typeId': 'Reikland',
+      'imageUrl': '',
+      'title': '【战锤3全面战争】微电影帝国皇帝卡尔弗兰兹（油管搬运）',
+      'publisher': '紫霖ty',
+      'detail': '',
+      'description': '',
+      'views': 1712,
+      'date': '2024-04-02 00:04:58',
+      'tagIds': [
+        'clip'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1MA4m1P7GL/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    },
+    {
+      'id': '89',
+      'typeId': 'Reikland',
+      'imageUrl': '',
+      'title': '【战锤3全战：超凡帝国】传奇-帝国-卡尔·弗兰兹-强袭攻略#1',
+      'publisher': '武侍建御雷',
+      'detail': '在双火枪一臼炮的初始部队加持下，前期攻略难度大幅度降低，尤其是在臼炮“攻城者”属性的加持下，玛丽恩堡攻略战变得愈加轻松~',
+      'description': '在双火枪一臼炮的初始部队加持下，前期攻略难度大幅度降低，尤其是在臼炮“攻城者”属性的加持下，玛丽恩堡攻略战变得愈加轻松~',
+      'views': 42000,
+      'date': '2022-08-14 09:51:06',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1iP411L75K/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    }
+  ],
+  'The_Golden_Order': [
+    {
+      'id': '90',
+      'typeId': 'The_Golden_Order',
+      'imageUrl': '',
+      'title': '[全面战争·战锤3·半小时玩一个领主] 拜尔沙泽·盖尔特',
+      'publisher': '古老游戏玩家',
+      'detail': '[全面战争·战锤3·半小时玩一个领主] 拜尔沙泽·盖尔特',
+      'description': '[全面战争·战锤3·半小时玩一个领主] 拜尔沙泽·盖尔特',
+      'views': 332,
+      'date': '2024-03-24 18:30:00',
+      'tagIds': [
+        'clansDescription'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1tZ42187VA/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    },
+    {
+      'id': '91',
+      'typeId': 'The_Golden_Order',
+      'imageUrl': '',
+      'title': '装聋作哑的渴望 - 帝国法师 拜尔沙泽',
+      'publisher': '萝卜肆无忌惮',
+      'detail': '所有的黑魔法记忆都已清除\n他找到了藏在内心深处的宁静\n我所有做的事情\n无愧于帝国 无愧于世界\n他孤独的自言自语\n但那份美好仅仅持续了片刻',
+      'description': '所有的黑魔法记忆都已清除\n他找到了藏在内心深处的宁静\n我所有做的事情\n无愧于帝国 无愧于世界\n他孤独的自言自语\n但那份美好仅仅持续了片刻',
+      'views': 54000,
+      'date': '2023-03-05 09:58:10',
+      'tagIds': [
+        'story'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1784y1P7hS/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    }
+  ],
+  'The_Huntsmarshals_Expedition': [
+    {
+      'id': '92',
+      'typeId': 'The_Huntsmarshals_Expedition',
+      'imageUrl': '',
+      'title': '[全面战争·战锤3·半小时玩一个领主] 马库斯·沃法特',
+      'publisher': '古老游戏玩家',
+      'detail': '[全面战争·战锤3·半小时玩一个领主] 马库斯·沃法特',
+      'description': '[全面战争·战锤3·半小时玩一个领主] 马库斯·沃法特',
+      'views': 753,
+      'date': '2024-03-31 19:30:00',
+      'tagIds': [
+        'clansDescription'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1aK421e7jT/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    },
+    {
+      'id': '93',
+      'typeId': 'The_Huntsmarshals_Expedition',
+      'imageUrl': '',
+      'title': '【战锤3】帝国 ✘马库斯·沃法特 灭世攻略  （第一集）',
+      'publisher': '温酱与夏凉丶',
+      'detail': '双线突破！ 上下开工 轻松破局！\n麻烦大家点赞三连一下 谢谢谢谢！\n\n交流群：142446829',
+      'description': '双线突破！ 上下开工 轻松破局！\n麻烦大家点赞三连一下 谢谢谢谢！\n\n交流群：142446829',
+      'views': 4838,
+      'date': '2023-05-07 23:01:43',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1UM4y1b7hb/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    },
+    {
+      'id': '94',
+      'typeId': 'The_Huntsmarshals_Expedition',
+      'imageUrl': '',
+      'title': '战锤3超凡帝国马库斯实况体验之四小强集合完毕',
+      'publisher': '火车王zym',
+      'detail': '本视频是战锤3超凡帝国马库斯双极难实况体验。马大帅总体而言还是很简单的，之后很快就会出锤3的帝国派系攻略，欢迎大家在评论区讨论。\n我已经整理了之前的攻略发到了我知乎的专栏里，链接如下:\nhttps://www.zhihu.com/column/c_1519681855921614848\n也可以关注我的b站账号，之前的攻略也整理在文集里了，我也会不定期在b站发布一些攻略视频：\n感谢大家的关注和支持。',
+      'description': '本视频是战锤3超凡帝国马库斯双极难实况体验。马大帅总体而言还是很简单的，之后很快就会出锤3的帝国派系攻略，欢迎大家在评论区讨论。\n我已经整理了之前的攻略发到了我知乎的专栏里，链接如下:\nhttps://www.zhihu.com/column/c_1519681855921614848\n也可以关注我的b站账号，之前的攻略也整理在文集里了，我也会不定期在b站发布一些攻略视频：\n感谢大家的关注和支持。',
+      'views': 2140,
+      'date': '2022-10-04 08:24:19',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1ct4y1A7Go/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    }
+  ],
+  'Cult_of_Sigmar': [
+    {
+      'id': '95',
+      'typeId': 'Cult_of_Sigmar',
+      'imageUrl': '',
+      'title': '[全面战争·战锤3·半小时玩一个领主] 沃克玛·无情者',
+      'publisher': '古老游戏玩家',
+      'detail': '[全面战争·战锤3·半小时玩一个领主] 沃克玛·无情者',
+      'description': '[全面战争·战锤3·半小时玩一个领主] 沃克玛·无情者',
+      'views': 356,
+      'date': '2024-04-08 11:30:00',
+      'tagIds': [
+        'clansDescription'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1vm42177LX/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    },
+    {
+      'id': '96',
+      'typeId': 'Cult_of_Sigmar',
+      'imageUrl': '',
+      'title': '帝国真皇沃克玛，独战天灾四满编！为什么沃克玛是顶尖无双领主？',
+      'publisher': 'wodwd-不是wdnmd-',
+      'detail': '准备满配无双领主\n再为他准备合适的战斗~\n中间很多步骤靠mod和自制mod实现~\n制作不易~\n记得点赞关注投币~',
+      'description': '准备满配无双领主\n再为他准备合适的战斗~\n中间很多步骤靠mod和自制mod实现~\n制作不易~\n记得点赞关注投币~',
+      'views': 91000,
+      'date': '2022-09-02 14:01:38',
+      'tagIds': [
+        'newerTeach'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1Dd4y1G78W/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    },
+    {
+      'id': '97',
+      'typeId': 'Cult_of_Sigmar',
+      'imageUrl': '',
+      'title': '【战锤3全战】- 沃克玛·无情者 - 明明我是射爆 但是我一定要用帝国的剑 斩吸血鬼的头',
+      'publisher': '温酱与夏凉丶',
+      'detail': '明明我帝国是射爆体系 但是我为什么不能玩砍爆体系呢？\n\n麻烦大家点赞支持一下 十分感谢了！谢谢大家！\n\n交流群：142446829',
+      'description': '明明我帝国是射爆体系 但是我为什么不能玩砍爆体系呢？\n\n麻烦大家点赞支持一下 十分感谢了！谢谢大家！\n\n交流群：142446829',
+      'views': 1798,
+      'date': '2024-04-27 15:22:31',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV18p421S7Za/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    },
+    {
+      'id': '98',
+      'typeId': 'Cult_of_Sigmar',
+      'imageUrl': '',
+      'title': '【战锤3】超凡帝国沃克玛新手向破局攻略#1 非洲只有一个光头！',
+      'publisher': 'KK就是Kei',
+      'detail': '极限一点可以省一回合，但是已经有大佬做了，这里只做简单打法。',
+      'description': '极限一点可以省一回合，但是已经有大佬做了，这里只做简单打法。',
+      'views': 14000,
+      'date': '2022-08-29 03:48:50',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1YG41157qx/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    }
+  ],
+  'The_Northern_Provinces': [
+    {
+      'id': '99',
+      'typeId': 'The_Northern_Provinces',
+      'imageUrl': '',
+      'title': '[全面战争·战锤3·半小时玩一个领主] 飙龙妙影',
+      'publisher': '古老游戏玩家',
+      'detail': '[全面战争·战锤3·半小时玩一个领主] 飙龙妙影',
+      'description': '[全面战争·战锤3·半小时玩一个领主] 飙龙妙影',
+      'views': 444,
+      'date': '2024-03-13 11:56:38',
+      'tagIds': [
+        'clansDescription'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1Nj421f7JZ/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    },
+    {
+      'id': '100',
+      'typeId': 'The_Northern_Provinces',
+      'imageUrl': '',
+      'title': '战锤Ⅲ台词语音翻译——天朝军威！ “飙龙”妙影与玉勇基础篇',
+      'publisher': '慕斯_Lorister',
+      'detail': '精灵翻译庭第五期\n妙影的撤退语音真是花了不少功夫\n聊天小窝647441556',
+      'description': '精灵翻译庭第五期\n妙影的撤退语音真是花了不少功夫\n聊天小窝647441556',
+      'views': 46000,
+      'date': '2023-06-03 11:40:25',
+      'tagIds': [
+        'clip'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV15V4y1U7e8/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    },
+    {
+      'id': '101',
+      'typeId': 'The_Northern_Provinces',
+      'imageUrl': '',
+      'title': '【全面战争: 战锤3】派系内容详解#1 震旦天朝 飙龙妙影',
+      'publisher': '太阳先生-',
+      'detail': '中文顾问\n宁和无敌\n长垣低价量产九级兵\n我震旦天下无敌啊！！！\n第二期恶魔亲王介绍：BV1Uq4y1A7kU',
+      'description': '中文顾问\n宁和无敌\n长垣低价量产九级兵\n我震旦天下无敌啊！！！\n第二期恶魔亲王介绍：BV1Uq4y1A7kU',
+      'views': 147000,
+      'date': '2022-01-19 23:00:03',
+      'tagIds': [
+        'newerTeach'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1Ur4y1Y7Ta/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    },
+    {
+      'id': '102',
+      'typeId': 'The_Northern_Provinces',
+      'imageUrl': '',
+      'title': '【战锤3】- 原版 - 飚龙妙影 4.10版本破局攻略 合理规划 极速穿透 秒破 #1',
+      'publisher': '温酱与夏凉丶',
+      'detail': '感谢舰长洛千何的赞助点播 \n\n较新手向的破局攻略 妙影现在破局难度不高 只是宁和比之前稍微繁琐一点\n\n交流群：142446829',
+      'description': '感谢舰长洛千何的赞助点播 \n\n较新手向的破局攻略 妙影现在破局难度不高 只是宁和比之前稍微繁琐一点\n\n交流群：142446829',
+      'views': 5709,
+      'date': '2023-11-28 19:09:31',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1Qw411n7Bm/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    }
+  ],
+  'The_Western_Provinces': [
+    {
+      'id': '103',
+      'typeId': 'The_Western_Provinces',
+      'imageUrl': '',
+      'title': '[全面战争·战锤3·半小时玩一个领主] 镔龙昭明',
+      'publisher': '古老游戏玩家',
+      'detail': '[全面战争·战锤3·半小时玩一个领主] 镔龙昭明',
+      'description': '[全面战争·战锤3·半小时玩一个领主] 镔龙昭明',
+      'views': 265,
+      'date': '2024-03-24 09:30:00',
+      'tagIds': [
+        'clansDescription'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1Xr42187cX/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    },
+    {
+      'id': '104',
+      'typeId': 'The_Western_Provinces',
+      'imageUrl': '',
+      'title': '【全面战争：战锤3】震旦-传奇战役-镔龙·昭明-强袭攻略#1',
+      'publisher': '武侍建御雷',
+      'detail': '关键点1：开局主城记得造铁雹铳手出兵建筑，打上阳之利器\r\n关键点2：巨龙马骑定位类似皇家飞马，伤害不错但很脆，很吃冲锋加成\r\n关键点3：炎霖火箭炮抬脚挺高，但下脚很低，极易误伤',
+      'description': '关键点1：开局主城记得造铁雹铳手出兵建筑，打上阳之利器\r\n关键点2：巨龙马骑定位类似皇家飞马，伤害不错但很脆，很吃冲锋加成\r\n关键点3：炎霖火箭炮抬脚挺高，但下脚很低，极易误伤',
+      'views': 32000,
+      'date': '2022-02-10 22:24:34',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1si4y1f7Az/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    },
+    {
+      'id': '105',
+      'typeId': 'The_Western_Provinces',
+      'imageUrl': '',
+      'title': '【战锤3】- 超凡帝国 - 镔龙昭明 震旦兵种解析 派系定位 全方位分析 新手教学 -ღ',
+      'publisher': '温酱与夏凉丶',
+      'detail': '本期给大家带来震旦镔龙昭明的兵种解析 派系分析 感谢大家支持。\n\n喜欢的话 麻烦三连+关注支持一下 谢谢~\n\n交流群：142446829',
+      'description': '本期给大家带来震旦镔龙昭明的兵种解析 派系分析 感谢大家支持。\n\n喜欢的话 麻烦三连+关注支持一下 谢谢~\n\n交流群：142446829',
+      'views': 13000,
+      'date': '2022-12-19 10:00:00',
+      'tagIds': [
+        'newerTeach'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1y8411p7kr/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    }
+  ],
+  'The_Jade_Court': [
+    {
+      'id': '108',
+      'typeId': 'The_Jade_Court',
+      'imageUrl': '',
+      'title': '[全面战争·战锤3·半小时玩一个领主] 玉龙元伯',
+      'publisher': '古老游戏玩家',
+      'detail': '[全面战争·战锤3·半小时玩一个领主] 玉龙元伯',
+      'description': '[全面战争·战锤3·半小时玩一个领主] 玉龙元伯',
+      'views': 958,
+      'date': '2024-03-31 11:30:00',
+      'tagIds': [
+        'clansDescription'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1Kj42197oV/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    },
+    {
+      'id': '109',
+      'typeId': 'The_Jade_Court',
+      'imageUrl': '',
+      'title': '【战锤3】- 玉龙元伯 - 超强攻略 10回合横扫南美 覆灭3传奇 双线开张 三线扩张！',
+      'publisher': '温酱与夏凉丶',
+      'detail': '玉龙元伯可以说是当前派系最强派系之一 不缺钱 不缺粮 部队强力 经济爆炸.\n整体扩张思路非常简单.尤其是补足之后的震旦可谓无人能当.\n时间比较仓促,有些东西还得深入研究. 但这个攻略完全可以给大家作为一个参考.\n\n交流群:142446829',
+      'description': '玉龙元伯可以说是当前派系最强派系之一 不缺钱 不缺粮 部队强力 经济爆炸.\n整体扩张思路非常简单.尤其是补足之后的震旦可谓无人能当.\n时间比较仓促,有些东西还得深入研究. 但这个攻略完全可以给大家作为一个参考.\n\n交流群:142446829',
+      'views': 48000,
+      'date': '2023-08-23 22:00:00',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1mN4y197cP/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    },
+    {
+      'id': '110',
+      'typeId': 'The_Jade_Court',
+      'imageUrl': '',
+      'title': '玉龙元伯无双测试~这就是无敌的元神！',
+      'publisher': 'wodwd-不是wdnmd-',
+      'detail': '视频制作不易，希望大家能多多点赞关注投币~\n本期视频投币过千，这周再更一期黑暗精灵深入讲解~',
+      'description': '视频制作不易，希望大家能多多点赞关注投币~\n本期视频投币过千，这周再更一期黑暗精灵深入讲解~',
+      'views': 68000,
+      'date': '2023-11-07 11:30:00',
+      'tagIds': [
+        'clip'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1R84y1D7Kr/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    },
+    {
+      'id': '111',
+      'typeId': 'The_Jade_Court',
+      'imageUrl': '',
+      'title': '【新手入坑】从一脸懵逼到全面战争25.1：玉龙元伯篇——元神！启动！',
+      'publisher': '稀糊猝鱼',
+      'detail': '来咯！新一轮！',
+      'description': '来咯！新一轮！',
+      'views': 22000,
+      'date': '2024-02-26 17:22:01',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1Xz421X7rV/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    }
+  ],
+  'Grimgors_Ardboyz': [],
+  'Bonerattlaz': [],
+  'Crooked_Moon': [],
+  'The_Bloody_Handz': [],
+  'Broken_Axe': [],
+  'Eataine': [],
+  'Order_of_Loremasters': [],
+  'Avelorn': [],
+  'Nagarythe': [],
+  'Yvresse': [],
+  'Knights_of_Caledor': [],
+  'Exiles_of_Khorne': [],
+  'The_Ice_Court': [],
+  'The_Great_Orthodoxy': [],
+  'Ursun_Revivalists': [],
+  'Daughters_of_the_Forest': [],
+  'Hexoatl': [],
+  'Last_Defenders': [],
+  'Cult_of_Sotek': [],
+  'Tlaqua': [],
+  'Itza': [],
+  'Spirit_of_the_Jungle': [],
+  'Ghosts_of_Pahuax': [],
+  'World_Walkers': [],
+  'Wintertooth': [],
+  'Poxmakers_of_Nurgle': [],
+  'Goldtooth': [],
+  'Disciples_of_the_Maw': [],
+  'Clan_Mors': [],
+  'Clan_Pestilens': [],
+  'Clan_Rictus': [],
+  'Clan_Skryre': [],
+  'Clan_Eshin': [],
+  'Clan_Moulder': [],
+  'Seducers_of_Slaanesh': [],
+  'Khemri': [],
+  'Exiles_of_Nehek': [],
+  'Court_of_Lybaras': [],
+  'Followers_of_Nagash': [],
+  'Oracles_of_Tzeentch': [],
+  'The_Deceivers': [],
+  'The_Awakened': [],
+  'The_Dreadfleet': [],
+  'Pirates_of_Sartosa': [],
+  'The_Drowned': [],
+  'The_Drakenhof_Conclave': [],
+  'The_Barrow_Legion': [],
+  'Sylvania_Vlad': [],
+  'Sylvania_Isabella': [],
+  'Caravan_of_Blue_Roses': [],
+  'Warhost_of_the_Apocalypse': [],
+  'Heralds_of_the_Tempest': [],
+  'The_Decadent_Host': [],
+  'The_Ecstatic_Legions': [],
+  'The_Fecundites': [],
+  'Legion_of_the_Gorequeen': [],
+  'Puppets_of_Misrule': [],
+  'Shadow_Legion': [],
+  'Talsyn': [],
+  'Argwylon': [],
+  'Heralds_of_Ariel': [],
+  'Wargrove_of_Woe': []
+};
+
+export const EMPTY_ARTICLES_MAP: IArticleMap = {
+  'Grimgors_Ardboyz': [],
+  'Bonerattlaz': [],
+  'Crooked_Moon': [],
+  'The_Bloody_Handz': [],
+  'Broken_Axe': [],
+  'Eataine': [],
+  'Order_of_Loremasters': [],
+  'Avelorn': [],
+  'Nagarythe': [],
+  'Yvresse': [],
+  'Knights_of_Caledor': [],
+  'Exiles_of_Khorne': [],
+  'The_Ice_Court': [],
+  'The_Great_Orthodoxy': [],
+  'Ursun_Revivalists': [],
+  'Daughters_of_the_Forest': [],
+  'Hexoatl': [],
+  'Last_Defenders': [],
+  'Cult_of_Sotek': [],
+  'Tlaqua': [],
+  'Itza': [],
+  'Spirit_of_the_Jungle': [],
+  'Ghosts_of_Pahuax': [],
+  'World_Walkers': [],
+  'Wintertooth': [],
+  'Poxmakers_of_Nurgle': [],
+  'Goldtooth': [],
+  'Disciples_of_the_Maw': [],
+  'Clan_Mors': [],
+  'Clan_Pestilens': [],
+  'Clan_Rictus': [],
+  'Clan_Skryre': [],
+  'Clan_Eshin': [],
+  'Clan_Moulder': [],
+  'Seducers_of_Slaanesh': [],
+  'Khemri': [],
+  'Exiles_of_Nehek': [],
+  'Court_of_Lybaras': [],
+  'Followers_of_Nagash': [],
+  'Oracles_of_Tzeentch': [],
+  'The_Deceivers': [],
+  'The_Awakened': [],
+  'The_Dreadfleet': [],
+  'Pirates_of_Sartosa': [],
+  'The_Drowned': [],
+  'The_Drakenhof_Conclave': [],
+  'The_Barrow_Legion': [],
+  'Sylvania_Vlad': [],
+  'Sylvania_Isabella': [],
+  'Caravan_of_Blue_Roses': [],
+  'Warhost_of_the_Apocalypse': [],
+  'Heralds_of_the_Tempest': [],
+  'The_Decadent_Host': [],
+  'The_Ecstatic_Legions': [],
+  'The_Fecundites': [],
+  'Legion_of_the_Gorequeen': [],
+  'Puppets_of_Misrule': [],
+  'Shadow_Legion': [],
+  'Talsyn': [],
+  'Argwylon': [],
+  'Heralds_of_Ariel': [],
+  'Wargrove_of_Woe': []
+};

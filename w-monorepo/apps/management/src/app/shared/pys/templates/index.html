@@ -9,7 +9,7 @@
 <h1>Scrape and Save</h1>
 <form id="saveForm">
   <label for="url">Enter URL:</label><br>
-  <input style="width: 400px" type="text" id="url" name="url"><br><br>
+  <input style="width: 800px" type="text" id="url" name="url"><br><br>
 
   <label for="tags">Select Tags:</label><br>
   <input type="checkbox" id="all" name="tags" value="all">
@@ -23,19 +23,52 @@
   <input type="checkbox" id="clip" name="tags" value="clip">
   <label for="clip">Clip</label><br>
   <input type="checkbox" id="story" name="tags" value="story">
-  <label for="story">Story</label><br><br>
+  <label for="story">Story</label><br>
+  <input type="checkbox" id="task" name="tags" value="task">
+  <label for="task">Task</label><br>
+  <input type="checkbox" id="news" name="tags" value="news">
+  <label for="news">News</label><br>
+  <br>
+
+  <!-- 选择Clan的id -->
+  <label for="clanId">Select Clan ID:</label><br>
+  <input type="text" id="clanSearch" oninput="filterClans()" placeholder="Search for Hero Name...">
+  <select id="clanId" name="clanId">
+    {% for clan in clans %}
+    <option value="{{ clan.id }}" data-hero="{{ clan.heroName }}">{{ clan.heroName }}</option>
+    {% endfor %}
+  </select><br><br>
 
   <input type="button" value="Save" onclick="saveData()">
 </form>
 
 <script>
+  function filterClans() {
+    var input, filter, select, options, option, i, heroName;
+    input = document.getElementById("clanSearch");
+    filter = input.value.toUpperCase();
+    select = document.getElementById("clanId");
+    options = select.getElementsByTagName("option");
+    for (i = 0; i < options.length; i++) {
+      option = options[i];
+      heroName = option.getAttribute("data-hero").toUpperCase();
+      if (heroName.indexOf(filter) > -1) {
+        option.style.display = "";
+      } else {
+        option.style.display = "none";
+      }
+    }
+  }
+
   function saveData() {
     var url = document.getElementById('url').value;
     var tags = Array.from(document.querySelectorAll('input[name="tags"]:checked')).map(tag => tag.value);
+    var clanId = document.getElementById('clanId').value; // 获取选定的clanId值
 
     var data = {
       url: url,
-      tags: tags
+      tags: tags,
+      clanId: clanId // 将clanId值包含在请求数据中
     };
 
     var xhr = new XMLHttpRequest();
