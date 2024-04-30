@@ -31,7 +31,12 @@ def scrape_page(url):
     publisher = publisher_tag.text.strip() if publisher_tag else ''
 
     detail_tag = soup.select_one('.video-desc-container .basic-desc-info .desc-info-text')
-    detail = detail_tag.text.strip() if detail_tag else ''
+    detail_lines = detail_tag.text.strip().split('\n') if detail_tag else []
+    detail = detail_lines[0] if detail_lines else ''
+
+    if len(detail) > 150:
+        # 如果detail长度超过150，只保留第一句
+        detail = detail.split('.')[0] + '.'
 
     views_text = soup.select_one('.view .view-text').text.strip()
     views = parse_views(views_text)

@@ -1801,7 +1801,7 @@ export const WARHAMMER_CLASSIFIERS_MAP: IWarhammerClassifierMap = {
       'path': 'assets/images/icons/Vampire Counts/The_Barrow_Legion.png'
     }
   },
-  'Sylvania': {
+  'Sylvania_Isabella': {
     'parentId': 'Vampire_Counts',
     'file': {
       'id': 'Sylvania_Isabella',
@@ -1810,6 +1810,18 @@ export const WARHAMMER_CLASSIFIERS_MAP: IWarhammerClassifierMap = {
       'heroName': '伊莎贝拉·冯·卡斯坦因',
       'heroNameEN': 'isabella-von-carstein',
       'heroAvatarPath': 'assets/images/lords/vampire-counts-isabella-von-carstein.png',
+      'path': 'assets/images/icons/Vampire Counts/Sylvania.png'
+    }
+  },
+  'Sylvania_Vlad': {
+    'parentId': 'Vampire_Counts',
+    'file': {
+      'id': 'Sylvania_Isabella',
+      'name': 'Sylvania',
+      'nameCN': '希尔瓦尼亚',
+      'heroName': '弗拉德·冯·卡斯坦因',
+      'heroNameEN': 'vlad-von-carstein',
+      'heroAvatarPath': 'assets/images/lords/vampire-counts-vlad-von-carstein.png',
       'path': 'assets/images/icons/Vampire Counts/Sylvania.png'
     }
   },

@@ -27,19 +27,25 @@ export class AppComponent {
   protected navigationItemActive = 'clans';
   protected showNavigation = true;
   protected readonly eBannerMode = EBannerMode;
-  protected readonly navigationItems: INavigationItem[] = [{
-    id: 'clans',
-    path: 'clans',
-    label: '全派系'
-  }, {
-    id: 'warSchool',
-    path: 'war-school',
-    label: '战争讲堂'
-  }, {
-    id: 'articles',
-    path: 'articles',
-    label: '文章资料'
-  }];
+  protected readonly navigationItems: INavigationItem[] = [
+    {
+      id: 'clans',
+      path: 'clans',
+      label: '全派系'
+    },
+    {
+      id: 'articles',
+      path: 'articles',
+      label: '最新资讯'
+    }, {
+      id: 'warSchool',
+      path: 'war-school',
+      label: '战争讲堂'
+    }, {
+      id: 'mods',
+      path: 'mods',
+      label: 'Mod推荐'
+    }];
 
   protected onBannerClick() {
     this._router.navigate(['']);

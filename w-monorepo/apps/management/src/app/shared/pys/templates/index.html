@@ -34,6 +34,7 @@
   <label for="clanId">Select Clan ID:</label><br>
   <input type="text" id="clanSearch" oninput="filterClans()" placeholder="Search for Hero Name...">
   <select id="clanId" name="clanId">
+    <option value="articles" data-hero="articles">最新资讯</option>
     {% for clan in clans %}
     <option value="{{ clan.id }}" data-hero="{{ clan.heroName }}">{{ clan.heroName }}</option>
     {% endfor %}

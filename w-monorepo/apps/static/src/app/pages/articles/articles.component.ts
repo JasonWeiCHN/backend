@@ -15,6 +15,86 @@ export class ArticlesComponent {
 
   public data: IItemCard[] = [
     {
+      'id': '410',
+      'typeId': 'Warherd_of_the_Shadowgave',
+      'imageUrl': '',
+      'title': '9.5分 《战锤3全面战争》DLC「腐烂王座」评测：知耻而后勇！',
+      'publisher': '明曦xmD',
+      'detail': '战锤3全面战争DLC 腐烂王座Throne of Decay 即将于4月30日晚10点正式上线。',
+      'description': '战锤3全面战争DLC 腐烂王座Throne of Decay 即将于4月30日晚10点正式上线。',
+      'views': 22000,
+      'date': '2024-04-29 22:01:16',
+      'tagIds': [
+        'news'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV19m421p7fi/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    },
+    {
+      'id': '411',
+      'typeId': 'articles',
+      'imageUrl': '',
+      'title': '【战锤3全战】- 腐烂王座 - 5.0更新日志前瞻 CA诚意满满 请问您准备好入库了嘛？ 开启传奇的战争之旅。',
+      'publisher': '温酱与夏凉丶',
+      'detail': '个人觉得这次CA的诚意绝对是够得 最后我们还不知道的就是定价如何。 但是我也担心如果新派系强度太高，整体上调的过于快餐化。 其实也有可能会让玩家觉得玩起来无聊， 毕竟策略游戏稍微有些深入才能让人觉得更有乐趣。',
+      'description': '个人觉得这次CA的诚意绝对是够得 最后我们还不知道的就是定价如何。 但是我也担心如果新派系强度太高，整体上调的过于快餐化。 其实也有可能会让玩家觉得玩起来无聊， 毕竟策略游戏稍微有些深入才能让人觉得更有乐趣。',
+      'views': 4750,
+      'date': '2024-04-30 02:52:54',
+      'tagIds': [
+        'news'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1ME421j7ML/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    },
+    {
+      'id': '412',
+      'typeId': 'articles',
+      'imageUrl': '',
+      'title': '【寅子录播】2024年4月29日《全战：战锤3》',
+      'publisher': '寅子',
+      'detail': '相关游戏：《全面战争：战锤3》',
+      'description': '相关游戏：《全面战争：战锤3》',
+      'views': 2015,
+      'date': '2024-04-30 10:25:18',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV19D421N7NA/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    },
+    {
+      'id': '413',
+      'typeId': 'articles',
+      'imageUrl': '',
+      'title': '【战锤3全战：超凡】5.0内测纳垢-塔木尔可汗传奇SA#3',
+      'publisher': '武侍建御雷',
+      'detail': '次英杰建议选择混矮酋长，其解锁的雷铳手可以大幅提升副编的战斗力，尤其是在对抗食人魔时。',
+      'description': '次英杰建议选择混矮酋长，其解锁的雷铳手可以大幅提升副编的战斗力，尤其是在对抗食人魔时。',
+      'views': 1145,
+      'date': '2024-04-30 08:22:05',
+      'tagIds': [
+        'news'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1hf421S71n/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    },
+    {
+      'id': '414',
+      'typeId': 'articles',
+      'imageUrl': '',
+      'title': '【战锤3全战】- 腐烂王座 - 5.0更新日志前瞻 CA诚意满满 请问您准备好入库了嘛？ 开启传奇的战争之旅。',
+      'publisher': '温酱与夏凉丶',
+      'detail': '个人觉得这次CA的诚意绝对是够得 最后我们还不知道的就是定价如何。 但是我也担心如果新派系强度太高，整体上调的过于快餐化。 其实也有可能会让玩家觉得玩起来无聊， 毕竟策略游戏稍微有些深入才能让人觉得更有乐趣。',
+      'description': '个人觉得这次CA的诚意绝对是够得 最后我们还不知道的就是定价如何。 但是我也担心如果新派系强度太高，整体上调的过于快餐化。 其实也有可能会让玩家觉得玩起来无聊， 毕竟策略游戏稍微有些深入才能让人觉得更有乐趣。',
+      'views': 4764,
+      'date': '2024-04-30 02:52:54',
+      'tagIds': [
+        'news'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1ME421j7ML/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    },
+    {
       'id': '',
       'typeId': '',
       'imageUrl': '',

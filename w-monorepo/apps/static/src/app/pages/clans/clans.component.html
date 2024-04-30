@@ -1,6 +1,11 @@
 <div class="clans">
+  <div style="display: flex;align-items: baseline;justify-content: center">
+    <div style="margin-right: 12px">显示模式:</div>
+    <w-tag-selector [tags]="tags" (tagSelected)="onTagSeclet($event)"></w-tag-selector>
+  </div>
   <div style="margin: 12px 0">
-    <st-warhammer-classifier></st-warhammer-classifier>
+    <st-clans-navigation *ngIf="activeModeId === 'map'"></st-clans-navigation>
+    <st-warhammer-classifier *ngIf="activeModeId === 'list'"></st-warhammer-classifier>
     <!--<w-classifier (classifierItemClick)="onClassifierItemClick($event)"></w-classifier>-->
   </div>
 </div>

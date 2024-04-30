@@ -1,14 +1,14 @@
 import { Route } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
 import { ArticleComponent } from './pages/article/article.component';
 import { ClansComponent } from './pages/clans/clans.component';
 import { WarSchoolComponent } from './pages/war-school/war-school.component';
 import { ArticlesComponent } from './pages/articles/articles.component';
+import { ModsComponent } from './pages/mods/mods.component';
 
 export const appRoutes: Route[] = [
   {
     path: '',
-    component: HomeComponent
+    component: ClansComponent
   },
   {
     path: 'article/:warhammerClassifierId/:heroId',
@@ -29,5 +29,9 @@ export const appRoutes: Route[] = [
   {
     path: 'war-school',
     component: WarSchoolComponent
+  },
+  {
+    path: 'mods',
+    component: ModsComponent
   }
 ];

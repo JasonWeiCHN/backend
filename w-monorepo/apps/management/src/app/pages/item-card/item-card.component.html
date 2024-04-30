@@ -8,30 +8,30 @@
   <table>
     <thead>
     <tr>
-      <th>ID</th>
-      <th>Type ID</th>
-      <th>Image URL</th>
-      <th>Source URL</th>
-      <th>Title</th>
-      <th>Views</th>
-      <th>Description</th>
       <th>Publisher</th>
-      <th>Date</th>
-      <th>Detail</th>
+      <th>Title</th>
+      <th>Type ID</th>
+      <th>Source URL</th>
+      <!--      <th>ID</th>-->
+      <!--      <th>Image URL</th>-->
+      <!--      <th>Views</th>-->
+      <!--      <th>Description</th>-->
+      <!--      <th>Date</th>-->
+      <!--      <th>Detail</th>-->
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let itemCard of itemCards">
-      <td>{{ itemCard.id }}</td>
-      <td>{{ itemCard.typeId }}</td>
-      <td>{{ itemCard.imageUrl }}</td>
-      <td>{{ itemCard.sourceUrl }}</td>
-      <td>{{ itemCard.title }}</td>
-      <td>{{ itemCard.views }}</td>
-      <td>{{ itemCard.description }}</td>
       <td>{{ itemCard.publisher }}</td>
-      <td>{{ itemCard.date }}</td>
-      <td>{{ itemCard.detail }}</td>
+      <td>{{ itemCard.title }}</td>
+      <td>{{ itemCard.typeId }}</td>
+      <td>{{ itemCard.sourceUrl }}</td>
+      <!--      <td>{{ itemCard.id }}</td>-->
+      <!--      <td>{{ itemCard.imageUrl }}</td>-->
+      <!--      <td>{{ itemCard.views }}</td>-->
+      <!--      <td>{{ itemCard.description }}</td>-->
+      <!--      <td>{{ itemCard.date }}</td>-->
+      <!--      <td>{{ itemCard.detail }}</td>-->
     </tr>
     </tbody>
   </table>
