@@ -1,1 +1,19 @@
-<app-nx-welcome></app-nx-welcome> <router-outlet></router-outlet>
+<div class="w-app">
+  <w-banner
+    (click)="onBannerClick()"
+    [data]="appConfig.banner"
+  ></w-banner>
+  <div class="page">
+    <div
+      *ngIf="showNavigation"
+      style="margin-bottom: 24px"
+    >
+      <w-navigation
+        [items]="appConfig.navigationItems"
+        (navigationItemClick)="onNavigationItemClick($event)"
+      ></w-navigation>
+    </div>
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
