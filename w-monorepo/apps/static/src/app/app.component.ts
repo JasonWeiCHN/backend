@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { NxWelcomeComponent } from './nx-welcome.component';
-import { BannerComponent, EBannerMode, INavigationItem, NavigationComponent } from '@w-monorepo/ui';
+import { BannerComponent, INavigationItem, NavigationComponent } from '@w-monorepo/ui';
 import { NgIf } from '@angular/common';
+import { APP_CONFIG } from './shared/constants/app.config.constans';
+import { IApp } from '@w-monorepo/interfaces';
 
 @Component({
   standalone: true,
@@ -12,6 +14,10 @@ import { NgIf } from '@angular/common';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+  protected appConfig: IApp = APP_CONFIG;
+  protected navigationItemActive = 'clans';
+  protected showNavigation = true;
+
   public constructor(private _router: Router) {
     // 订阅路由变化事件
     this._router.events.subscribe(event => {
@@ -21,32 +27,7 @@ export class AppComponent {
       }
     });
   }
-
-  // for test only, can be removed
-  public title = 'static';
-  protected navigationItemActive = 'clans';
-  protected showNavigation = true;
-  protected readonly eBannerMode = EBannerMode;
-  protected readonly navigationItems: INavigationItem[] = [
-    {
-      id: 'clans',
-      path: 'clans',
-      label: '全派系'
-    },
-    {
-      id: 'articles',
-      path: 'articles',
-      label: '最新资讯'
-    }, {
-      id: 'warSchool',
-      path: 'war-school',
-      label: '战争讲堂'
-    }, {
-      id: 'mods',
-      path: 'mods',
-      label: 'Mod推荐'
-    }];
-
+  
   protected onBannerClick() {
     this._router.navigate(['']);
   }
