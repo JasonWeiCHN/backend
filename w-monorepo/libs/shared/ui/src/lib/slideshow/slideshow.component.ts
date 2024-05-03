@@ -6,14 +6,14 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './slideshow.component.html',
-  styleUrl: './slideshow.component.scss',
+  styleUrl: './slideshow.component.scss'
 })
 export class SlideshowComponent implements OnInit, OnDestroy {
   @Input()
   images: string[] = [];
 
   public currentImageIndex = 0;
-  private readonly _autoplayInterval = 5000; // 自动播放间隔，单位为毫秒
+  private readonly _autoplayInterval = 3000; // 自动播放间隔，单位为毫秒
   autoplayTimer: any; // 定时器引用
 
   public ngOnInit(): void {

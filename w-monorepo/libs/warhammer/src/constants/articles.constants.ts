@@ -1263,6 +1263,56 @@ export const ARTICLES_MAP: IArticleMap = {
       'referer': null
     }
   ],
+  'Masters_of_lnnovation': [
+    {
+      'id': '420',
+      'typeId': 'Masters_of_lnnovation',
+      'imageUrl': '',
+      'title': '[全面战争·战锤3·半小时玩一个领主] 马拉凯·马凯森',
+      'publisher': '古老游戏玩家',
+      'detail': '[全面战争·战锤3·半小时玩一个领主] 诅咒灵·维里奇',
+      'description': '[全面战争·战锤3·半小时玩一个领主] 诅咒灵·维里奇',
+      'views': 77,
+      'date': '2024-05-01 16:25:36',
+      'tagIds': [
+        'clansDescription'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1sC411J7eh/',
+      'referer': null
+    },
+    {
+      'id': '424',
+      'typeId': 'Masters_of_lnnovation',
+      'imageUrl': '',
+      'title': '【战锤3全战：超凡】5.0内测矮人-马拉凯传奇SA#1',
+      'publisher': '武侍建御雷',
+      'detail': '初始就占据独龙城钻石矿的马拉凯十分富有，前期尽量多线扩张，不然第一个复仇时代有点难打满',
+      'description': '初始就占据独龙城钻石矿的马拉凯十分富有，前期尽量多线扩张，不然第一个复仇时代有点难打满',
+      'views': 7561,
+      'date': '2024-04-27 19:21:12',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1RH4y1N7F5',
+      'referer': null
+    },
+    {
+      'id': '425',
+      'typeId': 'Masters_of_lnnovation',
+      'imageUrl': '',
+      'title': '『屠夫工程师』马拉凯·马凯森 战役演示 / 中文字幕 / 全面战争：战锤3',
+      'publisher': '辉星黯月',
+      'detail': 'https://www.youtube.com/watch?v=STU2fFLXxgc',
+      'description': 'https://www.youtube.com/watch?v=STU2fFLXxgc',
+      'views': 21000,
+      'date': '2024-04-24 22:40:37',
+      'tagIds': [
+        'clansDescription'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1Rb421Y7Q9',
+      'referer': null
+    }
+  ],
   'Reikland': [
     {
       'id': '84',
@@ -1508,6 +1558,72 @@ export const ARTICLES_MAP: IArticleMap = {
         'liveRecording'
       ],
       'sourceUrl': 'https://www.bilibili.com/video/BV1YG41157qx/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    }
+  ],
+  'Wissenland_Nuln': [
+    {
+      'id': '432',
+      'typeId': 'Wissenland_Nuln',
+      'imageUrl': '',
+      'title': '[全面战争·战锤3·半小时玩一个领主] 埃斯佩斯·冯·邓肯',
+      'publisher': '古老游戏玩家',
+      'detail': '[全面战争·战锤3·半小时玩一个领主] 埃斯佩斯·冯·邓肯',
+      'description': '[全面战争·战锤3·半小时玩一个领主] 埃斯佩斯·冯·邓肯',
+      'views': 12,
+      'date': '2024-05-02 13:14:21',
+      'tagIds': [
+        'clansDescription'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1TH4y1V7VW',
+      'referer': null
+    },
+    {
+      'id': '421',
+      'typeId': 'Wissenland_Nuln',
+      'imageUrl': '',
+      'title': '『墓园玫瑰』埃斯佩斯·冯·邓肯 战役演示 / 中文字幕 / 全面战争：战锤3',
+      'publisher': '辉星黯月',
+      'detail': 'https://www.youtube.com/watch?v=qoR10nc2zcE',
+      'description': 'https://www.youtube.com/watch?v=qoR10nc2zcE',
+      'views': 26000,
+      'date': '2024-04-18 22:14:33',
+      'tagIds': [
+        'clansDescription'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1gD421H7Bh',
+      'referer': null
+    },
+    {
+      'id': '422',
+      'typeId': 'Wissenland_Nuln',
+      'imageUrl': '',
+      'title': '【战锤3全战】- 玫瑰墓园 - 埃斯佩斯·冯·邓肯 恐帝国火炮天下无敌？ 帝国机制及改动详解。',
+      'publisher': '温酱与夏凉丶',
+      'detail': '玫瑰墓园这个派系 对帝国火器的加成十分恐怖 。 我觉得甚至可能会恐怖到无聊 但是CA做出了一些新的尝试 总归是好的。',
+      'description': '玫瑰墓园这个派系 对帝国火器的加成十分恐怖 。 我觉得甚至可能会恐怖到无聊 但是CA做出了一些新的尝试 总归是好的。',
+      'views': 21000,
+      'date': '2024-04-19 09:26:06',
+      'tagIds': [
+        'clansDescription'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV19p421X76h',
+      'referer': null
+    },
+    {
+      'id': '423',
+      'typeId': 'Wissenland_Nuln',
+      'imageUrl': '',
+      'title': '战锤3腐烂王座 和墓园玫瑰埃斯佩斯一块玩耍吧！自动中文字幕',
+      'publisher': '明曦xmD',
+      'detail': 'https://www.youtube.com/watch?v=qoR10nc2zcE&t=641s',
+      'description': 'https://www.youtube.com/watch?v=qoR10nc2zcE&t=641s',
+      'views': 32000,
+      'date': '2024-04-18 23:00:37',
+      'tagIds': [
+        'clansDescription'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1Si42127m6',
       'referer': null
     }
   ],
@@ -2020,6 +2136,22 @@ export const ARTICLES_MAP: IArticleMap = {
         'clip'
       ],
       'sourceUrl': 'https://www.bilibili.com/video/BV1wg4y1z7y7/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    },
+    {
+      'id': '429',
+      'typeId': 'Broken_Axe',
+      'imageUrl': '',
+      'title': '重生之我是哥布林大王（上）【全面战争战锤3】',
+      'publisher': '机枪卡卡',
+      'detail': '冷知识：哈基米在绿皮语里是哥布林的意思',
+      'description': '冷知识：哈基米在绿皮语里是哥布林的意思',
+      'views': 43000,
+      'date': '2024-04-05 09:23:33',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV19q421w78C',
       'referer': null
     }
   ],
@@ -4209,6 +4341,73 @@ export const ARTICLES_MAP: IArticleMap = {
       'referer': null
     }
   ],
+  'The_Maggot_Host': [
+    {
+      'id': '426',
+      'typeId': 'The_Maggot_Host',
+      'imageUrl': '',
+      'title': '【战锤3全战：超凡】5.0内测纳垢-塔木尔可汗传奇SA#1',
+      'publisher': '武侍建御雷',
+      'detail': '塔木尔可汗很富有，新版纳垢苍蝇才是第一优先资源，且主要靠建筑获取，因此建筑选择上第一优先发展，第二就是苍蝇，经济可靠高额的战后收入来维持。',
+      'description': '塔木尔可汗很富有，新版纳垢苍蝇才是第一优先资源，且主要靠建筑获取，因此建筑选择上第一优先发展，第二就是苍蝇，经济可靠高额的战后收入来维持。',
+      'views': 6460,
+      'date': '2024-04-30 02:53:56',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1Bm421p71A',
+      'referer': null
+    },
+    {
+      'id': '427',
+      'typeId': 'The_Maggot_Host',
+      'imageUrl': '',
+      'title': '腐烂王座 — 塔木尔可汗',
+      'publisher': '萝卜肆无忌惮',
+      'detail': '我再也无法忍受这一幕',
+      'description': '我再也无法忍受这一幕',
+      'views': 89000,
+      'date': '2024-03-31 22:23:00',
+      'tagIds': [
+        'story'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1zj4219761',
+      'referer': null
+    },
+    {
+      'id': '428',
+      'typeId': 'The_Maggot_Host',
+      'imageUrl': '',
+      'title': '战锤3腐烂王座 塔木尔可汗 真正的混沌冠军！',
+      'publisher': '明曦xmD',
+      'detail': '塔木尔可汗的氏族长机制也是一个优质的战役引导机制，可以在6位氏族长任务的指引下征服中古战锤世界',
+      'description': '塔木尔可汗的氏族长机制也是一个优质的战役引导机制，可以在6位氏族长任务的指引下征服中古战锤世界',
+      'views': 42000,
+      'date': '2024-04-25 22:00:41',
+      'tagIds': [
+        'clansDescription'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1u1421R7qM',
+      'referer': null
+    },
+    {
+      'id': '430',
+      'typeId': 'The_Maggot_Host',
+      'imageUrl': '',
+      'title': '【战锤3全战】- 塔木尔可汗 - 骑士冲锋 正面硬莽！ 砍爆 宰杀柯日天！#1',
+      'publisher': '温酱与夏凉丶',
+      'detail': '欢迎收看5.0版本的第一期 我是四神都很喜欢的夏凉 咱来个塔木尔可汗！',
+      'description': '欢迎收看5.0版本的第一期 我是四神都很喜欢的夏凉 咱来个塔木尔可汗！',
+      'views': 5002,
+      'date': '2024-05-01 19:08:37',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV13r421u7k8',
+      'referer': null
+    }
+  ],
+  'Tallymen_of_Pestilence': [],
   'Goldtooth': [
     {
       'id': '282',

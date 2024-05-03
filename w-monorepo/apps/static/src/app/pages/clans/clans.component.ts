@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ClassifierComponent, ITag, TagSelectorComponent } from '@w-monorepo/ui';
+import { ClassifierComponent, ITag, SlideshowComponent, TagSelectorComponent } from '@w-monorepo/ui';
 import { WarhammerClassifierComponent } from '../../components/warhammer-classifier/warhammer-classifier.component';
 import { ClansNavigationComponent } from '../../components/clans-navigation/clans-navigation.component';
 
 @Component({
   selector: 'st-clans',
   standalone: true,
-  imports: [CommonModule, ClassifierComponent, WarhammerClassifierComponent, TagSelectorComponent, ClansNavigationComponent],
+  imports: [CommonModule, ClassifierComponent, WarhammerClassifierComponent, TagSelectorComponent, ClansNavigationComponent, SlideshowComponent],
   templateUrl: './clans.component.html',
   styleUrl: './clans.component.scss'
 })

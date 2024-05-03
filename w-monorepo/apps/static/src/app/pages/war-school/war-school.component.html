@@ -1,10 +1,22 @@
 <div class="war-school">
   <section>
     <div class="subtitle">
+      相关文章
+    </div>
+    <div class="articles">
+      <w-list
+        [data]="articles"
+        [mode]="eList.ARTICLE"
+        (listItemClick)="onListItemClick($event)"
+      ></w-list>
+    </div>
+  </section>
+  <section>
+    <div class="subtitle">
       相关视频
     </div>
     <div class="cards">
-      <ng-container *ngFor="let item of cards; let index = index;">
+      <ng-container *ngFor="let item of items; let index = index;">
         <w-item-card
           *ngIf="item.typeId === activeTypeId"
           (click)="onCardClick(item)"

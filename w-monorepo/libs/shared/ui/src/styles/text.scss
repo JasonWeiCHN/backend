@@ -3,3 +3,24 @@
   overflow: hidden; /* 超出部分隐藏 */
   text-overflow: ellipsis; /* 显示省略号 */
 }
+
+%no-select {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+
+  -webkit-user-select: none;
+  /* Safari */
+
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+
+  -moz-user-select: none;
+  /* Firefox */
+
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+
+  user-select: none;
+  /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
+
+}

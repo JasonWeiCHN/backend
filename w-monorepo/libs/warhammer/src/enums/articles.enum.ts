@@ -7,7 +7,8 @@ export enum EArticleTags {
   STORY = 'story',
   TASK = 'task',
   NEWS = 'news',
-  MODS = 'mods'
+  MODS = 'mods',
+  STRATEGY = 'strategy'
 }
 
 export enum EReferer {

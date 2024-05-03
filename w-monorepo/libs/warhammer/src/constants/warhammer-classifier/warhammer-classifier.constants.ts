@@ -228,6 +228,15 @@ export const WARHAMMER_CLASSIFIERS: IWarhammerClassifier[] = [
         'heroName': '托雷克·铁眉',
         'heroAvatarPath': 'assets/images/lords/dwarves-thorek-ironbrow.png',
         'path': 'assets/images/icons/Dwarfs/The_Ancestral_Throng.png'
+      },
+      {
+        'id': 'Masters_of_lnnovation',
+        'name': 'Masters_of_lnnovation',
+        'nameCN': '创新大师',
+        'heroName': '马拉凯·马凯森',
+        'heroNameEN': 'Malakai Makaisson',
+        'heroAvatarPath': 'assets/images/lords/dwarves-malakai-makaisson.png',
+        'path': 'assets/images/icons/Dwarfs/The_Ancestral_Throng.png'
       }
     ]
   },
@@ -266,6 +275,15 @@ export const WARHAMMER_CLASSIFIERS: IWarhammerClassifier[] = [
         'nameCN': '西格玛教会',
         'heroName': '沃克玛·无情者',
         'heroAvatarPath': 'assets/images/lords/empire-volkmar-the-grim.png',
+        'path': 'assets/images/icons/The Empire/Cult_of_Sigmar.png'
+      },
+      {
+        'id': 'Wissenland_Nuln',
+        'name': 'Wissenland_Nuln',
+        'nameCN': '威森领与努恩',
+        'heroName': '埃斯佩斯·冯·邓肯',
+        'heroNameEN': 'Elspeth von Draken',
+        'heroAvatarPath': 'assets/images/lords/empire-elspeth-von-draken.png',
         'path': 'assets/images/icons/The Empire/Cult_of_Sigmar.png'
       }
     ]
@@ -554,6 +572,24 @@ export const WARHAMMER_CLASSIFIERS: IWarhammerClassifier[] = [
         'nameCN': '纳垢驭疹官',
         'heroName': '库嘎斯·瘟父',
         'heroAvatarPath': 'assets/images/lords/nurgle-kugath-plaguefather.png',
+        'path': 'assets/images/icons/Nurgle/Poxmakers_of_Nurgle.png'
+      },
+      {
+        'id': 'The_Maggot_Host',
+        'name': 'The_Maggot_Host',
+        'nameCN': '蛆虫军团',
+        'heroName': '蛆虫之主·塔木尔可汗',
+        'heroNameEN': 'Tamurkhan the Maggot Lord',
+        'heroAvatarPath': 'assets/images/lords/nurgle-tankhan-the-maggot-lord.png',
+        'path': 'assets/images/icons/Nurgle/Poxmakers_of_Nurgle.png'
+      },
+      {
+        'id': 'Tallymen_of_Pestilence',
+        'name': 'Tallymen_of_Pestilence',
+        'nameCN': '瘟疫计患官',
+        'heroName': '埃皮德穆斯',
+        'heroNameEN': 'Epidemius',
+        'heroAvatarPath': 'assets/images/lords/nurgle-epidemius.png',
         'path': 'assets/images/icons/Nurgle/Poxmakers_of_Nurgle.png'
       }
     ]
@@ -1106,17 +1142,6 @@ export const WARHAMMER_CLASSIFIERS_MAP: IWarhammerClassifierMap = {
       'path': 'assets/images/icons/Dark Elves/Har_Ganeth.png'
     }
   },
-  'Hag_Graef': {
-    'parentId': 'Dark_Elves',
-    'file': {
-      'id': 'Hag_Graef',
-      'name': 'Hag_Graef',
-      'nameCN': '海格·葛雷夫',
-      'heroName': '马鲁斯·黑刃',
-      'heroAvatarPath': 'assets/images/lords/dark-elves-malus-darkblade.png',
-      'path': 'assets/images/icons/Dark Elves/Hag_Graef.png'
-    }
-  },
   'The_Blessed_Dread': {
     'parentId': 'Dark_Elves',
     'file': {
@@ -1126,6 +1151,17 @@ export const WARHAMMER_CLASSIFIERS_MAP: IWarhammerClassifierMap = {
       'heroName': '洛克西亚·堕落之心',
       'heroAvatarPath': 'assets/images/lords/dark-elves-lokhir-fellheart.png',
       'path': 'assets/images/icons/Dark Elves/The_Blessed_Dread.png'
+    }
+  },
+  'Hag_Graef': {
+    'parentId': 'Dark_Elves',
+    'file': {
+      'id': 'Hag_Graef',
+      'name': 'Hag_Graef',
+      'nameCN': '海格·葛雷夫',
+      'heroName': '马鲁斯·黑刃',
+      'heroAvatarPath': 'assets/images/lords/dark-elves-malus-darkblade.png',
+      'path': 'assets/images/icons/Dark Elves/Hag_Graef.png'
     }
   },
   'The_Thousand_Maws': {
@@ -1194,6 +1230,18 @@ export const WARHAMMER_CLASSIFIERS_MAP: IWarhammerClassifierMap = {
       'path': 'assets/images/icons/Dwarfs/The_Ancestral_Throng.png'
     }
   },
+  'Masters_of_lnnovation': {
+    'parentId': 'Dwarfs',
+    'file': {
+      'id': 'Masters_of_lnnovation',
+      'name': 'Masters_of_lnnovation',
+      'nameCN': '创新大师',
+      'heroName': '马拉凯·马凯森',
+      'heroNameEN': 'Malakai Makaisson',
+      'heroAvatarPath': 'assets/images/lords/dwarves-malakai-makaisson.png',
+      'path': 'assets/images/icons/Dwarfs/The_Ancestral_Throng.png'
+    }
+  },
   'Reikland': {
     'parentId': 'The_Empire',
     'file': {
@@ -1235,6 +1283,18 @@ export const WARHAMMER_CLASSIFIERS_MAP: IWarhammerClassifierMap = {
       'nameCN': '西格玛教会',
       'heroName': '沃克玛·无情者',
       'heroAvatarPath': 'assets/images/lords/empire-volkmar-the-grim.png',
+      'path': 'assets/images/icons/The Empire/Cult_of_Sigmar.png'
+    }
+  },
+  'Wissenland_Nuln': {
+    'parentId': 'The_Empire',
+    'file': {
+      'id': 'Wissenland_Nuln',
+      'name': 'Wissenland_Nuln',
+      'nameCN': '威森领与努恩',
+      'heroName': '埃斯佩斯·冯·邓肯',
+      'heroNameEN': 'Elspeth von Draken',
+      'heroAvatarPath': 'assets/images/lords/empire-elspeth-von-draken.png',
       'path': 'assets/images/icons/The Empire/Cult_of_Sigmar.png'
     }
   },
@@ -1557,6 +1617,30 @@ export const WARHAMMER_CLASSIFIERS_MAP: IWarhammerClassifierMap = {
       'path': 'assets/images/icons/Nurgle/Poxmakers_of_Nurgle.png'
     }
   },
+  'The_Maggot_Host': {
+    'parentId': 'Nurgle',
+    'file': {
+      'id': 'The_Maggot_Host',
+      'name': 'The_Maggot_Host',
+      'nameCN': '蛆虫军团',
+      'heroName': '蛆虫之主·塔木尔可汗',
+      'heroNameEN': 'Tamurkhan the Maggot Lord',
+      'heroAvatarPath': 'assets/images/lords/nurgle-tankhan-the-maggot-lord.png',
+      'path': 'assets/images/icons/Nurgle/Poxmakers_of_Nurgle.png'
+    }
+  },
+  'Tallymen_of_Pestilence': {
+    'parentId': 'Nurgle',
+    'file': {
+      'id': 'Tallymen_of_Pestilence',
+      'name': 'Tallymen_of_Pestilence',
+      'nameCN': '瘟疫计患官',
+      'heroName': '埃皮德穆斯',
+      'heroNameEN': 'Epidemius',
+      'heroAvatarPath': 'assets/images/lords/nurgle-epidemius.png',
+      'path': 'assets/images/icons/Nurgle/Poxmakers_of_Nurgle.png'
+    }
+  },
   'Goldtooth': {
     'parentId': 'Ogre_Kingdoms',
     'file': {
@@ -1801,6 +1885,18 @@ export const WARHAMMER_CLASSIFIERS_MAP: IWarhammerClassifierMap = {
       'path': 'assets/images/icons/Vampire Counts/The_Barrow_Legion.png'
     }
   },
+  'Sylvania_Vlad': {
+    'parentId': 'Vampire_Counts',
+    'file': {
+      'id': 'Sylvania_Vlad',
+      'name': 'Sylvania',
+      'nameCN': '希尔瓦尼亚',
+      'heroName': '弗拉德·冯·卡斯坦因',
+      'heroNameEN': 'vlad-von-carstein',
+      'heroAvatarPath': 'assets/images/lords/vampire-counts-vlad-von-carstein.png',
+      'path': 'assets/images/icons/Vampire Counts/Sylvania.png'
+    }
+  },
   'Sylvania_Isabella': {
     'parentId': 'Vampire_Counts',
     'file': {
@@ -1810,18 +1906,6 @@ export const WARHAMMER_CLASSIFIERS_MAP: IWarhammerClassifierMap = {
       'heroName': '伊莎贝拉·冯·卡斯坦因',
       'heroNameEN': 'isabella-von-carstein',
       'heroAvatarPath': 'assets/images/lords/vampire-counts-isabella-von-carstein.png',
-      'path': 'assets/images/icons/Vampire Counts/Sylvania.png'
-    }
-  },
-  'Sylvania_Vlad': {
-    'parentId': 'Vampire_Counts',
-    'file': {
-      'id': 'Sylvania_Isabella',
-      'name': 'Sylvania',
-      'nameCN': '希尔瓦尼亚',
-      'heroName': '弗拉德·冯·卡斯坦因',
-      'heroNameEN': 'vlad-von-carstein',
-      'heroAvatarPath': 'assets/images/lords/vampire-counts-vlad-von-carstein.png',
       'path': 'assets/images/icons/Vampire Counts/Sylvania.png'
     }
   },

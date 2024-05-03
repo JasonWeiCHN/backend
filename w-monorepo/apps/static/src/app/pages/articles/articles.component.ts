@@ -15,6 +15,86 @@ export class ArticlesComponent {
 
   public data: IItemCard[] = [
     {
+      'id': '431',
+      'typeId': 'articles',
+      'imageUrl': '',
+      'title': '《全面战争战锤3》5.0版本单位一览！！！',
+      'publisher': '奈何桃儿',
+      'detail': '游戏推荐：',
+      'description': '游戏推荐：',
+      'views': 2278,
+      'date': '2024-05-01 22:07:37',
+      'tagIds': [
+        'clip'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1AZ421n78g',
+      'referer': null
+    },
+    {
+      'id': '417',
+      'typeId': 'articles',
+      'imageUrl': '',
+      'title': '【战锤3全面战争】帝国紫晶铁甲军对战混沌矮人宽刃火枪，顶级火枪之间的较量，谁能笑到最后?',
+      'publisher': '网友花顺猪',
+      'detail': '',
+      'description': '',
+      'views': 149,
+      'date': '2024-05-01 13:04:03',
+      'tagIds': [
+        'clip'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1Fp421D7vp/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    },
+    {
+      'id': '418',
+      'typeId': 'articles',
+      'imageUrl': '',
+      'title': '“沉浸式吸蛆！”【战锤3腐烂王座】塔木尔可汗 本体与战斗动作展示',
+      'publisher': '还未阳',
+      'detail': '1.蛆虫领主盛宴这个技能如果可汗身边有多个单体，默认吸血最高血量的',
+      'description': '1.蛆虫领主盛宴这个技能如果可汗身边有多个单体，默认吸血最高血量的',
+      'views': 466,
+      'date': '2024-05-01 10:21:56',
+      'tagIds': [
+        'clip'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1Mw4m1C7hv/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    },
+    {
+      'id': '419',
+      'typeId': 'articles',
+      'imageUrl': '',
+      'title': '战锤3腐烂王座DLC努恩墓园玫瑰开场动画',
+      'publisher': '西极-监兵',
+      'detail': '',
+      'description': '',
+      'views': 157,
+      'date': '2024-04-30 22:58:43',
+      'tagIds': [
+        'clip'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1BM4m1f7yp/?spm_id_from=333.337.search-card.all.click',
+      'referer': null
+    },
+    {
+      'id': '416',
+      'typeId': 'articles',
+      'imageUrl': '',
+      'title': '腐烂王座的存档拯救？ 什么叫矮人直升机啊！',
+      'publisher': '明曦xmD',
+      'detail': '新版本的矮人直升机战役招募来到了2本，模组数量从4架到了12架，变脆了，但输出明显的提升！',
+      'description': '新版本的矮人直升机战役招募来到了2本，模组数量从4架到了12架，变脆了，但输出明显的提升！',
+      'views': 6274,
+      'date': '2024-04-30 15:44:37',
+      'tagIds': [
+        'news'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1UD421T7zZ/?spm_id_from=333.1007.tianma.4-4-14.click',
+      'referer': null
+    },
+    {
       'id': '410',
       'typeId': 'Warherd_of_the_Shadowgave',
       'imageUrl': '',
