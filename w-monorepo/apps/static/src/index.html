@@ -9,5 +9,18 @@
 </head>
 <body>
 <st-root></st-root>
+<script>
+  // Send POST request to track page visit
+  fetch('http://111.230.29.99:5000/track-page-visit', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({})
+  })
+    .then(response => response.text())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
+</script>
 </body>
 </html>

@@ -85,6 +85,9 @@ nx g @nx/angular:library products --directory=libs/products --standalone
 
 创建组件
 nx g @nx/angular:component product-list --directory=libs/products/src/lib/product-list --standalone --export
+
+在UI库创建组件
+nx g @nx/angular:component pagination --directory=libs/shared/ui/src/lib/pagination --standalone --export --style=scss
 ```
 
 ## 服务器
@@ -117,4 +120,10 @@ sudo mv /home/ubuntu/wgy/browser /var/www
 
 移动完成后，您可以使用 ls 命令检查目标目录中是否已经存在了 browser 目录及其内容：
 ls /var/www
+
+升级 pip
+sudo pip install --upgrade pip
+
+后台启动 python Flask 服务
+nohup python3 statistics.py > flask.log &
 ```

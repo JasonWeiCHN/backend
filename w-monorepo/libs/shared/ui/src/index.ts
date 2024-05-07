@@ -25,3 +25,7 @@ export * from './lib/header/header.component';
 export * from './lib/tag-selector/index';
 
 export * from './lib/back-button/back-button.component';
+
+export * from './lib/pagination/pagination.component';
+
+export * from './lib/project-switcher/index';

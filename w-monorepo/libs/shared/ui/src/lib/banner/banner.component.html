@@ -8,7 +8,7 @@
       <div class="subtitle">{{ data.subtitle }}</div>
     </div>
     <div class="right">
-      {{ data.rightContent }}
+      <ng-content select="[rightContent]"></ng-content>
     </div>
     <div class="navigation-container">
       <w-navigation></w-navigation>

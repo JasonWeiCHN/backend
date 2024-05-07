@@ -1,11 +1,4 @@
-// eslint-disable-next-line @nx/enforce-module-boundaries
-import { INavigationItem, ITag } from '@w-monorepo/ui';
-
-export interface IBanner {
-  title: string;
-  subtitle: string;
-  rightContent: string;
-}
+import { IBanner, INavigationItem, ITag } from '@w-monorepo/ui';
 
 export interface IApp {
   banner: IBanner;

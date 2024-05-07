@@ -1,0 +1,11 @@
+.mods {
+  .subtitle {
+    margin-bottom: 12px;
+  }
+}
+
+@media (max-width: 920px) {
+  .subtitle {
+    text-align: center;
+  }
+}

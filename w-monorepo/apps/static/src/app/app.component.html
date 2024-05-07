@@ -2,7 +2,19 @@
   <w-banner
     (click)="onBannerClick()"
     [data]="appConfig.banner"
-  ></w-banner>
+  >
+    <div rightContent>
+      <!-- TODO -->
+      <!--
+      <w-project-switcher
+        [selectedProject]="selectedProject"
+        [projects]="projects"
+        (projectSelected)="onProjectSelected($event)">
+      </w-project-switcher>
+      -->
+      全面战争·战锤3
+    </div>
+  </w-banner>
   <div class="page">
     <div
       *ngIf="showNavigation"

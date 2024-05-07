@@ -28,6 +28,8 @@
   <label for="task">Task</label><br>
   <input type="checkbox" id="news" name="tags" value="news">
   <label for="news">News</label><br>
+  <input type="checkbox" id="mods" name="tags" value="mods">
+  <label for="mods">Mods</label><br>
   <br>
 
   <!-- 选择Clan的id -->
@@ -40,6 +42,7 @@
     <option value="superJoke" data-hero="superJoke">funny-超能段子</option>
     <option value="articles" data-hero="articles">最新资讯</option>
     <option value="warSchool" data-hero="warSchool">战争学院</option>
+    <option value="mods" data-hero="mods">Mods</option>
     {% for clan in clans %}
     <option value="{{ clan.id }}" data-hero="{{ clan.heroName }}">{{ clan.heroName }}</option>
     {% endfor %}

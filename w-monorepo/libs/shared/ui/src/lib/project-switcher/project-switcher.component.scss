@@ -1,0 +1,39 @@
+.project-switcher {
+  position: relative;
+
+  &__selected-project {
+    cursor: pointer;
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  &__selector {
+    box-sizing: border-box;
+    display: none;
+    position: absolute;
+    z-index: 100;
+    top: 40px;
+    right: 0;
+    width: 180px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 4px 4px;
+    background: #2A475E;
+
+    & > div {
+      padding: 8px;
+      cursor: pointer;
+      border-bottom: 1px solid transparent;
+
+      &:hover {
+        border-bottom: 1px solid #ffffff;
+      }
+    }
+  }
+}
+
+
+.project-switcher:hover {
+  .project-switcher__selector {
+    display: block;
+  }
+}

@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EBannerMode } from './shared/enums/banner.enum';
 import { NavigationComponent } from '../navigation/navigation.component';
-import { IBanner } from '../../../../interfaces/src';
+import { IBanner } from './shared/interfaces/banner.interface';
 
 @Component({
   selector: 'w-banner',

@@ -1,7 +1,22 @@
 <div class="mods">
-  <w-list
-    [data]="data"
-    [mode]="eList.ARTICLE"
-    (listItemClick)="onListItemClick($event)"
-  ></w-list>
+  <section>
+    <div class="subtitle">
+      最新推荐
+    </div>
+    <w-list
+      [data]="newMods"
+      [mode]="eList.ARTICLE"
+      (listItemClick)="onListItemClick($event)"
+    ></w-list>
+  </section>
+  <section>
+    <div class="subtitle">
+      Mod合集
+    </div>
+    <w-list
+      [data]="modCollection"
+      [mode]="eList.ARTICLE"
+      (listItemClick)="onListItemClick($event)"
+    ></w-list>
+  </section>
 </div>

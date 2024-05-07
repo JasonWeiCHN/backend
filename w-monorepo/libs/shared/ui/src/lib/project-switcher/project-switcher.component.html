@@ -1,0 +1,10 @@
+<div class="project-switcher">
+  <div class="project-switcher__selected-project">
+    {{ selectedProject?.label }}
+  </div>
+  <div class="project-switcher__selector">
+    <div *ngFor="let project of projects" (click)="selectProject(project)">
+      {{ project.label }}
+    </div>
+  </div>
+</div>

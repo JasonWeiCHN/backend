@@ -1,40 +1,75 @@
 <div class="item-card">
-  <h2>
-    通过数组（数据源）自动上传
-  </h2>
-  <button (click)="uploadByArticlesMap()">上传所有的文章数据</button>
+  <div class="toolbar">
+    <button style="" (click)="downloadItemCardsAsJson()">下载全部文章数据</button>
+    <button style="margin-left: 8px" (click)="uploadByArticlesMap()">上传所有的文章数据</button>
+    <div style="display: flex; margin-left: 8px">
+      <select style="" [(ngModel)]="selectedColumn">
+        <option *ngFor="let column of columns" [value]="column">{{ column }}</option>
+      </select>
+      <input style="margin-left: 6px" type="text" [(ngModel)]="searchKeyword" (keydown.enter)="search()">
+      <button style="margin-left: 6px" (click)="search()">搜索</button>
+    </div>
+  </div>
+  <div class="table-container">
+    <table>
+      <thead>
+      <tr>
+        <th>Publisher</th>
+        <th>Title</th>
+        <th>Type ID</th>
+        <th>Source URL</th>
+        <!--      <th>ID</th>-->
+        <!--      <th>Image URL</th>-->
+        <!--      <th>Views</th>-->
+        <!--      <th>Description</th>-->
+        <!--      <th>Date</th>-->
+        <!--      <th>Detail</th>-->
+      </tr>
+      </thead>
+      <tbody>
+      <tr
+        *ngFor="let itemCard of itemCards"
+        (click)="onItemClick(itemCard)"
+      >
+        <td>{{ itemCard.publisher }}</td>
+        <td>{{ itemCard.title }}</td>
+        <td>{{ itemCard.typeId }}</td>
+        <td>{{ itemCard.sourceUrl }}</td>
+        <!--      <td>{{ itemCard.id }}</td>-->
+        <!--      <td>{{ itemCard.imageUrl }}</td>-->
+        <!--      <td>{{ itemCard.views }}</td>-->
+        <!--      <td>{{ itemCard.description }}</td>-->
+        <!--      <td>{{ itemCard.date }}</td>-->
+        <!--      <td>{{ itemCard.detail }}</td>-->
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="margin-top: 6px">
+    <w-pagination
+      [currentPage]="currentPage"
+      [totalPages]="totalPages"
+      (pageChange)="onPageChange($event)"
+    ></w-pagination>
+  </div>
 
-  <h2>Item Cards</h2>
-  <table>
-    <thead>
-    <tr>
-      <th>Publisher</th>
-      <th>Title</th>
-      <th>Type ID</th>
-      <th>Source URL</th>
-      <!--      <th>ID</th>-->
-      <!--      <th>Image URL</th>-->
-      <!--      <th>Views</th>-->
-      <!--      <th>Description</th>-->
-      <!--      <th>Date</th>-->
-      <!--      <th>Detail</th>-->
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let itemCard of itemCards">
-      <td>{{ itemCard.publisher }}</td>
-      <td>{{ itemCard.title }}</td>
-      <td>{{ itemCard.typeId }}</td>
-      <td>{{ itemCard.sourceUrl }}</td>
-      <!--      <td>{{ itemCard.id }}</td>-->
-      <!--      <td>{{ itemCard.imageUrl }}</td>-->
-      <!--      <td>{{ itemCard.views }}</td>-->
-      <!--      <td>{{ itemCard.description }}</td>-->
-      <!--      <td>{{ itemCard.date }}</td>-->
-      <!--      <td>{{ itemCard.detail }}</td>-->
-    </tr>
-    </tbody>
-  </table>
+  <!-- 详情模块 -->
+  <div class="table-item-detail" *ngIf="selectedItemDetail">
+    <h4>{{ selectedItemDetail.title }} - Detail</h4>
+    <p>Publisher: {{ selectedItemDetail.publisher }}</p>
+    <p>Type ID: {{ selectedItemDetail.typeId }}</p>
+    <p>Source URL: {{ selectedItemDetail.sourceUrl }}</p>
+    <!-- 其他详情属性 -->
+
+    <!-- 显示JSON字符串 -->
+    <div *ngIf="selectedItemJson">
+      <h4>JSON Data</h4>
+      <pre>{{ selectedItemJson }}</pre>
+    </div>
+
+    <!-- 删除按钮 -->
+    <button (click)="onDelete(selectedItemDetail.id)">删除</button>
+  </div>
 
   <h2>Add Item Card</h2>
   <form (submit)="onSubmit()">

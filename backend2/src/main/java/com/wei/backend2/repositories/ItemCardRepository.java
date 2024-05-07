@@ -2,8 +2,9 @@ package com.wei.backend2.repositories;
 
 import com.wei.backend2.entity.ItemCard;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ItemCardRepository extends JpaRepository<ItemCard, String> {
+public interface ItemCardRepository extends JpaRepository<ItemCard, Long>, JpaSpecificationExecutor<ItemCard> {
 }

@@ -13,7 +13,42 @@ import { EArticleTags, EReferer } from '@w-monorepo/warhammer';
 export class ModsComponent {
   protected readonly eList = EList;
 
-  public data: IItemCard[] = [
+  public newMods: IItemCard[] = [
+    {
+      'id': '442',
+      'typeId': 'mods',
+      'imageUrl': '',
+      'sourceUrl': 'https://www.bilibili.com/video/BV1GE421V7wH',
+      'title': '战锤3MOD推荐 墓园玫瑰埃斯佩斯“美化”',
+      'views': 8368,
+      'description': '一共七个墓园玫瑰的美化，合集链接：https://steamcommunity.com/workshop/filedetails/?id=3239918889',
+      'publisher': '明曦xmD & _Alvaro_',
+      'date': '2024-05-05 21:30:00',
+      'tagIds': [
+        'mods'
+      ],
+      'referer': null,
+      'detail': '一共七个墓园玫瑰的美化，合集链接：https://steamcommunity.com/workshop/filedetails/?id=3239918889'
+    },
+    {
+      'id': '433',
+      'typeId': 'mods',
+      'imageUrl': '',
+      'title': '战锤3MOD推荐 玫瑰美化/基础必用更新/感染BUG修复',
+      'publisher': '明曦xmD',
+      'detail': '腐烂王座刚更新没多久，各路MOD大佬就发力了，创作了许多实用的MOD',
+      'description': '腐烂王座刚更新没多久，各路MOD大佬就发力了，创作了许多实用的MOD',
+      'views': 8338,
+      'date': '2024-05-02 11:05:04',
+      'tagIds': [
+        'mods'
+      ],
+      'sourceUrl': 'https://www.bilibili.com/video/BV1Lw4m1C7bu',
+      'referer': null
+    }
+  ];
+
+  public modCollection: IItemCard[] = [
     {
       'id': '',
       'typeId': '',

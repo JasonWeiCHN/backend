@@ -6697,6 +6697,22 @@
       ],
       "sourceUrl": "https://www.bilibili.com/video/BV1AZ421n78g",
       "referer": null
+    },
+    {
+      "id": "434",
+      "typeId": "articles",
+      "imageUrl": "",
+      "title": "5.0新版本震旦攻略更新",
+      "publisher": "火车王zym",
+      "detail": "我已经整理了之前的文章发到了我知乎的专栏里，链接如下:\r",
+      "description": "我已经整理了之前的文章发到了我知乎的专栏里，链接如下:\r",
+      "views": 4351,
+      "date": "2024-05-02 10:10:39",
+      "tagIds": [
+        "news"
+      ],
+      "sourceUrl": "https://www.bilibili.com/video/BV14r421u7dH",
+      "referer": null
     }
   ],
   "warSchool": [
@@ -6894,6 +6910,40 @@
         "liveRecording"
       ],
       "sourceUrl": "https://www.bilibili.com/video/BV13r421u7k8",
+      "referer": null
+    },
+    {
+      "id": "435",
+      "typeId": "The_Maggot_Host",
+      "imageUrl": "",
+      "title": "[全面战争·战锤3·半小时玩一个领主] 蛆虫之主·塔木尔可汗",
+      "publisher": "古老游戏玩家",
+      "detail": "[全面战争·战锤3·半小时玩一个领主] 蛆虫之主·塔木尔可汗",
+      "description": "[全面战争·战锤3·半小时玩一个领主] 蛆虫之主·塔木尔可汗",
+      "views": 9,
+      "date": "2024-05-03 11:47:19",
+      "tagIds": [
+        "clansDescription"
+      ],
+      "sourceUrl": "https://www.bilibili.com/video/BV1aC411H7zK",
+      "referer": null
+    }
+  ],
+  "mods": [
+    {
+      "id": "433",
+      "typeId": "mods",
+      "imageUrl": "",
+      "title": "战锤3MOD推荐 玫瑰美化/基础必用更新/感染BUG修复",
+      "publisher": "明曦xmD",
+      "detail": "腐烂王座刚更新没多久，各路MOD大佬就发力了，创作了许多实用的MOD",
+      "description": "腐烂王座刚更新没多久，各路MOD大佬就发力了，创作了许多实用的MOD",
+      "views": 8338,
+      "date": "2024-05-02 11:05:04",
+      "tagIds": [
+        "mods"
+      ],
+      "sourceUrl": "https://www.bilibili.com/video/BV1Lw4m1C7bu",
       "referer": null
     }
   ]

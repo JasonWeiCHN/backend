@@ -14,6 +14,6 @@ export class MainComponent {
   public items = [
     { label: '种族', link: '/race' },
     { label: '派系', link: '/clans' },
-    { label: '卡片', link: '/item-cards' }
+    { label: '文章', link: '/item-cards' }
   ];
 }
