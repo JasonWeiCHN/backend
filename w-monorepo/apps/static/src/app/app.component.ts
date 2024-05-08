@@ -12,10 +12,11 @@ import {
 import { NgIf } from '@angular/common';
 import { APP_CONFIG } from './shared/constants/app.config.constans';
 import { IApp } from '@w-monorepo/interfaces';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   standalone: true,
-  imports: [NxWelcomeComponent, RouterModule, BannerComponent, NavigationComponent, NgIf, SlideshowComponent, ProjectSwitcherComponent],
+  imports: [HttpClientModule, NxWelcomeComponent, RouterModule, BannerComponent, NavigationComponent, NgIf, SlideshowComponent, ProjectSwitcherComponent],
   selector: 'st-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

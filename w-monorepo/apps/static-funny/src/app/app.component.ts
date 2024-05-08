@@ -57,7 +57,6 @@ export class AppComponent {
   ];
 
   public onListItemClick(item: IItemCard): void {
-    console.log(item);
     if (item.sourceUrl) {
       window.open(item.sourceUrl, '_blank');
     }

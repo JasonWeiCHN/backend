@@ -17,7 +17,7 @@ chrome_options.binary_location = 'C:/Program Files/Google/Chrome/Application/chr
 driver = webdriver.Chrome(options=chrome_options)
 
 # 要获取的 URL
-url = "https://www.bilibili.com/video/BV1Ge411C7tr?p=1&vd_source=cf6172bb9e27eef98252db60c4e279fe"
+url = "https://www.bilibili.com/video/BV1VK411t7FA/?spm_id_from=333.999.0.0&vd_source=cf6172bb9e27eef98252db60c4e279fe"
 
 # 打开指定 URL
 driver.get(url)

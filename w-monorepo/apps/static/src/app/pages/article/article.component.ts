@@ -45,7 +45,6 @@ export class ArticleComponent implements OnInit {
     const { id } = this._activatedRoute.snapshot.params;
     this.clan = this.warhammerClassifiersMap[id];
     this.data = this.articlesMap[id];
-    console.log(this.data);
   }
 
   public onListItemClick(item: IItemCard): void {

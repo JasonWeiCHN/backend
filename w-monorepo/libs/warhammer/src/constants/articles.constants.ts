@@ -3673,6 +3673,22 @@ export const ARTICLES_MAP: IArticleMap = {
   ],
   'warSchool': [
     {
+      'date': '2024-05-06 23:05:50',
+      'sourceUrl': 'https://www.bilibili.com/video/BV15r421g7Nb',
+      'referer': null,
+      'imageUrl': '',
+      'tagIds': [
+        'newerTeach'
+      ],
+      'publisher': 'Arka',
+      'description': '视频制作不易，希望大家多多点赞关注投币收藏~',
+      'typeId': 'warSchool',
+      'id': '452',
+      'detail': '视频制作不易，希望大家多多点赞关注投币收藏~',
+      'title': '【战锤全战3】矮子暴揍铁皮，现代战争就要用好定点轰炸= =*',
+      'views': 110
+    },
+    {
       'date': '2022-03-03 18:25:41',
       'sourceUrl': 'https://www.bilibili.com/video/BV1Xr4y1z73T/?spm_id_from=333.337.search-card.all.click',
       'referer': null,
@@ -4611,6 +4627,22 @@ export const ARTICLES_MAP: IArticleMap = {
   ],
   'The_Huntsmarshals_Expedition': [
     {
+      'date': '2024-05-05 23:09:43',
+      'sourceUrl': 'https://www.bilibili.com/video/BV1V142167S1',
+      'referer': null,
+      'imageUrl': '',
+      'tagIds': [
+        'clansDescription'
+      ],
+      'publisher': '非糖的碳水化合物',
+      'description': '全面战争战锤3',
+      'typeId': 'The_Huntsmarshals_Expedition',
+      'id': '446',
+      'detail': '全面战争战锤3',
+      'title': '战锤3 马库斯5.0开局讲解 速拿二级援军得坦克',
+      'views': 4504
+    },
+    {
       'date': '2024-03-31 19:30:00',
       'sourceUrl': 'https://www.bilibili.com/video/BV1aK421e7jT/?spm_id_from=333.337.search-card.all.click',
       'referer': null,
@@ -5252,6 +5284,22 @@ export const ARTICLES_MAP: IArticleMap = {
     }
   ],
   'Masters_of_lnnovation': [
+    {
+      'date': '2024-05-06 21:39:34',
+      'sourceUrl': 'https://www.bilibili.com/video/BV1rm411C7wT',
+      'referer': null,
+      'imageUrl': '',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'publisher': '星云号',
+      'description': '马拉凯大冒险！',
+      'typeId': 'Masters_of_lnnovation',
+      'id': '449',
+      'detail': '马拉凯大冒险！',
+      'title': '马拉凯大冒险-战锤全面战争3腐烂王座',
+      'views': 4828
+    },
     {
       'date': '2024-05-05 23:18:14',
       'sourceUrl': 'https://www.bilibili.com/video/BV1Kr421J7EX',
@@ -6789,6 +6837,22 @@ export const ARTICLES_MAP: IArticleMap = {
   ],
   'Wissenland_Nuln': [
     {
+      'date': '2024-05-06 22:26:28',
+      'sourceUrl': 'https://www.bilibili.com/video/BV1om421H72W',
+      'referer': null,
+      'imageUrl': '',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'publisher': '时间老猫',
+      'description': '扣1送',
+      'typeId': 'Wissenland_Nuln',
+      'id': '448',
+      'detail': '扣1送',
+      'title': '战锤3 帝国 埃斯佩斯 是时候让旧世界的乡巴佬闻闻昂贵的香味了',
+      'views': 1300
+    },
+    {
       'date': '2024-05-03 18:56:57',
       'sourceUrl': 'https://www.bilibili.com/video/BV1KC411E7ug',
       'referer': null,
@@ -6871,6 +6935,38 @@ export const ARTICLES_MAP: IArticleMap = {
   ],
   'articles': [
     {
+      'date': '2024-05-07 11:18:52',
+      'sourceUrl': 'https://www.bilibili.com/video/BV1GZ421E7Gs',
+      'referer': null,
+      'imageUrl': '',
+      'tagIds': [
+        'news'
+      ],
+      'publisher': '古老游戏玩家',
+      'description': '访问地址',
+      'typeId': 'articles',
+      'id': '451',
+      'detail': '访问地址',
+      'title': '[独立开发 · 全面战争 · 战锤3 · 资料站] 全网征稿 · 派系攻略',
+      'views': 17
+    },
+    {
+      'date': '2024-05-07 06:01:06',
+      'sourceUrl': 'https://www.bilibili.com/video/BV1UD421K7SA',
+      'referer': null,
+      'imageUrl': '',
+      'tagIds': [
+        'news'
+      ],
+      'publisher': '寅子',
+      'description': '相关游戏：《全面战争：战锤3》《剑星》',
+      'typeId': 'articles',
+      'id': '450',
+      'detail': '相关游戏：《全面战争：战锤3》《剑星》',
+      'title': '【寅子录播】2024年5月6日《全战：战锤3+剑星》',
+      'views': 7014
+    },
+    {
       'date': '2024-05-06 08:01:16',
       'sourceUrl': 'https://www.bilibili.com/video/BV1nf421U7Ph',
       'referer': null,
@@ -6885,6 +6981,22 @@ export const ARTICLES_MAP: IArticleMap = {
       'detail': '相关游戏：《剑星》《全面战争：战锤3》',
       'title': '【寅子录播】2024年5月5日《剑星+全战：战锤3》',
       'views': 1958
+    },
+    {
+      'date': '2024-05-05 11:45:00',
+      'sourceUrl': 'https://www.bilibili.com/video/BV1Pt421F7Bu',
+      'referer': null,
+      'imageUrl': '',
+      'tagIds': [
+        'news'
+      ],
+      'publisher': 'wodwd-不是wdnmd-',
+      'description': '全面战争战锤3',
+      'typeId': 'articles',
+      'id': '447',
+      'detail': '全面战争战锤3',
+      'title': '揭秘分析飞艇坦克的隐藏数据！藏了一个团的火力',
+      'views': 44000
     },
     {
       'date': '2024-05-04 09:20:11',

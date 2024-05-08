@@ -10,27 +10,16 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": [
-      "es2020",
-      "dom"
-    ],
+    "lib": ["es2020", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@w-monorepo/interfaces": [
-        "libs/shared/interfaces/src/index.ts"
-      ],
-      "@w-monorepo/ui": [
-        "libs/shared/ui/src/index.ts"
-      ],
-      "@w-monorepo/warhammer": [
-        "libs/warhammer/src/index.ts"
-      ]
+      "@w-monorepo/analysis": ["libs/analysis/src/index.ts"],
+      "@w-monorepo/interfaces": ["libs/shared/interfaces/src/index.ts"],
+      "@w-monorepo/ui": ["libs/shared/ui/src/index.ts"],
+      "@w-monorepo/warhammer": ["libs/warhammer/src/index.ts"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }

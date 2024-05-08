@@ -1,15 +1,16 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EItemCardMode, ItemCardComponent } from '../item-card';
-import { IItemCard } from '../item-card';
+import { EItemCardMode, IItemCard, ItemCardComponent } from '../item-card';
 import { EList } from './shared/enums/list.enum';
+import { AnalysisHttpService } from '@w-monorepo/analysis';
 
 @Component({
   selector: 'w-list',
   standalone: true,
   imports: [CommonModule, ItemCardComponent],
   templateUrl: './list.component.html',
-  styleUrl: './list.component.scss'
+  styleUrl: './list.component.scss',
+  providers: [AnalysisHttpService]
 })
 export class ListComponent {
   /**
@@ -24,13 +25,24 @@ export class ListComponent {
   @Input()
   public data: IItemCard[] = [];
 
+  @Input()
+  public isAnalysis: boolean = true;
+
   @Output('listItemClick')
   public readonly itemClick: EventEmitter<IItemCard> = new EventEmitter<IItemCard>();
+
+  public constructor(private analysisHttpService: AnalysisHttpService) {
+  }
 
   protected readonly eList = EList;
   protected readonly cardMode: EItemCardMode = EItemCardMode.LIST;
 
   public onItemClick(item: IItemCard): void {
     this.itemClick.emit(item);
+    this.analysisHttpService.submitString(item.title).subscribe((response: any) => {
+      console.log('String submitted successfully!', response);
+    }, (error: any) => {
+      console.error('Error submitting string:', error);
+    });
   }
 }

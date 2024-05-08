@@ -13,7 +13,25 @@ import { EArticleTags } from '@w-monorepo/warhammer';
 export class WarSchoolComponent {
   protected readonly eList = EList;
   protected activeTypeId = 'warSchool';
-  protected articles: IItemCard[] = [
+  protected practicalTeaching: IItemCard[] = [
+    {
+      'date': '2024-05-06 23:05:50',
+      'sourceUrl': 'https://www.bilibili.com/video/BV15r421g7Nb',
+      'referer': null,
+      'imageUrl': '',
+      'tagIds': [
+        'newerTeach'
+      ],
+      'publisher': 'Arka',
+      'description': '视频制作不易，希望大家多多点赞关注投币收藏~',
+      'typeId': 'warSchool',
+      'id': '452',
+      'detail': '视频制作不易，希望大家多多点赞关注投币收藏~',
+      'title': '【战锤全战3】矮子暴揍铁皮，现代战争就要用好定点轰炸= =*',
+      'views': 110
+    }
+  ];
+  protected basicKnowledge: IItemCard[] = [
     {
       'id': '',
       'typeId': 'strategy',
