@@ -1,7 +1,7 @@
 <div class="war-school">
   <section>
     <div class="subtitle">
-      相关文章
+      基础知识
     </div>
     <div class="basic-knowledge">
       <w-list
@@ -28,9 +28,8 @@
       相关视频
     </div>
     <div class="cards">
-      <ng-container *ngFor="let item of items; let index = index;">
+      <ng-container *ngFor="let item of warSchoolVideo; let index = index;">
         <w-item-card
-          *ngIf="item.typeId === activeTypeId"
           (click)="onCardClick(item)"
           [data]="item"
         ></w-item-card>

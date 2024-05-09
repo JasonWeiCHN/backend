@@ -8,7 +8,7 @@ BILI_JCT = ""
 BUVID3 = ""
 
 # FFMPEG 路径，查看：http://ffmpeg.org/
-FFMPEG_PATH = "ffmpeg"
+FFMPEG_PATH = r"F:/ffmpeg/bin/ffmpeg.exe"
 
 async def download_url(url: str, out: str, info: str):
     # 下载函数
@@ -22,19 +22,19 @@ async def download_url(url: str, out: str, info: str):
                     break
 
                 process += len(chunk)
-                print(f'下载 {info} {process} / {length}')
+                # print(f'下载 {info} {process} / {length}')
                 f.write(chunk)
 
 async def main():
     # 实例化 Credential 类
     credential = Credential(sessdata=SESSDATA, bili_jct=BILI_JCT, buvid3=BUVID3)
     # 实例化 Video 类
-    v = video.Video(bvid="BV1AV411x7Gs", credential=credential)
+    v = video.Video(bvid="BV1sw4m1m7iQ", credential=credential)
     # 获取视频下载链接
     download_url_data = await v.get_download_url(0)
     # 解析视频下载信息
     detecter = video.VideoDownloadURLDataDetecter(data=download_url_data)
-    streams = detecter.detect_best_streams()
+    streams = detecter.detect_best_streams(audio_min_quality=video.AudioQuality._64K)
     # 有 MP4 流 / FLV 流两种可能
     if detecter.check_flv_stream() == True:
         # FLV 流下载
@@ -47,8 +47,18 @@ async def main():
         # MP4 流下载
         await download_url(streams[0].url, "video_temp.m4s", "视频流")
         await download_url(streams[1].url, "audio_temp.m4s", "音频流")
+
         # 混流
-        os.system(f'{FFMPEG_PATH} -i video_temp.m4s -i audio_temp.m4s -vcodec copy -acodec copy video.mp4')
+        result = os.system(f'{FFMPEG_PATH} -i video_temp.m4s -i audio_temp.m4s -vcodec copy -acodec copy video.mp4')
+
+        # 检查混流操作的结果
+        if result != 0:
+            print("混流操作失败！")
+        else:
+            print("混流操作成功！")
+
+        print("当前工作目录:", os.getcwd())
+
         # 删除临时文件
         os.remove("video_temp.m4s")
         os.remove("audio_temp.m4s")

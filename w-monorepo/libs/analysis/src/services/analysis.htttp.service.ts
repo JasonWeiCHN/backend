@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class AnalysisHttpService {
-  private baseUrl = 'http://111.230.29.99:5000'; // http://127.0.0.1:5000 请将其修改为您的Flask服务器地址
+  private baseUrl = 'http://111.230.29.99:5000'; // http://111.230.29.99:5000 请将其修改为您的Flask服务器地址
 
   constructor(private http: HttpClient) {
   }

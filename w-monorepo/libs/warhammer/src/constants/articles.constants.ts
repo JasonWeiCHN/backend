@@ -1205,6 +1205,22 @@ export const ARTICLES_MAP: IArticleMap = {
   ],
   'Sylvania_Vlad': [
     {
+      'date': '2024-05-08 18:00:00',
+      'sourceUrl': 'https://www.bilibili.com/video/BV1Cf421U7r3',
+      'referer': null,
+      'imageUrl': '',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'publisher': '勾Yang',
+      'description': 'Vlad and the Empire',
+      'typeId': 'Sylvania_Vlad',
+      'id': '456',
+      'detail': 'Vlad and the Empire',
+      'title': '战锤3全面战争|希尔瓦尼亚|弗拉德的帝国梦',
+      'views': 69
+    },
+    {
       'date': '2023-09-09 02:07:17',
       'sourceUrl': 'https://www.bilibili.com/video/BV1NH4y1D7vA/?spm_id_from=333.337.search-card.all.click',
       'referer': null,
@@ -3143,6 +3159,22 @@ export const ARTICLES_MAP: IArticleMap = {
   ],
   'mods': [
     {
+      'date': '2024-05-08 21:22:14',
+      'sourceUrl': 'https://www.bilibili.com/video/BV12D421P7pE',
+      'referer': null,
+      'imageUrl': '',
+      'tagIds': [
+        'mods'
+      ],
+      'publisher': '明曦xmD',
+      'description': 'MOD合集链接：https://steamcommunity.com/sharedfiles/filedetails/?id=3242150386',
+      'typeId': 'mods',
+      'id': '458',
+      'detail': 'MOD合集链接：https://steamcommunity.com/sharedfiles/filedetails/?id=3242150386',
+      'title': '战锤MOD推荐 卡皇什么也不缺了！',
+      'views': 5835
+    },
+    {
       'date': '2024-05-05 21:30:00',
       'sourceUrl': 'https://www.bilibili.com/video/BV1GE421V7wH',
       'referer': null,
@@ -3525,6 +3557,22 @@ export const ARTICLES_MAP: IArticleMap = {
   ],
   'Tallymen_of_Pestilence': [
     {
+      'date': '2024-05-07 22:39:57',
+      'sourceUrl': 'https://www.bilibili.com/video/BV1sZ421E7K8',
+      'referer': null,
+      'imageUrl': '',
+      'tagIds': [
+        'clansDescription'
+      ],
+      'publisher': '温酱与夏凉丶',
+      'description': '瘟疫疾患管 FLC派系 看起来不强 其实也很无脑 是传统纳垢的老玩法派系。',
+      'typeId': 'Tallymen_of_Pestilence',
+      'id': '455',
+      'detail': '瘟疫疾患管 FLC派系 看起来不强 其实也很无脑 是传统纳垢的老玩法派系。',
+      'title': '【战锤3全战】- 瘟疫计患官 - 身坚志残坐轮椅 一发爆炸200杀 超强派系攻略',
+      'views': 4845
+    },
+    {
       'date': '2024-05-06 17:55:28',
       'sourceUrl': 'https://www.bilibili.com/video/BV1Vx4y1q7Rd',
       'referer': null,
@@ -3671,38 +3719,70 @@ export const ARTICLES_MAP: IArticleMap = {
       'views': 13000
     }
   ],
-  'warSchool': [
+  'basicKnowledge': [
     {
-      'date': '2024-05-06 23:05:50',
-      'sourceUrl': 'https://www.bilibili.com/video/BV15r421g7Nb',
+      'date': '2024-05-08 11:50:00',
+      'sourceUrl': 'https://www.bilibili.com/video/BV1Px4y1i7oa',
       'referer': null,
       'imageUrl': '',
       'tagIds': [
-        'newerTeach'
+        'basicKnowledge'
       ],
-      'publisher': 'Arka',
-      'description': '视频制作不易，希望大家多多点赞关注投币收藏~',
-      'typeId': 'warSchool',
-      'id': '452',
-      'detail': '视频制作不易，希望大家多多点赞关注投币收藏~',
-      'title': '【战锤全战3】矮子暴揍铁皮，现代战争就要用好定点轰炸= =*',
-      'views': 110
+      'publisher': 'wodwd-不是wdnmd-',
+      'description': '视频制作不易，希望大家多多点赞关注投币收藏',
+      'typeId': 'basicKnowledge',
+      'id': '453',
+      'detail': '视频制作不易，希望大家多多点赞关注投币收藏',
+      'title': '锤三5.0帝国思路讲解！不要执着于步射~',
+      'views': 20000
     },
     {
-      'date': '2022-03-03 18:25:41',
-      'sourceUrl': 'https://www.bilibili.com/video/BV1Xr4y1z73T/?spm_id_from=333.337.search-card.all.click',
+      'date': '2024-05-06 18:00:00',
+      'sourceUrl': 'https://www.bilibili.com/video/BV1o1421z7Ar',
       'referer': null,
       'imageUrl': '',
       'tagIds': [
-        ''
+        'basicKnowledge'
       ],
-      'publisher': 'DouEmperor',
-      'description': '规模：极限',
-      'typeId': 'warSchool',
-      'id': '415',
-      'detail': '规模：极限',
-      'title': '【全面战争：战锤3】抗性全解，特保、物抗、法抗都代表着什么？必备知识。',
-      'views': 14000
+      'publisher': '非糖的碳水化合物',
+      'description': '全面战争战锤3',
+      'typeId': 'basicKnowledge',
+      'id': '457',
+      'detail': '全面战争战锤3',
+      'title': '全面战争战锤3新手教学 手把手教你打鼠人（下） 机制篇',
+      'views': 1094
+    },
+    {
+      'date': '2023年08月03日 12:15',
+      'sourceUrl': 'https://www.bilibili.com/read/cv25476053',
+      'referer': '',
+      'imageUrl': '',
+      'tagIds': [
+        'basicKnowledge'
+      ],
+      'publisher': '火车王zym',
+      'description': '大家好，我是火车王。鉴于等4.0实在太漫长，我决定先更新一期混沌勇士的详细攻略。',
+      'typeId': 'basicKnowledge',
+      'id': '461',
+      'detail': '大家好，我是火车王。鉴于等4.0实在太漫长，我决定先更新一期混沌勇士的详细攻略。',
+      'title': '混沌勇士系列攻略【第一期】建筑与装备',
+      'views': 5779
+    },
+    {
+      'date': '2021年08月21日 09:26',
+      'sourceUrl': 'https://www.bilibili.com/read/cv12783637',
+      'referer': '',
+      'imageUrl': '',
+      'tagIds': [
+        'basicKnowledge'
+      ],
+      'publisher': ' 全网通缉狗狗毛',
+      'description': '学习资料来源：【蛋疼】从零开始玩全战，战锤全面战争新手教学_哔哩哔哩_bilibili',
+      'typeId': 'basicKnowledge',
+      'id': '460',
+      'detail': '学习资料来源：【蛋疼】从零开始玩全战，战锤全面战争新手教学_哔哩哔哩_bilibili',
+      'title': '全面战争：战锤2 游戏基本操作&攻略',
+      'views': 10000
     }
   ],
   'Court_of_Lybaras': [
@@ -5317,6 +5397,22 @@ export const ARTICLES_MAP: IArticleMap = {
       'views': 2146
     },
     {
+      'date': '2024-05-04 10:52:58',
+      'sourceUrl': 'https://www.bilibili.com/video/BV1Hm411y7UD',
+      'referer': null,
+      'imageUrl': '',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'publisher': '月升夜隐',
+      'description': '战锤3全面战争腐烂王座DLC马拉凯马师傅攻略档。',
+      'typeId': 'Masters_of_lnnovation',
+      'id': '459',
+      'detail': '战锤3全面战争腐烂王座DLC马拉凯马师傅攻略档。',
+      'title': '【战锤3】腐烂王座DLC群山王国崛起！马师傅横扫六合！【第一集】',
+      'views': 1884
+    },
+    {
       'date': '2024-05-01 16:25:36',
       'sourceUrl': 'https://www.bilibili.com/video/BV1sC411J7eh/',
       'referer': null,
@@ -5363,6 +5459,104 @@ export const ARTICLES_MAP: IArticleMap = {
       'detail': 'https://www.youtube.com/watch?v=STU2fFLXxgc',
       'title': '『屠夫工程师』马拉凯·马凯森 战役演示 / 中文字幕 / 全面战争：战锤3',
       'views': 21000
+    }
+  ],
+  'warSchoolVideo': [
+    {
+      'date': '2024-04-16 18:20:42',
+      'sourceUrl': 'https://www.bilibili.com/video/BV1MH4y1T7LY',
+      'referer': null,
+      'imageUrl': 'assets/images/war-school/mxxzs.jpg',
+      'tagIds': [
+        'warSchoolVideo'
+      ],
+      'publisher': '古老游戏玩家',
+      'description': '1 如何切换游戏难度',
+      'typeId': 'warSchoolVideo',
+      'id': '465',
+      'detail': '1 如何切换游戏难度',
+      'title': '[全面战争·战锤3·入门攻略] 萌新小知识',
+      'views': 2918
+    },
+    {
+      'date': '2024-03-16 11:39:32',
+      'sourceUrl': 'https://www.bilibili.com/video/BV1Tx4y1D7TP',
+      'referer': null,
+      'imageUrl': 'assets/images/war-school/ksjx.jpg',
+      'tagIds': [
+        'warSchoolVideo'
+      ],
+      'publisher': 'wodwd-不是wdnmd-',
+      'description': '本篇为基础篇，讲了基础操作，布阵，战斗思路等内容',
+      'typeId': 'warSchoolVideo',
+      'id': '466',
+      'detail': '本篇为基础篇，讲了基础操作，布阵，战斗思路等内容',
+      'title': '【全面战争战锤3】远程扛射教学：基础篇',
+      'views': 69000
+    },
+    {
+      'date': '2023-05-27 23:05:34',
+      'sourceUrl': 'https://www.bilibili.com/video/BV1gP411X7Sq',
+      'referer': null,
+      'imageUrl': 'assets/images/war-school/kscq.jpg',
+      'tagIds': [
+        'warSchoolVideo'
+      ],
+      'publisher': '火与熊的世界',
+      'description': '',
+      'typeId': 'warSchoolVideo',
+      'id': '464',
+      'detail': '',
+      'title': '【新手教学】新手看完就可以直接打传奇难度？进阶篇，王牌、核心、线，阵【战锤3:全面战争】丨No.2 - 2丨熊与火',
+      'views': 37000
+    },
+    {
+      'date': '2022-03-03 18:25:41',
+      'sourceUrl': 'https://www.bilibili.com/video/BV1Xr4y1z73T',
+      'referer': null,
+      'imageUrl': 'assets/images/war-school/tebao.jpg',
+      'tagIds': [
+        'warSchoolVideo'
+      ],
+      'publisher': 'DouEmperor',
+      'description': '规模：极限',
+      'typeId': 'warSchoolVideo',
+      'id': '467',
+      'detail': '规模：极限',
+      'title': '【全面战争：战锤3】抗性全解，特保、物抗、法抗都代表着什么？必备知识。',
+      'views': 14000
+    },
+    {
+      'date': '2022-02-21 20:00:05',
+      'sourceUrl': 'https://www.bilibili.com/video/BV1ob4y1471m',
+      'referer': null,
+      'imageUrl': 'assets/images/war-school/kjj.jpg',
+      'tagIds': [
+        'warSchoolVideo'
+      ],
+      'publisher': '奥勒良Aurelianus',
+      'description': '相关游戏：全面战争战锤3',
+      'typeId': 'warSchoolVideo',
+      'id': '463',
+      'detail': '相关游戏：全面战争战锤3',
+      'title': '新人必看！战锤3全面战争保姆级快捷键教程',
+      'views': 36000
+    },
+    {
+      'date': '2019-10-11 21:11:07',
+      'sourceUrl': 'https://www.bilibili.com/video/BV1fE411o7su',
+      'referer': null,
+      'imageUrl': 'assets/images/war-school/clks.jpg',
+      'tagIds': [
+        'warSchoolVideo'
+      ],
+      'publisher': '小蛋疼君',
+      'description': '玩战锤也有些年头了，一直想做一个系统性的新手教学，让新接触这个游戏的朋友可以更快上手。',
+      'typeId': 'warSchoolVideo',
+      'id': '462',
+      'detail': '玩战锤也有些年头了，一直想做一个系统性的新手教学，让新接触这个游戏的朋友可以更快上手。',
+      'title': '【蛋疼】从零开始玩全战，战锤全面战争新手教学',
+      'views': 1094000
     }
   ],
   'The_Drowned': [
@@ -6489,6 +6683,24 @@ export const ARTICLES_MAP: IArticleMap = {
       'views': 12000
     }
   ],
+  'practicalTeaching': [
+    {
+      'date': '2024-05-06 23:05:50',
+      'sourceUrl': 'https://www.bilibili.com/video/BV15r421g7Nb',
+      'referer': null,
+      'imageUrl': '',
+      'tagIds': [
+        'practicalTeaching'
+      ],
+      'publisher': 'Arka',
+      'description': '视频制作不易，希望大家多多点赞关注投币收藏~',
+      'typeId': 'practicalTeaching',
+      'id': '452',
+      'detail': '视频制作不易，希望大家多多点赞关注投币收藏~',
+      'title': '【战锤全战3】矮子暴揍铁皮，现代战争就要用好定点轰炸= =*',
+      'views': 110
+    }
+  ],
   'Bordeleaux_Errant': [
     {
       'date': '2024-04-27 18:00:00',
@@ -6934,6 +7146,22 @@ export const ARTICLES_MAP: IArticleMap = {
     }
   ],
   'articles': [
+    {
+      'date': '2024-05-08 12:00:00',
+      'sourceUrl': 'https://www.bilibili.com/video/BV13H4y1g7ae',
+      'referer': null,
+      'imageUrl': '',
+      'tagIds': [
+        'clip'
+      ],
+      'publisher': '战争游戏研究所',
+      'description': '这游戏再出几个DLC是不是可以当英雄连玩了',
+      'typeId': 'articles',
+      'id': '454',
+      'detail': '这游戏再出几个DLC是不是可以当英雄连玩了',
+      'title': '【战锤全面战争3】新版本PVP矮人vs帝国！飞艇竟然汗流浃背?',
+      'views': 18000
+    },
     {
       'date': '2024-05-07 11:18:52',
       'sourceUrl': 'https://www.bilibili.com/video/BV1GZ421E7Gs',

@@ -8,7 +8,10 @@ export enum EArticleTags {
   TASK = 'task',
   NEWS = 'news',
   MODS = 'mods',
-  STRATEGY = 'strategy'
+  STRATEGY = 'strategy',
+  BASIC_KNOWLEDGE = 'basicKnowledge',
+  PRACTICAL_TEACHING = 'practicalTeaching',
+  WAR_SCHOOL_VIDEO = 'warSchoolVideo'
 }
 
 export enum EReferer {

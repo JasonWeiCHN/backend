@@ -12,9 +12,10 @@
     </div>
     <w-back-button></w-back-button>
   </div>
-  <!-- 这个功能先开发 不上线 -->
+  <ng-container *ngIf="clan?.file as file">
+    <div class="game-strategy" [innerHTML]="file.description"></div>
+  </ng-container>
   <w-tag-selector [tags]="tags" (tagSelected)="onTagSeclet($event)"></w-tag-selector>
-
   <w-list
     *ngIf="data.length"
     [data]="data"

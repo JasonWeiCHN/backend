@@ -13,23 +13,29 @@
 
   <label for="tags">Select Tags:</label><br>
   <input type="checkbox" id="all" name="tags" value="all">
-  <label for="all">All</label><br>
+  <label for="all">All 全部</label><br>
   <input type="checkbox" id="clansDescription" name="tags" value="clansDescription">
-  <label for="clansDescription">Clans Description</label><br>
+  <label for="clansDescription">Clans Description 派系说明</label><br>
   <input type="checkbox" id="liveRecording" name="tags" value="liveRecording">
-  <label for="liveRecording">Live Recording</label><br>
+  <label for="liveRecording">Live Recording 实况录像</label><br>
   <input type="checkbox" id="newerTeach" name="tags" value="newerTeach">
-  <label for="newerTeach">Newer Teach</label><br>
+  <label for="newerTeach">Newer Teach 萌新教学</label><br>
   <input type="checkbox" id="clip" name="tags" value="clip">
-  <label for="clip">Clip</label><br>
+  <label for="clip">Clip 剪辑大片</label><br>
   <input type="checkbox" id="story" name="tags" value="story">
-  <label for="story">Story</label><br>
+  <label for="story">Story 讲故事</label><br>
   <input type="checkbox" id="task" name="tags" value="task">
-  <label for="task">Task</label><br>
+  <label for="task">Task 任务</label><br>
   <input type="checkbox" id="news" name="tags" value="news">
-  <label for="news">News</label><br>
+  <label for="news">News 最新资讯</label><br>
   <input type="checkbox" id="mods" name="tags" value="mods">
   <label for="mods">Mods</label><br>
+  <input type="checkbox" id="practicalTeaching" name="tags" value="practicalTeaching">
+  <label for="practicalTeaching">Practical Teaching 实战教学</label><br>
+  <input type="checkbox" id="basicKnowledge" name="tags" value="basicKnowledge">
+  <label for="basicKnowledge">Basic Knowledge 基础知识</label><br>
+  <input type="checkbox" id="warSchoolVideo" name="tags" value="warSchoolVideo">
+  <label for="warSchoolVideo">War School Video 战争讲堂精选视频</label><br>
   <br>
 
   <!-- 选择Clan的id -->
@@ -41,7 +47,9 @@
     <option value="parodyAndPrank" data-hero="parodyAndPrank">funny-恶搞整活</option>
     <option value="superJoke" data-hero="superJoke">funny-超能段子</option>
     <option value="articles" data-hero="articles">最新资讯</option>
-    <option value="warSchool" data-hero="warSchool">战争学院</option>
+    <option value="practicalTeaching" data-hero="practicalTeaching">实战教学</option>
+    <option value="basicKnowledge" data-hero="basicKnowledge">基础知识</option>
+    <option value="warSchoolVideo" data-hero="warSchoolVideo">战争讲堂精选视频</option>
     <option value="mods" data-hero="mods">Mods</option>
     {% for clan in clans %}
     <option value="{{ clan.id }}" data-hero="{{ clan.heroName }}">{{ clan.heroName }}</option>
