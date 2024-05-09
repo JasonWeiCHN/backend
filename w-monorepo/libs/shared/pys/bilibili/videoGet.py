@@ -3,8 +3,8 @@ from bilibili_api import video, Credential, HEADERS
 import httpx
 import os
 
-SESSDATA = ""
-BILI_JCT = ""
+SESSDATA = "8d69a471%2C1730947138%2Ca7cb6%2A51CjADCDgYj4IfbdDhfMPrzq95u_asBrhulmPLdWc1hOFtAPRWzIn0DNAt74sKIVElSuYSVmlTbEc4cGVmOTlJNWdCZnZaTWVLMl96YnB0TWd2Z1FnS3BJU2tlYlhJT2g1Q3MzQXVwUU50YVpodWhNMnRkVi02TEVrMGdreHBxaVVxUDJPU3lqV0ZBIIEC"
+BILI_JCT = "7630d85e6e52f1400499cdbf3798cff5"
 BUVID3 = ""
 
 # FFMPEG 路径，查看：http://ffmpeg.org/
@@ -29,12 +29,13 @@ async def main():
     # 实例化 Credential 类
     credential = Credential(sessdata=SESSDATA, bili_jct=BILI_JCT, buvid3=BUVID3)
     # 实例化 Video 类
-    v = video.Video(bvid="BV1sw4m1m7iQ", credential=credential)
+    v = video.Video(bvid="BV19m421W7pa", credential=credential)
     # 获取视频下载链接
     download_url_data = await v.get_download_url(0)
     # 解析视频下载信息
     detecter = video.VideoDownloadURLDataDetecter(data=download_url_data)
-    streams = detecter.detect_best_streams(audio_min_quality=video.AudioQuality._64K)
+    streams = detecter.detect_best_streams()
+    print(streams)
     # 有 MP4 流 / FLV 流两种可能
     if detecter.check_flv_stream() == True:
         # FLV 流下载

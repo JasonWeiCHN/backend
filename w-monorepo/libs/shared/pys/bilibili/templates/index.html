@@ -11,6 +11,28 @@
   <label for="url">Enter URL:</label><br>
   <input style="width: 800px" type="text" id="url" name="url"><br><br>
 
+  <!-- 选择 type id -->
+  <label for="clanId">Select Clan ID:</label><br>
+  <input type="text" id="clanSearch" oninput="filterClans()" placeholder="Search for Hero Name...">
+  <select id="clanId" name="clanId">
+    <option value="strategy" data-hero="strategy">shogun-攻略</option>
+    <option value="liveRecording" data-hero="liveRecording">shogun-实况录播</option>
+    <option value="backgroundKnowledge" data-hero="backgroundKnowledge">shogun-背景知识</option>
+    <option value="uncontrollableMoment" data-hero="uncontrollableMoment">funny-绷不住的瞬间</option>
+    <option value="funnyCollection" data-hero="funnyCollection">funny-无敌合集</option>
+    <option value="parodyAndPrank" data-hero="parodyAndPrank">funny-恶搞整活</option>
+    <option value="superJoke" data-hero="superJoke">funny-超能段子</option>
+    <option value="articles" data-hero="articles">最新资讯</option>
+    <option value="practicalTeaching" data-hero="practicalTeaching">实战教学</option>
+    <option value="basicKnowledge" data-hero="basicKnowledge">基础知识</option>
+    <option value="warSchoolVideo" data-hero="warSchoolVideo">战争讲堂精选视频</option>
+    <option value="newMod" data-hero="newMod">新 Mod</option>
+    <option value="modCollection" data-hero="modCollection">Mod 合集</option>
+    {% for clan in clans %}
+    <option value="{{ clan.id }}" data-hero="{{ clan.heroName }}">{{ clan.heroName }}</option>
+    {% endfor %}
+  </select><br><br>
+
   <label for="tags">Select Tags:</label><br>
   <input type="checkbox" id="all" name="tags" value="all">
   <label for="all">All 全部</label><br>
@@ -26,6 +48,7 @@
   <label for="story">Story 讲故事</label><br>
   <input type="checkbox" id="task" name="tags" value="task">
   <label for="task">Task 任务</label><br>
+  <!--
   <input type="checkbox" id="news" name="tags" value="news">
   <label for="news">News 最新资讯</label><br>
   <input type="checkbox" id="mods" name="tags" value="mods">
@@ -36,25 +59,8 @@
   <label for="basicKnowledge">Basic Knowledge 基础知识</label><br>
   <input type="checkbox" id="warSchoolVideo" name="tags" value="warSchoolVideo">
   <label for="warSchoolVideo">War School Video 战争讲堂精选视频</label><br>
+  -->
   <br>
-
-  <!-- 选择Clan的id -->
-  <label for="clanId">Select Clan ID:</label><br>
-  <input type="text" id="clanSearch" oninput="filterClans()" placeholder="Search for Hero Name...">
-  <select id="clanId" name="clanId">
-    <option value="uncontrollableMoment" data-hero="uncontrollableMoment">funny-绷不住的瞬间</option>
-    <option value="funnyCollection" data-hero="funnyCollection">funny-无敌合集</option>
-    <option value="parodyAndPrank" data-hero="parodyAndPrank">funny-恶搞整活</option>
-    <option value="superJoke" data-hero="superJoke">funny-超能段子</option>
-    <option value="articles" data-hero="articles">最新资讯</option>
-    <option value="practicalTeaching" data-hero="practicalTeaching">实战教学</option>
-    <option value="basicKnowledge" data-hero="basicKnowledge">基础知识</option>
-    <option value="warSchoolVideo" data-hero="warSchoolVideo">战争讲堂精选视频</option>
-    <option value="mods" data-hero="mods">Mods</option>
-    {% for clan in clans %}
-    <option value="{{ clan.id }}" data-hero="{{ clan.heroName }}">{{ clan.heroName }}</option>
-    {% endfor %}
-  </select><br><br>
 
   <input type="button" value="Save" onclick="saveData()">
 </form>

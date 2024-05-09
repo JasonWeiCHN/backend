@@ -34,27 +34,12 @@ export class AppComponent {
     {
       id: '1',
       label: '全面战争·战锤3',
-      url: ''
+      url: 'http://111.230.29.99/'
     },
     {
       id: '2',
       label: '全面战争·幕府将军',
-      url: ''
-    },
-    {
-      id: '3',
-      label: '全面战争·阿提拉',
-      url: ''
-    },
-    {
-      id: '4',
-      label: '全面战争·拿破仑',
-      url: ''
-    },
-    {
-      id: '5',
-      label: '全面战争·法老',
-      url: ''
+      url: 'http://111.230.29.99:4000/'
     }
   ];
 
@@ -78,6 +63,9 @@ export class AppComponent {
   }
 
   protected onProjectSelected(item: IProjectSwitcher) {
-    console.log(item);
+    const { url } = item;
+    if (url) {
+      window.open(url, '_self');
+    }
   }
 }

@@ -446,7 +446,8 @@ export const WARHAMMER_CLASSIFIERS: IWarhammerClassifier[] = [
         'nameCN': '冰雪王廷',
         'heroName': '女沙皇卡捷琳',
         'heroAvatarPath': 'assets/images/lords/kislev-tzarina-katarin.png',
-        'path': 'assets/images/icons/Kislev/The_Ice_Court.png'
+        'path': 'assets/images/icons/Kislev/The_Ice_Court.png',
+        'description': '<p>开局祈唤一位基斯里夫神祗，令其庇佑保护整个祖国母亲，获得你需要的增益效果。</p><p>女皇卡捷琳是非常强大的冰雪系法师，你的目标是点出"凛冬之心"这种强大的AOE法术。</p><p>女皇很脆弱，避免近战或陷入敌阵深处。</p><p>你的初始敌人是诺斯卡，你需要攻下三座他们的城池统一"南方州"。</p><p>每一场战斗都有一定的难度，用好你的冰雪系减速魔法，依靠翼骑兵和雪豹这种高机动战斗单位侵扰敌军，引出落单然后围杀。</p><p>你有很多远程单位，但他们弹药有限，需要创造好的射击环境。</p><p>前期记得招募一个波耶，补充哥萨、近卫军和基斯里夫勇士。</p><p>统一南方州后其实有南北两个扩张路线，北边是基斯里夫同族，南方进入山区是食人魔和响骨。</p><p>建议先攻南方，基斯里夫内战很惨烈，而且会掉虔信。</p><p>所以，先攻下"千柱石厅"统一"北世界边缘山脉"，再考虑下一步的计划。</p>'
       },
       {
         'id': 'The_Great_Orthodoxy',
@@ -1470,7 +1471,8 @@ export const WARHAMMER_CLASSIFIERS_MAP: IWarhammerClassifierMap = {
       'nameCN': '冰雪王廷',
       'heroName': '女沙皇卡捷琳',
       'heroAvatarPath': 'assets/images/lords/kislev-tzarina-katarin.png',
-      'path': 'assets/images/icons/Kislev/The_Ice_Court.png'
+      'path': 'assets/images/icons/Kislev/The_Ice_Court.png',
+      'description': '<p>开局祈唤一位基斯里夫神祗，令其庇佑保护整个祖国母亲，获得你需要的增益效果。</p><p>女皇卡捷琳是非常强大的冰雪系法师，你的目标是点出"凛冬之心"这种强大的AOE法术。</p><p>女皇很脆弱，避免近战或陷入敌阵深处。</p><p>你的初始敌人是诺斯卡，你需要攻下三座他们的城池统一"南方州"。</p><p>每一场战斗都有一定的难度，用好你的冰雪系减速魔法，依靠翼骑兵和雪豹这种高机动战斗单位侵扰敌军，引出落单然后围杀。</p><p>你有很多远程单位，但他们弹药有限，需要创造好的射击环境。</p><p>前期记得招募一个波耶，补充哥萨、近卫军和基斯里夫勇士。</p><p>统一南方州后其实有南北两个扩张路线，北边是基斯里夫同族，南方进入山区是食人魔和响骨。</p><p>建议先攻南方，基斯里夫内战很惨烈，而且会掉虔信。</p><p>所以，先攻下"千柱石厅"统一"北世界边缘山脉"，再考虑下一步的计划。</p>'
     }
   },
   'The_Great_Orthodoxy': {

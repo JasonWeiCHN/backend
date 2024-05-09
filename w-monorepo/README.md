@@ -88,6 +88,9 @@ nx g @nx/angular:component product-list --directory=libs/products/src/lib/produc
 
 在UI库创建组件
 nx g @nx/angular:component pagination --directory=libs/shared/ui/src/lib/pagination --standalone --export --style=scss
+
+给已有项目增加 tailwind
+npx nx g @nx/angular:setup-tailwind my-project
 ```
 
 ## 服务器
@@ -126,4 +129,7 @@ sudo pip install --upgrade pip
 
 后台启动 python Flask 服务
 nohup python3 statistics.py > flask.log &
+
+添加新项目后 如果用了新端口
+记得去服务器 在防火墙 添加规则
 ```

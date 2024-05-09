@@ -1661,6 +1661,56 @@ export const ARTICLES_MAP: IArticleMap = {
       'views': 5179
     }
   ],
+  'newMod': [
+    {
+      'id': '479',
+      'typeId': 'newMod',
+      'imageUrl': '',
+      'sourceUrl': 'https://www.bilibili.com/video/BV12D421P7pE',
+      'title': '战锤MOD推荐 卡皇什么也不缺了！',
+      'views': 11000,
+      'description': 'MOD合集链接：https://steamcommunity.com/sharedfiles/filedetails/?id=3242150386',
+      'publisher': '明曦xmD',
+      'date': '2024-05-08 21:22:14',
+      'tagIds': [
+        'newMod'
+      ],
+      'referer': null,
+      'detail': 'MOD合集链接：https://steamcommunity.com/sharedfiles/filedetails/?id=3242150386'
+    },
+    {
+      'date': '2024-05-05 21:30:00',
+      'sourceUrl': 'https://www.bilibili.com/video/BV1GE421V7wH',
+      'referer': null,
+      'imageUrl': '',
+      'tagIds': [
+        'newMod'
+      ],
+      'publisher': '明曦xmD & _Alvaro_',
+      'description': '一共七个墓园玫瑰的美化，合集链接：https://steamcommunity.com/workshop/filedetails/?id=3239918889',
+      'typeId': 'newMod',
+      'id': '442',
+      'detail': '一共七个墓园玫瑰的美化，合集链接：https://steamcommunity.com/workshop/filedetails/?id=3239918889',
+      'title': '战锤3MOD推荐 墓园玫瑰埃斯佩斯“美化”',
+      'views': 8368
+    },
+    {
+      'date': '2024-05-02 11:05:04',
+      'sourceUrl': 'https://www.bilibili.com/video/BV1Lw4m1C7bu',
+      'referer': null,
+      'imageUrl': '',
+      'tagIds': [
+        'newMod'
+      ],
+      'publisher': '明曦xmD',
+      'description': '腐烂王座刚更新没多久，各路MOD大佬就发力了，创作了许多实用的MOD',
+      'typeId': 'newMod',
+      'id': '433',
+      'detail': '腐烂王座刚更新没多久，各路MOD大佬就发力了，创作了许多实用的MOD',
+      'title': '战锤3MOD推荐 玫瑰美化/基础必用更新/感染BUG修复',
+      'views': 8338
+    }
+  ],
   'The_Ice_Court': [
     {
       'date': '2024-03-10 11:06:19',
@@ -2695,6 +2745,152 @@ export const ARTICLES_MAP: IArticleMap = {
       'views': 6024
     }
   ],
+  'modCollection': [
+    {
+      'date': '',
+      'sourceUrl': 'https://space.bilibili.com/259524914/channel/collectiondetail?sid=2084926',
+      'referer': '',
+      'imageUrl': '',
+      'tagIds': [
+        ''
+      ],
+      'publisher': '明曦xmD',
+      'description': 'Mod颁奖视频',
+      'typeId': 'modCollection',
+      'id': '475',
+      'detail': 'Mod颁奖视频',
+      'title': '[明曦xmD] 合集·战锤年度MOD颁奖',
+      'views': 0
+    },
+    {
+      'date': '',
+      'sourceUrl': 'https://space.bilibili.com/9968225/channel/collectiondetail?sid=668346',
+      'referer': '',
+      'imageUrl': '',
+      'tagIds': [
+        ''
+      ],
+      'publisher': '奥勒良Aurelianus',
+      'description': '40多个精选战锤mod',
+      'typeId': 'modCollection',
+      'id': '477',
+      'detail': '40多个精选战锤mod',
+      'title': '[奥勒良Aurelianus] 合集·战锤3Mod介绍',
+      'views': 0
+    },
+    {
+      'date': '',
+      'sourceUrl': 'https://space.bilibili.com/259524914/channel/collectiondetail?sid=2028116',
+      'referer': '',
+      'imageUrl': '',
+      'tagIds': [
+        ''
+      ],
+      'publisher': '明曦xmD',
+      'description': '新手必备Mod 和 Mod管理器',
+      'typeId': 'modCollection',
+      'id': '473',
+      'detail': '新手必备Mod 和 Mod管理器',
+      'title': '[明曦xmD] 合集·战锤3MOD必看',
+      'views': 0
+    },
+    {
+      'date': '',
+      'sourceUrl': 'https://space.bilibili.com/259524914/channel/collectiondetail?sid=2040151',
+      'referer': '',
+      'imageUrl': '',
+      'tagIds': [
+        ''
+      ],
+      'publisher': '明曦xmD',
+      'description': '3个派系Mod视频',
+      'typeId': 'modCollection',
+      'id': '474',
+      'detail': '3个派系Mod视频',
+      'title': '[明曦xmD] 合集·战锤3派系MOD',
+      'views': 0
+    },
+    {
+      'date': '',
+      'sourceUrl': 'https://space.bilibili.com/324051633/channel/collectiondetail?sid=2128824',
+      'referer': '',
+      'imageUrl': '',
+      'tagIds': [
+        ''
+      ],
+      'publisher': 'wodwd-不是wdnmd-',
+      'description': '4个精选战锤mod',
+      'typeId': 'modCollection',
+      'id': '476',
+      'detail': '4个精选战锤mod',
+      'title': '[wodwd-不是wdnmd-] 合集·MOD推荐与攻略！',
+      'views': 0
+    },
+    {
+      'date': '',
+      'sourceUrl': 'https://space.bilibili.com/20714613/channel/collectiondetail?sid=965379',
+      'referer': '',
+      'imageUrl': '',
+      'tagIds': [
+        ''
+      ],
+      'publisher': '阿斯塔特修会',
+      'description': '合集·战锤3R大Mod',
+      'typeId': 'modCollection',
+      'id': '471',
+      'detail': '合集·战锤3R大Mod',
+      'title': '[阿斯塔特修会] 合集·战锤3R大Mod',
+      'views': 0
+    },
+    {
+      'date': '',
+      'sourceUrl': 'https://space.bilibili.com/35933059',
+      'referer': '',
+      'imageUrl': '',
+      'tagIds': [
+        ''
+      ],
+      'publisher': '夏墨tactics',
+      'description': '空间多个Mod合集',
+      'typeId': 'modCollection',
+      'id': '472',
+      'detail': '空间多个Mod合集',
+      'title': '[夏墨tactics] 锤3 Mods 推荐',
+      'views': 0
+    },
+    {
+      'date': '',
+      'sourceUrl': 'https://space.bilibili.com/1313675621/channel/collectiondetail?sid=1199948',
+      'referer': '',
+      'imageUrl': '',
+      'tagIds': [
+        ''
+      ],
+      'publisher': '嘉维尔丛林之魂',
+      'description': '近400个战锤mod，一次选个够',
+      'typeId': 'modCollection',
+      'id': '470',
+      'detail': '',
+      'title': '[嘉维尔丛林之魂] 合集·战锤mod',
+      'views': 0
+    },
+    {
+      'date': '',
+      'sourceUrl': 'https://www.bilibili.com/read/cv19304826/?spm_id_from=333.999.0.0',
+      'referer': '',
+      'imageUrl': '',
+      'tagIds': [
+        ''
+      ],
+      'publisher': '金花家族',
+      'description': '以下是制作MOD需要用到的工具插件及下载地址',
+      'typeId': 'modCollection',
+      'id': '478',
+      'detail': '以下是制作MOD需要用到的工具插件及下载地址',
+      'title': '全面战争：战锤3MOD工具及下载地址',
+      'views': 0
+    }
+  ],
   'The_Bloody_Handz': [
     {
       'date': '2024-04-14 11:30:00',
@@ -3175,36 +3371,20 @@ export const ARTICLES_MAP: IArticleMap = {
       'views': 5835
     },
     {
-      'date': '2024-05-05 21:30:00',
-      'sourceUrl': 'https://www.bilibili.com/video/BV1GE421V7wH',
-      'referer': null,
-      'imageUrl': '',
-      'tagIds': [
-        'mods'
-      ],
-      'publisher': '明曦xmD & _Alvaro_',
-      'description': '一共七个墓园玫瑰的美化，合集链接：https://steamcommunity.com/workshop/filedetails/?id=3239918889',
-      'typeId': 'mods',
-      'id': '442',
-      'detail': '一共七个墓园玫瑰的美化，合集链接：https://steamcommunity.com/workshop/filedetails/?id=3239918889',
-      'title': '战锤3MOD推荐 墓园玫瑰埃斯佩斯“美化”',
-      'views': 8368
-    },
-    {
-      'date': '2024-05-02 11:05:04',
-      'sourceUrl': 'https://www.bilibili.com/video/BV1Lw4m1C7bu',
+      'date': '2024-05-08 21:22:14',
+      'sourceUrl': 'https://www.bilibili.com/video/BV12D421P7pE',
       'referer': null,
       'imageUrl': '',
       'tagIds': [
         'mods'
       ],
       'publisher': '明曦xmD',
-      'description': '腐烂王座刚更新没多久，各路MOD大佬就发力了，创作了许多实用的MOD',
+      'description': 'MOD合集链接：https://steamcommunity.com/sharedfiles/filedetails/?id=3242150386',
       'typeId': 'mods',
-      'id': '433',
-      'detail': '腐烂王座刚更新没多久，各路MOD大佬就发力了，创作了许多实用的MOD',
-      'title': '战锤3MOD推荐 玫瑰美化/基础必用更新/感染BUG修复',
-      'views': 8338
+      'id': '469',
+      'detail': 'MOD合集链接：https://steamcommunity.com/sharedfiles/filedetails/?id=3242150386',
+      'title': '战锤MOD推荐 卡皇什么也不缺了！',
+      'views': 10000
     }
   ],
   'Clan_Eshin': [
@@ -7049,6 +7229,22 @@ export const ARTICLES_MAP: IArticleMap = {
   ],
   'Wissenland_Nuln': [
     {
+      'date': '2024-05-07 19:09:11',
+      'sourceUrl': 'https://www.bilibili.com/video/BV1nM4m1d7Lb',
+      'referer': null,
+      'imageUrl': '',
+      'tagIds': [
+        'liveRecording'
+      ],
+      'publisher': '瓦尔基娅_Ven',
+      'description': '哈哈哈哈！！我又回来啦！',
+      'typeId': 'Wissenland_Nuln',
+      'id': '468',
+      'detail': '哈哈哈哈！！我又回来啦！',
+      'title': '【瓦尔基娅】努恩女术士拯救真正的帝国#1',
+      'views': 394
+    },
+    {
       'date': '2024-05-06 22:26:28',
       'sourceUrl': 'https://www.bilibili.com/video/BV1om421H72W',
       'referer': null,
@@ -7146,6 +7342,22 @@ export const ARTICLES_MAP: IArticleMap = {
     }
   ],
   'articles': [
+    {
+      'id': '480',
+      'typeId': 'articles',
+      'imageUrl': '',
+      'sourceUrl': 'https://www.bilibili.com/video/BV1qH4y1G7Hx',
+      'title': '战锤3全面战争视频：帝国矮人VS纳垢',
+      'views': 256,
+      'description': 'https://youtube.com/watch=/c7f63d8e',
+      'publisher': '萨瓦莉克',
+      'date': '2024-05-09 21:58:53',
+      'tagIds': [
+        'clip'
+      ],
+      'referer': null,
+      'detail': 'https://youtube.com/watch=/c7f63d8e'
+    },
     {
       'date': '2024-05-08 12:00:00',
       'sourceUrl': 'https://www.bilibili.com/video/BV13H4y1g7ae',

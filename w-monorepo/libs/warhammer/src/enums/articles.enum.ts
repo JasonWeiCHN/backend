@@ -11,7 +11,9 @@ export enum EArticleTags {
   STRATEGY = 'strategy',
   BASIC_KNOWLEDGE = 'basicKnowledge',
   PRACTICAL_TEACHING = 'practicalTeaching',
-  WAR_SCHOOL_VIDEO = 'warSchoolVideo'
+  WAR_SCHOOL_VIDEO = 'warSchoolVideo',
+  NEW_MOD = 'newMod',
+  MOD_COLLECTION = 'modCollection'
 }
 
 export enum EReferer {
