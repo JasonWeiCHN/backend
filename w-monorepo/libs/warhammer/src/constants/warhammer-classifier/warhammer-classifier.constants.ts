@@ -15,7 +15,6 @@ export const WARHAMMER_CLASSIFIERS: IWarhammerClassifier[] = [
         'nameCN': '独眼战兽群',
         'heroName': '卡扎克·独眼',
         'heroAvatarPath': 'assets/images/lords/beastmen-khazrak-the-one-eye.png',
-        'description': '卡扎克是帝国北部森林的梦魇，他将再次令血域遍及邓肯瓦尔德',
         'path': 'assets/images/icons/Beastmen/Warherd_of_the_One-Eye.png'
       },
       {
@@ -581,7 +580,8 @@ export const WARHAMMER_CLASSIFIERS: IWarhammerClassifier[] = [
         'heroName': '蛆虫之主·塔木尔可汗',
         'heroNameEN': 'Tamurkhan the Maggot Lord',
         'heroAvatarPath': 'assets/images/lords/nurgle-tankhan-the-maggot-lord.png',
-        'path': 'assets/images/icons/Nurgle/Poxmakers_of_Nurgle.png'
+        'path': 'assets/images/icons/Nurgle/Poxmakers_of_Nurgle.png',
+        'description': '<p>开局往南方进攻，死敌柯烈克·食日者等着你，你和他只有一个能活在这个世界。</p><p>攻下"绞架树"一统"卡达莎"，接着进攻"奇美拉高地"。</p><p>存够"霸权"(纳垢资源)立刻招募"玷污者·凯兹克"，自带坐骑，移速达到80+，武器威力560，还能重生。</p><p>手动战中利用凯兹克和强大的腐烂骑士(也会重生)，将敌军作战单位一个接一个勾引出来围杀是上好的战术。</p><p>击败柯烈克·食日者即可完成前期破局。</p>'
       },
       {
         'id': 'Tallymen_of_Pestilence',
@@ -984,7 +984,6 @@ export const WARHAMMER_CLASSIFIERS_MAP: IWarhammerClassifierMap = {
       'nameCN': '独眼战兽群',
       'heroName': '卡扎克·独眼',
       'heroAvatarPath': 'assets/images/lords/beastmen-khazrak-the-one-eye.png',
-      'description': '卡扎克是帝国北部森林的梦魇，他将再次令血域遍及邓肯瓦尔德',
       'path': 'assets/images/icons/Beastmen/Warherd_of_the_One-Eye.png'
     }
   },
@@ -1626,7 +1625,8 @@ export const WARHAMMER_CLASSIFIERS_MAP: IWarhammerClassifierMap = {
       'heroName': '蛆虫之主·塔木尔可汗',
       'heroNameEN': 'Tamurkhan the Maggot Lord',
       'heroAvatarPath': 'assets/images/lords/nurgle-tankhan-the-maggot-lord.png',
-      'path': 'assets/images/icons/Nurgle/Poxmakers_of_Nurgle.png'
+      'path': 'assets/images/icons/Nurgle/Poxmakers_of_Nurgle.png',
+      'description': '<p>开局往南方进攻，死敌柯烈克·食日者等着你，你和他只有一个能活在这个世界。</p><p>攻下"绞架树"一统"卡达莎"，接着进攻"奇美拉高地"。</p><p>存够"霸权"(纳垢资源)立刻招募"玷污者·凯兹克"，自带坐骑，移速达到80+，武器威力560，还能重生。</p><p>手动战中利用凯兹克和强大的腐烂骑士(也会重生)，将敌军作战单位一个接一个勾引出来围杀是上好的战术。</p><p>击败柯烈克·食日者即可完成前期破局。</p>'
     }
   },
   'Tallymen_of_Pestilence': {

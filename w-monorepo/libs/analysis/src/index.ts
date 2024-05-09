@@ -1,1 +1,1 @@
-export * from './services/analysis.htttp';
+export * from './services/analysis.htttp.service';

@@ -1,16 +1,18 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EItemCardMode, ItemCardComponent } from '@w-monorepo/ui';
+import { ItemCardComponent } from '@w-monorepo/ui';
 import { Router } from '@angular/router';
 import { EWarhammerClassifierMode } from './shared/enums/warhammer-classifier.enum';
 import { IImageFile, IWarhammerClassifier, WARHAMMER_CLASSIFIERS } from '@w-monorepo/warhammer';
+import { AnalysisHttpService } from '@w-monorepo/analysis';
 
 @Component({
   selector: 'st-warhammer-classifier',
   standalone: true,
   imports: [CommonModule, ItemCardComponent],
   templateUrl: './warhammer-classifier.component.html',
-  styleUrl: './warhammer-classifier.component.scss'
+  styleUrl: './warhammer-classifier.component.scss',
+  providers: [AnalysisHttpService]
 })
 export class WarhammerClassifierComponent {
   /**
@@ -24,14 +26,18 @@ export class WarhammerClassifierComponent {
 
   protected eWarhammerClassifierMode = EWarhammerClassifierMode;
 
-  public constructor(private _router: Router) {
+  public constructor(private analysisHttpService: AnalysisHttpService, private _router: Router) {
   }
 
   public data: IWarhammerClassifier[] = WARHAMMER_CLASSIFIERS;
 
   public onImgBoxClick(item: IImageFile): void {
     this._router.navigate([`/article/${item.id}`]);
-  }
 
-  protected readonly eItemCardMode = EItemCardMode;
+    this.analysisHttpService.submitString('查看: ' + item.heroName).subscribe((response: any) => {
+      // console.log('String submitted successfully!', response);
+    }, (error: any) => {
+      console.error('Error submitting string:', error);
+    });
+  }
 }

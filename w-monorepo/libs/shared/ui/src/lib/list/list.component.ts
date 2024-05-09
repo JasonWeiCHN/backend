@@ -26,7 +26,7 @@ export class ListComponent {
   public data: IItemCard[] = [];
 
   @Input()
-  public isAnalysis: boolean = true;
+  public isAnalysis = true;
 
   @Output('listItemClick')
   public readonly itemClick: EventEmitter<IItemCard> = new EventEmitter<IItemCard>();
@@ -39,8 +39,9 @@ export class ListComponent {
 
   public onItemClick(item: IItemCard): void {
     this.itemClick.emit(item);
+
     this.analysisHttpService.submitString(item.title).subscribe((response: any) => {
-      console.log('String submitted successfully!', response);
+      // console.log('String submitted successfully!', response);
     }, (error: any) => {
       console.error('Error submitting string:', error);
     });

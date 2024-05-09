@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { INavigationItem } from './shared/interfaces/navigation.interface';
 import { has } from 'lodash-es';
 import { NavigationEnd, Router } from '@angular/router';
+import { AnalysisHttpService } from '@w-monorepo/analysis';
 
 @Component({
   selector: 'w-navigation',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './navigation.component.html',
-  styleUrl: './navigation.component.scss'
+  styleUrl: './navigation.component.scss',
+  providers: [AnalysisHttpService]
 })
 export class NavigationComponent implements OnChanges {
   /**
@@ -26,7 +28,7 @@ export class NavigationComponent implements OnChanges {
 
   public activeItemId = '';
 
-  public constructor(private router: Router) {
+  public constructor(private analysisHttpService: AnalysisHttpService, private router: Router) {
   }
 
   public ngOnChanges(changes: SimpleChanges): void {
@@ -48,6 +50,12 @@ export class NavigationComponent implements OnChanges {
   protected onItemClick(item: INavigationItem) {
     this.activeItemId = item.id;
     this.itemClick.emit(item);
+
+    this.analysisHttpService.submitString('导航切换: ' + item.label).subscribe((response: any) => {
+      // console.log('String submitted successfully!', response);
+    }, (error: any) => {
+      console.error('Error submitting string:', error);
+    });
   }
 
   private updateActiveItemId() {
