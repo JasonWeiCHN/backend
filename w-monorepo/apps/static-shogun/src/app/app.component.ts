@@ -26,20 +26,25 @@ import { ARTICLES_MAP } from './shared/constants/data.constants';
 export class AppComponent {
   protected appConfig: IApp = APP_CONFIG;
   protected selectedProject: IProjectSwitcher = {
-    id: '2',
+    id: '1',
     label: '全面战争·幕府将军',
-    url: ''
+    url: 'http://111.230.29.99:4000/'
   };
   protected projects: IProjectSwitcher[] = [
     {
       id: '1',
+      label: '全面战争·幕府将军',
+      url: 'http://111.230.29.99:4000/'
+    },
+    {
+      id: '2',
       label: '全面战争·战锤3',
       url: 'http://111.230.29.99/'
     },
     {
-      id: '2',
-      label: '全面战争·幕府将军',
-      url: 'http://111.230.29.99:4000/'
+      id: '3',
+      label: '全面战争·法老',
+      url: 'http://111.230.29.99:4001/'
     }
   ];
 

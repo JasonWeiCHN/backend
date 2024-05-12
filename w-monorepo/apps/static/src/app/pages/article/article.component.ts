@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { BackButtonComponent, EList, IItemCard, ITag, ListComponent, TagSelectorComponent } from '@w-monorepo/ui';
@@ -16,7 +16,8 @@ import {
   standalone: true,
   imports: [CommonModule, ListComponent, TagSelectorComponent, BackButtonComponent],
   templateUrl: './article.component.html',
-  styleUrl: './article.component.scss'
+  styleUrl: './article.component.scss',
+  encapsulation: ViewEncapsulation.None
 })
 export class ArticleComponent implements OnInit {
   // TODO 优化: 没有数据的应该不显示

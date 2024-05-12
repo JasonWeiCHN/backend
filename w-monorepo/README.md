@@ -79,6 +79,8 @@ It will show tasks that you can run with Nx.
 ```
 创建项目
 npx nx g @nx/angular:app inventory --directory=apps/inventory --dry-run
+npx nx g @nx/angular:app static-shogun --directory=apps/static-shogun --add-tailwind
+
 
 创建lib
 nx g @nx/angular:library products --directory=libs/products --standalone
@@ -91,6 +93,28 @@ nx g @nx/angular:component pagination --directory=libs/shared/ui/src/lib/paginat
 
 给已有项目增加 tailwind
 npx nx g @nx/angular:setup-tailwind my-project
+```
+
+## 关于 bilibili-api 的使用
+
+- 下载高清晰度视频 需要使用
+
+```
+streams = detecter.detect_all()
+
+还要填写
+SESSDATA = "6ee3c61d%2C1730955052%2C1cb77%2A51CjDAygcxInzoPR8iz_KWaluDNvEgadVmiP0PcIrTfaz2GNhA3zTRp0rjRXTRXB9IVm8SVmN6UV9VNFlYWDRER2pCYm9mZm5NUzBKdTFRMmN6b2RNUzB3UVR5U3B0eENKalZyTlFlNXpzZGZrN3doNkpwSV9nQXlIalRYVXFmei0xM1JpaVA0S0NBIIEC"
+BILI_JCT = "7e5c5317fe9573a2c2d1d0817cccbd81"
+
+然后再选择对应清晰度，注意 index
+await download_url(streams[8].url, "video_temp.m4s", "视频流")
+await download_url(streams[20].url, "audio_temp.m4s", "音频流")
+```
+
+- 没有清晰度要求的话 使用
+
+```
+streams = detecter.detect_best_streams()
 ```
 
 ## 服务器

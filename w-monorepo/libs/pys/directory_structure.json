@@ -1,0 +1,494 @@
+[
+    {
+        "directory": "icons",
+        "files": []
+    },
+    {
+        "directory": "Beastmen",
+        "files": [
+            {
+                "name": "Harbinger_of_Disaster",
+                "path": "assets/images/icons/Beastmen/Harbinger_of_Disaster.png"
+            },
+            {
+                "name": "Slaughterhorn_Tribe",
+                "path": "assets/images/icons/Beastmen/Slaughterhorn_Tribe.png"
+            },
+            {
+                "name": "Warherd_of_the_One-Eye",
+                "path": "assets/images/icons/Beastmen/Warherd_of_the_One-Eye.png"
+            },
+            {
+                "name": "Warherd_of_the_Shadowgave",
+                "path": "assets/images/icons/Beastmen/Warherd_of_the_Shadowgave.png"
+            }
+        ]
+    },
+    {
+        "directory": "Bretonnia",
+        "files": [
+            {
+                "name": "Bordeleaux_Errant",
+                "path": "assets/images/icons/Bretonnia/Bordeleaux_Errant.png"
+            },
+            {
+                "name": "Carcassonne",
+                "path": "assets/images/icons/Bretonnia/Carcassonne.png"
+            },
+            {
+                "name": "Chevaliers_de_Lyonesse",
+                "path": "assets/images/icons/Bretonnia/Chevaliers_de_Lyonesse.png"
+            },
+            {
+                "name": "Couronne",
+                "path": "assets/images/icons/Bretonnia/Couronne.png"
+            }
+        ]
+    },
+    {
+        "directory": "Chaos Dwarfs",
+        "files": [
+            {
+                "name": "Disciples_of_Hashut",
+                "path": "assets/images/icons/Chaos Dwarfs/Disciples_of_Hashut.png"
+            },
+            {
+                "name": "The_Legion_of_Azgorh",
+                "path": "assets/images/icons/Chaos Dwarfs/The_Legion_of_Azgorh.png"
+            },
+            {
+                "name": "The_Warhost_of_Zharr",
+                "path": "assets/images/icons/Chaos Dwarfs/The_Warhost_of_Zharr.png"
+            }
+        ]
+    },
+    {
+        "directory": "Daemons of Chaos",
+        "files": [
+            {
+                "name": "Legion_of_Chaos",
+                "path": "assets/images/icons/Daemons of Chaos/Legion_of_Chaos.png"
+            }
+        ]
+    },
+    {
+        "directory": "Dark Elves",
+        "files": [
+            {
+                "name": "Cult_of_Pleasure",
+                "path": "assets/images/icons/Dark Elves/Cult_of_Pleasure.png"
+            },
+            {
+                "name": "Hag_Graef",
+                "path": "assets/images/icons/Dark Elves/Hag_Graef.png"
+            },
+            {
+                "name": "Har_Ganeth",
+                "path": "assets/images/icons/Dark Elves/Har_Ganeth.png"
+            },
+            {
+                "name": "Naggarond",
+                "path": "assets/images/icons/Dark Elves/Naggarond.png"
+            },
+            {
+                "name": "The_Blessed_Dread",
+                "path": "assets/images/icons/Dark Elves/The_Blessed_Dread.png"
+            },
+            {
+                "name": "The_Thousand_Maws",
+                "path": "assets/images/icons/Dark Elves/The_Thousand_Maws.png"
+            }
+        ]
+    },
+    {
+        "directory": "Dwarfs",
+        "files": [
+            {
+                "name": "Clan_Angrund",
+                "path": "assets/images/icons/Dwarfs/Clan_Angrund.png"
+            },
+            {
+                "name": "Ironbrows_Expedition",
+                "path": "assets/images/icons/Dwarfs/Ironbrows_Expedition.png"
+            },
+            {
+                "name": "Karak_Kadrin",
+                "path": "assets/images/icons/Dwarfs/Karak_Kadrin.png"
+            },
+            {
+                "name": "Karaz-a-Karak",
+                "path": "assets/images/icons/Dwarfs/Karaz-a-Karak.png"
+            },
+            {
+                "name": "The_Ancestral_Throng",
+                "path": "assets/images/icons/Dwarfs/The_Ancestral_Throng.png"
+            }
+        ]
+    },
+    {
+        "directory": "Grand Cathay",
+        "files": [
+            {
+                "name": "The_Jade_Court",
+                "path": "assets/images/icons/Grand Cathay/The_Jade_Court.png"
+            },
+            {
+                "name": "The_Northern_Provinces",
+                "path": "assets/images/icons/Grand Cathay/The_Northern_Provinces.png"
+            },
+            {
+                "name": "The_Western_Provinces",
+                "path": "assets/images/icons/Grand Cathay/The_Western_Provinces.png"
+            }
+        ]
+    },
+    {
+        "directory": "Greenskins",
+        "files": [
+            {
+                "name": "Bonerattlaz",
+                "path": "assets/images/icons/Greenskins/Bonerattlaz.png"
+            },
+            {
+                "name": "Broken_Axe",
+                "path": "assets/images/icons/Greenskins/Broken_Axe.png"
+            },
+            {
+                "name": "Crooked_Moon",
+                "path": "assets/images/icons/Greenskins/Crooked_Moon.png"
+            },
+            {
+                "name": "Grimgors_Ardboyz",
+                "path": "assets/images/icons/Greenskins/Grimgors_Ardboyz.png"
+            },
+            {
+                "name": "The_Bloody_Handz",
+                "path": "assets/images/icons/Greenskins/The_Bloody_Handz.png"
+            }
+        ]
+    },
+    {
+        "directory": "High Elves",
+        "files": [
+            {
+                "name": "Avelorn",
+                "path": "assets/images/icons/High Elves/Avelorn.png"
+            },
+            {
+                "name": "Eataine",
+                "path": "assets/images/icons/High Elves/Eataine.png"
+            },
+            {
+                "name": "Knights_of_Caledor",
+                "path": "assets/images/icons/High Elves/Knights_of_Caledor.png"
+            },
+            {
+                "name": "Nagarythe",
+                "path": "assets/images/icons/High Elves/Nagarythe.png"
+            },
+            {
+                "name": "Order_of_Loremasters",
+                "path": "assets/images/icons/High Elves/Order_of_Loremasters.png"
+            },
+            {
+                "name": "Yvresse",
+                "path": "assets/images/icons/High Elves/Yvresse.png"
+            }
+        ]
+    },
+    {
+        "directory": "Khorne",
+        "files": [
+            {
+                "name": "Exiles_of_Khorne",
+                "path": "assets/images/icons/Khorne/Exiles_of_Khorne.png"
+            }
+        ]
+    },
+    {
+        "directory": "Kislev",
+        "files": [
+            {
+                "name": "Daughters_of_the_Forest",
+                "path": "assets/images/icons/Kislev/Daughters_of_the_Forest.png"
+            },
+            {
+                "name": "Kislev_Expedition",
+                "path": "assets/images/icons/Kislev/Kislev_Expedition.png"
+            },
+            {
+                "name": "The_Great_Orthodoxy",
+                "path": "assets/images/icons/Kislev/The_Great_Orthodoxy.png"
+            },
+            {
+                "name": "The_Ice_Court",
+                "path": "assets/images/icons/Kislev/The_Ice_Court.png"
+            },
+            {
+                "name": "Ursun_Revivalists",
+                "path": "assets/images/icons/Kislev/Ursun_Revivalists.png"
+            }
+        ]
+    },
+    {
+        "directory": "Lizardmen",
+        "files": [
+            {
+                "name": "Cult_of_Sotek",
+                "path": "assets/images/icons/Lizardmen/Cult_of_Sotek.png"
+            },
+            {
+                "name": "Ghosts_of_Pahuax",
+                "path": "assets/images/icons/Lizardmen/Ghosts_of_Pahuax.png"
+            },
+            {
+                "name": "Hexoatl",
+                "path": "assets/images/icons/Lizardmen/Hexoatl.png"
+            },
+            {
+                "name": "Itza",
+                "path": "assets/images/icons/Lizardmen/Itza.png"
+            },
+            {
+                "name": "Last_Defenders",
+                "path": "assets/images/icons/Lizardmen/Last_Defenders.png"
+            },
+            {
+                "name": "Spirit_of_the_Jungle",
+                "path": "assets/images/icons/Lizardmen/Spirit_of_the_Jungle.png"
+            },
+            {
+                "name": "Tlaqua",
+                "path": "assets/images/icons/Lizardmen/Tlaqua.png"
+            }
+        ]
+    },
+    {
+        "directory": "Norsca",
+        "files": [
+            {
+                "name": "Wintertooth",
+                "path": "assets/images/icons/Norsca/Wintertooth.png"
+            },
+            {
+                "name": "World_Walkers",
+                "path": "assets/images/icons/Norsca/World_Walkers.png"
+            }
+        ]
+    },
+    {
+        "directory": "Nurgle",
+        "files": [
+            {
+                "name": "Poxmakers_of_Nurgle",
+                "path": "assets/images/icons/Nurgle/Poxmakers_of_Nurgle.png"
+            }
+        ]
+    },
+    {
+        "directory": "Ogre Kingdoms",
+        "files": [
+            {
+                "name": "Disciples_of_the_Maw",
+                "path": "assets/images/icons/Ogre Kingdoms/Disciples_of_the_Maw.png"
+            },
+            {
+                "name": "Goldtooth",
+                "path": "assets/images/icons/Ogre Kingdoms/Goldtooth.png"
+            }
+        ]
+    },
+    {
+        "directory": "Skaven",
+        "files": [
+            {
+                "name": "Clan_Eshin",
+                "path": "assets/images/icons/Skaven/Clan_Eshin.png"
+            },
+            {
+                "name": "Clan_Mors",
+                "path": "assets/images/icons/Skaven/Clan_Mors.png"
+            },
+            {
+                "name": "Clan_Moulder",
+                "path": "assets/images/icons/Skaven/Clan_Moulder.png"
+            },
+            {
+                "name": "Clan_Pestilens",
+                "path": "assets/images/icons/Skaven/Clan_Pestilens.png"
+            },
+            {
+                "name": "Clan_Rictus",
+                "path": "assets/images/icons/Skaven/Clan_Rictus.png"
+            },
+            {
+                "name": "Clan_Skryre",
+                "path": "assets/images/icons/Skaven/Clan_Skryre.png"
+            }
+        ]
+    },
+    {
+        "directory": "Slaanesh",
+        "files": [
+            {
+                "name": "Seducers_of_Slaanesh",
+                "path": "assets/images/icons/Slaanesh/Seducers_of_Slaanesh.png"
+            }
+        ]
+    },
+    {
+        "directory": "The Empire",
+        "files": [
+            {
+                "name": "Cult_of_Sigmar",
+                "path": "assets/images/icons/The Empire/Cult_of_Sigmar.png"
+            },
+            {
+                "name": "Reikland",
+                "path": "assets/images/icons/The Empire/Reikland.png"
+            },
+            {
+                "name": "The_Golden_Order",
+                "path": "assets/images/icons/The Empire/The_Golden_Order.png"
+            },
+            {
+                "name": "The_Huntsmarshals_Expedition",
+                "path": "assets/images/icons/The Empire/The_Huntsmarshals_Expedition.png"
+            }
+        ]
+    },
+    {
+        "directory": "Tomb Kings",
+        "files": [
+            {
+                "name": "Court_of_Lybaras",
+                "path": "assets/images/icons/Tomb Kings/Court_of_Lybaras.png"
+            },
+            {
+                "name": "Exiles_of_Nehek",
+                "path": "assets/images/icons/Tomb Kings/Exiles_of_Nehek.png"
+            },
+            {
+                "name": "Followers_of_Nagash",
+                "path": "assets/images/icons/Tomb Kings/Followers_of_Nagash.png"
+            },
+            {
+                "name": "Khemri",
+                "path": "assets/images/icons/Tomb Kings/Khemri.png"
+            }
+        ]
+    },
+    {
+        "directory": "Tzeentch",
+        "files": [
+            {
+                "name": "Oracles_of_Tzeentch",
+                "path": "assets/images/icons/Tzeentch/Oracles_of_Tzeentch.png"
+            },
+            {
+                "name": "The_Deceivers",
+                "path": "assets/images/icons/Tzeentch/The_Deceivers.png"
+            }
+        ]
+    },
+    {
+        "directory": "Vampire Coast",
+        "files": [
+            {
+                "name": "Pirates_of_Sartosa",
+                "path": "assets/images/icons/Vampire Coast/Pirates_of_Sartosa.png"
+            },
+            {
+                "name": "The_Awakened",
+                "path": "assets/images/icons/Vampire Coast/The_Awakened.png"
+            },
+            {
+                "name": "The_Dreadfleet",
+                "path": "assets/images/icons/Vampire Coast/The_Dreadfleet.png"
+            },
+            {
+                "name": "The_Drowned",
+                "path": "assets/images/icons/Vampire Coast/The_Drowned.png"
+            }
+        ]
+    },
+    {
+        "directory": "Vampire Counts",
+        "files": [
+            {
+                "name": "Caravan_of_Blue_Roses",
+                "path": "assets/images/icons/Vampire Counts/Caravan_of_Blue_Roses.png"
+            },
+            {
+                "name": "Sylvania",
+                "path": "assets/images/icons/Vampire Counts/Sylvania.png"
+            },
+            {
+                "name": "The_Barrow_Legion",
+                "path": "assets/images/icons/Vampire Counts/The_Barrow_Legion.png"
+            },
+            {
+                "name": "The_Drakenhof_Conclave",
+                "path": "assets/images/icons/Vampire Counts/The_Drakenhof_Conclave.png"
+            }
+        ]
+    },
+    {
+        "directory": "Warriors of Chaos",
+        "files": [
+            {
+                "name": "Heralds_of_the_Tempest",
+                "path": "assets/images/icons/Warriors of Chaos/Heralds_of_the_Tempest.png"
+            },
+            {
+                "name": "Legion_of_the_Gorequeen",
+                "path": "assets/images/icons/Warriors of Chaos/Legion_of_the_Gorequeen.png"
+            },
+            {
+                "name": "Puppets_of_Misrule",
+                "path": "assets/images/icons/Warriors of Chaos/Puppets_of_Misrule.png"
+            },
+            {
+                "name": "Shadow_Legion",
+                "path": "assets/images/icons/Warriors of Chaos/Shadow_Legion.png"
+            },
+            {
+                "name": "The_Decadent_Host",
+                "path": "assets/images/icons/Warriors of Chaos/The_Decadent_Host.png"
+            },
+            {
+                "name": "The_Ecstatic_Legions",
+                "path": "assets/images/icons/Warriors of Chaos/The_Ecstatic_Legions.png"
+            },
+            {
+                "name": "The_Fecundites",
+                "path": "assets/images/icons/Warriors of Chaos/The_Fecundites.png"
+            },
+            {
+                "name": "Warhost_of_the_Apocalypse",
+                "path": "assets/images/icons/Warriors of Chaos/Warhost_of_the_Apocalypse.png"
+            }
+        ]
+    },
+    {
+        "directory": "Wood Elves",
+        "files": [
+            {
+                "name": "Argwylon",
+                "path": "assets/images/icons/Wood Elves/Argwylon.png"
+            },
+            {
+                "name": "Heralds_of_Ariel",
+                "path": "assets/images/icons/Wood Elves/Heralds_of_Ariel.png"
+            },
+            {
+                "name": "Talsyn",
+                "path": "assets/images/icons/Wood Elves/Talsyn.png"
+            },
+            {
+                "name": "Wargrove_of_Woe",
+                "path": "assets/images/icons/Wood Elves/Wargrove_of_Woe.png"
+            }
+        ]
+    }
+]

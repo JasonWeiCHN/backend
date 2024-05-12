@@ -22,11 +22,13 @@
 
   .table-item-detail {
     box-sizing: border-box;
+    position: relative;
     width: 1200px;
     margin-top: 6px;
     padding: 12px;
     border: 1px solid #dbdbdb;
     font-size: 13px;
+    overflow-x: scroll;
 
     h4 {
       font-size: 14px;

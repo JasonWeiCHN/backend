@@ -55,6 +55,7 @@
 
   <!-- 详情模块 -->
   <div class="table-item-detail" *ngIf="selectedItemDetail">
+    <img *ngIf="selectedItemDetail.imageUrl" [src]="selectedItemDetail.imageUrl" alt="">
     <h4>{{ selectedItemDetail.title }} - Detail</h4>
     <p>Publisher: {{ selectedItemDetail.publisher }}</p>
     <p>Type ID: {{ selectedItemDetail.typeId }}</p>

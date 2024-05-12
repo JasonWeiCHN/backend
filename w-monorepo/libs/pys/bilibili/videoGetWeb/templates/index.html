@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrape and Save</title>
+</head>
+<body>
+<h1>Scrape and Save</h1>
+<form id="saveForm">
+  <label for="SESSDATA">SESSDATA:</label><br>
+  <input style="width: 800px" type="text" id="SESSDATA" name="SESSDATA"><br><br>
+  <label for="BILI_JCT">BILI_JCT:</label><br>
+  <input style="width: 800px" type="text" id="BILI_JCT" name="BILI_JCT"><br><br>
+  <label for="BVID">BVID:</label><br>
+  <input style="width: 800px" type="text" id="BVID" name="BVID"><br><br>
+  <label for="output_folder">Output Folder:</label><br>
+  <input style="width: 800px" type="text" id="output_folder" name="output_folder"><br><br>
+  <label for="clanId">Select Type ID:</label><br>
+  <select id="typeId" name="typeId">
+    <option value="1">Type 1</option>
+    <option value="2">Type 2</option>
+    <option value="3">Type 3</option>
+    <!-- Add more options as needed -->
+  </select><br><br>
+  <input type="button" value="Save" onclick="saveData()">
+</form>
+
+<script>
+  function saveData() {
+    var SESSDATA = document.getElementById('SESSDATA').value;
+    var BILI_JCT = document.getElementById('BILI_JCT').value;
+    var BVID = document.getElementById('BVID').value;
+    var output_folder = document.getElementById('output_folder').value;
+    var typeId = document.getElementById('typeId').value;
+
+    var data = {
+      SESSDATA: SESSDATA,
+      BILI_JCT: BILI_JCT,
+      BVID: BVID,
+      output_folder: output_folder,
+      typeId: typeId
+    };
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '/download_and_save', true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          alert('Data saved successfully to backend!');
+        } else {
+          alert('Failed to save data to backend. Status code: ' + xhr.status);
+        }
+      }
+    };
+    xhr.send(JSON.stringify(data));
+  }
+</script>
+</body>
+</html>

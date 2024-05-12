@@ -25,17 +25,7 @@ export interface IWarhammerClassifier extends IWarhammerClassifierBase {
 
 export interface IClan {
   parentId: string;
-  file: {
-    id: string;
-    name: string;
-    nameCN: string;
-    heroName: string;
-    heroAvatarPath: string;
-    heroNameEN?: string;
-    path: string;
-    description?: string;
-    heroNames?: string[];
-  };
+  file: IImageFile;
 }
 
 export interface IWarhammerClassifierMap {

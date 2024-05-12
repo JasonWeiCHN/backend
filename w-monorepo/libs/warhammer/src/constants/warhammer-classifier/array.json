@@ -10,8 +10,8 @@
         "nameCN": "独眼战兽群",
         "heroName": "卡扎克·独眼",
         "heroAvatarPath": "assets/images/lords/beastmen-khazrak-the-one-eye.png",
-        "description": "卡扎克是帝国北部森林的梦魇，他将再次令血域遍及邓肯瓦尔德",
-        "path": "assets/images/icons/Beastmen/Warherd_of_the_One-Eye.png"
+        "path": "assets/images/icons/Beastmen/Warherd_of_the_One-Eye.png",
+        "description": "<p>开局攻下劳伦洛伦，竖立万魔岩创造“血域”。</p><p>这里是帝国的腹地，周围任何人都可以是我们的敌人，最有实力者，是“皇帝·卡尔·弗兰茨”。</p><p>向南方进攻，摧毁米登领，就能打通前往“阿尔道夫”的道路。</p><p>隐蔽营地可以隐藏部队，卡扎克·独眼拥有很高的伏击率，进入战场后，大量先锋部署的部队，可以让我们占得先机。</p><p>利用好角兽群先锋部署和潜行，即可轻易撕碎帝国的部队。</p><p>攻下“阿尔道夫”，灭掉“皇帝·卡尔·弗兰茨”，即可完成破局。</p><p class=‘contributors’><span>供稿人:</span><a href='https://space.bilibili.com/22088751'>温酱与夏凉丶</a></p>"
       },
       {
         "id": "Harbinger_of_Disaster",
@@ -19,7 +19,8 @@
         "nameCN": "灾厄先驱",
         "heroName": "马拉戈·黑暗征兆",
         "heroAvatarPath": "assets/images/lords/beastmen-malagor-the-dark-omen.png",
-        "path": "assets/images/icons/Beastmen/Harbinger_of_Disaster.png"
+        "path": "assets/images/icons/Beastmen/Harbinger_of_Disaster.png",
+        "description": "<p>开局攻下“赫尔纳齐洼地”，竖立万魔岩创造“血域”。</p><p>宣战顶髻，和斯卡布兰德一起瓜分他的地盘。</p><p>之后我们可以随意发展。</p><p>马拉戈·黑暗征兆的核心玩法是利用“隐蔽营地”悄然接近敌人，发起伏击。</p><p>前期以练级为主，升到12级可以点“特殊线”，最快点出“群鸦蔽日”学会“无尽群鸦盛宴”，就可以让敌人感受无尽的痛苦。</p><p>消灭附近所有的派系。</p><p class=‘contributors’><span>供稿人:</span><a href='https://space.bilibili.com/22088751'>温酱与夏凉丶</a></p>"
       },
       {
         "id": "Warherd_of_the_Shadowgave",
@@ -27,7 +28,8 @@
         "nameCN": "影孽战兽群",
         "heroName": "魔古尔·影孽",
         "heroAvatarPath": "assets/images/lords/beastmen-morghur-the-shadowgave.png",
-        "path": "assets/images/icons/Beastmen/Warherd_of_the_Shadowgave.png"
+        "path": "assets/images/icons/Beastmen/Warherd_of_the_Shadowgave.png",
+        "description": "<p>开局攻下“蒙特纳斯”，竖立万魔岩创造“血域”。</p><p>向南进军，快速拿下整个“埃斯塔利亚”，敌人是帝国派系“南方王国”，然后可以进攻“湖神仙女”。</p><p>魔古尔·影孽的核心玩法是利用被动技能“卑鄙嬗变光环”的烧血效果消耗敌军兵模，回血光环可以恢复自身血量。</p><p>小模组、高移速，让影孽成为“移动烧血机”。</p><p>大量的角兽群结合混沌之卵可以对敌人进行毁灭打击。</p><p>攻下“卡尔卡松”，即可破局。</p><p class=‘contributors’><span>供稿人:</span><a href='https://space.bilibili.com/22088751'>温酱与夏凉丶</a></p>"
       },
       {
         "id": "Slaughterhorn_Tribe",
@@ -35,7 +37,8 @@
         "nameCN": "屠灭之角部落",
         "heroName": "陶诺斯·铜牛",
         "heroAvatarPath": "assets/images/lords/beastmen-taurox-the-brass-bull.png",
-        "path": "assets/images/icons/Beastmen/Slaughterhorn_Tribe.png"
+        "path": "assets/images/icons/Beastmen/Slaughterhorn_Tribe.png",
+        "description": "<p>开局攻下“克拉卡隆德”，竖立万魔岩创造“血域”。</p><p>一路向东，敌人都是黑暗精灵，先消灭挡住前路的塞洛斯塔·恐怖之鳍，最后和“影王”阿里斯·安纳尔进行终极对决。</p><p>陶诺斯·铜牛拥有强大的物理输出和高护甲，他能身先士卒带领牛头怪部队轻易摧毁敌人的防线，结合战獒的高速迂回战术，轻松击败敌人。</p><p>消灭阿里斯·安纳尔之后，即可破局。</p><p class=‘contributors’><span>供稿人:</span><a href='https://space.bilibili.com/22088751'>温酱与夏凉丶</a></p>"
       }
     ]
   },
@@ -50,7 +53,8 @@
         "nameCN": "哥隆尼",
         "heroName": "劳恩·列奥康沃尔",
         "heroAvatarPath": "assets/images/lords/bretonnia-louen-leoncoeur.png",
-        "path": "assets/images/icons/Bretonnia/Couronne.png"
+        "path": "assets/images/icons/Bretonnia/Couronne.png",
+        "description": "<p>第一场战争会考验玩家使用骑兵的能力，攻下“勒·安古朗”。</p><p>前期最难缠的敌人是绿皮派系“大肚王·咕噜”，先消灭吸血鬼伯爵派系“穆席隆”，进攻奥卡山。</p><p>警惕西北方的混沌勇士“比拉克”，他随时可能穿过奥比恩海峡入侵你。</p><p>劳恩·列奥康沃尔是一位伟大的巴托国王，在战场上利用好骑兵部队，他们拥有很多优异的加成效果。</p><p>搭配抗线的老农部队，善用士气打击，进行机动作战，就能取得不错的战果。</p><p>消灭大肚王·咕噜，即可破局。</p><p class=‘contributors’><span>供稿人:</span><a href='https://space.bilibili.com/22088751'>温酱与夏凉丶</a></p>"
       },
       {
         "id": "Bordeleaux_Errant",
@@ -58,7 +62,8 @@
         "nameCN": "波尔德洛长征军",
         "heroName": "艾博里克·德·波尔德罗",
         "heroAvatarPath": "assets/images/lords/bretonnia-alberic-de-bordeleaux.png",
-        "path": "assets/images/icons/Bretonnia/Bordeleaux_Errant.png"
+        "path": "assets/images/icons/Bretonnia/Bordeleaux_Errant.png",
+        "description": "<p>攻下“扎慧塔克”和“塔拉克斯兰”统一“食人鱼沼泽”。</p><p>接下来主要的敌人是吸血鬼海盗“卢瑟·哈肯”和南方的蜥蜴人“哥罗克”。</p><p>艾博里克·德·波尔德罗的技能“恢弘打击”拥有反大加成，再加上“波尔德罗冠军勇士”，使得他的“王国骑士”非常适合攻击蜥蜴人这种大型部队较多的派系。</p><p>善用骑兵，依靠机动迂回的战术，可以取得不错的效果。</p><p>消灭卢瑟·哈肯和哥罗克，即可破局。</p><p class=‘contributors’><span>供稿人:</span><a href='https://space.bilibili.com/22088751'>温酱与夏凉丶</a></p>"
       },
       {
         "id": "Carcassonne",
@@ -66,7 +71,8 @@
         "nameCN": "卡尔卡松",
         "heroName": "湖神仙女",
         "heroAvatarPath": "assets/images/lords/bretonnia-fay-enchantress.png",
-        "path": "assets/images/icons/Bretonnia/Carcassonne.png"
+        "path": "assets/images/icons/Bretonnia/Carcassonne.png",
+        "description": "<p>初始战的敌人是绿皮派系“红云”，依靠强大的神佑投石机和圣杯骑士，可以轻松击败他们。</p><p>接下来，快速集结部队，消灭盘踞在奥卡山的大肚王·咕噜。</p><p>警惕南方的斯卡文鼠人“伊克特·利爪”和游牧野兽人派系“魔古尔·影孽”。</p><p>湖神仙女开局就有神佑投石机和圣杯骑士，强大的巴托尼亚骑士领主，再加上大量的老农部队。</p><p>在战场上有着强悍的实力。</p><p>消灭大肚王·咕噜，即可破局。</p><p class=‘contributors’><span>供稿人:</span><a href='https://space.bilibili.com/22088751'>温酱与夏凉丶</a></p>"
       },
       {
         "id": "Chevaliers_de_Lyonesse",
@@ -74,7 +80,8 @@
         "nameCN": "里昂尼斯骑士战团",
         "heroName": "赫潘丝·德·里昂尼斯",
         "heroAvatarPath": "assets/images/lords/bretonnia-repanse-de-lyonesse.png",
-        "path": "assets/images/icons/Bretonnia/Chevaliers_de_Lyonesse.png"
+        "path": "assets/images/icons/Bretonnia/Chevaliers_de_Lyonesse.png",
+        "description": "<p>攻下“费拉斯”和“亥卡”统一“阿拉比海岸”。</p><p>通过外交与“欧瑞格骑士”合邦，进攻西南方的“术士群岛”，那里是古墓王“黑色·阿克汉”的地盘。</p><p>也可以东进或南下，选择很多。</p><p>赫潘丝·德·里昂尼斯是一位强大的少女骑士，拥有爆炸技能“少女之怒”，可以反复爆炸击杀敌军。</p><p>升到9级后点出“放逐天灾”能让她的部队获得高额加成，在对付吸血鬼和古墓王派系时得心应手。</p><p>强大的骑士部队在发起冲锋后能给予敌人致命一击。</p><p class=‘contributors’><span>供稿人:</span><a href='https://space.bilibili.com/22088751'>温酱与夏凉丶</a></p>"
       }
     ]
   },
@@ -442,7 +449,8 @@
         "nameCN": "冰雪王廷",
         "heroName": "女沙皇卡捷琳",
         "heroAvatarPath": "assets/images/lords/kislev-tzarina-katarin.png",
-        "path": "assets/images/icons/Kislev/The_Ice_Court.png"
+        "path": "assets/images/icons/Kislev/The_Ice_Court.png",
+        "description": "<p>开局祈唤一位基斯里夫神祗，令其庇佑保护整个祖国母亲，获得你需要的增益效果。</p><p>女皇卡捷琳是非常强大的冰雪系法师，你的目标是点出"凛冬之心"这种强大的AOE法术。</p><p>女皇很脆弱，避免近战或陷入敌阵深处。</p><p>你的初始敌人是诺斯卡，你需要攻下三座他们的城池统一"南方州"。</p><p>每一场战斗都有一定的难度，用好你的冰雪系减速魔法，依靠翼骑兵和雪豹这种高机动战斗单位侵扰敌军，引出落单然后围杀。</p><p>你有很多远程单位，但他们弹药有限，需要创造好的射击环境。</p><p>前期记得招募一个波耶，补充哥萨、近卫军和基斯里夫勇士。</p><p>统一南方州后其实有南北两个扩张路线，北边是基斯里夫同族，南方进入山区是食人魔和响骨。</p><p>建议先攻南方，基斯里夫内战很惨烈，而且会掉虔信。</p><p>所以，先攻下"千柱石厅"统一"北世界边缘山脉"，再考虑下一步的计划。</p>"
       },
       {
         "id": "The_Great_Orthodoxy",
@@ -576,7 +584,8 @@
         "heroName": "蛆虫之主·塔木尔可汗",
         "heroNameEN": "Tamurkhan the Maggot Lord",
         "heroAvatarPath": "assets/images/lords/nurgle-tankhan-the-maggot-lord.png",
-        "path": "assets/images/icons/Nurgle/Poxmakers_of_Nurgle.png"
+        "path": "assets/images/icons/Nurgle/Poxmakers_of_Nurgle.png",
+        "description": "<p>开局往南方进攻，死敌柯烈克·食日者等着你，你和他只有一个能活在这个世界。</p><p>攻下"绞架树"一统"卡达莎"，接着进攻"奇美拉高地"。</p><p>存够"霸权"(纳垢资源)立刻招募"玷污者·凯兹克"，自带坐骑，移速达到80+，武器威力560，还能重生。</p><p>手动战中利用凯兹克和强大的腐烂骑士(也会重生)，将敌军作战单位一个接一个勾引出来围杀是上好的战术。</p><p>击败柯烈克·食日者即可完成前期破局。</p>"
       },
       {
         "id": "Tallymen_of_Pestilence",

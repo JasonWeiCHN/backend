@@ -10,11 +10,13 @@
 <body>
 <st-root></st-root>
 <script>
+  window.projectName = 'warhammer3'; // 项目名称
   // Send POST request to track page visit
   fetch('http://111.230.29.99:5000/track-page-visit', {
     method: 'POST',
     headers: {
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
+      'X-Project-Name': 'warhammer3'
     },
     body: JSON.stringify({})
   })

@@ -26,20 +26,25 @@ export class AppComponent {
   protected navigationItemActive = 'clans';
   protected showNavigation = true;
   protected selectedProject: IProjectSwitcher = {
-    id: '1',
+    id: '2',
     label: '全面战争·战锤3',
-    url: ''
+    url: 'http://111.230.29.99/'
   };
   protected projects: IProjectSwitcher[] = [
     {
       id: '1',
+      label: '全面战争·幕府将军',
+      url: 'http://111.230.29.99:4000/'
+    },
+    {
+      id: '2',
       label: '全面战争·战锤3',
       url: 'http://111.230.29.99/'
     },
     {
-      id: '2',
-      label: '全面战争·幕府将军',
-      url: 'http://111.230.29.99:4000/'
+      id: '3',
+      label: '全面战争·法老',
+      url: 'http://111.230.29.99:4001/'
     }
   ];
 

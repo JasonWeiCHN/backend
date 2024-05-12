@@ -32,7 +32,24 @@
   margin: 12px 0;
   border-radius: 5px;
 
-  p {
-    margin-bottom: 4px;
+  .contributors {
+    font-size: 14px;
+    margin-top: 6px;
+
+    span {
+      color: #c4c4a8;
+      margin-right: 6px;
+    }
+
+    a {
+      cursor: pointer;
+      color: #c4c4c4;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      color: #ffffff;
+    }
   }
 }
+
