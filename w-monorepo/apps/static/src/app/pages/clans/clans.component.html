@@ -8,4 +8,11 @@
     <st-warhammer-classifier *ngIf="activeModeId === 'list'"></st-warhammer-classifier>
     <!--<w-classifier (classifierItemClick)="onClassifierItemClick($event)"></w-classifier>-->
   </div>
+  <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin-bottom: 12px">
+    <div style="margin-bottom: 12px">超凡帝国大地图:</div>
+    <img src="assets/images/warhammer/cfdg_800.jpg" alt="" (click)="openImage('1400')">
+    <button style="text-decoration: underline; margin-top: 8px" (click)="openImage('high')">
+      打开高清版地图（8.52MB）
+    </button>
+  </div>
 </div>

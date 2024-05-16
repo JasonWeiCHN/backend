@@ -18,6 +18,7 @@
         <th>Title</th>
         <th>Type ID</th>
         <th>Source URL</th>
+        <th>Image</th>
         <!--      <th>ID</th>-->
         <!--      <th>Image URL</th>-->
         <!--      <th>Views</th>-->
@@ -35,6 +36,8 @@
         <td>{{ itemCard.title }}</td>
         <td>{{ itemCard.typeId }}</td>
         <td>{{ itemCard.sourceUrl }}</td>
+        <td><img style="width: 40px; height: 40px; object-fit: contain"
+                 [src]="'http://localhost:8000/' + itemCard.imageUrl + '/pic.jpg'" alt=""></td>
         <!--      <td>{{ itemCard.id }}</td>-->
         <!--      <td>{{ itemCard.imageUrl }}</td>-->
         <!--      <td>{{ itemCard.views }}</td>-->
@@ -55,11 +58,21 @@
 
   <!-- 详情模块 -->
   <div class="table-item-detail" *ngIf="selectedItemDetail">
-    <img *ngIf="selectedItemDetail.imageUrl" [src]="selectedItemDetail.imageUrl" alt="">
+    <div *ngIf="selectedItemDetail.imageUrl" style="position: absolute; right: 10px; top: 10px;">
+      <img
+        style="width: 120px; height: 120px; object-fit: contain"
+        [src]="'http://localhost:8000/' + selectedItemDetail.imageUrl + '/min.gif'"
+        alt="">
+      <img
+        style="width: 300px; height: 160px; object-fit: cover"
+        [src]="'http://localhost:8000/' + selectedItemDetail.imageUrl + '/pic.jpg'"
+        alt=""
+      />
+    </div>
     <h4>{{ selectedItemDetail.title }} - Detail</h4>
     <p>Publisher: {{ selectedItemDetail.publisher }}</p>
     <p>Type ID: {{ selectedItemDetail.typeId }}</p>
-    <p>Source URL: {{ selectedItemDetail.sourceUrl }}</p>
+    <p>Source URL(Ctrl+点击访问): <a [href]="selectedItemDetail.sourceUrl">{{ selectedItemDetail.sourceUrl }}</a></p>
     <!-- 其他详情属性 -->
 
     <!-- 显示JSON字符串 -->

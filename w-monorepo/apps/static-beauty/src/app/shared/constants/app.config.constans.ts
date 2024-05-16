@@ -1,8 +1,9 @@
 import { IApp } from '@w-monorepo/interfaces';
 
 export const APP_CONFIG: IApp = {
+  fileServer: 'http://localhost:8000/',
   banner: {
-    title: '美女不迷路',
+    title: '小姐姐不迷路',
     subtitle: '快速找到最受瞩目的她',
     rightContent: ''
   },

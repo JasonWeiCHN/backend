@@ -4,17 +4,25 @@
     [data]="appConfig.banner"
   ></w-banner>
   <div class="page">
-    <div
-      *ngIf="showNavigation"
-      style="margin-bottom: 24px"
-    >
-      <w-tag-selector
-        *ngIf="appConfig.navTags && appConfig.navTags.length"
-        [tags]="appConfig.navTags"
-        (tagSelected)="onTagSeclet($event)">
-      </w-tag-selector>
+    <div class="img-list">
+      <div
+        *ngFor="let item of data"
+        class="img-container"
+        (click)="onListItemClick(item)"
+      >
+        <img
+          class="pic"
+          [src]="appConfig.fileServer + item.imageUrl + '/first_frame.png'" alt=""
+        >
+        <img
+          class="gif"
+          [src]="appConfig.fileServer + item.imageUrl + '/min.gif'" alt=""
+        >
+      </div>
     </div>
-    <router-outlet></router-outlet>
+    <div class="load-more" (click)="loadMore()">
+      加载更多 已加载 {{ data.length }} / {{ total }}
+    </div>
   </div>
 </div>
 

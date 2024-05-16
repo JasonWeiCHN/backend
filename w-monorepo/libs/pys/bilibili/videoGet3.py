@@ -12,9 +12,10 @@ from datetime import datetime
 SESSDATA = "9233597d%2C1731161674%2Cf9afd%2A52CjATkcu61Z1D4ojfK_DOWCgaztC32oJdQYZjcjmZxjRggIrd6P_kSvH_fEPCKY_ZuW4SVnFrd0U3M2VaZkFNaVo2eFljM3BuWjZid3VBNU4tMXNqdFpHWlMzSko3RXZ1VVZBM2VWeVZ3LTRvUjBXMGY4YXJsald2RS1oc0prQ0lEbU5KRm1PQkNBIIEC"
 BILI_JCT = "a0bcde097d2b3dc90a0f93c0e6da99df"
 BUVID3 = ""
-BVIDS = ["BV1VW421w7Jb", "BV1fH4y1j7Ua", "BV1EF4m157dj", "BV18g4y1k7n1", "BV13v421k7S4", "BV1Sy421b7hs", "BV1UH4y1j7Do", "BV1i1421f7jS", "BV1zF4m1L7hp","BV1Su4m1A7bc"]  # 修改为你的多个 BVID
+BVIDS = ["BV1bC4y137ZQ", "BV13u4y1Y7UW", "BV1Ph4y1i7fS", "BV1wC4y1V7WN", "BV1D94y1t7Yo", "BV1DN41147W4", "BV1HG41127i7", "BV16h4y1z7UE", "BV1gj411x7UY", "BV1zp4y1M7VM", "BV1ew411y756", "BV1i84y1m7bG", "BV1i94y1h7AF", "BV1jw411e7zZ", "BV1Ez4y1G7vU", "BV1Zp4y1F7t5", "BV1nw411Y7Bv", "BV1hF411S7kQ", "BV1s94y1p7Mo", "BV1Du4y1r7Fo", "BV1NV411N7PD", "BV1Sm4y1P7SU", "BV1iz4y1j7Un", "BV1Ah4y1N7dC", "BV1ku4y1k7GR", "BV1Kz4y1T7Zh", "BV1tP411Y79Y", "BV1s8411z7aw", "BV1zN4y1975W", "BV1dG411f7Qb", "BV1uN41167GM", "BV1qm4y1n7Yp", "BV1Xh4y1Q7qA", "BV1HN411z76x", "BV1dp4y1u7b3", "BV1ZV411G7xv", "BV1tV411V7JH", "BV19P41147Nv", "BV1J14y1B72X", "BV1Wu411G78v", "BV1K94y1i75F", "BV1vx4y197Rx", "BV1MV411K7w1", "BV1sk4y1N7tE", "BV1Pk4y1N7aC", "BV11s4y167k7", "BV1iF411R7bB", "BV17P411e7aH", "BV1Gz4y1p7p5", "BV1Wh4y1M7dd"] # 修改为你的多个 BVID
 # FFMPEG 路径，查看：http://ffmpeg.org/
 FFMPEG_PATH = r"F:/ffmpeg/bin/ffmpeg.exe"
+OUTPUT_FOLDER = r"F:\biliGet\funny"
 
 async def download_url(url: str, out: str, info: str):
     # 下载函数
@@ -105,26 +106,36 @@ def extract_random_frames(video_path, output_folder, num_frames, frame_duration)
 
 async def download_images(video_info, output_folder):
     # 下载视频信息中的图片
-    pic_url = video_info['pic']
-    face_url = video_info['owner']['face']
-    first_frame_url = video_info['pages'][0]['first_frame']
+    pic_url = video_info.get('pic')
+    face_url = video_info.get('owner', {}).get('face')
+    first_frame_url = video_info.get('pages', [{}])[0].get('first_frame')
 
     # 下载视频封面图片并添加延迟
-    await download_url(pic_url, os.path.join(output_folder, 'pic.jpg'), "视频封面")
-    await asyncio.sleep(2)  # 添加延迟，单位为秒
+    if pic_url:
+        await download_url(pic_url, os.path.join(output_folder, 'pic.jpg'), "视频封面")
+        await asyncio.sleep(2)  # 添加延迟，单位为秒
+    else:
+        print("视频封面图片未找到，跳过处理。")
 
     # 下载UP主头像图片并添加延迟
-    await download_url(face_url, os.path.join(output_folder, 'face.jpg'), "UP 主头像")
-    await asyncio.sleep(2)  # 添加延迟，单位为秒
+    if face_url:
+        await download_url(face_url, os.path.join(output_folder, 'face.jpg'), "UP 主头像")
+        await asyncio.sleep(2)  # 添加延迟，单位为秒
+    else:
+        print("UP主头像图片未找到，跳过处理。")
 
     # 下载视频首帧图片
-    await download_url(first_frame_url, os.path.join(output_folder, 'first_frame.jpg'), "视频首帧")
+    if first_frame_url:
+        await download_url(first_frame_url, os.path.join(output_folder, 'first_frame.jpg'), "视频首帧")
+    else:
+        print("视频首帧图片未找到，跳过处理。")
+
 
 def generate_submission_data(video_info, bvid, output_folder):
     # 生成提交后台请求的数据
     obj = {
         'typeId': video_info['tid'],
-        'imageUrl': os.path.join(output_folder, 'pic.jpg'),
+        'imageUrl': bvid,
         'title': video_info['title'],
         'publisher': video_info['owner']['name'],
         'detail': json.dumps(video_info),
@@ -148,7 +159,12 @@ async def submit_data(submission_data):
         print('Failed to submit data to the backend:', str(e))
 
 async def process_bvid(bvid, num_frames, frame_duration):
-    output_folder = os.path.join(r"F:\biliGet", bvid)  # 修改为 F 盘上的 biliGet 文件夹下的子目录路径
+    output_folder = os.path.join(OUTPUT_FOLDER, bvid)  # 修改为 F 盘上的 biliGet 文件夹下的子目录路径
+
+    # 检查输出文件夹是否已存在
+    if os.path.exists(output_folder):
+        print(f" BVID {bvid} 已存在, 跳过本次操作...")
+        return
 
     # 创建输出文件夹
     os.makedirs(output_folder, exist_ok=True)
@@ -157,7 +173,7 @@ async def process_bvid(bvid, num_frames, frame_duration):
     await download_video(bvid, output_folder)
 
     # 转换视频为 GIF
-    extract_random_frames(os.path.join(output_folder, "video.mp4"), output_folder, num_frames, frame_duration)
+    # extract_random_frames(os.path.join(output_folder, "video.mp4"), output_folder, num_frames, frame_duration)
 
     # 读取视频信息
     with open(os.path.join(output_folder, 'video_info.json'), 'r', encoding='utf-8') as f:
@@ -175,8 +191,8 @@ async def process_bvid(bvid, num_frames, frame_duration):
 
 async def main():
     # 输入参数
-    num_frames = 100  # Number of frames to extract
-    frame_duration = 20  # Duration between frames in milliseconds
+    num_frames = 60  # Number of frames to extract
+    frame_duration = 15  # Duration between frames in milliseconds
 
     # 逐个处理每个 BVID
     for bvid in BVIDS:

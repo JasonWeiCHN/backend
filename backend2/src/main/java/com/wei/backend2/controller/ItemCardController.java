@@ -94,7 +94,7 @@ public class ItemCardController {
                 cardMap.put("imageUrl", card.getImageUrl());
                 cardMap.put("title", card.getTitle());
                 cardMap.put("publisher", card.getPublisher());
-                cardMap.put("detail", card.getDetail());
+                cardMap.put("detail", "");
                 cardMap.put("description", card.getDescription());
                 cardMap.put("views", card.getViews());
                 cardMap.put("date", card.getDate());

@@ -5705,7 +5705,7 @@ export const ARTICLES_MAP: IArticleMap = {
     'date': '2023-12-20 08:00:39',
     'sourceUrl': 'https://www.bilibili.com/video/BV1Ge411C7tr/?p=1&vd_source=cf6172bb9e27eef98252db60c4e279fe',
     'referer': 'bilibili',
-    'imageUrl': 'assets/images/warhammer/One_Eye1.jpg',
+    'imageUrl': '',
     'tagIds': ['liveRecording'],
     'publisher': 'LucPass',
     'description': '本期看点大概有\r\n伏击 被伏击\r\n牛头怪 大角兽 混沌卵 独眼巨人\r\n中间丢了一个小时录像 有兴趣可以去直播回放找找',

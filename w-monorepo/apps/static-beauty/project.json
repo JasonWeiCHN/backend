@@ -8,19 +8,25 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/static-beauty",
         "index": "apps/static-beauty/src/index.html",
         "main": "apps/static-beauty/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "apps/static-beauty/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
           "apps/static-beauty/src/favicon.ico",
           "apps/static-beauty/src/assets"
         ],
-        "styles": ["apps/static-beauty/src/styles.scss"],
+        "styles": [
+          "apps/static-beauty/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -57,7 +63,8 @@
           "buildTarget": "static-beauty:build:production"
         },
         "development": {
-          "buildTarget": "static-beauty:build:development"
+          "buildTarget": "static-beauty:build:development",
+          "port": 4204
         }
       },
       "defaultConfiguration": "development"
@@ -73,7 +80,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
         "jestConfig": "apps/static-beauty/jest.config.ts"
       }
