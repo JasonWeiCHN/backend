@@ -116,7 +116,7 @@ async def download_images(video_info, output_folder):
 def generate_submission_data(video_info, bvid, output_folder, typeId):
     obj = {
         'typeId': typeId,
-        'imageUrl': os.path.join(output_folder, 'pic.jpg'),
+        'imageUrl': bvid,
         'title': video_info['title'],
         'publisher': video_info['owner']['name'],
         'detail': json.dumps(video_info),

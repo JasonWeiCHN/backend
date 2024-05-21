@@ -1,7 +1,6 @@
 <div class="item-card">
   <div class="toolbar">
     <button style="" (click)="downloadItemCardsAsJson()">下载全部文章数据</button>
-    <button style="margin-left: 8px" (click)="uploadByArticlesMap()">上传所有的文章数据</button>
     <div style="display: flex; margin-left: 8px">
       <select style="" [(ngModel)]="selectedColumn">
         <option *ngFor="let column of columns" [value]="column">{{ column }}</option>
@@ -55,7 +54,6 @@
       (pageChange)="onPageChange($event)"
     ></w-pagination>
   </div>
-
   <!-- 详情模块 -->
   <div class="table-item-detail" *ngIf="selectedItemDetail">
     <div *ngIf="selectedItemDetail.imageUrl" style="position: absolute; right: 10px; top: 10px;">
@@ -84,7 +82,6 @@
     <!-- 删除按钮 -->
     <button (click)="onDelete(selectedItemDetail.id)">删除</button>
   </div>
-
   <div class="create-form">
     <h2>Add Item Card 新建项目</h2>
     <form (submit)="onSubmit()">

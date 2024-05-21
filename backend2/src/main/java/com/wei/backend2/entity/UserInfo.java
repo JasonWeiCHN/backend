@@ -21,7 +21,5 @@ public class UserInfo {
 
     @Column(name = "gender")
     private Integer gender;
-
-    // 省略 getter 和 setter 方法
 }
 

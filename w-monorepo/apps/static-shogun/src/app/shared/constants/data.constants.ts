@@ -1,4 +1,4 @@
-import { IArticleMap } from '@w-monorepo/warhammer';
+import { IArticleMap } from '@w-monorepo/interfaces';
 
 export const ARTICLES_MAP: IArticleMap = {
   'liveRecording': [
@@ -7,48 +7,54 @@ export const ARTICLES_MAP: IArticleMap = {
       'sourceUrl': 'https://www.bilibili.com/video/BV1sm41127RS',
       'referer': null,
       'imageUrl': '',
-      'tagIds': [
-        ''
-      ],
+      'tagIds': [''],
       'publisher': '古老游戏玩家',
       'description': 'https://www.youtube.com/watch?v=t8ucsIkt-6k&t=3s',
       'typeId': 'liveRecording',
       'id': '2',
-      'detail': 'https://www.youtube.com/watch?v=t8ucsIkt-6k&t=3s',
+      'detail': '',
       'title': '[ 转载 ·  Khan of Steppe ] 全面战争·幕府将军1·织田篇·第一集',
       'views': 514
-    },
-    {
+    }, {
       'date': '2024-04-11 19:30:00',
       'sourceUrl': 'https://www.bilibili.com/video/BV1Jx421S7AJ',
       'referer': null,
       'imageUrl': '',
-      'tagIds': [
-        ''
-      ],
+      'tagIds': [''],
       'publisher': '古老游戏玩家',
       'description': 'https://www.youtube.com/watch?v=2dmbQOeziOg&list=PLY8cZUL4pfEBmeXwfBSqMhjbhwWs5OpdP',
       'typeId': 'liveRecording',
       'id': '3',
-      'detail': 'https://www.youtube.com/watch?v=2dmbQOeziOg&list=PLY8cZUL4pfEBmeXwfBSqMhjbhwWs5OpdP',
+      'detail': '',
       'title': '[ 转载 ·  LegendofTotalWar ] 全面战争·幕府将军1·毛利篇·第一集',
       'views': 196
-    }
-  ],
+    }],
   'strategy': [
+    {
+      'date': '2000-06-10 0:00:00',
+      'sourceUrl': 'http://111.230.29.99:4002/',
+      'referer': '',
+      'imageUrl': '',
+      'tagIds': [''],
+      'publisher': 'Creative Assembly',
+      'description': '关于日本史、武士和游戏说明',
+      'typeId': 'strategy',
+      'id': '14',
+      'detail': '',
+      'title': '幕府将军游戏手册',
+      'views': 0
+    },
     {
       'date': '2024-05-10 20:14:11',
       'sourceUrl': 'https://www.bilibili.com/video/BV1xH4y1g7ub',
       'referer': null,
       'imageUrl': '',
-      'tagIds': [
-        ''
-      ],
+      'tagIds': [''],
       'publisher': '古老游戏玩家',
       'description': '[全面战争 · 幕府将军] 新手教学篇 - 跟我入门',
       'typeId': 'strategy',
       'id': '1',
-      'detail': '[全面战争 · 幕府将军] 新手教学篇 - 跟我入门',
+      'detail': '',
       'title': '[全面战争 · 幕府将军] 新手教学篇 - 跟我入门',
       'views': 297
     }
@@ -59,160 +65,130 @@ export const ARTICLES_MAP: IArticleMap = {
       'sourceUrl': 'https://www.bilibili.com/video/BV15m421s7rw',
       'referer': null,
       'imageUrl': '',
-      'tagIds': [
-        ''
-      ],
+      'tagIds': [''],
       'publisher': '古老游戏玩家',
       'description': '官方资料翻译后转有声',
       'typeId': 'backgroundKnowledge',
       'id': '13',
-      'detail': '官方资料翻译后转有声',
+      'detail': '',
       'title': '[全面战争 · 幕府将军] 关于日本的研究-战国时代篇2',
       'views': 320
-    },
-    {
+    }, {
       'date': '2024-04-18 22:40:00',
       'sourceUrl': 'https://www.bilibili.com/video/BV111421d7sy',
       'referer': null,
       'imageUrl': '',
-      'tagIds': [
-        ''
-      ],
+      'tagIds': [''],
       'publisher': '古老游戏玩家',
       'description': '官方资料翻译后转有声',
       'typeId': 'backgroundKnowledge',
       'id': '12',
-      'detail': '官方资料翻译后转有声',
+      'detail': '',
       'title': '[全面战争 · 幕府将军] 关于日本的研究-战国时代篇1',
       'views': 433
-    },
-    {
+    }, {
       'date': '2024-04-16 21:47:11',
       'sourceUrl': 'https://www.bilibili.com/video/BV1jA4m1c724',
       'referer': null,
       'imageUrl': '',
-      'tagIds': [
-        ''
-      ],
+      'tagIds': [''],
       'publisher': '古老游戏玩家',
       'description': '官方资料翻译后转有声',
       'typeId': 'backgroundKnowledge',
       'id': '11',
-      'detail': '官方资料翻译后转有声',
+      'detail': '',
       'title': '[全面战争 · 幕府将军] 关于日本的研究-早期幕府将军篇',
       'views': 291
-    },
-    {
+    }, {
       'date': '2024-04-15 20:27:48',
       'sourceUrl': 'https://www.bilibili.com/video/BV1xz421C7p1',
       'referer': null,
       'imageUrl': '',
-      'tagIds': [
-        ''
-      ],
+      'tagIds': [''],
       'publisher': '古老游戏玩家',
       'description': '官方资料翻译后转有声',
       'typeId': 'backgroundKnowledge',
       'id': '10',
-      'detail': '官方资料翻译后转有声',
+      'detail': '',
       'title': '[全面战争 · 幕府将军] 关于日本的研究-源平之战篇',
       'views': 282
-    },
-    {
+    }, {
       'date': '2024-04-14 19:30:00',
       'sourceUrl': 'https://www.bilibili.com/video/BV1xD421n71o',
       'referer': null,
       'imageUrl': '',
-      'tagIds': [
-        ''
-      ],
+      'tagIds': [''],
       'publisher': '古老游戏玩家',
       'description': '官方资料翻译后转有声',
       'typeId': 'backgroundKnowledge',
       'id': '9',
-      'detail': '官方资料翻译后转有声',
+      'detail': '',
       'title': '[全面战争 · 幕府将军] 关于日本的研究-武士崛起篇2',
       'views': 270
-    },
-    {
+    }, {
       'date': '2024-04-13 19:50:00',
       'sourceUrl': 'https://www.bilibili.com/video/BV1Tz421C7oU',
       'referer': null,
       'imageUrl': '',
-      'tagIds': [
-        ''
-      ],
+      'tagIds': [''],
       'publisher': '古老游戏玩家',
       'description': '官方资料翻译后转有声',
       'typeId': 'backgroundKnowledge',
       'id': '8',
-      'detail': '官方资料翻译后转有声',
+      'detail': '',
       'title': '[全面战争 · 幕府将军] 关于日本的研究-武士崛起篇1',
       'views': 339
-    },
-    {
+    }, {
       'date': '2024-04-11 22:30:00',
       'sourceUrl': 'https://www.bilibili.com/video/BV1ot421E75X',
       'referer': null,
       'imageUrl': '',
-      'tagIds': [
-        ''
-      ],
+      'tagIds': [''],
       'publisher': '古老游戏玩家',
       'description': '官方资料翻译后转有声',
       'typeId': 'backgroundKnowledge',
       'id': '7',
-      'detail': '官方资料翻译后转有声',
+      'detail': '',
       'title': '[全面战争 · 幕府将军] 关于日本的研究-早期日本篇',
       'views': 254
-    },
-    {
+    }, {
       'date': '2024-04-10 18:05:38',
       'sourceUrl': 'https://www.bilibili.com/video/BV1mC411V7ZV',
       'referer': null,
       'imageUrl': '',
-      'tagIds': [
-        ''
-      ],
+      'tagIds': [''],
       'publisher': '古老游戏玩家',
       'description': '官方资料翻译后转有声',
       'typeId': 'backgroundKnowledge',
       'id': '6',
-      'detail': '官方资料翻译后转有声',
+      'detail': '',
       'title': '[全面战争 · 幕府将军] 关于日本的研究-神话篇',
       'views': 329
-    },
-    {
+    }, {
       'date': '2024-04-07 16:19:45',
       'sourceUrl': 'https://www.bilibili.com/video/BV15x421S7xf',
       'referer': null,
       'imageUrl': '',
-      'tagIds': [
-        ''
-      ],
+      'tagIds': [''],
       'publisher': '古老游戏玩家',
       'description': '在玩幕府将军之前，先聊聊日本战术的内核',
       'typeId': 'backgroundKnowledge',
       'id': '5',
-      'detail': '在玩幕府将军之前，先聊聊日本战术的内核',
+      'detail': '',
       'title': '[全面战争 · 幕府将军] 爱“偷袭”的日本',
       'views': 1156
-    },
-    {
+    }, {
       'date': '2024-04-06 23:34:53',
       'sourceUrl': 'https://www.bilibili.com/video/BV1Nz421C7hR',
       'referer': null,
       'imageUrl': '',
-      'tagIds': [
-        ''
-      ],
+      'tagIds': [''],
       'publisher': '古老游戏玩家',
       'description': '幕府将军背后的中国元素',
       'typeId': 'backgroundKnowledge',
       'id': '4',
-      'detail': '幕府将军背后的中国元素',
+      'detail': '',
       'title': '[全面战争·幕府将军] 幕府将军背后的中国元素',
       'views': 5308
-    }
-  ]
+    }]
 };

@@ -1,0 +1,41 @@
+<div class="contributor">
+  <div class="toolbar">
+    <button style="" (click)="downloadContributorsAsJson()">下载全部贡献者数据</button>
+    <div style="display: flex; margin-left: 8px">
+      <select style="" [(ngModel)]="selectedColumn">
+        <option *ngFor="let column of columns" [value]="column">{{ column }}</option>
+      </select>
+      <input style="margin-left: 6px" type="text" [(ngModel)]="searchKeyword" (keydown.enter)="search()">
+      <button style="margin-left: 6px" (click)="search()">搜索</button>
+    </div>
+  </div>
+  <div class="table-container">
+    <table>
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>URL</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let contributor of contributors" (click)="onContributorClick(contributor)">
+        <td>{{ contributor.name }}</td>
+        <td>{{ contributor.url }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="create-form">
+    <h2>Add Contributor 新增贡献者</h2>
+    <form (submit)="onSubmit()">
+      <label for="name">Name 姓名:</label>
+      <input type="text" id="name" name="name" [(ngModel)]="addContributor.name" required>
+
+      <label for="url">URL:</label>
+      <input type="text" id="url" name="url" [(ngModel)]="addContributor.url" required>
+
+      <button type="submit">Submit 提交</button>
+    </form>
+  </div>
+</div>
+

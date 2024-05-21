@@ -81,7 +81,6 @@ It will show tasks that you can run with Nx.
 npx nx g @nx/angular:app inventory --directory=apps/inventory --dry-run
 npx nx g @nx/angular:app static-shogun --directory=apps/static-shogun --add-tailwind
 
-
 创建lib
 nx g @nx/angular:library products --directory=libs/products --standalone
 

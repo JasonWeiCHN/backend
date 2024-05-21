@@ -5,6 +5,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @Builder
 @AllArgsConstructor
@@ -19,4 +21,5 @@ public class AddClan {
     private String heroAvatarPath;
     private String description;
     private String warhammerClassifierId;
+    private String contributorIds;  // 贡献者ID列表，用逗号分隔
 }

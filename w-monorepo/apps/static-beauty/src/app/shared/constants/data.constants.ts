@@ -1,4 +1,4 @@
-import { IArticleMap } from '@w-monorepo/warhammer';
+import { IArticleMap } from '@w-monorepo/interfaces';
 
 export const ARTICLES_MAP: IArticleMap = {
   'beauty': [{

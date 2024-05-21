@@ -3,6 +3,7 @@ import { MainComponent } from './pages/main/main.component';
 import { RaceComponent } from './pages/race/race.component';
 import { ClansComponent } from './pages/clans/clans.component';
 import { ItemCardComponent } from './pages/item-card/item-card.component';
+import { ContributorComponent } from './pages/contributor/contributor.component';
 
 export const appRoutes: Route[] = [
   {
@@ -20,6 +21,10 @@ export const appRoutes: Route[] = [
       {
         path: 'item-cards',
         component: ItemCardComponent
+      },
+      {
+        path: 'contributor',
+        component: ContributorComponent
       }
     ]
   }

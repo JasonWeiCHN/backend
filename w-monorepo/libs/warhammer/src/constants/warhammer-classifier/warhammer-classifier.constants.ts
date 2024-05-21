@@ -16,7 +16,7 @@ export const WARHAMMER_CLASSIFIERS: IWarhammerClassifier[] = [
         'heroName': '卡扎克·独眼',
         'heroAvatarPath': 'assets/images/lords/beastmen-khazrak-the-one-eye.png',
         'path': 'assets/images/icons/Beastmen/Warherd_of_the_One-Eye.png',
-        'description': '<p>开局攻下劳伦洛伦，竖立万魔岩创造“血域”。</p><p>这里是帝国的腹地，周围任何人都可以是我们的敌人，最有实力者，是“皇帝·卡尔·弗兰茨”。</p><p>向南方进攻，摧毁米登领，就能打通前往“阿尔道夫”的道路。</p><p>隐蔽营地可以隐藏部队，卡扎克·独眼拥有很高的伏击率，进入战场后，大量先锋部署的部队，可以让我们占得先机。</p><p>利用好角兽群先锋部署和潜行，即可轻易撕碎帝国的部队。</p><p>攻下“阿尔道夫”，灭掉“皇帝·卡尔·弗兰茨”，即可完成破局。</p><p class="contributors"><span>供稿人:</span><a href="https://space.bilibili.com/22088751">温酱与夏凉丶</a></p>'
+        'description': '<p>开局攻下劳伦洛伦，竖立万魔岩创造“血域”。</p><p>这里是帝国的腹地，周围任何人都可以是我们的敌人，最有实力者，是“皇帝·卡尔·弗兰茨”。</p><p>向南方进攻，摧毁米登领，就能打通前往“阿尔道夫”的道路。</p><p>隐蔽营地可以隐藏部队，卡扎克·独眼拥有很高的伏击率，进入战场后，大量先锋部署的部队，可以让我们占得先机。</p><p>利用好角兽群先锋部署和潜行，即可轻易撕碎帝国的部队。</p><p>攻下“阿尔道夫”，灭掉“皇帝·卡尔·弗兰茨”，即可完成破局。</p><p class="contributors"><span>供稿人:</span><a target="_blank" href="https://space.bilibili.com/22088751">温酱与夏凉丶</a></p>'
       },
       {
         'id': 'Harbinger_of_Disaster',
@@ -25,7 +25,7 @@ export const WARHAMMER_CLASSIFIERS: IWarhammerClassifier[] = [
         'heroName': '马拉戈·黑暗征兆',
         'heroAvatarPath': 'assets/images/lords/beastmen-malagor-the-dark-omen.png',
         'path': 'assets/images/icons/Beastmen/Harbinger_of_Disaster.png',
-        'description': '<p>开局攻下“赫尔纳齐洼地”，竖立万魔岩创造“血域”。</p><p>宣战顶髻，和斯卡布兰德一起瓜分他的地盘。</p><p>之后我们可以随意发展。</p><p>马拉戈·黑暗征兆的核心玩法是利用“隐蔽营地”悄然接近敌人，发起伏击。</p><p>前期以练级为主，升到12级可以点“特殊线”，最快点出“群鸦蔽日”学会“无尽群鸦盛宴”，就可以让敌人感受无尽的痛苦。</p><p>消灭附近所有的派系。</p><p class="contributors"><span>供稿人:</span><a href="https://space.bilibili.com/22088751">温酱与夏凉丶</a></p>'
+        'description': '<p>开局攻下“赫尔纳齐洼地”，竖立万魔岩创造“血域”。</p><p>宣战顶髻，和斯卡布兰德一起瓜分他的地盘。</p><p>之后我们可以随意发展。</p><p>马拉戈·黑暗征兆的核心玩法是利用“隐蔽营地”悄然接近敌人，发起伏击。</p><p>前期以练级为主，升到12级可以点“特殊线”，最快点出“群鸦蔽日”学会“无尽群鸦盛宴”，就可以让敌人感受无尽的痛苦。</p><p>消灭附近所有的派系。</p><p class="contributors"><span>供稿人:</span><a target="_blank" href="https://space.bilibili.com/22088751">温酱与夏凉丶</a></p>'
       },
       {
         'id': 'Warherd_of_the_Shadowgave',
@@ -34,7 +34,7 @@ export const WARHAMMER_CLASSIFIERS: IWarhammerClassifier[] = [
         'heroName': '魔古尔·影孽',
         'heroAvatarPath': 'assets/images/lords/beastmen-morghur-the-shadowgave.png',
         'path': 'assets/images/icons/Beastmen/Warherd_of_the_Shadowgave.png',
-        'description': '<p>开局攻下“蒙特纳斯”，竖立万魔岩创造“血域”。</p><p>向南进军，快速拿下整个“埃斯塔利亚”，敌人是帝国派系“南方王国”，然后可以进攻“湖神仙女”。</p><p>魔古尔·影孽的核心玩法是利用被动技能“卑鄙嬗变光环”的烧血效果消耗敌军兵模，回血光环可以恢复自身血量。</p><p>小模组、高移速，让影孽成为“移动烧血机”。</p><p>大量的角兽群结合混沌之卵可以对敌人进行毁灭打击。</p><p>攻下“卡尔卡松”，即可破局。</p><p class="contributors"><span>供稿人:</span><a href="https://space.bilibili.com/22088751">温酱与夏凉丶</a></p>'
+        'description': '<p>开局攻下“蒙特纳斯”，竖立万魔岩创造“血域”。</p><p>向南进军，快速拿下整个“埃斯塔利亚”，敌人是帝国派系“南方王国”，然后可以进攻“湖神仙女”。</p><p>魔古尔·影孽的核心玩法是利用被动技能“卑鄙嬗变光环”的烧血效果消耗敌军兵模，回血光环可以恢复自身血量。</p><p>小模组、高移速，让影孽成为“移动烧血机”。</p><p>大量的角兽群结合混沌之卵可以对敌人进行毁灭打击。</p><p>攻下“卡尔卡松”，即可破局。</p><p class="contributors"><span>供稿人:</span><a target="_blank" href="https://space.bilibili.com/22088751">温酱与夏凉丶</a></p>'
       },
       {
         'id': 'Slaughterhorn_Tribe',
@@ -43,7 +43,7 @@ export const WARHAMMER_CLASSIFIERS: IWarhammerClassifier[] = [
         'heroName': '陶诺斯·铜牛',
         'heroAvatarPath': 'assets/images/lords/beastmen-taurox-the-brass-bull.png',
         'path': 'assets/images/icons/Beastmen/Slaughterhorn_Tribe.png',
-        'description': '<p>开局攻下“克拉卡隆德”，竖立万魔岩创造“血域”。</p><p>一路向东，敌人都是黑暗精灵，先消灭挡住前路的塞洛斯塔·恐怖之鳍，最后和“影王”阿里斯·安纳尔进行终极对决。</p><p>陶诺斯·铜牛拥有强大的物理输出和高护甲，他能身先士卒带领牛头怪部队轻易摧毁敌人的防线，结合战獒的高速迂回战术，轻松击败敌人。</p><p>消灭阿里斯·安纳尔之后，即可破局。</p><p class="contributors"><span>供稿人:</span><a href="https://space.bilibili.com/22088751">温酱与夏凉丶</a></p>'
+        'description': '<p>开局攻下“克拉卡隆德”，竖立万魔岩创造“血域”。</p><p>一路向东，敌人都是黑暗精灵，先消灭挡住前路的塞洛斯塔·恐怖之鳍，最后和“影王”阿里斯·安纳尔进行终极对决。</p><p>陶诺斯·铜牛拥有强大的物理输出和高护甲，他能身先士卒带领牛头怪部队轻易摧毁敌人的防线，结合战獒的高速迂回战术，轻松击败敌人。</p><p>消灭阿里斯·安纳尔之后，即可破局。</p><p class="contributors"><span>供稿人:</span><a target="_blank" href="https://space.bilibili.com/22088751">温酱与夏凉丶</a></p>'
       }
     ]
   },
@@ -59,7 +59,7 @@ export const WARHAMMER_CLASSIFIERS: IWarhammerClassifier[] = [
         'heroName': '劳恩·列奥康沃尔',
         'heroAvatarPath': 'assets/images/lords/bretonnia-louen-leoncoeur.png',
         'path': 'assets/images/icons/Bretonnia/Couronne.png',
-        'description': '<p>第一场战争会考验玩家使用骑兵的能力，攻下“勒·安古朗”。</p><p>前期最难缠的敌人是绿皮派系“大肚王·咕噜”，先消灭吸血鬼伯爵派系“穆席隆”，进攻奥卡山。</p><p>警惕西北方的混沌勇士“比拉克”，他随时可能穿过奥比恩海峡入侵你。</p><p>劳恩·列奥康沃尔是一位伟大的巴托国王，在战场上利用好骑兵部队，他们拥有很多优异的加成效果。</p><p>搭配抗线的老农部队，善用士气打击，进行机动作战，就能取得不错的战果。</p><p>消灭大肚王·咕噜，即可破局。</p><p class="contributors"><span>供稿人:</span><a href="https://space.bilibili.com/22088751">温酱与夏凉丶</a></p>'
+        'description': '<p>第一场战争会考验玩家使用骑兵的能力，攻下“勒·安古朗”。</p><p>前期最难缠的敌人是绿皮派系“大肚王·咕噜”，先消灭吸血鬼伯爵派系“穆席隆”，进攻奥卡山。</p><p>警惕西北方的混沌勇士“比拉克”，他随时可能穿过奥比恩海峡入侵你。</p><p>劳恩·列奥康沃尔是一位伟大的巴托国王，在战场上利用好骑兵部队，他们拥有很多优异的加成效果。</p><p>搭配抗线的老农部队，善用士气打击，进行机动作战，就能取得不错的战果。</p><p>消灭大肚王·咕噜，即可破局。</p><p class="contributors"><span>供稿人:</span><a target="_blank" href="https://space.bilibili.com/22088751">温酱与夏凉丶</a></p>'
       },
       {
         'id': 'Bordeleaux_Errant',
@@ -68,7 +68,7 @@ export const WARHAMMER_CLASSIFIERS: IWarhammerClassifier[] = [
         'heroName': '艾博里克·德·波尔德罗',
         'heroAvatarPath': 'assets/images/lords/bretonnia-alberic-de-bordeleaux.png',
         'path': 'assets/images/icons/Bretonnia/Bordeleaux_Errant.png',
-        'description': '<p>攻下“扎慧塔克”和“塔拉克斯兰”统一“食人鱼沼泽”。</p><p>接下来主要的敌人是吸血鬼海盗“卢瑟·哈肯”和南方的蜥蜴人“哥罗克”。</p><p>艾博里克·德·波尔德罗的技能“恢弘打击”拥有反大加成，再加上“波尔德罗冠军勇士”，使得他的“王国骑士”非常适合攻击蜥蜴人这种大型部队较多的派系。</p><p>善用骑兵，依靠机动迂回的战术，可以取得不错的效果。</p><p>消灭卢瑟·哈肯和哥罗克，即可破局。</p><p class="contributors"><span>供稿人:</span><a href="https://space.bilibili.com/22088751">温酱与夏凉丶</a></p>'
+        'description': '<p>攻下“扎慧塔克”和“塔拉克斯兰”统一“食人鱼沼泽”。</p><p>接下来主要的敌人是吸血鬼海盗“卢瑟·哈肯”和南方的蜥蜴人“哥罗克”。</p><p>艾博里克·德·波尔德罗的技能“恢弘打击”拥有反大加成，再加上“波尔德罗冠军勇士”，使得他的“王国骑士”非常适合攻击蜥蜴人这种大型部队较多的派系。</p><p>善用骑兵，依靠机动迂回的战术，可以取得不错的效果。</p><p>消灭卢瑟·哈肯和哥罗克，即可破局。</p><p class="contributors"><span>供稿人:</span><a target="_blank" href="https://space.bilibili.com/22088751">温酱与夏凉丶</a></p>'
       },
       {
         'id': 'Carcassonne',
@@ -77,7 +77,7 @@ export const WARHAMMER_CLASSIFIERS: IWarhammerClassifier[] = [
         'heroName': '湖神仙女',
         'heroAvatarPath': 'assets/images/lords/bretonnia-fay-enchantress.png',
         'path': 'assets/images/icons/Bretonnia/Carcassonne.png',
-        'description': '<p>初始战的敌人是绿皮派系“红云”，依靠强大的神佑投石机和圣杯骑士，可以轻松击败他们。</p><p>接下来，快速集结部队，消灭盘踞在奥卡山的大肚王·咕噜。</p><p>警惕南方的斯卡文鼠人“伊克特·利爪”和游牧野兽人派系“魔古尔·影孽”。</p><p>湖神仙女开局就有神佑投石机和圣杯骑士，强大的巴托尼亚骑士领主，再加上大量的老农部队。</p><p>在战场上有着强悍的实力。</p><p>消灭大肚王·咕噜，即可破局。</p><p class="contributors"><span>供稿人:</span><a href="https://space.bilibili.com/22088751">温酱与夏凉丶</a></p>'
+        'description': '<p>初始战的敌人是绿皮派系“红云”，依靠强大的神佑投石机和圣杯骑士，可以轻松击败他们。</p><p>接下来，快速集结部队，消灭盘踞在奥卡山的大肚王·咕噜。</p><p>警惕南方的斯卡文鼠人“伊克特·利爪”和游牧野兽人派系“魔古尔·影孽”。</p><p>湖神仙女开局就有神佑投石机和圣杯骑士，强大的巴托尼亚骑士领主，再加上大量的老农部队。</p><p>在战场上有着强悍的实力。</p><p>消灭大肚王·咕噜，即可破局。</p><p class="contributors"><span>供稿人:</span><a target="_blank" href="https://space.bilibili.com/22088751">温酱与夏凉丶</a></p>'
       },
       {
         'id': 'Chevaliers_de_Lyonesse',
@@ -86,7 +86,7 @@ export const WARHAMMER_CLASSIFIERS: IWarhammerClassifier[] = [
         'heroName': '赫潘丝·德·里昂尼斯',
         'heroAvatarPath': 'assets/images/lords/bretonnia-repanse-de-lyonesse.png',
         'path': 'assets/images/icons/Bretonnia/Chevaliers_de_Lyonesse.png',
-        'description': '<p>攻下“费拉斯”和“亥卡”统一“阿拉比海岸”。</p><p>通过外交与“欧瑞格骑士”合邦，进攻西南方的“术士群岛”，那里是古墓王“黑色·阿克汉”的地盘。</p><p>也可以东进或南下，选择很多。</p><p>赫潘丝·德·里昂尼斯是一位强大的少女骑士，拥有爆炸技能“少女之怒”，可以反复爆炸击杀敌军。</p><p>升到9级后点出“放逐天灾”能让她的部队获得高额加成，在对付吸血鬼和古墓王派系时得心应手。</p><p>强大的骑士部队在发起冲锋后能给予敌人致命一击。</p><p class="contributors"><span>供稿人:</span><a href="https://space.bilibili.com/22088751">温酱与夏凉丶</a></p>'
+        'description': '<p>攻下“费拉斯”和“亥卡”统一“阿拉比海岸”。</p><p>通过外交与“欧瑞格骑士”合邦，进攻西南方的“术士群岛”，那里是古墓王“黑色·阿克汉”的地盘。</p><p>也可以东进或南下，选择很多。</p><p>赫潘丝·德·里昂尼斯是一位强大的少女骑士，拥有爆炸技能“少女之怒”，可以反复爆炸击杀敌军。</p><p>升到9级后点出“放逐天灾”能让她的部队获得高额加成，在对付吸血鬼和古墓王派系时得心应手。</p><p>强大的骑士部队在发起冲锋后能给予敌人致命一击。</p><p class="contributors"><span>供稿人:</span><a target="_blank" href="https://space.bilibili.com/22088751">温酱与夏凉丶</a></p>'
       }
     ]
   },
@@ -101,7 +101,8 @@ export const WARHAMMER_CLASSIFIERS: IWarhammerClassifier[] = [
         'nameCN': '哈苏特信徒',
         'heroName': '阿斯特戈斯·铁手',
         'heroAvatarPath': 'assets/images/lords/chaos-dwarves-astragoth-ironhand.png',
-        'path': 'assets/images/icons/Chaos Dwarfs/Disciples_of_Hashut.png'
+        'path': 'assets/images/icons/Chaos Dwarfs/Disciples_of_Hashut.png',
+        'description': '<p>攻下“巨颅湖”和“德兹内沃特要塞”，灭掉扎尔之奴，统一“骸骨高原”。</p><p>这里是一个分水岭，再招募一个领主组建副队，招巨型魔牛，去攻打“莱弥亚姐妹会”，这是西南方的“吸血鬼伯爵”派系。</p><p>主队则直接向北通过“达尔斯拉夫要塞”，穿越戈罗迈德尼山脉，进攻创新大师“马拉凯·马凯森”。</p><br/><p>阿斯特戈斯·铁手是一个“魔武双休”的传奇领主。神器任务的奖励品“石披风”增加高额的物抗，廉价的魔法技能“杀戮之火”，极大提升了铁手的初期实力。</p><br/><p>大地精弓箭手向敌人发射无尽的箭雨，大地精卑鄙潜伏者与领主组合进行包抄和士气打击。传奇事务官“戈度兹·暗算者”能提供强大的加成，尽快招募他。</p><br/><p>消灭创新大师“马拉凯·马凯森”，即可破局。</p><p class="contributors"><span>供稿人:</span><a target="_blank" href="https://space.bilibili.com/22088751">温酱与夏凉丶</a></p>'
       },
       {
         'id': 'The_Legion_of_Azgorh',
@@ -109,7 +110,8 @@ export const WARHAMMER_CLASSIFIERS: IWarhammerClassifier[] = [
         'nameCN': '阿佐格军团',
         'heroName': '灰烬·德拉兹霍斯',
         'heroAvatarPath': 'assets/images/lords/chaos-dwarves-drazhoath-the-ashen.png',
-        'path': 'assets/images/icons/Chaos Dwarfs/The_Legion_of_Azgorh.png'
+        'path': 'assets/images/icons/Chaos Dwarfs/The_Legion_of_Azgorh.png',
+        'description': '<p>攻下“前哨站”和“黑堡”，消灭黑暗之地兽人，统一“呼啸荒原”。</p><br/><p>如果节奏合适，我们会在西北的“灰魔女山”碰到斯卡文鼠人派系“崔特思·畏尾”的主力。利用伏击消灭他们，占领他们的地盘后，转向南方，与骸骨平原上的“龙王子.伊姆瑞克”对决。</p><br/><p>灰烬·德拉兹霍斯是一位强大的“哈苏特系”法师，但他也有很强的近战肉搏能力。</p><p>升到12级后点出特殊线的“长期流亡”和“灰烬”。</p><p>长期流亡可以用很低的魔法施放“阿佐格烈焰”。</p><p>灰烬能获得“魔屏”。</p><p>神器任务的奖励品“魔怨坩埚”可以随着杀敌数的增加提升法术精通，还有“地狱碎片护符”可以反弹近战伤害。</p><p>武装车队派往邓肯霍夫城堡可以获得回血。</p><br/><p>有了魔屏、回血和近战反伤后，灰烬·德拉兹霍斯可以一个人深入敌阵，杀伤敌军。</p><br/><p>前期的敌人主要是鼠人和高等精灵，大地精弓箭手的性价比不高，混沌矮人的领主们属性优秀，所以我们可以选择用大地精卑鄙者与领主结合，利用法术，潜行后消灭敌人后排，打偷袭战术为佳。</p><br/><p>消灭掉“崔特思·畏尾”和“伊姆瑞克”，即可破局。</p><p class="contributors"><span>供稿人:</span><a target="_blank" href="https://space.bilibili.com/22088751">温酱与夏凉丶</a></p>'
       },
       {
         'id': 'The_Warhost_of_Zharr',
@@ -117,7 +119,8 @@ export const WARHAMMER_CLASSIFIERS: IWarhammerClassifier[] = [
         'nameCN': '扎尔战团',
         'heroName': '黑心·扎坦',
         'heroAvatarPath': 'assets/images/lords/chaos-dwarves-zhatan-the-black.png',
-        'path': 'assets/images/icons/Chaos Dwarfs/The_Warhost_of_Zharr.png'
+        'path': 'assets/images/icons/Chaos Dwarfs/The_Warhost_of_Zharr.png',
+        'description': '<p>攻下“千眼要塞”统一“岩天矮丘”。</p><p>一路向东进军，拿下“鳌门关”、“龙门关”、“蝰门关”。</p><p>掌握“三关”对我们来说至关重要。</p><br/><p>主要的敌人是混沌勇士“诅咒灵·维里奇”和震旦天朝“飙龙·妙影”。</p><br/><p>黑心·扎坦的加成在于步兵和战争机器，再加上传奇事务官“戈度兹·暗算者”的高加成。 我们的部队用大地精弓箭手和大地精卑鄙潜伏者组合，使用得当，就能发挥恐怖的作战能力。</p><br/><p>消灭“诅咒灵·维里奇”和“飙龙·妙影”，即可破局。</p><p class="contributors"><span>供稿人:</span><a target="_blank" href="https://space.bilibili.com/22088751">温酱与夏凉丶</a></p>'
       }
     ]
   },
@@ -132,7 +135,8 @@ export const WARHAMMER_CLASSIFIERS: IWarhammerClassifier[] = [
         'nameCN': '混沌大军',
         'heroName': '恶魔亲王',
         'heroAvatarPath': 'assets/images/lords/legion-of-chaos-daemon-prince.png',
-        'path': 'assets/images/icons/Daemons of Chaos/Legion_of_Chaos.png'
+        'path': 'assets/images/icons/Daemons of Chaos/Legion_of_Chaos.png',
+        'description': '<p>这是一个玩法多样化，甚至随心所欲的派系。</p><p>可以自由组合混沌四神派系的部队，或者说四神部队都为你所用。</p><br/><p>攻下“衰败森林”、“蝇塔”、“呕胆崖”统一“恶臭肿瘤”。</p><p>向东进军攻打奸奇派系“全视之眼”，占领火山之心，之后会遇到主要的对手“马鲁斯·黑刃”。</p><br/><p>部队组合很自由，我推荐“恐虐”与“色孽”组合，拥有恐怖的肉搏能力，也可以选择“恐虐”与“奸奇”，如果你喜欢“射爆流”玩法。</p><p>“纳垢”与“色孽”或“奸奇”也是一种组合方案。</p><p>恶魔亲王的装备也有很多选择，可随意调整，十分强力。</p><br/><p>消灭“马鲁斯·黑刃”，即可破局。</p><p class="contributors"><span>供稿人:</span><a target="_blank" href="https://space.bilibili.com/22088751">温酱与夏凉丶</a></p>'
       }
     ]
   },
@@ -590,7 +594,7 @@ export const WARHAMMER_CLASSIFIERS: IWarhammerClassifier[] = [
         'heroNameEN': 'Tamurkhan the Maggot Lord',
         'heroAvatarPath': 'assets/images/lords/nurgle-tankhan-the-maggot-lord.png',
         'path': 'assets/images/icons/Nurgle/Poxmakers_of_Nurgle.png',
-        'description': '<p>开局往南方进攻，死敌柯烈克·食日者等着你，你和他只有一个能活在这个世界。</p><p>攻下"绞架树"一统"卡达莎"，接着进攻"奇美拉高地"。</p><p>存够"霸权"(纳垢资源)立刻招募"玷污者·凯兹克"，自带坐骑，移速达到80+，武器威力560，还能重生。</p><p>手动战中利用凯兹克和强大的腐烂骑士(也会重生)，将敌军作战单位一个接一个勾引出来围杀是上好的战术。</p><p>击败柯烈克·食日者即可完成前期破局。</p><p class="contributors"><span>供稿人:</span><a href="https://space.bilibili.com/431259608">古老游戏玩家</a></p>'
+        'description': '<p>开局往南方进攻，死敌柯烈克·食日者等着你，你和他只有一个能活在这个世界。</p><p>攻下"绞架树"一统"卡达莎"，接着进攻"奇美拉高地"。</p><p>存够"霸权"(纳垢资源)立刻招募"玷污者·凯兹克"，自带坐骑，移速达到80+，武器威力560，还能重生。</p><p>手动战中利用凯兹克和强大的腐烂骑士(也会重生)，将敌军作战单位一个接一个勾引出来围杀是上好的战术。</p><p>击败柯烈克·食日者即可完成前期破局。</p><p class="contributors"><span>供稿人:</span><a target="_blank" href="https://space.bilibili.com/431259608">古老游戏玩家</a></p>'
       },
       {
         'id': 'Tallymen_of_Pestilence',
@@ -951,7 +955,8 @@ export const WARHAMMER_CLASSIFIERS: IWarhammerClassifier[] = [
         'heroName': '奥莱恩',
         'heroNameEN': 'orion',
         'heroAvatarPath': 'assets/images/lords/wood-elves-orion.png',
-        'path': 'assets/images/icons/Wood Elves/Talsyn.png'
+        'path': 'assets/images/icons/Wood Elves/Talsyn.png',
+        'description': '<p>这是一个玩法特殊的派系，可以全地图宣战。</p><p>宣战派系达到一定数量后，军队的维持费会降为零！</p><p>也就是变成了“无维持费”的状态。</p><br/><p>攻下“奎那利斯”统一“夏珑森林”。</p><p>进攻奥卡山，消灭绿皮派系“大肚王·咕噜”。</p><p>他离我们最近，还会打洞。</p><p>为了完成“艾索洛伦的重生仪式”，附近需要占领的城市尽快拿下。</p><br/><p>外交方面建议结交巴托尼亚、木精灵和帝国。</p><br/><p>宣战绿皮、吸血鬼、矮人和斯卡文鼠人。</p><br/><p>因为宣战减维持费的机制，奥莱恩破局很快，前期可以用事务官出去探路，方便寻找宣战目标。</p><br/><p>利用“深层根须”进行在大地图上进行远距离的传送。</p><br/><p>木精灵拥有强大的射击部队，射程超远，弓箭手从“林地守卫”到“巡林客”都是王牌军队，多倚仗他们的力量。</p><br/><p>奥莱恩有多个骑兵加成，本队可以多带骑兵。</p><br/><p>三本后可以招募“树精”代替矛兵抗线，四本后多招“巡林客”，不缺钱。</p><br/><p>奥莱恩多宣战就能破局，远宣近攻！</p><p class="contributors"><span>供稿人:</span><a target="_blank" href="https://space.bilibili.com/404279534">卡卓因</a></p>'
       },
       {
         'id': 'Argwylon',
@@ -993,3 +998,24 @@ export const WARHAMMER_CLASSIFIERS_MAP: IWarhammerClassifierMap = WARHAMMER_CLAS
   });
   return acc;
 }, {} as IWarhammerClassifierMap);
+
+
+const test = {
+  'id': 'Warherd_of_the_One_Eye',
+  'name': 'Warherd_of_the_One-Eye',
+  'nameCN': '独眼战兽群',
+  'heroName': '卡扎克·独眼',
+  'heroAvatarPath': 'assets/images/lords/beastmen-khazrak-the-one-eye.png',
+  'path': 'assets/images/icons/Beastmen/Warherd_of_the_One-Eye.png',
+  'description': '',
+  'contributors': [
+    {
+      name: 'jason',
+      url: 'http://www.bbaba.com/adfasdfdsafewewweweewew'
+    },
+    {
+      name: 'tom',
+      url: 'http://www.bbaba.com/333323223322332'
+    }
+  ]
+};

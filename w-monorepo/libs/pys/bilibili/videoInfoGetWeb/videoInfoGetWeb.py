@@ -14,6 +14,7 @@ SESSDATA = "9233597d%2C1731161674%2Cf9afd%2A52CjATkcu61Z1D4ojfK_DOWCgaztC32oJdQY
 BILI_JCT = "a0bcde097d2b3dc90a0f93c0e6da99df"
 BUVID3 = ""
 FFMPEG_PATH = r"F:/ffmpeg/bin/ffmpeg.exe"
+OUTPUT_FOLDER = r"F:\biliGet\warhammer3"
 
 async def download_url(url: str, out: str, info: str):
     async with httpx.AsyncClient(headers=HEADERS) as sess:
@@ -46,8 +47,8 @@ async def download_images(video_info, output_folder):
 
 def generate_submission_data(video_info, bvid, output_folder):
     obj = {
-        'typeId': video_info['tid'],
-        'imageUrl': os.path.join(output_folder, 'pic.jpg'),
+        'typeId': '',
+        'imageUrl': bvid,
         'title': video_info['title'],
         'publisher': video_info['owner']['name'],
         'detail': json.dumps(video_info),
@@ -71,13 +72,14 @@ async def submit_data(submission_data):
         print('Failed to submit data to the backend:', str(e))
 
 async def process_bvid(bvid, type_id, tag_ids):
-    output_folder = os.path.join(r"F:\biliGet\warhammer3", bvid)
+    output_folder = os.path.join(OUTPUT_FOLDER, bvid)
     os.makedirs(output_folder, exist_ok=True)
     await download_video(bvid, output_folder)
     with open(os.path.join(output_folder, 'video_info.json'), 'r', encoding='utf-8') as f:
         video_info = json.load(f)
     await download_images(video_info, output_folder)
     submission_data = generate_submission_data(video_info, bvid, output_folder)
+    # 覆盖 typeId 和 tagIds
     submission_data['typeId'] = type_id
     submission_data['tagIds'] = tag_ids
     print(submission_data)

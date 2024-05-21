@@ -1,4 +1,4 @@
-export * from './lib/test';
+export * from './article.interface';
 
 export * from './app.interface';
 

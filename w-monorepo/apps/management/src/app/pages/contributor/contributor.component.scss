@@ -1,0 +1,16 @@
+@import "apps/management/src/app/shared/styles/table.scss";
+
+.contributor {
+  @extend #table;
+
+  .toolbar {
+    display: flex;
+    margin-bottom: 12px;
+  }
+
+  .table-container {
+    width: 800px;
+    height: 400px;
+    overflow: scroll;
+  }
+}

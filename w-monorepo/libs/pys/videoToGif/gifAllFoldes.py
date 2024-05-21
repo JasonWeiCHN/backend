@@ -65,7 +65,7 @@ def process_folders(root_folder):
             create_gif_and_save_frame(video_path, start_time, end_time, gif_path, image_path)
 
 # 示例使用
-root_folder = 'F:/biliGet/beauty'  # 替换为主文件夹路径
+root_folder = 'F:/biliGet/funny'  # 替换为主文件夹路径
 start_time = '00:00:1'  # 替换为开始时间 (格式为 'HH:MM:SS')
 end_time = '00:00:3'    # 替换为结束时间 (格式为 'HH:MM:SS')
 process_folders(root_folder)
