@@ -18,7 +18,12 @@ public class Clan {
     private String heroName;
     private String heroNameEN;
     private String heroAvatarPath;
+
+    @Column(columnDefinition = "TEXT")
     private String description;
+
+    @Column(name = "order_value")
+    private Integer order;
 
     @ManyToOne
     @JoinColumn(name = "warhammer_classifier_id") // 这里指定外键列名

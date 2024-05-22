@@ -14,9 +14,9 @@ def create_gif_from_video(video_path, start_time, end_time, gif_path):
     video_clip.close()
 
 # 示例使用
-video_path = 'F:/biliGet/beauty/BV1Wp4y1u7br/video.mp4'  # 替换为你的MP4文件路径
-start_time = '00:00:10'  # 替换为开始时间 (格式为 'HH:MM:SS')
-end_time = '00:00:20'    # 替换为结束时间 (格式为 'HH:MM:SS')
-gif_path = 'F:/biliGet/beauty/BV1Wp4y1u7br/output.gif'  # 替换为你希望保存GIF文件的路径
+video_path = 'F:/biliGet/funny/BV1Xm421K7rc/video.mp4'  # 替换为你的MP4文件路径
+start_time = '00:00:00'  # 替换为开始时间 (格式为 'HH:MM:SS')
+end_time = '00:00:04'    # 替换为结束时间 (格式为 'HH:MM:SS')
+gif_path = 'F:/biliGet/funny/BV1Xm421K7rc/min.gif'  # 替换为你希望保存GIF文件的路径
 
 create_gif_from_video(video_path, start_time, end_time, gif_path)

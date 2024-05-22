@@ -1,28 +1,45 @@
 import { IApp } from '@w-monorepo/interfaces';
 
 export const APP_CONFIG: IApp = {
+  fileServer: 'http://localhost:8000/', // 'http://111.230.29.99:5001/funny/'
   banner: {
     title: '搞笑一箩筐',
-    subtitle: '让人爆笑的那几秒中',
+    subtitle: '我要的只是快乐',
     rightContent: ''
   },
-  navigationItems: [
+  navigationItems: [],
+  navTags: [
     {
-      id: 'uncontrollableMoment',
-      path: 'uncontrollable-moment',
-      label: '绷不住的瞬间'
+      id: 'cute',
+      name: '可爱'
     },
     {
-      id: 'funnyCollection',
-      path: 'funnyCollection',
-      label: '无敌合集'
-    }, {
-      id: 'parodyAndPrank',
-      path: 'parody-and-prank',
-      label: '恶搞整活'
-    }, {
-      id: 'superJoke',
-      path: 'super-joke',
-      label: '超能段子'
-    }]
+      id: 'sweet',
+      name: '高甜'
+    },
+    {
+      id: 'sexy',
+      name: '性感'
+    },
+    {
+      id: 'classical',
+      name: '古典'
+    },
+    {
+      id: 'life',
+      name: '生活'
+    },
+    {
+      id: 'dance',
+      name: '舞蹈'
+    },
+    {
+      id: 'sakura-girl',
+      name: '樱花妹'
+    },
+    {
+      id: 'korean',
+      name: '韩系'
+    }
+  ]
 };

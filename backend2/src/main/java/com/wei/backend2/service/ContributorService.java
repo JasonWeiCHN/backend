@@ -9,4 +9,5 @@ public interface ContributorService {
     List<Contributor> findAll();
     Contributor saveContributor(AddContributor addContributor);
     Contributor findById(Long id);  // 新增的方法
+    List<Contributor> searchContributor(String column, String keyword);
 }

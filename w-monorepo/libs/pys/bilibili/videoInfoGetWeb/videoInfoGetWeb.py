@@ -10,11 +10,11 @@ from bilibili_api import video, Credential, HEADERS
 app = Flask(__name__)
 
 # 替换成你的 SESSDATA、BILI_JCT 和 FFMPEG_PATH
-SESSDATA = "9233597d%2C1731161674%2Cf9afd%2A52CjATkcu61Z1D4ojfK_DOWCgaztC32oJdQYZjcjmZxjRggIrd6P_kSvH_fEPCKY_ZuW4SVnFrd0U3M2VaZkFNaVo2eFljM3BuWjZid3VBNU4tMXNqdFpHWlMzSko3RXZ1VVZBM2VWeVZ3LTRvUjBXMGY4YXJsald2RS1oc0prQ0lEbU5KRm1PQkNBIIEC"
-BILI_JCT = "a0bcde097d2b3dc90a0f93c0e6da99df"
+SESSDATA = "7bbcbe74%2C1731807787%2C249d1%2A51CjBMs7JpVYq0g-13xJ292DZeFJ8LFDkYzcnaDktku-cT6_89_roXGd-OUZZSX2KwhtkSVkFFeDc3NkFYQkNKemNVd2FZYVpVanBWdnV4Y0JqM3FDX2NxYXgza3Z2cm1uU3VLWUF1RmJlVXVUc2JWRktnZzdxYU5UWGlkT281NXptZFpyZl96NGlRIIEC"
+BILI_JCT = "063d77cc6e5d7f03fad77cdf2baf6f27"
 BUVID3 = ""
 FFMPEG_PATH = r"F:/ffmpeg/bin/ffmpeg.exe"
-OUTPUT_FOLDER = r"F:\biliGet\warhammer3"
+OUTPUT_FOLDER = r"F:\biliGet\troy"
 
 async def download_url(url: str, out: str, info: str):
     async with httpx.AsyncClient(headers=HEADERS) as sess:
@@ -39,8 +39,6 @@ async def download_video(bvid, output_folder):
 
 async def download_images(video_info, output_folder):
     pic_url = video_info['pic']
-    face_url = video_info['owner']['face']
-    first_frame_url = video_info['pages'][0]['first_frame']
 
     await download_url(pic_url, os.path.join(output_folder, 'pic.jpg'), "视频封面")
     await asyncio.sleep(2)

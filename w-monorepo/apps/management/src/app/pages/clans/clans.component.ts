@@ -9,6 +9,7 @@ import {
   WarhammerHttpService
 } from '@w-monorepo/warhammer';
 import { HttpClient } from '@angular/common/http';
+import { ClansHttpService } from './shared/services/clans.http.service';
 
 @Component({
   selector: 'm-clans',
@@ -16,7 +17,7 @@ import { HttpClient } from '@angular/common/http';
   imports: [CommonModule, FormsModule],
   templateUrl: './clans.component.html',
   styleUrl: './clans.component.scss',
-  providers: [WarhammerHttpService]
+  providers: [WarhammerHttpService, ClansHttpService]
 })
 export class ClansComponent implements OnInit {
   public clans: IImageFile[] = [];
@@ -31,7 +32,7 @@ export class ClansComponent implements OnInit {
     heroAvatarPath: ''
   };
 
-  public constructor(private http: HttpClient, private warhammerHttpService: WarhammerHttpService) {
+  public constructor(private http: HttpClient, private warhammerHttpService: WarhammerHttpService, private clansHttpService: ClansHttpService) {
   }
 
   public ngOnInit(): void {
@@ -45,11 +46,7 @@ export class ClansComponent implements OnInit {
       classifier.files.forEach(file => {
         const iClanUpload: IClanUpload = {
           warhammerClassifierId,
-          id: file.id,
-          name: file.name,
-          path: file.path,
-          heroName: file.heroName,
-          heroAvatarPath: file.heroAvatarPath
+          ...file
         };
         this.warhammerHttpService.saveClan(iClanUpload).subscribe(
           () => {
@@ -61,6 +58,25 @@ export class ClansComponent implements OnInit {
         );
       });
     });
+  }
+
+  protected downloadItemCardsAsJson(): void {
+    this.clansHttpService.downloadClansAsJson().subscribe(
+      (data: any) => {
+        const blob = new Blob([data], { type: 'application/json' });
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'clans.json';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+      },
+      (error: any) => {
+        console.error('Failed to download item cards:', error);
+      }
+    );
   }
 
   public onSubmit(): void {

@@ -13,7 +13,23 @@
     <w-back-button></w-back-button>
   </div>
   <ng-container *ngIf="clan?.file as file">
-    <div class="game-strategy" [innerHTML]="file.description"></div>
+    <div class="game-strategy">
+      <div [innerHTML]="file.description"></div>
+      <ng-container *ngIf="file.contributors?.length">
+        <p
+          *ngFor="let contributor of file.contributors"
+          class="contributors"
+        >
+          <span>供稿人:</span>
+          <a *ngIf="contributor.url"
+             (click)="onContributorClick(contributor)"
+             target="_blank"
+             [href]="contributor.url"
+          >{{ contributor.name }}</a>
+          <a *ngIf="!contributor.url">{{ contributor.name }}</a>
+        </p>
+      </ng-container>
+    </div>
   </ng-container>
   <w-tag-selector [tags]="tags" (tagSelected)="onTagSeclet($event)"></w-tag-selector>
   <w-list

@@ -1,4 +1,4 @@
-export interface IProjectSwitcher {
+export interface ISwitcherProject {
   id: string;
   url: string;
   label: string;

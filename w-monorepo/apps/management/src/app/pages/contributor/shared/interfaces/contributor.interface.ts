@@ -1,9 +1,8 @@
 export interface IContributor {
-  id: string;
+  id: number;
   name: string;
   url: string;
 }
-
 
 export interface IAddContributor {
   name: string;

@@ -13,12 +13,14 @@
     <table>
       <thead>
       <tr>
+        <th>ID</th>
         <th>Name</th>
         <th>URL</th>
       </tr>
       </thead>
       <tbody>
       <tr *ngFor="let contributor of contributors" (click)="onContributorClick(contributor)">
+        <td>{{ contributor.id }}</td>
         <td>{{ contributor.name }}</td>
         <td>{{ contributor.url }}</td>
       </tr>

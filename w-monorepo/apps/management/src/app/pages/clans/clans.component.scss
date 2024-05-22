@@ -4,4 +4,9 @@
 .clans {
   @extend #table;
   @extend #form;
+
+  .toolbar {
+    display: flex;
+    margin-bottom: 12px;
+  }
 }

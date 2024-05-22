@@ -8,19 +8,25 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/static-funny",
         "index": "apps/static-funny/src/index.html",
         "main": "apps/static-funny/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "apps/static-funny/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
           "apps/static-funny/src/favicon.ico",
           "apps/static-funny/src/assets"
         ],
-        "styles": ["apps/static-funny/src/styles.scss"],
+        "styles": [
+          "apps/static-funny/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -57,7 +63,8 @@
           "buildTarget": "static-funny:build:production"
         },
         "development": {
-          "buildTarget": "static-funny:build:development"
+          "buildTarget": "static-funny:build:development",
+          "port": 4207
         }
       },
       "defaultConfiguration": "development"
@@ -73,7 +80,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
         "jestConfig": "apps/static-funny/jest.config.ts"
       }

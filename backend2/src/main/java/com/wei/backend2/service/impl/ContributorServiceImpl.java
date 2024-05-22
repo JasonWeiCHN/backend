@@ -1,10 +1,13 @@
 package com.wei.backend2.service.impl;
 
 import com.wei.backend2.entity.Contributor;
+import com.wei.backend2.entity.ItemCard;
 import com.wei.backend2.payload.request.AddContributor;
 import com.wei.backend2.repositories.ContributorRepository;
+import com.wei.backend2.repositories.ContributorSpecifications;
 import com.wei.backend2.service.ContributorService;
 import org.springframework.beans.BeanUtils;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -34,5 +37,11 @@ public class ContributorServiceImpl implements ContributorService {
     public Contributor findById(Long id) {
         Optional<Contributor> optionalContributor = contributorRepository.findById(id);
         return optionalContributor.orElseThrow(() -> new RuntimeException("Contributor not found with id: " + id));
+    }
+
+    @Override
+    public List<Contributor> searchContributor(String column, String keyword) {
+        Specification<Contributor> spec = ContributorSpecifications.containsTextInColumn(column, keyword);
+        return contributorRepository.findAll(spec);
     }
 }

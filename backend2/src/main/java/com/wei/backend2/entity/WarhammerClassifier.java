@@ -13,4 +13,7 @@ public class WarhammerClassifier {
 
     private String directory;
     private String nameCN;
+
+    @Column(name = "order_value")
+    private Integer order;
 }

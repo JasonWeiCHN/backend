@@ -4,7 +4,7 @@ import { NxWelcomeComponent } from './nx-welcome.component';
 import {
   BannerComponent,
   INavigationItem,
-  IProjectSwitcher,
+  ISwitcherProject,
   NavigationComponent,
   ProjectSwitcherComponent,
   SlideshowComponent
@@ -25,28 +25,8 @@ export class AppComponent {
   protected appConfig: IApp = APP_CONFIG;
   protected navigationItemActive = 'clans';
   protected showNavigation = true;
-  protected selectedProject: IProjectSwitcher = {
-    id: '2',
-    label: '全面战争·战锤3',
-    url: 'http://111.230.29.99/'
-  };
-  protected projects: IProjectSwitcher[] = [
-    {
-      id: '1',
-      label: '全面战争·幕府将军',
-      url: 'http://111.230.29.99:4000/'
-    },
-    {
-      id: '2',
-      label: '全面战争·战锤3',
-      url: 'http://111.230.29.99/'
-    },
-    {
-      id: '3',
-      label: '全面战争·法老',
-      url: 'http://111.230.29.99:4001/'
-    }
-  ];
+  protected selectedProject: ISwitcherProject | undefined = APP_CONFIG.project;
+  protected projects: ISwitcherProject[] = APP_CONFIG.projects || [];
 
   public constructor(private _router: Router) {
     // 订阅路由变化事件
@@ -67,7 +47,7 @@ export class AppComponent {
     this._router.navigate([item.path]);
   }
 
-  protected onProjectSelected(item: IProjectSwitcher) {
+  protected onProjectSelected(item: ISwitcherProject) {
     const { url } = item;
     if (url) {
       window.open(url, '_self');

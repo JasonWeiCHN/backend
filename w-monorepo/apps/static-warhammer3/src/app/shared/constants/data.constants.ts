@@ -1350,6 +1350,32 @@ export const ARTICLES_MAP: IArticleMap = {
     'views': 5179
   }],
   'newMod': [{
+    'date': '2024-05-21 10:55',
+    'sourceUrl': 'https://www.bilibili.com/video/BV1R7421o7s9',
+    'referer': null,
+    'imageUrl': 'BV1R7421o7s9',
+    'tagIds': [''],
+    'publisher': '嘉维尔丛林之魂',
+    'description': 'SCM Revamped 帝国中文汉化合集\nSCM Marienburg (5.0)\nMIXER - Mixu\'s Unlocker\n传奇英雄：羅紗沢。玛丽恩堡中尤伟庄园派系开局解锁。\n【【战锤3全面战争】玛里恩派系之尤伟庄园】 https://www.bilibili.com/video/BV1pG411Q7dZ/?share_source=copy_web&vd_source=55f465a816f9b85efdc7631ad139e3e8',
+    'typeId': 'newMod',
+    'id': '501',
+    'detail': '',
+    'title': '【战锤3全面战争】矮人武士——羅紗沢',
+    'views': 1348
+  }, {
+    'date': '2024-05-19 14:03',
+    'sourceUrl': 'https://www.bilibili.com/video/BV1ut421T7oP',
+    'referer': null,
+    'imageUrl': 'BV1ut421T7oP',
+    'tagIds': [''],
+    'publisher': '战锤卡尔弗兰兹',
+    'description': '-',
+    'typeId': 'newMod',
+    'id': '504',
+    'detail': '',
+    'title': '战锤3mod制作教程（基础篇）',
+    'views': 303
+  }, {
     'date': '2024-05-16 20:38',
     'sourceUrl': 'https://www.bilibili.com/video/BV1ET421D7QT',
     'referer': null,
@@ -4522,6 +4548,19 @@ export const ARTICLES_MAP: IArticleMap = {
     'views': 1463
   }],
   'Masters_of_lnnovation': [{
+    'date': '2024-05-18 19:10',
+    'sourceUrl': 'https://www.bilibili.com/video/BV1aE421G79i',
+    'referer': null,
+    'imageUrl': 'BV1aE421G79i',
+    'tagIds': ['liveRecording'],
+    'publisher': 'E巧',
+    'description': '花钱买来的强度，这就是！金钱的力量？大哥，你血条呢？',
+    'typeId': 'Masters_of_lnnovation',
+    'id': '506',
+    'detail': '',
+    'title': '【全面战争：战锤3】二，兄弟你的血条呢？科技解决一切强敌？！甚至是龙！',
+    'views': 1558
+  }, {
     'date': '2024-05-14 08:06',
     'sourceUrl': 'https://www.bilibili.com/video/BV1ys421A7Qc',
     'referer': null,
@@ -5900,6 +5939,19 @@ export const ARTICLES_MAP: IArticleMap = {
     'views': 16000
   }],
   'Wissenland_Nuln': [{
+    'date': '2024-05-19 10:18',
+    'sourceUrl': 'https://www.bilibili.com/video/BV1Nb42187Aj',
+    'referer': null,
+    'imageUrl': 'BV1Nb42187Aj',
+    'tagIds': ['newerTeach'],
+    'publisher': '赤色的麦田',
+    'description': '~',
+    'typeId': 'Wissenland_Nuln',
+    'id': '505',
+    'detail': '',
+    'title': '【战锤3】墓园玫瑰6回合13城灭吸血鬼，极限扩张种田升级，适合萌新【赤色的麦田】',
+    'views': 8155
+  }, {
     'date': '2024-05-11 00:13:40',
     'sourceUrl': 'https://www.bilibili.com/video/BV1HH4y1G7QC',
     'referer': null,
@@ -6018,6 +6070,45 @@ export const ARTICLES_MAP: IArticleMap = {
     'views': 26000
   }],
   'articles': [{
+    'date': '2024-05-20 11:35',
+    'sourceUrl': 'https://www.bilibili.com/video/BV1aJ4m1w7L3',
+    'referer': null,
+    'imageUrl': 'BV1aJ4m1w7L3',
+    'tagIds': ['clip'],
+    'publisher': '一般路过网友花小猪',
+    'description': '-',
+    'typeId': 'articles',
+    'id': '502',
+    'detail': '',
+    'title': '【战锤3全面战争】腐烂王座矮人新单位动画展示，诚意十足值得支持',
+    'views': 3462
+  }, {
+    'date': '2024-05-19 21:46',
+    'sourceUrl': 'https://www.bilibili.com/video/BV1Bn4y1d74e',
+    'referer': null,
+    'imageUrl': 'BV1Bn4y1d74e',
+    'tagIds': [''],
+    'publisher': '一般路过网友花小猪',
+    'description': '-',
+    'typeId': 'articles',
+    'id': '503',
+    'detail': '',
+    'title': '【战锤3全面战争】帝国才是这个dlc的最大获益者，陆船加坦克等于胜利-陆战PVP 帝国对战混沌矮人',
+    'views': 4027
+  }, {
+    'date': '2024-05-18 17:58',
+    'sourceUrl': 'https://www.bilibili.com/video/BV1yt421M7xJ',
+    'referer': null,
+    'imageUrl': 'BV1yt421M7xJ',
+    'tagIds': ['clip'],
+    'publisher': '叶哥的全面战争',
+    'description': 'https://www.youtube.com/@warhammerbattles/videos',
+    'typeId': 'articles',
+    'id': '507',
+    'detail': '',
+    'title': '战锤3全面战争电影蜥蜴人top视频',
+    'views': 2161
+  }, {
     'date': '2024-05-17 15:14',
     'sourceUrl': 'https://www.bilibili.com/video/BV1Dy411Y7pU',
     'referer': null,

@@ -13,7 +13,7 @@ export class ItemCardHttpService {
   }
 
   public searchItemCards(column: string, keyword: string): Observable<IItemCard[]> {
-    return this.http.get<IItemCard[]>(`http://localhost:8080/itemCard/search?column=${column}&keyword=${keyword}`);
+    return this.http.get<IItemCard[]>(`${this.baseUrl}/search?column=${column}&keyword=${keyword}`);
   }
 
   public getAllItemCards(): Observable<IItemCard[]> {
@@ -21,7 +21,7 @@ export class ItemCardHttpService {
   }
 
   public getAllItemCardsPaginated(page: number, size: number): Observable<Page<IItemCard>> {
-    return this.http.get<Page<IItemCard>>(`http://localhost:8080/itemCard/findAllPaginated?page=${page}&size=${size}`);
+    return this.http.get<Page<IItemCard>>(`${this.baseUrl}/findAllPaginated?page=${page}&size=${size}`);
   }
 
   public addItemCard(addItemCard: IAddItemCard): Observable<void> {

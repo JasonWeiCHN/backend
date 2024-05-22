@@ -13,4 +13,5 @@ public class AddWarhammerClassifier {
     private String id;
     private String directory;
     private String nameCN;
+    private Integer order;
 }

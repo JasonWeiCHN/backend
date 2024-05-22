@@ -15,7 +15,4 @@ public class Contributor {
 
     private String name;
     private String url;
-
-    @ManyToMany(mappedBy = "contributors")
-    private List<Clan> clans;
 }

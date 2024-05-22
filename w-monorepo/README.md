@@ -157,6 +157,13 @@ nohup python3 statistics.py > flask.log &
 记得去服务器 在防火墙 添加规则
 ```
 
+## 文件服务器
+
+```
+启动指令 定位到web-files
+nohup python3 web.py > nohup.out 2>&1 &
+```
+
 ## 用户轨迹记录
 
 - 翻墙访问会跨域 无法记录轨迹

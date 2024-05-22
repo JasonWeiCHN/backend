@@ -5,6 +5,10 @@ import { BackButtonComponent, EList, IItemCard, ITag, ListComponent, TagSelector
 import { EArticleTags, IClan, IWarhammerClassifierMap, WARHAMMER_CLASSIFIERS_MAP } from '@w-monorepo/warhammer';
 import { IArticleMap } from '@w-monorepo/interfaces';
 import { ARTICLES_MAP } from '../../shared/constants/data.constants';
+import { AnalysisHttpService } from '@w-monorepo/analysis';
+import {
+  IContributor
+} from '../../../../../management/src/app/pages/contributor/shared/interfaces/contributor.interface';
 
 @Component({
   selector: 'app-article',
@@ -12,7 +16,8 @@ import { ARTICLES_MAP } from '../../shared/constants/data.constants';
   imports: [CommonModule, ListComponent, TagSelectorComponent, BackButtonComponent],
   templateUrl: './article.component.html',
   styleUrl: './article.component.scss',
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  providers: [AnalysisHttpService]
 })
 export class ArticleComponent implements OnInit {
   // TODO 优化: 没有数据的应该不显示
@@ -33,6 +38,7 @@ export class ArticleComponent implements OnInit {
   protected data: IItemCard[] | undefined = undefined;
 
   public constructor(
+    private analysisHttpService: AnalysisHttpService,
     private readonly _activatedRoute: ActivatedRoute
   ) {
   }
@@ -43,7 +49,7 @@ export class ArticleComponent implements OnInit {
     this.data = this.articlesMap[id];
   }
 
-  public onListItemClick(item: IItemCard): void {
+  protected onListItemClick(item: IItemCard): void {
     if (item.sourceUrl) {
       window.open(item.sourceUrl, '_blank');
     }
@@ -62,5 +68,13 @@ export class ArticleComponent implements OnInit {
         article.tagIds?.includes(selectedTagId)
       );
     }
+  }
+
+  protected onContributorClick(contributor: IContributor): void {
+    this.analysisHttpService.submitString('跳转: ' + contributor.name).subscribe((response: any) => {
+      // console.log('String submitted successfully!', response);
+    }, (error: any) => {
+      console.error('Error submitting string:', error);
+    });
   }
 }

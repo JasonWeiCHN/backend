@@ -36,13 +36,13 @@ export class RaceComponent implements OnInit {
   // 保存所有 WARHAMMER_CLASSIFIERS 数据到后台
   saveAllWarhammerClassifiers() {
     WARHAMMER_CLASSIFIERS.forEach((classifier: IWarhammerClassifier) => {
-      const { id, directory, nameCN } = classifier;
-      this.saveWarhammerClassifier({ id, directory, nameCN });
+      const { id, directory, nameCN, order } = classifier;
+      this.saveWarhammerClassifier({ id, directory, nameCN, order });
     });
   }
 
   // 向后台发送请求保存单个 WarhammerClassifier
-  saveWarhammerClassifier(classifier: { id: string; directory: string; nameCN: string; }) {
+  saveWarhammerClassifier(classifier: { id: string; directory: string; nameCN: string; order: number | undefined }) {
     this.http.post('http://localhost:8080/warhammerClassifier/saveWarhammerClassifier', classifier)
       .subscribe(
         response => {

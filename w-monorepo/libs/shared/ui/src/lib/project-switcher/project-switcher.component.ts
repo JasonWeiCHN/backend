@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IProjectSwitcher } from './shared/project-switcher.interface';
+import { ISwitcherProject } from './shared/project-switcher.interface';
 
 @Component({
   selector: 'w-project-switcher',
@@ -10,11 +10,11 @@ import { IProjectSwitcher } from './shared/project-switcher.interface';
   styleUrl: './project-switcher.component.scss'
 })
 export class ProjectSwitcherComponent {
-  @Input() selectedProject: IProjectSwitcher | undefined = undefined;
-  @Input() projects: IProjectSwitcher[] = [];
-  @Output() projectSelected: EventEmitter<IProjectSwitcher> = new EventEmitter<IProjectSwitcher>();
+  @Input() selectedProject: ISwitcherProject | undefined = undefined;
+  @Input() projects: ISwitcherProject[] = [];
+  @Output() projectSelected: EventEmitter<ISwitcherProject> = new EventEmitter<ISwitcherProject>();
 
-  selectProject(project: IProjectSwitcher) {
+  selectProject(project: ISwitcherProject) {
     this.selectedProject = project;
     this.projectSelected.emit(project);
   }

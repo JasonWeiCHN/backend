@@ -22,4 +22,5 @@ public class AddClan {
     private String description;
     private String warhammerClassifierId;
     private String contributorIds;  // 贡献者ID列表，用逗号分隔
+    private Integer order;
 }

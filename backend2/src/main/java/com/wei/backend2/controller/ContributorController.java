@@ -1,5 +1,6 @@
 package com.wei.backend2.controller;
 import com.wei.backend2.entity.Contributor;
+import com.wei.backend2.entity.ItemCard;
 import com.wei.backend2.payload.request.AddContributor;
 import com.wei.backend2.service.ContributorService;
 import io.swagger.annotations.Api;
@@ -29,5 +30,11 @@ public class ContributorController {
     @ApiOperation(value = "Add contributor")
     public void saveContributor(@RequestBody AddContributor addContributor){
         contributorService.saveContributor(addContributor);
+    }
+
+    @GetMapping("/search")
+    @ApiOperation(value = "Search item contributor by column and keyword")
+    public List<Contributor> searchContributor(@RequestParam String column, @RequestParam String keyword) {
+        return contributorService.searchContributor(column, keyword);
     }
 }
