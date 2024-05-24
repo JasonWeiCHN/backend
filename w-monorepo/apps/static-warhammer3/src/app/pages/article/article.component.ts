@@ -3,12 +3,10 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { BackButtonComponent, EList, IItemCard, ITag, ListComponent, TagSelectorComponent } from '@w-monorepo/ui';
 import { EArticleTags, IClan, IWarhammerClassifierMap, WARHAMMER_CLASSIFIERS_MAP } from '@w-monorepo/warhammer';
-import { IArticleMap } from '@w-monorepo/interfaces';
+import { IArticleMap, IContributor } from '@w-monorepo/interfaces';
 import { ARTICLES_MAP } from '../../shared/constants/data.constants';
 import { AnalysisHttpService } from '@w-monorepo/analysis';
-import {
-  IContributor
-} from '../../../../../management/src/app/pages/contributor/shared/interfaces/contributor.interface';
+import { VoteHttpService } from '@w-monorepo/vote';
 
 @Component({
   selector: 'app-article',
@@ -17,12 +15,13 @@ import {
   templateUrl: './article.component.html',
   styleUrl: './article.component.scss',
   encapsulation: ViewEncapsulation.None,
-  providers: [AnalysisHttpService]
+  providers: [AnalysisHttpService, VoteHttpService]
 })
 export class ArticleComponent implements OnInit {
   // TODO 优化: 没有数据的应该不显示
   protected tags: ITag[] = [
     { id: EArticleTags.ALL, name: '全部' },
+    { id: EArticleTags.VOTE, name: '投票' },
     { id: EArticleTags.CLANS_DESCRIPTION, name: '派系说明' },
     { id: EArticleTags.LIVE_RECORDING, name: '实况录像' },
     { id: EArticleTags.TASK, name: '任务' },
@@ -35,10 +34,14 @@ export class ArticleComponent implements OnInit {
   protected title = '';
   protected clan: IClan | undefined = undefined;
   protected readonly eList = EList;
+  protected readonly EArticleTags = EArticleTags;
   protected data: IItemCard[] | undefined = undefined;
+  protected selectedTagId: string = EArticleTags.ALL;
+  protected votes: Record<string, number> = {};
 
   public constructor(
-    private analysisHttpService: AnalysisHttpService,
+    private readonly voteHttpService: VoteHttpService,
+    private readonly analysisHttpService: AnalysisHttpService,
     private readonly _activatedRoute: ActivatedRoute
   ) {
   }
@@ -58,8 +61,9 @@ export class ArticleComponent implements OnInit {
   protected onTagSeclet(tagIndex: number): void {
     const { id } = this._activatedRoute.snapshot.params;
     const selectedTagId = this.tags[tagIndex].id;
+    this.selectedTagId = selectedTagId;
 
-    if (selectedTagId === 'all') {
+    if (selectedTagId === EArticleTags.ALL) {
       // 如果选择了 "全部" 标签，则显示所有文章
       this.data = this.articlesMap[id];
     } else {
@@ -68,10 +72,27 @@ export class ArticleComponent implements OnInit {
         article.tagIds?.includes(selectedTagId)
       );
     }
+
+    if (selectedTagId === EArticleTags.VOTE) {
+      // TODO 1 应该优化为一次获取所有投票数据（已实现） 2 popularity 应该设计为枚举 3 避免多次投票
+      this.voteHttpService.getSubjectVotes(this.clan?.file.id || '').subscribe((response: any) => {
+        this.votes = response;
+      }, (error: any) => {
+        console.error('Error submitting string:', error);
+      });
+    }
   }
 
   protected onContributorClick(contributor: IContributor): void {
     this.analysisHttpService.submitString('跳转: ' + contributor.name).subscribe((response: any) => {
+      // console.log('String submitted successfully!', response);
+    }, (error: any) => {
+      console.error('Error submitting string:', error);
+    });
+  }
+
+  protected onVoteClick(subjectId: string, mechanismId: string): void {
+    this.voteHttpService.submitVote(subjectId, mechanismId).subscribe((response: any) => {
       // console.log('String submitted successfully!', response);
     }, (error: any) => {
       console.error('Error submitting string:', error);

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IAddContributor, IContributor } from '../interfaces/contributor.interface';
+import { IAddContributor, IContributor } from '@w-monorepo/interfaces';
 
 @Injectable()
 export class ContributorHttpService {

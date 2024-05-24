@@ -1,5 +1,6 @@
 export enum EArticleTags {
   ALL = 'all',
+  VOTE = 'vote',
   CLANS_DESCRIPTION = 'clansDescription',
   LIVE_RECORDING = 'liveRecording',
   NEWER_TEACH = 'newerTeach',

@@ -8,12 +8,13 @@
       <div class="info">
         <div style="font-size: 20px">{{ clan.file.heroName }}</div>
         <div style="font-size: 16px">{{ clan.file.nameCN }}</div>
+        <div style="font-size: 16px">外号: {{ clan.file.heroNickName }}</div>
       </div>
     </div>
     <w-back-button></w-back-button>
   </div>
   <ng-container *ngIf="clan?.file as file">
-    <div class="game-strategy">
+    <div *ngIf="file.description?.length" class="game-strategy">
       <div [innerHTML]="file.description"></div>
       <ng-container *ngIf="file.contributors?.length">
         <p
@@ -32,13 +33,32 @@
     </div>
   </ng-container>
   <w-tag-selector [tags]="tags" (tagSelected)="onTagSeclet($event)"></w-tag-selector>
-  <w-list
-    *ngIf="data.length"
-    [data]="data"
-    [mode]="eList.ARTICLE"
-    (listItemClick)="onListItemClick($event)"
-  ></w-list>
-  <div *ngIf="!data.length">
-    暂无内容
+  <ng-container *ngIf="selectedTagId !== EArticleTags.VOTE">
+    <w-list
+      *ngIf="data.length"
+      [data]="data"
+      [mode]="eList.ARTICLE"
+      (listItemClick)="onListItemClick($event)"
+    ></w-list>
+    <div *ngIf="!data.length">
+      暂无内容
+    </div>
+  </ng-container>
+  <div *ngIf="clan && selectedTagId === EArticleTags.VOTE" class="vote-list">
+    <div
+      class="vote-item"
+      style="">
+      <div>我喜欢 {{ clan.file.heroName }}, 投他一票, 给他涨涨人气!</div>
+      <div style="display: flex">
+        <div class="vote-value">{{ votes['popularity'] }}</div>
+        <div class="vote-button" (click)="onVoteClick(clan.file.id, 'popularity')">投票</div>
+      </div>
+    </div>
+    <div
+      class="vote-item"
+      style="">
+      <div>适合新手 {{ clan.file.heroName }}, 投他一票!</div>
+      <div>投票 600 +</div>
+    </div>
   </div>
 </div>

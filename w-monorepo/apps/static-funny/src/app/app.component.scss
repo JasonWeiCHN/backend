@@ -1,3 +1,5 @@
+@import "libs/shared/ui/src/styles/loaders/loaders.scss";
+
 .w-app {
   min-width: 290px;
   height: 100vh;
@@ -20,6 +22,7 @@
 
   .img-container {
     cursor: pointer;
+    position: relative; // 保持加载动画和图片的定位一致
 
     .pic, .gif {
       width: 120px;
@@ -34,6 +37,13 @@
 
     .gif {
       display: none;
+    }
+
+    .loading {
+      width: 120px;
+      height: 120px;
+      background: #0d0d0d;
+      position: absolute;
     }
 
     &:hover {
@@ -54,7 +64,7 @@
   margin: 12px auto;
   padding: 6px 24px;
   color: #888888;
-  border: 1px solid #888888;
+  border: 1px solid #9b9b9b;
   cursor: pointer;
 
   &:hover {
@@ -62,5 +72,3 @@
     border-color: #ffffff;
   }
 }
-
-

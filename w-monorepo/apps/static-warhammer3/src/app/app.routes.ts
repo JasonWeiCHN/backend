@@ -4,6 +4,7 @@ import { ClansComponent } from './pages/clans/clans.component';
 import { WarSchoolComponent } from './pages/war-school/war-school.component';
 import { ArticlesComponent } from './pages/articles/articles.component';
 import { ModsComponent } from './pages/mods/mods.component';
+import { DiscountComponent } from './pages/discount/discount.component';
 
 export const appRoutes: Route[] = [
   {
@@ -25,6 +26,10 @@ export const appRoutes: Route[] = [
   {
     path: 'articles',
     component: ArticlesComponent
+  },
+  {
+    path: 'discount',
+    component: DiscountComponent
   },
   {
     path: 'war-school',

@@ -30,7 +30,8 @@
 .game-strategy {
   padding: 4px 0;
   margin: 12px 0;
-  border-radius: 5px;
+  border-bottom: 1px solid #9b9b9b;
+  border-top: 1px solid #9b9b9b;
 
   .contributors {
     font-size: 14px;
@@ -49,6 +50,29 @@
 
     a:hover {
       color: #ffffff;
+    }
+  }
+}
+
+.vote-list {
+  .vote-item {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 4px 0;
+    margin-bottom: 6px;
+    border-bottom: 1px solid #9b9b9b;
+
+    .vote-button {
+      cursor: pointer;
+      margin-left: 6px;
+      border-bottom: 1px solid #9b9b9b;
+    }
+
+    .vote-button:hover {
+      color: #f696dd;
+      border-color: #f696dd;
     }
   }
 }

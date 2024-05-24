@@ -1,7 +1,7 @@
 import { IApp } from '@w-monorepo/interfaces';
 
 export const APP_CONFIG: IApp = {
-  fileServer: 'http://localhost:8000/', // 'http://111.230.29.99:5001/funny/'
+  fileServer: 'http://111.230.29.99:5001/funny/', // 'http://localhost:8000/'
   banner: {
     title: '搞笑一箩筐',
     subtitle: '我要的只是快乐',

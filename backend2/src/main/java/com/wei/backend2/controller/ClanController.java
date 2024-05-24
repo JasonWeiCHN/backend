@@ -68,6 +68,7 @@ public class ClanController {
                 file.put("name", clan.getName());
                 file.put("nameCN", clan.getNameCN());
                 file.put("heroName", clan.getHeroName());
+                file.put("heroNickName", clan.getHeroNickName());
                 file.put("heroAvatarPath", clan.getHeroAvatarPath());
                 file.put("path", clan.getPath());
                 file.put("description", clan.getDescription());

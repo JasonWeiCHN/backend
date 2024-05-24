@@ -4,7 +4,7 @@
   &__selected-project {
     cursor: pointer;
     padding: 8px;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #9b9b9b;
   }
 
   &__selector {
@@ -15,7 +15,8 @@
     top: 40px;
     right: 0;
     width: 180px;
-    border: 1px solid #ccc;
+    padding: 0 8px;
+    border: 1px solid #9b9b9b;
     border-radius: 4px 0 4px 4px;
     background: #2A475E;
 
@@ -33,6 +34,10 @@
 
 
 .project-switcher:hover {
+  .project-switcher__selected-project {
+    color: #ffffff;
+  }
+
   .project-switcher__selector {
     display: block;
   }

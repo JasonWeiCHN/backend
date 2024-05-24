@@ -27,5 +27,9 @@ export const APP_CONFIG: IApp = {
       id: 'mods',
       path: 'mods',
       label: 'Mod推荐'
+    }, {
+      id: 'discount',
+      path: 'discount',
+      label: '折扣消息'
     }]
 };

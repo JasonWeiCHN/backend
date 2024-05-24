@@ -23,8 +23,12 @@
       transform: translateX(-50%);
       width: 60%;
       height: 2px;
-      background-color: #d8d8d8;
+      background-color: #ffffff;
     }
+  }
+
+  &__item.active, &__item:hover {
+    color: #ffffff;
   }
 
   &__item::after {

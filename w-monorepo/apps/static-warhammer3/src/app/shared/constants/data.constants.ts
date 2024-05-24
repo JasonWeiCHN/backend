@@ -199,6 +199,20 @@ export const ARTICLES_MAP: IArticleMap = {
     'title': '战锤全战视频：库迦-雷霆战帅',
     'views': 6425
   }],
+  'discount': [{
+    'date': '2024-05-24 13:00',
+    'sourceUrl': 'https://www.bilibili.com/video/BV1Dz421Y7EF',
+    'referer': null,
+    'imageUrl': 'BV1Dz421Y7EF',
+    'tagIds': [''],
+    'publisher': '古老游戏玩家',
+    'description': '[全面战争 · 战锤3 · 特卖] 截止 5 月 31 日\n\n折扣 -50% \n现价 149\n全面战争·战锤系列其他作品也在打折中',
+    'typeId': 'discount',
+    'id': '508',
+    'detail': '',
+    'title': '[全面战争 · 战锤3 · 特卖] 截止 5 月 31 日',
+    'views': 26
+  }],
   'Talsyn': [{
     'date': '2024-02-29 15:32:26',
     'sourceUrl': 'https://www.bilibili.com/video/BV1MF4m1j7Ce/?spm_id_from=333.337.search-card.all.click',

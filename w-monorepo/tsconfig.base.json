@@ -19,6 +19,7 @@
       "@w-monorepo/game": ["libs/game/src/index.ts"],
       "@w-monorepo/interfaces": ["libs/shared/interfaces/src/index.ts"],
       "@w-monorepo/ui": ["libs/shared/ui/src/index.ts"],
+      "@w-monorepo/vote": ["libs/vote/src/index.ts"],
       "@w-monorepo/warhammer": ["libs/warhammer/src/index.ts"]
     }
   },

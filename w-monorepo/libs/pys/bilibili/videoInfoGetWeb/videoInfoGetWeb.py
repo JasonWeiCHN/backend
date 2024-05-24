@@ -14,7 +14,7 @@ SESSDATA = "7bbcbe74%2C1731807787%2C249d1%2A51CjBMs7JpVYq0g-13xJ292DZeFJ8LFDkYzc
 BILI_JCT = "063d77cc6e5d7f03fad77cdf2baf6f27"
 BUVID3 = ""
 FFMPEG_PATH = r"F:/ffmpeg/bin/ffmpeg.exe"
-OUTPUT_FOLDER = r"F:\biliGet\troy"
+OUTPUT_FOLDER = r"F:/biliGet/warhammer3"
 
 async def download_url(url: str, out: str, info: str):
     async with httpx.AsyncClient(headers=HEADERS) as sess:

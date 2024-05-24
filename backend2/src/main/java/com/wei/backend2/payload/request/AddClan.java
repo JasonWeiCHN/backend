@@ -18,6 +18,7 @@ public class AddClan {
     private String path;
     private String heroName;
     private String heroNameEN;
+    private String heroNickName;
     private String heroAvatarPath;
     private String description;
     private String warhammerClassifierId;

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ContributorHttpService } from './shared/services/contributor.http.service';
-import { IAddContributor, IContributor } from './shared/interfaces/contributor.interface';
+import { IAddContributor, IContributor } from '@w-monorepo/interfaces';
 
 @Component({
   selector: 'm-contributor',

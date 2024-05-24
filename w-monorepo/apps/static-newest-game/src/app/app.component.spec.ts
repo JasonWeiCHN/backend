@@ -15,13 +15,13 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain(
-      'Welcome static-newest-game'
+      'Welcome static-shogun'
     );
   });
 
-  it(`should have as title 'static-newest-game'`, () => {
+  it(`should have as title 'static-shogun'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('static-newest-game');
+    expect(app.title).toEqual('static-shogun');
   });
 });

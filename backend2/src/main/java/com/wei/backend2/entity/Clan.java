@@ -17,6 +17,7 @@ public class Clan {
     private String path;
     private String heroName;
     private String heroNameEN;
+    private String heroNickName;
     private String heroAvatarPath;
 
     @Column(columnDefinition = "TEXT")

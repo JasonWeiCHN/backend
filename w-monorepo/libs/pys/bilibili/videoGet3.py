@@ -12,10 +12,10 @@ from datetime import datetime
 SESSDATA = "7bbcbe74%2C1731807787%2C249d1%2A51CjBMs7JpVYq0g-13xJ292DZeFJ8LFDkYzcnaDktku-cT6_89_roXGd-OUZZSX2KwhtkSVkFFeDc3NkFYQkNKemNVd2FZYVpVanBWdnV4Y0JqM3FDX2NxYXgza3Z2cm1uU3VLWUF1RmJlVXVUc2JWRktnZzdxYU5UWGlkT281NXptZFpyZl96NGlRIIEC"
 BILI_JCT = "063d77cc6e5d7f03fad77cdf2baf6f27"
 BUVID3 = ""
-BVIDS = ["BV1Xm421K7rc"] # 修改为你的多个 BVID
+BVIDS = ["BV11m421K7un"] # 修改为你的多个 BVID
 # FFMPEG 路径，查看：http://ffmpeg.org/
 FFMPEG_PATH = r"F:/ffmpeg/bin/ffmpeg.exe"
-OUTPUT_FOLDER = r"F:\biliGet\funny"
+OUTPUT_FOLDER = r"F:/biliGet/newest-game"
 
 async def download_url(url: str, out: str, info: str):
     # 下载函数

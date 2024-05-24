@@ -8,19 +8,25 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/static-newest-game",
         "index": "apps/static-newest-game/src/index.html",
         "main": "apps/static-newest-game/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "apps/static-newest-game/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
           "apps/static-newest-game/src/favicon.ico",
           "apps/static-newest-game/src/assets"
         ],
-        "styles": ["apps/static-newest-game/src/styles.scss"],
+        "styles": [
+          "apps/static-newest-game/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -57,7 +63,8 @@
           "buildTarget": "static-newest-game:build:production"
         },
         "development": {
-          "buildTarget": "static-newest-game:build:development"
+          "buildTarget": "static-newest-game:build:development",
+          "port": 4208
         }
       },
       "defaultConfiguration": "development"
@@ -73,7 +80,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
         "jestConfig": "apps/static-newest-game/jest.config.ts"
       }

@@ -11,6 +11,7 @@ export interface IImageFile {
   path: string;
   heroName: string;
   heroNameEN?: string;
+  heroNickName?: string;
   heroAvatarPath: string;
   description?: string | null;
   order?: number;

@@ -9,7 +9,12 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "lodash/*": ["node_modules/@types/lodash-es/*"]
+      "lodash/*": [
+        "node_modules/@types/lodash-es/*"
+      ],
+      "@w-monorepo/analysis": [
+        "libs/analysis/src/index.ts"
+      ]
     }
   },
   "files": [],
