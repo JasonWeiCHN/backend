@@ -240,9 +240,9 @@ export const WARHAMMER_CLASSIFIERS: IWarhammerClassifier[] = [
       'path': 'assets/images/icons/Dwarfs/Karaz-a-Karak.png',
       'name': 'Karaz-a-Karak',
       'nameCN': '卡拉扎-阿-卡拉克',
-      'description': null,
+      'description': '<p>向东攻下“葛朗尼石厅”、“史奎格独角山”，统一“白银之路”。</p><p>敌人是绿皮派系“血矛”，他们只是个小威胁。</p><p>招募副领主，攻下“至高之地”后，我们会遇上邪月“史卡斯尼克”的主力。</p><p>可以伏击，抓住机会消灭他们。</p><p>也可以直接突进上去干。</p><p>前期主力作战单位是雷管矿工。</p><br/><p>索尔格林是一位非常“硬”的矮人传奇领主。</p><p>大师级恶怨符文是他的主要输出手段。</p><p>先点红线，留点加特殊线技能。</p><br/><p>消灭史卡斯尼克，即可破局。</p>',
       'id': 'Karaz_a_Karak',
-      'contributors': [],
+      'contributors': [{ 'id': 3, 'name': '温酱与夏凉丶', 'url': 'https://space.bilibili.com/22088751' }],
       'heroName': '索尔葛林·负怨者',
       'order': 1
     }, {
@@ -251,9 +251,9 @@ export const WARHAMMER_CLASSIFIERS: IWarhammerClassifier[] = [
       'path': 'assets/images/icons/Dwarfs/Karak_Kadrin.png',
       'name': 'Karak_Kadrin',
       'nameCN': '卡拉克·卡德林',
-      'description': null,
+      'description': '<p>攻下“纳施拉克巢穴”。</p><p>可以考虑兵分两路。</p><p>主队向南进攻“殇王山”、“葛罗姆峰”，拿下“肋骨峰”。</p><p>通过“穿行地道”进入东面的“刚巴德峰”。</p><p>建造“攻城工坊”出投石车，招募副队向北偷袭绿皮派系“响骨”阿兹汗·屠灭者。</p><p>我们被两个绿皮派系夹在中间，如果不先动手，就会陷入腹背受敌的困境。</p><br/><p>阿格里姆·铁拳是一位传奇屠夫领主。</p><p>拥有非常强的战斗能力，特性“永不战败”，大师级恶怨符文加上很强的近战能力，让他成为“斩将”好手。</p><p>但也要小心，撤退不及时可能暴毙。</p><p>开局就是二本城，可以出投石机，也可以用矿工（雷管）和重矢弩手开局。</p><br/><p>消灭阿兹汗·屠灭者和史卡斯尼克，即可破局。</p>',
       'id': 'Karak_Kadrin',
-      'contributors': [],
+      'contributors': [{ 'id': 3, 'name': '温酱与夏凉丶', 'url': 'https://space.bilibili.com/22088751' }],
       'heroName': '阿格里姆·铁拳',
       'order': 2
     }, {
@@ -262,9 +262,13 @@ export const WARHAMMER_CLASSIFIERS: IWarhammerClassifier[] = [
       'path': 'assets/images/icons/Dwarfs/Clan_Angrund.png',
       'name': 'Clan_Angrund',
       'nameCN': '安格朗德氏族',
-      'description': null,
+      'description': '<p>攻下“卡拉克·卜达尔”，“卡拉克·铜山堡”，统一“山底洞窟”。</p><p>与“卡拉克·号角堡”合邦。</p><p>接下来有三种发展思路：</p><p>思路一，守卫家园，这是一种求稳的玩法。把与自己接壤或临近的敌人逐一消灭，包括史库里氏族-伊克特·利爪、萨图沙海盗-盐怨和大胃信徒-斯卡拉格，这种玩法对作战能力要求比较高，因为敌人不弱，部队维持费也较贵。</p><p>思路二，招募投石车，补充部队，直奔八峰山，兵贵神速，灭掉奎克·猎头者，可以减少维持费，但也会进入多线作战的局面。</p><p>思路三，攻下“斯坦加特”，进攻“索尔岭”，将城市交易给埃斯佩斯·冯·邓肯（新传奇领主，外号“墓园玫瑰”），达成防御同盟。进攻盐怨，打下“提利尔岭”交易给大胃信徒，达成防御同盟...通过外交手段来改变周边的敌我环境，寻求发展。</p><br/><p>每种思路都可破局，自由选择。</p><br/><p>贝勒爷开局自带四位先祖（英雄）， 战斗力极强，但惧怕魔法攻击。</p><p>主加红线技能，增强部队作战能力，留点加特殊线。</p><p>投石机、矿工（雷管）和重矢弩手都是可靠的作战单位。</p>',
       'id': 'Clan_Angrund',
-      'contributors': [],
+      'contributors': [{
+        'id': 5,
+        'name': '御剑小蚂蚁Zorth',
+        'url': 'https://space.bilibili.com/3546654250633889'
+      }, { 'id': 3, 'name': '温酱与夏凉丶', 'url': 'https://space.bilibili.com/22088751' }],
       'heroName': '贝勒加·铁锤',
       'order': 3
     }, {
@@ -273,9 +277,9 @@ export const WARHAMMER_CLASSIFIERS: IWarhammerClassifier[] = [
       'path': 'assets/images/icons/Dwarfs/The_Ancestral_Throng.png',
       'name': 'The_Ancestral_Throng',
       'nameCN': '先祖之军',
-      'description': null,
+      'description': '<p>攻下“上古尖塔”、“终极黑暗祭坛”，统一“镔铁海岸”。</p><br/><p>在终极黑暗祭坛，可能会撞上“娜迦隆德”的主力。</p><p>伏击“马雷基斯”或者与他正面开战，也可以等他们攻城，我们在后面偷袭，这里有很多选择。</p><br/><p>“白矮人”格瑞姆布林戴尔是一位强力的近战领主，开局部队的“铁龙手炮兵”杀伤力惊人。</p><p>推荐红线加点，12级前留点加特殊线技能。</p><p>矮人直升机飞机和铁龙手炮兵可以获得很好的战果。</p><p>注意黑暗精灵的弩手部队，破甲伤害对矮人是不小的威胁。</p><br/><p>消灭马雷基斯，即可破局。</p>',
       'id': 'The_Ancestral_Throng',
-      'contributors': [],
+      'contributors': [{ 'id': 3, 'name': '温酱与夏凉丶', 'url': 'https://space.bilibili.com/22088751' }],
       'heroName': '白矮人·格瑞姆布林戴尔',
       'order': 4
     }, {
@@ -284,9 +288,9 @@ export const WARHAMMER_CLASSIFIERS: IWarhammerClassifier[] = [
       'path': 'assets/images/icons/Dwarfs/The_Ancestral_Throng.png',
       'name': 'Ironbrows_Expedition',
       'nameCN': '铁眉远征军',
-      'description': null,
+      'description': '<p>攻下“失落高原”、“蛛网山”，统一“南地世界边缘山脉”</p><p>一路北上，打下“卡拉格·红云山”，拿下你的第一个神器。</p><br/><p>有两个选择，宣战西面的恐虐派系“斯卡布兰德”，和他厮杀。</p><p>也可以向东，帮助至高女王消灭吸血鬼，穿过迷雾山，进攻奎克·猎头者，拿下一件神器。</p><p>去八峰山方向的神器比较多，路线也更好走。</p><br/><p>托雷克·铁眉是一位传奇符文铁匠，给部队非常高的加成，自身的属性也很好。</p><p>恶怨符文输出，矿工（雷管）和重矢弩手组合能轻松干掉周围的敌人。</p><p>主加红线技能。</p><br/><p>消灭斯卡布兰德或者奎克·猎头者，即可破局。</p>',
       'id': 'Ironbrows_Expedition',
-      'contributors': [],
+      'contributors': [{ 'id': 3, 'name': '温酱与夏凉丶', 'url': 'https://space.bilibili.com/22088751' }],
       'heroName': '托雷克·铁眉',
       'order': 5
     }, {
@@ -295,9 +299,9 @@ export const WARHAMMER_CLASSIFIERS: IWarhammerClassifier[] = [
       'path': 'assets/images/icons/Dwarfs/The_Ancestral_Throng.png',
       'name': 'Masters_of_lnnovation',
       'nameCN': '创新大师',
-      'description': null,
+      'description': '<p>5.0版本新增的矮人传奇领主，拥有超级大杀器飞艇“葛朗尼之魂”。</p><p>这艘飞艇能让你获得“绝对”的快感。</p><br/><p>开局战后可以通过“穿行地道”向南直取“地狱深坑”，再向东进攻“阿斯特戈斯·铁手”。</p><p>也可以分兵两路，在第3/4回合拿下地狱深坑，注意西边的“冬牙”，这是一个实实在在的威胁。</p><br/><p>马拉凯·马凯森是一位混合武器领主，作战能力一般，主队是“半游牧”部队。</p><p>但有了大杀器-飞艇“哥朗尼之魂”后，不需要太多部队，就能发挥超强的战斗力。</p><p>可以很快建立副队实现扩张，马拉凯的大冒险也可以让我们在前期获得不少战力强悍的部队。</p><p>主加红线技能。</p><br/><p>拿下地狱深坑，即可破局。</p>',
       'id': 'Masters_of_lnnovation',
-      'contributors': [],
+      'contributors': [{ 'id': 3, 'name': '温酱与夏凉丶', 'url': 'https://space.bilibili.com/22088751' }],
       'heroName': '马拉凯·马凯森',
       'order': 6
     }],
@@ -312,9 +316,9 @@ export const WARHAMMER_CLASSIFIERS: IWarhammerClassifier[] = [
       'path': 'assets/images/icons/The Empire/Reikland.png',
       'name': 'Reikland',
       'nameCN': '瑞克领',
-      'description': null,
+      'description': '<p>消灭叛军“帝国分离势力”，统一“瑞克领”。</p><p>集结部队进攻西北方的“玛丽恩堡”，也是帝国派系，但和卡皇关系并不好。</p><p>拿下玛丽恩堡后可以招募边民骑手，他可以使用榴弹发射器，简称“榴弹骑”。</p><br/><p>一路北上，消灭宿敌“卡扎克·独眼”。</p><p>向“黄铜要塞”进军攻打“费斯图斯”，也是我们必须要消灭的敌人。</p><br/><p>卡尔·弗兰茨前期的身板并不“硬”，作战时需要注意他的血量。</p><p>红线加点，然后加特殊线。</p><br/><p>副领主招募“工程大师”，非常好用。</p><p>可以选择“射爆流”或是骑兵与工程大师组合的“炮轰流”，都非常舒服。</p><br/><p>消灭弗卡扎克·独眼和费斯图斯，即可破局。</p>',
       'id': 'Reikland',
-      'contributors': [],
+      'contributors': [{ 'id': 3, 'name': '温酱与夏凉丶', 'url': 'https://space.bilibili.com/22088751' }],
       'heroName': '皇帝·卡尔·弗兰茨',
       'order': 1
     }, {
@@ -323,9 +327,9 @@ export const WARHAMMER_CLASSIFIERS: IWarhammerClassifier[] = [
       'path': 'assets/images/icons/The Empire/The_Golden_Order.png',
       'name': 'The_Golden_Order',
       'nameCN': '黄金学院',
-      'description': null,
+      'description': '<p>5.0版本之后，拜尔沙泽·盖尔特的初始位置已经移动到了“天离烈土”，这儿是震旦天朝的势力范围。</p><br/><p>攻下“精风寺” ，先占领一个城市。</p><p>可以兵分两路，让主队拜尔沙泽·盖尔特进入西南峡谷隧道，攻打“蓝玫瑰车队”赫尔曼·苟斯特和纳垢派系“库嘎斯·瘟父”。</p><p>副队进攻“燃风牧民”。</p><br/><p>消灭两大威胁后，拿下“巨龙群岛”这块肥硕之地。</p><br/><p>得益于5.0版本对于“魔法学院”的改动，通过得到“奥数论文”，可以快速组建“法师大队”，战力惊人。</p><p>主加法师线和特殊线。</p><br/><p>消灭赫尔曼·苟斯特和库嘎斯·瘟父，即可破局。</p>',
       'id': 'The_Golden_Order',
-      'contributors': [],
+      'contributors': [{ 'id': 3, 'name': '温酱与夏凉丶', 'url': 'https://space.bilibili.com/22088751' }],
       'heroName': '拜尔沙泽·盖尔特',
       'order': 2
     }, {
@@ -334,9 +338,9 @@ export const WARHAMMER_CLASSIFIERS: IWarhammerClassifier[] = [
       'path': 'assets/images/icons/The Empire/The_Huntsmarshals_Expedition.png',
       'name': 'The_Huntsmarshals_Expedition',
       'nameCN': '猎人元帅远征军',
-      'description': null,
+      'description': '<p>开局消灭一支斯卡文鼠人部队，在南美（露丝契亚），猎人元帅的主要任务是消灭蜥蜴人。</p><p>进攻“塔兰克斯拉”，以大白蜥“哥罗克”为攻略目标。</p><br/><p>马库斯·沃法特在“特殊线”技能的加成下，招募“工程大师”，战力很恐怖。</p><p>通过不停的征战，获得帝国的援兵。</p><br/><p>外交上与艾博里克·德·波尔德罗和玉龙·元伯联合，在南美可以肆意妄为。</p><br/><p>消灭哥罗克，即可破局。</p>',
       'id': 'The_Huntsmarshals_Expedition',
-      'contributors': [],
+      'contributors': [{ 'id': 3, 'name': '温酱与夏凉丶', 'url': 'https://space.bilibili.com/22088751' }],
       'heroName': '马库斯·沃法特',
       'order': 3
     }, {
@@ -345,9 +349,9 @@ export const WARHAMMER_CLASSIFIERS: IWarhammerClassifier[] = [
       'path': 'assets/images/icons/The Empire/Cult_of_Sigmar.png',
       'name': 'Cult_of_Sigmar',
       'nameCN': '西格玛教会',
-      'description': null,
+      'description': '<p>消灭“沙丘王国”，统一“苦行僧之地”。</p><p>在夺取“漂移沙地”时，会碰上曼弗雷德·冯·卡斯坦因（吸血鬼伯爵）的部队。</p><p>可以借刀杀人，也可以直接向他宣战。</p><br/><p>击败曼弗雷德主队后，一鼓作气拿下他的地盘。</p><p>接下来消灭附近所有的古墓王派系。</p><br/><p>沃克玛·无情者可以招募非常强力的牧师领主，这是他的厉害之处。</p><p>这些牧师技能CD短、自身属性优秀。</p><p>再加上工程大师，破局简单。</p><br/><p>消灭曼弗雷德·冯·卡斯坦因，即可破局。</p>',
       'id': 'Cult_of_Sigmar',
-      'contributors': [],
+      'contributors': [{ 'id': 3, 'name': '温酱与夏凉丶', 'url': 'https://space.bilibili.com/22088751' }],
       'heroName': '沃克玛·无情者',
       'order': 4
     }, {
@@ -356,9 +360,9 @@ export const WARHAMMER_CLASSIFIERS: IWarhammerClassifier[] = [
       'path': 'assets/images/icons/The Empire/Cult_of_Sigmar.png',
       'name': 'Wissenland_Nuln',
       'nameCN': '威森领与努恩',
-      'description': null,
+      'description': '<p>攻下“道腾巴赫”、“威森堡”，统一“威森领”。</p><p>拿下“索尔领”，第五回合在“穆特”建造“莫尔花园”和附属建筑“莫尔民兵营”，攻下“索尔要塞”。</p><p>传送至穆特，与吸血鬼派系希尔瓦尼亚“弗拉德·冯·卡斯坦因”开战。</p><br/><p>前期战损很低，建造“法师密会所”，准备招募“烈焰法师”，他是对付绿皮和吸血鬼的强力单位。</p><p>招募一个“大诵经师”领主作为前排。</p><p>墓园玫瑰护甲很低，不要近战。</p><p>大工程师的默认武器榴弹是很强的反步兵手段。</p><p>火枪手、努恩铁甲军、黑色玫瑰团骑士、地狱风暴火箭炮都是核心战力。</p><br/><p>消灭弗拉德·冯·卡斯坦因，即可破局。</p>',
       'id': 'Wissenland_Nuln',
-      'contributors': [],
+      'contributors': [{ 'id': 6, 'name': '时间老猫', 'url': 'https://space.bilibili.com/12426474' }],
       'heroName': '埃斯佩斯·冯·邓肯',
       'order': 5
     }],
@@ -373,9 +377,9 @@ export const WARHAMMER_CLASSIFIERS: IWarhammerClassifier[] = [
       'path': 'assets/images/icons/Grand Cathay/The_Northern_Provinces.png',
       'name': 'The_Northern_Provinces',
       'nameCN': '卫北列省',
-      'description': null,
+      'description': '<p>攻下“南离”，统一“硝硫路”，接着拿下“蕹昌”、“兵马俑墓园”、“魄魅”，统一“岩镔原”。</p><p>快速集结部队，直扑东南方的绿皮派系“点心”。</p><p>攻下点心的主城后，会与艾辛氏族相遇，消灭他们。</p><p>下一个目标是洛克西亚·堕落之心。</p><br/><p>飙龙·妙影是拥有强大法术的法师，“大地之血”为部队补充血量。</p><p>震旦部队属性优异，注意保持“武道宁和”。</p><p>外交上与“帝国戍卫”和“天庭忠卫”合邦。</p><br/><p>控制长垣，抵御库尔甘战帮和维里奇的进攻。</p><br/><p>扫平震旦境内威胁，消灭艾辛氏族和洛克西亚·堕落之心，即可破局。</p>',
       'id': 'The_Northern_Provinces',
-      'contributors': [],
+      'contributors': [{ 'id': 3, 'name': '温酱与夏凉丶', 'url': 'https://space.bilibili.com/22088751' }],
       'heroName': '飙龙·妙影',
       'order': 1
     }, {
@@ -384,9 +388,9 @@ export const WARHAMMER_CLASSIFIERS: IWarhammerClassifier[] = [
       'path': 'assets/images/icons/Grand Cathay/The_Western_Provinces.png',
       'name': 'The_Western_Provinces',
       'nameCN': '卫西列省',
-      'description': null,
+      'description': '<p>攻下“瀚宇港”，统一“缙绅荒原”。</p><p>灭掉“新武”的斯卡文鼠人，北攻“上阳”，到达“泰梓”后，可以向东北进攻，背刺“艾辛氏族”，拿下行省“皓月林”。</p><p>合邦“玉石护军”，消灭吸血鬼伯爵派系“僵尸叛军”，宣战洛克西亚·堕落之心。</p><br/><p>他的出生点很好，破局简单。</p><br/><p>镔龙·昭明兼通“金属系”和“阳系”的双修法师，还有强大的近战肉搏能力。</p><p>对近战部队有很好的加成。</p><br/><p>消灭艾辛氏族，即可破局。</p>',
       'id': 'The_Western_Provinces',
-      'contributors': [],
+      'contributors': [{ 'id': 3, 'name': '温酱与夏凉丶', 'url': 'https://space.bilibili.com/22088751' }],
       'heroName': '镔龙·昭明',
       'order': 2
     }, {
@@ -395,9 +399,9 @@ export const WARHAMMER_CLASSIFIERS: IWarhammerClassifier[] = [
       'path': 'assets/images/icons/Grand Cathay/The_Jade_Court.png',
       'name': 'The_Jade_Court',
       'nameCN': '玉廷',
-      'description': null,
+      'description': '<p>玉龙·元伯开局就是双线发展。</p><br/><p>在南美（露丝契亚）消灭蛮荒兽人派系“蓝蝰蛇”，沿着海岸，向正南方往“千噬”方向进攻。</p><p>震旦方向招募部队攻打吸血鬼伯爵派系“僵尸叛军”，统一“天廷河源”，之后进攻“艾辛氏族”和洛克西亚·堕落之心。</p><br/><p>玉龙·元伯属性优异，拥有无与伦比的近战肉搏能力，强大的“无双”，可以斩杀敌方领主或部队。</p><p>拥有天堂系法术“卡莎朵拉彗星”和阴系法术“夜鸮决”可以大范围秒杀敌方部队。</p><br/><p>“国是”机制可以加速完成招募和建造。</p><br/><p>消灭千噬，即可破局。</p>',
       'id': 'The_Jade_Court',
-      'contributors': [],
+      'contributors': [{ 'id': 3, 'name': '温酱与夏凉丶', 'url': 'https://space.bilibili.com/22088751' }],
       'heroName': '玉龙·元伯',
       'order': 3
     }],

@@ -1,0 +1,62 @@
+@keyframes rotateAndScale {
+  0% {
+    transform: scale(1.2) rotate(0deg); /* 开始时为原始大小1.2倍和0度旋转 */
+  }
+  100% {
+    transform: scale(1.0) rotate(360deg); /* 结束时恢复原始大小并顺时针旋转360度 */
+  }
+}
+
+.vote {
+  box-sizing: border-box;
+  width: 100%;
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    color: #d8d8d8;
+    border: 1px solid #9b9b9b;
+
+    .title {
+      color: #c4c4a8;
+      font-size: 16px;
+    }
+
+    .des {
+      color: #c4c4c4;
+    }
+
+    .to-vote-detail {
+      transition: transform 0.3s;
+
+      span {
+        display: none;
+      }
+    }
+  }
+
+  &__item:hover {
+    background: #2A475E;
+
+    .title {
+      color: #fcfcbd;
+    }
+
+    .des {
+      color: #ffffff;
+    }
+
+    .to-vote-detail {
+      animation: rotateAndScale 0.3s forwards;
+
+      span {
+        display: inline;
+        color: #ffffff;
+      }
+    }
+  }
+}

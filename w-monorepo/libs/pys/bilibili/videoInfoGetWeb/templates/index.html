@@ -14,6 +14,11 @@
   <label for="clanId">Select Clan ID:</label><br>
   <input type="text" id="clanSearch" oninput="filterClans()" placeholder="Search for Hero Name...">
   <select id="clanId" name="clanId">
+    <option value="china" data-hero="china">food-中华美食</option>
+    <option value="southeastAsia" data-hero="southeastAsia">food-东南亚</option>
+    <option value="arabic" data-hero="arabic">food-阿拉伯</option>
+    <option value="europe" data-hero="europe">food-欧洲</option>
+    <option value="america" data-hero="america">food-美洲</option>
     <option value="strategy" data-hero="strategy">game-攻略</option>
     <option value="liveRecording" data-hero="liveRecording">game-实况录播</option>
     <option value="backgroundKnowledge" data-hero="backgroundKnowledge">game-背景知识</option>
@@ -48,6 +53,22 @@
   <label for="story">Story 讲故事</label><br>
   <input type="checkbox" id="task" name="tags" value="task">
   <label for="task">Task 任务</label><br><br>
+
+  <label for="tags">特产网专用子分类:</label><br>
+  <input type="checkbox" id="food" name="tags" value="food">
+  <label for="food">美食</label><br>
+  <input type="checkbox" id="tea" name="tags" value="tea">
+  <label for="tea">茶</label><br>
+  <input type="checkbox" id="wine" name="tags" value="wine">
+  <label for="wine">酒</label><br>
+  <input type="checkbox" id="fruit" name="tags" value="fruit">
+  <label for="fruit">水果</label><br>
+  <input type="checkbox" id="gemstone" name="tags" value="gemstone">
+  <label for="gemstone">宝石</label><br>
+  <input type="checkbox" id="medicine" name="tags" value="medicine">
+  <label for="medicine">名药</label><br>
+  <input type="checkbox" id="flower" name="tags" value="flower">
+  <label for="flower">花</label><br><br>
 
   <input type="button" value="Save" onclick="saveData()">
 </form>

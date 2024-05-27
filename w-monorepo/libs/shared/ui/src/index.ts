@@ -29,3 +29,7 @@ export * from './lib/back-button/back-button.component';
 export * from './lib/pagination/pagination.component';
 
 export * from './lib/project-switcher/index';
+
+export * from './lib/snackbar/index';
+
+export * from './lib/china-city-selector';

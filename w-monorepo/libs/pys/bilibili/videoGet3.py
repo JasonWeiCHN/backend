@@ -9,13 +9,13 @@ from PIL import Image
 from datetime import datetime
 
 # 替换成你的 SESSDATA、BILI_JCT 和 FFMPEG_PATH
-SESSDATA = "7bbcbe74%2C1731807787%2C249d1%2A51CjBMs7JpVYq0g-13xJ292DZeFJ8LFDkYzcnaDktku-cT6_89_roXGd-OUZZSX2KwhtkSVkFFeDc3NkFYQkNKemNVd2FZYVpVanBWdnV4Y0JqM3FDX2NxYXgza3Z2cm1uU3VLWUF1RmJlVXVUc2JWRktnZzdxYU5UWGlkT281NXptZFpyZl96NGlRIIEC"
-BILI_JCT = "063d77cc6e5d7f03fad77cdf2baf6f27"
+SESSDATA = "cdd559b0%2C1732628222%2C78fb6%2A52CjByfOrSpcsDMdYsBtdk3RtgNMXxGZLuhMRVayeU6jgPpJ-e4eBBJ3cxo954UF-_knASVjZnU0R5OGVRM2Q3TnYtQldfRUk5NjV6RnNHNkRrM0JTbzB6N0J1V1QySTJ6VEkwSTdfTDRNVG9HMXQwdUZXdWhodEJ2WjRzbEVlSnJDM0pyZmhtRzZBIIEC"
+BILI_JCT = "184ce2026c73b98ceab96234fa84091e"
 BUVID3 = ""
-BVIDS = ["BV11m421K7un"] # 修改为你的多个 BVID
+BVIDS = ["BV1jt421h7m6", "BV1G1421279D", "BV1vn4y1R7kz", "BV1um421N78R", "BV1cH4y1E7Dg", "BV1Y7421d73h", "BV1rJ4m1w7Aa", "BV1yM4m1k7CN", "BV1N1421D7tX", "BV18n4y1o7pq", "BV16y411879A", "BV1tu411G7oK", "BV1fu411n78V", "BV1mi421U7PF", "BV1wM4m1r7Uv", "BV1qM4m1k7EX", "BV1ny411e7H3", "BV11s421w7Q9", "BV1mD421G7Ti", "BV1sZ421x76Z"] # 修改为你的多个 BVID
 # FFMPEG 路径，查看：http://ffmpeg.org/
 FFMPEG_PATH = r"F:/ffmpeg/bin/ffmpeg.exe"
-OUTPUT_FOLDER = r"F:/biliGet/newest-game"
+OUTPUT_FOLDER = r"F:/biliGet/beauty"
 
 async def download_url(url: str, out: str, info: str):
     # 下载函数
@@ -138,7 +138,8 @@ def generate_submission_data(video_info, bvid, output_folder):
         'imageUrl': bvid,
         'title': video_info['title'],
         'publisher': video_info['owner']['name'],
-        'detail': json.dumps(video_info),
+        # 'detail': json.dumps(video_info),
+        'detail': '',
         'description': video_info['desc'],
         'views': video_info['stat']['view'],
         'date': datetime.fromtimestamp(video_info['pubdate']).strftime('%Y-%m-%d %H:%M'),
@@ -163,31 +164,33 @@ async def process_bvid(bvid, num_frames, frame_duration):
 
     # 检查输出文件夹是否已存在
     if os.path.exists(output_folder):
-        print(f" BVID {bvid} 已存在, 跳过本次操作...")
+        print(f"BVID {bvid} 已存在, 跳过本次操作...")
         return
 
     # 创建输出文件夹
     os.makedirs(output_folder, exist_ok=True)
 
-    # 下载视频并获取视频信息
-    await download_video(bvid, output_folder)
+    try:
+        # 下载视频并获取视频信息
+        await download_video(bvid, output_folder)
 
-    # 转换视频为 GIF
-    # extract_random_frames(os.path.join(output_folder, "video.mp4"), output_folder, num_frames, frame_duration)
+        # 读取视频信息
+        with open(os.path.join(output_folder, 'video_info.json'), 'r', encoding='utf-8') as f:
+            video_info = json.load(f)
 
-    # 读取视频信息
-    with open(os.path.join(output_folder, 'video_info.json'), 'r', encoding='utf-8') as f:
-        video_info = json.load(f)
+        # 下载视频信息中的图片
+        await download_images(video_info, output_folder)
 
-    # 下载视频信息中的图片
-    await download_images(video_info, output_folder)
+        # 生成提交后台请求的数据
+        submission_data = generate_submission_data(video_info, bvid, output_folder)
+        print(submission_data)
 
-    # 生成提交后台请求的数据
-    submission_data = generate_submission_data(video_info, bvid, output_folder)
-    print(submission_data)
+        # 提交后台请求
+        await submit_data(submission_data)
 
-    # 提交后台请求
-    await submit_data(submission_data)
+    except Exception as e:
+        print(f"处理 BVID {bvid} 时发生错误: {e}")
+
 
 async def main():
     # 输入参数
@@ -196,7 +199,10 @@ async def main():
 
     # 逐个处理每个 BVID
     for bvid in BVIDS:
-        await process_bvid(bvid, num_frames, frame_duration)
+        try:
+            await process_bvid(bvid, num_frames, frame_duration)
+        except Exception as e:
+            print(f"处理 BVID {bvid} 时发生错误: {e}")
 
 if __name__ == '__main__':
     asyncio.run(main())

@@ -22,6 +22,7 @@ public class ItemCard {
 
     private String title;
     private Integer views;
+    @Column(columnDefinition = "TEXT")
     private String description;
     private String publisher;
     private String date;

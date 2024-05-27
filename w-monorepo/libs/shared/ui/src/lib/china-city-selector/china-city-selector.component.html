@@ -1,0 +1,18 @@
+<div class="city-switcher">
+  <div class="city-switcher__selected-city">
+    {{ selectedCity?.name }}
+  </div>
+  <div class="city-switcher__selector">
+    <div *ngFor="let province of provinces" style="margin-bottom: 16px">
+      <div class="city-switcher__selector__province">{{ province.name }}</div>
+      <div
+        *ngFor="let city of province.children"
+        class="city-switcher__selector__city"
+        [class.selected]="city.code === selectedCity?.code"
+        (click)="selectCity(city)"
+      >
+        {{ city.name }}
+      </div>
+    </div>
+  </div>
+</div>

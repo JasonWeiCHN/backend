@@ -1,0 +1,46 @@
+{
+  "name": "Taurox the Brass Bull",
+  "factions": {
+    "name": "Warherd of the One-Eye",
+    "icon": "https://res.cloudinary.com/fishofstone/image/upload/twwstats/api/8714479261853360749/ui/flags/wh_dlc03_bst_beastmen/mon_24.webp"
+  },
+  "caste": "Lord",
+  "is_large": {
+    "value": "Yes",
+    "icon": "https://res.cloudinary.com/fishofstone/image/upload/twwstats/api/8714479261853360749/ui/skins/default/icon_entity_large.webp"
+  },
+  "unit_size": 1,
+  "health": 7368,
+  "barrier_health": 0,
+  "armour": 130,
+  "leadership": 80,
+  "speed": 64,
+  "melee_attack": {
+    "value": 53,
+    "effect": "Flaming Attack",
+    "icon": "https://res.cloudinary.com/fishofstone/image/upload/twwstats/api/8714479261853360749/ui/skins/default/modifier_icon_flaming.webp"
+  },
+  "can_siege": {
+    "value": "Yes",
+    "icon": "https://res.cloudinary.com/fishofstone/image/upload/twwstats/api/8714479261853360749/ui/battle ui/ability_icons/can_siege.webp"
+  },
+  "melee_defence": 47,
+  "primary_melee_weapon": {
+    "damage": 500
+  },
+  "charge_bonus": 54,
+  "primary_missile_weapon": {
+    "ammo": 0,
+    "projectile_range": 0,
+    "damage": null
+  },
+  "multiplayer_cost": 1600,
+  "singleplayer_cost": 0,
+  "singleplayer_upkeep": 0,
+  "create_time": 1,
+  "category": {
+    "name": "Melee Specialist",
+    "icon_holder": "https://res.cloudinary.com/fishofstone/image/upload/twwstats/api/8714479261853360749/ui/skins/default/unit_cat_holder_round.webp",
+    "icon": "https://res.cloudinary.com/fishofstone/image/upload/twwstats/api/8714479261853360749/ui/common ui/unit_category_icons/wh_dlc03_bst_gorebull.webp"
+  }
+}

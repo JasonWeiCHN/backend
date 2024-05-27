@@ -1,0 +1,60 @@
+.city-switcher {
+  position: relative;
+
+  &__selected-city {
+    cursor: pointer;
+    padding: 8px;
+    border-bottom: 1px solid #9b9b9b;
+  }
+
+  &__selector {
+    box-sizing: border-box;
+    display: none;
+    position: absolute;
+    z-index: 100;
+    top: 40px;
+    right: 0;
+    width: 180px;
+    padding: 0 8px;
+    border: 1px solid #9b9b9b;
+    border-radius: 4px 0 4px 4px;
+    background: #2A475E;
+    //word-break: keep-all;
+
+    &__province {
+      padding-bottom: 8px;
+    }
+
+    &__city {
+      padding: 0 0 4px 12px;
+      cursor: pointer;
+      border-bottom: 1px solid transparent;
+      color: #9b9b9b;
+
+      &:hover {
+        color: #ffffff;
+        border-bottom: 1px solid #ffffff;
+      }
+    }
+
+    .selected {
+      color: #ffffff;
+    }
+  }
+}
+
+
+.city-switcher:hover {
+  .city-switcher__selected-city {
+    color: #ffffff;
+  }
+
+  .city-switcher__selector {
+    display: block;
+
+    //display: flex;
+    //flex-wrap: wrap;
+    //max-height: 500px;
+    //overflow-y: scroll;
+  }
+}

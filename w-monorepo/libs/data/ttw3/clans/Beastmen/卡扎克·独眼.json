@@ -1,0 +1,46 @@
+{
+  "name": "Khazrak the One-Eye",
+  "factions": {
+    "name": "Warherd of the One-Eye",
+    "icon": "https://res.cloudinary.com/fishofstone/image/upload/twwstats/api/8714479261853360749/ui/flags/wh_dlc03_bst_beastmen/mon_24.webp"
+  },
+  "caste": "Lord",
+  "is_large": {
+    "value": "Yes",
+    "icon": "https://res.cloudinary.com/fishofstone/image/upload/twwstats/api/8714479261853360749/ui/skins/default/icon_entity_small.webp"
+  },
+  "unit_size": 1,
+  "health": 4972,
+  "barrier_health": 0,
+  "armour": 100,
+  "leadership": 75,
+  "speed": 42,
+  "melee_attack": {
+    "value": 60,
+    "effect": "",
+    "icon": ""
+  },
+  "can_siege": {
+    "value": "Yes",
+    "icon": "https://res.cloudinary.com/fishofstone/image/upload/twwstats/api/8714479261853360749/ui/battle ui/ability_icons/can_siege.webp"
+  },
+  "melee_defence": 52,
+  "primary_melee_weapon": {
+    "damage": 490
+  },
+  "charge_bonus": 70,
+  "primary_missile_weapon": {
+    "ammo": 0,
+    "projectile_range": 0,
+    "damage": null
+  },
+  "multiplayer_cost": 950,
+  "singleplayer_cost": 0,
+  "singleplayer_upkeep": 0,
+  "create_time": 1,
+  "category": {
+    "name": "",
+    "icon_holder": "",
+    "icon": ""
+  }
+}

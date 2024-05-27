@@ -12,8 +12,8 @@ import { RouterOutlet } from '@angular/router';
 })
 export class MainComponent {
   public items = [
-    { label: '种族', link: '/race' },
-    { label: '派系', link: '/clans' },
+    { label: '主类', link: '/race' },
+    { label: '次类', link: '/clans' },
     { label: '文章', link: '/item-cards' },
     { label: '贡献者', link: '/contributor' }
   ];

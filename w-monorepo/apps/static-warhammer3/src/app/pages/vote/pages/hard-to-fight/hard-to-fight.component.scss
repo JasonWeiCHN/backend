@@ -1,0 +1,14 @@
+.selected-names {
+  margin-bottom: 12px;
+
+  .vote-button {
+    cursor: pointer;
+    margin-left: 6px;
+    color: #a86797;
+  }
+
+  .vote-button:hover {
+    color: #f696dd;
+    border-color: #f696dd;
+  }
+}

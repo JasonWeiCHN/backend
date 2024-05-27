@@ -19,17 +19,27 @@ export const APP_CONFIG: IApp = {
       id: 'articles',
       path: 'articles',
       label: '最新资讯'
-    }, {
+    },
+    {
       id: 'warSchool',
       path: 'war-school',
       label: '战争讲堂'
-    }, {
+    },
+    {
       id: 'mods',
       path: 'mods',
       label: 'Mod推荐'
-    }, {
+    },
+    {
       id: 'discount',
       path: 'discount',
       label: '折扣消息'
-    }]
+    }
+    // TODO 多选投票 暂未完成 有难度
+    // {
+    //   id: 'vote',
+    //   path: 'vote',
+    //   label: '投票区'
+    // }
+  ]
 };

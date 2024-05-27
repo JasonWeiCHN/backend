@@ -1,39 +1,47 @@
 import { Component } from '@angular/core';
-import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { NxWelcomeComponent } from './nx-welcome.component';
-import { BannerComponent, INavigationItem, NavigationComponent } from '@w-monorepo/ui';
+import {
+  BannerComponent,
+  EList,
+  IItemCard,
+  INavigationItem,
+  ListComponent,
+  NavigationComponent,
+  ProjectSwitcherComponent
+} from '@w-monorepo/ui';
 import { NgIf } from '@angular/common';
 import { IApp } from '@w-monorepo/interfaces';
+import { HttpClientModule } from '@angular/common/http';
 import { APP_CONFIG } from './shared/constants/app.config.constans';
+import { ARTICLES_MAP } from './shared/constants/data.constants';
 
 @Component({
   standalone: true,
-  imports: [NxWelcomeComponent, RouterModule, BannerComponent, NavigationComponent, NgIf],
+  imports: [HttpClientModule, NxWelcomeComponent, BannerComponent, NavigationComponent, NgIf, ProjectSwitcherComponent, ListComponent],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
+  protected readonly eList = EList;
   protected appConfig: IApp = APP_CONFIG;
-  protected navigationItemActive = 'clans';
-  protected showNavigation = true;
+  protected navigationItemActive = 'china';
 
-  public constructor(private _router: Router) {
-    // 订阅路由变化事件
-    this._router.events.subscribe(event => {
-      if (event instanceof NavigationEnd) {
-        // 检查当前路由是否匹配'article/:id'
-        this.showNavigation = !this._router.url.includes('article/');
-      }
-    });
-  }
-
-  protected onBannerClick() {
-    this._router.navigate(['']);
-  }
+  public food: IItemCard[] = ARTICLES_MAP[this.navigationItemActive];
 
   protected onNavigationItemClick(item: INavigationItem) {
     this.navigationItemActive = item.id;
-    this._router.navigate([item.path]);
+    this.food = ARTICLES_MAP[this.navigationItemActive].map(item => {
+      return {
+        ...item,
+        imageUrl: `${APP_CONFIG.fileServer}${item.imageUrl}/pic.jpg`
+      };
+    });
+  }
+
+  protected onListItemClick(item: IItemCard): void {
+    if (item.sourceUrl) {
+      window.open(item.sourceUrl, '_blank');
+    }
   }
 }

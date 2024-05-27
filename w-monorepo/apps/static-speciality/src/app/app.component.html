@@ -1,0 +1,27 @@
+<div class="w-app">
+  <w-banner
+    [data]="appConfig.banner"
+  >
+    <div rightContent>
+      <w-china-city-selector
+        [provinces]="provinces"
+        [selectedCity]="selectedCity"
+        (citySelected)="onCitySelected($event)"
+      ></w-china-city-selector>
+    </div>
+  </w-banner>
+  <div class="page">
+    <w-navigation
+      [items]="appConfig.navigationItems"
+      (navigationItemClick)="onNavigationItemClick($event)"
+    ></w-navigation>
+    <div style="margin-top: 12px">
+      <w-list
+        [data]="data"
+        [mode]="eList.GAME"
+        (listItemClick)="onListItemClick($event)"
+      ></w-list>
+    </div>
+  </div>
+</div>
+

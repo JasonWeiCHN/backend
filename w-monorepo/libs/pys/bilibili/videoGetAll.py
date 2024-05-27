@@ -3,8 +3,8 @@ from bilibili_api import video, Credential, HEADERS
 import httpx
 import os
 
-SESSDATA = "6ee3c61d%2C1730955052%2C1cb77%2A51CjDAygcxInzoPR8iz_KWaluDNvEgadVmiP0PcIrTfaz2GNhA3zTRp0rjRXTRXB9IVm8SVmN6UV9VNFlYWDRER2pCYm9mZm5NUzBKdTFRMmN6b2RNUzB3UVR5U3B0eENKalZyTlFlNXpzZGZrN3doNkpwSV9nQXlIalRYVXFmei0xM1JpaVA0S0NBIIEC"
-BILI_JCT = "7e5c5317fe9573a2c2d1d0817cccbd81"
+SESSDATA = "efed9675%2C1732526644%2C780fe%2A52CjBc_juThMRyt98RWNnl6EnRmTjB_GgUFuJSkKVpeiihf7qxV3VII9BPu3nBQkP91HASVnhoUE41SmtNMUNHUTRxZl9hbTlNdHdHNWpHZV83QmROemlNRG9IeU1YVlNOc21yc2lRaUhCZVgwdWd2S19vWnd0SWlqRWY1VDBmdG8tckMyTjNNMlRnIIEC"
+BILI_JCT = "ddd5a462f300305b5952d902cf2289af"
 BUVID3 = ""
 
 # FFMPEG 路径，查看：http://ffmpeg.org/
@@ -29,7 +29,7 @@ async def main():
     # 实例化 Credential 类
     credential = Credential(sessdata=SESSDATA, bili_jct=BILI_JCT, buvid3=BUVID3)
     # 实例化 Video 类
-    v = video.Video(bvid="BV13r421u7k8", credential=credential)
+    v = video.Video(bvid="BV1rn4y1o7pH", credential=credential)
     # 获取视频下载链接
     download_url_data = await v.get_download_url(0)
     # 解析视频下载信息
@@ -46,8 +46,8 @@ async def main():
         os.remove("flv_temp.flv")
     else:
         # MP4 流下载
-        await download_url(streams[8].url, "video_temp.m4s", "视频流")
-        await download_url(streams[20].url, "audio_temp.m4s", "音频流")
+        await download_url(streams[1].url, "video_temp.m4s", "视频流")
+        await download_url(streams[16].url, "audio_temp.m4s", "音频流")
 
         # 混流
         result = os.system(f'{FFMPEG_PATH} -i video_temp.m4s -i audio_temp.m4s -vcodec copy -acodec copy video.mp4')

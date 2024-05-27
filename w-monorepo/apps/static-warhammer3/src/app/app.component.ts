@@ -7,16 +7,29 @@ import {
   ISwitcherProject,
   NavigationComponent,
   ProjectSwitcherComponent,
-  SlideshowComponent
+  SlideshowComponent,
+  SnackbarComponent,
+  SnackbarModule
 } from '@w-monorepo/ui';
-import { NgIf } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { APP_CONFIG } from './shared/constants/app.config.constans';
 import { IApp } from '@w-monorepo/interfaces';
 import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   standalone: true,
-  imports: [HttpClientModule, NxWelcomeComponent, RouterModule, BannerComponent, NavigationComponent, NgIf, SlideshowComponent, ProjectSwitcherComponent],
+  imports: [
+    SnackbarModule,
+    HttpClientModule,
+    NxWelcomeComponent,
+    RouterModule,
+    BannerComponent,
+    NavigationComponent,
+    CommonModule,
+    SlideshowComponent,
+    ProjectSwitcherComponent,
+    SnackbarComponent
+  ],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

@@ -1,0 +1,13 @@
+<div class="vote">
+  <div *ngFor="let item of votes" class="vote__item" (click)="onVoteClick(item)">
+    <div>
+      <div class="title">{{ item.title }}</div>
+      <div class="des">{{ item.description }}</div>
+    </div>
+    <div class="to-vote-detail">
+        <span>
+           进入
+        </span>
+    </div>
+  </div>
+</div>

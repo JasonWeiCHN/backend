@@ -8,19 +8,25 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/static-food",
         "index": "apps/static-food/src/index.html",
         "main": "apps/static-food/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "apps/static-food/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
           "apps/static-food/src/favicon.ico",
           "apps/static-food/src/assets"
         ],
-        "styles": ["apps/static-food/src/styles.scss"],
+        "styles": [
+          "apps/static-food/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -57,7 +63,8 @@
           "buildTarget": "static-food:build:production"
         },
         "development": {
-          "buildTarget": "static-food:build:development"
+          "buildTarget": "static-food:build:development",
+          "port": 4209
         }
       },
       "defaultConfiguration": "development"
@@ -73,7 +80,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
         "jestConfig": "apps/static-food/jest.config.ts"
       }

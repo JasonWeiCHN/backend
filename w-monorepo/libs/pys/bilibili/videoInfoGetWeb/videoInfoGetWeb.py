@@ -10,8 +10,8 @@ from bilibili_api import video, Credential, HEADERS
 app = Flask(__name__)
 
 # 替换成你的 SESSDATA、BILI_JCT 和 FFMPEG_PATH
-SESSDATA = "7bbcbe74%2C1731807787%2C249d1%2A51CjBMs7JpVYq0g-13xJ292DZeFJ8LFDkYzcnaDktku-cT6_89_roXGd-OUZZSX2KwhtkSVkFFeDc3NkFYQkNKemNVd2FZYVpVanBWdnV4Y0JqM3FDX2NxYXgza3Z2cm1uU3VLWUF1RmJlVXVUc2JWRktnZzdxYU5UWGlkT281NXptZFpyZl96NGlRIIEC"
-BILI_JCT = "063d77cc6e5d7f03fad77cdf2baf6f27"
+SESSDATA = "8b1d63e4%2C1732938512%2C50fdf%2A62CjBHqTjnzlu60m4yrYhGS1D7nTb3c1BeCsNfkvDP3mYJNMh2BTmI1DNqNaEQuFJRmNASVkJXN2h5cWZEUW51dDEwVF9lMFFiMXF2RXBYZkFqNEJQRU00VW51RjRaZWRGMkVCRjZFeFg0LV85eGk5OXhjZjk2clZ5MElTNG50dlhxRmR4QVNYYURBIIEC"
+BILI_JCT = "b982a6b975769eb33632aea3d215485c"
 BUVID3 = ""
 FFMPEG_PATH = r"F:/ffmpeg/bin/ffmpeg.exe"
 OUTPUT_FOLDER = r"F:/biliGet/warhammer3"
@@ -43,13 +43,13 @@ async def download_images(video_info, output_folder):
     await download_url(pic_url, os.path.join(output_folder, 'pic.jpg'), "视频封面")
     await asyncio.sleep(2)
 
-def generate_submission_data(video_info, bvid, output_folder):
+def generate_submission_data(video_info, bvid):
     obj = {
         'typeId': '',
         'imageUrl': bvid,
         'title': video_info['title'],
         'publisher': video_info['owner']['name'],
-        'detail': json.dumps(video_info),
+        'detail': '',
         'description': video_info['desc'],
         'views': video_info['stat']['view'],
         'date': datetime.fromtimestamp(video_info['pubdate']).strftime('%Y-%m-%d %H:%M'),
@@ -58,11 +58,12 @@ def generate_submission_data(video_info, bvid, output_folder):
     return obj
 
 async def submit_data(submission_data):
+    proxy_url = "http://localhost:8080"  # 代理地址和端口
     backend_url = 'http://localhost:8080/itemCard/saveItemCard'
     headers = {'Content-Type': 'application/json'}
 
     try:
-        async with httpx.AsyncClient() as client:
+        async with httpx.AsyncClient(proxies=proxy_url) as client:
             response = await client.post(backend_url, json=submission_data, headers=headers)
             response.raise_for_status()
             print('Data submitted successfully!')
@@ -71,16 +72,22 @@ async def submit_data(submission_data):
 
 async def process_bvid(bvid, type_id, tag_ids):
     output_folder = os.path.join(OUTPUT_FOLDER, bvid)
+
+    # 检查输出文件夹是否已存在
+    if os.path.exists(output_folder):
+        print(f"BVID {bvid} 已存在, 跳过本次操作...")
+        return
+
+    # 创建输出文件夹
     os.makedirs(output_folder, exist_ok=True)
     await download_video(bvid, output_folder)
     with open(os.path.join(output_folder, 'video_info.json'), 'r', encoding='utf-8') as f:
         video_info = json.load(f)
     await download_images(video_info, output_folder)
-    submission_data = generate_submission_data(video_info, bvid, output_folder)
+    submission_data = generate_submission_data(video_info, bvid)
     # 覆盖 typeId 和 tagIds
     submission_data['typeId'] = type_id
     submission_data['tagIds'] = tag_ids
-    print(submission_data)
     await submit_data(submission_data)
 
 @app.route('/')

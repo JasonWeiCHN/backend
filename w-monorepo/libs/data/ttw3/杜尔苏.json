@@ -1,0 +1,46 @@
+{
+  "name": "Durthu",
+  "factions": {
+    "name": "Talsyn",
+    "icon": "https://res.cloudinary.com/fishofstone/image/upload/twwstats/api/8714479261853360749/ui/flags/wh_dlc05_wef_wood_elves/mon_24.webp"
+  },
+  "caste": "Lord",
+  "is_large": {
+    "value": "Yes",
+    "icon": "https://res.cloudinary.com/fishofstone/image/upload/twwstats/api/8714479261853360749/ui/skins/default/icon_entity_large.webp"
+  },
+  "unit_size": 1,
+  "health": 9828,
+  "barrier_health": 0,
+  "armour": 110,
+  "leadership": 90,
+  "speed": 35,
+  "melee_attack": {
+    "value": 65,
+    "effect": "Magical Attack",
+    "icon": "https://res.cloudinary.com/fishofstone/image/upload/twwstats/api/8714479261853360749/ui/skins/default/modifier_icon_magical.webp"
+  },
+  "can_siege": {
+    "value": "Yes",
+    "icon": "https://res.cloudinary.com/fishofstone/image/upload/twwstats/api/8714479261853360749/ui/battle ui/ability_icons/can_siege.webp"
+  },
+  "melee_defence": 48,
+  "primary_melee_weapon": {
+    "damage": 490
+  },
+  "charge_bonus": 40,
+  "primary_missile_weapon": {
+    "ammo": 0,
+    "projectile_range": 0,
+    "damage": null
+  },
+  "multiplayer_cost": 1800,
+  "singleplayer_cost": 1800,
+  "singleplayer_upkeep": 450,
+  "create_time": 1,
+  "category": {
+    "name": "Monster",
+    "icon_holder": "https://res.cloudinary.com/fishofstone/image/upload/twwstats/api/8714479261853360749/ui/skins/default/unit_cat_holder_round.webp",
+    "icon": "https://res.cloudinary.com/fishofstone/image/upload/twwstats/api/8714479261853360749/ui/common ui/unit_category_icons/wh_dlc05_wef_treeman.webp"
+  }
+}

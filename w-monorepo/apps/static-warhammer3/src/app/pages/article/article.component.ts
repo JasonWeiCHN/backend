@@ -1,7 +1,15 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { BackButtonComponent, EList, IItemCard, ITag, ListComponent, TagSelectorComponent } from '@w-monorepo/ui';
+import {
+  BackButtonComponent,
+  EList,
+  IItemCard,
+  ITag,
+  ListComponent,
+  SnackbarService,
+  TagSelectorComponent
+} from '@w-monorepo/ui';
 import { EArticleTags, IClan, IWarhammerClassifierMap, WARHAMMER_CLASSIFIERS_MAP } from '@w-monorepo/warhammer';
 import { IArticleMap, IContributor } from '@w-monorepo/interfaces';
 import { ARTICLES_MAP } from '../../shared/constants/data.constants';
@@ -40,6 +48,7 @@ export class ArticleComponent implements OnInit {
   protected votes: Record<string, number> = {};
 
   public constructor(
+    private snackbarService: SnackbarService,
     private readonly voteHttpService: VoteHttpService,
     private readonly analysisHttpService: AnalysisHttpService,
     private readonly _activatedRoute: ActivatedRoute
@@ -50,6 +59,7 @@ export class ArticleComponent implements OnInit {
     const { id } = this._activatedRoute.snapshot.params;
     this.clan = this.warhammerClassifiersMap[id];
     this.data = this.articlesMap[id];
+    this.getVotes();
   }
 
   protected onListItemClick(item: IItemCard): void {
@@ -72,15 +82,6 @@ export class ArticleComponent implements OnInit {
         article.tagIds?.includes(selectedTagId)
       );
     }
-
-    if (selectedTagId === EArticleTags.VOTE) {
-      // TODO 1 应该优化为一次获取所有投票数据（已实现） 2 popularity 应该设计为枚举 3 避免多次投票
-      this.voteHttpService.getSubjectVotes(this.clan?.file.id || '').subscribe((response: any) => {
-        this.votes = response;
-      }, (error: any) => {
-        console.error('Error submitting string:', error);
-      });
-    }
   }
 
   protected onContributorClick(contributor: IContributor): void {
@@ -93,6 +94,31 @@ export class ArticleComponent implements OnInit {
 
   protected onVoteClick(subjectId: string, mechanismId: string): void {
     this.voteHttpService.submitVote(subjectId, mechanismId).subscribe((response: any) => {
+      if (response.error) {
+        // TODO hard code
+        if (response.error === 'You have already voted') {
+          // alert('你已经给他投过票啦!');
+          this.snackbarService.show('你已经给他投过票啦!');
+        }
+      } else {
+        this.logVote(subjectId, mechanismId);
+        this.getVotes();
+      }
+    }, (error: any) => {
+      console.error('Error submitting string:', error);
+    });
+  }
+
+  private getVotes(): void {
+    this.voteHttpService.getSubjectVotes(this.clan?.file.id || '').subscribe((response: any) => {
+      this.votes = response;
+    }, (error: any) => {
+      console.error('Error submitting string:', error);
+    });
+  }
+
+  private logVote(subjectId: string, mechanismId: string): void {
+    this.analysisHttpService.submitString(`投票: ${subjectId} ${mechanismId}`).subscribe((response: any) => {
       // console.log('String submitted successfully!', response);
     }, (error: any) => {
       console.error('Error submitting string:', error);

@@ -12,24 +12,55 @@
     </div>
   </w-banner>
   <div class="page">
-    <!-- TODO 可直接引入静态页面 -->
-    <!--<a href="/assets/oda.html" target="_blank">宝藏游戏之家 - 全面战争·幕府将军</a>-->
-    <div class="subtitle">
-      6月新游
+    <ng-container *ngIf="mode === eMode.HOME">
+      <!-- TODO 可直接引入静态页面 -->
+      <!--<a href="/assets/oda.html" target="_blank">宝藏游戏之家 - 全面战争·幕府将军</a>-->
+      <div class="subtitle">
+        首发新游
+      </div>
+      <w-list
+        [data]="newest"
+        [mode]="eList.GAME"
+        (listItemClick)="onSteamGameClick($event)"
+      ></w-list>
+      <div class="subtitle">
+        最新打折
+      </div>
+      <w-list
+        [data]="discount"
+        [mode]="eList.GAME"
+        (listItemClick)="onSteamGameClick($event)"
+      ></w-list>
+      <div class="subtitle">
+        新游资讯
+      </div>
+      <w-list
+        [data]="new"
+        [mode]="eList.ARTICLE"
+        (listItemClick)="onListItemClick($event)"
+      ></w-list>
+    </ng-container>
+    <div *ngIf="mode === eMode.DETAIL && game" class="game-detail">
+      <div class="game-detail__header">
+        <div class="left">
+          <div class="image-box">
+            <img [src]="game.imageUrl" alt="">
+          </div>
+          <div class="title">{{ game.title }}</div>
+        </div>
+        <div style="display: flex">
+          <button style="margin-right: 12px" (click)="goSteam(game)">Steam 商店</button>
+          <button (click)="goBack()">返回</button>
+        </div>
+      </div>
+      <div class="game-detail__price">
+        <div class="initial">原价: <span>{{ game.price?.initial }}</span></div>
+        <div class="discount-percent">折扣: <span>- {{ game.price?.discountPercent }} %</span></div>
+        <div class="final">现价: <span>{{ game.price?.final }}</span></div>
+        <div class="date">截止日期: <span>{{ game.date }}</span></div>
+      </div>
+      <div style="margin-top: 12px">简介: {{ game.description }}</div>
     </div>
-    <w-list
-      [data]="strategy"
-      [mode]="eList.ARTICLE"
-      (listItemClick)="onListItemClick($event)"
-    ></w-list>
-    <div class="subtitle">
-      实况录像
-    </div>
-    <w-list
-      [data]="liveRecording"
-      [mode]="eList.ARTICLE"
-      (listItemClick)="onListItemClick($event)"
-    ></w-list>
   </div>
 </div>
 

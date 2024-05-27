@@ -1,0 +1,11 @@
+<div class="selected-names">
+  选中的项:
+  <span *ngFor="let name of selectedNames; let last = last">
+    {{ name }}<span *ngIf="!last">, </span>
+  </span>
+</div>
+
+<app-race-multiple-selector
+  [maxSelection]="3"
+  (selectionChange)="onSelectionChange($event)">
+</app-race-multiple-selector>

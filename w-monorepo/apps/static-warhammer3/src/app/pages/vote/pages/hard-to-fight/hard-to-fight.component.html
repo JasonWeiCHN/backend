@@ -1,0 +1,17 @@
+<div class="selected-names" style="margin-bottom: 12px">
+  <div>
+    你的选择:
+    <button class="vote-button" *ngIf="selectedNames.length">确认投票</button>
+  </div>
+  <div *ngIf="selectedNames.length">
+     <span *ngFor="let name of selectedNames; let last = last">
+      {{ name }}<span *ngIf="!last">, </span>
+    </span>
+  </div>
+  <div *ngIf="!selectedNames.length">暂无选择</div>
+</div>
+
+<app-race-multiple-selector
+  [maxSelection]="3"
+  (selectionChange)="onSelectionChange($event)">
+</app-race-multiple-selector>

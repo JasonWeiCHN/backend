@@ -1,3 +1,9 @@
+export interface IPrice {
+  discountPercent: number;
+  initial: string;
+  final: string;
+}
+
 export interface IItemCard {
   id: string;
   tagIds: string[];
@@ -11,4 +17,5 @@ export interface IItemCard {
   date: string;
   detail: string;
   referer?: string | null;
+  price?: IPrice;
 }

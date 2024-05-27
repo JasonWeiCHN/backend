@@ -123,6 +123,70 @@
   }
 }
 
+.list--game {
+  .list__item {
+    position: relative;
+    background-size: contain;
+    background-position: right;
+    background-repeat: repeat;
+    overflow: hidden; // Ensure the gradient does not overflow the container
+    transition: transform 0.2s ease-in-out;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to right, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0));
+      z-index: 1;
+    }
+
+    &__details {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 80%;
+
+      &__content {
+        .heat {
+          width: 100px;
+        }
+
+        .des {
+          @extend #overflow-text;
+
+          max-width: 100%;
+        }
+
+        .publisher {
+          font-size: 14px;
+          max-width: 380px;
+          width: 60%;
+        }
+      }
+    }
+
+    &:hover {
+      border-color: #ffffff;
+      transform: scale(1.02); // Use transform to scale the item
+
+      .heat {
+        color: #f3abab;
+      }
+
+      .des {
+        color: #ffffff;
+      }
+
+      .publisher {
+        color: #b3eee0;
+      }
+    }
+  }
+}
+
 
 @media (max-width: 360px) {
   .list {

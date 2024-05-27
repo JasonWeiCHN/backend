@@ -1,19 +1,22 @@
 <div class="w-app">
   <w-banner
-    (click)="onBannerClick()"
     [data]="appConfig.banner"
-  ></w-banner>
+  >
+  </w-banner>
   <div class="page">
-    <div
-      *ngIf="showNavigation"
-      style="margin-bottom: 24px"
-    >
-      <w-navigation
-        [items]="appConfig.navigationItems"
-        (navigationItemClick)="onNavigationItemClick($event)"
-      ></w-navigation>
+    <!-- TODO 可直接引入静态页面 -->
+    <!--<a href="/assets/oda.html" target="_blank">宝藏游戏之家 - 全面战争·幕府将军</a>-->
+    <w-navigation
+      [items]="appConfig.navigationItems"
+      (navigationItemClick)="onNavigationItemClick($event)"
+    ></w-navigation>
+    <div style="margin-top: 12px">
+      <w-list
+        [data]="food"
+        [mode]="eList.GAME"
+        (listItemClick)="onListItemClick($event)"
+      ></w-list>
     </div>
-    <router-outlet></router-outlet>
   </div>
 </div>
 
