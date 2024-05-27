@@ -16,6 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@w-monorepo/analysis": ["libs/analysis/src/index.ts"],
+      "@w-monorepo/charts": ["libs/charts/src/index.ts"],
+      "@w-monorepo/enums": ["libs/shared/enums/src/index.ts"],
       "@w-monorepo/game": ["libs/game/src/index.ts"],
       "@w-monorepo/interfaces": ["libs/shared/interfaces/src/index.ts"],
       "@w-monorepo/ui": ["libs/shared/ui/src/index.ts"],

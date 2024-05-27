@@ -10,8 +10,8 @@ from bilibili_api import video, Credential, HEADERS
 app = Flask(__name__)
 
 # 替换成你的 SESSDATA、BILI_JCT 和 FFMPEG_PATH
-SESSDATA = "7bbcbe74%2C1731807787%2C249d1%2A51CjBMs7JpVYq0g-13xJ292DZeFJ8LFDkYzcnaDktku-cT6_89_roXGd-OUZZSX2KwhtkSVkFFeDc3NkFYQkNKemNVd2FZYVpVanBWdnV4Y0JqM3FDX2NxYXgza3Z2cm1uU3VLWUF1RmJlVXVUc2JWRktnZzdxYU5UWGlkT281NXptZFpyZl96NGlRIIEC"
-BILI_JCT = "063d77cc6e5d7f03fad77cdf2baf6f27"
+SESSDATA = "f4c6d9c0%2C1732068028%2C71cfa%2A51CjDh4m97sdm4GZNwz-FPdqZ6rSd7IRDH8zJcGktB-CspSdErk-ozKDS6G4d_V1OX2cESVklMaDh6OXFGeGtVSkdTZ0pMQUEzeVBJVGpES3lzckM2V2ZQbzFoWTRaZjNaejdyd3poNWl6X19LZExJSnI2UGR5STVTQzdFYW80OXZpVS1xNEpJdEZBIIEC"
+BILI_JCT = "f8e6be95079d72eed600f5a800bcb218"
 BUVID3 = ""
 FFMPEG_PATH = r"F:/ffmpeg/bin/ffmpeg.exe"
 OUTPUT_FOLDER = r"F:/biliGet/warhammer3"
@@ -43,7 +43,7 @@ async def download_images(video_info, output_folder):
     await download_url(pic_url, os.path.join(output_folder, 'pic.jpg'), "视频封面")
     await asyncio.sleep(2)
 
-def generate_submission_data(video_info, bvid, output_folder):
+def generate_submission_data(video_info, bvid):
     obj = {
         'typeId': '',
         'imageUrl': bvid,
@@ -58,11 +58,12 @@ def generate_submission_data(video_info, bvid, output_folder):
     return obj
 
 async def submit_data(submission_data):
+    proxy_url = "http://localhost:8080"  # 代理地址和端口
     backend_url = 'http://localhost:8080/itemCard/saveItemCard'
     headers = {'Content-Type': 'application/json'}
 
     try:
-        async with httpx.AsyncClient() as client:
+        async with httpx.AsyncClient(proxies=proxy_url) as client:
             response = await client.post(backend_url, json=submission_data, headers=headers)
             response.raise_for_status()
             print('Data submitted successfully!')

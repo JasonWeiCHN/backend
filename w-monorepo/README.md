@@ -169,3 +169,44 @@ nohup python3 web.py > nohup.out 2>&1 &
 
 - 翻墙访问会跨域 无法记录轨迹
 - 翻墙访问是可以打开网站的 但是无法请求接口
+
+## 配置投票服务
+
+- 安装 Flask Flask-CORS pymongo
+
+```
+python3 -m pip install Flask Flask-CORS pymongo
+```
+
+- 安装 mongodb
+
+```
+sudo apt update
+sudo apt install mongodb
+sudo systemctl start mongodb
+```
+
+- 查询线上mongodb数据
+
+```
+连接到 MongoDB 数据库：
+mongo
+
+选择数据库：
+use <database_name>
+
+执行查询：
+db.<collection_name>.find()
+```
+
+- 后台启动 vote.py
+
+```
+nohup python3 vote.py &
+```
+
+- 查看 vote.py 进程
+
+```
+ps aux | grep vote.py
+```

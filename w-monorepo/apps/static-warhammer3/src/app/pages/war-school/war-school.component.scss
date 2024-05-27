@@ -8,6 +8,36 @@
     flex-wrap: wrap;
     gap: 8px;
   }
+
+  .question {
+    margin-bottom: 12px;
+
+    .qa-item {
+      color: #c4c4c4;
+      cursor: pointer;
+      padding-bottom: 4px;
+      border-bottom: 1px solid #9b9b9b;
+      margin-bottom: 6px;
+
+      &:hover {
+        color: #ffffff;
+        border-color: #ffffff;
+      }
+    }
+  }
+
+  .answer {
+    button {
+      padding: 2px 6px;
+      border-bottom: 1px solid #9b9b9b;
+      font-size: 16px;
+      color: #c4c4c4;
+
+      &:hover {
+        border-color: #ffffff;
+      }
+    }
+  }
 }
 
 @media (max-width: 920px) {

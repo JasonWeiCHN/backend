@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/itemCard")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 @Api(tags = "itemCard")
 @RequiredArgsConstructor
 public class ItemCardController {

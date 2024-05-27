@@ -1,6 +1,7 @@
 <div
   class="list"
   [class.list--article]="mode === eList.ARTICLE"
+  [class.list--game]="mode === eList.GAME"
 >
   <ng-container *ngIf="mode === eList.DEFAULT">
     <div
@@ -37,15 +38,6 @@
         <div class="list__item__details__title">{{ item.title }}</div>
         <div class="list__item__details__content">
           <div class="flex items-center break-keep">
-            <!--
-            <div
-              class="heat flex justify-between items-center mr-2"
-            >
-              <span>热度:</span>
-              <span>{{ item.views }}</span>
-            </div>
-            <div class="mr-2">|</div>
-            -->
             <div class="des">简介: {{ item.description || '暂无说明' }}</div>
           </div>
           <div class="publisher flex justify-between items-center">
@@ -58,6 +50,36 @@
         <span>
            进入
         </span>
+      </div>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="mode === eList.GAME">
+    <div
+      *ngFor="let item of data"
+      (click)="onItemClick(item)"
+      class="list__item"
+      [ngStyle]="{ 'background-image': 'url(' + item.imageUrl + ')' }"
+    >
+      <div class="list__item__details">
+        <div class="list__item__details__title">{{ item.title }}</div>
+        <div class="list__item__details__content" style="display: flex; width: 100%">
+          <div *ngIf="item.price" class="flex items-center" style="font-size: 24px; transform: scaleY(1.1);">
+            <div style="background-color: #4c6b22; color: #beee11">-{{ item.price.discountPercent }}%</div>
+            <div
+              style="margin: 0 12px; width: max-content; padding-right: 12px; color:#beee11; border-right: 1px solid #9b9b9b">
+              {{ item.price.final }}
+            </div>
+          </div>
+          <div style="width: 90%">
+            <div class="flex items-center break-keep">
+              <div class="des">简介: {{ item.description || '暂无说明' }}</div>
+            </div>
+            <div class="publisher flex justify-between items-center">
+              <div>截止日期: {{ item.date }}</div>
+              <div>开发商: {{ item.publisher }}</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </ng-container>

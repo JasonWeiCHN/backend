@@ -1,39 +1,56 @@
 <div class="war-school">
-  <section>
-    <div class="subtitle">
-      基础知识
+  <ng-container *ngIf="mode === eMode.HOME">
+    <section>
+      <div class="subtitle">
+        核心问答
+      </div>
+      <div class="question">
+        <div *ngFor="let item of qas" class="qa-item" (click)="onQaClick(item)">{{ item.q }}</div>
+      </div>
+    </section>
+    <section>
+      <div class="subtitle">
+        基础知识
+      </div>
+      <div class="basic-knowledge">
+        <w-list
+          [data]="basicKnowledge"
+          [mode]="eList.ARTICLE"
+          (listItemClick)="onListItemClick($event)"
+        ></w-list>
+      </div>
+    </section>
+    <section>
+      <div class="subtitle">
+        实战教学
+      </div>
+      <div class="practical-teaching">
+        <w-list
+          [data]="practicalTeaching"
+          [mode]="eList.ARTICLE"
+          (listItemClick)="onListItemClick($event)"
+        ></w-list>
+      </div>
+    </section>
+    <section>
+      <div class="subtitle">
+        相关视频
+      </div>
+      <div class="cards">
+        <ng-container *ngFor="let item of warSchoolVideo; let index = index;">
+          <w-item-card
+            (click)="onCardClick(item)"
+            [data]="item"
+          ></w-item-card>
+        </ng-container>
+      </div>
+    </section>
+  </ng-container>
+  <div *ngIf="mode === eMode.DETAIL && qa" class="answer">
+    <div style="display: flex; align-items: center">
+      <button (click)="goBack()">返回</button>
+      <div style="margin-left: 12px">{{ qa.q }}</div>
     </div>
-    <div class="basic-knowledge">
-      <w-list
-        [data]="basicKnowledge"
-        [mode]="eList.ARTICLE"
-        (listItemClick)="onListItemClick($event)"
-      ></w-list>
-    </div>
-  </section>
-  <section>
-    <div class="subtitle">
-      实战教学
-    </div>
-    <div class="practical-teaching">
-      <w-list
-        [data]="practicalTeaching"
-        [mode]="eList.ARTICLE"
-        (listItemClick)="onListItemClick($event)"
-      ></w-list>
-    </div>
-  </section>
-  <section>
-    <div class="subtitle">
-      相关视频
-    </div>
-    <div class="cards">
-      <ng-container *ngFor="let item of warSchoolVideo; let index = index;">
-        <w-item-card
-          (click)="onCardClick(item)"
-          [data]="item"
-        ></w-item-card>
-      </ng-container>
-    </div>
-  </section>
+    <div style="margin-top: 12px">{{ qa.a }}</div>
+  </div>
 </div>

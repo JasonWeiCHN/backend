@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class VoteHttpService {
-  private baseUrl = 'http://127.0.0.1:5000';
+  private baseUrl = 'http://111.230.29.99:5002'; // http://127.0.0.1:5002
 
   constructor(private http: HttpClient) {
   }

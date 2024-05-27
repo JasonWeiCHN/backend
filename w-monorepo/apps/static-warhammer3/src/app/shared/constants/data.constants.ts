@@ -545,6 +545,19 @@ export const ARTICLES_MAP: IArticleMap = {
     'views': 270
   }],
   'Reikland': [{
+    'date': '2024-05-25 08:37',
+    'sourceUrl': 'https://www.bilibili.com/video/BV1UZ421W7Yb',
+    'referer': null,
+    'imageUrl': 'BV1UZ421W7Yb',
+    'tagIds': ['newerTeach'],
+    'publisher': '赤色的麦田',
+    'description': '~',
+    'typeId': 'Reikland',
+    'id': '518',
+    'detail': '',
+    'title': '【战锤3】卡皇第2回合速灭分离势力【赤色的麦田】',
+    'views': 5361
+  }, {
     'date': '2024-05-14 21:40',
     'sourceUrl': 'https://www.bilibili.com/video/BV1rM4m1C79D',
     'referer': null,
@@ -1364,6 +1377,19 @@ export const ARTICLES_MAP: IArticleMap = {
     'views': 5179
   }],
   'newMod': [{
+    'date': '2024-05-25 22:02',
+    'sourceUrl': 'https://www.bilibili.com/video/BV1QZ421W7Tm',
+    'referer': null,
+    'imageUrl': 'BV1QZ421W7Tm',
+    'tagIds': [''],
+    'publisher': '明曦xmD',
+    'description': '震旦+矮人当然是震旦矮人啦，给到了黑域堡派系。喜欢的话，请点赞支持下吧，MOD在加班加点制作了，感谢@怕力苦',
+    'typeId': 'newMod',
+    'id': '514',
+    'detail': '',
+    'title': '战锤3 震旦+矮人=？',
+    'views': 12021
+  }, {
     'date': '2024-05-21 10:55',
     'sourceUrl': 'https://www.bilibili.com/video/BV1R7421o7s9',
     'referer': null,
@@ -2592,6 +2618,32 @@ export const ARTICLES_MAP: IArticleMap = {
     'views': 40000
   }],
   'The_Maggot_Host': [{
+    'date': '2024-05-27 02:37',
+    'sourceUrl': 'https://www.bilibili.com/video/BV1Fs421g7zY',
+    'referer': null,
+    'imageUrl': 'BV1Fs421g7zY',
+    'tagIds': ['newerTeach'],
+    'publisher': '武侍建御雷',
+    'description': '新版纳垢最强新兵种：腐烂骑士，纳垢食人魔，蟾蜍龙，其他都是配角。。。',
+    'typeId': 'The_Maggot_Host',
+    'id': '509',
+    'detail': '',
+    'title': '【战锤3全战：超凡】全派系兵种解析-纳垢-塔木尔可汗篇-兵种解析',
+    'views': 2105
+  }, {
+    'date': '2024-05-25 15:14',
+    'sourceUrl': 'https://www.bilibili.com/video/BV1Wz421a7Fn',
+    'referer': null,
+    'imageUrl': 'BV1Wz421a7Fn',
+    'tagIds': ['liveRecording'],
+    'publisher': '高长恭丶兰陵王',
+    'description': '',
+    'typeId': 'The_Maggot_Host',
+    'id': '516',
+    'detail': '',
+    'title': '【全战战锤3】新版本，纳垢-塔木尔可汗，解决恐虐-绯红骷髅，最后军力（2024年05月04日直播录像）',
+    'views': 160
+  }, {
     'date': '2024-05-13 16:48',
     'sourceUrl': 'https://www.bilibili.com/video/BV1Nb42187Dj',
     'referer': null,
@@ -3227,6 +3279,19 @@ export const ARTICLES_MAP: IArticleMap = {
     'views': 13000
   }],
   'basicKnowledge': [{
+    'date': '2024-05-26 20:45',
+    'sourceUrl': 'https://www.bilibili.com/video/BV13m421T73W',
+    'referer': null,
+    'imageUrl': 'BV13m421T73W',
+    'tagIds': [''],
+    'publisher': '非糖的碳水化合物',
+    'description': '点赞超过150，两天之内更新下期兵种讲解',
+    'typeId': 'basicKnowledge',
+    'id': '510',
+    'detail': '',
+    'title': '全面战争战锤3新手教学 帝国（上）派系讲解',
+    'views': 1101
+  }, {
     'date': '2024-05-08 11:50:00',
     'sourceUrl': 'https://www.bilibili.com/video/BV1Px4y1i7oa',
     'referer': null,
@@ -3280,6 +3345,19 @@ export const ARTICLES_MAP: IArticleMap = {
     'views': 10000
   }],
   'Court_of_Lybaras': [{
+    'date': '2024-05-24 17:18',
+    'sourceUrl': 'https://www.bilibili.com/video/BV1xb421z7hJ',
+    'referer': null,
+    'imageUrl': 'BV1xb421z7hJ',
+    'tagIds': ['newerTeach'],
+    'publisher': '树懒主机游戏',
+    'description': '',
+    'typeId': 'Court_of_Lybaras',
+    'id': '515',
+    'detail': '',
+    'title': '【战锤3超凡帝国】莱巴拉斯古墓王(1)',
+    'views': 352
+  }, {
     'date': '2023-07-22 08:00:00',
     'sourceUrl': 'https://www.bilibili.com/video/BV1Bu4y1m7Jc/?spm_id_from=333.337.search-card.all.click',
     'referer': null,
@@ -4562,6 +4640,19 @@ export const ARTICLES_MAP: IArticleMap = {
     'views': 1463
   }],
   'Masters_of_lnnovation': [{
+    'date': '2024-05-25 23:26',
+    'sourceUrl': 'https://www.bilibili.com/video/BV19n4y1o7pm',
+    'referer': null,
+    'imageUrl': 'BV19n4y1o7pm',
+    'tagIds': ['liveRecording'],
+    'publisher': '月升夜隐',
+    'description': '',
+    'typeId': 'Masters_of_lnnovation',
+    'id': '513',
+    'detail': '',
+    'title': '【战锤3】马拉凯特殊BUG？史上最强绝版加农炮！',
+    'views': 1263
+  }, {
     'date': '2024-05-18 19:10',
     'sourceUrl': 'https://www.bilibili.com/video/BV1aE421G79i',
     'referer': null,
@@ -5621,6 +5712,19 @@ export const ARTICLES_MAP: IArticleMap = {
     'views': 1
   }],
   'Order_of_Loremasters': [{
+    'date': '2024-05-26 09:29',
+    'sourceUrl': 'https://www.bilibili.com/video/BV1DJ4m1w7dx',
+    'referer': null,
+    'imageUrl': 'BV1DJ4m1w7dx',
+    'tagIds': ['liveRecording'],
+    'publisher': '大嘴骨灰叔',
+    'description': '自动酣畅大胜，手操实在打不上来',
+    'typeId': 'Order_of_Loremasters',
+    'id': '512',
+    'detail': '',
+    'title': '全面战争-战锤3 凡世帝国-各势力第一战-泰格里斯---手操实在打不到酣畅大胜，请高手指教',
+    'views': 152
+  }, {
     'date': '2024-03-30 03:00:00',
     'sourceUrl': 'https://www.bilibili.com/video/BV12q421A77u/?spm_id_from=333.337.search-card.all.click',
     'referer': null,
@@ -6084,6 +6188,45 @@ export const ARTICLES_MAP: IArticleMap = {
     'views': 26000
   }],
   'articles': [{
+    'date': '2024-05-27 16:23',
+    'sourceUrl': 'https://www.bilibili.com/video/BV1Kt421K7CD',
+    'referer': null,
+    'imageUrl': 'BV1Kt421K7CD',
+    'tagIds': [''],
+    'publisher': '古老游戏玩家',
+    'description': '墓园玫瑰好变态，但是外网...\n\n原帖链接\nhttps://www.reddit.com/r/totalwarhammer/comments/1d1atqg/one_of_the_most_beautiful_things_ive_ever_seen_in/\n\n全面战争·资源站\nhttp://111.230.29.99/',
+    'typeId': 'articles',
+    'id': '519',
+    'detail': '',
+    'title': '[全面战争·战锤3] 墓园玫瑰好变态，但是外网...',
+    'views': 231
+  }, {
+    'date': '2024-05-26 20:09',
+    'sourceUrl': 'https://www.bilibili.com/video/BV1XU411d7ZB',
+    'referer': null,
+    'imageUrl': 'BV1XU411d7ZB',
+    'tagIds': ['clip'],
+    'publisher': '叶哥的全面战争',
+    'description': 'https://www.youtube.com/@Savage-Battles-2020',
+    'typeId': 'articles',
+    'id': '511',
+    'detail': '',
+    'title': '战锤3全面战争电影恐虐-吸血鬼伯爵战争',
+    'views': 115
+  }, {
+    'date': '2024-05-25 11:45',
+    'sourceUrl': 'https://www.bilibili.com/video/BV1nb421z7ze',
+    'referer': null,
+    'imageUrl': 'BV1nb421z7ze',
+    'tagIds': [''],
+    'publisher': 'wodwd-不是wdnmd-',
+    'description': '帝国的后期基本完全依赖单体\n无论是传统的纯单体抱团\n还是远程体系，都刚需足够的单体\n恰巧帝国的单体体系，可谓恐怖无比...\n————————————————\n视频制作不易，希望大家能多多点赞关注，投币收藏~\n本期视频投币过千，会尽快更新帝国深入讲解\n来分析帝国的精英部队，选帝侯部队，领主，英雄，魔法',
+    'typeId': 'articles',
+    'id': '517',
+    'detail': '',
+    'title': '【战锤全战3】帝国兵种评级分析！单体的神~',
+    'views': 59637
+  }, {
     'date': '2024-05-20 11:35',
     'sourceUrl': 'https://www.bilibili.com/video/BV1aJ4m1w7L3',
     'referer': null,
