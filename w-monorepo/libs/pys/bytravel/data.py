@@ -3,11 +3,13 @@ from bs4 import BeautifulSoup
 import json
 import os
 import time
+import re  # 导入正则表达式库
 
-# 基础URL和页面数量
-BASE_URL = "http://shop.bytravel.cn/produce/index316_list"
-NUM_PAGES = 18  # 假设有15个页面
-OUTPUT_DIR = "江门特产"  # 指定保存文件的目录
+# 变动的数字部分
+INDEX_NUMBER = 300
+
+# 构建基础URL
+BASE_URL = f"http://shop.bytravel.cn/produce/index{INDEX_NUMBER}_list"
 DELAY_SECONDS = 1  # 延迟时间（秒）
 
 # 函数来处理详情页面并返回内容
@@ -93,8 +95,31 @@ def process_page(url, output_dir, page_index):
     except Exception as e:
         print(f"Failed to process page {page_index}: {e}")
 
+# 函数来提取OUTPUT_DIR和NUM_PAGES
+def extract_metadata(base_url):
+    response = requests.get(f"{base_url}.html")
+    response.encoding = 'gb2312'
+    soup = BeautifulSoup(response.text, 'html.parser')
+
+    # 提取OUTPUT_DIR
+    output_dir_tag = soup.find('div', class_='f12').find_all('a')[-1]
+    output_dir = output_dir_tag.get_text(strip=True)
+
+    # 提取NUM_PAGES
+    nav = soup.find('nav', id='list-page')
+    num_pages_tag = nav.find_all('a')[-3]
+    num_pages_text = num_pages_tag.get_text(strip=True)
+
+    # 使用正则表达式提取数字部分
+    num_pages = int(re.search(r'\d+', num_pages_text).group())
+
+    return output_dir, num_pages
+
 # 处理多个页面
-def process_multiple_pages(base_url, num_pages, output_dir):
+def process_multiple_pages(base_url):
+    # 提取OUTPUT_DIR和NUM_PAGES
+    output_dir, num_pages = extract_metadata(base_url)
+
     # 如果输出目录不存在，则创建
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
@@ -111,4 +136,4 @@ def process_multiple_pages(base_url, num_pages, output_dir):
         time.sleep(DELAY_SECONDS)
 
 # 处理多个页面
-process_multiple_pages(BASE_URL, NUM_PAGES, OUTPUT_DIR)
+process_multiple_pages(BASE_URL)
