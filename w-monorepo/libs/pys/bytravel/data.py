@@ -6,7 +6,7 @@ import time
 import re  # 导入正则表达式库
 
 # 变动的数字部分
-INDEX_NUMBER = 300
+INDEX_NUMBER = 220
 
 # 构建基础URL
 BASE_URL = f"http://shop.bytravel.cn/produce/index{INDEX_NUMBER}_list"
