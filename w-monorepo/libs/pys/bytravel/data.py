@@ -5,11 +5,8 @@ import os
 import time
 import re  # 导入正则表达式库
 
-# 变动的数字部分
-INDEX_NUMBER = 220
-
-# 构建基础URL
-BASE_URL = f"http://shop.bytravel.cn/produce/index{INDEX_NUMBER}_list"
+# 变动的数字部分数组
+INDEX_NUMBERS = [1053, 584, 583, 578, 568, 559, 558, 557, 556, 555, 554, 553, 552, 551, 279, 278, 264]  # 可以添加更多的数字
 DELAY_SECONDS = 1  # 延迟时间（秒）
 
 # 函数来处理详情页面并返回内容
@@ -107,16 +104,21 @@ def extract_metadata(base_url):
 
     # 提取NUM_PAGES
     nav = soup.find('nav', id='list-page')
-    num_pages_tag = nav.find_all('a')[-3]
-    num_pages_text = num_pages_tag.get_text(strip=True)
+    num_pages_tags = nav.find_all('a')
 
-    # 使用正则表达式提取数字部分
-    num_pages = int(re.search(r'\d+', num_pages_text).group())
+    if len(num_pages_tags) > 2:
+        num_pages_text = num_pages_tags[-3].get_text(strip=True)
+        num_pages = int(re.search(r'\d+', num_pages_text).group())
+    else:
+        num_pages = 1
 
     return output_dir, num_pages
 
 # 处理多个页面
-def process_multiple_pages(base_url):
+def process_multiple_pages(index_number):
+    # 构建基础URL
+    base_url = f"http://shop.bytravel.cn/produce/index{index_number}_list"
+
     # 提取OUTPUT_DIR和NUM_PAGES
     output_dir, num_pages = extract_metadata(base_url)
 
@@ -135,5 +137,6 @@ def process_multiple_pages(base_url):
         # 添加延迟
         time.sleep(DELAY_SECONDS)
 
-# 处理多个页面
-process_multiple_pages(BASE_URL)
+# 依次处理数组中的多个INDEX_NUMBER
+for index_number in INDEX_NUMBERS:
+    process_multiple_pages(index_number)

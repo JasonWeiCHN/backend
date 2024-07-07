@@ -1,8 +1,5 @@
 <div class="w-app">
-  <w-banner
-    (click)="onBannerClick()"
-    [data]="appConfig.banner"
-  ></w-banner>
+  <w-banner (click)="onBannerClick()" [data]="appConfig.banner"></w-banner>
   <div class="page">
     <div class="img-list">
       <div
@@ -12,12 +9,14 @@
       >
         <img
           class="pic"
-          [src]="appConfig.fileServer + item.imageUrl + '/first_frame.png'" alt=""
-        >
+          [src]="appConfig.fileServer + item.imageUrl + '/pic.jpg'"
+          alt=""
+        />
         <img
           class="gif"
-          [src]="appConfig.fileServer + item.imageUrl + '/min.gif'" alt=""
-        >
+          [src]="appConfig.fileServer + item.imageUrl + '/min.gif'"
+          alt=""
+        />
       </div>
     </div>
     <div class="load-more" (click)="loadMore()">
@@ -25,4 +24,3 @@
     </div>
   </div>
 </div>
-

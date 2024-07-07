@@ -14,7 +14,7 @@ export interface IItemCard {
   imageUrl: string;
   title: string;
   description: string;
-  date: string;
+  date: string | null;
   detail: string;
   referer?: string | null;
   price?: IPrice;

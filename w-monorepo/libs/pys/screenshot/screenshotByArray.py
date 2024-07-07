@@ -9,7 +9,7 @@ import os
 # 常量配置
 CHROMEDRIVER_PATH = r'F:/chromedriver-win64/chromedriver.exe'
 BASE_URL = 'http://localhost:4201/article/'
-CLAN_IDS = ["The_Western_Provinces","The_Jade_Court","The_Northern_Provinces"]
+CLAN_IDS = ["Eataine","Nagarythe","Yvresse","Order_of_Loremasters","Avelorn","Knights_of_Caledor"]
  # 根据你的实际数据替换
 OUTPUT_DIR = r'F:/tmp'  # 配置所有图片保存的路径文件夹
 

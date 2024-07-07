@@ -166,6 +166,31 @@ nohup python3 statistics.py > flask.log &
 nohup python3 web.py > nohup.out 2>&1 &
 ```
 
+- 如果文件服务出现问题，可以通过下面指令查看日志
+
+```
+cat nohup.out
+```
+
+- 文件服务启动在 5001 端口
+
+```
+ubuntu@VM-8-4-ubuntu:/var/www/web-files$ sudo lsof -i :5001
+COMMAND   PID   USER   FD   TYPE    DEVICE SIZE/OFF NODE NAME
+python3 26816 ubuntu    3u  IPv4 108410703      0t0  TCP *:5001 (LISTEN)
+python3 26816 ubuntu    4u  IPv4 108412032      0t0  TCP VM-8-4-ubuntu:5001->219.134.234.132:32550 (CLOSE_WAIT)
+
+上面的输出表示端口 5001 正在被进程 26816 占用。
+可以通过下面操作结束进程
+sudo kill -9 26816
+
+检查端口是否仍被占用
+sudo lsof -i :5001
+
+重新运行启动脚本
+nohup python3 web.py > nohup.out 2>&1 &
+```
+
 ## 用户轨迹记录
 
 - 翻墙访问会跨域 无法记录轨迹
