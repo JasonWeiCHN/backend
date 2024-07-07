@@ -1,0 +1,5 @@
+@import "../../shared/styles/game-detail.scss";
+
+.discount {
+  @extend #game-detail;
+}

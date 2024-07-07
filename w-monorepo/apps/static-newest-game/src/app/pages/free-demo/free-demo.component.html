@@ -1,0 +1,40 @@
+<div class="free-demo">
+  <ng-container *ngIf="mode === eMode.HOME">
+    <w-list
+      [data]="data"
+      [mode]="eList.GAME"
+      (listItemClick)="onSteamGameClick($event)"
+    ></w-list>
+  </ng-container>
+  <div *ngIf="mode === eMode.DETAIL && game" class="game-detail">
+    <div class="game-detail__header">
+      <div class="left">
+        <div class="image-box">
+          <img [src]="game.imageUrl" alt="" />
+        </div>
+        <div class="title">{{ game.title }}</div>
+      </div>
+      <div style="display: flex">
+        <button style="margin-right: 12px" (click)="goSteam(game)">
+          Steam 商店
+        </button>
+        <button (click)="goBack()">返回</button>
+      </div>
+    </div>
+    <div *ngIf="game.date" class="game-detail__price">
+      <div class="initial">
+        原价: <span>{{ game.price?.initial }}</span>
+      </div>
+      <div class="discount-percent">
+        折扣: <span>- {{ game.price?.discountPercent }} %</span>
+      </div>
+      <div class="final">
+        现价: <span>{{ game.price?.final }}</span>
+      </div>
+      <div class="date">
+        截止日期: <span>{{ game.date }}</span>
+      </div>
+    </div>
+    <div style="margin-top: 12px">简介: {{ game.description }}</div>
+  </div>
+</div>

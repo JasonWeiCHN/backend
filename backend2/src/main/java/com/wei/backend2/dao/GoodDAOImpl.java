@@ -51,7 +51,6 @@ public class GoodDAOImpl implements GoodDAO {
 
     @Override
     public void updateGood(Good good) {
-
     }
 
     @Override

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'lib-charts',
+  selector: 'c-lib-charts',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './charts.component.html',

@@ -1,0 +1,5 @@
+@import "../../shared/styles/game-detail.scss";
+
+.free-demo {
+  @extend #game-detail;
+}

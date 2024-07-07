@@ -96,6 +96,20 @@ nx g @nx/angular:component pagination --directory=libs/shared/ui/src/lib/paginat
 npx nx g @nx/angular:setup-tailwind my-project
 ```
 
+## 数据导出 与 导入 postgre
+
+### 导出
+
+```
+\! pg_dump -U postgres -h localhost -p 5432 -d jason -F c -b -v -f d:\jason.dump
+```
+
+### 导入
+
+```
+pg_restore -U postgres -h localhost -p 5432 -d jason d:\jason.dump
+```
+
 ## 关于 bilibili-api 的使用
 
 - 下载高清晰度视频 需要使用
@@ -163,6 +177,31 @@ nohup python3 statistics.py > flask.log &
 
 ```
 启动指令 定位到web-files
+nohup python3 web.py > nohup.out 2>&1 &
+```
+
+- 如果文件服务出现问题，可以通过下面指令查看日志
+
+```
+cat nohup.out
+```
+
+- 文件服务启动在 5001 端口
+
+```
+ubuntu@VM-8-4-ubuntu:/var/www/web-files$ sudo lsof -i :5001
+COMMAND   PID   USER   FD   TYPE    DEVICE SIZE/OFF NODE NAME
+python3 26816 ubuntu    3u  IPv4 108410703      0t0  TCP *:5001 (LISTEN)
+python3 26816 ubuntu    4u  IPv4 108412032      0t0  TCP VM-8-4-ubuntu:5001->219.134.234.132:32550 (CLOSE_WAIT)
+
+上面的输出表示端口 5001 正在被进程 26816 占用。
+可以通过下面操作结束进程
+sudo kill -9 26816
+
+检查端口是否仍被占用
+sudo lsof -i :5001
+
+重新运行启动脚本
 nohup python3 web.py > nohup.out 2>&1 &
 ```
 

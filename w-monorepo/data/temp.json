@@ -1,0 +1,122 @@
+[
+  {
+    "name": "前端开发工程师",
+    "iconType": 1,
+    "url": null,
+    "source": "1",
+    "icon": {
+      "word": "热",
+      "url": "https://img.bosszhipin.com/beijin/icon/3ff0424847e193e6ce9fc9d6e0a8cbdcdf7057d7d2336142c8dca7d7e5177b62.png",
+      "width": 45,
+      "height": 48
+    },
+    "specType": null,
+    "background": null,
+    "naturalLanguageParam": null,
+    "queryId": "8846434879702054062"
+  },
+  {
+    "name": "移动端前端开发",
+    "iconType": 0,
+    "url": null,
+    "source": "1",
+    "icon": null,
+    "specType": null,
+    "background": null,
+    "naturalLanguageParam": null,
+    "queryId": "1729306670903253021"
+  },
+  {
+    "name": "html5前端开发工程师",
+    "iconType": 1,
+    "url": null,
+    "source": "1",
+    "icon": {
+      "word": "热",
+      "url": "https://img.bosszhipin.com/beijin/icon/3ff0424847e193e6ce9fc9d6e0a8cbdcdf7057d7d2336142c8dca7d7e5177b62.png",
+      "width": 45,
+      "height": 48
+    },
+    "specType": null,
+    "background": null,
+    "naturalLanguageParam": null,
+    "queryId": "3128474243884756893"
+  },
+  {
+    "name": "java前端开发工程师",
+    "iconType": 0,
+    "url": null,
+    "source": "1",
+    "icon": null,
+    "specType": null,
+    "background": null,
+    "naturalLanguageParam": null,
+    "queryId": "2800974759820907128"
+  },
+  {
+    "name": "资深前端开发工程师",
+    "iconType": 0,
+    "url": null,
+    "source": "1",
+    "icon": null,
+    "specType": null,
+    "background": null,
+    "naturalLanguageParam": null,
+    "queryId": "5104868440710016555"
+  },
+  {
+    "name": "app前端开发工程师",
+    "iconType": 0,
+    "url": null,
+    "source": "1",
+    "icon": null,
+    "specType": null,
+    "background": null,
+    "naturalLanguageParam": null,
+    "queryId": "4334494346748412966"
+  },
+  {
+    "name": "ios前端开发工程师",
+    "iconType": 0,
+    "url": null,
+    "source": "1",
+    "icon": null,
+    "specType": null,
+    "background": null,
+    "naturalLanguageParam": null,
+    "queryId": "3847189434943829374"
+  },
+  {
+    "name": "react前端开发工程师",
+    "iconType": 0,
+    "url": null,
+    "source": "1",
+    "icon": null,
+    "specType": null,
+    "background": null,
+    "naturalLanguageParam": null,
+    "queryId": "6658592931760011359"
+  },
+  {
+    "name": "webgis前端开发工程师",
+    "iconType": 0,
+    "url": null,
+    "source": "1",
+    "icon": null,
+    "specType": null,
+    "background": null,
+    "naturalLanguageParam": null,
+    "queryId": "755536817739001369"
+  },
+  {
+    "name": "前端开发师",
+    "iconType": 0,
+    "url": null,
+    "source": "1",
+    "icon": null,
+    "specType": null,
+    "background": null,
+    "naturalLanguageParam": null,
+    "queryId": "5102013977778617954"
+  }
+]

@@ -3,6 +3,11 @@ import { ISwitcherProject } from '@w-monorepo/ui';
 export const GAMES: ISwitcherProject[] = [
   {
     id: '',
+    label: '新游资讯站',
+    url: 'http://111.230.29.99:4006/'
+  },
+  {
+    id: '',
     label: '全面战争·幕府将军',
     url: 'http://111.230.29.99:4000/'
   },

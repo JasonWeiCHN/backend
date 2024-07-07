@@ -2,7 +2,7 @@ import { IApp } from '@w-monorepo/interfaces';
 import { GAMES } from '@w-monorepo/game';
 
 export const APP_CONFIG: IApp = {
-  project: GAMES[0],
+  project: GAMES[1],
   projects: GAMES,
   banner: {
     title: '宝藏游戏之家',

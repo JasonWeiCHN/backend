@@ -10,6 +10,7 @@ interface IVoteItem {
   description: string;
 }
 
+// TODO 未完成开发
 @Component({
   selector: 'app-vote',
   standalone: true,

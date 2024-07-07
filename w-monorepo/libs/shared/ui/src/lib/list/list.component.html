@@ -63,7 +63,9 @@
       <div class="list__item__details">
         <div class="list__item__details__title">{{ item.title }}</div>
         <div class="list__item__details__content" style="display: flex; width: 100%">
-          <div *ngIf="item.price" class="flex items-center" style="font-size: 24px; transform: scaleY(1.1);">
+          <!-- 这个判断是有问题的 应该使用 isFree 但是如果在 itemCard里 增加 isFree 会增加越来越多的开关 这是一个值得思考的问题 -->
+          <div *ngIf="item.price && item.date" class="flex items-center"
+               style="font-size: 24px; transform: scaleY(1.1);">
             <div style="background-color: #4c6b22; color: #beee11">-{{ item.price.discountPercent }}%</div>
             <div
               style="margin: 0 12px; width: max-content; padding-right: 12px; color:#beee11; border-right: 1px solid #9b9b9b">
@@ -75,7 +77,7 @@
               <div class="des">简介: {{ item.description || '暂无说明' }}</div>
             </div>
             <div class="publisher flex justify-between items-center">
-              <div>截止日期: {{ item.date }}</div>
+              <div *ngIf="item.date">截止日期: {{ item.date }}</div>
               <div>开发商: {{ item.publisher }}</div>
             </div>
           </div>
