@@ -13,6 +13,7 @@ import { Nagash1Component } from './pages/nagash/nagash1.component';
 import { AnalysisHttpService } from '@w-monorepo/analysis';
 import { Nagash2Component } from './pages/nagash2/nagash2.component';
 
+// TODO COMMON INTERFACE IStaticArticleLink
 interface IStaticArticleLink {
   key: string;
   label: string;
@@ -37,6 +38,13 @@ export class ArticlesComponent {
   protected readonly eMode = EMode;
   protected mode = EMode.HOME;
   protected readonly eList = EList;
+  protected staticArticleLink: IStaticArticleLink | undefined = undefined;
+  protected tags: ITag[] = [
+    { id: 'cn', name: '中文' },
+    { id: 'en', name: '英文' },
+    { id: 'cn-en', name: '中英对照' },
+  ];
+  protected localLanguage = 'cn';
   protected readonly staticArticleLinks: IStaticArticleLink[] = [
     {
       key: 'nagash_1',
@@ -47,13 +55,6 @@ export class ArticlesComponent {
       label: '纳迦什-篡位者',
     },
   ];
-  protected staticArticleLink: IStaticArticleLink | undefined = undefined;
-  protected tags: ITag[] = [
-    { id: 'cn', name: '中文' },
-    { id: 'en', name: '英文' },
-    { id: 'cn-en', name: '中英对照' },
-  ];
-  protected localLanguage = 'cn';
 
   public data: IItemCard[] = ARTICLES_MAP['articles'];
 

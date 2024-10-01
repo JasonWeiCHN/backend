@@ -1,0 +1,69 @@
+.articles {
+  .subtitle {
+    color: #ffffff;
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+
+  .static-article-link {
+    margin-bottom: 12px;
+
+    &__item {
+      color: #c4c4c4;
+      cursor: pointer;
+      padding-bottom: 4px;
+      border-bottom: 1px solid #9b9b9b;
+      margin-bottom: 6px;
+
+      &:hover {
+        color: #ffffff;
+        border-color: #ffffff;
+      }
+    }
+  }
+
+  .detail {
+    .button-back {
+      padding: 4px 6px;
+      border-bottom: 1px solid #9b9b9b;
+      font-size: 16px;
+      color: #d8d8d8;
+
+      &:hover {
+        border-color: #ffffff;
+      }
+    }
+  }
+}
+
+// 注意这是Magic Code 用来控制包裹内容的 本地化
+.local-cn {
+  .en {
+    display: none;
+  }
+}
+
+.local-en {
+  .cn {
+    display: none;
+  }
+}
+
+.local-cn-en {
+  .cn, .en {
+    display: block;
+  }
+
+  .cn {
+    color: #c4c4a8;
+  }
+
+  .en {
+    color: #6d9d92;
+  }
+}
+
+.block {
+  margin-bottom: 24px;
+}
+

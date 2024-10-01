@@ -1,0 +1,20 @@
+<div class="videos">
+  <div class="subtitle">技术攻略</div>
+  <w-list
+    [data]="strategy"
+    [mode]="eList.ARTICLE"
+    (listItemClick)="onListItemClick($event)"
+  ></w-list>
+  <div class="subtitle">实况录像</div>
+  <w-list
+    [data]="liveRecording"
+    [mode]="eList.ARTICLE"
+    (listItemClick)="onListItemClick($event)"
+  ></w-list>
+  <div class="subtitle">背景知识</div>
+  <w-list
+    [data]="backgroundKnowledge"
+    [mode]="eList.ARTICLE"
+    (listItemClick)="onListItemClick($event)"
+  ></w-list>
+</div>

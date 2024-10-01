@@ -1,7 +1,7 @@
-from googletrans import Translator
+from deep_translator import GoogleTranslator
 
 def generate_html(text, output_html):
-    translator = Translator()
+    translator = GoogleTranslator(source='en', target='zh-CN')
 
     # 将文本按段落分割
     paragraphs = text.split('\n')
@@ -18,7 +18,7 @@ def generate_html(text, output_html):
                 file.write(f'<p>{paragraph}</p>\n')
 
                 # 中文翻译
-                translated = translator.translate(paragraph, src='en', dest='zh-cn').text
+                translated = translator.translate(paragraph)
                 file.write(f'<p>{translated}</p>\n')
 
         # 写入HTML尾部
