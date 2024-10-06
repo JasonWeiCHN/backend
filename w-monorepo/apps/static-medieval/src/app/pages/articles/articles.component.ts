@@ -19,8 +19,8 @@ import { SpanishEarlyComponent } from './pages/spanish-early/spanish-early.compo
 import { TurkishEarlyComponent } from './pages/turkish-early/turkish-early.component';
 import { BackgroundEarlyComponent } from './pages/background-early/background-early.component';
 
-// TODO COMMON INTERFACE IStaticArticleLink
-interface IStaticArticleLink {
+// TODO COMMON INTERFACE ILinkItem
+interface ILinkItem {
   key: string;
   label: string;
 }
@@ -55,14 +55,14 @@ interface IStaticArticleLink {
 export class ArticlesComponent {
   protected readonly eMode = EMode;
   protected mode: EMode = EMode.HOME;
-  protected staticArticleLink: IStaticArticleLink | undefined = undefined;
+  protected staticLinkItem: ILinkItem | undefined = undefined;
   protected tags: ITag[] = [
     { id: 'cn', name: '中文' },
     { id: 'en', name: '英文' },
     { id: 'cn-en', name: '中英对照' },
   ];
   protected localLanguage = 'cn';
-  protected readonly staticArticleLinks: IStaticArticleLink[] = [
+  protected readonly staticArticleLinks: ILinkItem[] = [
     {
       key: 'background_early',
       label: '[早期] 背景知识',
@@ -131,9 +131,9 @@ export class ArticlesComponent {
     private readonly analysisHttpService: AnalysisHttpService
   ) {}
 
-  protected onStaticArticleLinkClick(item: IStaticArticleLink): void {
+  protected onStaticLinkItemClick(item: ILinkItem): void {
     this.mode = EMode.DETAIL;
-    this.staticArticleLink = item;
+    this.staticLinkItem = item;
     this.analysisHttpService
       .submitString('查看 Medieval 资料: ' + item.label)
       .subscribe(

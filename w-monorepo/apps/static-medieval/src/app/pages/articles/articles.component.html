@@ -2,11 +2,11 @@
   <ng-container *ngIf="mode === eMode.HOME">
     <section>
       <div class="subtitle">派系介绍</div>
-      <div class="static-article-link">
+      <div class="static-link">
         <div
           *ngFor="let item of staticArticleLinks"
-          class="static-article-link__item"
-          (click)="onStaticArticleLinkClick(item)"
+          class="static-link__item"
+          (click)="onStaticLinkItemClick(item)"
         >
           {{ item.label }}
         </div>
@@ -25,49 +25,49 @@
     </div>
     <div [className]="'local-' + localLanguage" style="margin-top: 12px">
       <app-background-early
-        *ngIf="staticArticleLink?.key === 'background_early'"
+        *ngIf="staticLinkItem?.key === 'background_early'"
       ></app-background-early>
       <app-almohads-early
-        *ngIf="staticArticleLink?.key === 'almohads_early'"
+        *ngIf="staticLinkItem?.key === 'almohads_early'"
       ></app-almohads-early>
       <app-aragon-early
-        *ngIf="staticArticleLink?.key === 'aragon_early'"
+        *ngIf="staticLinkItem?.key === 'aragon_early'"
       ></app-aragon-early>
       <app-byzantine-early
-        *ngIf="staticArticleLink?.key === 'byzantine_early'"
+        *ngIf="staticLinkItem?.key === 'byzantine_early'"
       ></app-byzantine-early>
       <app-danes-early
-        *ngIf="staticArticleLink?.key === 'danes_early'"
+        *ngIf="staticLinkItem?.key === 'danes_early'"
       ></app-danes-early>
       <app-egypt-early
-        *ngIf="staticArticleLink?.key === 'egypt_early'"
+        *ngIf="staticLinkItem?.key === 'egypt_early'"
       ></app-egypt-early>
       <app-english-early
-        *ngIf="staticArticleLink?.key === 'english_early'"
+        *ngIf="staticLinkItem?.key === 'english_early'"
       ></app-english-early>
       <app-french-early
-        *ngIf="staticArticleLink?.key === 'french_early'"
+        *ngIf="staticLinkItem?.key === 'french_early'"
       ></app-french-early>
       <app-holy-roman-early
-        *ngIf="staticArticleLink?.key === 'holy_roman_early'"
+        *ngIf="staticLinkItem?.key === 'holy_roman_early'"
       ></app-holy-roman-early>
       <app-hungarians-early
-        *ngIf="staticArticleLink?.key === 'hungarians_early'"
+        *ngIf="staticLinkItem?.key === 'hungarians_early'"
       ></app-hungarians-early>
       <app-italy-early
-        *ngIf="staticArticleLink?.key === 'italy_early'"
+        *ngIf="staticLinkItem?.key === 'italy_early'"
       ></app-italy-early>
       <app-polish-early
-        *ngIf="staticArticleLink?.key === 'polish_early'"
+        *ngIf="staticLinkItem?.key === 'polish_early'"
       ></app-polish-early>
       <app-sicily-early
-        *ngIf="staticArticleLink?.key === 'sicily_early'"
+        *ngIf="staticLinkItem?.key === 'sicily_early'"
       ></app-sicily-early>
       <app-spanish-early
-        *ngIf="staticArticleLink?.key === 'spanish_early'"
+        *ngIf="staticLinkItem?.key === 'spanish_early'"
       ></app-spanish-early>
       <app-turkish-early
-        *ngIf="staticArticleLink?.key === 'turkish_early'"
+        *ngIf="staticLinkItem?.key === 'turkish_early'"
       ></app-turkish-early>
     </div>
   </div>

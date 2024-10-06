@@ -1,0 +1,35 @@
+<div class="english-words">
+  <ng-container *ngIf="mode === eMode.HOME">
+    <section>
+      <div class="subtitle">英语单词</div>
+      <div class="static-link">
+        <div
+          *ngFor="let item of englishWordLinks"
+          class="static-link__item"
+          (click)="onStaticLinkItemClick(item)"
+        >
+          {{ item.label }}
+        </div>
+      </div>
+    </section>
+  </ng-container>
+  <div *ngIf="mode === eMode.DETAIL" class="detail">
+    <div
+      style="display: flex; align-items: center; justify-content: space-between"
+    >
+      <button class="button-back" (click)="goBack()">返回</button>
+    </div>
+    <div style="margin-top: 12px">
+      <app-words-all *ngIf="staticLinkItem?.key === 'all'"></app-words-all>
+      <app-words-city-management
+        *ngIf="staticLinkItem?.key === 'city_management'"
+      ></app-words-city-management>
+      <app-words-battle-objectives
+        *ngIf="staticLinkItem?.key === 'battle_objectives'"
+      ></app-words-battle-objectives>
+      <app-words-military-units
+        *ngIf="staticLinkItem?.key === 'military_units'"
+      ></app-words-military-units>
+    </div>
+  </div>
+</div>

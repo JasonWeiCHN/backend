@@ -11,14 +11,24 @@ export const APP_CONFIG: IApp = {
   },
   navigationItems: [
     {
+      id: 'articles',
+      path: 'articles',
+      label: '文章',
+    },
+    {
       id: 'videos',
       path: 'videos',
       label: '视频',
     },
     {
-      id: 'articles',
-      path: 'articles',
-      label: '文章',
+      id: 'englishWords',
+      path: 'english-words',
+      label: '英语单词',
+    },
+    {
+      id: 'hotkeys',
+      path: 'hotkeys',
+      label: '快捷键',
     },
   ],
 };

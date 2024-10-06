@@ -1,4 +1,4 @@
-.articles {
+.english-words {
   .subtitle {
     color: #ffffff;
     font-weight: 500;
@@ -34,36 +34,5 @@
       }
     }
   }
-}
-
-// 注意这是Magic Code 用来控制包裹内容的 本地化
-.local-cn {
-  .en {
-    display: none;
-  }
-}
-
-.local-en {
-  .cn {
-    display: none;
-  }
-}
-
-.local-cn-en {
-  .cn, .en {
-    display: block;
-  }
-
-  .cn {
-    color: #c4c4a8;
-  }
-
-  .en {
-    color: #6d9d92;
-  }
-}
-
-.block {
-  margin-bottom: 24px;
 }
 

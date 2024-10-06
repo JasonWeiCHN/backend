@@ -1,0 +1,29 @@
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.card {
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  padding: 8px;
+  width: 216px;
+  height: 126px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+
+  .en {
+    margin: 0;
+    font-size: 1.2em;
+    color: #c4c4a8;
+  }
+
+  .cn {
+    margin: 4px 0;
+    color: #ffffff;
+  }
+
+  .des {
+    color: #b3eee0;
+  }
+}

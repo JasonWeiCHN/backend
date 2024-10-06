@@ -13,8 +13,8 @@ import { Nagash1Component } from './pages/nagash/nagash1.component';
 import { AnalysisHttpService } from '@w-monorepo/analysis';
 import { Nagash2Component } from './pages/nagash2/nagash2.component';
 
-// TODO COMMON INTERFACE IStaticArticleLink
-interface IStaticArticleLink {
+// TODO COMMON INTERFACE ILinkItem
+interface ILinkItem {
   key: string;
   label: string;
 }
@@ -38,14 +38,14 @@ export class ArticlesComponent {
   protected readonly eMode = EMode;
   protected mode = EMode.HOME;
   protected readonly eList = EList;
-  protected staticArticleLink: IStaticArticleLink | undefined = undefined;
+  protected staticArticleLink: ILinkItem | undefined = undefined;
   protected tags: ITag[] = [
     { id: 'cn', name: '中文' },
     { id: 'en', name: '英文' },
     { id: 'cn-en', name: '中英对照' },
   ];
   protected localLanguage = 'cn';
-  protected readonly staticArticleLinks: IStaticArticleLink[] = [
+  protected readonly staticArticleLinks: ILinkItem[] = [
     {
       key: 'nagash_1',
       label: '纳迦什-序章',
@@ -68,7 +68,7 @@ export class ArticlesComponent {
     }
   }
 
-  protected onStaticArticleLinkClick(item: IStaticArticleLink): void {
+  protected onStaticArticleLinkClick(item: ILinkItem): void {
     this.mode = EMode.DETAIL;
     this.staticArticleLink = item;
     this.analysisHttpService
