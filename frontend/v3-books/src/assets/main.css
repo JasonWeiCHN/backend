@@ -1,0 +1,10 @@
+@import './base.css';
+
+html {
+  font-size: 16px;
+  color: #333333;
+}
+
+#app {
+  /*padding: 1rem;*/
+}

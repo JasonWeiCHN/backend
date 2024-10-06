@@ -1,0 +1,25 @@
+@import './base.css';
+
+html {
+  font-size: 16px;
+  color: #333333;
+  transition: font-size 1s ease;
+}
+
+#app {
+  /*padding: 1rem;*/
+}
+
+/* 当屏幕宽度小于 768px 时 */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px; /* 缩小字体 */
+  }
+}
+
+/* 当屏幕宽度小于 480px 时 */
+@media (max-width: 480px) {
+  html {
+    font-size: 12px; /* 更小的字体 */
+  }
+}

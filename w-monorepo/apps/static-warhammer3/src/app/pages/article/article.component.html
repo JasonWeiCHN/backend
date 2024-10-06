@@ -10,36 +10,31 @@
           />
         </div>
         <div class="info">
-          <div style="font-size: 20px">{{ clan.file.heroName }}</div>
+          <div style="font-size: 20px; font-weight: 600">
+            {{ clan.file.heroName }}
+          </div>
           <div style="font-size: 16px">{{ clan.file.nameCN }}</div>
           <div style="font-size: 16px">外号: {{ clan.file.heroNickName }}</div>
         </div>
       </div>
       <w-back-button></w-back-button>
     </div>
-    <ng-container *ngIf="clan?.file as file">
-      <div *ngIf="file.description?.length" class="game-strategy">
-        <div [innerHTML]="file.description"></div>
-        <ng-container *ngIf="file.contributors?.length">
-          <div class="contributors">
-            <span>供稿人:</span>
-            <div
-              *ngFor="let contributor of file.contributors"
-              style="margin-right: 8px"
-            >
-              <a
-                *ngIf="contributor.url"
-                (click)="onContributorClick(contributor)"
-                target="_blank"
-                [href]="contributor.url"
-                >{{ contributor.name }}</a
-              >
-              <a *ngIf="!contributor.url">{{ contributor.name }}</a>
-            </div>
-          </div>
-        </ng-container>
-      </div>
-    </ng-container>
+    <div *ngIf="clanExtra">
+      <p
+        style="margin: 12px 0; color: #c4c4a8; border-bottom: 1px solid #c4c4a8"
+      >
+        {{ clanExtra.slogan }}
+      </p>
+      <p
+        style="
+          padding-bottom: 6px;
+          margin-bottom: 12px;
+          border-bottom: 1px solid #c4c4a8;
+        "
+      >
+        {{ clanExtra.description }}
+      </p>
+    </div>
   </div>
   <w-tag-selector
     [tags]="tags"
@@ -111,7 +106,32 @@
       </div>
     </div>
   </div>
-  <ng-container>
+  <ng-container
+    *ngIf="selectedTagId === EArticleTags.NEWER_TEACH && clan?.file as file"
+  >
+    <div *ngIf="file.description?.length" class="game-strategy">
+      <div [innerHTML]="file.description"></div>
+      <ng-container *ngIf="file.contributors?.length">
+        <div class="contributors">
+          <span>供稿人:</span>
+          <div
+            *ngFor="let contributor of file.contributors"
+            style="margin-right: 8px"
+          >
+            <a
+              *ngIf="contributor.url"
+              (click)="onContributorClick(contributor)"
+              target="_blank"
+              [href]="contributor.url"
+              >{{ contributor.name }}</a
+            >
+            <a *ngIf="!contributor.url">{{ contributor.name }}</a>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </ng-container>
+  <div style="margin-top: 6px">
     <w-list
       *ngIf="data.length"
       [data]="data"
@@ -121,5 +141,5 @@
     <div *ngIf="!data.length && selectedTagId !== EArticleTags.VOTE">
       暂无内容
     </div>
-  </ng-container>
+  </div>
 </div>

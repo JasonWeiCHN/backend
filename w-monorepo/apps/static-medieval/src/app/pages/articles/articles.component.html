@@ -1,10 +1,21 @@
 <div class="articles">
   <ng-container *ngIf="mode === eMode.HOME">
     <section>
+      <div class="static-link">
+        <div
+          *ngFor="let item of militaryUnitLinks"
+          class="static-link__item"
+          (click)="onStaticLinkItemClick(item)"
+        >
+          {{ item.label }}
+        </div>
+      </div>
+    </section>
+    <section>
       <div class="subtitle">派系介绍</div>
       <div class="static-link">
         <div
-          *ngFor="let item of staticArticleLinks"
+          *ngFor="let item of backgroundLinks"
           class="static-link__item"
           (click)="onStaticLinkItemClick(item)"
         >
@@ -24,6 +35,9 @@
       ></w-tag-selector>
     </div>
     <div [className]="'local-' + localLanguage" style="margin-top: 12px">
+      <app-military-units
+        *ngIf="staticLinkItem?.key === 'military_units'"
+      ></app-military-units>
       <app-background-early
         *ngIf="staticLinkItem?.key === 'background_early'"
       ></app-background-early>

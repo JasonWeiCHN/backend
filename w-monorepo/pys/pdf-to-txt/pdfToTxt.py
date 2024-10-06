@@ -17,7 +17,7 @@ def pdf_to_text(pdf_file, txt_file):
     print(f"PDF文本已成功提取到 {txt_file}")
 
 # 示例用法
-pdf_file_path = 'Daughter-of-the-Pirate-King.pdf'  # 你的PDF文件路径
-txt_file_path = 'Daughter-of-the-Pirate-King.txt'  # 输出的TXT文件路径
+pdf_file_path = '提格兰-叛教者朱利安时代的故事.pdf'  # 你的PDF文件路径
+txt_file_path = '提格兰-叛教者朱利安时代的故事.txt'  # 输出的TXT文件路径
 
 pdf_to_text(pdf_file_path, txt_file_path)

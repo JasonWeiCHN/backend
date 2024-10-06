@@ -9,10 +9,10 @@ from PIL import Image
 from datetime import datetime
 
 # 替换成你的 SESSDATA、BILI_JCT 和 FFMPEG_PATH
-SESSDATA = "b6ed868e%2C1734347917%2C7672c%2A62CjCj0xvDeWCpgs6dfVhjhkDT5eYav875XsfZH_EoZGbfP6l_96xY7SyyZLc-q7veg00SVmlzdmtDTFgxVFpMQW5WZjhJWDRqa3A3dk12Z0d2NVUzN3lQMThOQ2pHNTRmTEo0SUp6WXo2VWs3V3M5bWs5NVcwWFZLcFNHbGxjV2MxMmF6Y2puVkVRIIEC"
-BILI_JCT = "d2062de4f7be43845be0553cc5afe6af"
+SESSDATA = "68c2a05c%2C1744007446%2C03533%2Aa1CjCfORxmFY0uMNgNVl6x62VuOChM5-2Xs97oVhSXWs7M6F-rcYErFrRDXBGpDBpc5M0SVnZGZW5mbDBrVUFJWTEtMTgwV2pIRUNnd191V3k4Yk9icTJJWEZfRGtudXhPdWZZMmZXOWo0ZEJsMHdaWDM5MUdFemh3ampfMERxakg4M081bWwtaW5nIIEC"
+BILI_JCT = "c2e57cbbe22cc146a88e247f41f9bec4"
 BUVID3 = ""
-BVIDS = ["BV1gb421v7yD", "BV15J4m1T71Q", "BV1wr421w7sY", "BV1M4421Q7tS", "BV1Ux4y1E7SP", "BV1Y7421R7Kj", "BV1m6421f7Bt", "BV1eJ4m1G7K2", "BV1Hb421H791", "BV1fi421v7ck", "BV1bZ421g79Z", "BV1TJ4m1G7kG", "BV1Ub421i7KT", "BV1gm421V7kg", "BV1qM4m1z7dk", "BV14n4y1d7Nf", "BV1C2421T7F4", "BV1vZ421p74m", "BV1kS411N7bP", "BV1ts421g7k1"]
+BVIDS = ["BV1YV2AY9Ey6"]
 # FFMPEG 路径，查看：http://ffmpeg.org/
 FFMPEG_PATH = r"F:/ffmpeg/bin/ffmpeg.exe"
 OUTPUT_FOLDER = r"F:/biliGet/beauty"
@@ -21,13 +21,11 @@ async def download_url(url: str, out: str, info: str):
     # 下载函数
     async with httpx.AsyncClient(headers=HEADERS) as sess:
         resp = await sess.get(url)
+        content = resp.content  # 读取响应内容
         length = resp.headers.get('content-length')
         with open(out, 'wb') as f:
             process = 0
-            for chunk in resp.iter_bytes(1024):
-                if not chunk:
-                    break
-
+            for chunk in [content[i:i+1024] for i in range(0, len(content), 1024)]:
                 process += len(chunk)
                 print(f'下载 {info} {process} / {length}')
                 f.write(chunk)

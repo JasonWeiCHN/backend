@@ -18,6 +18,7 @@ import { SicilyEarlyComponent } from './pages/sicily-early/sicily-early.componen
 import { SpanishEarlyComponent } from './pages/spanish-early/spanish-early.component';
 import { TurkishEarlyComponent } from './pages/turkish-early/turkish-early.component';
 import { BackgroundEarlyComponent } from './pages/background-early/background-early.component';
+import { MilitaryUnitsComponent } from './pages/military-units/military-units.component';
 
 // TODO COMMON INTERFACE ILinkItem
 interface ILinkItem {
@@ -46,6 +47,7 @@ interface ILinkItem {
     SpanishEarlyComponent,
     TurkishEarlyComponent,
     BackgroundEarlyComponent,
+    MilitaryUnitsComponent,
   ],
   templateUrl: './articles.component.html',
   styleUrl: './articles.component.scss',
@@ -62,7 +64,13 @@ export class ArticlesComponent {
     { id: 'cn-en', name: '中英对照' },
   ];
   protected localLanguage = 'cn';
-  protected readonly staticArticleLinks: ILinkItem[] = [
+  protected readonly militaryUnitLinks: ILinkItem[] = [
+    {
+      key: 'military_units',
+      label: '战斗单位',
+    },
+  ];
+  protected readonly backgroundLinks: ILinkItem[] = [
     {
       key: 'background_early',
       label: '[早期] 背景知识',

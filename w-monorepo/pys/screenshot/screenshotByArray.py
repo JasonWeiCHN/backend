@@ -1,23 +1,22 @@
 from selenium import webdriver
-from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from webdriver_manager.chrome import ChromeDriverManager
 from PIL import Image
 import os
 
 # 常量配置
-CHROMEDRIVER_PATH = r'F:/chromedriver-win64/chromedriver.exe'
 BASE_URL = 'http://localhost:4201/article/'
-CLAN_IDS = ["Eataine","Nagarythe","Yvresse","Order_of_Loremasters","Avelorn","Knights_of_Caledor"]
- # 根据你的实际数据替换
+CLAN_IDS = ["Warherd_of_the_One_Eye", "Couronne", "Disciples_of_Hashut", "Cult_of_Pleasure", "Karaz_a_Karak", "Reikland", "The_Ice_Court", "Last_Defenders", "Khemri", "The_Awakened", "Heralds_of_Ariel" ]  # 根据实际数据替换
 OUTPUT_DIR = r'F:/tmp'  # 配置所有图片保存的路径文件夹
 
 # 初始化WebDriver
 options = webdriver.ChromeOptions()
 options.add_argument('--headless')  # 无头模式
 options.add_argument('--disable-gpu')
-service = ChromeService(executable_path=CHROMEDRIVER_PATH)
+service = Service(ChromeDriverManager().install())
 driver = webdriver.Chrome(service=service, options=options)
 
 # 创建输出文件夹（如果不存在）

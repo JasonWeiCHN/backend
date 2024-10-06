@@ -1,0 +1,15 @@
+<div class="static-article">
+  <ng-container *ngFor="let item of data; let index = index">
+    <div class="subtitle">{{ item.title }} | {{ item.titleCn }}</div>
+    <div class="block en">
+      <p>
+        {{ item.descEn }}
+      </p>
+    </div>
+    <div class="block cn">
+      <p>
+        {{ item.descCn }}
+      </p>
+    </div>
+  </ng-container>
+</div>
