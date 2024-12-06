@@ -1,0 +1,7 @@
+<div class="gallery">
+  <div class="row">
+    <div *ngFor="let columnImages of displayedImages" class="column">
+      <img *ngFor="let image of columnImages" [src]="image" />
+    </div>
+  </div>
+</div>

@@ -11,7 +11,7 @@ def txt_to_html(input_file, output_file):
         content = content.strip()  # 去除首尾多余的空格
 
         # 将文本按句号、感叹号、问号等标点符号分割
-        sentences = re.split(r'([.!?])', content)  # 保留标点符号
+        sentences = re.split(r'([.!?。！？])', content)  # 保留标点符号
 
         paragraphs = []
         current_paragraph = ''
@@ -25,7 +25,7 @@ def txt_to_html(input_file, output_file):
                     current_paragraph = sentence
 
             # 如果句子以句号、感叹号或问号结尾，将其视为一个完整的段落
-            if sentence[-1] in ['.', '!', '?']:
+            if sentence[-1] in ['.', '!', '?','。', '！','？']:
                 paragraphs.append(f"<p>{current_paragraph}</p>\n")  # 添加换行符
                 current_paragraph = ''  # 清空当前段落，准备下一个段落
 

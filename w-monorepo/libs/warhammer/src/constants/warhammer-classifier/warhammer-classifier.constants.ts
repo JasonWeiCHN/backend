@@ -525,7 +525,7 @@ export const WARHAMMER_CLASSIFIERS: IWarhammerClassifier[] = [
     nameCN: '帝国',
     files: [
       {
-        heroNickName: '卡皇、卡+8、帝国大只佬、死亡爪挂件',
+        heroNickName: '卡皇、卡+8、帝国大只佬、死亡之爪挂件',
         heroAvatarPath: 'assets/images/lords/empire-karl-franz.png',
         path: 'assets/images/icons/The Empire/Reikland.png',
         name: 'Reikland',

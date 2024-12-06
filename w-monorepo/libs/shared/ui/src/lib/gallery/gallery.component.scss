@@ -1,0 +1,53 @@
+.gallery {
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .column {
+    box-sizing: border-box;
+    padding: 0 4px;
+    flex: 20%;
+  }
+
+  .column img {
+    vertical-align: middle;
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+/* Responsive layout */
+@media screen and (max-width: 1200px) {
+  .column {
+    flex: 20%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .column {
+    flex: 25%;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 33.33%;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 50%;
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .column {
+    flex: 100%;
+  }
+}

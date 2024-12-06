@@ -49,11 +49,11 @@
     class="vote-list"
   >
     <div class="vote-item">
-      <div>
+      <div class="left">
         我喜欢这个派系:
         <span style="color: #c4c4a8">{{ clan.file.heroName }}</span>
       </div>
-      <div style="display: flex">
+      <div class="right">
         <div class="vote-value">{{ votes['popularity'] || 0 }}</div>
         <div
           class="vote-button"
@@ -64,8 +64,8 @@
       </div>
     </div>
     <div class="vote-item">
-      <div>上手简单，适合新手!</div>
-      <div style="display: flex">
+      <div class="left">上手简单，适合新手!</div>
+      <div class="right">
         <div class="vote-value">{{ votes['easy'] || 0 }}</div>
         <div class="vote-button" (click)="onVoteClick(clan.file.id, 'easy')">
           投票
@@ -73,8 +73,8 @@
       </div>
     </div>
     <div class="vote-item">
-      <div>太难了，特别有挑战!</div>
-      <div style="display: flex">
+      <div class="left">太难了，特别有挑战!</div>
+      <div class="right">
         <div class="vote-value">{{ votes['hard'] || 0 }}</div>
         <div class="vote-button" (click)="onVoteClick(clan.file.id, 'hard')">
           投票
@@ -82,8 +82,8 @@
       </div>
     </div>
     <div class="vote-item">
-      <div>作为敌人，这个派系很可怕，我可不想和他发生战斗！</div>
-      <div style="display: flex">
+      <div class="left">作为敌人，这个派系很可怕，我可不想和他发生战斗！</div>
+      <div class="right">
         <div class="vote-value">{{ votes['hard-to-fight'] || 0 }}</div>
         <div
           class="vote-button"
@@ -94,8 +94,8 @@
       </div>
     </div>
     <div class="vote-item">
-      <div>我能轻松击败他，简直不堪一击！</div>
-      <div style="display: flex">
+      <div class="left">我能轻松击败他，简直不堪一击！</div>
+      <div class="right">
         <div class="vote-value">{{ votes['easy-to-fight'] || 0 }}</div>
         <div
           class="vote-button"

@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, ViewportScroller } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import {
   BackButtonComponent,
@@ -69,10 +69,12 @@ export class ArticleComponent implements OnInit {
     private snackbarService: SnackbarService,
     private readonly voteHttpService: VoteHttpService,
     private readonly analysisHttpService: AnalysisHttpService,
-    private readonly _activatedRoute: ActivatedRoute
+    private readonly _activatedRoute: ActivatedRoute,
+    private readonly _viewportScroller: ViewportScroller
   ) {}
 
   public ngOnInit(): void {
+    this._viewportScroller.scrollToPosition([0, 0]); // 滚动到顶部
     const { id } = this._activatedRoute.snapshot.params;
     this.clan = this.warhammerClassifiersMap[id];
     this.clanExtra = this.clanMap[id];

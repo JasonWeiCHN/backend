@@ -2,25 +2,31 @@
   "name": "static-pet",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "prefix": "app",
+  "prefix": "pet",
   "sourceRoot": "apps/static-pet/src",
   "tags": [],
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/static-pet",
         "index": "apps/static-pet/src/index.html",
         "main": "apps/static-pet/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "apps/static-pet/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
           "apps/static-pet/src/favicon.ico",
           "apps/static-pet/src/assets"
         ],
-        "styles": ["apps/static-pet/src/styles.scss"],
+        "styles": [
+          "apps/static-pet/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -73,7 +79,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
         "jestConfig": "apps/static-pet/jest.config.ts"
       }

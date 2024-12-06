@@ -7,9 +7,8 @@
     {{ data.detail }}
   </div>
   <div class="item-card__img-container">
-    <img [src]="data.imageUrl" alt="">
-    <div
-      class="item-card__img-container__des">
+    <img [src]="data.imageUrl" alt="" />
+    <div class="item-card__img-container__des">
       <div class="title">{{ data.title }}</div>
       <div class="description">{{ data.description }}</div>
       <div class="date">{{ data.date }}</div>
@@ -17,6 +16,6 @@
   </div>
   <div
     class="item-card__background"
-    [style.background-image]="'url(' + data.imageUrl + ')'">
-  </div>
+    [style.background-image]="'url(' + data.imageUrl + ')'"
+  ></div>
 </div>

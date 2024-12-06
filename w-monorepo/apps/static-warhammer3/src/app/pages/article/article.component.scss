@@ -69,16 +69,31 @@
     margin-bottom: 6px;
     border-bottom: 1px solid #9b9b9b;
 
-    .vote-button {
-      cursor: pointer;
-      margin-left: 6px;
-      border-bottom: 1px solid #a86797;
-      color: #a86797;
-    }
+    .right {
+      display: flex;
 
-    .vote-button:hover {
-      color: #f696dd;
-      border-color: #f696dd;
+      .vote-button {
+        cursor: pointer;
+        margin-left: 6px;
+        border-bottom: 1px solid #a86797;
+        color: #a86797;
+      }
+
+      .vote-button:hover {
+        color: #f696dd;
+        border-color: #f696dd;
+      }
+    }
+  }
+}
+
+/* 当屏幕宽度小于 480px 时 */
+@media (max-width: 480px) {
+  .vote-list {
+    .vote-item {
+      .left {
+        max-width: 280px;
+      }
     }
   }
 }

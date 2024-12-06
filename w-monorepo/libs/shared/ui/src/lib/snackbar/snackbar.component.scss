@@ -1,8 +1,9 @@
 .snackbar {
   position: fixed;
+  width: 190px;
   top: 20vh;
   left: 50%;
-  transform: translateX(-50%);
+  margin-left: -95px;
   background-color: #171d25;
   color: #ffffff;
   padding: 16px;

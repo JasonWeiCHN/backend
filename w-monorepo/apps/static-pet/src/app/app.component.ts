@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { IApp } from '@w-monorepo/interfaces';
+import { APP_CONFIG } from './shared/constants/app.config.constans';
+import { PetBannerComponent } from './components/pet-banner/pet-banner.component';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   standalone: true,
-  imports: [NxWelcomeComponent, RouterModule],
-  selector: 'app-root',
+  imports: [PetBannerComponent, RouterOutlet],
+  selector: 'pet-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'static-pet';
+  protected appConfig: IApp = APP_CONFIG;
 }

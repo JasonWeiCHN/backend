@@ -256,3 +256,19 @@ nohup python3 vote.py &
 ```
 ps aux | grep vote.py
 ```
+
+## 重启服务器的悲剧
+
+```
+投票系统重启
+cd /var/www/vote/
+nohup python3 vote.py &
+
+统计系统重启
+cd /var/www/statistics/
+nohup python3 statistics.py > flask.log &
+
+文件系统重启
+cd /var/www/web-files/
+nohup python3 web.py > nohup.out 2>&1 &
+```

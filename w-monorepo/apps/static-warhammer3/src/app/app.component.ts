@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
-import { NxWelcomeComponent } from './nx-welcome.component';
 import {
   BannerComponent,
   INavigationItem,
@@ -9,7 +8,7 @@ import {
   ProjectSwitcherComponent,
   SlideshowComponent,
   SnackbarComponent,
-  SnackbarModule
+  SnackbarModule,
 } from '@w-monorepo/ui';
 import { CommonModule } from '@angular/common';
 import { APP_CONFIG } from './shared/constants/app.config.constans';
@@ -21,18 +20,17 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     SnackbarModule,
     HttpClientModule,
-    NxWelcomeComponent,
     RouterModule,
     BannerComponent,
     NavigationComponent,
     CommonModule,
     SlideshowComponent,
     ProjectSwitcherComponent,
-    SnackbarComponent
+    SnackbarComponent,
   ],
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
   protected appConfig: IApp = APP_CONFIG;
@@ -43,7 +41,7 @@ export class AppComponent {
 
   public constructor(private _router: Router) {
     // 订阅路由变化事件
-    this._router.events.subscribe(event => {
+    this._router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         // 检查当前路由是否匹配'article/:id'
         this.showNavigation = !this._router.url.includes('article/');

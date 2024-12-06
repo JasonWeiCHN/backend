@@ -1,5 +1,6 @@
 export enum EList {
   DEFAULT,
   ARTICLE,
-  GAME
+  GAME,
+  TALENT,
 }

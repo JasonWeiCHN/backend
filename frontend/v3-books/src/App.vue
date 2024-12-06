@@ -5,7 +5,16 @@ import Header from '@/components/Header.vue'
 
 <template>
   <Header></Header>
-  <RouterView />
+  <div class="page">
+    <RouterView />
+  </div>
 </template>
 
-<style scoped></style>
+<style lang="scss">
+.page {
+  p {
+    font-size: 18px;
+    margin-bottom: 1rem;
+  }
+}
+</style>

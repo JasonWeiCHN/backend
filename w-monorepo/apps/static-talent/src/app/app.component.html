@@ -1,0 +1,12 @@
+<div class="w-app">
+  <w-banner [data]="appConfig.banner">
+    <div rightContent></div>
+  </w-banner>
+  <div class="page">
+    <w-list
+      [data]="talents"
+      [mode]="eList.TALENT"
+      (listItemClick)="onListItemClick($event)"
+    ></w-list>
+  </div>
+</div>

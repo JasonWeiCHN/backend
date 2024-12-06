@@ -1,0 +1,21 @@
+<div *ngIf="data" class="good-card">
+  <div style="padding: 10px; border-bottom: 1px solid #b8b8b8">
+    <div *ngIf="data.tagIds.length" class="good-card__tags">
+      <div class="tag" *ngFor="let tag of data.tagIds">
+        {{ tag }}
+      </div>
+    </div>
+    <div class="good-card__img-container">
+      <img [src]="data.imageUrl" alt="" />
+    </div>
+    <div class="good-card__title">
+      {{ data.title }}
+    </div>
+    <div class="good-card__description">
+      {{ data.description }}
+    </div>
+  </div>
+  <div *ngIf="data.price" class="good-card__price">
+    ￥ {{ data.price.final }}
+  </div>
+</div>

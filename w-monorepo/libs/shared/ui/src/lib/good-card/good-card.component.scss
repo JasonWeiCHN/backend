@@ -1,0 +1,61 @@
+.good-card {
+  box-sizing: border-box;
+  width: 360px;
+  border: 1px solid #b8b8b8;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &__img-container {
+    display: flex;
+    justify-content: center;
+    height: 250px;
+    overflow: hidden;
+
+    img {
+      width: auto;
+      height: 100%;
+      transition: transform 0.5s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  &__tags {
+    display: flex;
+
+    .tag {
+      color: #636363;
+      padding: 0 3px;
+      margin-right: 6px;
+      border: 1px solid #b8b8b8;
+      border-radius: 4px;
+
+      &:hover {
+        border-color: #636363;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 8px;
+    font-size: 22px;
+    color: #535353;
+  }
+
+  &__description {
+    font-size: 16px;
+    color: #636363;
+  }
+
+  &__price {
+    padding: 10px;
+    font-size: 16px;
+    color: #535353;
+  }
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+}

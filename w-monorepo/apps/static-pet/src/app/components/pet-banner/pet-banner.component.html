@@ -1,0 +1,20 @@
+<div class="pet-banner">
+  <div class="content">
+    <div class="left" (click)="onLogoClick()">
+      <img class="logo" src="./assets/images/pet-logo.png" alt="" />
+    </div>
+    <div class="right">
+      <div
+        *ngFor="let item of items; let i = index"
+        class="nav-item"
+        [class.active]="item.id === activeItemId"
+        [ngStyle]="{ 'border-right': i === items.length - 1 ? 'none' : '' }"
+        (click)="onItemClick(item)"
+      >
+        {{ item.label }}
+      </div>
+      <!--      <div class="nav-item" style="border-right: none">宠物美图</div>-->
+      <div class="button-buy">在线购买</div>
+    </div>
+  </div>
+</div>
