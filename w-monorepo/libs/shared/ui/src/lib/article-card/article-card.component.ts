@@ -3,13 +3,13 @@ import { CommonModule } from '@angular/common';
 import { IItemCard } from '../item-card';
 
 @Component({
-  selector: 'w-good-card',
+  selector: 'w-article-card',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './good-card.component.html',
-  styleUrl: './good-card.component.scss',
+  templateUrl: './article-card.component.html',
+  styleUrl: './article-card.component.scss',
 })
-export class GoodCardComponent {
+export class ArticleCardComponent {
   @Input()
   public data: IItemCard | undefined;
 

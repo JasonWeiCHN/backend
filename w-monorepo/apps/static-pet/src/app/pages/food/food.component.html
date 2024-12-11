@@ -1,7 +1,17 @@
 <div class="food">
+  <div style="margin-bottom: 12px">
+    <w-navigation
+      [mode]="eNavigationMode.PET"
+      [items]="navigationItems"
+      (navigationItemClick)="onNavigationItemClick($event)"
+    ></w-navigation>
+  </div>
   <div class="grid-container">
     <div *ngFor="let item of data" class="grid-container__item">
-      <w-good-card [data]="item"></w-good-card>
+      <w-good-card
+        [data]="item"
+        (itemClick)="onItemClick($event)"
+      ></w-good-card>
     </div>
   </div>
 </div>

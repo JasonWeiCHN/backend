@@ -1,194 +1,454 @@
 import { IArticleMap } from '@w-monorepo/interfaces';
+import { EPetType } from '../enums/pet.enum';
 
-export const ARTICLES_MAP: IArticleMap = {
-  'liveRecording': [
+export const FOOD_MAP: IArticleMap = {
+  [EPetType.DOG]: [
     {
-      'date': '2024-04-27 16:56:01',
-      'sourceUrl': 'https://www.bilibili.com/video/BV1sm41127RS',
-      'referer': null,
-      'imageUrl': '',
-      'tagIds': [''],
-      'publisher': '古老游戏玩家',
-      'description': 'https://www.youtube.com/watch?v=t8ucsIkt-6k&t=3s',
-      'typeId': 'liveRecording',
-      'id': '2',
-      'detail': '',
-      'title': '[ 转载 ·  Khan of Steppe ] 全面战争·幕府将军1·织田篇·第一集',
-      'views': 514
-    }, {
-      'date': '2024-04-11 19:30:00',
-      'sourceUrl': 'https://www.bilibili.com/video/BV1Jx421S7AJ',
-      'referer': null,
-      'imageUrl': '',
-      'tagIds': [''],
-      'publisher': '古老游戏玩家',
-      'description': 'https://www.youtube.com/watch?v=2dmbQOeziOg&list=PLY8cZUL4pfEBmeXwfBSqMhjbhwWs5OpdP',
-      'typeId': 'liveRecording',
-      'id': '3',
-      'detail': '',
-      'title': '[ 转载 ·  LegendofTotalWar ] 全面战争·幕府将军1·毛利篇·第一集',
-      'views': 196
-    }],
-  'strategy': [
-    {
-      'date': '2000-06-10 0:00:00',
-      'sourceUrl': 'http://111.230.29.99:4002/',
-      'referer': '',
-      'imageUrl': '',
-      'tagIds': [''],
-      'publisher': 'Creative Assembly',
-      'description': '关于日本史、武士和游戏说明',
-      'typeId': 'strategy',
-      'id': '14',
-      'detail': '',
-      'title': '幕府将军游戏手册',
-      'views': 0
+      sourceUrl: 'https://item.jd.com/100109638062.html',
+      date: 'undefined',
+      description: '心粮时刻全价鸭肉梨狗粮拉布拉多边牧中大型犬通用犬粮20kg',
+      detail: '888888',
+      id: '',
+      imageUrl:
+        'https://img12.360buyimg.com/n7/jfs/t1/179674/23/46619/122417/66a0618eF3bfe89c0/0a19541ba34cd3d9.jpg',
+      tagIds: ['news', 'dog_food'],
+      title: '心粮 鲜鸭雪梨',
+      price: {
+        discountPercent: 100,
+        initial: '289.00',
+        final: '289.00',
+      },
     },
     {
-      'date': '2024-05-10 20:14:11',
-      'sourceUrl': 'https://www.bilibili.com/video/BV1xH4y1g7ub',
-      'referer': null,
-      'imageUrl': '',
-      'tagIds': [''],
-      'publisher': '古老游戏玩家',
-      'description': '[全面战争 · 幕府将军] 新手教学篇 - 跟我入门',
-      'typeId': 'strategy',
-      'id': '1',
-      'detail': '',
-      'title': '[全面战争 · 幕府将军] 新手教学篇 - 跟我入门',
-      'views': 297
-    }
-  ],
-  'backgroundKnowledge': [
+      sourceUrl: 'https://item.jd.com/10128132934741.html',
+      date: 'undefined',
+      description:
+        '狗粮40斤装成犬大型犬专用金毛拉布拉多边牧通用全价大包装冻干粮',
+      detail: '888888',
+      id: '',
+      imageUrl:
+        'https://g-search2.alicdn.com/img/bao/uploaded/i4/i3/2206799193129/O1CN01gycYCr1Yz8HVUC1Gc_!!0-item_pic.jpg_580x580q90.jpg',
+      tagIds: ['news', 'dog_food'],
+      title: '果喜蜜 通用狗粮',
+      price: {
+        discountPercent: 100,
+        initial: '94.50',
+        final: '94.50',
+      },
+    },
     {
-      'date': '2024-04-24 21:24:55',
-      'sourceUrl': 'https://www.bilibili.com/video/BV15m421s7rw',
-      'referer': null,
-      'imageUrl': '',
-      'tagIds': [''],
-      'publisher': '古老游戏玩家',
-      'description': '官方资料翻译后转有声',
-      'typeId': 'backgroundKnowledge',
-      'id': '13',
-      'detail': '',
-      'title': '[全面战争 · 幕府将军] 关于日本的研究-战国时代篇2',
-      'views': 320
-    }, {
-      'date': '2024-04-18 22:40:00',
-      'sourceUrl': 'https://www.bilibili.com/video/BV111421d7sy',
-      'referer': null,
-      'imageUrl': '',
-      'tagIds': [''],
-      'publisher': '古老游戏玩家',
-      'description': '官方资料翻译后转有声',
-      'typeId': 'backgroundKnowledge',
-      'id': '12',
-      'detail': '',
-      'title': '[全面战争 · 幕府将军] 关于日本的研究-战国时代篇1',
-      'views': 433
-    }, {
-      'date': '2024-04-16 21:47:11',
-      'sourceUrl': 'https://www.bilibili.com/video/BV1jA4m1c724',
-      'referer': null,
-      'imageUrl': '',
-      'tagIds': [''],
-      'publisher': '古老游戏玩家',
-      'description': '官方资料翻译后转有声',
-      'typeId': 'backgroundKnowledge',
-      'id': '11',
-      'detail': '',
-      'title': '[全面战争 · 幕府将军] 关于日本的研究-早期幕府将军篇',
-      'views': 291
-    }, {
-      'date': '2024-04-15 20:27:48',
-      'sourceUrl': 'https://www.bilibili.com/video/BV1xz421C7p1',
-      'referer': null,
-      'imageUrl': '',
-      'tagIds': [''],
-      'publisher': '古老游戏玩家',
-      'description': '官方资料翻译后转有声',
-      'typeId': 'backgroundKnowledge',
-      'id': '10',
-      'detail': '',
-      'title': '[全面战争 · 幕府将军] 关于日本的研究-源平之战篇',
-      'views': 282
-    }, {
-      'date': '2024-04-14 19:30:00',
-      'sourceUrl': 'https://www.bilibili.com/video/BV1xD421n71o',
-      'referer': null,
-      'imageUrl': '',
-      'tagIds': [''],
-      'publisher': '古老游戏玩家',
-      'description': '官方资料翻译后转有声',
-      'typeId': 'backgroundKnowledge',
-      'id': '9',
-      'detail': '',
-      'title': '[全面战争 · 幕府将军] 关于日本的研究-武士崛起篇2',
-      'views': 270
-    }, {
-      'date': '2024-04-13 19:50:00',
-      'sourceUrl': 'https://www.bilibili.com/video/BV1Tz421C7oU',
-      'referer': null,
-      'imageUrl': '',
-      'tagIds': [''],
-      'publisher': '古老游戏玩家',
-      'description': '官方资料翻译后转有声',
-      'typeId': 'backgroundKnowledge',
-      'id': '8',
-      'detail': '',
-      'title': '[全面战争 · 幕府将军] 关于日本的研究-武士崛起篇1',
-      'views': 339
-    }, {
-      'date': '2024-04-11 22:30:00',
-      'sourceUrl': 'https://www.bilibili.com/video/BV1ot421E75X',
-      'referer': null,
-      'imageUrl': '',
-      'tagIds': [''],
-      'publisher': '古老游戏玩家',
-      'description': '官方资料翻译后转有声',
-      'typeId': 'backgroundKnowledge',
-      'id': '7',
-      'detail': '',
-      'title': '[全面战争 · 幕府将军] 关于日本的研究-早期日本篇',
-      'views': 254
-    }, {
-      'date': '2024-04-10 18:05:38',
-      'sourceUrl': 'https://www.bilibili.com/video/BV1mC411V7ZV',
-      'referer': null,
-      'imageUrl': '',
-      'tagIds': [''],
-      'publisher': '古老游戏玩家',
-      'description': '官方资料翻译后转有声',
-      'typeId': 'backgroundKnowledge',
-      'id': '6',
-      'detail': '',
-      'title': '[全面战争 · 幕府将军] 关于日本的研究-神话篇',
-      'views': 329
-    }, {
-      'date': '2024-04-07 16:19:45',
-      'sourceUrl': 'https://www.bilibili.com/video/BV15x421S7xf',
-      'referer': null,
-      'imageUrl': '',
-      'tagIds': [''],
-      'publisher': '古老游戏玩家',
-      'description': '在玩幕府将军之前，先聊聊日本战术的内核',
-      'typeId': 'backgroundKnowledge',
-      'id': '5',
-      'detail': '',
-      'title': '[全面战争 · 幕府将军] 爱“偷袭”的日本',
-      'views': 1156
-    }, {
-      'date': '2024-04-06 23:34:53',
-      'sourceUrl': 'https://www.bilibili.com/video/BV1Nz421C7hR',
-      'referer': null,
-      'imageUrl': '',
-      'tagIds': [''],
-      'publisher': '古老游戏玩家',
-      'description': '幕府将军背后的中国元素',
-      'typeId': 'backgroundKnowledge',
-      'id': '4',
-      'detail': '',
-      'title': '[全面战争·幕府将军] 幕府将军背后的中国元素',
-      'views': 5308
-    }]
+      sourceUrl: 'https://item.jd.com/100016348492.html',
+      date: 'undefined',
+      description: '10斤装泰迪金毛比熊40博美20小型中大型成犬幼犬通用型5kg',
+      detail: '888888',
+      id: '',
+      imageUrl:
+        'https://img12.360buyimg.com/n7/jfs/t1/55839/21/20893/282935/62ce9277E698e0550/b3d732d198f486c1.jpg',
+      tagIds: ['news', 'dog_food'],
+      title: '台派 狗粮',
+      price: {
+        discountPercent: 100,
+        initial: '43.80',
+        final: '43.80',
+      },
+    },
+    {
+      sourceUrl: 'https://item.jd.com/100051923758.html',
+      date: 'undefined',
+      description: '幼犬粮泰迪金毛比熊博美柯基通用型大型小型犬专用 2kg',
+      detail: '888888',
+      id: '',
+      imageUrl:
+        'https://img13.360buyimg.com/n7/jfs/t1/244207/2/19753/86831/66f3dd63Fbc5ac985/ca5286acfa3c0d7c.jpg',
+      tagIds: ['news', 'dog_food'],
+      title: '凯锐思 狗粮',
+      price: {
+        discountPercent: 100,
+        initial: '27.90',
+        final: '27.90',
+      },
+    },
+    {
+      sourceUrl:
+        'https://item.taobao.com/item.htm?abbucket=11&id=800236445037&ns=1&pisk=fNRIKODCGkqQA2DEhz3NfidlIO5WA3G4Az_JoUFUy6Cd2dTDVMuoK6J1VhK1vWunKTIWx6BkLgSFV_TkcVoqgj8H-_X-0ml28G34Gs28paEPX1QPKcuabj8H-_4Q2qJtguGNRVV8egKR6OQ5o_Edy9316w75wWB89REOjGIRw9IpWPQ5PyERy73_WabRyWQR2NFOraqdw_KJWj2QlaMCxegwky1GD4J2JGNXSC_peJYCf-yD1d6hDIS_w7d1JFSt7_PjUipcYtSvXfPCNFQWYG-xM51OhKYPPHGQ96J9IBfe_macd3s1HCW_vJQfOM6v9O4LwFXJCC1e902D7Fsdh1JZIDWPOH9cm9Hij3T1Y3dCBkiN4K8w9Otxb5tlFKYPPHGQ9nIyOSSXS7e75tV55ius582k7gcXasrZE2WdSw6Z5VZpE9QG51us5-3hpNbwBVg_n75..&priceTId=2147805117339009754343976e490e&skuId=5453390125217&spm=a21n57.1.hoverItem.3&utparam=%7B%22aplus_abtest%22%3A%226b88a9ca0b7144d2047bee4a5d14ec73%22%7D&xxc=taobaoSearch',
+      date: 'undefined',
+      description: '全价冻干鲜肉夹心成幼犬鸭肉梨中小型犬粮',
+      detail: '888888',
+      id: '',
+      imageUrl:
+        'https://img.alicdn.com/img/i4/3964196285/O1CN01VC07iL1wIaAQmBCXD_!!3964196285-0-alimamacc.jpg_580x580q90.jpg',
+      tagIds: ['news', 'dog_food'],
+      title: '耐吉斯 狗粮',
+      price: {
+        discountPercent: 100,
+        initial: '114.00',
+        final: '114.00',
+      },
+    },
+    {
+      date: 'undefined',
+      description:
+        '11-in-1 Multivitamin Bites 11合1多功能咀嚼軟粒 - 牛肉味(犬用)',
+      detail: '888888',
+      id: '',
+      imageUrl:
+        'https://img.alicdn.com/imgextra/i3/2247374807/O1CN01mWiTfz1lNeq889ouF_!!2247374807.jpg',
+      tagIds: ['news', 'dog_food'],
+      title: 'Zesty Paws',
+      price: {
+        discountPercent: 100,
+        initial: '368.00',
+        final: '368.00',
+      },
+    },
+    {
+      date: 'undefined',
+      description: '馋嘴泰迪冻干狗粮 贵宾成犬专用狗粮 犬主粮 5kg包邮',
+      detail: '888888',
+      id: '',
+      imageUrl:
+        'https://espetsso-media.s3-accelerate.amazonaws.com/img/p/1/3/5/8/3/13583-home_default.jpg',
+      tagIds: ['news', 'dog_food'],
+      title: '威尔逊 狗粮',
+      price: {
+        discountPercent: 100,
+        initial: '106.80',
+        final: '106.80',
+      },
+    },
+    {
+      date: 'undefined',
+      description:
+        '11-in-1 Multivitamin Bites 11合1多功能咀嚼軟粒 - 牛肉味(犬用)',
+      detail: '888888',
+      id: '',
+      imageUrl:
+        'https://espetsso-media.s3-accelerate.amazonaws.com/img/p/1/3/5/8/3/13583-home_default.jpg',
+      tagIds: ['news', 'dog_food'],
+      title: 'Zesty Paws',
+      price: {
+        discountPercent: 100,
+        initial: '368.00',
+        final: '368.00',
+      },
+    },
+    {
+      date: 'undefined',
+      description:
+        '11-in-1 Multivitamin Bites 11合1多功能咀嚼軟粒 - 牛肉味(犬用)',
+      detail: '888888',
+      id: '',
+      imageUrl:
+        'https://espetsso-media.s3-accelerate.amazonaws.com/img/p/1/3/5/8/3/13583-home_default.jpg',
+      tagIds: ['news', 'dog_food'],
+      title: 'Zesty Paws',
+      price: {
+        discountPercent: 100,
+        initial: '368.00',
+        final: '368.00',
+      },
+    },
+    {
+      date: 'undefined',
+      description:
+        '11-in-1 Multivitamin Bites 11合1多功能咀嚼軟粒 - 牛肉味(犬用)',
+      detail: '888888',
+      id: '',
+      imageUrl:
+        'https://espetsso-media.s3-accelerate.amazonaws.com/img/p/1/3/5/8/3/13583-home_default.jpg',
+      tagIds: ['news', 'dog_food'],
+      title: 'Zesty Paws',
+      price: {
+        discountPercent: 100,
+        initial: '368.00',
+        final: '368.00',
+      },
+    },
+    {
+      date: 'undefined',
+      description:
+        '11-in-1 Multivitamin Bites 11合1多功能咀嚼軟粒 - 牛肉味(犬用)',
+      detail: '888888',
+      id: '',
+      imageUrl:
+        'https://espetsso-media.s3-accelerate.amazonaws.com/img/p/1/3/5/8/3/13583-home_default.jpg',
+      tagIds: ['news', 'dog_food'],
+      title: 'Zesty Paws',
+      price: {
+        discountPercent: 100,
+        initial: '368.00',
+        final: '368.00',
+      },
+    },
+    {
+      date: 'undefined',
+      description:
+        '11-in-1 Multivitamin Bites 11合1多功能咀嚼軟粒 - 牛肉味(犬用)',
+      detail: '888888',
+      id: '',
+      imageUrl:
+        'https://espetsso-media.s3-accelerate.amazonaws.com/img/p/1/3/5/8/3/13583-home_default.jpg',
+      tagIds: ['news', 'dog_food'],
+      title: 'Zesty Paws',
+      price: {
+        discountPercent: 100,
+        initial: '368.00',
+        final: '368.00',
+      },
+    },
+    {
+      date: 'undefined',
+      description:
+        '11-in-1 Multivitamin Bites 11合1多功能咀嚼軟粒 - 牛肉味(犬用)',
+      detail: '888888',
+      id: '',
+      imageUrl:
+        'https://espetsso-media.s3-accelerate.amazonaws.com/img/p/1/3/5/8/3/13583-home_default.jpg',
+      tagIds: ['news', 'dog_food'],
+      title: 'Zesty Paws',
+      price: {
+        discountPercent: 100,
+        initial: '368.00',
+        final: '368.00',
+      },
+    },
+    {
+      date: 'undefined',
+      description:
+        '11-in-1 Multivitamin Bites 11合1多功能咀嚼軟粒 - 牛肉味(犬用)',
+      detail: '888888',
+      id: '',
+      imageUrl:
+        'https://espetsso-media.s3-accelerate.amazonaws.com/img/p/1/3/5/8/3/13583-home_default.jpg',
+      tagIds: ['news', 'dog_food'],
+      title: 'Zesty Paws',
+      price: {
+        discountPercent: 100,
+        initial: '368.00',
+        final: '368.00',
+      },
+    },
+    {
+      date: 'undefined',
+      description:
+        '11-in-1 Multivitamin Bites 11合1多功能咀嚼軟粒 - 牛肉味(犬用)',
+      detail: '888888',
+      id: '',
+      imageUrl:
+        'https://espetsso-media.s3-accelerate.amazonaws.com/img/p/1/3/5/8/3/13583-home_default.jpg',
+      tagIds: ['news', 'dog_food'],
+      title: 'Zesty Paws',
+      price: {
+        discountPercent: 100,
+        initial: '368.00',
+        final: '368.00',
+      },
+    },
+    {
+      date: 'undefined',
+      description:
+        '11-in-1 Multivitamin Bites 11合1多功能咀嚼軟粒 - 牛肉味(犬用)',
+      detail: '888888',
+      id: '',
+      imageUrl:
+        'https://espetsso-media.s3-accelerate.amazonaws.com/img/p/1/3/5/8/3/13583-home_default.jpg',
+      tagIds: ['news', 'dog_food'],
+      title: 'Zesty Paws',
+      price: {
+        discountPercent: 100,
+        initial: '368.00',
+        final: '368.00',
+      },
+    },
+  ],
+  [EPetType.CAT]: [
+    {
+      date: 'undefined',
+      description: '冻干生骨肉双拼猫粮-大鹅红枣配方10kg 高蛋白低脂肪成幼猫',
+      detail: '888888',
+      id: '',
+      imageUrl:
+        'https://img13.360buyimg.com/n7/jfs/t1/187835/37/54790/242516/67516243Fa9aabfb4/26ec3a63dbbc5660.png',
+      tagIds: ['news', 'cat_food'],
+      title: '京东京造 猫粮',
+      price: {
+        discountPercent: 100,
+        initial: '399.00',
+        final: '399.00',
+      },
+    },
+    {
+      date: 'undefined',
+      description: '2.5kg5斤 成猫 幼猫 全阶段美味营养全价猫粮',
+      detail: '888888',
+      id: '',
+      imageUrl:
+        'https://img11.360buyimg.com/n7/jfs/t1/237492/23/28159/96984/67233760F380b695a/7f0dba0d94a1c4a6.jpg',
+      tagIds: ['news', 'cat_food'],
+      title: '弗兰士 猫粮',
+      price: {
+        discountPercent: 100,
+        initial: '25.90',
+        final: '25.90',
+      },
+    },
+    {
+      date: 'undefined',
+      description:
+        '宠物零食满籽多春鱼冻干猫零食小鱼干营养补钙拌粮猫狗通用 B级多春鱼冻干[50g/袋]',
+      detail: '888888',
+      id: '',
+      imageUrl:
+        'https://img12.360buyimg.com/n1/jfs/t1/242582/31/24146/95767/673b0e94F77db73d6/d5848da8fd2be688.jpg',
+      tagIds: ['news', 'cat_food'],
+      title: '冠本 多春鱼冻干',
+      price: {
+        discountPercent: 100,
+        initial: '9.90',
+        final: '9.90',
+      },
+    },
+  ],
+  [EPetType.FISH]: [
+    {
+      date: 'undefined',
+      description:
+        '金龙鱼红龙增色增艳高蛋白观赏鱼热带鱼大型鱼通用鱼粮 至尊红龙520g*1罐（营养均衡龙鱼御用粮）',
+      detail: '888888',
+      id: '',
+      imageUrl:
+        'https://img11.360buyimg.com/n7/jfs/t1/161007/26/40366/177850/66163ef8F267e0603/99f20eb7997c0eb3.jpg',
+      tagIds: ['news', 'dog_food'],
+      title: '贝意品 龙鱼饲料',
+      price: {
+        discountPercent: 100,
+        initial: '179.10',
+        final: '179.10',
+      },
+    },
+    {
+      date: 'undefined',
+      description: '小型鱼专用饲料 150g 鱼食热带鱼斗鱼灯科鱼饲料孔雀鱼饲料鱼粮',
+      detail: '888888',
+      id: '',
+      imageUrl:
+        'https://img10.360buyimg.com/n7/jfs/t1/211482/30/49311/173396/673eb26aFd97536e5/ae113509dfb9f6d1.jpg',
+      tagIds: ['news', 'dog_food'],
+      title: '鱼多趣 小鱼饲料',
+      price: {
+        discountPercent: 100,
+        initial: '11.80',
+        final: '11.80',
+      },
+    },
+  ],
+  [EPetType.BIRD]: [
+    {
+      date: 'undefined',
+      description: '虎皮玄风鸟食谷子【1200ml】画眉鸽子牡丹文鸟饲料',
+      detail: '888888',
+      id: '',
+      imageUrl:
+        'https://img14.360buyimg.com/n7/jfs/t1/205377/27/47904/265916/672f3aecFbd805263/6582d1afc8598e72.jpg',
+      tagIds: ['news', 'dog_food'],
+      title: '茨格曼 鹦鹉饲料',
+      price: {
+        discountPercent: 100,
+        initial: '20.50',
+        final: '20.50',
+      },
+    },
+  ],
+  [EPetType.MOUSE]: [
+    {
+      date: 'undefined',
+      description:
+        '果蔬仓鼠粮680g 仓鼠粮食营养主粮金丝熊 三线 银狐紫仓布丁食物',
+      detail: '888888',
+      id: '',
+      imageUrl:
+        'https://img10.360buyimg.com/n7/jfs/t1/246381/20/16910/177556/66bc6849Fb9e9f731/0174f252290a65d7.jpg',
+      tagIds: ['news', 'dog_food'],
+      title: '喜帅 仓鼠粮',
+      price: {
+        discountPercent: 100,
+        initial: '24.80',
+        final: '24.80',
+      },
+    },
+  ],
+};
+
+export const GOODS_MAP: IArticleMap = {
+  [EPetType.DOG]: [
+    {
+      date: 'undefined',
+      description:
+        '狗狗玩具自动遛狗球耐咬自嗨逗狗狗神器比熊小型犬宠物小狗突突球',
+      detail: '888888',
+      id: '',
+      imageUrl:
+        'https://g-search3.alicdn.com/img/bao/uploaded/i4/i3/2215726356056/O1CN01CIR8Wh1ubhaAXuvEZ_!!4611686018427385432-0-item_pic.jpg_580x580q90.jpg',
+      tagIds: ['news', 'dog_food'],
+      title: '遛狗球',
+      price: {
+        discountPercent: 100,
+        initial: '5.80',
+        final: '5.80',
+      },
+    },
+    {
+      date: 'undefined',
+      description:
+        '狗玩具宠物小狗磨牙玩具耐咬大型犬金毛大狗咬不烂的狗狗解闷神器',
+      detail: '888888',
+      id: '',
+      imageUrl:
+        'https://img.alicdn.com/img/i1/4222265350/O1CN01SA4LZ01pOLuej8192_!!0-saturn_solar.jpg_580x580q90.jpg',
+      tagIds: ['news', 'dog_food'],
+      title: '牛棒骨',
+      price: {
+        discountPercent: 100,
+        initial: '9.80',
+        final: '9.80',
+      },
+    },
+  ],
+  [EPetType.CAT]: [],
+  [EPetType.FISH]: [],
+  [EPetType.BIRD]: [],
+  [EPetType.MOUSE]: [],
+};
+
+export const NEWS_MAP: IArticleMap = {
+  [EPetType.DOG]: [
+    {
+      sourceUrl: 'assets/htmls/14 Best Dogs for First-Time Owners.html',
+      referer:
+        'https://www.thesprucepets.com/best-dogs-for-first-time-owners-4153979',
+      date: '',
+      description: '',
+      detail: '',
+      id: '',
+      imageUrl:
+        'https://www.thesprucepets.com/thmb/eKsHcHrK3OvXxQxtUEu0EDCUmlQ=/315x208/filters:no_upscale():strip_icc():format(webp)/best-dogs-for-first-time-owners-4153979-hero-bb82043e86394be28afcd8582d0da2d6.JPG',
+      tagIds: [],
+      title: '初次养狗的14个最佳选择',
+    },
+    {
+      referer: 'https://www.thesprucepets.com/can-dogs-see-in-the-dark-5199751',
+      date: '',
+      description: '',
+      detail: '',
+      id: '',
+      imageUrl:
+        'https://www.thesprucepets.com/thmb/Inh1g8-mXSO2sfN4duZNqPliJr4=/315x236/filters:no_upscale():strip_icc():format(webp)/golden-retriever-in-woods-523106764-28aefbe2775b4126be7672437c28086b.jpg',
+      tagIds: [],
+      title: '狗在黑暗中能看见东西吗？',
+    },
+  ],
+  [EPetType.CAT]: [],
+  [EPetType.FISH]: [],
+  [EPetType.BIRD]: [],
+  [EPetType.MOUSE]: [],
 };

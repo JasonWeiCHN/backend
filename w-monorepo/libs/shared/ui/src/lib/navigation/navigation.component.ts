@@ -1,9 +1,17 @@
-import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { INavigationItem } from './shared/interfaces/navigation.interface';
 import { has } from 'lodash-es';
 import { NavigationEnd, Router } from '@angular/router';
 import { AnalysisHttpService } from '@w-monorepo/analysis';
+import { ENavigationMode } from './shared/enums/navigation.enum';
 
 @Component({
   selector: 'w-navigation',
@@ -11,9 +19,18 @@ import { AnalysisHttpService } from '@w-monorepo/analysis';
   imports: [CommonModule],
   templateUrl: './navigation.component.html',
   styleUrl: './navigation.component.scss',
-  providers: [AnalysisHttpService]
+  providers: [AnalysisHttpService],
 })
 export class NavigationComponent implements OnChanges {
+  /**
+   * @description
+   * Different mode will display different layout
+   * @type {ENavigationMode}
+   * @default ENavigationMode.DEFAULT
+   */
+  @Input()
+  public mode: ENavigationMode = ENavigationMode.DEFAULT;
+
   /**
    * @description
    * Navigation items
@@ -24,12 +41,16 @@ export class NavigationComponent implements OnChanges {
   public items: INavigationItem[] = [];
 
   @Output('navigationItemClick')
-  public readonly itemClick: EventEmitter<INavigationItem> = new EventEmitter<INavigationItem>();
+  public readonly itemClick: EventEmitter<INavigationItem> =
+    new EventEmitter<INavigationItem>();
 
   public activeItemId = '';
+  protected eNavigationMode = ENavigationMode;
 
-  public constructor(private analysisHttpService: AnalysisHttpService, private router: Router) {
-  }
+  public constructor(
+    private analysisHttpService: AnalysisHttpService,
+    private router: Router
+  ) {}
 
   public ngOnChanges(changes: SimpleChanges): void {
     if (has(changes, 'items')) {
@@ -40,7 +61,7 @@ export class NavigationComponent implements OnChanges {
     }
 
     // 监听路由变化
-    this.router.events.subscribe(event => {
+    this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.updateActiveItemId();
       }
@@ -51,16 +72,21 @@ export class NavigationComponent implements OnChanges {
     this.activeItemId = item.id;
     this.itemClick.emit(item);
 
-    this.analysisHttpService.submitString('导航切换: ' + item.label).subscribe((response: any) => {
-      // console.log('String submitted successfully!', response);
-    }, (error: any) => {
-      console.error('Error submitting string:', error);
-    });
+    this.analysisHttpService.submitString('导航切换: ' + item.label).subscribe(
+      (response: any) => {
+        // console.log('String submitted successfully!', response);
+      },
+      (error: any) => {
+        console.error('Error submitting string:', error);
+      }
+    );
   }
 
   private updateActiveItemId() {
     const currentUrl = this.router.url;
-    const matchedItem = this.items.find(item => currentUrl.includes(item.path));
+    const matchedItem = this.items.find((item) =>
+      currentUrl.includes(item.path)
+    );
     if (matchedItem) {
       this.activeItemId = matchedItem.id;
     }

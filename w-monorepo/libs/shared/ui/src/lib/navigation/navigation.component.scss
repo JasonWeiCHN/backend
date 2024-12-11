@@ -1,6 +1,7 @@
 @import "libs/shared/ui/src/styles/text.scss";
 
 .navigation-bar {
+  $root: &;
   @extend %no-select;
 
   width: 100%;
@@ -49,6 +50,31 @@
     color: #ffffff;
     width: 60%;
     left: 50%;
+  }
+
+  &--pet {
+    color: #535353;
+
+    #{$root}__item {
+      min-width: 120px;
+
+      &.active::after {
+        background-color: #636363;
+      }
+    }
+
+    #{$root}__item.active, #{$root}__item:hover {
+      color: #636363;
+    }
+
+    #{$root}__item::after {
+      height: 1px;
+      background-color: #636363;
+    }
+
+    #{$root}__item:hover::after {
+      color: #636363;
+    }
   }
 }
 

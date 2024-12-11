@@ -90,7 +90,7 @@ nx g @nx/angular:component product-list --directory=libs/products/src/lib/produc
 nx g @nx/angular:component race-multiple-selector --directory=apps/static-warhammer3/src/app/components/race-multiple-selector --standalone --export --style=scss
 
 在UI库创建组件
-nx g @nx/angular:component pagination --directory=libs/shared/ui/src/lib/pagination --standalone --export --style=scss
+nx g @nx/angular:component article-card --directory=libs/shared/ui/src/lib/article-card --standalone --export --style=scss
 
 给已有项目增加 tailwind
 npx nx g @nx/angular:setup-tailwind my-project

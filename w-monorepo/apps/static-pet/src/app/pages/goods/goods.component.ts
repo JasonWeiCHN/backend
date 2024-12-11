@@ -1,271 +1,64 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { GoodCardComponent, IItemCard } from '@w-monorepo/ui';
+import {
+  ENavigationMode,
+  GoodCardComponent,
+  IItemCard,
+  INavigationItem,
+  NavigationComponent,
+} from '@w-monorepo/ui';
+import { EPetType } from '../../shared/enums/pet.enum';
+import { GOODS_MAP } from '../../shared/constants/data.constants';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'pet-goods',
   standalone: true,
-  imports: [CommonModule, GoodCardComponent],
+  imports: [
+    HttpClientModule,
+    CommonModule,
+    GoodCardComponent,
+    NavigationComponent,
+  ],
   templateUrl: './goods.component.html',
   styleUrl: './goods.component.scss',
 })
 export class GoodsComponent {
-  protected data: IItemCard[] = [
+  protected readonly navigationItems: INavigationItem[] = [
     {
-      date: 'undefined',
-      description:
-        '11-in-1 Multivitamin Bites 11合1多功能咀嚼軟粒 - 牛肉味(犬用)',
-      detail: '888888',
-      id: '',
-      imageUrl:
-        'https://espetsso-media.s3-accelerate.amazonaws.com/img/p/1/3/5/8/3/13583-home_default.jpg',
-      tagIds: ['news', 'dog_food'],
-      title: 'Zesty Paws',
-      price: {
-        discountPercent: 100,
-        initial: '368.00',
-        final: '368.00',
-      },
+      id: EPetType.DOG,
+      label: '狗',
+      path: '',
     },
     {
-      date: 'undefined',
-      description:
-        '11-in-1 Multivitamin Bites 11合1多功能咀嚼軟粒 - 牛肉味(犬用)',
-      detail: '888888',
-      id: '',
-      imageUrl:
-        'https://espetsso-media.s3-accelerate.amazonaws.com/img/p/1/3/5/8/3/13583-home_default.jpg',
-      tagIds: ['news', 'dog_food'],
-      title: 'Zesty Paws',
-      price: {
-        discountPercent: 100,
-        initial: '368.00',
-        final: '368.00',
-      },
+      id: EPetType.CAT,
+      label: '猫',
+      path: '',
     },
     {
-      date: 'undefined',
-      description:
-        '11-in-1 Multivitamin Bites 11合1多功能咀嚼軟粒 - 牛肉味(犬用)',
-      detail: '888888',
-      id: '',
-      imageUrl:
-        'https://espetsso-media.s3-accelerate.amazonaws.com/img/p/1/3/5/8/3/13583-home_default.jpg',
-      tagIds: ['news', 'dog_food'],
-      title: 'Zesty Paws',
-      price: {
-        discountPercent: 100,
-        initial: '368.00',
-        final: '368.00',
-      },
+      id: EPetType.FISH,
+      label: '鱼',
+      path: '',
     },
     {
-      date: 'undefined',
-      description:
-        '11-in-1 Multivitamin Bites 11合1多功能咀嚼軟粒 - 牛肉味(犬用)',
-      detail: '888888',
-      id: '',
-      imageUrl:
-        'https://espetsso-media.s3-accelerate.amazonaws.com/img/p/1/3/5/8/3/13583-home_default.jpg',
-      tagIds: ['news', 'dog_food'],
-      title: 'Zesty Paws',
-      price: {
-        discountPercent: 100,
-        initial: '368.00',
-        final: '368.00',
-      },
+      id: EPetType.BIRD,
+      label: '鸟',
+      path: '',
     },
     {
-      date: 'undefined',
-      description:
-        '11-in-1 Multivitamin Bites 11合1多功能咀嚼軟粒 - 牛肉味(犬用)',
-      detail: '888888',
-      id: '',
-      imageUrl:
-        'https://espetsso-media.s3-accelerate.amazonaws.com/img/p/1/3/5/8/3/13583-home_default.jpg',
-      tagIds: ['news', 'dog_food'],
-      title: 'Zesty Paws',
-      price: {
-        discountPercent: 100,
-        initial: '368.00',
-        final: '368.00',
-      },
-    },
-    {
-      date: 'undefined',
-      description:
-        '11-in-1 Multivitamin Bites 11合1多功能咀嚼軟粒 - 牛肉味(犬用)',
-      detail: '888888',
-      id: '',
-      imageUrl:
-        'https://espetsso-media.s3-accelerate.amazonaws.com/img/p/1/3/5/8/3/13583-home_default.jpg',
-      tagIds: ['news', 'dog_food'],
-      title: 'Zesty Paws',
-      price: {
-        discountPercent: 100,
-        initial: '368.00',
-        final: '368.00',
-      },
-    },
-    {
-      date: 'undefined',
-      description:
-        '11-in-1 Multivitamin Bites 11合1多功能咀嚼軟粒 - 牛肉味(犬用)',
-      detail: '888888',
-      id: '',
-      imageUrl:
-        'https://espetsso-media.s3-accelerate.amazonaws.com/img/p/1/3/5/8/3/13583-home_default.jpg',
-      tagIds: ['news', 'dog_food'],
-      title: 'Zesty Paws',
-      price: {
-        discountPercent: 100,
-        initial: '368.00',
-        final: '368.00',
-      },
-    },
-    {
-      date: 'undefined',
-      description:
-        '11-in-1 Multivitamin Bites 11合1多功能咀嚼軟粒 - 牛肉味(犬用)',
-      detail: '888888',
-      id: '',
-      imageUrl:
-        'https://espetsso-media.s3-accelerate.amazonaws.com/img/p/1/3/5/8/3/13583-home_default.jpg',
-      tagIds: ['news', 'dog_food'],
-      title: 'Zesty Paws',
-      price: {
-        discountPercent: 100,
-        initial: '368.00',
-        final: '368.00',
-      },
-    },
-    {
-      date: 'undefined',
-      description:
-        '11-in-1 Multivitamin Bites 11合1多功能咀嚼軟粒 - 牛肉味(犬用)',
-      detail: '888888',
-      id: '',
-      imageUrl:
-        'https://espetsso-media.s3-accelerate.amazonaws.com/img/p/1/3/5/8/3/13583-home_default.jpg',
-      tagIds: ['news', 'dog_food'],
-      title: 'Zesty Paws',
-      price: {
-        discountPercent: 100,
-        initial: '368.00',
-        final: '368.00',
-      },
-    },
-    {
-      date: 'undefined',
-      description:
-        '11-in-1 Multivitamin Bites 11合1多功能咀嚼軟粒 - 牛肉味(犬用)',
-      detail: '888888',
-      id: '',
-      imageUrl:
-        'https://espetsso-media.s3-accelerate.amazonaws.com/img/p/1/3/5/8/3/13583-home_default.jpg',
-      tagIds: ['news', 'dog_food'],
-      title: 'Zesty Paws',
-      price: {
-        discountPercent: 100,
-        initial: '368.00',
-        final: '368.00',
-      },
-    },
-    {
-      date: 'undefined',
-      description:
-        '11-in-1 Multivitamin Bites 11合1多功能咀嚼軟粒 - 牛肉味(犬用)',
-      detail: '888888',
-      id: '',
-      imageUrl:
-        'https://espetsso-media.s3-accelerate.amazonaws.com/img/p/1/3/5/8/3/13583-home_default.jpg',
-      tagIds: ['news', 'dog_food'],
-      title: 'Zesty Paws',
-      price: {
-        discountPercent: 100,
-        initial: '368.00',
-        final: '368.00',
-      },
-    },
-    {
-      date: 'undefined',
-      description:
-        '11-in-1 Multivitamin Bites 11合1多功能咀嚼軟粒 - 牛肉味(犬用)',
-      detail: '888888',
-      id: '',
-      imageUrl:
-        'https://espetsso-media.s3-accelerate.amazonaws.com/img/p/1/3/5/8/3/13583-home_default.jpg',
-      tagIds: ['news', 'dog_food'],
-      title: 'Zesty Paws',
-      price: {
-        discountPercent: 100,
-        initial: '368.00',
-        final: '368.00',
-      },
-    },
-    {
-      date: 'undefined',
-      description:
-        '11-in-1 Multivitamin Bites 11合1多功能咀嚼軟粒 - 牛肉味(犬用)',
-      detail: '888888',
-      id: '',
-      imageUrl:
-        'https://espetsso-media.s3-accelerate.amazonaws.com/img/p/1/3/5/8/3/13583-home_default.jpg',
-      tagIds: ['news', 'dog_food'],
-      title: 'Zesty Paws',
-      price: {
-        discountPercent: 100,
-        initial: '368.00',
-        final: '368.00',
-      },
-    },
-    {
-      date: 'undefined',
-      description:
-        '11-in-1 Multivitamin Bites 11合1多功能咀嚼軟粒 - 牛肉味(犬用)',
-      detail: '888888',
-      id: '',
-      imageUrl:
-        'https://espetsso-media.s3-accelerate.amazonaws.com/img/p/1/3/5/8/3/13583-home_default.jpg',
-      tagIds: ['news', 'dog_food'],
-      title: 'Zesty Paws',
-      price: {
-        discountPercent: 100,
-        initial: '368.00',
-        final: '368.00',
-      },
-    },
-    {
-      date: 'undefined',
-      description:
-        '11-in-1 Multivitamin Bites 11合1多功能咀嚼軟粒 - 牛肉味(犬用)',
-      detail: '888888',
-      id: '',
-      imageUrl:
-        'https://espetsso-media.s3-accelerate.amazonaws.com/img/p/1/3/5/8/3/13583-home_default.jpg',
-      tagIds: ['news', 'dog_food'],
-      title: 'Zesty Paws',
-      price: {
-        discountPercent: 100,
-        initial: '368.00',
-        final: '368.00',
-      },
-    },
-    {
-      date: 'undefined',
-      description:
-        '11-in-1 Multivitamin Bites 11合1多功能咀嚼軟粒 - 牛肉味(犬用)',
-      detail: '888888',
-      id: '',
-      imageUrl:
-        'https://espetsso-media.s3-accelerate.amazonaws.com/img/p/1/3/5/8/3/13583-home_default.jpg',
-      tagIds: ['news', 'dog_food'],
-      title: 'Zesty Paws',
-      price: {
-        discountPercent: 100,
-        initial: '368.00',
-        final: '368.00',
-      },
+      id: EPetType.MOUSE,
+      label: '豚鼠',
+      path: '',
     },
   ];
+  protected data: IItemCard[] = [];
+  protected readonly eNavigationMode = ENavigationMode;
+
+  public constructor() {
+    this.data = GOODS_MAP[EPetType.DOG];
+  }
+
+  protected onNavigationItemClick(item: INavigationItem) {
+    this.data = GOODS_MAP[item.id];
+  }
 }

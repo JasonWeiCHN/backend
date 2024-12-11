@@ -37,3 +37,5 @@ export * from './lib/china-city-selector';
 export * from './lib/gallery/gallery.component';
 
 export * from './lib/good-card/good-card.component';
+
+export * from './lib/article-card/article-card.component';
