@@ -88,7 +88,7 @@ export class ArticleComponent implements OnInit {
     }
   }
 
-  protected onTagSeclet(tagIndex: number): void {
+  protected onTagSelect(tagIndex: number): void {
     const { id } = this._activatedRoute.snapshot.params;
     const selectedTagId = this.tags[tagIndex].id;
     this.selectedTagId = selectedTagId;

@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ClassifierComponent, ITag, SlideshowComponent, TagSelectorComponent } from '@w-monorepo/ui';
+import {
+  ClassifierComponent,
+  ITag,
+  SlideshowComponent,
+  TagSelectorComponent,
+} from '@w-monorepo/ui';
 import { WarhammerClassifierComponent } from '../../components/warhammer-classifier/warhammer-classifier.component';
 import { ClansNavigationComponent } from '../../components/clans-navigation/clans-navigation.component';
 import { AnalysisHttpService } from '@w-monorepo/analysis';
@@ -8,10 +13,17 @@ import { AnalysisHttpService } from '@w-monorepo/analysis';
 @Component({
   selector: 'app-clans',
   standalone: true,
-  imports: [CommonModule, ClassifierComponent, WarhammerClassifierComponent, TagSelectorComponent, ClansNavigationComponent, SlideshowComponent],
+  imports: [
+    CommonModule,
+    ClassifierComponent,
+    WarhammerClassifierComponent,
+    TagSelectorComponent,
+    ClansNavigationComponent,
+    SlideshowComponent,
+  ],
   templateUrl: './clans.component.html',
   styleUrl: './clans.component.scss',
-  providers: [AnalysisHttpService]
+  providers: [AnalysisHttpService],
 })
 export class ClansComponent {
   public activeModeId = 'map'; // list / map
@@ -20,11 +32,10 @@ export class ClansComponent {
 
   protected tags: ITag[] = [
     { id: 'map', name: '图表' },
-    { id: 'list', name: '列表' }
+    { id: 'list', name: '列表' },
   ];
 
-  public constructor(private analysisHttpService: AnalysisHttpService) {
-  }
+  public constructor(private analysisHttpService: AnalysisHttpService) {}
 
   protected openImage(type: string) {
     switch (type) {
@@ -38,11 +49,14 @@ export class ClansComponent {
         break;
     }
 
-    this.analysisHttpService.submitString('打开: ' + type + '地图').subscribe((response: any) => {
-      // console.log('String submitted successfully!', response);
-    }, (error: any) => {
-      console.error('Error submitting string:', error);
-    });
+    this.analysisHttpService.submitString('打开: ' + type + '地图').subscribe(
+      (response: any) => {
+        // console.log('String submitted successfully!', response);
+      },
+      (error: any) => {
+        console.error('Error submitting string:', error);
+      }
+    );
   }
 
   // TODO 没有配置https 部署后不支持下载！
@@ -54,7 +68,7 @@ export class ClansComponent {
   //   link.click();
   // }
 
-  protected onTagSeclet(tagIndex: number): void {
+  protected onTagSelect(tagIndex: number): void {
     this.activeModeId = this.tags[tagIndex].id;
   }
 }

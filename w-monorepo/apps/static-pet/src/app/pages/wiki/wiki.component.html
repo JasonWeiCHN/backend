@@ -1,0 +1,51 @@
+<div class="pet-wiki">
+  <div class="navigation">
+    <w-navigation
+      [mode]="eNavigationMode.PET"
+      [items]="navigationItems"
+      (navigationItemClick)="onNavigationItemClick($event)"
+    ></w-navigation>
+  </div>
+  <div class="details" *ngIf="data">
+    <section class="overview">
+      <div class="title" [id]="ePetWiKiNavigation.OVERVIEW">概览</div>
+      <div
+        class="content"
+        [innerHTML]="data[ePetWiKiNavigation.OVERVIEW]"
+      ></div>
+    </section>
+    <section class="characteristics">
+      <div class="title" id="characteristics">特点</div>
+      <div
+        class="content"
+        [innerHTML]="data[ePetWiKiNavigation.CHARACTERISTICS]"
+      ></div>
+    </section>
+    <section class="appearance">
+      <div class="title" id="appearance">外形</div>
+      <div
+        class="content"
+        [innerHTML]="data[ePetWiKiNavigation.APPEARANCE]"
+      ></div>
+    </section>
+    <section class="photos">
+      <div class="title" id="photos">照片</div>
+      <div class="content" [innerHTML]="data[ePetWiKiNavigation.PHOTOS]"></div>
+    </section>
+    <section class="temperament">
+      <div class="title" id="temperament">个性</div>
+      <div
+        class="content"
+        [innerHTML]="data[ePetWiKiNavigation.TEMPERAMENT]"
+      ></div>
+    </section>
+    <section class="care">
+      <div class="title" id="care">照顾</div>
+      <div class="content" [innerHTML]="data[ePetWiKiNavigation.CARE]"></div>
+    </section>
+    <section class="history">
+      <div class="title" id="history">起源</div>
+      <div class="content" [innerHTML]="data[ePetWiKiNavigation.HISTORY]"></div>
+    </section>
+  </div>
+</div>

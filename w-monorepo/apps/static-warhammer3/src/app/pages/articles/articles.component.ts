@@ -87,7 +87,7 @@ export class ArticlesComponent {
     this.mode = EMode.HOME;
   }
 
-  protected onTagSeclet(tagIndex: number): void {
+  protected onTagSelect(tagIndex: number): void {
     this.localLanguage = this.tags[tagIndex].id;
   }
 }

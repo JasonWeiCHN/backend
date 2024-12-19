@@ -44,6 +44,8 @@ export class PetBannerComponent {
     },
   ];
   public activeItemId = '';
+  protected activeItem: INavigationItem | undefined = undefined;
+  protected isMenuVisible = false;
 
   public constructor(private _router: Router) {
     // 监听路由变化
@@ -56,11 +58,21 @@ export class PetBannerComponent {
 
   protected onItemClick(item: INavigationItem) {
     this.activeItemId = item.id;
+    this.activeItem = item;
+    this.isMenuVisible = false;
     this._router.navigate([item.path]);
   }
 
   protected onLogoClick() {
     this._router.navigate(['home']);
+  }
+
+  protected onMenuClick() {
+    this.isMenuVisible = true;
+  }
+
+  protected onCloseMenuClick() {
+    this.isMenuVisible = false;
   }
 
   private updateActiveItemId() {
@@ -70,6 +82,7 @@ export class PetBannerComponent {
     );
     if (matchedItem) {
       this.activeItemId = matchedItem.id;
+      this.activeItem = matchedItem;
     }
   }
 }

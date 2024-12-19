@@ -1,10 +1,16 @@
-<div class="tag-container">
+<div
+  class="tag-container"
+  [class.tag-container--pet]="mode === eTagSelector.PET"
+>
   <div
-    *ngFor="let tag of tags; let i = index"
+    *ngFor="let tag of displayedTags; let i = index"
     class="tag"
     [class.selected]="i === selectedTagIndex"
     (click)="selectTag(i)"
   >
     {{ tag.name }}
+  </div>
+  <div class="tag toggle-button" (click)="toggleTagDisplay()">
+    {{ showAllTags ? '收起' : '展开' }}
   </div>
 </div>

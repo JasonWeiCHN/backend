@@ -59,28 +59,48 @@
       min-width: 120px;
 
       &.active::after {
-        background-color: #636363;
+        background-color: #0e4965;
       }
     }
 
     #{$root}__item.active, #{$root}__item:hover {
-      color: #636363;
+      color: #0e4965;
     }
 
     #{$root}__item::after {
       height: 1px;
-      background-color: #636363;
+      background-color: #0e4965;
     }
 
     #{$root}__item:hover::after {
-      color: #636363;
+      color: #0e4965;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .navigation-bar {
+    &--pet {
+      .navigation-bar__item {
+        font-size: 16px;
+        padding: 0 12px;
+        min-width: min-content;
+      }
     }
   }
 }
 
 @media screen and (max-width: 360px) {
   .navigation-bar {
+    width: 100vw;
     overflow-x: scroll;
     gap: 12px;
+
+    &--pet {
+      .navigation-bar__item {
+        font-size: 16px;
+        min-width: min-content;
+      }
+    }
   }
 }

@@ -2,15 +2,41 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px; /* 标签之间的间距 */
+
+  .tag {
+    cursor: pointer;
+    padding: 4px 6px;
+    border-bottom: none;
+    border-bottom: 1px solid transparent;
+
+    &:hover, &.selected {
+      color: #ffffff;
+      border-bottom: 1px solid #9b9b9b;
+    }
+  }
+
+  .toggle-button {
+    display: none;
+  }
 }
 
-.tag {
-  cursor: pointer;
-  padding: 4px 6px;
-  border-bottom: none;
+.tag-container--pet {
+  .tag {
+    color: #0e4965;
 
-  &:hover, &.selected {
-    color: #ffffff;
-    border-bottom: 1px solid #9b9b9b;
+    &:hover, &.selected {
+      color: #2571bd;
+      border-bottom: 1px solid #2571bd;
+    }
+  }
+
+  .toggle-button {
+    color: #aecb54;
+    display: block;
+
+    &:hover, &.selected {
+      color: #95b728;
+      border-bottom: 1px solid #95b728;
+    }
   }
 }

@@ -1,241 +1,73 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { GalleryComponent, IItemCard } from '@w-monorepo/ui';
+import {
+  ENavigationMode,
+  ETagSelector,
+  GalleryComponent,
+  IItemCard,
+  INavigationItem,
+  ITag,
+  NavigationComponent,
+  TagSelectorComponent,
+} from '@w-monorepo/ui';
 import { PetGalleryComponent } from '../../components/pet-gallery/pet-gallery.component';
+import {
+  ON_SALE_MAP,
+  PET_CLASSIFICATION,
+} from '../../shared/constants/data.constants';
+import { EPetType } from '../../shared/enums/pet.enum';
+import { HttpClientModule } from '@angular/common/http';
+import { APP_CONFIG } from '../../shared/constants/app.config.constans';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'pet-on-sale',
   standalone: true,
-  imports: [CommonModule, GalleryComponent, PetGalleryComponent],
+  imports: [
+    HttpClientModule,
+    CommonModule,
+    GalleryComponent,
+    PetGalleryComponent,
+    NavigationComponent,
+    TagSelectorComponent,
+  ],
   templateUrl: './on-sale.component.html',
   styleUrl: './on-sale.component.scss',
 })
 export class OnSaleComponent {
-  protected pets: IItemCard[] = [
-    {
-      date: '',
-      description: '伯恩山犬',
-      detail: '',
-      id: '',
-      imageUrl: 'assets/images/dogs/dog1.jpg',
-      tagIds: [],
-      title: '小乖',
-      typeId: '',
-      price: {
-        discountPercent: 100,
-        initial: '2000',
-        final: '2000',
-      },
-    },
-    {
-      date: '',
-      description: '伯恩山犬',
-      detail: '',
-      id: '',
-      imageUrl: 'assets/images/dogs/dog2.jpg',
-      tagIds: [],
-      title: '小乖',
-      typeId: '',
-      price: {
-        discountPercent: 100,
-        initial: '2000',
-        final: '2000',
-      },
-    },
-    {
-      date: '',
-      description: '伯恩山犬',
-      detail: '',
-      id: '',
-      imageUrl: 'assets/images/dogs/dog3.jpg',
-      tagIds: [],
-      title: '小乖',
-      typeId: '',
-      price: {
-        discountPercent: 100,
-        initial: '2000',
-        final: '2000',
-      },
-    },
-    {
-      date: '',
-      description: '伯恩山犬',
-      detail: '',
-      id: '',
-      imageUrl: 'assets/images/dogs/dog4.jpg',
-      tagIds: [],
-      title: '小乖',
-      typeId: '',
-      price: {
-        discountPercent: 100,
-        initial: '2000',
-        final: '2000',
-      },
-    },
-    {
-      date: '',
-      description: '伯恩山犬',
-      detail: '',
-      id: '',
-      imageUrl: 'assets/images/dogs/dog5.jpg',
-      tagIds: [],
-      title: '小乖',
-      typeId: '',
-      price: {
-        discountPercent: 100,
-        initial: '2000',
-        final: '2000',
-      },
-    },
-    {
-      date: '',
-      description: '伯恩山犬',
-      detail: '',
-      id: '',
-      imageUrl: 'assets/images/dogs/dog6.jpg',
-      tagIds: [],
-      title: '小乖',
-      typeId: '',
-      price: {
-        discountPercent: 100,
-        initial: '2000',
-        final: '2000',
-      },
-    },
-    {
-      date: '',
-      description: '伯恩山犬',
-      detail: '',
-      id: '',
-      imageUrl: 'assets/images/dogs/dog7.jpg',
-      tagIds: [],
-      title: '小乖',
-      typeId: '',
-      price: {
-        discountPercent: 100,
-        initial: '2000',
-        final: '2000',
-      },
-    },
-    {
-      date: '',
-      description: '伯恩山犬',
-      detail: '',
-      id: '',
-      imageUrl: 'assets/images/dogs/dog8.jpg',
-      tagIds: [],
-      title: '小乖',
-      typeId: '',
-      price: {
-        discountPercent: 100,
-        initial: '2000',
-        final: '2000',
-      },
-    },
-    {
-      date: '',
-      description: '伯恩山犬',
-      detail: '',
-      id: '',
-      imageUrl: 'assets/images/dogs/dog9.jpg',
-      tagIds: [],
-      title: '小乖',
-      typeId: '',
-      price: {
-        discountPercent: 100,
-        initial: '2000',
-        final: '2000',
-      },
-    },
-    {
-      date: '',
-      description: '伯恩山犬',
-      detail: '',
-      id: '',
-      imageUrl: 'assets/images/dogs/dog10.jpg',
-      tagIds: [],
-      title: '小乖',
-      typeId: '',
-      price: {
-        discountPercent: 100,
-        initial: '2000',
-        final: '2000',
-      },
-    },
-    {
-      date: '',
-      description: '伯恩山犬',
-      detail: '',
-      id: '',
-      imageUrl: 'assets/images/dogs/dog11.jpg',
-      tagIds: [],
-      title: '小乖',
-      typeId: '',
-      price: {
-        discountPercent: 100,
-        initial: '2000',
-        final: '2000',
-      },
-    },
-    {
-      date: '',
-      description: '伯恩山犬',
-      detail: '',
-      id: '',
-      imageUrl: 'assets/images/dogs/dog12.jpg',
-      tagIds: [],
-      title: '小乖',
-      typeId: '',
-      price: {
-        discountPercent: 100,
-        initial: '2000',
-        final: '2000',
-      },
-    },
-    {
-      date: '',
-      description: '伯恩山犬',
-      detail: '',
-      id: '',
-      imageUrl: 'assets/images/dogs/dog13.jpg',
-      tagIds: [],
-      title: '小乖',
-      typeId: '',
-      price: {
-        discountPercent: 100,
-        initial: '2000',
-        final: '2000',
-      },
-    },
-    {
-      date: '',
-      description: '伯恩山犬',
-      detail: '',
-      id: '',
-      imageUrl: 'assets/images/dogs/dog14.jpg',
-      tagIds: [],
-      title: '小乖',
-      typeId: '',
-      price: {
-        discountPercent: 100,
-        initial: '2000',
-        final: '2000',
-      },
-    },
-    {
-      date: '',
-      description: '伯恩山犬',
-      detail: '',
-      id: '',
-      imageUrl: 'assets/images/dogs/dog15.jpg',
-      tagIds: [],
-      title: '小乖',
-      typeId: '',
-      price: {
-        discountPercent: 100,
-        initial: '2000',
-        final: '2000',
-      },
-    },
-  ];
+  protected readonly eNavigationMode = ENavigationMode;
+  protected readonly eTagSelector = ETagSelector;
+  protected readonly navigationItems: INavigationItem[] =
+    APP_CONFIG.navigationItems;
+  protected data: IItemCard[] = [...ON_SALE_MAP[EPetType.DOG]];
+  protected tags: ITag[] = PET_CLASSIFICATION[EPetType.DOG];
+  protected activeNavigationItemId: string = EPetType.DOG;
+  protected activeTag: ITag = PET_CLASSIFICATION[EPetType.DOG][0];
+
+  public constructor(private _router: Router) {}
+
+  protected onNavigationItemClick(item: INavigationItem) {
+    this.data = ON_SALE_MAP[item.id];
+    this.activeNavigationItemId = item.id;
+  }
+
+  protected onItemClick(item: IItemCard): void {
+    console.log(item);
+  }
+
+  protected onMoreClick(): void {
+    this._router.navigate([`/wiki/${this.activeTag.id}`]);
+  }
+
+  protected onTagSelect(tagIndex: number): void {
+    this.activeTag = this.tags[tagIndex];
+    const { id } = this.tags[tagIndex];
+    const data = ON_SALE_MAP[this.activeNavigationItemId];
+
+    if (id === 'all') {
+      this.data = data;
+    } else {
+      this.data = data.filter((item) => item.typeId === id);
+    }
+  }
 }

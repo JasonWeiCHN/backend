@@ -10,6 +10,7 @@ import {
 import { EPetType } from '../../shared/enums/pet.enum';
 import { GOODS_MAP } from '../../shared/constants/data.constants';
 import { HttpClientModule } from '@angular/common/http';
+import { APP_CONFIG } from '../../shared/constants/app.config.constans';
 
 @Component({
   selector: 'pet-goods',
@@ -24,33 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
   styleUrl: './goods.component.scss',
 })
 export class GoodsComponent {
-  protected readonly navigationItems: INavigationItem[] = [
-    {
-      id: EPetType.DOG,
-      label: '狗',
-      path: '',
-    },
-    {
-      id: EPetType.CAT,
-      label: '猫',
-      path: '',
-    },
-    {
-      id: EPetType.FISH,
-      label: '鱼',
-      path: '',
-    },
-    {
-      id: EPetType.BIRD,
-      label: '鸟',
-      path: '',
-    },
-    {
-      id: EPetType.MOUSE,
-      label: '豚鼠',
-      path: '',
-    },
-  ];
+  protected readonly navigationItems: INavigationItem[] =
+    APP_CONFIG.navigationItems;
   protected data: IItemCard[] = [];
   protected readonly eNavigationMode = ENavigationMode;
 

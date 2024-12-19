@@ -67,3 +67,24 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   }
 }
+
+
+@media screen and (max-width: 800px) {
+  .good-card {
+    &__title {
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    &__description {
+      font-size: 14px;
+    }
+
+    &__price {
+      font-size: 14px;
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+}

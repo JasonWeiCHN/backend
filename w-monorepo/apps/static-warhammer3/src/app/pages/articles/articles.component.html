@@ -28,7 +28,7 @@
       <button (click)="goBack()">返回</button>
       <w-tag-selector
         [tags]="tags"
-        (tagSelected)="onTagSeclet($event)"
+        (tagSelected)="onTagSelect($event)"
       ></w-tag-selector>
     </div>
     <div [className]="'local-' + localLanguage" style="margin-top: 12px">

@@ -1,7 +1,11 @@
 <div class="pet-gallery">
   <div class="row">
     <div *ngFor="let pets of displayedPets" class="column">
-      <div *ngFor="let pet of pets" class="image-box">
+      <div
+        *ngFor="let pet of pets"
+        (click)="onItemClick(pet)"
+        class="image-box"
+      >
         <img [src]="pet.imageUrl" />
         <div class="info">
           <p>{{ pet.title }}</p>

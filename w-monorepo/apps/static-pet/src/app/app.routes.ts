@@ -6,6 +6,7 @@ import { FoodComponent } from './pages/food/food.component';
 import { GoodsComponent } from './pages/goods/goods.component';
 import { ServiceComponent } from './pages/service/service.component';
 import { PicsComponent } from './pages/pics/pics.component';
+import { WikiComponent } from './pages/wiki/wiki.component';
 
 export const appRoutes: Route[] = [
   {
@@ -39,5 +40,9 @@ export const appRoutes: Route[] = [
   {
     path: 'pics',
     component: PicsComponent,
+  },
+  {
+    path: 'wiki/:id',
+    component: WikiComponent,
   },
 ];
