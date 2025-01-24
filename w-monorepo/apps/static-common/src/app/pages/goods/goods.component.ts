@@ -7,10 +7,10 @@ import {
   INavigationItem,
   NavigationComponent,
 } from '@w-monorepo/ui';
-import { EPetType } from '../../shared/enums/pet.enum';
-import { GOODS_MAP } from '../../shared/constants/data.constants';
+import { EPetTag } from '../../shared/enums/pet.enum';
 import { HttpClientModule } from '@angular/common/http';
 import { APP_CONFIG } from '../../shared/constants/app.config.constans';
+import { GOODS_MAP } from '../../shared/constants/pets.constants';
 
 @Component({
   selector: 'app-goods',
@@ -31,7 +31,7 @@ export class GoodsComponent {
   protected readonly eNavigationMode = ENavigationMode;
 
   public constructor() {
-    this.data = GOODS_MAP[EPetType.DOG];
+    this.data = GOODS_MAP[EPetTag.DOG];
   }
 
   protected onNavigationItemClick(item: INavigationItem) {

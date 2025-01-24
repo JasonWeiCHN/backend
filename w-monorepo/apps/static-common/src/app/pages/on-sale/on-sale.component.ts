@@ -10,14 +10,14 @@ import {
   TagSelectorComponent,
 } from '@w-monorepo/ui';
 import { AppGalleryComponent } from '../../components/app-gallery/app-gallery.component';
-import {
-  ON_SALE_MAP,
-  PET_CLASSIFICATION,
-} from '../../shared/constants/data.constants';
-import { EPetType } from '../../shared/enums/pet.enum';
+import { EPetTag } from '../../shared/enums/pet.enum';
 import { HttpClientModule } from '@angular/common/http';
 import { APP_CONFIG } from '../../shared/constants/app.config.constans';
 import { ActivatedRoute, Router } from '@angular/router';
+import {
+  ON_SALE_MAP,
+  PET_TAG_MAP,
+} from '../../shared/constants/pets.constants';
 
 @Component({
   selector: 'app-on-sale',
@@ -37,11 +37,11 @@ export class OnSaleComponent implements OnInit {
   protected readonly eTagSelector = ETagSelector;
   protected readonly navigationItems: INavigationItem[] =
     APP_CONFIG.subNavigationItems || [];
-  protected data: IItemCard[] = [...ON_SALE_MAP[EPetType.DOG]];
-  protected tags: ITag[] = PET_CLASSIFICATION[EPetType.DOG];
-  protected activeNavigationItemId: string = EPetType.DOG;
+  protected data: IItemCard[] = [...ON_SALE_MAP[EPetTag.DOG]];
+  protected tags: ITag[] = PET_TAG_MAP[EPetTag.DOG];
+  protected activeNavigationItemId: string = EPetTag.DOG;
   protected initNavigationItemId: string | undefined = undefined;
-  protected activeTag: ITag = PET_CLASSIFICATION[EPetType.DOG][0];
+  protected activeTag: ITag = PET_TAG_MAP[EPetTag.DOG][0];
 
   public constructor(
     private readonly _activatedRoute: ActivatedRoute,
@@ -55,8 +55,8 @@ export class OnSaleComponent implements OnInit {
 
   protected onNavigationItemClick(item: INavigationItem) {
     this._router.navigate([`/on-sale/${item.id}`]);
-    this.tags = PET_CLASSIFICATION[item.id];
-    this.activeTag = PET_CLASSIFICATION[item.id][0];
+    this.tags = PET_TAG_MAP[item.id];
+    this.activeTag = PET_TAG_MAP[item.id][0];
     this.data = ON_SALE_MAP[item.id];
     this.activeNavigationItemId = item.id;
   }

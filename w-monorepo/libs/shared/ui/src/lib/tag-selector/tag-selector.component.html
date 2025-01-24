@@ -1,6 +1,7 @@
 <div
   class="tag-container"
   [class.tag-container--pet]="mode === eTagSelector.PET"
+  [class.tag-container--common]="mode === eTagSelector.COMMON"
 >
   <div
     *ngFor="let tag of displayedTags; let i = index"

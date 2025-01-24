@@ -1,5 +1,5 @@
 import { IApp } from '@w-monorepo/interfaces';
-import { EPetType } from '../enums/pet.enum';
+import { EPetTag } from '../enums/pet.enum';
 
 export const APP_CONFIG: IApp = {
   banner: {
@@ -11,17 +11,17 @@ export const APP_CONFIG: IApp = {
     {
       id: 'onSale',
       label: '在售宠物',
-      path: 'on-sale',
+      path: 'page/on-sale',
     },
     {
       id: 'food',
       label: '宠物粮仓',
-      path: 'food',
+      path: 'page/food',
     },
     {
       id: 'goods',
       label: '宠物用品',
-      path: 'goods',
+      path: 'page/goods',
     },
     {
       id: 'service',
@@ -31,7 +31,7 @@ export const APP_CONFIG: IApp = {
     {
       id: 'news',
       label: '宠物资讯',
-      path: 'news',
+      path: 'page/news',
     },
     {
       id: 'pics',
@@ -41,12 +41,12 @@ export const APP_CONFIG: IApp = {
   ],
   subNavigationItems: [
     {
-      id: EPetType.DOG,
+      id: EPetTag.DOG,
       label: '狗',
       path: '',
     },
     {
-      id: EPetType.CAT,
+      id: EPetTag.CAT,
       label: '猫',
       path: '',
     },

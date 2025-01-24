@@ -1,4 +1,4 @@
-export enum EPetType {
+export enum EPetTag {
   DOG = 'dog',
   CAT = 'cat',
   FISH = 'fish',

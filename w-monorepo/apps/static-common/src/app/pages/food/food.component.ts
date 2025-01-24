@@ -8,9 +8,9 @@ import {
   NavigationComponent,
 } from '@w-monorepo/ui';
 import { HttpClientModule } from '@angular/common/http';
-import { EPetType } from '../../shared/enums/pet.enum';
-import { FOOD_MAP } from '../../shared/constants/data.constants';
+import { EPetTag } from '../../shared/enums/pet.enum';
 import { APP_CONFIG } from '../../shared/constants/app.config.constans';
+import { FOOD_MAP } from '../../shared/constants/pets.constants';
 
 @Component({
   selector: 'app-food',
@@ -31,7 +31,7 @@ export class FoodComponent {
   protected data: IItemCard[] = [];
 
   public constructor() {
-    this.data = FOOD_MAP[EPetType.DOG];
+    this.data = FOOD_MAP[EPetTag.DOG];
   }
 
   protected onNavigationItemClick(item: INavigationItem) {

@@ -8,10 +8,10 @@ import {
   INavigationItem,
   NavigationComponent,
 } from '@w-monorepo/ui';
-import { EPetType } from '../../shared/enums/pet.enum';
-import { NEWS_MAP } from '../../shared/constants/data.constants';
+import { EPetTag } from '../../shared/enums/pet.enum';
 import { HttpClientModule } from '@angular/common/http';
 import { APP_CONFIG } from '../../shared/constants/app.config.constans';
+import { NEWS_MAP } from '../../shared/constants/pets.constants';
 
 @Component({
   selector: 'app-news',
@@ -33,7 +33,7 @@ export class NewsComponent {
   protected readonly eNavigationMode = ENavigationMode;
 
   public constructor() {
-    this.data = NEWS_MAP[EPetType.DOG];
+    this.data = NEWS_MAP[EPetTag.DOG];
   }
 
   protected onNavigationItemClick(item: INavigationItem): void {

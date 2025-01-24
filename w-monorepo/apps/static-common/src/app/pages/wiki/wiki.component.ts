@@ -6,14 +6,17 @@ import {
   NavigationComponent,
 } from '@w-monorepo/ui';
 import { HttpClientModule } from '@angular/common/http';
-import { PET_NAVIGATION_ITEMS } from '../../shared/constants/data.constants';
 import {
   IPetDetails,
   IPetMap,
   IPetProperties,
 } from '../../shared/interfaces/pet.interface';
 import { ActivatedRoute } from '@angular/router';
-import { CATS_MAP, DOGS_MAP } from '../../shared/constants/pets.constants';
+import {
+  CATS_MAP,
+  DOGS_MAP,
+  PET_NAVIGATION_ITEMS,
+} from '../../shared/constants/pets.constants';
 import { EPetWiKiNavigation } from '../../shared/enums/pet.enum';
 
 @Component({

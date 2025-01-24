@@ -1,23 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
+  ArticleCardComponent,
   ENavigationMode,
   ETagSelector,
+  GoodCardComponent,
   IItemCard,
   INavigationItem,
   ITag,
   NavigationComponent,
   TagSelectorComponent,
 } from '@w-monorepo/ui';
-import { APP_CONFIG } from '../../shared/constants/app.config.constans';
-import {
-  ON_SALE_MAP,
-  PET_CLASSIFICATION,
-} from '../../shared/constants/data.constants';
-import { EPetType } from '../../shared/enums/pet.enum';
+import { EPetTag } from '../../shared/enums/pet.enum';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AppGalleryComponent } from '../../components/app-gallery/app-gallery.component';
 import { HttpClientModule } from '@angular/common/http';
+import { IPageConfig } from '../../shared/interfaces/page.interface';
+import { PAGE_MAP } from '../../shared/constants/page.config.constans';
+import { EPageMode } from '../../shared/enums/page.enum';
+import { PAGE_DATA } from '../../shared/constants/data.constants';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-page',
@@ -28,20 +30,24 @@ import { HttpClientModule } from '@angular/common/http';
     AppGalleryComponent,
     NavigationComponent,
     TagSelectorComponent,
+    GoodCardComponent,
+    ArticleCardComponent,
   ],
   templateUrl: './page.component.html',
   styleUrl: './page.component.scss',
 })
-export class PageComponent {
+export class PageComponent implements OnInit, OnDestroy {
+  protected pageConfig: IPageConfig | undefined = undefined;
   protected readonly eNavigationMode = ENavigationMode;
   protected readonly eTagSelector = ETagSelector;
-  protected readonly navigationItems: INavigationItem[] =
-    APP_CONFIG.subNavigationItems || [];
-  protected data: IItemCard[] = [...ON_SALE_MAP[EPetType.DOG]];
-  protected tags: ITag[] = PET_CLASSIFICATION[EPetType.DOG];
-  protected activeNavigationItemId: string = EPetType.DOG;
+  protected readonly ePageMode = EPageMode;
+  protected navigationItems: INavigationItem[] = [];
+  protected data: IItemCard[] = [];
+  protected tags: ITag[] = [];
+  protected activeNavigationItemId: string = EPetTag.DOG;
   protected initNavigationItemId: string | undefined = undefined;
-  protected activeTag: ITag = PET_CLASSIFICATION[EPetType.DOG][0];
+  protected activeTag: ITag | undefined = undefined;
+  private _routeSubscription: Subscription | undefined;
 
   public constructor(
     private readonly _activatedRoute: ActivatedRoute,
@@ -49,15 +55,46 @@ export class PageComponent {
   ) {}
 
   public ngOnInit(): void {
-    const { type } = this._activatedRoute.snapshot.params;
-    this.initNavigationItemId = type;
+    // 订阅路由参数变化
+    this._routeSubscription = this._activatedRoute.paramMap.subscribe(
+      (params) => {
+        const type = params.get('type') || '';
+        const nav = params.get('nav') || undefined;
+        const tag = params.get('tag') || undefined;
+
+        this.initializePage(type, nav, tag);
+      }
+    );
   }
 
-  protected onNavigationItemClick(item: INavigationItem) {
-    this._router.navigate([`/on-sale/${item.id}`]);
-    this.tags = PET_CLASSIFICATION[item.id];
-    this.activeTag = PET_CLASSIFICATION[item.id][0];
-    this.data = ON_SALE_MAP[item.id];
+  private initializePage(type: string, nav?: string, tag?: string): void {
+    console.log(type, nav, tag);
+
+    // 更新页面数据
+    this.pageConfig = PAGE_MAP[type];
+    console.log(this.pageConfig);
+
+    this.navigationItems = this.pageConfig?.navigationItems || [];
+    this.initNavigationItemId = nav || this.navigationItems[0]?.id;
+
+    if (this.navigationItems.length && this.initNavigationItemId) {
+      this.data = PAGE_DATA[type]?.[this.initNavigationItemId] || [];
+
+      if (this.pageConfig?.tagMap) {
+        this.tags = this.pageConfig.tagMap[this.initNavigationItemId] || [];
+        this.activeTag = this.tags.find((t) => t.id === tag) || this.tags[0];
+      }
+    }
+  }
+
+  protected onNavigationItemClick(item: INavigationItem): void {
+    const { type } = this._activatedRoute.snapshot.params;
+    this._router.navigate([`/page/${type}/${item.id}`]);
+    if (this.pageConfig?.tagMap) {
+      this.tags = this.pageConfig.tagMap[item.id];
+      this.activeTag = this.tags[0];
+    }
+    this.data = PAGE_DATA[type]?.[item.id] || [];
     this.activeNavigationItemId = item.id;
   }
 
@@ -66,20 +103,28 @@ export class PageComponent {
   }
 
   protected onMoreClick(): void {
+    if (!this.activeTag) return;
+
     this._router.navigate([
       `/wiki/${this.activeNavigationItemId}/${this.activeTag.id}`,
     ]);
   }
 
   protected onTagSelect(tagIndex: number): void {
+    const { type } = this._activatedRoute.snapshot.params;
     this.activeTag = this.tags[tagIndex];
     const { id } = this.tags[tagIndex];
-    const data = ON_SALE_MAP[this.activeNavigationItemId];
+    const data = PAGE_DATA[type]?.[this.activeNavigationItemId] || [];
 
     if (id === 'all') {
       this.data = data;
     } else {
       this.data = data.filter((item) => item.typeId === id);
     }
+  }
+
+  public ngOnDestroy(): void {
+    // 取消订阅，避免内存泄漏
+    this._routeSubscription?.unsubscribe();
   }
 }
