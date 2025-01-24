@@ -1,6 +1,7 @@
 <div
   class="navigation-bar"
   [class.navigation-bar--pet]="mode === eNavigationMode.PET"
+  [class.navigation-bar--common]="mode === eNavigationMode.COMMON"
 >
   <div
     *ngFor="let item of items"

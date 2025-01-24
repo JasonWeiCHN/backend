@@ -18,20 +18,20 @@ export const APP_CONFIG: IApp = {
       label: '猫',
       path: '',
     },
-    {
-      id: EPetType.FISH,
-      label: '鱼',
-      path: '',
-    },
-    {
-      id: EPetType.BIRD,
-      label: '鸟',
-      path: '',
-    },
-    {
-      id: EPetType.MOUSE,
-      label: '豚鼠',
-      path: '',
-    },
+    // {
+    //   id: EPetType.FISH,
+    //   label: '鱼',
+    //   path: '',
+    // },
+    // {
+    //   id: EPetType.BIRD,
+    //   label: '鸟',
+    //   path: '',
+    // },
+    // {
+    //   id: EPetType.MOUSE,
+    //   label: '豚鼠',
+    //   path: '',
+    // },
   ],
 };

@@ -10,7 +10,11 @@
   >
     {{ tag.name }}
   </div>
-  <div class="tag toggle-button" (click)="toggleTagDisplay()">
+  <div
+    *ngIf="tags.length > visibleTagCount"
+    class="tag toggle-button"
+    (click)="toggleTagDisplay()"
+  >
     {{ showAllTags ? '收起' : '展开' }}
   </div>
 </div>

@@ -1,0 +1,35 @@
+.on-sale {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 12px;
+
+  .tag-container, .description {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 12px;
+  }
+
+  .description {
+    padding: 0 6px;
+    color: #535353;
+
+    .text {
+      margin-bottom: 4px;
+    }
+  }
+
+  .button-more {
+    cursor: pointer;
+    color: #aecb54;
+
+    span {
+      color: #f84602;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

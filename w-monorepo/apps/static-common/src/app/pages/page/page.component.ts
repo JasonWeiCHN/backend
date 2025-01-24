@@ -1,0 +1,85 @@
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import {
+  ENavigationMode,
+  ETagSelector,
+  IItemCard,
+  INavigationItem,
+  ITag,
+  NavigationComponent,
+  TagSelectorComponent,
+} from '@w-monorepo/ui';
+import { APP_CONFIG } from '../../shared/constants/app.config.constans';
+import {
+  ON_SALE_MAP,
+  PET_CLASSIFICATION,
+} from '../../shared/constants/data.constants';
+import { EPetType } from '../../shared/enums/pet.enum';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AppGalleryComponent } from '../../components/app-gallery/app-gallery.component';
+import { HttpClientModule } from '@angular/common/http';
+
+@Component({
+  selector: 'app-page',
+  standalone: true,
+  imports: [
+    HttpClientModule,
+    CommonModule,
+    AppGalleryComponent,
+    NavigationComponent,
+    TagSelectorComponent,
+  ],
+  templateUrl: './page.component.html',
+  styleUrl: './page.component.scss',
+})
+export class PageComponent {
+  protected readonly eNavigationMode = ENavigationMode;
+  protected readonly eTagSelector = ETagSelector;
+  protected readonly navigationItems: INavigationItem[] =
+    APP_CONFIG.subNavigationItems || [];
+  protected data: IItemCard[] = [...ON_SALE_MAP[EPetType.DOG]];
+  protected tags: ITag[] = PET_CLASSIFICATION[EPetType.DOG];
+  protected activeNavigationItemId: string = EPetType.DOG;
+  protected initNavigationItemId: string | undefined = undefined;
+  protected activeTag: ITag = PET_CLASSIFICATION[EPetType.DOG][0];
+
+  public constructor(
+    private readonly _activatedRoute: ActivatedRoute,
+    private _router: Router
+  ) {}
+
+  public ngOnInit(): void {
+    const { type } = this._activatedRoute.snapshot.params;
+    this.initNavigationItemId = type;
+  }
+
+  protected onNavigationItemClick(item: INavigationItem) {
+    this._router.navigate([`/on-sale/${item.id}`]);
+    this.tags = PET_CLASSIFICATION[item.id];
+    this.activeTag = PET_CLASSIFICATION[item.id][0];
+    this.data = ON_SALE_MAP[item.id];
+    this.activeNavigationItemId = item.id;
+  }
+
+  protected onItemClick(item: IItemCard): void {
+    console.log(item);
+  }
+
+  protected onMoreClick(): void {
+    this._router.navigate([
+      `/wiki/${this.activeNavigationItemId}/${this.activeTag.id}`,
+    ]);
+  }
+
+  protected onTagSelect(tagIndex: number): void {
+    this.activeTag = this.tags[tagIndex];
+    const { id } = this.tags[tagIndex];
+    const data = ON_SALE_MAP[this.activeNavigationItemId];
+
+    if (id === 'all') {
+      this.data = data;
+    } else {
+      this.data = data.filter((item) => item.typeId === id);
+    }
+  }
+}

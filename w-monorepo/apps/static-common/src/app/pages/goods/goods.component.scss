@@ -1,0 +1,21 @@
+.goods {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 12px;
+
+  .grid-container {
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* 定义 N 列，这里是 5 列 */
+    gap: 12px; /* 图片之间的间距 */
+    grid-auto-rows: auto; /* 自动调整每个图片项的高度 */
+
+    &__item {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

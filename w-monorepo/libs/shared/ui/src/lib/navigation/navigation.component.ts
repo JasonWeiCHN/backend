@@ -40,6 +40,15 @@ export class NavigationComponent implements OnChanges {
   @Input()
   public items: INavigationItem[] = [];
 
+  /**
+   * @description
+   * Init item id
+   * @type {string | undefined}
+   * @default undefined
+   */
+  @Input()
+  public initItemId: string | undefined = undefined;
+
   @Output('navigationItemClick')
   public readonly itemClick: EventEmitter<INavigationItem> =
     new EventEmitter<INavigationItem>();
@@ -54,7 +63,10 @@ export class NavigationComponent implements OnChanges {
 
   public ngOnChanges(changes: SimpleChanges): void {
     if (has(changes, 'items')) {
-      if (this.items.length) {
+      if (this.initItemId) {
+        // 使用传入的初始项
+        this.activeItemId = this.initItemId;
+      } else if (this.items.length) {
         // 默认激活第一项
         this.activeItemId = this.items[0].id;
       }

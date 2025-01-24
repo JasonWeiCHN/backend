@@ -23,6 +23,10 @@ export const appRoutes: Route[] = [
   },
   {
     path: 'on-sale',
+    redirectTo: 'on-sale/dog',
+  },
+  {
+    path: 'on-sale/:type',
     component: OnSaleComponent,
   },
   {
@@ -42,7 +46,7 @@ export const appRoutes: Route[] = [
     component: PicsComponent,
   },
   {
-    path: 'wiki/:id',
+    path: 'wiki/:type/:id',
     component: WikiComponent,
   },
 ];

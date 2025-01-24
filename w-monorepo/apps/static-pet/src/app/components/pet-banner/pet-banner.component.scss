@@ -1,3 +1,5 @@
+@import "libs/shared/ui/src/styles/text.scss";
+
 .pet-banner {
   box-sizing: border-box;
   display: block;
@@ -31,6 +33,8 @@
       align-items: center;
 
       .nav-item {
+        @extend %no-select;
+        
         cursor: pointer;
         width: 150px;
         padding: 0 20px;

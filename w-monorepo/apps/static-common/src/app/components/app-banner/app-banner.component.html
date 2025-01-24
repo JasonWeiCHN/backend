@@ -1,0 +1,55 @@
+<div class="app-banner">
+  <div class="content">
+    <div class="left" (click)="onLogoClick()">
+      <img class="logo" src="./assets/images/app-logo.png" alt="" />
+    </div>
+    <div class="right">
+      <div
+        *ngFor="let item of items; let i = index"
+        class="nav-item"
+        [class.active]="item.id === activeItemId"
+        [ngStyle]="{ 'border-right': i === items.length - 1 ? 'none' : '' }"
+        (click)="onItemClick(item)"
+      >
+        {{ item.label }}
+      </div>
+      <div class="button-buy">在线购买</div>
+    </div>
+  </div>
+</div>
+
+<div class="app-banner-mobile">
+  <div class="content">
+    <div class="left" (click)="onLogoClick()">
+      <img class="logo" src="./assets/images/app-logo.png" alt="" />
+    </div>
+    <div class="center">
+      <div class="title">{{ activeItem?.label }}</div>
+    </div>
+    <div class="right">
+      <img
+        class="menu"
+        (click)="onMenuClick()"
+        src="./assets/images/icons/menu.png"
+        alt=""
+      />
+    </div>
+  </div>
+</div>
+
+<div class="menu-mask" *ngIf="isMenuVisible">
+  <div class="top" (click)="onCloseMenuClick()"></div>
+  <div class="menu-mask__items">
+    <div
+      *ngFor="let item of items; let i = index"
+      class="nav-item"
+      [class.active]="item.id === activeItemId"
+      [ngStyle]="{ 'border-right': i === items.length - 1 ? 'none' : '' }"
+      (click)="onItemClick(item)"
+    >
+      {{ item.label }}
+    </div>
+    <!--      <div class="nav-item" style="border-right: none">宠物美图</div>-->
+    <div class="button-buy">在线购买</div>
+  </div>
+</div>

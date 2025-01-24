@@ -52,7 +52,7 @@
     left: 50%;
   }
 
-  &--pet {
+  &--pet, &--common {
     color: #535353;
 
     #{$root}__item {
@@ -80,7 +80,7 @@
 
 @media screen and (max-width: 800px) {
   .navigation-bar {
-    &--pet {
+    &--pet, &--common {
       .navigation-bar__item {
         font-size: 16px;
         padding: 0 12px;
@@ -96,7 +96,7 @@
     overflow-x: scroll;
     gap: 12px;
 
-    &--pet {
+    &--pet, &--common {
       .navigation-bar__item {
         font-size: 16px;
         min-width: min-content;

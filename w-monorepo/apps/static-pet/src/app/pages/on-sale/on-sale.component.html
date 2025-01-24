@@ -3,10 +3,11 @@
     <w-navigation
       [mode]="eNavigationMode.PET"
       [items]="navigationItems"
+      [initItemId]="initNavigationItemId"
       (navigationItemClick)="onNavigationItemClick($event)"
     ></w-navigation>
   </div>
-  <div class="tag-container">
+  <div *ngIf="tags.length" class="tag-container">
     <w-tag-selector
       [visibleTagCount]="15"
       [mode]="eTagSelector.PET"
@@ -14,7 +15,7 @@
       (tagSelected)="onTagSelect($event)"
     ></w-tag-selector>
   </div>
-  <div *ngIf="activeTag.description" class="description">
+  <div *ngIf="activeTag?.description" class="description">
     <div class="text">{{ activeTag.description }}</div>
     <div class="button-more" (click)="onMoreClick()">
       查看详细 <span>{{ activeTag.name }}</span> 的详细资料

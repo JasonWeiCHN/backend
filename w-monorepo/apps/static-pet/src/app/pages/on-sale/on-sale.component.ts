@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   ENavigationMode,
@@ -18,7 +18,7 @@ import {
 import { EPetType } from '../../shared/enums/pet.enum';
 import { HttpClientModule } from '@angular/common/http';
 import { APP_CONFIG } from '../../shared/constants/app.config.constans';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'pet-on-sale',
@@ -34,7 +34,7 @@ import { Router } from '@angular/router';
   templateUrl: './on-sale.component.html',
   styleUrl: './on-sale.component.scss',
 })
-export class OnSaleComponent {
+export class OnSaleComponent implements OnInit {
   protected readonly eNavigationMode = ENavigationMode;
   protected readonly eTagSelector = ETagSelector;
   protected readonly navigationItems: INavigationItem[] =
@@ -42,11 +42,23 @@ export class OnSaleComponent {
   protected data: IItemCard[] = [...ON_SALE_MAP[EPetType.DOG]];
   protected tags: ITag[] = PET_CLASSIFICATION[EPetType.DOG];
   protected activeNavigationItemId: string = EPetType.DOG;
+  protected initNavigationItemId: string | undefined = undefined;
   protected activeTag: ITag = PET_CLASSIFICATION[EPetType.DOG][0];
 
-  public constructor(private _router: Router) {}
+  public constructor(
+    private readonly _activatedRoute: ActivatedRoute,
+    private _router: Router
+  ) {}
+
+  public ngOnInit(): void {
+    const { type } = this._activatedRoute.snapshot.params;
+    this.initNavigationItemId = type;
+  }
 
   protected onNavigationItemClick(item: INavigationItem) {
+    this._router.navigate([`/on-sale/${item.id}`]);
+    this.tags = PET_CLASSIFICATION[item.id];
+    this.activeTag = PET_CLASSIFICATION[item.id][0];
     this.data = ON_SALE_MAP[item.id];
     this.activeNavigationItemId = item.id;
   }
@@ -56,7 +68,9 @@ export class OnSaleComponent {
   }
 
   protected onMoreClick(): void {
-    this._router.navigate([`/wiki/${this.activeTag.id}`]);
+    this._router.navigate([
+      `/wiki/${this.activeNavigationItemId}/${this.activeTag.id}`,
+    ]);
   }
 
   protected onTagSelect(tagIndex: number): void {

@@ -1,0 +1,219 @@
+@import "libs/shared/ui/src/styles/text.scss";
+
+.app-banner {
+  box-sizing: border-box;
+  display: block;
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  border-bottom: 1px solid #d7d7d7;
+  background: #ffffff;
+
+
+  .content {
+    max-width: 1200px;
+    width: 100%;
+    height: 48px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .left {
+      .logo {
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+
+      .nav-item {
+        @extend %no-select;
+
+        cursor: pointer;
+        width: 150px;
+        padding: 0 20px;
+        text-align: center;
+        font-weight: 600;
+        border-right: 1px solid #0e4965;
+        transition: all 0.5s ease;
+
+        &:hover {
+          color: #2571bd;
+          letter-spacing: 6px;
+          font-weight: 600;
+        }
+      }
+
+      .button-buy {
+        cursor: pointer;
+        width: 120px;
+        line-height: 40px;
+        text-align: center;
+        font-weight: 500;
+        border-radius: 22px;
+        letter-spacing: 2px;
+        color: #ffffff;
+        background: #aecb54;
+        transition: all 0.5s ease;
+
+        &:hover {
+          letter-spacing: 6px;
+          font-weight: 600;
+        }
+      }
+
+      .active {
+        color: #2571bd;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.app-banner-mobile {
+  box-sizing: border-box;
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  border-bottom: 1px solid #d7d7d7;
+  background: #ffffff;
+
+  .content {
+    max-width: 1200px;
+    width: 100%;
+    height: 48px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+    .left {
+      .logo {
+        cursor: pointer;
+        width: 48px;
+        height: 48px;
+      }
+    }
+
+    .center {
+      .title {
+        font-size: 16px;
+      }
+    }
+
+    .right {
+      .menu {
+        box-sizing: border-box;
+        display: inline-block;
+        cursor: pointer;
+        width: 36px;
+        height: 36px;
+        border: 1px solid transparent;
+
+        &:hover {
+          border: 1px solid #dbdbdb;
+        }
+      }
+    }
+
+  }
+}
+
+.menu-mask {
+  box-sizing: border-box;
+  display: block;
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  .top {
+    height: 48px;
+  }
+
+  .menu-mask__items {
+    position: absolute;
+    width: 100%;
+    top: 48px;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6); /* 黑色背景，透明度 50% */
+
+    .nav-item, .button-buy {
+      cursor: pointer;
+      width: 100%;
+      padding: 6px 20px;
+      color: #ffffff;
+      text-align: center;
+      font-size: 16px;
+      transition: all 0.5s ease;
+
+      &:hover {
+        color: #ffffff;
+        letter-spacing: 6px;
+        font-weight: 600;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+@media (max-width: 1500px) {
+  .app-banner {
+  }
+}
+
+@media (max-width: 1200px) {
+  .app-banner {
+    .content {
+      .right {
+        .nav-item {
+          padding: 0;
+          width: 100px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .app-banner {
+    .content {
+      .right {
+        .nav-item {
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .app-banner {
+    display: none;
+  }
+
+  .app-banner-mobile {
+    display: block;
+  }
+}
+
+@media (max-width: 600px) {
+  .app-banner {
+  }
+}
+
+@media (max-width: 400px) {
+  .app-banner {
+  }
+}

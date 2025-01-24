@@ -78,7 +78,7 @@ export class GalleryComponent implements OnInit {
     this.displayedImages = [];
 
     // Split the images array into the required number of columns
-    const chunkSize = Math.ceil(this.images.length / this.columns);
+    const chunkSize = Math.floor(this.images.length / this.columns);
     for (let i = 0; i < this.columns; i++) {
       this.displayedImages[i] = this.images.slice(
         i * chunkSize,

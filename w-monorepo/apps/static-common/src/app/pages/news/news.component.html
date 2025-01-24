@@ -1,0 +1,17 @@
+<div class="news">
+  <div style="margin-bottom: 12px">
+    <w-navigation
+      [mode]="eNavigationMode.PET"
+      [items]="navigationItems"
+      (navigationItemClick)="onNavigationItemClick($event)"
+    ></w-navigation>
+  </div>
+  <div class="grid-container">
+    <div *ngFor="let item of data" class="grid-container__item">
+      <w-article-card
+        [data]="item"
+        (itemClick)="onItemClick($event)"
+      ></w-article-card>
+    </div>
+  </div>
+</div>

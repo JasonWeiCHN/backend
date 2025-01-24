@@ -1,9 +1,13 @@
+@import "libs/shared/ui/src/styles/text.scss";
+
 .tag-container {
   display: flex;
   flex-wrap: wrap;
   gap: 8px; /* 标签之间的间距 */
 
   .tag {
+    @extend %no-select;
+
     cursor: pointer;
     padding: 4px 6px;
     border-bottom: none;
