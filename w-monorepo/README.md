@@ -81,6 +81,7 @@ npx nx g @nx/angular:app static-shogun --directory=apps/static-shogun --add-tail
 
 创建lib
 nx g @nx/angular:library products --directory=libs/products --standalone
+nx g @nx/angular:lib constants --directory=libs/shared/constants --standalone
 
 创建页面
 nx g @nx/angular:component discount --directory=apps/static-warhammer3/src/app/pages/discount --standalone --style=scss --export

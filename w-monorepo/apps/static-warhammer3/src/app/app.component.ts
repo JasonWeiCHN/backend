@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import {
+  BackHomeButtonComponent,
   BannerComponent,
   INavigationItem,
-  ISwitcherProject,
   NavigationComponent,
   ProjectSwitcherComponent,
   SlideshowComponent,
@@ -27,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     SlideshowComponent,
     ProjectSwitcherComponent,
     SnackbarComponent,
+    BackHomeButtonComponent,
   ],
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -36,8 +37,8 @@ export class AppComponent {
   protected appConfig: IApp = APP_CONFIG;
   protected navigationItemActive = 'clans';
   protected showNavigation = true;
-  protected selectedProject: ISwitcherProject | undefined = APP_CONFIG.project;
-  protected projects: ISwitcherProject[] = APP_CONFIG.projects || [];
+  // protected selectedProject: ISwitcherProject | undefined = APP_CONFIG.project;
+  // protected projects: ISwitcherProject[] = APP_CONFIG.projects || [];
 
   public constructor(private _router: Router) {
     // 订阅路由变化事件
@@ -58,10 +59,10 @@ export class AppComponent {
     this._router.navigate([item.path]);
   }
 
-  protected onProjectSelected(item: ISwitcherProject) {
-    const { url } = item;
-    if (url) {
-      window.open(url, '_self');
-    }
-  }
+  // protected onProjectSelected(item: ISwitcherProject) {
+  //   const { url } = item;
+  //   if (url) {
+  //     window.open(url, '_self');
+  //   }
+  // }
 }

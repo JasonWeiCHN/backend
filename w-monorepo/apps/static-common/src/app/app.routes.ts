@@ -1,7 +1,6 @@
 import { Route } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { ServiceComponent } from './pages/service/service.component';
-import { PicsComponent } from './pages/pics/pics.component';
 import { WikiComponent } from './pages/wiki/wiki.component';
 import { PageComponent } from './pages/page/page.component';
 
@@ -31,11 +30,7 @@ export const appRoutes: Route[] = [
     component: ServiceComponent,
   },
   {
-    path: 'pics',
-    component: PicsComponent,
-  },
-  {
-    path: 'wiki/:type/:id',
+    path: 'wiki/:id',
     component: WikiComponent,
   },
   // {
@@ -57,5 +52,9 @@ export const appRoutes: Route[] = [
   // {
   //   path: 'goods',
   //   component: GoodsComponent,
+  // },
+  // {
+  //   path: 'pics',
+  //   component: PicsComponent,
   // },
 ];

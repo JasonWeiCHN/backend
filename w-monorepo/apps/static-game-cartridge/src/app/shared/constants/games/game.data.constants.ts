@@ -1,0 +1,311 @@
+import { ITag } from '@w-monorepo/ui';
+import { IArticleMap } from '@w-monorepo/interfaces';
+
+export const PS5_TAGS: ITag[] = [{ id: 'all', name: '不限' }];
+
+export const PS4_TAGS: ITag[] = [{ id: 'all', name: '不限' }];
+
+export const CARTRIDGE_MAP: IArticleMap = {
+  ps5: [
+    {
+      sourceUrl: 'https://www.sofmap.com/product_detail.aspx?sku=101237226',
+      date: '',
+      description: '怪物猎人·荒野，一场惊心动魄的狩猎即将来临。',
+      detail:
+        'https://www.openshop.com.hk/_c_product_36108.html?srsltid=AfmBOoqEi9ROCSFVs_JtYeftm2ZHTDqhugDqKY6GnUghUHf8Atbft4B_',
+      id: 'sqF1NA',
+      imageUrl: 'assets/images/ps5/F_sqF1NA.png',
+      tagIds: ['新品', '怪物猎人'],
+      title: 'Monster Hunter Wilds',
+      price: {
+        discountPercent: 100,
+        initial: '425.00',
+        final: '425.00',
+      },
+    },
+    {
+      sourceUrl: 'https://www.sofmap.com/product_detail.aspx?sku=80046532',
+      date: '',
+      description:
+        '如临真实战场，畅享爽快的一骑当千动作！无名英雄闯荡三国乱世的“真・三国无双”系列新作。',
+      detail: '',
+      id: '1qug5y',
+      imageUrl: 'assets/images/ps5/F_1qug5y.png',
+      tagIds: ['新品', '三国'],
+      title: '真三国无双·起源',
+      price: {
+        discountPercent: 100,
+        initial: '485.00',
+        final: '485.00',
+      },
+    },
+    {
+      sourceUrl: 'https://www.sofmap.com/product_detail.aspx?sku=100614033',
+      date: '',
+      description:
+        '通过强化的图形效果、Roguelike生存体验“赴死之旅”等游戏模式以及更多其他内容，探索艾莉和埃比的故事。',
+      detail: '',
+      id: 'nkC04A',
+      imageUrl: 'assets/images/ps5/F_nkC04A.png',
+      tagIds: ['剧情', '末日'],
+      title: '最后生还者·PART2',
+      price: {
+        discountPercent: 100,
+        initial: '268.00',
+        final: '268.00',
+      },
+    },
+    {
+      sourceUrl: 'https://www.sofmap.com/product_detail.aspx?sku=413895178',
+      date: '',
+      description:
+        '带领乔尔和艾莉穿越末日后的美国，遇见令人难忘的盟友和敌人，踏上一段充满挑战的旅程。',
+      detail: '',
+      id: 'CsDawL',
+      imageUrl: 'assets/images/ps5/F_CsDawL.png',
+      tagIds: ['剧情', '末日'],
+      title: '最后生还者·PART1',
+      price: {
+        discountPercent: 100,
+        initial: '325.00',
+        final: '325.00',
+      },
+    },
+    {
+      sourceUrl: 'https://www.sofmap.com/product_detail.aspx?sku=100994533',
+      date: '',
+      description: '传说的起点…',
+      detail: '',
+      id: 'yjrdzh',
+      imageUrl: 'assets/images/ps5/F_yjrdzh.png',
+      tagIds: ['经典', '重制版', '勇者斗恶龙'],
+      title: '勇者斗恶龙III',
+      price: {
+        discountPercent: 100,
+        initial: '280.00',
+        final: '280.00',
+      },
+    },
+    {
+      sourceUrl: 'https://www.sofmap.com/product_detail.aspx?sku=100994628',
+      date: '',
+      description: '玩家将化身历代皇帝，与七英雄展开长达数千年的战斗。',
+      detail: '',
+      id: 'rTujpY',
+      imageUrl: 'assets/images/ps5/F_rTujpY.png',
+      tagIds: ['经典', '重制版'],
+      title: '浪漫沙加2 七英雄的复仇',
+      price: {
+        discountPercent: 100,
+        initial: '448.00',
+        final: '448.00',
+      },
+    },
+    {
+      sourceUrl: 'https://www.sofmap.com/product_detail.aspx?sku=100500303',
+      date: '',
+      description:
+        '克劳德一行人脱离魔晄都市米德加，跨越命运之墙，迈入未知的荒野旅程。',
+      detail: '',
+      id: 'IP44Jn',
+      imageUrl: 'assets/images/ps5/F_IP44Jn.png',
+      tagIds: ['经典', '重制版'],
+      title: '最终幻想7 重生',
+      price: {
+        discountPercent: 100,
+        initial: '375.00',
+        final: '375.00',
+      },
+    },
+    {
+      sourceUrl: 'https://www.sofmap.com/product_detail.aspx?sku=100500338',
+      date: '',
+      description:
+        '从“人生低谷”东山再起的男人——春日一番，以及面临“人生最后”之战的男人——桐生一马',
+      detail: '',
+      id: 'PLu8nA',
+      imageUrl: 'assets/images/ps5/F_PLu8nA.png',
+      tagIds: ['如龙'],
+      title: '人中之龙8',
+      price: {
+        discountPercent: 100,
+        initial: '238.00',
+        final: '238.00',
+      },
+    },
+    {
+      sourceUrl: 'https://www.sofmap.com/product_detail.aspx?sku=101242113',
+      date: '',
+      description:
+        '在遥远的未来，巨型机器在地球各处游荡，幸运的少数人类结成独特的聚落求生，并在杂草丛生的失落文明废墟中扎下根来。',
+      detail: '',
+      id: 'Q1Z0cM',
+      imageUrl: 'assets/images/ps5/F_Q1Z0cM.png',
+      tagIds: ['机甲', '冒险', '开放世界', '重制版'],
+      title: '《地平线 零之曙光™》',
+      price: {
+        discountPercent: 100,
+        initial: '289.00',
+        final: '289.00',
+      },
+    },
+    {
+      sourceUrl: 'https://www.sofmap.com/product_detail.aspx?sku=100815863',
+      date: '',
+      description:
+        '片段破碎，却又多彩的故事──以“交界地”为舞台登场的角色们各有主张，于是在利害关系之下谱成的群像剧，就此展开。',
+      detail: '',
+      id: 'xc7moB',
+      imageUrl: 'assets/images/ps5/F_xc7moB.png',
+      tagIds: ['魂'],
+      title: '艾尔登法环',
+      price: {
+        discountPercent: 100,
+        initial: '238.00',
+        final: '238.00',
+      },
+    },
+    {
+      sourceUrl: 'https://www.sofmap.com/product_detail.aspx?sku=100638045',
+      date: '',
+      description:
+        '在幕府统治了三个世纪之后，西方的黑船袭击了日本的边界，这个国家陷入了动荡不安的状态。',
+      detail: '',
+      id: 'aM0Xd9',
+      imageUrl: 'assets/images/ps5/F_aM0Xd9.png',
+      tagIds: ['动作'],
+      title: '浪人崛起',
+      price: {
+        discountPercent: 100,
+        initial: '290.00',
+        final: '290.00',
+      },
+    },
+    {
+      sourceUrl: 'https://www.sofmap.com/product_detail.aspx?sku=100979260',
+      date: '',
+      description: '和Astro一起来一场超大型太空冒险吧！',
+      detail: '',
+      id: 'et69sO',
+      imageUrl: 'assets/images/ps5/F_et69sO.png',
+      tagIds: ['宇宙'],
+      title: '宇宙机器人',
+      price: {
+        discountPercent: 100,
+        initial: '360.00',
+        final: '360.00',
+      },
+    },
+    {
+      sourceUrl: 'https://www.sofmap.com/product_detail.aspx?sku=100742499',
+      date: '',
+      description: '鸟山明·沙漠大冒险！',
+      detail: '',
+      id: 'LLD6Lp',
+      imageUrl: 'assets/images/ps5/F_LLD6Lp.png',
+      tagIds: ['机甲'],
+      title: 'Sand Land',
+      price: {
+        discountPercent: 100,
+        initial: '428.00',
+        final: '428.00',
+      },
+    },
+    {
+      sourceUrl: 'https://www.sofmap.com/product_detail.aspx?sku=100549095',
+      date: '',
+      description:
+        '召集你的团队，回到被遗忘的国度，开启一段记载着友谊与背叛、牺牲与生存、以及至上力量诱惑的传奇故事。',
+      detail: '',
+      id: 'DOeaue',
+      imageUrl: 'assets/images/ps5/F_DOeaue.png',
+      tagIds: ['角色扮演', '剧情'],
+      title: '博德之门3',
+      price: {
+        discountPercent: 100,
+        initial: '325.00',
+        final: '325.00（无中文） ',
+      },
+    },
+    {
+      sourceUrl: 'https://www.sofmap.com/product_detail.aspx?sku=100967065',
+      date: '',
+      description:
+        '收到已过世的妻子玛丽寄来的信，詹姆斯借机来到充满回忆的城镇「寂静岭」。',
+      detail: '',
+      id: '5JG0ch',
+      imageUrl: 'assets/images/ps5/F_5JG0ch.png',
+      tagIds: ['恐怖', '剧情'],
+      title: '寂静岭2',
+      price: {
+        discountPercent: 100,
+        initial: '340.00',
+        final: '340.00',
+      },
+    },
+    {
+      sourceUrl: 'https://www.sofmap.com/product_detail.aspx?sku=100979262',
+      date: '',
+      description:
+        '由于神秘怪物“时间吞噬者”造成的时空扭曲，索尼克和夏特开始了各自的故事。',
+      detail: '',
+      id: '79f2Os',
+      imageUrl: 'assets/images/ps5/F_79f2Os.png',
+      tagIds: ['动作'],
+      title: '索尼克×夏特 世代重启',
+      price: {
+        discountPercent: 100,
+        initial: '298.00',
+        final: '298.00',
+      },
+    },
+    {
+      sourceUrl: 'https://www.sofmap.com/product_detail.aspx?sku=101078257',
+      date: '',
+      description: '《EA SPORTS FC™ 25》将为您带来更多为俱乐部奋勇争胜的方式。',
+      detail: '',
+      id: 'mELJig',
+      imageUrl: 'assets/images/ps5/F_mELJig.png',
+      tagIds: ['足球', '体育'],
+      title: '《EA SPORTS FC™ 25》',
+      price: {
+        discountPercent: 100,
+        initial: '298.00',
+        final: '298.00',
+      },
+    },
+    {
+      sourceUrl: 'https://www.sofmap.com/product_detail.aspx?sku=101304042',
+      date: '',
+      description: '维纳斯璀璨假期。在这座岛，怦然心动的每一刻。',
+      detail: '',
+      id: 'lYCcDd',
+      imageUrl: 'assets/images/ps5/F_lYCcDd.png',
+      tagIds: ['恋爱', '即将推出'],
+      title: '死或生 Xtreme',
+      price: {
+        discountPercent: 100,
+        initial: '--.--',
+        final: '--.--',
+      },
+    },
+  ],
+  ps4: [],
+  switch: [
+    {
+      sourceUrl: '/wiki/cZTCm5',
+      date: '',
+      description: '塞尔达传说，梦在延续！',
+      detail: '',
+      id: 'cZTCm5',
+      imageUrl: 'assets/images/switch/F_cZTCm5.png',
+      tagIds: ['角色扮演', '开放世界'],
+      title: '塞尔达传说·王国之泪',
+      price: {
+        discountPercent: 100,
+        initial: '235.00',
+        final: '235.00',
+      },
+    },
+  ],
+};

@@ -16,9 +16,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AppGalleryComponent } from '../../components/app-gallery/app-gallery.component';
 import { HttpClientModule } from '@angular/common/http';
 import { IPageConfig } from '../../shared/interfaces/page.interface';
-import { PAGE_MAP } from '../../shared/constants/page.config.constans';
 import { EPageMode } from '../../shared/enums/page.enum';
-import { PAGE_DATA } from '../../shared/constants/data.constants';
+import { PAGE_DATA, PAGE_MAP } from '../../shared/constants/data.constants';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -69,13 +68,20 @@ export class PageComponent implements OnInit, OnDestroy {
 
   private initializePage(type: string, nav?: string, tag?: string): void {
     console.log(type, nav, tag);
+    // clear
+    this.data = [];
+    this.tags = [];
 
     // 更新页面数据
     this.pageConfig = PAGE_MAP[type];
-    console.log(this.pageConfig);
 
     this.navigationItems = this.pageConfig?.navigationItems || [];
     this.initNavigationItemId = nav || this.navigationItems[0]?.id;
+
+    if (this.navigationItems.length === 0) {
+      this.data = Object.values(PAGE_DATA[type]).flat() || [];
+      this.tags = [];
+    }
 
     if (this.navigationItems.length && this.initNavigationItemId) {
       this.data = PAGE_DATA[type]?.[this.initNavigationItemId] || [];
@@ -100,6 +106,12 @@ export class PageComponent implements OnInit, OnDestroy {
 
   protected onItemClick(item: IItemCard): void {
     console.log(item);
+
+    const url = item.sourceUrl || item.referer;
+
+    if (url) {
+      window.open(url, '_blank');
+    }
   }
 
   protected onMoreClick(): void {

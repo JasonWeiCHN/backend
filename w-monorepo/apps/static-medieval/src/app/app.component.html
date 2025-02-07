@@ -1,12 +1,15 @@
 <div class="w-app">
   <w-banner [data]="appConfig.banner">
     <div rightContent>
+      <!--
       <w-project-switcher
         [selectedProject]="selectedProject"
         [projects]="projects"
         (projectSelected)="onProjectSelected($event)"
       >
       </w-project-switcher>
+      -->
+      <w-back-home-button></w-back-home-button>
     </div>
   </w-banner>
   <div class="page">

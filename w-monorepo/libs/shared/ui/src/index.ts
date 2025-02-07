@@ -39,3 +39,7 @@ export * from './lib/gallery/gallery.component';
 export * from './lib/good-card/good-card.component';
 
 export * from './lib/article-card/article-card.component';
+
+export * from './lib/back-home-button/back-home-button.component';
+
+export * from './lib/navigation-button/navigation-button.component';

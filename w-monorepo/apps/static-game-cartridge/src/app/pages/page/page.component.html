@@ -1,0 +1,53 @@
+<div *ngIf="pageConfig" class="page">
+  <div class="top-bar">
+    <div class="top-bar__container">
+      <w-navigation
+        [mode]="eNavigationMode.COMMON"
+        [items]="navigationItems"
+        [initItemId]="initNavigationItemId"
+        (navigationItemClick)="onNavigationItemClick($event)"
+      ></w-navigation>
+      <w-navigation-button
+        [url]="contactUsUrl"
+        [buttonText]="'联系站长购买'"
+      ></w-navigation-button>
+    </div>
+  </div>
+  <div *ngIf="tags.length" class="tag-container">
+    <w-tag-selector
+      [visibleTagCount]="15"
+      [mode]="eTagSelector.COMMON"
+      [tags]="tags"
+      (tagSelected)="onTagSelect($event)"
+    ></w-tag-selector>
+  </div>
+  <div *ngIf="activeTag && activeTag.id !== 'all'" class="description">
+    <div class="text">
+      {{ activeTag.description }}
+    </div>
+    <div class="button-more" (click)="onMoreClick()">
+      查看详细 <span>{{ activeTag.name }}</span> 的详细资料
+    </div>
+  </div>
+  <div *ngIf="pageConfig.mode === ePageMode.ARTICLE" class="grid-container">
+    <div *ngFor="let item of data" class="grid-container__item">
+      <w-article-card
+        [data]="item"
+        (itemClick)="onItemClick($event)"
+      ></w-article-card>
+    </div>
+  </div>
+  <div *ngIf="pageConfig.mode === ePageMode.GOODS_CARD" class="grid-container">
+    <div *ngFor="let item of data" class="grid-container__item">
+      <w-good-card
+        [data]="item"
+        (itemClick)="onItemClick($event)"
+      ></w-good-card>
+    </div>
+  </div>
+  <app-gallery
+    *ngIf="pageConfig.mode === ePageMode.GALLERY"
+    [data]="data"
+    (itemClick)="onItemClick($event)"
+  ></app-gallery>
+</div>

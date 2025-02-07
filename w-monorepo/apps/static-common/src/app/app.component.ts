@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IApp } from '@w-monorepo/interfaces';
-import { APP_CONFIG } from './shared/constants/app.config.constans';
+import { APP_CONFIG } from './shared/constants/app.config.constants';
 import { AppBannerComponent } from './components/app-banner/app-banner.component';
 import { RouterOutlet } from '@angular/router';
 

@@ -1,35 +1,30 @@
 <div class="w-app">
-  <w-banner
-    [data]="appConfig.banner"
-  >
+  <w-banner [data]="appConfig.banner">
     <div rightContent>
+      <!--
       <w-project-switcher
         [selectedProject]="selectedProject"
         [projects]="projects"
         (projectSelected)="onProjectSelected($event)">
       </w-project-switcher>
+      -->
+      <w-back-home-button></w-back-home-button>
     </div>
   </w-banner>
   <div class="page">
-    <div class="subtitle">
-      技术攻略
-    </div>
+    <div class="subtitle">技术攻略</div>
     <w-list
       [data]="strategy"
       [mode]="eList.ARTICLE"
       (listItemClick)="onListItemClick($event)"
     ></w-list>
-    <div class="subtitle">
-      实况录像
-    </div>
+    <div class="subtitle">实况录像</div>
     <w-list
       [data]="liveRecording"
       [mode]="eList.ARTICLE"
       (listItemClick)="onListItemClick($event)"
     ></w-list>
-    <div class="subtitle">
-      背景知识
-    </div>
+    <div class="subtitle">背景知识</div>
     <w-list
       [data]="backgroundKnowledge"
       [mode]="eList.ARTICLE"
@@ -37,4 +32,3 @@
     ></w-list>
   </div>
 </div>
-

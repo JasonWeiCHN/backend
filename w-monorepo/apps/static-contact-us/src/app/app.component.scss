@@ -1,0 +1,42 @@
+.contact-us {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  padding-top: 24px;
+
+  h1 {
+    color: #ffffff;
+    font-size: 24px;
+    margin: 12px 0;
+    border-bottom: 1px solid #ffffff;
+  }
+
+  .subtitle {
+    margin: 12px 0;
+    font-size: 20px;
+  }
+
+  .wechat {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .wechat, .fish {
+    img {
+      width: 270px;
+      height: auto;
+    }
+  }
+
+  .wechat-no {
+    cursor: pointer;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #ffcc00; // 鼠标悬浮时改变颜色
+    }
+  }
+}

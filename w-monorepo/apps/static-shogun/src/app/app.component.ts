@@ -2,13 +2,14 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { NxWelcomeComponent } from './nx-welcome.component';
 import {
+  BackHomeButtonComponent,
   BannerComponent,
   EList,
   IItemCard,
   ISwitcherProject,
   ListComponent,
   NavigationComponent,
-  ProjectSwitcherComponent
+  ProjectSwitcherComponent,
 } from '@w-monorepo/ui';
 import { NgIf } from '@angular/common';
 import { IApp } from '@w-monorepo/interfaces';
@@ -18,10 +19,20 @@ import { ARTICLES_MAP } from './shared/constants/data.constants';
 
 @Component({
   standalone: true,
-  imports: [HttpClientModule, NxWelcomeComponent, RouterModule, BannerComponent, NavigationComponent, NgIf, ProjectSwitcherComponent, ListComponent],
+  imports: [
+    HttpClientModule,
+    NxWelcomeComponent,
+    RouterModule,
+    BannerComponent,
+    NavigationComponent,
+    NgIf,
+    ProjectSwitcherComponent,
+    ListComponent,
+    BackHomeButtonComponent,
+  ],
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
   protected appConfig: IApp = APP_CONFIG;

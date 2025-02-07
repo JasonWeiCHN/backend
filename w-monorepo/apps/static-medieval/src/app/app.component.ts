@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { NxWelcomeComponent } from './nx-welcome.component';
 import {
+  BackHomeButtonComponent,
   BannerComponent,
   EList,
   INavigationItem,
@@ -26,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     NgIf,
     ProjectSwitcherComponent,
     ListComponent,
+    BackHomeButtonComponent,
   ],
   selector: 'app-root',
   templateUrl: './app.component.html',
