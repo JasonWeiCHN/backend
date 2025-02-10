@@ -109,11 +109,11 @@ export class PageComponent implements OnInit, OnDestroy {
   protected onItemClick(item: IItemCard): void {
     console.log(item);
 
-    // const url = item.sourceUrl || item.referer;
-    //
-    // if (url) {
-    //   window.open(url, '_blank');
-    // }
+    const url = item.sourceUrl || item.referer;
+
+    if (url) {
+      window.open(url, '_blank');
+    }
   }
 
   protected onMoreClick(): void {

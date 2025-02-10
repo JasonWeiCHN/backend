@@ -20,7 +20,7 @@ export class WikiComponent implements OnInit {
 
   public ngOnInit(): void {
     const { id } = this._activatedRoute.snapshot.params;
-    console.log(id);
+    
     this.data = WIKI_DATA_MAP[id];
   }
 }
