@@ -48,6 +48,17 @@ export const GAME_WIKI_DATA_MAP: IWikiDataMap = {
       description: '<p>闲鱼最低 115元，拼多多二手119元</p>',
     },
   },
+  '0pcTPp': {
+    chart: {
+      name: 'GTA5 侠盗猎车手5',
+      release: '---/--/--',
+      manufacturer: '-----',
+    },
+    content: {
+      overview: '<p>本作国内禁售！</p>',
+      description: '<p>香港 157.37元</p>',
+    },
+  },
   cZTCm5: {
     chart: {
       name: '塞尔达传说·王国之泪',

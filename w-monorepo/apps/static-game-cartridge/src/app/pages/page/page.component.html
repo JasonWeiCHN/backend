@@ -1,16 +1,64 @@
+<div
+  *ngIf="showBanner && selectedCard"
+  [class.show]="showBanner"
+  class="bottom-banner"
+>
+  <div class="content">
+    <div class="info">
+      <h3 class="title">{{ selectedCard.title }}</h3>
+      <p class="description">{{ selectedCard.description }}</p>
+      <div *ngIf="selectedCardDetail && selectedCardDetail.price" class="price">
+        <p *ngIf="selectedCardDetail.price.xg">
+          <span class="seller">港货正品：</span>
+          <span class="value">{{ selectedCardDetail.price.xg }}</span>
+        </p>
+        <p *ngIf="selectedCardDetail.price.pdd">
+          <span class="seller">拼多多：</span>
+          <span class="value">{{ selectedCardDetail.price.pdd }}</span>
+        </p>
+        <p *ngIf="selectedCardDetail.price.xy">
+          <span class="seller">闲鱼：</span>
+          <span class="value">{{ selectedCardDetail.price.xy }}</span>
+        </p>
+        <p *ngIf="selectedCardDetail.price.jd">
+          <span class="seller">京东：</span>
+          <span class="value">{{ selectedCardDetail.price.jd }}</span>
+        </p>
+        <p *ngIf="selectedCardDetail.price.tb">
+          <span class="seller">淘宝：</span>
+          <span class="value">{{ selectedCardDetail.price.tb }}</span>
+        </p>
+      </div>
+    </div>
+    <button class="close-button" (click)="closeBanner()">收起</button>
+  </div>
+</div>
 <div *ngIf="pageConfig" class="page">
   <div class="top-bar">
     <div class="top-bar__container">
-      <w-navigation
-        [mode]="eNavigationMode.COMMON"
-        [items]="navigationItems"
-        [initItemId]="initNavigationItemId"
-        (navigationItemClick)="onNavigationItemClick($event)"
-      ></w-navigation>
-      <w-navigation-button
-        [url]="contactUsUrl"
-        [buttonText]="'联系站长购买'"
-      ></w-navigation-button>
+      <div class="left">
+        <w-navigation
+          [mode]="eNavigationMode.COMMON"
+          [items]="navigationItems"
+          [initItemId]="initNavigationItemId"
+          (navigationItemClick)="onNavigationItemClick($event)"
+        ></w-navigation>
+      </div>
+      <div class="right">
+        <div class="search-container">
+          <input
+            type="text"
+            placeholder="搜索一下"
+            [(ngModel)]="searchText"
+            (input)="onSearchChange()"
+            class="search-input"
+          />
+        </div>
+        <w-navigation-button
+          [url]="contactUsUrl"
+          [buttonText]="'联系站长购买'"
+        ></w-navigation-button>
+      </div>
     </div>
   </div>
   <div *ngIf="tags.length" class="tag-container">

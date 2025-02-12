@@ -25,6 +25,11 @@ const COMMON_NAVIGATION_ITEMS = [
     label: 'Switch',
     path: '',
   },
+  {
+    id: 'old',
+    label: '二手',
+    path: '',
+  },
 ];
 
 export const GAME_PAGE_DATA: IPageDataMap = {

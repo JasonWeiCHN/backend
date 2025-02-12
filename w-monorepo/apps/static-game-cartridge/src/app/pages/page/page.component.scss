@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   padding-top: 12px;
+  padding-bottom: 120px;
 
   .top-bar {
     position: fixed;
@@ -21,6 +22,25 @@
       width: 100%;
       max-width: 1200px;
       margin: 0 auto;
+
+      .search-container {
+        display: inline-block;
+        margin-right: 12px;
+
+        .search-input {
+          padding: 6px 10px;
+          font-size: 14px;
+          border: 1px solid #b8b8b8;
+          border-radius: 4px;
+          outline: none;
+        }
+
+        &:hover {
+          .search-input {
+            border-color: #535353;
+          }
+        }
+      }
     }
   }
 
@@ -64,6 +84,95 @@
 
     &:hover {
       text-decoration: underline;
+    }
+  }
+}
+
+.bottom-banner {
+  position: fixed;
+  z-index: 2000;
+  box-sizing: border-box;
+  bottom: -120px; // 初始隐藏在底部
+  width: 100%;
+  height: 100px;
+  padding: 12px 12px 0 12px;
+  background: #ffffff;
+  border-top: 1px solid #b8b8b8;
+
+  .content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .info {
+      .title {
+        color: #535353;
+      }
+
+      .description {
+        color: #636363;
+      }
+
+      .price {
+        display: flex;
+
+        p {
+          margin-right: 12px;
+
+          .seller {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+
+  .close-button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #636363;
+
+    &:hover {
+      color: #535353;
+      text-decoration: underline;
+    }
+  }
+}
+
+.bottom-banner.show {
+  bottom: 0;
+}
+
+
+@media (max-width: 600px) {
+  .page {
+    .top-bar {
+      &__container {
+        flex-direction: column;
+
+        .right {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-top: 12px;
+          gap: 6px;
+
+          .search-container {
+            .search-input {
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+
+    .grid-container {
+      padding-top: 120px;
     }
   }
 }

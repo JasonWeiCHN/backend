@@ -2,6 +2,10 @@ export interface IPrice {
   discountPercent: number;
   initial: string;
   final: string;
+  xy?: string; // 闲鱼
+  jd?: string; // 京东
+  tb?: string; // 淘宝
+  pdd?: string; // 拼多多
 }
 
 export interface IItemCard {
