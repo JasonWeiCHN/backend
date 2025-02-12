@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 import {
   ArticleCardComponent,
   ENavigationMode,
@@ -71,6 +71,7 @@ export class PageComponent implements OnInit, OnDestroy {
   private searchSubject = new Subject<string>();
 
   public constructor(
+    private _location: Location,
     private readonly _activatedRoute: ActivatedRoute,
     private _router: Router
   ) {
@@ -147,7 +148,7 @@ export class PageComponent implements OnInit, OnDestroy {
 
   protected onNavigationItemClick(item: INavigationItem): void {
     const { type } = this._activatedRoute.snapshot.params;
-    this._router.navigate([`/page/${type}/${item.id}`]);
+    this._location.go(`/page/${type}/${item.id}`);
     if (this.pageConfig?.tagMap) {
       this.tags = this.pageConfig.tagMap[item.id];
       this.activeTag = this.tags[0];
