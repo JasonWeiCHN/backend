@@ -18,8 +18,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { IPageConfig } from '../../shared/interfaces/page.interface';
 import { EPageMode } from '../../shared/enums/page.enum';
 import { PAGE_DATA, PAGE_MAP } from '../../shared/constants/data.constants';
-import { Subscription } from 'rxjs';
+import { debounceTime, Subject, Subscription } from 'rxjs';
 import { URL_CONTACT_US } from '@w-monorepo/constants';
+import { FormsModule } from '@angular/forms';
+
+interface IGameCartridgePrice {
+  xy?: string;
+  jd?: string;
+  tb?: string;
+  xg?: string;
+  pdd?: string;
+}
+
+interface IGameCartridgeDetail {
+  price: IGameCartridgePrice;
+}
 
 @Component({
   selector: 'app-page',
@@ -33,6 +46,7 @@ import { URL_CONTACT_US } from '@w-monorepo/constants';
     GoodCardComponent,
     ArticleCardComponent,
     NavigationButtonComponent,
+    FormsModule,
   ],
   templateUrl: './page.component.html',
   styleUrl: './page.component.scss',
@@ -49,12 +63,21 @@ export class PageComponent implements OnInit, OnDestroy {
   protected initNavigationItemId: string | undefined = undefined;
   protected activeTag: ITag | undefined = undefined;
   protected contactUsUrl = URL_CONTACT_US;
+  protected selectedCard: IItemCard | null = null; // 存储当前选中的商品
+  protected selectedCardDetail: IGameCartridgeDetail | null = null;
+  protected showBanner = false; // 是否展示 bottom-banner
+  protected searchText = ''; // 存储搜索关键字
   private _routeSubscription: Subscription | undefined;
+  private searchSubject = new Subject<string>();
 
   public constructor(
     private readonly _activatedRoute: ActivatedRoute,
     private _router: Router
-  ) {}
+  ) {
+    this.searchSubject.pipe(debounceTime(300)).subscribe(() => {
+      this.performSearch();
+    });
+  }
 
   public ngOnInit(): void {
     // 订阅路由参数变化
@@ -95,6 +118,33 @@ export class PageComponent implements OnInit, OnDestroy {
     }
   }
 
+  protected onSearchChange(): void {
+    this.searchSubject.next(this.searchText);
+  }
+
+  protected performSearch(): void {
+    const { type, nav } = this._activatedRoute.snapshot.params;
+    console.log(type, nav);
+    const allData = PAGE_DATA[type]?.[nav] || [];
+    console.log(allData);
+
+    if (!this.searchText.trim()) {
+      this.data = allData;
+      return;
+    }
+
+    this.data = allData.filter((item) =>
+      item.title.toLowerCase().includes(this.searchText.toLowerCase())
+    );
+
+    console.log(this.data);
+  }
+
+  // 关闭 bottom-banner
+  protected closeBanner(): void {
+    this.showBanner = false;
+  }
+
   protected onNavigationItemClick(item: INavigationItem): void {
     const { type } = this._activatedRoute.snapshot.params;
     this._router.navigate([`/page/${type}/${item.id}`]);
@@ -109,11 +159,21 @@ export class PageComponent implements OnInit, OnDestroy {
   protected onItemClick(item: IItemCard): void {
     console.log(item);
 
-    const url = item.sourceUrl || item.referer;
+    // 更新选中商品的信息
+    this.selectedCard = item;
 
-    if (url) {
-      window.open(url, '_blank');
+    if (item.detail) {
+      this.selectedCardDetail = JSON.parse(item.detail) as IGameCartridgeDetail;
+    } else {
+      this.selectedCardDetail = null;
     }
+
+    this.showBanner = true;
+
+    // const url = item.sourceUrl || item.referer;
+    // if (url) {
+    //   window.open(url, '_blank');
+    // }
   }
 
   protected onMoreClick(): void {
