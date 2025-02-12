@@ -3,6 +3,8 @@ import {
   EventEmitter,
   Input,
   OnChanges,
+  OnDestroy,
+  OnInit,
   Output,
   SimpleChanges,
 } from '@angular/core';
@@ -12,6 +14,7 @@ import { has } from 'lodash-es';
 import { NavigationEnd, Router } from '@angular/router';
 import { AnalysisHttpService } from '@w-monorepo/analysis';
 import { ENavigationMode } from './shared/enums/navigation.enum';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'w-navigation',
@@ -21,7 +24,7 @@ import { ENavigationMode } from './shared/enums/navigation.enum';
   styleUrl: './navigation.component.scss',
   providers: [AnalysisHttpService],
 })
-export class NavigationComponent implements OnChanges {
+export class NavigationComponent implements OnChanges, OnInit, OnDestroy {
   /**
    * @description
    * Different mode will display different layout
@@ -55,11 +58,21 @@ export class NavigationComponent implements OnChanges {
 
   public activeItemId = '';
   protected eNavigationMode = ENavigationMode;
+  private routerEventsSubscription: Subscription | undefined;
 
   public constructor(
     private analysisHttpService: AnalysisHttpService,
     private router: Router
   ) {}
+
+  ngOnInit(): void {
+    // 订阅路由事件
+    this.routerEventsSubscription = this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.updateActiveItemId();
+      }
+    });
+  }
 
   public ngOnChanges(changes: SimpleChanges): void {
     if (has(changes, 'items')) {
@@ -72,12 +85,16 @@ export class NavigationComponent implements OnChanges {
       }
     }
 
-    // 监听路由变化
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        this.updateActiveItemId();
-      }
-    });
+    if (has(changes, 'initItemId') && this.initItemId) {
+      this.activeItemId = this.initItemId;
+    }
+  }
+
+  public ngOnDestroy(): void {
+    // 组件销毁时取消订阅
+    if (this.routerEventsSubscription) {
+      this.routerEventsSubscription.unsubscribe();
+    }
   }
 
   protected onItemClick(item: INavigationItem) {

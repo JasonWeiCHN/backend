@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { CommonModule, Location } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import {
   ArticleCardComponent,
   ENavigationMode,
@@ -21,6 +21,7 @@ import { PAGE_DATA, PAGE_MAP } from '../../shared/constants/data.constants';
 import { debounceTime, Subject, Subscription } from 'rxjs';
 import { URL_CONTACT_US } from '@w-monorepo/constants';
 import { FormsModule } from '@angular/forms';
+import { AnalysisHttpService } from '@w-monorepo/analysis';
 
 interface IGameCartridgePrice {
   xy?: string;
@@ -50,6 +51,7 @@ interface IGameCartridgeDetail {
   ],
   templateUrl: './page.component.html',
   styleUrl: './page.component.scss',
+  providers: [AnalysisHttpService],
 })
 export class PageComponent implements OnInit, OnDestroy {
   protected pageConfig: IPageConfig | undefined = undefined;
@@ -71,9 +73,9 @@ export class PageComponent implements OnInit, OnDestroy {
   private searchSubject = new Subject<string>();
 
   public constructor(
-    private _location: Location,
+    private readonly _analysisHttpService: AnalysisHttpService,
     private readonly _activatedRoute: ActivatedRoute,
-    private _router: Router
+    private readonly _router: Router
   ) {
     this.searchSubject.pipe(debounceTime(300)).subscribe(() => {
       this.performSearch();
@@ -125,9 +127,7 @@ export class PageComponent implements OnInit, OnDestroy {
 
   protected performSearch(): void {
     const { type, nav } = this._activatedRoute.snapshot.params;
-    console.log(type, nav);
     const allData = PAGE_DATA[type]?.[nav] || [];
-    console.log(allData);
 
     if (!this.searchText.trim()) {
       this.data = allData;
@@ -137,8 +137,6 @@ export class PageComponent implements OnInit, OnDestroy {
     this.data = allData.filter((item) =>
       item.title.toLowerCase().includes(this.searchText.toLowerCase())
     );
-
-    console.log(this.data);
   }
 
   // 关闭 bottom-banner
@@ -148,18 +146,18 @@ export class PageComponent implements OnInit, OnDestroy {
 
   protected onNavigationItemClick(item: INavigationItem): void {
     const { type } = this._activatedRoute.snapshot.params;
-    this._location.go(`/page/${type}/${item.id}`);
+    this._router.navigateByUrl(`/page/${type}/${item.id}`);
     if (this.pageConfig?.tagMap) {
       this.tags = this.pageConfig.tagMap[item.id];
       this.activeTag = this.tags[0];
     }
     this.data = PAGE_DATA[type]?.[item.id] || [];
     this.activeNavigationItemId = item.id;
+    // 更新子组件的初始项 不更新上面的导航栏不会变
+    this.initNavigationItemId = item.id;
   }
 
   protected onItemClick(item: IItemCard): void {
-    console.log(item);
-
     // 更新选中商品的信息
     this.selectedCard = item;
 
@@ -170,6 +168,15 @@ export class PageComponent implements OnInit, OnDestroy {
     }
 
     this.showBanner = true;
+
+    this._analysisHttpService.submitString('查看: ' + item.title).subscribe(
+      (response: any) => {
+        // console.log('String submitted successfully!', response);
+      },
+      (error: any) => {
+        console.error('Error submitting string:', error);
+      }
+    );
 
     // const url = item.sourceUrl || item.referer;
     // if (url) {
