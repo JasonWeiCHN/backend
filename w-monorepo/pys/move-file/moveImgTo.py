@@ -29,6 +29,6 @@ def copy_images(src_dir, dest_dir):
 
 if __name__ == "__main__":
     source_directory = "F:/output_images"  # 这里填入你的源目录路径
-    destination_directory = "F:/backend/w-monorepo/apps/static-game-cartridge/src/assets/images/ps4"  # 这里填入你的目标目录路径
+    destination_directory = "F:/backend/w-monorepo/apps/static-game-cartridge/src/assets/images/switch"  # 这里填入你的目标目录路径
     copy_images(source_directory, destination_directory)
     print("图片复制完成！")

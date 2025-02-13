@@ -89,7 +89,7 @@ def resize_images_in_directory(input_dir, output_base_dir, target_height):
 
 # 示例用法
 if __name__ == "__main__":
-    input_directory = "F:/04.游戏数据采集/新封面/PS4"
+    input_directory = "F:/04.游戏数据采集/新封面/SWITCH"
     output_directory = "F:/output_images"  # 目标文件夹
     target_height = 240  # 目标高度
 
