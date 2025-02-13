@@ -5,7 +5,7 @@ import { PageComponent } from './pages/page/page.component';
 export const appRoutes: Route[] = [
   {
     path: '',
-    redirectTo: 'page/cartridge/ps5',
+    redirectTo: 'page/cartridge/recommend',
     pathMatch: 'full', // 添加 pathMatch，确保路径完全匹配
   },
   {

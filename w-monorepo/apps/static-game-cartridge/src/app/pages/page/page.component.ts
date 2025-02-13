@@ -22,6 +22,7 @@ import { debounceTime, Subject, Subscription } from 'rxjs';
 import { URL_CONTACT_US } from '@w-monorepo/constants';
 import { FormsModule } from '@angular/forms';
 import { AnalysisHttpService } from '@w-monorepo/analysis';
+import { RecommendComponent } from './components/recommend/recommend.component';
 
 interface IGameCartridgePrice {
   xy?: string;
@@ -48,6 +49,7 @@ interface IGameCartridgeDetail {
     ArticleCardComponent,
     NavigationButtonComponent,
     FormsModule,
+    RecommendComponent,
   ],
   templateUrl: './page.component.html',
   styleUrl: './page.component.scss',
@@ -61,7 +63,7 @@ export class PageComponent implements OnInit, OnDestroy {
   protected navigationItems: INavigationItem[] = [];
   protected data: IItemCard[] = [];
   protected tags: ITag[] = [];
-  protected activeNavigationItemId = 'ps5';
+  protected activeNavigationItemId = 'recommend';
   protected initNavigationItemId: string | undefined = undefined;
   protected activeTag: ITag | undefined = undefined;
   protected contactUsUrl = URL_CONTACT_US;
@@ -105,6 +107,7 @@ export class PageComponent implements OnInit, OnDestroy {
 
     this.navigationItems = this.pageConfig?.navigationItems || [];
     this.initNavigationItemId = nav || this.navigationItems[0]?.id;
+    this.activeNavigationItemId = this.initNavigationItemId;
 
     if (this.navigationItems.length === 0) {
       this.data = Object.values(PAGE_DATA[type]).flat() || [];

@@ -6,11 +6,5 @@ export const GAME_APP_CONFIG: IApp = {
     subtitle: '各种卡带',
     rightContent: '',
   },
-  navigationItems: [
-    {
-      id: 'cartridge',
-      label: '游戏卡带',
-      path: 'page/cartridge',
-    },
-  ],
+  navigationItems: [],
 };

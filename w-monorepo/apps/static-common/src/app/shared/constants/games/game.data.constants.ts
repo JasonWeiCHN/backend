@@ -816,7 +816,7 @@ export const CARTRIDGE_MAP: IArticleMap = {
         '如临真实战场，畅享爽快的一骑当千动作！无名英雄闯荡三国乱世的“真・三国无双”系列新作。',
       detail: '',
       id: '1qug5y',
-      imageUrl: 'assets/images/ps5/F_1qug5y.png',
+      imageUrl: 'assets/images/ps5/zsgwsqy.png',
       tagIds: ['新品', '三国'],
       title: '真三国无双·起源',
       price: {

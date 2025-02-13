@@ -77,7 +77,14 @@
       查看详细 <span>{{ activeTag.name }}</span> 的详细资料
     </div>
   </div>
-  <div *ngIf="pageConfig.mode === ePageMode.ARTICLE" class="grid-container">
+  <app-recommend *ngIf="activeNavigationItemId === 'recommend'"></app-recommend>
+  <div
+    *ngIf="
+      pageConfig.mode === ePageMode.ARTICLE &&
+      activeNavigationItemId !== 'recommend'
+    "
+    class="grid-container"
+  >
     <div *ngFor="let item of data" class="grid-container__item">
       <w-article-card
         [data]="item"

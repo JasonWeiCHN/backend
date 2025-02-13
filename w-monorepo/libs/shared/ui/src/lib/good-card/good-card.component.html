@@ -1,7 +1,7 @@
 <div *ngIf="data" (click)="onItemClick(data)" class="good-card">
   <div style="padding: 10px; border-bottom: 1px solid #b8b8b8">
     <div *ngIf="data.tagIds.length" class="good-card__tags">
-      <div class="tag" *ngFor="let tag of data.tagIds">
+      <div *ngFor="let tag of data.tagIds" class="tag">
         {{ tag }}
       </div>
     </div>

@@ -11,6 +11,11 @@ const GAME_TAG_MAP: ITagMap = {
 
 const COMMON_NAVIGATION_ITEMS = [
   {
+    id: 'recommend',
+    label: '最新推荐',
+    path: '',
+  },
+  {
     id: 'ps5',
     label: 'PS5',
     path: '',

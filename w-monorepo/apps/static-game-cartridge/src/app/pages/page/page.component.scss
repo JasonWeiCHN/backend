@@ -47,7 +47,7 @@
   .grid-container {
     width: 100%;
     max-width: 1200px;
-    padding-top: 42px;
+    padding-top: 48px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* 定义 N 列，这里是 5 列 */
     gap: 12px; /* 图片之间的间距 */
