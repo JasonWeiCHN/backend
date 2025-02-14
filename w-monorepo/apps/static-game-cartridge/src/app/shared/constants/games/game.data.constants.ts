@@ -18,8 +18,8 @@ export const CARTRIDGE_MAP: IArticleMap = {
       title: 'Monster Hunter Wilds',
       price: {
         discountPercent: 100,
-        initial: '498.00',
-        final: '498.00',
+        initial: '',
+        final: '498.00（正在预定）',
       },
     },
     {
@@ -35,7 +35,7 @@ export const CARTRIDGE_MAP: IArticleMap = {
       title: '真三国无双·起源',
       price: {
         discountPercent: 100,
-        initial: '469.00',
+        initial: '',
         final: '469.00',
       },
     },
@@ -43,30 +43,30 @@ export const CARTRIDGE_MAP: IArticleMap = {
       sourceUrl: '/wiki/zjaAsj',
       date: '',
       description: '奎爷这次要斩杀多少神',
-      detail: '{"price":{"xg":"258.00", "xy":"171.00（港版无特典）"}}',
+      detail: '{"price":{"xg":"258.00", "xy":"150.00（港版无特典）"}}',
       id: 'zjaAsj',
       imageUrl: 'assets/images/ps5/F_zjaAsj.jpg',
       tagIds: ['动作', '冒险'],
       title: '战神 诸神黄昏',
       price: {
         discountPercent: 100,
-        initial: '258.00',
-        final: '258.00',
+        initial: '',
+        final: '258.00（新卡） 150.00（闲鱼） 174.9.00（拼多多）',
       },
     },
     {
       sourceUrl: '/wiki/RitaOO',
       date: '',
       description: '能吃就行！',
-      detail: '{"price":{"xy":"120.00", "xg": "148.00"}}',
+      detail: '{"price":{"xy":"128.00", "xg": "148.00"}}',
       id: 'RitaOO',
       imageUrl: 'assets/images/ps5/F_RitaOO.jpg',
       tagIds: ['多人合作', '休闲'],
       title: '胡闹厨房 全都好吃',
       price: {
         discountPercent: 100,
-        initial: '148.00',
-        final: '148.00',
+        initial: '',
+        final: '148.00（新卡） 128.00（闲鱼） 120.00（拼多多）',
       },
     },
     {
@@ -80,8 +80,8 @@ export const CARTRIDGE_MAP: IArticleMap = {
       title: '胡闹搬家2',
       price: {
         discountPercent: 100,
-        initial: '148.00',
-        final: '148.00',
+        initial: '',
+        final: '148.00（新卡） 140.00（闲鱼） 128.00（拼多多）',
       },
     },
     {
@@ -111,8 +111,8 @@ export const CARTRIDGE_MAP: IArticleMap = {
       title: '最后生还者·PART2',
       price: {
         discountPercent: 100,
-        initial: '268.00',
-        final: '268.00',
+        initial: '',
+        final: '268.00（新卡）',
       },
     },
     {
@@ -127,8 +127,8 @@ export const CARTRIDGE_MAP: IArticleMap = {
       title: '最后生还者·PART1',
       price: {
         discountPercent: 100,
-        initial: '325.00',
-        final: '325.00',
+        initial: '',
+        final: '325.00（新卡） 200.00（闲鱼） 210.00（拼多多）',
       },
     },
     {
@@ -142,8 +142,8 @@ export const CARTRIDGE_MAP: IArticleMap = {
       title: '勇者斗恶龙III',
       price: {
         discountPercent: 100,
-        initial: '280.00',
-        final: '280.00',
+        initial: '',
+        final: '280.00（新卡） 210.00（闲鱼） 243.00（拼多多）',
       },
     },
     {
@@ -157,8 +157,8 @@ export const CARTRIDGE_MAP: IArticleMap = {
       title: '浪漫沙加2 七英雄的复仇',
       price: {
         discountPercent: 100,
-        initial: '448.00',
-        final: '448.00',
+        initial: '',
+        final: '448.00（新卡） 279.00（闲鱼-日版无中文）',
       },
     },
     {
@@ -173,8 +173,8 @@ export const CARTRIDGE_MAP: IArticleMap = {
       title: '最终幻想7 重生',
       price: {
         discountPercent: 100,
-        initial: '375.00',
-        final: '375.00',
+        initial: '',
+        final: '375.00（新卡） 290.00（闲鱼） 225.00（拼多多）',
       },
     },
     {
@@ -189,8 +189,8 @@ export const CARTRIDGE_MAP: IArticleMap = {
       title: '人中之龙8',
       price: {
         discountPercent: 100,
-        initial: '238.00',
-        final: '238.00',
+        initial: '',
+        final: '238.00（新卡） 165.00（闲鱼）',
       },
     },
     {
@@ -205,8 +205,8 @@ export const CARTRIDGE_MAP: IArticleMap = {
       title: '《地平线 零之曙光™》',
       price: {
         discountPercent: 100,
-        initial: '289.00',
-        final: '289.00',
+        initial: '',
+        final: '350.00（新卡） 260.00（闲鱼） 288.00（拼多多）',
       },
     },
     {
@@ -4629,7 +4629,7 @@ export const CARTRIDGE_MAP: IArticleMap = {
       imageUrl:
         'https://img.alicdn.com/bao/uploaded/i2/O1CN01M0HMtY1VHDN85Rstl_!!0-fleamarket.jpg_450x10000Q90.jpg',
       tagIds: ['参考价'],
-      title: '塞尔达无双灾厄启示 日版日文',
+      title: '塞尔达无双灾厄启示',
       price: {
         discountPercent: 100,
         initial: '199.00',

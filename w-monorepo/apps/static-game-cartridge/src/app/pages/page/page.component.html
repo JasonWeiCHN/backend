@@ -94,10 +94,10 @@
   </div>
   <div *ngIf="pageConfig.mode === ePageMode.GOODS_CARD" class="grid-container">
     <div *ngFor="let item of data" class="grid-container__item">
-      <w-good-card
+      <app-cartridge-card
         [data]="item"
         (itemClick)="onItemClick($event)"
-      ></w-good-card>
+      ></app-cartridge-card>
     </div>
   </div>
   <app-gallery

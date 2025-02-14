@@ -1,0 +1,5 @@
+@import "apps/management/src/app/shared/styles/table.scss";
+
+.good {
+  @extend #table;
+}

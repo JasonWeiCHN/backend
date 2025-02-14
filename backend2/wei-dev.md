@@ -32,3 +32,9 @@
 #### swagger 如何访问
 
 - http://localhost:8080/swagger-ui/index.html
+
+#### 如何在 idea 创建一个新的项目
+- 新建项目 选择spring boot
+- copy 一个 配置文件 application.yml
+- 创建对应的数据库
+- 创建实体类 并 启动，如何 数据库 里自动生成了表，项目创建成功

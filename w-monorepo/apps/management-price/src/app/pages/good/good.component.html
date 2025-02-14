@@ -1,0 +1,18 @@
+<div class="good">
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>名字</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of Goods" (click)="onItemClick(item)">
+          <td>{{ item.id }}</td>
+          <td>{{ item.name }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

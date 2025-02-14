@@ -4,7 +4,6 @@ import {
   ArticleCardComponent,
   ENavigationMode,
   ETagSelector,
-  GoodCardComponent,
   IItemCard,
   INavigationItem,
   ITag,
@@ -23,18 +22,8 @@ import { URL_CONTACT_US } from '@w-monorepo/constants';
 import { FormsModule } from '@angular/forms';
 import { AnalysisHttpService } from '@w-monorepo/analysis';
 import { RecommendComponent } from './components/recommend/recommend.component';
-
-interface IGameCartridgePrice {
-  xy?: string;
-  jd?: string;
-  tb?: string;
-  xg?: string;
-  pdd?: string;
-}
-
-interface IGameCartridgeDetail {
-  price: IGameCartridgePrice;
-}
+import { CartridgeCardComponent } from '../../components/cartridge-card/cartridge-card.component';
+import { IGameCartridgeDetail } from '../../shared/interfaces/game-card.interface';
 
 @Component({
   selector: 'app-page',
@@ -45,11 +34,11 @@ interface IGameCartridgeDetail {
     AppGalleryComponent,
     NavigationComponent,
     TagSelectorComponent,
-    GoodCardComponent,
     ArticleCardComponent,
     NavigationButtonComponent,
     FormsModule,
     RecommendComponent,
+    CartridgeCardComponent,
   ],
   templateUrl: './page.component.html',
   styleUrl: './page.component.scss',

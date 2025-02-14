@@ -1,0 +1,27 @@
+<div *ngIf="data" (click)="onItemClick(data)" class="cartridge-card">
+  <div style="padding: 10px; border-bottom: 1px solid #b8b8b8">
+    <div *ngIf="data.tagIds.length" class="cartridge-card__tags">
+      <div
+        *ngFor="let tag of data.tagIds"
+        class="tag"
+        [ngStyle]="tag === '新品' ? { color: '#ff5000' } : {}"
+      >
+        {{ tag }}
+      </div>
+    </div>
+    <div class="cartridge-card__img-container">
+      <img [src]="data.imageUrl" alt="" />
+    </div>
+    <div class="cartridge-card__title">
+      {{ data.title }}
+    </div>
+    <div class="cartridge-card__description">
+      {{ data.description }}
+    </div>
+  </div>
+  <div *ngIf="data.price" class="cartridge-card__price">
+    <span *ngFor="let item of data.price.final.split(' '); let last = last">
+      ¥ {{ item }}<span *ngIf="!last"><br /></span>
+    </span>
+  </div>
+</div>
