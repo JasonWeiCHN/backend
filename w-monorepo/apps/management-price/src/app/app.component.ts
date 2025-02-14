@@ -8,4 +8,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [RouterModule, GoodComponent, HttpClientModule],
   selector: 'm-price-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.compon
+  styleUrl: './app.component.scss',
+})
+export class AppComponent {
+  title = 'management-price';
+}

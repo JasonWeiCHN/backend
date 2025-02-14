@@ -2,4 +2,42 @@
 
 .good {
   @extend #table;
+
+  .table-container {
+    width: 1200px;
+    height: 500px;
+    margin: 0 auto;
+    overflow: scroll;
+
+    &__tools {
+      margin-bottom: 12px;
+    }
+  }
+}
+
+.add-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  color: #FFFFFF;
+
+  &__container {
+    width: 1200px;
+    margin: 0 auto;
+
+    label {
+      margin-right: 12px;
+    }
+
+    .form-items {
+      margin-top: 12px;
+    }
+
+    .submit-buttons {
+      margin-top: 12px;
+    }
+  }
 }

@@ -1,19 +1,16 @@
 import { Injectable } from '@angular/core';
-import { IGood } from './good.interface';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { IAddGood, IGood } from './good.interface';
 import { Page } from '@w-monorepo/interfaces';
 
 @Injectable()
 export class GoodHttpService {
-  private baseUrl = 'http://localhost:8080/goods';
+  private baseUrl = 'http://localhost:8080/goods'; // 后端接口地址
 
   constructor(private http: HttpClient) {}
 
-  public getAllGoods(): Observable<IGood[]> {
-    return this.http.get<IGood[]>(`${this.baseUrl}/getAllGoods`);
-  }
-
+  // 获取所有商品（分页）
   public getAllGoodsPaginated(
     page: number,
     size: number
@@ -21,5 +18,10 @@ export class GoodHttpService {
     return this.http.get<Page<IGood>>(
       `${this.baseUrl}/getAllGoodsPaginated?page=${page}&size=${size}`
     );
+  }
+
+  // 新增商品
+  public createGood(good: IAddGood): Observable<IGood> {
+    return this.http.post<IGood>(this.baseUrl, good);
   }
 }
