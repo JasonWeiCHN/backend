@@ -4,11 +4,12 @@ import { IAddGood, IGood } from './good.interface';
 import { GoodHttpService } from './good.http.service';
 import { Page } from '@w-monorepo/interfaces';
 import { FormsModule } from '@angular/forms';
+import { PaginationComponent } from '@w-monorepo/ui';
 
 @Component({
   selector: 'm-price-good',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, PaginationComponent],
   templateUrl: './good.component.html',
   styleUrl: './good.component.scss',
   providers: [GoodHttpService],
@@ -19,7 +20,9 @@ export class GoodComponent implements OnInit {
   protected currentPage = 0;
   protected pageSize = 15; // 每页显示数量
   public isAddModalVisible = false; // 控制新增商品表单显示
-  public addGood: IAddGood = { name: '' }; // 用于绑定表单数据
+  public addGood: IAddGood = { name: '' }; // 用于绑定新增商品数据
+  public isEditModalVisible = false; // 控制编辑商品表单显示
+  public editGood: IGood = { id: '', name: '' }; // 用于绑定编辑商品数据
 
   public constructor(private goodHttpService: GoodHttpService) {}
 
@@ -38,6 +41,11 @@ export class GoodComponent implements OnInit {
 
   protected onItemClick(item: IGood): void {
     console.log(item);
+  }
+
+  protected onPageChange(page: number): void {
+    this.currentPage = page;
+    this.loadGoods();
   }
 
   // 打开新增商品表单
@@ -64,5 +72,52 @@ export class GoodComponent implements OnInit {
         }
       );
     }
+  }
+
+  // 打开修改商品表单
+  public openEditModal(item: IGood): void {
+    this.editGood = { ...item }; // 将选中的商品数据填充到编辑表单
+    this.isEditModalVisible = true;
+  }
+
+  // 关闭修改商品表单
+  public closeEditModal(): void {
+    this.isEditModalVisible = false;
+    this.editGood = { id: '', name: '' }; // 清空表单数据
+  }
+
+  // 提交修改商品
+  public editGoodFormSubmit(): void {
+    if (this.editGood.name.trim()) {
+      this.goodHttpService
+        .updateGood(this.editGood.id, this.editGood)
+        .subscribe(
+          (updatedGood) => {
+            // 更新商品列表中的数据
+            const index = this.Goods.findIndex(
+              (good) => good.id === updatedGood.id
+            );
+            if (index !== -1) {
+              this.Goods[index] = updatedGood;
+            }
+            this.closeEditModal(); // 关闭表单
+          },
+          (error) => {
+            console.error('修改商品失败', error);
+          }
+        );
+    }
+  }
+
+  // 删除商品
+  public deleteGood(id: string): void {
+    this.goodHttpService.deleteGood(id).subscribe(
+      () => {
+        this.Goods = this.Goods.filter((good) => good.id !== id); // 从列表中删除商品
+      },
+      (error) => {
+        console.error('删除商品失败', error);
+      }
+    );
   }
 }

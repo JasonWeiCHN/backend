@@ -1,2 +1,27 @@
 .pagination {
+  button {
+    text-decoration: underline;
+  }
+
+  button:hover {
+    color: orangered;
+  }
+
+  input {
+    border: 1px solid #333333;
+    border-radius: 4px;
+  }
+
+  input:hover {
+    border-color: #000000;
+  }
+
+  .disabled-button {
+    color: #cccccc; /* 灰色背景 */
+    cursor: auto; /* 禁用时的光标样式 */
+
+    &:hover {
+      color: #cccccc;
+    }
+  }
 }

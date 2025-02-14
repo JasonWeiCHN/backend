@@ -7,14 +7,14 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './pagination.component.html',
-  styleUrl: './pagination.component.scss'
+  styleUrl: './pagination.component.scss',
 })
 export class PaginationComponent {
   @Input()
-  public currentPage: number = 0;
+  public currentPage = 0;
 
   @Input()
-  public totalPages: number = 0;
+  public totalPages = 0;
 
   @Output()
   public pageChange = new EventEmitter<number>();

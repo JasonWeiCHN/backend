@@ -12,6 +12,18 @@
     &__tools {
       margin-bottom: 12px;
     }
+
+    table {
+      button {
+        margin-right: 12px;
+        cursor: pointer;
+        text-decoration: underline;
+
+        &:hover {
+          color: orangered;
+        }
+      }
+    }
   }
 }
 
@@ -30,6 +42,10 @@
 
     label {
       margin-right: 12px;
+    }
+
+    input {
+      color: #000000;
     }
 
     .form-items {

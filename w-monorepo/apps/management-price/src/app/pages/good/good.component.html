@@ -9,15 +9,30 @@
         <tr>
           <th>ID</th>
           <th>名字</th>
+          <th>操作</th>
+          <!-- 新增操作列 -->
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let item of Goods" (click)="onItemClick(item)">
           <td>{{ item.id }}</td>
           <td>{{ item.name }}</td>
+          <td>
+            <!-- 删除按钮 -->
+            <button (click)="deleteGood(item.id)">删除</button>
+            <!-- 修改按钮 -->
+            <button (click)="openEditModal(item)">修改</button>
+          </td>
         </tr>
       </tbody>
     </table>
+    <div style="margin-top: 6px">
+      <w-pagination
+        [currentPage]="currentPage"
+        [totalPages]="totalPages"
+        (pageChange)="onPageChange($event)"
+      ></w-pagination>
+    </div>
   </div>
 
   <!-- 新增商品表单 -->
@@ -38,6 +53,29 @@
         <div class="submit-buttons">
           <button style="margin-right: 12px" type="submit">提交</button>
           <button type="button" (click)="closeAddModal()">关闭</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 修改商品表单 -->
+  <div *ngIf="isEditModalVisible" class="add-modal">
+    <div class="add-modal__container">
+      <h3>修改商品</h3>
+      <form (submit)="editGoodFormSubmit()">
+        <div class="form-items">
+          <label for="editName">名字:</label>
+          <input
+            type="text"
+            id="editName"
+            [(ngModel)]="editGood.name"
+            name="name"
+            required
+          />
+        </div>
+        <div class="submit-buttons">
+          <button style="margin-right: 12px" type="submit">提交</button>
+          <button type="button" (click)="closeEditModal()">关闭</button>
         </div>
       </form>
     </div>

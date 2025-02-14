@@ -24,4 +24,14 @@ export class GoodHttpService {
   public createGood(good: IAddGood): Observable<IGood> {
     return this.http.post<IGood>(this.baseUrl, good);
   }
+
+  // 修改商品
+  updateGood(id: string, good: IAddGood): Observable<IGood> {
+    return this.http.put<IGood>(`${this.baseUrl}/${id}`, good);
+  }
+
+  // 删除商品
+  deleteGood(id: string): Observable<void> {
+    return this.http.delete<void>(`${this.baseUrl}/${id}`);
+  }
 }
