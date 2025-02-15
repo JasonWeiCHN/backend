@@ -1,0 +1,21 @@
+.price-root {
+  .navigation {
+    width: 1200px;
+    margin: 0 auto;
+
+    .navigation-bar__item {
+      color: #888888;
+
+      &:hover {
+        color: #888888;
+        text-decoration: underline;
+      }
+    }
+
+    .navigation-bar__item.active {
+      color: #333333;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+  }
+}

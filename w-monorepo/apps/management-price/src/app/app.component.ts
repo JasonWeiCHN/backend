@@ -1,15 +1,54 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { GoodComponent } from './pages/good/good.component';
 import { HttpClientModule } from '@angular/common/http';
+import { INavigationItem, NavigationComponent } from '@w-monorepo/ui';
+import { NgIf } from '@angular/common';
+import { PlatformComponent } from './pages/platform/platform.component';
 
 @Component({
   standalone: true,
-  imports: [RouterModule, GoodComponent, HttpClientModule],
+  imports: [
+    RouterModule,
+    GoodComponent,
+    HttpClientModule,
+    NavigationComponent,
+    NgIf,
+    PlatformComponent,
+  ],
   selector: 'm-price-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
+  encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent {
-  title = 'management-price';
+  public title = 'management-price';
+
+  public navigationItems: INavigationItem[] = [
+    {
+      id: 'good',
+      label: '商品',
+      path: '',
+    },
+    {
+      id: 'platform',
+      label: '平台',
+      path: '',
+    },
+    {
+      id: 'price',
+      label: '价格',
+      path: '',
+    },
+  ];
+
+  public activeNavigationItem: INavigationItem = {
+    id: 'good',
+    label: '商品',
+    path: '',
+  };
+
+  protected onNavigationItemClick(item: INavigationItem) {
+    this.activeNavigationItem = item;
+  }
 }

@@ -26,12 +26,12 @@ export class GoodHttpService {
   }
 
   // 修改商品
-  updateGood(id: string, good: IAddGood): Observable<IGood> {
+  public updateGood(id: string, good: IAddGood): Observable<IGood> {
     return this.http.put<IGood>(`${this.baseUrl}/${id}`, good);
   }
 
   // 删除商品
-  deleteGood(id: string): Observable<void> {
+  public deleteGood(id: string): Observable<void> {
     return this.http.delete<void>(`${this.baseUrl}/${id}`);
   }
 }

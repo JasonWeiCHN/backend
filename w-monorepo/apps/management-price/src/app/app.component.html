@@ -1,1 +1,12 @@
-<m-price-good></m-price-good>
+<div class="price-root">
+  <div class="navigation">
+    <w-navigation
+      [items]="navigationItems"
+      (navigationItemClick)="onNavigationItemClick($event)"
+    ></w-navigation>
+  </div>
+  <m-price-good *ngIf="activeNavigationItem.id === 'good'"></m-price-good>
+  <m-price-platform
+    *ngIf="activeNavigationItem.id === 'platform'"
+  ></m-price-platform>
+</div>
