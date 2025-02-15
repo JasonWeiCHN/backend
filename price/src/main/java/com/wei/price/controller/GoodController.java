@@ -41,6 +41,12 @@ public class GoodController {
         return ResponseEntity.ok(goods);
     }
 
+    // 根据商品名称查询商品
+    @GetMapping("/search")
+    public List<Good> searchGoodsByName(@RequestParam String name) {
+        return goodService.searchGoodsByName(name);
+    }
+
     @GetMapping("/{id}")
     public Optional<Good> getGoodById(@PathVariable Long id) {
         return goodService.getGoodById(id);

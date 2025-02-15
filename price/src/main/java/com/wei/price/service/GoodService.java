@@ -32,6 +32,11 @@ public class GoodService {
         return goodRepository.findAll(pageable);
     }
 
+    // 根据名称查询商品
+    public List<Good> searchGoodsByName(String name) {
+        return goodRepository.findByNameContainingIgnoreCase(name); // 使用模糊查询
+    }
+
     public Optional<Good> getGoodById(Long id) {
         return goodRepository.findById(id);
     }
