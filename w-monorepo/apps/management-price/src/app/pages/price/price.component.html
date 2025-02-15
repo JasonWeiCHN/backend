@@ -45,12 +45,26 @@
       <h3>新增价格</h3>
       <form (submit)="addPriceFormSubmit()">
         <div class="form-items">
-          <label for="goodId">商品ID:</label>
-          <input [(ngModel)]="addPrice.goodId" name="goodId" required />
+          <label for="goodId">商品名称:</label>
+          <input
+            name="goodSearchTerm"
+            [(ngModel)]="goodSearchTerm"
+            (ngModelChange)="onGoodSearchChange($event)"
+            placeholder="输入商品名称"
+          />
+          <ul *ngIf="goods.length > 0" class="goods-list">
+            <li *ngFor="let item of goods" (click)="addPrice.goodId = item.id">
+              {{ item.name }}
+            </li>
+          </ul>
         </div>
         <div class="form-items">
-          <label for="platformId">平台ID:</label>
-          <input [(ngModel)]="addPrice.platformId" name="platformId" required />
+          <label for="platformId">平台:</label>
+          <select [(ngModel)]="addPrice.platformId" name="platformId" required>
+            <option *ngFor="let platform of platforms" [value]="platform.id">
+              {{ platform.name }}
+            </option>
+          </select>
         </div>
         <div class="form-items">
           <label for="date">日期:</label>

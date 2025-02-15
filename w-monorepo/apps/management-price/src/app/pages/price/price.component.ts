@@ -5,6 +5,11 @@ import { PaginationComponent } from '@w-monorepo/ui';
 import { Page } from '@w-monorepo/interfaces';
 import { IAddPrice, IPrice } from './price.interface';
 import { PriceHttpService } from './price.http.service';
+import { debounceTime, of, switchMap } from 'rxjs';
+import { GoodHttpService } from '../good/good.http.service';
+import { IGood } from '../good/good.interface';
+import { IPlatform } from '../platform/platform.interface';
+import { PlatformHttpService } from '../platform/platform.http.service';
 
 @Component({
   selector: 'm-price',
@@ -17,7 +22,7 @@ import { PriceHttpService } from './price.http.service';
   ],
   templateUrl: './price.component.html',
   styleUrl: './price.component.scss',
-  providers: [PriceHttpService],
+  providers: [PriceHttpService, PlatformHttpService, GoodHttpService],
 })
 export class PriceComponent implements OnInit {
   protected Prices: IPrice[] = [];
@@ -26,8 +31,8 @@ export class PriceComponent implements OnInit {
   protected pageSize = 2; // 每页显示数量
   public isAddModalVisible = false; // 控制新增价格表单显示
   public addPrice: IAddPrice = {
-    goodId: 0,
-    platformId: 0,
+    goodId: '',
+    platformId: '',
     date: '',
     price: 0,
     sourceUrl: '',
@@ -35,17 +40,25 @@ export class PriceComponent implements OnInit {
   public isEditModalVisible = false; // 控制编辑价格表单显示
   public editPrice: IPrice = {
     id: '',
-    goodId: 0,
-    platformId: 0,
+    goodId: '',
+    platformId: '',
     date: '',
     price: 0,
     sourceUrl: '',
   }; // 用于绑定编辑价格数据
+  protected goodSearchTerm = ''; // 商品名称搜索关键字
+  protected goods: IGood[] = [];
+  public platforms: IPlatform[] = []; // 存储平台数据
 
-  public constructor(private priceHttpService: PriceHttpService) {}
+  public constructor(
+    private priceHttpService: PriceHttpService,
+    private goodHttpService: GoodHttpService,
+    private platformHttpService: PlatformHttpService
+  ) {}
 
   public ngOnInit() {
     this.loadPrices();
+    this.loadPlatforms(); // 加载平台信息
   }
 
   protected loadPrices(): void {
@@ -55,6 +68,12 @@ export class PriceComponent implements OnInit {
         this.Prices = page.content;
         this.totalPages = page.totalPages;
       });
+  }
+
+  protected loadPlatforms() {
+    this.platformHttpService.getAllPlatforms().subscribe((platforms) => {
+      this.platforms = platforms;
+    });
   }
 
   protected onItemClick(item: IPrice): void {
@@ -75,8 +94,8 @@ export class PriceComponent implements OnInit {
   public closeAddModal(): void {
     this.isAddModalVisible = false;
     this.addPrice = {
-      goodId: 0,
-      platformId: 0,
+      goodId: '',
+      platformId: '',
       date: '',
       price: 0,
       sourceUrl: '',
@@ -114,8 +133,8 @@ export class PriceComponent implements OnInit {
     this.isEditModalVisible = false;
     this.editPrice = {
       id: '',
-      goodId: 0,
-      platformId: 0,
+      goodId: '',
+      platformId: '',
       date: '',
       price: 0,
       sourceUrl: '',
@@ -160,5 +179,20 @@ export class PriceComponent implements OnInit {
         console.error('删除价格失败', error);
       }
     );
+  }
+
+  // 防抖查询
+  onGoodSearchChange(searchTerm: string) {
+    this.goodSearchTerm = searchTerm;
+    of(searchTerm)
+      .pipe(
+        debounceTime(300), // 设置防抖时间
+        switchMap((term) => {
+          return this.goodHttpService.searchGoodsByName(term); // 根据输入的商品名称查询商品
+        })
+      )
+      .subscribe((goods) => {
+        this.goods = goods; // 更新商品列表
+      });
   }
 }

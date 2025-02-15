@@ -10,6 +10,10 @@ export class PlatformHttpService {
 
   constructor(private http: HttpClient) {}
 
+  public getAllPlatforms(): Observable<IPlatform[]> {
+    return this.http.get<IPlatform[]>(this.baseUrl);
+  }
+
   // 获取所有商品（分页）
   public getAllPlatformsPaginated(
     page: number,

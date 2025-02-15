@@ -34,4 +34,8 @@ export class GoodHttpService {
   public deleteGood(id: string): Observable<void> {
     return this.http.delete<void>(`${this.baseUrl}/${id}`);
   }
+
+  public searchGoodsByName(name: string): Observable<IGood[]> {
+    return this.http.get<IGood[]>(`${this.baseUrl}/search?name=${name}`);
+  }
 }
