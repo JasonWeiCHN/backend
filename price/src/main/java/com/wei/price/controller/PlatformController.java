@@ -1,7 +1,6 @@
 package com.wei.price.controller;
 
 import com.wei.price.dto.PlatformRequest;
-import com.wei.price.entity.Good;
 import com.wei.price.entity.Platform;
 import com.wei.price.service.PlatformService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +34,7 @@ public class PlatformController {
 
     // 分页查
     @GetMapping("/getAllPlatformsPaginated")
-    public ResponseEntity<Page<Platform>> getAllGoodsPaginated(@RequestParam(defaultValue = "0") int page,
+    public ResponseEntity<Page<Platform>> getAllPlatformsPaginated(@RequestParam(defaultValue = "0") int page,
                                                            @RequestParam(defaultValue = "10") int size) {
         Pageable pageable = PageRequest.of(page, size);
         Page<Platform> platform = platformService.getAllPlatformsPaginated(pageable);

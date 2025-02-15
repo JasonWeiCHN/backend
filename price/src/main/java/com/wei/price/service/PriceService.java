@@ -8,6 +8,8 @@ import com.wei.price.repository.GoodRepository;
 import com.wei.price.repository.PlatformRepository;
 import com.wei.price.repository.PriceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -49,6 +51,10 @@ public class PriceService {
     // 查
     public List<Price> getAllPrices() {
         return priceRepository.findAll();
+    }
+
+    public Page<Price> getAllPricesPaginated(Pageable pageable) {
+        return priceRepository.findAll(pageable);
     }
 
     public Optional<Price> getPriceById(Long id) {

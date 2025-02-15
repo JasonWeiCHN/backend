@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PaginationComponent } from '@w-monorepo/ui';
@@ -19,8 +19,8 @@ import { PlatformHttpService } from './platform.http.service';
   styleUrl: './platform.component.scss',
   providers: [PlatformHttpService],
 })
-export class PlatformComponent {
-  protected Platforms: IPlatform[] = [];
+export class PlatformComponent implements OnInit {
+  protected platforms: IPlatform[] = [];
   protected totalPages = 0;
   protected currentPage = 0;
   protected pageSize = 2; // 每页显示数量
@@ -39,7 +39,7 @@ export class PlatformComponent {
     this.platformHttpService
       .getAllPlatformsPaginated(this.currentPage, this.pageSize)
       .subscribe((page: Page<IPlatform>) => {
-        this.Platforms = page.content;
+        this.platforms = page.content;
         this.totalPages = page.totalPages;
       });
   }
@@ -69,7 +69,7 @@ export class PlatformComponent {
     if (this.addPlatform.name.trim()) {
       this.platformHttpService.createPlatform(this.addPlatform).subscribe(
         (platform) => {
-          this.Platforms.push(platform); // 将新增的商品添加到商品列表
+          this.platforms.push(platform); // 将新增的商品添加到商品列表
           this.closeAddModal(); // 关闭表单
         },
         (error) => {
@@ -99,11 +99,11 @@ export class PlatformComponent {
         .subscribe(
           (updatedPlatform) => {
             // 更新商品列表中的数据
-            const index = this.Platforms.findIndex(
+            const index = this.platforms.findIndex(
               (platform) => platform.id === updatedPlatform.id
             );
             if (index !== -1) {
-              this.Platforms[index] = updatedPlatform;
+              this.platforms[index] = updatedPlatform;
             }
             this.closeEditModal(); // 关闭表单
           },
@@ -118,7 +118,7 @@ export class PlatformComponent {
   public deletePlatform(id: string): void {
     this.platformHttpService.deletePlatform(id).subscribe(
       () => {
-        this.Platforms = this.Platforms.filter(
+        this.platforms = this.platforms.filter(
           (platform) => platform.id !== id
         ); // 从列表中删除商品
       },
