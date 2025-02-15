@@ -4,6 +4,8 @@ import com.wei.price.dto.PlatformRequest;
 import com.wei.price.entity.Platform;
 import com.wei.price.repository.PlatformRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -24,6 +26,10 @@ public class PlatformService {
     // 查
     public List<Platform> getAllPlatforms() {
         return platformRepository.findAll();
+    }
+
+    public Page<Platform> getAllPlatformsPaginated(Pageable pageable) {
+        return platformRepository.findAll(pageable);
     }
 
     public Optional<Platform> getPlatformById(Long id) {

@@ -11,6 +11,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/prices")
+@CrossOrigin(origins = "*")
 public class PriceController {
     @Autowired
     private PriceService priceService;
