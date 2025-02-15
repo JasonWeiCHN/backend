@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { INavigationItem, NavigationComponent } from '@w-monorepo/ui';
 import { NgIf } from '@angular/common';
 import { PlatformComponent } from './pages/platform/platform.component';
+import { PriceComponent } from './pages/price/price.component';
 
 @Component({
   standalone: true,
@@ -15,6 +16,7 @@ import { PlatformComponent } from './pages/platform/platform.component';
     NavigationComponent,
     NgIf,
     PlatformComponent,
+    PriceComponent,
   ],
   selector: 'm-price-root',
   templateUrl: './app.component.html',

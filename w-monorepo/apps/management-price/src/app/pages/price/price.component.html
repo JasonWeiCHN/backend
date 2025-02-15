@@ -1,1 +1,79 @@
-<p>price works!</p>
+<div class="price">
+  <div class="table-container">
+    <div class="table-container__tools">
+      <button (click)="openAddModal()">新增价格</button>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>商品ID</th>
+          <th>平台ID</th>
+          <th>日期</th>
+          <th>价格</th>
+          <th>来源URL</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of Prices" (click)="onItemClick(item)">
+          <td>{{ item.id }}</td>
+          <td>{{ item.goodId }}</td>
+          <td>{{ item.platformId }}</td>
+          <td>{{ item.date }}</td>
+          <td>{{ item.price }}</td>
+          <td>{{ item.sourceUrl }}</td>
+          <td>
+            <button (click)="deletePrice(item.id)">删除</button>
+            <button (click)="openEditModal(item)">修改</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="margin-top: 6px">
+      <w-pagination
+        [currentPage]="currentPage"
+        [totalPages]="totalPages"
+        (pageChange)="onPageChange($event)"
+      ></w-pagination>
+    </div>
+  </div>
+
+  <!-- 新增价格表单 -->
+  <div *ngIf="isAddModalVisible" class="add-modal">
+    <div class="add-modal__container">
+      <h3>新增价格</h3>
+      <form (submit)="addPriceFormSubmit()">
+        <div class="form-items">
+          <label for="goodId">商品ID:</label>
+          <input [(ngModel)]="addPrice.goodId" name="goodId" required />
+        </div>
+        <div class="form-items">
+          <label for="platformId">平台ID:</label>
+          <input [(ngModel)]="addPrice.platformId" name="platformId" required />
+        </div>
+        <div class="form-items">
+          <label for="date">日期:</label>
+          <input type="date" [(ngModel)]="addPrice.date" name="date" required />
+        </div>
+        <div class="form-items">
+          <label for="price">价格:</label>
+          <input
+            type="number"
+            [(ngModel)]="addPrice.price"
+            name="price"
+            required
+          />
+        </div>
+        <div class="form-items">
+          <label for="sourceUrl">信息来源URL:</label>
+          <input [(ngModel)]="addPrice.sourceUrl" name="sourceUrl" />
+        </div>
+        <div class="form-buttons">
+          <button style="margin-right: 12px" type="submit">提交</button>
+          <button (click)="closeAddModal()">关闭</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
