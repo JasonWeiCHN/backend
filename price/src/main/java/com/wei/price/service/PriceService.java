@@ -7,9 +7,12 @@ import com.wei.price.entity.Price;
 import com.wei.price.repository.GoodRepository;
 import com.wei.price.repository.PlatformRepository;
 import com.wei.price.repository.PriceRepository;
+import com.wei.price.specifications.PriceSpecifications;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -55,6 +58,25 @@ public class PriceService {
 
     public Page<Price> getAllPricesPaginated(Pageable pageable) {
         return priceRepository.findAll(pageable);
+    }
+
+    public List<Price> searchPrices(String column, String keyword) {
+        Specification<Price> spec = PriceSpecifications.containsTextInColumn(column, keyword);
+        return priceRepository.findAll(spec);
+    }
+
+    public List<Price> searchPricesSortByPrice(String column, String keyword) {
+        Specification<Price> spec = PriceSpecifications.containsTextInColumn(column, keyword);
+        return priceRepository.findAll(spec, Sort.by(Sort.Order.asc("price")));
+    }
+
+    public List<Price> searchPricesSortByDate(String column, String keyword) {
+        Specification<Price> spec = PriceSpecifications.containsTextInColumn(column, keyword);
+        // 使用 Sort 按价格升序排序，同时按日期降序排序（最近的日期优先）
+        return priceRepository.findAll(spec,
+                Sort.by(Sort.Order.asc("price"), Sort.Order.desc("date"))
+        );
+
     }
 
     public Optional<Price> getPriceById(Long id) {

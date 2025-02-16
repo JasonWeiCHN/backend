@@ -41,6 +41,13 @@ public class PriceController {
         return ResponseEntity.ok(platform);
     }
 
+    // 搜索
+    @GetMapping("/search")
+    public List<Price> searchPrices(@RequestParam String column, @RequestParam String keyword) {
+        return priceService.searchPricesSortByPrice(column, keyword);
+    }
+
+
     @GetMapping("/{id}")
     public Optional<Price> getPriceById(@PathVariable Long id) {
         return priceService.getPriceById(id);

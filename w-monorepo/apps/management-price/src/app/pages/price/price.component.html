@@ -1,28 +1,52 @@
 <div class="price">
   <div class="table-container">
     <div class="table-container__tools">
-      <button (click)="openAddModal()">新增价格</button>
+      <div class="left">
+        <button (click)="openAddModal()">新增价格</button>
+      </div>
+      <div class="right">
+        <div class="search">
+          <select style="" [(ngModel)]="selectedColumn">
+            <option *ngFor="let column of columns" [value]="column">
+              {{ column }}
+            </option>
+          </select>
+          <input
+            style="margin-left: 6px"
+            type="text"
+            [(ngModel)]="searchKeyword"
+            (keydown.enter)="search()"
+          />
+          <button class="search-button" style="" (click)="search()">
+            搜索
+          </button>
+        </div>
+      </div>
     </div>
     <table>
       <thead>
         <tr>
-          <th>ID</th>
-          <th>商品ID</th>
-          <th>平台ID</th>
-          <th>日期</th>
-          <th>价格</th>
-          <th>来源URL</th>
+          <th style="width: 60px">ID</th>
+          <th style="width: 400px">商品</th>
+          <th style="width: 100px">平台</th>
+          <th style="width: 160px">日期</th>
+          <th style="width: 100px">价格</th>
+          <th style="width: 200px">来源URL</th>
           <th>操作</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of Prices" (click)="onItemClick(item)">
+        <tr *ngFor="let item of prices" (click)="onItemClick(item)">
           <td>{{ item.id }}</td>
-          <td>{{ item.goodId }}</td>
-          <td>{{ item.platformId }}</td>
+          <td>{{ item.good.name }}</td>
+          <td>{{ item.platform.name }}</td>
           <td>{{ item.date }}</td>
           <td>{{ item.price }}</td>
-          <td>{{ item.sourceUrl }}</td>
+          <td>
+            <div class="source-url">
+              {{ item.sourceUrl }}
+            </div>
+          </td>
           <td>
             <button (click)="deletePrice(item.id)">删除</button>
             <button (click)="openEditModal(item)">修改</button>
@@ -44,6 +68,7 @@
     <div class="add-modal__container">
       <h3>新增价格</h3>
       <form (submit)="addPriceFormSubmit()">
+        <!-- 商品名称选择框 -->
         <div class="form-items">
           <label for="goodId">商品名称:</label>
           <input
@@ -52,12 +77,24 @@
             (ngModelChange)="onGoodSearchChange($event)"
             placeholder="输入商品名称"
           />
+          <!-- 商品列表 -->
           <ul *ngIf="goods.length > 0" class="goods-list">
-            <li *ngFor="let item of goods" (click)="addPrice.goodId = item.id">
+            <li
+              *ngFor="let item of goods"
+              (click)="selectGood(item)"
+              [class.selected]="item.id === addPrice.goodId"
+            >
+              <!-- 添加动态类 -->
               {{ item.name }}
             </li>
           </ul>
+          <!-- 显示已选中的商品名称 -->
+          <div *ngIf="addPrice.goodId">
+            <strong>已选择商品：</strong>
+            <span style="color: yellow">{{ selectedGood?.name }}</span>
+          </div>
         </div>
+        <!-- 平台选择 -->
         <div class="form-items">
           <label for="platformId">平台:</label>
           <select [(ngModel)]="addPrice.platformId" name="platformId" required>
@@ -66,10 +103,12 @@
             </option>
           </select>
         </div>
+        <!-- 日期选择 -->
         <div class="form-items">
           <label for="date">日期:</label>
           <input type="date" [(ngModel)]="addPrice.date" name="date" required />
         </div>
+        <!-- 价格输入 -->
         <div class="form-items">
           <label for="price">价格:</label>
           <input
@@ -79,13 +118,85 @@
             required
           />
         </div>
+        <!-- 信息来源 URL -->
         <div class="form-items">
           <label for="sourceUrl">信息来源URL:</label>
           <input [(ngModel)]="addPrice.sourceUrl" name="sourceUrl" />
         </div>
+        <!-- 提交按钮 -->
         <div class="form-buttons">
           <button style="margin-right: 12px" type="submit">提交</button>
           <button (click)="closeAddModal()">关闭</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 编辑价格表单 -->
+  <div *ngIf="isEditModalVisible" class="add-modal">
+    <div class="add-modal__container">
+      <h3>修改价格</h3>
+      <form (submit)="editPriceFormSubmit()">
+        <!-- 商品ID（不可编辑）-->
+        <div class="form-items">
+          <label for="id">ID:</label>
+          <input class="readonly" type="text" [value]="editPrice.id" readonly />
+        </div>
+
+        <!-- 商品名称（不可编辑）-->
+        <div class="form-items">
+          <label for="goodName">商品名称:</label>
+          <input
+            class="readonly"
+            type="text"
+            [value]="editPrice.good.name"
+            readonly
+          />
+        </div>
+
+        <!-- 平台名称（不可编辑）-->
+        <div class="form-items">
+          <label for="platformName">平台名称:</label>
+          <input
+            class="readonly"
+            type="text"
+            [value]="editPrice.platform.name"
+            readonly
+          />
+        </div>
+
+        <!-- 日期选择 -->
+        <div class="form-items">
+          <label for="date">日期:</label>
+          <input
+            type="date"
+            [(ngModel)]="editPrice.date"
+            name="date"
+            required
+          />
+        </div>
+
+        <!-- 价格输入 -->
+        <div class="form-items">
+          <label for="price">价格:</label>
+          <input
+            type="number"
+            [(ngModel)]="editPrice.price"
+            name="price"
+            required
+          />
+        </div>
+
+        <!-- 信息来源 URL -->
+        <div class="form-items">
+          <label for="sourceUrl">信息来源URL:</label>
+          <input [(ngModel)]="editPrice.sourceUrl" name="sourceUrl" />
+        </div>
+
+        <!-- 提交按钮 -->
+        <div class="form-buttons">
+          <button style="margin-right: 12px" type="submit">提交</button>
+          <button (click)="closeEditModal()">关闭</button>
         </div>
       </form>
     </div>

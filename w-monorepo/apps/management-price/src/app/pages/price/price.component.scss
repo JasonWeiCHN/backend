@@ -5,15 +5,45 @@
 
   .table-container {
     width: 1200px;
-    height: 500px;
+    //height: 500px;
     margin: 0 auto;
-    overflow: scroll;
 
     &__tools {
+      display: flex;
+      justify-content: space-between;
       margin-bottom: 12px;
+
+      .search {
+        display: flex;
+
+        input, select {
+          border: 1px solid #333333;
+        }
+
+        .search-button {
+          margin-left: 6px;
+          text-decoration: underline;
+
+          &:hover {
+            color: orangered;
+          }
+        }
+      }
     }
 
     table {
+      .source-url {
+        width: 200px;
+        overflow-x: auto; /* 允许滚动 */
+        white-space: nowrap; /* 防止换行 */
+        cursor: text;
+      }
+
+      /* 隐藏滚动条 */
+      .source-url::-webkit-scrollbar {
+        display: none;
+      }
+
       button {
         margin-right: 12px;
         cursor: pointer;
@@ -41,11 +71,20 @@
     margin: 0 auto;
 
     label {
+      display: inline-block;
+      width: 100px;
       margin-right: 12px;
     }
 
     input, select {
+      width: 360px;
       color: #000000;
+      padding-left: 4px;
+    }
+
+    input.readonly {
+      background: #dbdbdb;
+      cursor: pointer;
     }
 
     .form-items {

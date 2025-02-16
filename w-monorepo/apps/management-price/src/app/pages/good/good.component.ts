@@ -18,7 +18,7 @@ export class GoodComponent implements OnInit {
   protected Goods: IGood[] = [];
   protected totalPages = 0;
   protected currentPage = 0;
-  protected pageSize = 15; // 每页显示数量
+  protected pageSize = 50; // 每页显示数量
   public isAddModalVisible = false; // 控制新增商品表单显示
   public addGood: IAddGood = { name: '' }; // 用于绑定新增商品数据
   public isEditModalVisible = false; // 控制编辑商品表单显示
@@ -111,13 +111,22 @@ export class GoodComponent implements OnInit {
 
   // 删除商品
   public deleteGood(id: string): void {
-    this.goodHttpService.deleteGood(id).subscribe(
-      () => {
-        this.Goods = this.Goods.filter((good) => good.id !== id); // 从列表中删除商品
-      },
-      (error) => {
-        console.error('删除商品失败', error);
-      }
-    );
+    // 弹出二次确认框
+    const isConfirmed = window.confirm('确定要删除该商品吗？ id 为：' + id);
+
+    if (isConfirmed) {
+      // 用户点击确认后，执行删除操作
+      this.goodHttpService.deleteGood(id).subscribe(
+        () => {
+          this.Goods = this.Goods.filter((good) => good.id !== id); // 从列表中删除商品
+        },
+        (error) => {
+          console.error('删除商品失败', error);
+        }
+      );
+    } else {
+      // 用户点击取消，不做任何操作
+      console.log('删除操作已取消');
+    }
   }
 }
