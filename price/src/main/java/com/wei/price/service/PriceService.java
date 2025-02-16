@@ -7,9 +7,11 @@ import com.wei.price.entity.Price;
 import com.wei.price.repository.GoodRepository;
 import com.wei.price.repository.PlatformRepository;
 import com.wei.price.repository.PriceRepository;
+import com.wei.price.specifications.PriceSpecifications;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -55,6 +57,11 @@ public class PriceService {
 
     public Page<Price> getAllPricesPaginated(Pageable pageable) {
         return priceRepository.findAll(pageable);
+    }
+
+    public List<Price> searchPrices(String column, String keyword) {
+        Specification<Price> spec = PriceSpecifications.containsTextInColumn(column, keyword);
+        return priceRepository.findAll(spec);
     }
 
     public Optional<Price> getPriceById(Long id) {

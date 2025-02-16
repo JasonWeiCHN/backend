@@ -34,4 +34,10 @@ export class PriceHttpService {
   public deletePrice(id: string): Observable<void> {
     return this.http.delete<void>(`${this.baseUrl}/${id}`);
   }
+
+  public searchPrices(column: string, keyword: string): Observable<IPrice[]> {
+    return this.http.get<IPrice[]>(
+      `${this.baseUrl}/search?column=${column}&keyword=${keyword}`
+    );
+  }
 }

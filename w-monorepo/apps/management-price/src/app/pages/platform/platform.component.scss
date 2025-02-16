@@ -5,9 +5,7 @@
 
   .table-container {
     width: 1200px;
-    height: 500px;
     margin: 0 auto;
-    overflow: scroll;
 
     &__tools {
       margin-bottom: 12px;
@@ -41,10 +39,13 @@
     margin: 0 auto;
 
     label {
+      display: inline-block;
+      width: 120px;
       margin-right: 12px;
     }
 
     input {
+      width: 360px;
       color: #000000;
     }
 

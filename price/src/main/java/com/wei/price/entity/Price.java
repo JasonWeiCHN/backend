@@ -25,6 +25,7 @@ public class Price {
     @Column(nullable = false)
     private Double price;  // 商品价格
 
+    @Column(columnDefinition = "TEXT")
     private String sourceUrl;  // 信息来源 URL
 
     public Good getGood() {
@@ -41,6 +42,10 @@ public class Price {
 
     public void setPlatform(Platform platform) {
         this.platform = platform;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public LocalDate getDate() {

@@ -27,8 +27,7 @@ export const CARTRIDGE_MAP: IArticleMap = {
       date: '',
       description:
         '如临真实战场，畅享爽快的一骑当千动作！无名英雄闯荡三国乱世的“真・三国无双”系列新作。',
-      detail:
-        '{"price":{"xy":"350.00（日版无中文） 400.00（港版无特典）", "xg": "469.00"}}',
+      detail: '{"price":{"xg": "469.00", "xy":"420.00", "pdd":"429.00"}}',
       id: '1qug5y',
       imageUrl: 'assets/images/ps5/F_1qug5y.png',
       tagIds: ['新品', '三国'],
@@ -36,7 +35,7 @@ export const CARTRIDGE_MAP: IArticleMap = {
       price: {
         discountPercent: 100,
         initial: '',
-        final: '469.00',
+        final: '469.00（新卡） 420.00（闲鱼） 429.00（拼多多）',
       },
     },
     {
@@ -51,7 +50,7 @@ export const CARTRIDGE_MAP: IArticleMap = {
       price: {
         discountPercent: 100,
         initial: '',
-        final: '258.00（新卡） 150.00（闲鱼） 174.9.00（拼多多）',
+        final: '258.00（新卡） 150.00（闲鱼） 174.90（拼多多）',
       },
     },
     {
@@ -911,6 +910,21 @@ export const CARTRIDGE_MAP: IArticleMap = {
     },
   ],
   switch: [
+    {
+      sourceUrl: '',
+      date: '',
+      description: '多人快乐轰趴游戏',
+      detail: '{"price":{"xg":"290.00","pdd":"260.00","xy":"245.00"}}',
+      id: 'xLaQaF',
+      imageUrl: 'assets/images/switch/xLaQaF.jpg',
+      tagIds: ['新品', '马里奥', '多人', '休闲'],
+      title: '马里奥派对·空前盛宴',
+      price: {
+        discountPercent: 100,
+        initial: '',
+        final: '290.00（新卡） 245.00（闲鱼） 260.00（拼多多）',
+      },
+    },
     {
       sourceUrl: '/wiki/cZTCm5',
       date: '',

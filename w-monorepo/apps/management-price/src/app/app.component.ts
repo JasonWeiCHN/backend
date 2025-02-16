@@ -28,6 +28,11 @@ export class AppComponent {
 
   public navigationItems: INavigationItem[] = [
     {
+      id: 'price',
+      label: '价格',
+      path: '',
+    },
+    {
       id: 'good',
       label: '商品',
       path: '',
@@ -37,16 +42,11 @@ export class AppComponent {
       label: '平台',
       path: '',
     },
-    {
-      id: 'price',
-      label: '价格',
-      path: '',
-    },
   ];
 
   public activeNavigationItem: INavigationItem = {
-    id: 'good',
-    label: '商品',
+    id: 'price',
+    label: '价格',
     path: '',
   };
 
