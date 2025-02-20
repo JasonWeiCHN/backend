@@ -78,6 +78,7 @@ It will show tasks that you can run with Nx.
 创建项目
 npx nx g @nx/angular:app inventory --directory=apps/inventory --dry-run
 npx nx g @nx/angular:app static-shogun --directory=apps/static-shogun --add-tailwind
+npx nx g @nx/angular:app management-price-mobile --directory=apps/management-price-mobile --add-tailwind --standalone --style=scss
 
 创建lib
 nx g @nx/angular:library products --directory=libs/products --standalone
@@ -204,6 +205,13 @@ sudo lsof -i :5001
 
 重新运行启动脚本
 nohup python3 web.py > nohup.out 2>&1 &
+```
+
+### 价格上传服务
+
+```
+cd /var/www/management-price-mobile/assets/
+nohup python3 server.py > flask_app.log 2>&1 &
 ```
 
 ## 用户轨迹记录

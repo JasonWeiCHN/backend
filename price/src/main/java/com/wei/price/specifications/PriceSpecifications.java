@@ -3,7 +3,6 @@ package com.wei.price.specifications;
 import com.wei.price.entity.Good;
 import com.wei.price.entity.Platform;
 import com.wei.price.entity.Price;
-import jakarta.persistence.criteria.Expression;
 import jakarta.persistence.criteria.Path;
 import org.springframework.data.jpa.domain.Specification;
 

@@ -28,7 +28,7 @@ export class PriceComponent implements OnInit {
   protected prices: IPrice[] = [];
   protected totalPages = 0;
   protected currentPage = 0;
-  protected pageSize = 50; // 每页显示数量
+  protected pageSize = 30; // 每页显示数量
   public isAddModalVisible = false; // 控制新增价格表单显示
   public addPrice: IAddPrice = {
     goodId: '',

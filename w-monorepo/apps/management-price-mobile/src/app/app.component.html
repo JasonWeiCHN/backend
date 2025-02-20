@@ -1,0 +1,54 @@
+<div class="app-root">
+  <div class="add-price-container">
+    <h3>新增价格</h3>
+    <form (submit)="addPriceFormSubmit()">
+      <!-- 商品名称输入框 -->
+      <div class="form-items">
+        <label for="goodName">商品名称:</label>
+        <input
+          name="goodName"
+          [(ngModel)]="addPrice.goodName"
+          placeholder="输入商品名称"
+        />
+      </div>
+
+      <!-- 平台选择 -->
+      <div class="form-items">
+        <label for="platformId">平台:</label>
+        <select [(ngModel)]="addPrice.platformId" name="platformId" required>
+          <option *ngFor="let platform of platforms" [value]="platform.id">
+            {{ platform.name }}
+          </option>
+        </select>
+      </div>
+
+      <!-- 日期选择 -->
+      <div class="form-items">
+        <label for="date">日期:</label>
+        <input type="date" [(ngModel)]="addPrice.date" name="date" required />
+      </div>
+
+      <!-- 价格输入 -->
+      <div class="form-items">
+        <label for="price">价格:</label>
+        <input
+          type="number"
+          [(ngModel)]="addPrice.price"
+          name="price"
+          required
+        />
+      </div>
+
+      <!-- 信息来源 URL -->
+      <div class="form-items">
+        <label for="sourceUrl">信息来源URL:</label>
+        <input [(ngModel)]="addPrice.sourceUrl" name="sourceUrl" />
+      </div>
+
+      <!-- 提交按钮 -->
+      <div class="form-buttons">
+        <button type="submit">提交</button>
+      </div>
+    </form>
+  </div>
+</div>

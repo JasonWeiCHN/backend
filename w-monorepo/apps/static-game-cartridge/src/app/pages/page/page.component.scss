@@ -136,10 +136,10 @@
     font-size: 16px;
     cursor: pointer;
     color: #636363;
+    text-decoration: underline;
 
     &:hover {
-      color: #535353;
-      text-decoration: underline;
+      color: orangered;
     }
   }
 }
@@ -173,6 +173,33 @@
 
     .grid-container {
       padding-top: 120px;
+    }
+  }
+
+  .bottom-banner {
+    height: 200px;
+
+    .content {
+      .info {
+        max-width: 300px;
+
+        .title {
+          font-size: 18px;
+          margin-bottom: 6px;
+        }
+
+        .description {
+          margin-bottom: 6px;
+          font-size: 16px;
+        }
+
+        .price {
+          font-size: 16px;
+
+          display: flex;
+          flex-direction: column;
+        }
+      }
     }
   }
 }
