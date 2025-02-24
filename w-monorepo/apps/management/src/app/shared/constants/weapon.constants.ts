@@ -1,6 +1,14 @@
 import { IClanMap, IWarhammerClassifier } from '@w-monorepo/warhammer';
 
-export const WEAPON_CLASSIFIERS: IWarhammerClassifier[] = [];
+export const WEAPON_CLASSIFIERS: IWarhammerClassifier[] = [
+  {
+    nameCN: '武器',
+    files: [],
+    id: 'weapon',
+    directory: 'weapon',
+    order: 1,
+  },
+];
 
 export const WEAPON_CLASSIFIERS_MAP: IClanMap = {
   Great_Sword: {

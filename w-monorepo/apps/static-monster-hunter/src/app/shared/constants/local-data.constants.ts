@@ -5,11 +5,11 @@ export interface IClanExtra {
   description: string;
 }
 
-export interface IClanMap {
+export interface IClanExtraMap {
   [key: string]: IClanExtra;
 }
 
-export const WEAPON_EXTRA_MAP: IClanMap = {
+export const WEAPON_EXTRA_MAP: IClanExtraMap = {
   Great_Sword: {
     slogan: '大剑无锋，大巧不工',
     description:
