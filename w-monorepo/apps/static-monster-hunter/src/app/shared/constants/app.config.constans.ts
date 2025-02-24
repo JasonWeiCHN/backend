@@ -5,7 +5,7 @@ export const APP_CONFIG: IApp = {
   project: GAMES[3],
   projects: GAMES,
   banner: {
-    title: '宝藏游戏之家',
+    title: '宝藏游戏之家 - 怪物猎人',
     subtitle: '好游戏汇聚此地',
     rightContent: '全面战争·战锤3',
   },

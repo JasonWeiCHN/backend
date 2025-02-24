@@ -5,8 +5,6 @@ import {
   BannerComponent,
   INavigationItem,
   NavigationComponent,
-  ProjectSwitcherComponent,
-  SlideshowComponent,
   SnackbarComponent,
   SnackbarModule,
 } from '@w-monorepo/ui';
@@ -24,8 +22,6 @@ import { HttpClientModule } from '@angular/common/http';
     BannerComponent,
     NavigationComponent,
     CommonModule,
-    SlideshowComponent,
-    ProjectSwitcherComponent,
     SnackbarComponent,
     BackHomeButtonComponent,
   ],
@@ -37,8 +33,6 @@ export class AppComponent {
   protected appConfig: IApp = APP_CONFIG;
   protected navigationItemActive = 'weapons';
   protected showNavigation = true;
-  // protected selectedProject: ISwitcherProject | undefined = APP_CONFIG.project;
-  // protected projects: ISwitcherProject[] = APP_CONFIG.projects || [];
 
   public constructor(private _router: Router) {
     // 订阅路由变化事件
@@ -51,18 +45,11 @@ export class AppComponent {
   }
 
   protected onBannerClick() {
-    this._router.navigate(['clans']);
+    this._router.navigate(['weapons']);
   }
 
   protected onNavigationItemClick(item: INavigationItem) {
     this.navigationItemActive = item.id;
     this._router.navigate([item.path]);
   }
-
-  // protected onProjectSelected(item: ISwitcherProject) {
-  //   const { url } = item;
-  //   if (url) {
-  //     window.open(url, '_self');
-  //   }
-  // }
 }

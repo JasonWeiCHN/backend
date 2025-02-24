@@ -14,17 +14,17 @@ import {
   EArticleTags,
   IClan,
   IWarhammerClassifierMap,
-  WARHAMMER_CLASSIFIERS_MAP,
 } from '@w-monorepo/warhammer';
 import { IArticleMap, IContributor } from '@w-monorepo/interfaces';
 import { ARTICLES_MAP } from '../../shared/constants/data.constants';
 import { AnalysisHttpService } from '@w-monorepo/analysis';
 import { VoteHttpService } from '@w-monorepo/vote';
 import {
-  CLAN_MAP,
   IClanExtra,
   IClanMap,
+  WEAPON_EXTRA_MAP,
 } from '../../shared/constants/local-data.constants';
+import { WEAPON_CLASSIFIERS_MAP } from '../../shared/constants/weapon.constants';
 
 @Component({
   selector: 'app-article',
@@ -45,20 +45,17 @@ export class ArticleComponent implements OnInit {
   protected tags: ITag[] = [
     { id: EArticleTags.ALL, name: '全部' },
     { id: EArticleTags.VOTE, name: '投票' },
-    { id: EArticleTags.CLANS_DESCRIPTION, name: '派系说明' },
-    { id: EArticleTags.LIVE_RECORDING, name: '实况录像' },
-    { id: EArticleTags.TASK, name: '任务' },
+    { id: EArticleTags.CLANS_DESCRIPTION, name: '使用说明' },
     { id: EArticleTags.NEWER_TEACH, name: '萌新教学' },
     { id: EArticleTags.CLIP, name: '剪辑大片' },
-    { id: EArticleTags.STORY, name: '讲故事' },
   ];
   protected articlesMap: IArticleMap = ARTICLES_MAP;
-  protected warhammerClassifiersMap: IWarhammerClassifierMap =
-    WARHAMMER_CLASSIFIERS_MAP;
-  protected clanMap: IClanMap = CLAN_MAP;
+  protected weaponClassifiersMap: IWarhammerClassifierMap =
+    WEAPON_CLASSIFIERS_MAP;
+  protected weaponExtraMap: IClanMap = WEAPON_EXTRA_MAP;
   protected title = '';
-  protected clan: IClan | undefined = undefined;
-  protected clanExtra: IClanExtra | undefined = undefined;
+  protected weapon: IClan | undefined = undefined;
+  protected weaponExtra: IClanExtra | undefined = undefined;
   protected readonly eList = EList;
   protected readonly EArticleTags = EArticleTags;
   protected data: IItemCard[] | undefined = undefined;
@@ -76,8 +73,8 @@ export class ArticleComponent implements OnInit {
   public ngOnInit(): void {
     this._viewportScroller.scrollToPosition([0, 0]); // 滚动到顶部
     const { id } = this._activatedRoute.snapshot.params;
-    this.clan = this.warhammerClassifiersMap[id];
-    this.clanExtra = this.clanMap[id];
+    this.weapon = this.weaponClassifiersMap[id];
+    this.weaponExtra = this.weaponExtraMap[id];
     this.data = this.articlesMap[id];
     this.getVotes();
   }
@@ -138,7 +135,7 @@ export class ArticleComponent implements OnInit {
   }
 
   private getVotes(): void {
-    this.voteHttpService.getSubjectVotes(this.clan?.file.id || '').subscribe(
+    this.voteHttpService.getSubjectVotes(this.weapon?.file.id || '').subscribe(
       (response: any) => {
         this.votes = response;
       },
