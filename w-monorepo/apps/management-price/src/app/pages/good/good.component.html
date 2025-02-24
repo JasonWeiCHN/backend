@@ -1,8 +1,27 @@
 <div class="good">
   <div class="table-container">
     <div class="table-container__tools">
-      <!-- 新增商品按钮 -->
-      <button (click)="openAddModal()">新增商品</button>
+      <div class="left">
+        <button (click)="openAddModal()">新增商品</button>
+      </div>
+      <div class="right">
+        <div class="search">
+          <select style="" [(ngModel)]="selectedColumn">
+            <option *ngFor="let column of columns" [value]="column">
+              {{ column }}
+            </option>
+          </select>
+          <input
+            style="margin-left: 6px"
+            type="text"
+            [(ngModel)]="searchKeyword"
+            (keydown.enter)="search()"
+          />
+          <button class="search-button" style="" (click)="search()">
+            搜索
+          </button>
+        </div>
+      </div>
     </div>
     <table>
       <thead>
@@ -14,7 +33,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of Goods" (click)="onItemClick(item)">
+        <tr *ngFor="let item of goods" (click)="onItemClick(item)">
           <td>{{ item.id }}</td>
           <td>{{ item.name }}</td>
           <td>

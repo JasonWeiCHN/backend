@@ -42,7 +42,7 @@ public class GoodController {
     }
 
     // 根据商品名称查询商品
-    @GetMapping("/search")
+    @GetMapping("/searchGoodsByName")
     public List<Good> searchGoodsByName(@RequestParam String name) {
         return goodService.searchGoodsByName(name);
     }

@@ -4,7 +4,7 @@ interface IContributor {
   url: string;
 }
 
-export interface IImageFile {
+export interface IWarhammerImageFile {
   id: string;
   name: string;
   nameCN?: string | null;
@@ -18,7 +18,7 @@ export interface IImageFile {
   contributors?: IContributor[];
 }
 
-export interface IClanUpload extends IImageFile {
+export interface IClanUpload extends IWarhammerImageFile {
   warhammerClassifierId: string;
 }
 
@@ -30,12 +30,12 @@ export interface IWarhammerClassifierBase {
 }
 
 export interface IWarhammerClassifier extends IWarhammerClassifierBase {
-  files: IImageFile[];
+  files: IWarhammerImageFile[];
 }
 
 export interface IClan {
   parentId: string;
-  file: IImageFile;
+  file: IWarhammerImageFile;
 }
 
 export interface IWarhammerClassifierMap {

@@ -1,0 +1,52 @@
+.war-school {
+  .subtitle {
+    margin-bottom: 12px;
+  }
+
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .question {
+    margin-bottom: 12px;
+
+    .qa-item {
+      color: #c4c4c4;
+      cursor: pointer;
+      padding-bottom: 4px;
+      border-bottom: 1px solid #9b9b9b;
+      margin-bottom: 6px;
+
+      &:hover {
+        color: #ffffff;
+        border-color: #ffffff;
+      }
+    }
+  }
+
+  .answer {
+    button {
+      padding: 4px 6px;
+      border-bottom: 1px solid #9b9b9b;
+      font-size: 16px;
+      color: #c4c4c4;
+
+      &:hover {
+        border-color: #ffffff;
+      }
+    }
+  }
+}
+
+@media (max-width: 920px) {
+  .subtitle {
+    text-align: center;
+  }
+
+  .cards {
+    justify-content: space-evenly;
+    gap: 4px;
+  }
+}

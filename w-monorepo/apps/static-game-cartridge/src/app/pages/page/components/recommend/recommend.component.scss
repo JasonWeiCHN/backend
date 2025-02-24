@@ -2,17 +2,15 @@
   margin-top: 48px;
 
   &__item {
-    position: relative;
+    display: flex;
     max-width: 1200px;
     width: 100%;
-    margin: 0 auto 12px;
+    margin: 0 auto 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #0e4965;
 
     .details {
-      position: absolute;
-      z-index: 2000;
-      left: 30%;
-      top: 36px;
-      color: #ffffff;
+      margin-left: 24px;
 
       .title {
         font-size: 24px;
@@ -36,19 +34,9 @@
     }
 
     .box {
-      position: relative;
-      max-height: 400px;
-
-      .back {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
       .front {
-        position: absolute;
-        height: 100%;
-        width: auto;
+        width: 240px;
+        height: auto;
       }
     }
   }
@@ -59,15 +47,18 @@
     margin-top: 120px;
 
     &__item {
+      display: block;
+
       .details {
-        top: 12px;
+        margin-left: auto;
+        text-align: center;
+        font-size: 16px;
 
         .title {
           font-size: 18px;
         }
 
         .subtitle {
-          font-size: 16px;
           margin: 6px 0;
         }
 

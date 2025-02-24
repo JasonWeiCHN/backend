@@ -1,0 +1,22 @@
+<div
+  class="warhammer-classifier"
+  [class.warhammer-classifier--list]="mode === eWarhammerClassifierMode.LIST"
+>
+  <div
+    *ngFor="let item of data"
+    class="warhammer-classifier__item"
+    [class.warhammer-classifier__item--list]="mode === eWarhammerClassifierMode.LIST"
+  >
+    <div class="title">{{ item.nameCN }}</div>
+    <div class="img-box">
+      <div
+        *ngFor="let file of item.files"
+        class="img-box__item"
+        (click)="onImgBoxClick(file)"
+      >
+        <img class="" [src]="file.heroAvatarPath" [alt]="file.name" [title]="file.heroName">
+        <span class="img-box__item__title">{{ file.heroName }}</span>
+      </div>
+    </div>
+  </div>
+</div>

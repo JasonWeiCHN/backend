@@ -1,0 +1,100 @@
+.article {
+  h3 {
+    color: #d8d8d8;
+  }
+}
+
+.identity-information {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .clan-info {
+    display: flex;
+
+    .image-box {
+      width: 60px;
+      height: 80px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .info {
+    align-self: flex-end;
+    margin-left: 12px;
+  }
+}
+
+.game-strategy {
+  padding: 4px 0;
+  margin: 12px 0;
+  border-bottom: 1px solid #9b9b9b;
+
+  .contributors {
+    display: flex;
+    font-size: 14px;
+    margin-top: 6px;
+
+    span {
+      color: #c4c4a8;
+      margin-right: 6px;
+    }
+
+    a {
+      cursor: pointer;
+      color: #c4c4c4;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      color: #ffffff;
+    }
+  }
+}
+
+.vote-list {
+  margin-bottom: 24px;
+
+  .vote-item {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 4px 0;
+    margin-bottom: 6px;
+    border-bottom: 1px solid #9b9b9b;
+
+    .right {
+      display: flex;
+
+      .vote-button {
+        cursor: pointer;
+        margin-left: 6px;
+        border-bottom: 1px solid #a86797;
+        color: #a86797;
+      }
+
+      .vote-button:hover {
+        color: #f696dd;
+        border-color: #f696dd;
+      }
+    }
+  }
+}
+
+/* 当屏幕宽度小于 480px 时 */
+@media (max-width: 480px) {
+  .vote-list {
+    .vote-item {
+      .left {
+        max-width: 280px;
+      }
+    }
+  }
+}
+

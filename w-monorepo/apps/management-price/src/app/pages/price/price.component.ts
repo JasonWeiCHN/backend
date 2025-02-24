@@ -247,6 +247,7 @@ export class PriceComponent implements OnInit {
       .searchPrices(this.selectedColumn, this.searchKeyword)
       .subscribe((prices: IPrice[]) => {
         this.prices = prices; // 更新列表数据
+        this.totalPages = Math.ceil(prices.length / this.pageSize);
       });
   }
 }

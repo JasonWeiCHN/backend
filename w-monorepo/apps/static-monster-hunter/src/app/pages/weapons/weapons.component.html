@@ -1,0 +1,11 @@
+<div class="clans">
+  <div style="margin: 12px 0">
+    <div
+      *ngFor="let item of weaponImages"
+      class="image-box"
+      (click)="onItemClick(item)"
+    >
+      <img [src]="item.path" [alt]="item.name" [title]="item.name" />
+    </div>
+  </div>
+</div>

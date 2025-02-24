@@ -1,0 +1,20 @@
+<div class="race-multiple-selector">
+  <div
+    *ngFor="let item of data; let i = index"
+    class="race-multiple-selector__item"
+    [class.selected]="selectedIndices.includes(i)"
+    (click)="toggleSelection(i)"
+  >
+    <div class="race-name">{{ item.nameCN }}</div>
+    <div>
+      <div class="img-box">
+        <div
+          *ngFor="let file of item.files"
+          class="img-box__item"
+        >
+          <img [src]="file.heroAvatarPath" [alt]="file.name" [title]="file.heroName">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -36,6 +36,8 @@ export class GoodHttpService {
   }
 
   public searchGoodsByName(name: string): Observable<IGood[]> {
-    return this.http.get<IGood[]>(`${this.baseUrl}/search?name=${name}`);
+    return this.http.get<IGood[]>(
+      `${this.baseUrl}/searchGoodsByName?name=${name}`
+    );
   }
 }

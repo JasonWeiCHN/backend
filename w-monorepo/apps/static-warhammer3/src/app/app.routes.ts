@@ -12,47 +12,47 @@ import { EasyToFightComponent } from './pages/vote/pages/easy-to-fight/easy-to-f
 export const appRoutes: Route[] = [
   {
     path: '',
-    component: ClansComponent
+    component: ClansComponent,
   },
   {
     path: 'article/:warhammerClassifierId/:heroId',
-    component: ArticleComponent
+    component: ArticleComponent,
   },
   {
     path: 'article/:id',
-    component: ArticleComponent
+    component: ArticleComponent,
   },
   {
     path: 'clans',
-    component: ClansComponent
+    component: ClansComponent,
   },
   {
     path: 'articles',
-    component: ArticlesComponent
+    component: ArticlesComponent,
   },
   {
     path: 'discount',
-    component: DiscountComponent
+    component: DiscountComponent,
   },
   {
     path: 'war-school',
-    component: WarSchoolComponent
+    component: WarSchoolComponent,
   },
   {
     path: 'mods',
-    component: ModsComponent
+    component: ModsComponent,
   },
   {
     path: 'vote',
-    component: VoteComponent
+    component: VoteComponent,
   },
   // 专用路由
   {
     path: 'vote/hard-to-fight',
-    component: HardToFightComponent
+    component: HardToFightComponent,
   },
   {
     path: 'vote/easy-to-fight',
-    component: EasyToFightComponent
-  }
+    component: EasyToFightComponent,
+  },
 ];

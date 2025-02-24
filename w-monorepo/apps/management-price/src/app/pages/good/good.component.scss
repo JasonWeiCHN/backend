@@ -9,7 +9,26 @@
     margin: 0 auto;
 
     &__tools {
+      display: flex;
+      justify-content: space-between;
       margin-bottom: 12px;
+
+      .search {
+        display: flex;
+
+        input, select {
+          border: 1px solid #333333;
+        }
+
+        .search-button {
+          margin-left: 6px;
+          text-decoration: underline;
+
+          &:hover {
+            color: orangered;
+          }
+        }
+      }
     }
 
     table {

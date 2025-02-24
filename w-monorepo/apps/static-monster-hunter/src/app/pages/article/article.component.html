@@ -1,0 +1,145 @@
+<div *ngIf="data" class="article">
+  <div class="top-info">
+    <div *ngIf="clan" class="identity-information">
+      <div class="clan-info" style="display: flex">
+        <div class="image-box">
+          <img
+            [src]="clan.file.heroAvatarPath"
+            [alt]="clan.file.name"
+            [title]="clan.file.heroName"
+          />
+        </div>
+        <div class="info">
+          <div style="font-size: 20px; font-weight: 600">
+            {{ clan.file.heroName }}
+          </div>
+          <div style="font-size: 16px">{{ clan.file.nameCN }}</div>
+          <div style="font-size: 16px">外号: {{ clan.file.heroNickName }}</div>
+        </div>
+      </div>
+      <w-back-button></w-back-button>
+    </div>
+    <div *ngIf="clanExtra">
+      <p
+        style="margin: 12px 0; color: #c4c4a8; border-bottom: 1px solid #c4c4a8"
+      >
+        {{ clanExtra.slogan }}
+      </p>
+      <p
+        style="
+          padding-bottom: 6px;
+          margin-bottom: 12px;
+          border-bottom: 1px solid #c4c4a8;
+        "
+      >
+        {{ clanExtra.description }}
+      </p>
+    </div>
+  </div>
+  <w-tag-selector
+    [tags]="tags"
+    (tagSelected)="onTagSelect($event)"
+  ></w-tag-selector>
+  <div
+    *ngIf="
+      clan &&
+      (selectedTagId === EArticleTags.VOTE ||
+        selectedTagId === EArticleTags.ALL)
+    "
+    class="vote-list"
+  >
+    <div class="vote-item">
+      <div class="left">
+        我喜欢这个派系:
+        <span style="color: #c4c4a8">{{ clan.file.heroName }}</span>
+      </div>
+      <div class="right">
+        <div class="vote-value">{{ votes['popularity'] || 0 }}</div>
+        <div
+          class="vote-button"
+          (click)="onVoteClick(clan.file.id, 'popularity')"
+        >
+          投票
+        </div>
+      </div>
+    </div>
+    <div class="vote-item">
+      <div class="left">上手简单，适合新手!</div>
+      <div class="right">
+        <div class="vote-value">{{ votes['easy'] || 0 }}</div>
+        <div class="vote-button" (click)="onVoteClick(clan.file.id, 'easy')">
+          投票
+        </div>
+      </div>
+    </div>
+    <div class="vote-item">
+      <div class="left">太难了，特别有挑战!</div>
+      <div class="right">
+        <div class="vote-value">{{ votes['hard'] || 0 }}</div>
+        <div class="vote-button" (click)="onVoteClick(clan.file.id, 'hard')">
+          投票
+        </div>
+      </div>
+    </div>
+    <div class="vote-item">
+      <div class="left">作为敌人，这个派系很可怕，我可不想和他发生战斗！</div>
+      <div class="right">
+        <div class="vote-value">{{ votes['hard-to-fight'] || 0 }}</div>
+        <div
+          class="vote-button"
+          (click)="onVoteClick(clan.file.id, 'hard-to-fight')"
+        >
+          投票
+        </div>
+      </div>
+    </div>
+    <div class="vote-item">
+      <div class="left">我能轻松击败他，简直不堪一击！</div>
+      <div class="right">
+        <div class="vote-value">{{ votes['easy-to-fight'] || 0 }}</div>
+        <div
+          class="vote-button"
+          (click)="onVoteClick(clan.file.id, 'easy-to-fight')"
+        >
+          投票
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-container
+    *ngIf="selectedTagId === EArticleTags.NEWER_TEACH && clan?.file as file"
+  >
+    <div *ngIf="file.description?.length" class="game-strategy">
+      <div [innerHTML]="file.description"></div>
+      <ng-container *ngIf="file.contributors?.length">
+        <div class="contributors">
+          <span>供稿人:</span>
+          <div
+            *ngFor="let contributor of file.contributors"
+            style="margin-right: 8px"
+          >
+            <a
+              *ngIf="contributor.url"
+              (click)="onContributorClick(contributor)"
+              target="_blank"
+              [href]="contributor.url"
+              >{{ contributor.name }}</a
+            >
+            <a *ngIf="!contributor.url">{{ contributor.name }}</a>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </ng-container>
+  <div style="margin-top: 6px">
+    <w-list
+      *ngIf="data.length"
+      [data]="data"
+      [mode]="eList.ARTICLE"
+      (listItemClick)="onListItemClick($event)"
+    ></w-list>
+    <div *ngIf="!data.length && selectedTagId !== EArticleTags.VOTE">
+      暂无内容
+    </div>
+  </div>
+</div>

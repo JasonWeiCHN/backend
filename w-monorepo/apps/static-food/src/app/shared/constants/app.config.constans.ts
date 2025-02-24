@@ -5,30 +5,33 @@ export const APP_CONFIG: IApp = {
   banner: {
     title: '世界美食',
     subtitle: '让你流着口说获得视觉享受',
-    rightContent: ''
+    rightContent: '',
   },
   navigationItems: [
     {
       id: 'china',
       path: 'clans',
-      label: '中华美食'
+      label: '中华美食',
     },
     {
       id: 'southeastAsia',
       path: 'southeast-asia',
-      label: '东南亚'
-    }, {
+      label: '东南亚',
+    },
+    {
       id: 'arabic',
       path: 'arabic',
-      label: '阿拉伯'
-    }, {
+      label: '阿拉伯',
+    },
+    {
       id: 'europe',
       path: 'europe',
-      label: '欧洲'
-    }, {
+      label: '欧洲',
+    },
+    {
       id: 'america',
       path: 'america',
-      label: '美洲'
-    }
-  ]
+      label: '美洲',
+    },
+  ],
 };

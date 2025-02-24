@@ -15,7 +15,7 @@ import { PaginationComponent } from '@w-monorepo/ui';
   providers: [GoodHttpService],
 })
 export class GoodComponent implements OnInit {
-  protected Goods: IGood[] = [];
+  protected goods: IGood[] = [];
   protected totalPages = 0;
   protected currentPage = 0;
   protected pageSize = 50; // 每页显示数量
@@ -23,6 +23,11 @@ export class GoodComponent implements OnInit {
   public addGood: IAddGood = { name: '' }; // 用于绑定新增商品数据
   public isEditModalVisible = false; // 控制编辑商品表单显示
   public editGood: IGood = { id: '', name: '' }; // 用于绑定编辑商品数据
+
+  protected selectedColumn = 'name'; // 默认选择 good 字段
+  protected searchKeyword = '';
+  // TODO 动态化
+  protected columns: string[] = ['name'];
 
   public constructor(private goodHttpService: GoodHttpService) {}
 
@@ -34,7 +39,7 @@ export class GoodComponent implements OnInit {
     this.goodHttpService
       .getAllGoodsPaginated(this.currentPage, this.pageSize)
       .subscribe((page: Page<IGood>) => {
-        this.Goods = page.content;
+        this.goods = page.content;
         this.totalPages = page.totalPages;
       });
   }
@@ -64,7 +69,7 @@ export class GoodComponent implements OnInit {
     if (this.addGood.name.trim()) {
       this.goodHttpService.createGood(this.addGood).subscribe(
         (good) => {
-          this.Goods.push(good); // 将新增的商品添加到商品列表
+          this.goods.push(good); // 将新增的商品添加到商品列表
           this.closeAddModal(); // 关闭表单
         },
         (error) => {
@@ -94,11 +99,11 @@ export class GoodComponent implements OnInit {
         .subscribe(
           (updatedGood) => {
             // 更新商品列表中的数据
-            const index = this.Goods.findIndex(
+            const index = this.goods.findIndex(
               (good) => good.id === updatedGood.id
             );
             if (index !== -1) {
-              this.Goods[index] = updatedGood;
+              this.goods[index] = updatedGood;
             }
             this.closeEditModal(); // 关闭表单
           },
@@ -118,7 +123,7 @@ export class GoodComponent implements OnInit {
       // 用户点击确认后，执行删除操作
       this.goodHttpService.deleteGood(id).subscribe(
         () => {
-          this.Goods = this.Goods.filter((good) => good.id !== id); // 从列表中删除商品
+          this.goods = this.goods.filter((good) => good.id !== id); // 从列表中删除商品
         },
         (error) => {
           console.error('删除商品失败', error);
@@ -128,5 +133,15 @@ export class GoodComponent implements OnInit {
       // 用户点击取消，不做任何操作
       console.log('删除操作已取消');
     }
+  }
+
+  // 点击搜索按钮时触发的方法
+  protected search(): void {
+    // 向后端发送搜索请求
+    this.goodHttpService
+      .searchGoodsByName(this.searchKeyword)
+      .subscribe((goods: IGood[]) => {
+        this.goods = goods; // 更新列表数据
+      });
   }
 }
