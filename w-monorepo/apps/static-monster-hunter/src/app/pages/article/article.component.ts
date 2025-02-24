@@ -10,18 +10,14 @@ import {
   SnackbarService,
   TagSelectorComponent,
 } from '@w-monorepo/ui';
-import {
-  EArticleTags,
-  IClan,
-  IWarhammerClassifierMap,
-} from '@w-monorepo/warhammer';
+import { EArticleTags, IClan, IClanMap } from '@w-monorepo/warhammer';
 import { IArticleMap, IContributor } from '@w-monorepo/interfaces';
 import { ARTICLES_MAP } from '../../shared/constants/data.constants';
 import { AnalysisHttpService } from '@w-monorepo/analysis';
 import { VoteHttpService } from '@w-monorepo/vote';
 import {
   IClanExtra,
-  IClanMap,
+  IClanExtraMap,
   WEAPON_EXTRA_MAP,
 } from '../../shared/constants/local-data.constants';
 import { WEAPON_CLASSIFIERS_MAP } from '../../shared/constants/weapon.constants';
@@ -50,9 +46,8 @@ export class ArticleComponent implements OnInit {
     { id: EArticleTags.CLIP, name: '剪辑大片' },
   ];
   protected articlesMap: IArticleMap = ARTICLES_MAP;
-  protected weaponClassifiersMap: IWarhammerClassifierMap =
-    WEAPON_CLASSIFIERS_MAP;
-  protected weaponExtraMap: IClanMap = WEAPON_EXTRA_MAP;
+  protected weaponClassifiersMap: IClanMap = WEAPON_CLASSIFIERS_MAP;
+  protected weaponExtraMap: IClanExtraMap = WEAPON_EXTRA_MAP;
   protected title = '';
   protected weapon: IClan | undefined = undefined;
   protected weaponExtra: IClanExtra | undefined = undefined;
