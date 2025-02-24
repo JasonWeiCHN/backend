@@ -13,17 +13,17 @@ import {
 import {
   EArticleTags,
   IClan,
-  IWarhammerClassifierMap,
-  WARHAMMER_CLASSIFIERS_MAP,
+  IClanMap,
+  WARHAMMER_CLANS_MAP,
 } from '@w-monorepo/warhammer';
 import { IArticleMap, IContributor } from '@w-monorepo/interfaces';
 import { ARTICLES_MAP } from '../../shared/constants/data.constants';
 import { AnalysisHttpService } from '@w-monorepo/analysis';
 import { VoteHttpService } from '@w-monorepo/vote';
 import {
-  CLAN_MAP,
+  CLAN_EXTRA_MAP,
   IClanExtra,
-  IClanMap,
+  IClanExtraMap,
 } from '../../shared/constants/local-data.constants';
 
 @Component({
@@ -53,9 +53,8 @@ export class ArticleComponent implements OnInit {
     { id: EArticleTags.STORY, name: '讲故事' },
   ];
   protected articlesMap: IArticleMap = ARTICLES_MAP;
-  protected warhammerClassifiersMap: IWarhammerClassifierMap =
-    WARHAMMER_CLASSIFIERS_MAP;
-  protected clanMap: IClanMap = CLAN_MAP;
+  protected warhammerClassifiersMap: IClanMap = WARHAMMER_CLANS_MAP;
+  protected clanExtraMap: IClanExtraMap = CLAN_EXTRA_MAP;
   protected title = '';
   protected clan: IClan | undefined = undefined;
   protected clanExtra: IClanExtra | undefined = undefined;
@@ -77,7 +76,7 @@ export class ArticleComponent implements OnInit {
     this._viewportScroller.scrollToPosition([0, 0]); // 滚动到顶部
     const { id } = this._activatedRoute.snapshot.params;
     this.clan = this.warhammerClassifiersMap[id];
-    this.clanExtra = this.clanMap[id];
+    this.clanExtra = this.clanExtraMap[id];
     this.data = this.articlesMap[id];
     this.getVotes();
   }

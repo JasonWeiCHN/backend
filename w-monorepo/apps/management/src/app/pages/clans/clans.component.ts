@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {
+  IClanMap,
   IClanUpload,
+  IWarhammerClassifier,
   IWarhammerClassifierBase,
   IWarhammerImageFile,
   WARHAMMER_CLASSIFIERS,
@@ -10,6 +12,7 @@ import {
 } from '@w-monorepo/warhammer';
 import { HttpClient } from '@angular/common/http';
 import { ClansHttpService } from './shared/services/clans.http.service';
+import { WEAPON_CLASSIFIERS_MAP } from '../../shared/constants/weapon.constants';
 
 @Component({
   selector: 'm-clans',
@@ -44,7 +47,7 @@ export class ClansComponent implements OnInit {
   }
 
   public uploadAllClans(): void {
-    WARHAMMER_CLASSIFIERS.forEach((classifier) => {
+    WARHAMMER_CLASSIFIERS.forEach((classifier: IWarhammerClassifier) => {
       const warhammerClassifierId = classifier.id;
       classifier.files.forEach((file) => {
         const iClanUpload: IClanUpload = {
@@ -60,6 +63,33 @@ export class ClansComponent implements OnInit {
           }
         );
       });
+    });
+  }
+
+  protected onUploadAllClansByMapClick(): void {
+    this.uploadAllClansByMap(WEAPON_CLASSIFIERS_MAP);
+  }
+
+  private uploadAllClansByMap(classifiersMap: IClanMap): void {
+    Object.keys(classifiersMap).forEach((key) => {
+      const classifier = classifiersMap[key];
+      const { file } = classifier;
+
+      // 生成 IClanUpload 对象
+      const iClanUpload: IClanUpload = {
+        warhammerClassifierId: classifier.parentId,
+        ...file,
+      };
+
+      // 上传每个文件
+      this.warhammerHttpService.saveClan(iClanUpload).subscribe(
+        () => {
+          console.log(`Clan ${file.name} uploaded successfully.`);
+        },
+        (error) => {
+          console.error(`Error uploading clan ${file.name}:`, error);
+        }
+      );
     });
   }
 

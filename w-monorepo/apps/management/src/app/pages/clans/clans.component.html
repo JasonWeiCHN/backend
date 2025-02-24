@@ -1,84 +1,132 @@
 <div class="clans">
   <h2>派系列表</h2>
   <div class="toolbar">
-    <button style="" (click)="downloadItemCardsAsJson()">下载全部clans数据</button>
+    <button style="" (click)="downloadItemCardsAsJson()">
+      下载全部clans数据
+    </button>
   </div>
   <table>
     <thead>
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <!--      <th>NameCN</th>-->
-      <th>Path</th>
-      <th>Hero Name</th>
-      <!--      <th>Hero Name EN</th>-->
-      <th>Hero Avatar Path</th>
-      <!--      <th>Description</th>-->
-    </tr>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <!--      <th>NameCN</th>-->
+        <th>Path</th>
+        <th>Hero Name</th>
+        <!--      <th>Hero Name EN</th>-->
+        <th>Hero Avatar Path</th>
+        <!--      <th>Description</th>-->
+      </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let imageFile of clans">
-      <td>{{ imageFile.id }}</td>
-      <td>{{ imageFile.name }}</td>
-      <!--      <td>{{ imageFile.nameCN }}</td>-->
-      <td>{{ imageFile.path }}</td>
-      <td>{{ imageFile.heroName }}</td>
-      <!--      <td>{{ imageFile.heroNameEN }}</td>-->
-      <td>{{ imageFile.heroAvatarPath }}</td>
-      <!--      <td>{{ imageFile.description }}</td>-->
-    </tr>
+      <tr *ngFor="let imageFile of clans">
+        <td>{{ imageFile.id }}</td>
+        <td>{{ imageFile.name }}</td>
+        <!--      <td>{{ imageFile.nameCN }}</td>-->
+        <td>{{ imageFile.path }}</td>
+        <td>{{ imageFile.heroName }}</td>
+        <!--      <td>{{ imageFile.heroNameEN }}</td>-->
+        <td>{{ imageFile.heroAvatarPath }}</td>
+        <!--      <td>{{ imageFile.description }}</td>-->
+      </tr>
     </tbody>
   </table>
-  <h2>
-    通过数组（数据源）自动上传
-  </h2>
+  <h2>通过数组（数据源）自动上传</h2>
   <button (click)="uploadAllClans()">Upload All Files</button>
-  <h2>
-    单条数据上传
-  </h2>
+  <button (click)="onUploadAllClansByMapClick()">
+    Upload Weapons Classifiers
+  </button>
+  <h2>单条数据上传</h2>
   <div>
     <h3>Warhammer Classifier Selector</h3>
     <select [(ngModel)]="selectedClassifierId">
       <option value="" disabled selected>Select Warhammer Classifier</option>
       <option
         *ngFor="let classifier of warhammerClassifiers"
-        [value]="classifier.id">
+        [value]="classifier.id"
+      >
         {{ classifier.nameCN }}
       </option>
     </select>
-    <p *ngIf="selectedClassifierId">Selected Classifier ID: {{ selectedClassifierId }}</p>
+    <p *ngIf="selectedClassifierId">
+      Selected Classifier ID: {{ selectedClassifierId }}
+    </p>
   </div>
   <div>
     <h3>Upload Image File</h3>
-    html
-    Copy code
+    html Copy code
     <form (submit)="onSubmit()">
       <label for="id">ID:</label>
-      <input type="text" id="id" name="name" [(ngModel)]="clanUpload.id" required>
+      <input
+        type="text"
+        id="id"
+        name="name"
+        [(ngModel)]="clanUpload.id"
+        required
+      />
 
       <label for="name">Name:</label>
-      <input type="text" id="name" name="name" [(ngModel)]="clanUpload.name" required>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        [(ngModel)]="clanUpload.name"
+        required
+      />
 
       <label for="nameCN">Chinese Name:</label>
-      <input type="text" id="nameCN" name="nameCN" [(ngModel)]="clanUpload.nameCN" required>
+      <input
+        type="text"
+        id="nameCN"
+        name="nameCN"
+        [(ngModel)]="clanUpload.nameCN"
+        required
+      />
 
       <label for="path">Path:</label>
-      <input type="text" id="path" name="path" [(ngModel)]="clanUpload.path" required>
+      <input
+        type="text"
+        id="path"
+        name="path"
+        [(ngModel)]="clanUpload.path"
+        required
+      />
 
       <label for="heroName">Hero Name:</label>
-      <input type="text" id="heroName" name="heroName" [(ngModel)]="clanUpload.heroName" required>
+      <input
+        type="text"
+        id="heroName"
+        name="heroName"
+        [(ngModel)]="clanUpload.heroName"
+        required
+      />
 
       <label for="heroAvatarPath">Hero Avatar Path:</label>
-      <input type="text" id="heroAvatarPath" name="heroAvatarPath" [(ngModel)]="clanUpload.heroAvatarPath"
-             required>
+      <input
+        type="text"
+        id="heroAvatarPath"
+        name="heroAvatarPath"
+        [(ngModel)]="clanUpload.heroAvatarPath"
+        required
+      />
 
       <label for="description">Description:</label>
-      <textarea id="description" name="description" [(ngModel)]="clanUpload.description" required></textarea>
+      <textarea
+        id="description"
+        name="description"
+        [(ngModel)]="clanUpload.description"
+        required
+      ></textarea>
 
       <div>
         <label for="warhammerClassifierId">Warhammer Classifier ID:</label>
-        <input type="text" id="warhammerClassifierId" name="warhammerClassifierId" [(ngModel)]="selectedClassifierId"
-               required>
+        <input
+          type="text"
+          id="warhammerClassifierId"
+          name="warhammerClassifierId"
+          [(ngModel)]="selectedClassifierId"
+          required
+        />
       </div>
 
       <button type="submit">Submit</button>

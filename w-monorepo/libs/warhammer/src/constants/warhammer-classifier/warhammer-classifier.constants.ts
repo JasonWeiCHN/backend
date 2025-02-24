@@ -1,6 +1,6 @@
 import {
+  IClanMap,
   IWarhammerClassifier,
-  IWarhammerClassifierMap,
 } from '../../interfaces/warhammer-classifier/warhammer-classifier.interface';
 
 export const WARHAMMER_CLASSIFIERS: IWarhammerClassifier[] = [
@@ -1700,8 +1700,8 @@ export const WARHAMMER_CLASSIFIERS: IWarhammerClassifier[] = [
   },
 ];
 
-export const WARHAMMER_CLASSIFIERS_MAP: IWarhammerClassifierMap =
-  WARHAMMER_CLASSIFIERS.reduce((acc, classifier) => {
+export const WARHAMMER_CLANS_MAP: IClanMap = WARHAMMER_CLASSIFIERS.reduce(
+  (acc, classifier) => {
     classifier.files.forEach((file) => {
       acc[file.id] = {
         parentId: classifier.id,
@@ -1709,4 +1709,6 @@ export const WARHAMMER_CLASSIFIERS_MAP: IWarhammerClassifierMap =
       };
     });
     return acc;
-  }, {} as IWarhammerClassifierMap);
+  },
+  {} as IClanMap
+);

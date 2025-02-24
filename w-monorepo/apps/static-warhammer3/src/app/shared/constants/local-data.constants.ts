@@ -5,11 +5,11 @@ export interface IClanExtra {
   description: string;
 }
 
-export interface IClanMap {
+export interface IClanExtraMap {
   [key: string]: IClanExtra;
 }
 
-export const CLAN_MAP: IClanMap = {
+export const CLAN_EXTRA_MAP: IClanExtraMap = {
   Warherd_of_the_One_Eye: {
     slogan: '卡扎克是帝国北部森林的梦魇，他将再次令血域遍及邓肯瓦尔德',
     description:

@@ -38,6 +38,6 @@ export interface IClan {
   file: IWarhammerImageFile;
 }
 
-export interface IWarhammerClassifierMap {
+export interface IClanMap {
   [key: string]: IClan;
 }
