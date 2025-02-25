@@ -1,39 +1,7 @@
 <div class="articles">
-  <ng-container *ngIf="mode === eMode.HOME">
-    <section>
-      <div class="subtitle">战锤人物志</div>
-      <div class="static-article-link">
-        <div
-          *ngFor="let item of staticArticleLinks"
-          class="static-article-link__item"
-          (click)="onStaticArticleLinkClick(item)"
-        >
-          {{ item.label }}
-        </div>
-      </div>
-    </section>
-    <section>
-      <div class="subtitle">最新更新</div>
-      <w-list
-        [data]="data"
-        [mode]="eList.ARTICLE"
-        (listItemClick)="onListItemClick($event)"
-      ></w-list>
-    </section>
-  </ng-container>
-  <div *ngIf="mode === eMode.DETAIL" class="detail">
-    <div
-      style="display: flex; align-items: center; justify-content: space-between"
-    >
-      <button (click)="goBack()">返回</button>
-      <w-tag-selector
-        [tags]="tags"
-        (tagSelected)="onTagSelect($event)"
-      ></w-tag-selector>
-    </div>
-    <div [className]="'local-' + localLanguage" style="margin-top: 12px">
-      <app-nagash1 *ngIf="staticArticleLink?.key === 'nagash_1'"></app-nagash1>
-      <app-nagash2 *ngIf="staticArticleLink?.key === 'nagash_2'"></app-nagash2>
-    </div>
-  </div>
+  <w-list
+    [data]="data"
+    [mode]="eList.ARTICLE"
+    (listItemClick)="onListItemClick($event)"
+  ></w-list>
 </div>

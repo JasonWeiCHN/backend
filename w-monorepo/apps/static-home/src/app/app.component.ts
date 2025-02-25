@@ -31,10 +31,10 @@ export class AppComponent {
       search: '游戏卡带之家YXKDZJ',
     },
     {
-      imgUrl: 'assets/F_newest.png',
-      title: '最新游戏资讯站',
-      sourceUrl: 'http://111.230.29.99:4006/',
-      search: '最新游戏ZXYX',
+      imgUrl: 'assets/F_monster-hunter.png',
+      title: '怪物猎人',
+      sourceUrl: 'http://111.230.29.99:4012/',
+      search: '怪物猎人GWLR',
     },
     {
       imgUrl: 'assets/F_totalwar3.png',
@@ -65,6 +65,12 @@ export class AppComponent {
       title: '全面战争·法老',
       sourceUrl: 'http://111.230.29.99:4001/',
       search: '全面战争·法老QMZZFL',
+    },
+    {
+      imgUrl: 'assets/F_newest.png',
+      title: '最新游戏资讯站',
+      sourceUrl: 'http://111.230.29.99:4006/',
+      search: '最新游戏ZXYX',
     },
     // 更多数据...
   ];

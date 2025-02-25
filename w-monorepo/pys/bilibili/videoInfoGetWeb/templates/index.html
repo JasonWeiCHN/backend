@@ -26,15 +26,15 @@
     <option value="funnyCollection" data-hero="funnyCollection">funny-无敌合集</option>
     <option value="parodyAndPrank" data-hero="parodyAndPrank">funny-恶搞整活</option>
     <option value="superJoke" data-hero="superJoke">funny-超能段子</option>
-    <option value="articles" data-hero="articles">最新资讯</option>
-    <option value="practicalTeaching" data-hero="practicalTeaching">实战教学</option>
-    <option value="basicKnowledge" data-hero="basicKnowledge">基础知识</option>
-    <option value="warSchoolVideo" data-hero="warSchoolVideo">战争讲堂精选视频</option>
-    <option value="newMod" data-hero="newMod">新 Mod</option>
-    <option value="modCollection" data-hero="modCollection">Mod 合集</option>
-    <option value="discount" data-hero="discount">折扣消息</option>
+    <option value="articles" data-hero="articles">articles-最新资讯</option>
+    <option value="practicalTeaching" data-hero="practicalTeaching">practicalTeaching-实战教学</option>
+    <option value="basicKnowledge" data-hero="basicKnowledge">basicKnowledge-基础知识</option>
+    <option value="warSchoolVideo" data-hero="warSchoolVideo">warSchoolVideo-战争讲堂精选视频</option>
+    <option value="newMod" data-hero="newMod">newMod-新 Mod</option>
+    <option value="modCollection" data-hero="modCollection">modCollection-Mod 合集</option>
+    <option value="discount" data-hero="discount">discount-折扣消息</option>
     {% for clan in clans %}
-    <option value="{{ clan.id }}" data-hero="{{ clan.heroName }}">{{ clan.heroName }}</option>
+    <option value="{{ clan.id }}" data-hero="{{ clan.heroName }}">{{ clan.heroName }} {{ clan.nameCN }}</option>
     {% endfor %}
   </select><br><br>
 

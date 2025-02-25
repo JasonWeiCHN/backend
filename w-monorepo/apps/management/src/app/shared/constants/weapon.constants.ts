@@ -93,7 +93,7 @@ export const WEAPON_CLASSIFIERS_MAP: IClanMap = {
       heroAvatarPath: 'assets/images/weapons/Hunting_Horn.png',
       path: 'assets/images/weapons/Hunting_Horn.png',
       name: 'Hunting Horn',
-      nameCN: '片手剑 / 单手剑',
+      nameCN: '狩猎笛',
       description: '钝击，“演奏”',
       id: 'Hunting_Horn',
       contributors: [],
