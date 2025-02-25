@@ -10,11 +10,11 @@ from bilibili_api import video, Credential, HEADERS
 app = Flask(__name__)
 
 # 替换成你的 SESSDATA、BILI_JCT 和 FFMPEG_PATH
-SESSDATA = "b6ed868e%2C1734347917%2C7672c%2A62CjCj0xvDeWCpgs6dfVhjhkDT5eYav875XsfZH_EoZGbfP6l_96xY7SyyZLc-q7veg00SVmlzdmtDTFgxVFpMQW5WZjhJWDRqa3A3dk12Z0d2NVUzN3lQMThOQ2pHNTRmTEo0SUp6WXo2VWs3V3M5bWs5NVcwWFZLcFNHbGxjV2MxMmF6Y2puVkVRIIEC"
-BILI_JCT = "d2062de4f7be43845be0553cc5afe6af"
+SESSDATA = "ad304d6d%2C1755740415%2Cde168%2A22CjBNpo019H0cHXtGqHdwDQHiObIqa1_nqE5RkQKVEzIeXlVJxUevCSDwl1efwLp69BwSVlc3X2ZEZWxzc1FEd1dFY2JpeXQ0WEdIU1BtNjlUeXhJYUVpYWhiUFZoVkthbzdPVnctVjNOcWV6SHNCbll2UzFHdW1DWUMzVkFKaHFLTkdSY2sxMi13IIEC"
+BILI_JCT = "631dd13e13290c633c416671bdcc1a31"
 BUVID3 = ""
 FFMPEG_PATH = r"F:/ffmpeg/bin/ffmpeg.exe"
-OUTPUT_FOLDER = r"F:/biliGet/warhammer3"
+OUTPUT_FOLDER = r"F:/biliGet/monster-hunter"
 
 async def download_url(url: str, out: str, info: str):
     async with httpx.AsyncClient(headers=HEADERS) as sess:

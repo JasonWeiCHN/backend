@@ -55,6 +55,22 @@ export const CARTRIDGE_MAP: IArticleMap = {
       },
     },
     {
+      sourceUrl: '',
+      date: '',
+      description:
+        '13世纪末，蒙古帝国东征，铁蹄所到之处皆成焦土。残暴狡诈的蒙军统帅赫通汗率领舰队大举入侵，对马岛是横亘在侵略者与日本本土之间的最后一道防线。',
+      detail: '',
+      id: 'MDZzYh',
+      imageUrl: 'assets/images/ps5/MDZzYh.jpg',
+      tagIds: ['动作', '开放世界'],
+      title: '对马岛之魂',
+      price: {
+        discountPercent: 100,
+        initial: '',
+        final: '230.00（新卡） 170.00（闲鱼） 198.00（拼多多）',
+      },
+    },
+    {
       sourceUrl: '/wiki/zjaAsj',
       date: '',
       description: '奎爷这次要斩杀多少神',
