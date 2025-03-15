@@ -2,7 +2,10 @@
   "name": "@w-monorepo/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "electron-game-master": "electron ./apps/electron-game-master/dist/main.js",
+    "build-electron-game-master": "cd ./apps/electron-game-master && npm run build"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~17.2.0",

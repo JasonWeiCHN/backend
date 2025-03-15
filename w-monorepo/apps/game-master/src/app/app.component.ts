@@ -22,34 +22,34 @@ export class AppComponent implements OnInit {
   public categories = ['动作', '射击', '冒险', '策略'];
   public games = [
     {
-      name: '战神',
-      image: 'godofwar.jpg',
+      name: '真三国无双起源',
+      image: 'assets/F_1qug5y.png',
       category: '动作',
-      path: 'C:\\Games\\GodOfWar.exe',
+      path: 'D:\\SANGUO\\SANGUO-ORIGINS\\DWORIGINS.exe',
     },
     {
-      name: '战神1',
-      image: 'godofwar.jpg',
+      name: '雨魂',
+      image: 'assets/1058553_front.jpg',
       category: '动作',
-      path: 'C:\\Games\\GodOfWar.exe',
+      path: 'F:\\BaiduNetdiskDownload\\雨魂\\app.exe',
     },
     {
-      name: '战神2',
-      image: 'godofwar.jpg',
+      name: '街机',
+      image: 'assets/1058553_front.jpg',
       category: '动作',
-      path: 'C:\\Games\\GodOfWar.exe',
+      path: 'F:\\街机模拟器中文典藏版+500游戏合集\\WinKawaks.exe',
     },
     {
-      name: '战神3',
+      name: '图片',
       image: 'godofwar.jpg',
       category: '动作',
-      path: 'C:\\Games\\GodOfWar.exe',
+      path: 'F:\\真·三国无双-起源\\header_schinese.jpg',
     },
     {
       name: 'CS:GO',
       image: 'csgo.jpg',
       category: '射击',
-      path: 'C:\\Games\\CSGO.exe',
+      path: 'D:\\[にじいろばんび] 尼特与天使与色色家族 官方中文版 V1.4\\[にじいろばんび] 尼特与天使与色色家族 官方中文版 V1.4\\NeetAndAngel.exe',
     },
     {
       name: '塞尔达',
@@ -68,9 +68,9 @@ export class AppComponent implements OnInit {
   private lastPressTime = 0;
   private DEBOUNCE_TIME = 150; // 300ms 防抖时间
 
-  constructor(private gamepadService: GamepadService) {}
+  public constructor(private gamepadService: GamepadService) {}
 
-  ngOnInit() {
+  public ngOnInit() {
     this.gamepadService.getGamepadState().subscribe((gp) => {
       if (gp) {
         const now = Date.now();
@@ -130,8 +130,15 @@ export class AppComponent implements OnInit {
       (index + this.filteredGames.length) % this.filteredGames.length;
   }
 
+  // 运行游戏
   public launchGame() {
-    console.log(`打开游戏：${this.filteredGames[this.activeGameIndex].path}`);
-    // 这里可以用 Electron/Node.js 执行本地游戏
+    const gamePath = this.filteredGames[this.activeGameIndex].path;
+    console.log(`打开游戏：${gamePath}`);
+
+    if ((window as any).electron) {
+      (window as any).electron.launchGame(gamePath);
+    } else {
+      console.warn('Electron 未找到');
+    }
   }
 }
