@@ -34,16 +34,16 @@ export class AppComponent implements OnInit {
       path: 'F:\\BaiduNetdiskDownload\\雨魂\\app.exe',
     },
     {
+      name: '图片',
+      image: 'assets/1058553_front.jpg',
+      category: '动作',
+      path: 'F:\\爬取物\\四个表情\\image_2.png',
+    },
+    {
       name: '街机',
       image: 'assets/1058553_front.jpg',
       category: '动作',
       path: 'F:\\街机模拟器中文典藏版+500游戏合集\\WinKawaks.exe',
-    },
-    {
-      name: '图片',
-      image: 'godofwar.jpg',
-      category: '动作',
-      path: 'F:\\真·三国无双-起源\\header_schinese.jpg',
     },
     {
       name: 'CS:GO',
@@ -65,18 +65,20 @@ export class AppComponent implements OnInit {
     (g) => g.category === this.categories[0]
   );
 
+  public isGameRunning = false; // 是否正在运行游戏
+  public runningGameName = ''; // 正在运行的游戏名称
+
   private lastPressTime = 0;
-  private DEBOUNCE_TIME = 150; // 300ms 防抖时间
+  private DEBOUNCE_TIME = 150; // 防抖时间
 
   public constructor(private gamepadService: GamepadService) {}
 
   public ngOnInit() {
     this.gamepadService.getGamepadState().subscribe((gp) => {
-      if (gp) {
+      if (gp && !this.isGameRunning) {
         const now = Date.now();
         if (now - this.lastPressTime < this.DEBOUNCE_TIME) return; // 防抖
 
-        // 分类切换（LB/RB）
         if (gp.buttons[4].pressed) {
           this.changeCategory(this.selectedCategoryIndex - 1);
           this.lastPressTime = now;
@@ -86,34 +88,59 @@ export class AppComponent implements OnInit {
           this.lastPressTime = now;
         }
 
-        // 方向键 + 左摇杆控制游戏选择
         const leftStickX = gp.axes[0];
         const leftStickY = gp.axes[1];
 
         if (gp.buttons[14].pressed || leftStickX < -0.5) {
-          this.changeGame(this.activeGameIndex - 1); // 左
+          this.changeGame(this.activeGameIndex - 1);
           this.lastPressTime = now;
         }
         if (gp.buttons[15].pressed || leftStickX > 0.5) {
-          this.changeGame(this.activeGameIndex + 1); // 右
+          this.changeGame(this.activeGameIndex + 1);
           this.lastPressTime = now;
         }
         if (gp.buttons[12].pressed || leftStickY < -0.5) {
-          this.changeGame(this.activeGameIndex - 1); // 上
+          this.changeGame(this.activeGameIndex - 1);
           this.lastPressTime = now;
         }
         if (gp.buttons[13].pressed || leftStickY > 0.5) {
-          this.changeGame(this.activeGameIndex + 1); // 下
+          this.changeGame(this.activeGameIndex + 1);
           this.lastPressTime = now;
         }
 
-        // A 键启动游戏
         if (gp.buttons[0].pressed) {
           this.launchGame();
           this.lastPressTime = now;
         }
       }
     });
+
+    // 监听 Electron 的游戏启动事件
+    if ((window as any).electron) {
+      (window as any).electron.onGameLaunchSuccess(() => {
+        console.error('Game launch Success!');
+      });
+
+      (window as any).electron.onGameLaunchError((error: string) => {
+        console.error('Game launch error:', error);
+        this.isGameRunning = false;
+        this.runningGameName = '';
+      });
+
+      // 监听游戏退出事件
+      (window as any).electron.onGameExit(() => {
+        console.log('游戏已退出');
+        this.isGameRunning = false;
+        this.runningGameName = '';
+      });
+
+      // 监听图片打开事件
+      (window as any).electron.onImageOpenSuccess(() => {
+        console.log('图片已打开');
+        this.isGameRunning = false;
+        this.runningGameName = '';
+      });
+    }
   }
 
   public changeCategory(index: number) {
@@ -130,13 +157,15 @@ export class AppComponent implements OnInit {
       (index + this.filteredGames.length) % this.filteredGames.length;
   }
 
-  // 运行游戏
   public launchGame() {
-    const gamePath = this.filteredGames[this.activeGameIndex].path;
-    console.log(`打开游戏：${gamePath}`);
+    const game = this.filteredGames[this.activeGameIndex];
+    console.log(`正在启动游戏：${game.name}`);
+
+    this.isGameRunning = true;
+    this.runningGameName = game.name;
 
     if ((window as any).electron) {
-      (window as any).electron.launchGame(gamePath);
+      (window as any).electron.launchGame(game.path);
     } else {
       console.warn('Electron 未找到');
     }

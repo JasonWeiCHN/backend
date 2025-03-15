@@ -1,0 +1,22 @@
+.game-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* 黑色半透明 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  z-index: 1000;
+}
+
+.game-overlay-content {
+  padding: 18px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 8px;
+  text-align: center;
+}

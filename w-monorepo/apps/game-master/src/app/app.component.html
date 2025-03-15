@@ -2,8 +2,14 @@
   [categories]="categories"
   [selectedIndex]="selectedCategoryIndex"
   (categoryChanged)="changeCategory($event)"
->
-</app-category-nav>
+></app-category-nav>
 
 <app-game-list [games]="filteredGames" [activeIndex]="activeGameIndex">
 </app-game-list>
+
+<!-- 遮罩层 -->
+<div class="game-overlay" *ngIf="isGameRunning">
+  <div class="game-overlay-content">
+    <h2>{{ runningGameName }} 正在运行...</h2>
+  </div>
+</div>
