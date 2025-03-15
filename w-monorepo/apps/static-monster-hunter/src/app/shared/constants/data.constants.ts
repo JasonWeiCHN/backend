@@ -3,6 +3,21 @@ import { IArticleMap } from '@w-monorepo/interfaces';
 export const ARTICLES_MAP: IArticleMap = {
   Switch_Axe: [
     {
+      date: '2025-03-08 17:26',
+      sourceUrl: 'https://www.bilibili.com/video/BV1Ax99YPEKv',
+      referer: null,
+      imageUrl: 'BV1Ax99YPEKv',
+      tagIds: [''],
+      publisher: '小绿出来挨揍',
+      description:
+        '打了3个晚上每次都是打完3把重开游戏复制存档，打完才发现有无限调查mod，tgy我鲨了你啊！！！',
+      typeId: 'Switch_Axe',
+      id: '53',
+      detail: '',
+      title: '最强输出强击瓶斩斧，充充爆5星历战锁刃龙',
+      views: 47395,
+    },
+    {
       date: '2025-03-02 15:54',
       sourceUrl: 'https://www.bilibili.com/video/BV1iz9bY7ENx',
       referer: null,
@@ -84,6 +99,21 @@ export const ARTICLES_MAP: IArticleMap = {
   ],
   Hunting_Horn: [
     {
+      date: '2025-03-10 22:59',
+      sourceUrl: 'https://www.bilibili.com/video/BV1rCRVYpERN',
+      referer: null,
+      imageUrl: 'BV1rCRVYpERN',
+      tagIds: [''],
+      publisher: '古老游戏玩家',
+      description:
+        '[怪物猎人·荒野] 萌新狩猎笛30分钟熬死6星历战土龙，折磨观众\n\n我的游戏站\nhttp://111.230.29.99/',
+      typeId: 'Hunting_Horn',
+      id: '57',
+      detail: '',
+      title: '[怪物猎人·荒野] 萌新狩猎笛30分钟熬死6星历战土龙，折磨观众',
+      views: 0,
+    },
+    {
       date: '2025-03-04 19:35',
       sourceUrl: 'https://www.bilibili.com/video/BV1rT9nYTEX8',
       referer: null,
@@ -144,6 +174,21 @@ export const ARTICLES_MAP: IArticleMap = {
   ],
   Lance: [
     {
+      date: '2025-03-14 13:51',
+      sourceUrl: 'https://www.bilibili.com/video/BV1mPQGYJEay',
+      referer: null,
+      imageUrl: 'BV1mPQGYJEay',
+      tagIds: [''],
+      publisher: '古老游戏玩家',
+      description:
+        '[怪物猎人·荒野] 萌新长枪27分钟戳死8星锁刃龙，太好用啦！\n\n我的游戏站\nhttp://111.230.29.99/',
+      typeId: 'Lance',
+      id: '62',
+      detail: '',
+      title: '[怪物猎人·荒野] 萌新长枪27分钟戳死8星锁刃龙，太好用啦！',
+      views: 514,
+    },
+    {
       date: '2025-03-01 08:40',
       sourceUrl: 'https://www.bilibili.com/video/BV1NxXSY9EBx',
       referer: null,
@@ -190,6 +235,36 @@ export const ARTICLES_MAP: IArticleMap = {
     },
   ],
   Great_Sword: [
+    {
+      date: '2025-03-09 14:51',
+      sourceUrl: 'https://www.bilibili.com/video/BV1kgRbYcEtP',
+      referer: null,
+      imageUrl: 'BV1kgRbYcEtP',
+      tagIds: [''],
+      publisher: '古老游戏玩家',
+      description:
+        '[怪物猎人·荒野] 萌新大剑初两小时熬死黑蚀龙\n\n我的游戏站\nhttp://111.230.29.99/',
+      typeId: 'Great_Sword',
+      id: '54',
+      detail: '',
+      title: '[怪物猎人·荒野] 萌新大剑两小时熬死黑蚀龙',
+      views: 358,
+    },
+    {
+      date: '2025-03-07 23:03',
+      sourceUrl: 'https://www.bilibili.com/video/BV1TM9SYFEkW',
+      referer: null,
+      imageUrl: 'BV1TM9SYFEkW',
+      tagIds: [''],
+      publisher: '古老游戏玩家',
+      description:
+        '[怪物猎人·荒野] 萌新大刀初见历战\n\n我的游戏站\nhttp://111.230.29.99/',
+      typeId: 'Great_Sword',
+      id: '52',
+      detail: '',
+      title: '[怪物猎人·荒野] 萌新大刀初见历战',
+      views: 257,
+    },
     {
       date: '2025-03-01 18:52',
       sourceUrl: 'https://www.bilibili.com/video/BV18yXXYMEqS',
@@ -285,6 +360,21 @@ export const ARTICLES_MAP: IArticleMap = {
   ],
   practicalTeaching: [
     {
+      date: '2025-03-11 20:13',
+      sourceUrl: 'https://www.bilibili.com/video/BV1EPQVYuECg',
+      referer: null,
+      imageUrl: 'BV1EPQVYuECg',
+      tagIds: [''],
+      publisher: '古老游戏玩家',
+      description:
+        '[怪物猎人·荒野] 难道？狩猎笛是最好的副武器！！！\n\n我的游戏站\nhttp://111.230.29.99/',
+      typeId: 'practicalTeaching',
+      id: '59',
+      detail: '',
+      title: '[怪物猎人·荒野] 难道？狩猎笛是最好的副武器！！！',
+      views: 939,
+    },
+    {
       date: '2025-03-04 08:43',
       sourceUrl: 'https://www.bilibili.com/video/BV1PJ97YaEAD',
       referer: null,
@@ -362,6 +452,36 @@ export const ARTICLES_MAP: IArticleMap = {
     },
   ],
   Sword_and_Shield: [
+    {
+      date: '2025-03-15 13:09',
+      sourceUrl: 'https://www.bilibili.com/video/BV1AqQmYyEtF',
+      referer: null,
+      imageUrl: 'BV1AqQmYyEtF',
+      tagIds: [''],
+      publisher: '古老游戏玩家',
+      description:
+        '[怪物猎人·荒野] 萌新片手剑秦王绕柱砍死7星黑蚀龙\n\n我的游戏站\nhttp://111.230.29.99/',
+      typeId: 'Sword_and_Shield',
+      id: '64',
+      detail: '',
+      title: '[怪物猎人·荒野] 萌新片手剑秦王绕柱砍死7星黑蚀龙',
+      views: 14,
+    },
+    {
+      date: '2025-03-13 17:57',
+      sourceUrl: 'https://www.bilibili.com/video/BV1A7QAYSEus',
+      referer: null,
+      imageUrl: 'BV1A7QAYSEus',
+      tagIds: [''],
+      publisher: '古老游戏玩家',
+      description:
+        '[怪物猎人·荒野] 萌新片手剑18分钟秦王绕柱剑法砍死8星锁刃龙\n\n我的游戏站\nhttp://111.230.29.99/',
+      typeId: 'Sword_and_Shield',
+      id: '61',
+      detail: '',
+      title: '[怪物猎人·荒野] 萌新片手剑18分钟秦王绕柱剑法砍死8星锁刃龙',
+      views: 359,
+    },
     {
       date: '2025-02-27 09:41',
       sourceUrl: 'https://www.bilibili.com/video/BV1xUPpeVELe',
@@ -458,6 +578,52 @@ export const ARTICLES_MAP: IArticleMap = {
   ],
   Light_Bowgun: [
     {
+      date: '2025-03-10 12:13',
+      sourceUrl: 'https://www.bilibili.com/video/BV13zRgYbExS',
+      referer: null,
+      imageUrl: 'BV13zRgYbExS',
+      tagIds: [''],
+      publisher: '古老游戏玩家',
+      description:
+        '[怪物猎人·荒野] 萌新轻弩40分钟熬死冻峰龙，折磨观众\n\n我的游戏站\nhttp://111.230.29.99/',
+      typeId: 'Light_Bowgun',
+      id: '56',
+      detail: '',
+      title: '[怪物猎人·荒野] 萌新轻弩40分钟熬死冻峰龙，折磨观众',
+      views: 371,
+    },
+    {
+      date: '2025-03-09 21:53',
+      sourceUrl: 'https://www.bilibili.com/video/BV1KgRYYmEn3',
+      referer: null,
+      imageUrl: 'BV1KgRYYmEn3',
+      tagIds: [''],
+      publisher: '古老游戏玩家',
+      description:
+        '[怪物猎人·荒野] 萌新轻弩大战锁刃龙\n\n我的游戏站\nhttp://111.230.29.99/',
+      typeId: 'Light_Bowgun',
+      id: '55',
+      detail: '',
+      title: '[怪物猎人·荒野] 萌新轻弩大战锁刃龙',
+      views: 322,
+    },
+    {
+      date: '2025-03-07 12:15',
+      sourceUrl: 'https://www.bilibili.com/video/BV12HRTYVEkR',
+      referer: null,
+      imageUrl: 'BV12HRTYVEkR',
+      tagIds: [''],
+      publisher: '子烨大魔王',
+      description:
+        '觉得视频内容不错的观众朋友们点个赞吧，要是能有个三连那就更好了，嘿嘿\n轻弩连接大脑，左键代替思考\n不能保证百分之百无遗漏，欢迎大家查漏补缺\n后续如果有新内容或问题会补充在视频分p里',
+      typeId: 'Light_Bowgun',
+      id: '49',
+      detail: '',
+      title:
+        '【怪猎荒野】轻弩保姆级攻略！教学+开荒+毕业配装（全流派）十分钟从入门到精通',
+      views: 13461,
+    },
+    {
       date: '2025-03-03 11:17',
       sourceUrl: 'https://www.bilibili.com/video/BV1vD9vYPE6y',
       referer: null,
@@ -551,6 +717,21 @@ export const ARTICLES_MAP: IArticleMap = {
   ],
   Long_Sword: [
     {
+      date: '2025-03-06 22:05',
+      sourceUrl: 'https://www.bilibili.com/video/BV1BvRNYdE5Q',
+      referer: null,
+      imageUrl: 'BV1BvRNYdE5Q',
+      tagIds: [''],
+      publisher: '古老游戏玩家',
+      description:
+        '[怪物猎人·荒野] 萌新太刀初见锁刃龙\n\n我的游戏站\nhttp://111.230.29.99/',
+      typeId: 'Long_Sword',
+      id: '51',
+      detail: '',
+      title: '[怪物猎人·荒野] 萌新太刀初见锁刃龙',
+      views: 100,
+    },
+    {
       date: '2025-03-05 17:18',
       sourceUrl: 'https://www.bilibili.com/video/BV1KH9dYyEf2',
       referer: null,
@@ -598,6 +779,21 @@ export const ARTICLES_MAP: IArticleMap = {
   ],
   Gunlance: [
     {
+      date: '2025-03-14 22:17',
+      sourceUrl: 'https://www.bilibili.com/video/BV1ZeQzYCEPE',
+      referer: null,
+      imageUrl: 'BV1ZeQzYCEPE',
+      tagIds: [''],
+      publisher: '古老游戏玩家',
+      description:
+        '[怪物猎人·荒野] 萌新铳枪力战8星锁刃龙，完全不知道在打什么？\n\n我的游戏站\nhttp://111.230.29.99/',
+      typeId: 'Gunlance',
+      id: '63',
+      detail: '',
+      title: '[怪物猎人·荒野] 萌新铳枪力战8星锁刃龙，完全不知道在打什么？',
+      views: 349,
+    },
+    {
       date: '2025-03-02 23:34',
       sourceUrl: 'https://www.bilibili.com/video/BV1zG98YREBb',
       referer: null,
@@ -644,6 +840,51 @@ export const ARTICLES_MAP: IArticleMap = {
     },
   ],
   articles: [
+    {
+      date: '2025-03-12 11:40',
+      sourceUrl: 'https://www.bilibili.com/video/BV1SjQnYVE4v',
+      referer: null,
+      imageUrl: 'BV1SjQnYVE4v',
+      tagIds: [''],
+      publisher: '古老游戏玩家',
+      description:
+        '[怪物猎人·荒野] 大型宝物是什么？\n\n我的游戏站\nhttp://111.230.29.99/',
+      typeId: 'articles',
+      id: '60',
+      detail: '',
+      title: '[怪物猎人·荒野] 大型宝物是什么？',
+      views: 389,
+    },
+    {
+      date: '2025-03-11 11:08',
+      sourceUrl: 'https://www.bilibili.com/video/BV1McRJYjEHb',
+      referer: null,
+      imageUrl: 'BV1McRJYjEHb',
+      tagIds: [''],
+      publisher: '古老游戏玩家',
+      description:
+        '[怪物猎人·荒野] 巨大冰块拯救我\n\n我的游戏站\nhttp://111.230.29.99/',
+      typeId: 'articles',
+      id: '58',
+      detail: '',
+      title: '[怪物猎人·荒野] 巨大冰块拯救了我！',
+      views: 180,
+    },
+    {
+      date: '2025-03-06 08:07',
+      sourceUrl: 'https://www.bilibili.com/video/BV1FyRFYLEBZ',
+      referer: null,
+      imageUrl: 'BV1FyRFYLEBZ',
+      tagIds: [''],
+      publisher: '古老游戏玩家',
+      description:
+        '[怪物猎人·荒野·首发特典] 公会骑士套装展示！\n\n我的游戏站\nhttp://111.230.29.99/',
+      typeId: 'articles',
+      id: '50',
+      detail: '',
+      title: '[怪物猎人·荒野·首发特典] 公会骑士套装展示！',
+      views: 205,
+    },
     {
       date: '2025-03-03 13:48',
       sourceUrl: 'https://www.bilibili.com/video/BV1fF9vYMEkM',
