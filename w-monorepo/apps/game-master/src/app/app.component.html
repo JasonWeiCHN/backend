@@ -1,1 +1,31 @@
-<app-nx-welcome></app-nx-welcome> <router-outlet></router-outlet>
+<div>
+  <h1>手柄校验：</h1>
+
+  <div *ngIf="gamepad">
+    <h2>按钮状态：</h2>
+    <ul>
+      <li>A (0): {{ buttonStates[0] }}</li>
+      <li>B (1): {{ buttonStates[1] }}</li>
+      <li>X (2): {{ buttonStates[2] }}</li>
+      <li>Y (3): {{ buttonStates[3] }}</li>
+      <li>LB (4): {{ buttonStates[4] }}</li>
+      <li>RB (5): {{ buttonStates[5] }}</li>
+      <li>LT (6, 触发器): {{ gamepad.buttons[6].value.toFixed(2) }}</li>
+      <li>RT (7, 触发器): {{ gamepad.buttons[7].value.toFixed(2) }}</li>
+      <li>Back (8): {{ buttonStates[8] }}</li>
+      <li>Start (9): {{ buttonStates[9] }}</li>
+      <li>左摇杆按下 (10): {{ buttonStates[10] }}</li>
+      <li>右摇杆按下 (11): {{ buttonStates[11] }}</li>
+      <li>十字键 上 (12): {{ buttonStates[12] }}</li>
+      <li>十字键 下 (13): {{ buttonStates[13] }}</li>
+      <li>十字键 左 (14): {{ buttonStates[14] }}</li>
+      <li>十字键 右 (15): {{ buttonStates[15] }}</li>
+    </ul>
+
+    <h2>摇杆状态：</h2>
+    <p>左摇杆 X: {{ axes[0].toFixed(2) }}</p>
+    <p>左摇杆 Y: {{ axes[1].toFixed(2) }}</p>
+    <p>右摇杆 X: {{ axes[2].toFixed(2) }}</p>
+    <p>右摇杆 Y: {{ axes[3].toFixed(2) }}</p>
+  </div>
+</div>
