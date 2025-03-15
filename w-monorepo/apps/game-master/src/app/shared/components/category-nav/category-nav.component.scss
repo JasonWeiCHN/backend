@@ -1,0 +1,13 @@
+.category-nav {
+  display: flex;
+  gap: 10px;
+}
+
+.category-nav button {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.category-nav .active {
+  border-bottom: 3px solid #00f;
+}

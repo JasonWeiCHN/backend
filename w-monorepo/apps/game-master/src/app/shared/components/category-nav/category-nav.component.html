@@ -1,0 +1,8 @@
+<div class="category-nav">
+  <button
+    *ngFor="let cat of categories; let i = index"
+    [class.active]="i === selectedIndex"
+  >
+    {{ cat }}
+  </button>
+</div>

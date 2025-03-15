@@ -5,12 +5,12 @@ import { BehaviorSubject, interval } from 'rxjs';
 export class GamepadService {
   private gamepadState = new BehaviorSubject<Gamepad | null>(null);
 
-  public constructor() {
+  constructor() {
     this.startListening();
   }
 
   private startListening() {
-    interval(100).subscribe(() => {
+    interval(50).subscribe(() => {
       const gamepads = navigator.getGamepads();
       if (gamepads[0]) {
         this.gamepadState.next(gamepads[0]);
