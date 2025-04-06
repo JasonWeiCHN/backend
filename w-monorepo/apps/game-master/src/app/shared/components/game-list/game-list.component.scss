@@ -1,5 +1,14 @@
 .game-list {
-  display: flex;
-  gap: 10px;
-  overflow-x: auto;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); // 每行6列
+  gap: 16px;
+  padding: 16px;
+
+  @media (max-width: 1280px) {
+    grid-template-columns: repeat(4, 1fr); // 小屏时自适应为4列
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr); // 更小屏自适应为2列
+  }
 }

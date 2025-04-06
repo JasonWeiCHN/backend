@@ -1,11 +1,31 @@
-<app-category-nav
-  [categories]="categories"
-  [selectedIndex]="selectedCategoryIndex"
-  (categoryChanged)="changeCategory($event)"
-></app-category-nav>
+<div class="main-layout">
+  <!-- 左边：游戏卡片 -->
+  <div class="game-grid-panel">
+    <app-category-nav
+      [categories]="categories"
+      [selectedIndex]="selectedCategoryIndex"
+      (categoryChanged)="changeCategory($event)"
+    >
+    </app-category-nav>
 
-<app-game-list [games]="filteredGames" [activeIndex]="activeGameIndex">
-</app-game-list>
+    <app-game-list [games]="filteredGames" [activeIndex]="activeGameIndex">
+    </app-game-list>
+  </div>
+
+  <!-- 右边：游戏详情 -->
+  <div class="game-detail-panel" *ngIf="filteredGames[activeGameIndex]">
+    <img [src]="filteredGames[activeGameIndex].image" alt="游戏封面" />
+    <h3>{{ filteredGames[activeGameIndex].name }}</h3>
+    <p>
+      <strong>类型:</strong> {{ filteredGames[activeGameIndex].type || '未知' }}
+    </p>
+    <p>
+      <strong>发行日期:</strong>
+      {{ filteredGames[activeGameIndex].releaseDate || '暂无' }}
+    </p>
+    <p>{{ filteredGames[activeGameIndex].description || '暂无介绍' }}</p>
+  </div>
+</div>
 
 <!-- 遮罩层 -->
 <div class="game-overlay" *ngIf="isGameRunning">

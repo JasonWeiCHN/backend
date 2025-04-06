@@ -19,50 +19,122 @@ import { GameListComponent } from './shared/components/game-list/game-list.compo
   providers: [GamepadService],
 })
 export class AppComponent implements OnInit {
-  public categories = ['动作', '射击', '冒险', '策略'];
+  public categories = ['店长推荐', 'PS5', 'SWITCH', 'STEAM'];
   public games = [
     {
-      name: '真三国无双起源',
+      name: '真三国无双起源1',
       image: 'assets/F_1qug5y.png',
-      category: '动作',
+      category: ['店长推荐'],
       path: 'D:\\SANGUO\\SANGUO-ORIGINS\\DWORIGINS.exe',
+      releaseDate: '2023-05-10',
+      type: '动作冒险',
+      description: '《塞尔达传说》是任天堂开发的动作角色扮演游戏系列...',
     },
     {
-      name: '雨魂',
+      name: '真三国无双起源2',
+      image: 'assets/F_1qug5y.png',
+      category: ['店长推荐'],
+      path: 'D:\\SANGUO\\SANGUO-ORIGINS\\DWORIGINS.exe',
+      releaseDate: '2023-05-10',
+      type: '动作冒险',
+      description: '《塞尔达传说》是任天堂开发的动作角色扮演游戏系列...',
+    },
+    {
+      name: '真三国无双起源3',
+      image: 'assets/F_1qug5y.png',
+      category: ['店长推荐'],
+      path: 'D:\\SANGUO\\SANGUO-ORIGINS\\DWORIGINS.exe',
+      releaseDate: '2023-05-10',
+      type: '动作冒险',
+      description: '《塞尔达传说》是任天堂开发的动作角色扮演游戏系列...',
+    },
+    {
+      name: '真三国无双起源4',
+      image: 'assets/F_1qug5y.png',
+      category: ['店长推荐'],
+      path: 'D:\\SANGUO\\SANGUO-ORIGINS\\DWORIGINS.exe',
+      releaseDate: '2023-05-10',
+      type: '动作冒险',
+      description: '《塞尔达传说》是任天堂开发的动作角色扮演游戏系列...',
+    },
+    {
+      name: '真三国无双起源5',
+      image: 'assets/F_1qug5y.png',
+      category: ['店长推荐'],
+      path: 'D:\\SANGUO\\SANGUO-ORIGINS\\DWORIGINS.exe',
+      releaseDate: '2023-05-10',
+      type: '动作冒险',
+      description: '《塞尔达传说》是任天堂开发的动作角色扮演游戏系列...',
+    },
+    {
+      name: '真三国无双起源6',
+      image: 'assets/F_1qug5y.png',
+      category: ['店长推荐'],
+      path: 'D:\\SANGUO\\SANGUO-ORIGINS\\DWORIGINS.exe',
+      releaseDate: '2023-05-10',
+      type: '动作冒险',
+      description: '《塞尔达传说》是任天堂开发的动作角色扮演游戏系列...',
+    },
+    {
+      name: '真三国无双起源7',
+      image: 'assets/F_1qug5y.png',
+      category: ['店长推荐'],
+      path: 'D:\\SANGUO\\SANGUO-ORIGINS\\DWORIGINS.exe',
+      releaseDate: '2023-05-10',
+      type: '动作冒险',
+      description: '《塞尔达传说》是任天堂开发的动作角色扮演游戏系列...',
+    },
+    {
+      name: '店长推荐',
       image: 'assets/1058553_front.jpg',
-      category: '动作',
+      category: ['店长推荐', 'PS5'],
       path: 'F:\\BaiduNetdiskDownload\\雨魂\\app.exe',
+      releaseDate: '2023-05-10',
+      type: '动作冒险',
+      description: '《塞尔达传说》是任天堂开发的动作角色扮演游戏系列...',
     },
     {
       name: '图片',
       image: 'assets/1058553_front.jpg',
-      category: '动作',
-      path: 'F:\\爬取物\\四个表情\\image_2.png',
+      category: ['店长推荐', 'SWITCH'],
+      path: 'F:\\04.游戏数据采集\\PS345\\001.真·三国无双·起源\\F_1qug5y.png',
+      releaseDate: '2023-05-10',
+      type: '动作冒险',
+      description: '《塞尔达传说》是任天堂开发的动作角色扮演游戏系列...',
     },
     {
       name: '街机',
       image: 'assets/1058553_front.jpg',
-      category: '动作',
+      category: ['店长推荐', 'STEAM'],
       path: 'F:\\街机模拟器中文典藏版+500游戏合集\\WinKawaks.exe',
+      releaseDate: '2023-05-10',
+      type: '动作冒险',
+      description: '《塞尔达传说》是任天堂开发的动作角色扮演游戏系列...',
     },
     {
       name: 'CS:GO',
       image: 'csgo.jpg',
-      category: '射击',
+      category: ['店长推荐', 'STEAM'],
       path: 'D:\\[にじいろばんび] 尼特与天使与色色家族 官方中文版 V1.4\\[にじいろばんび] 尼特与天使与色色家族 官方中文版 V1.4\\NeetAndAngel.exe',
+      releaseDate: '2023-05-10',
+      type: '动作冒险',
+      description: '《塞尔达传说》是任天堂开发的动作角色扮演游戏系列...',
     },
     {
       name: '塞尔达',
       image: 'zelda.jpg',
-      category: '冒险',
+      category: ['SWITCH'],
       path: 'C:\\Games\\Zelda.exe',
+      releaseDate: '2023-05-10',
+      type: '动作冒险',
+      description: '《塞尔达传说》是任天堂开发的动作角色扮演游戏系列...',
     },
   ];
 
   public selectedCategoryIndex = 0;
   public activeGameIndex = 0;
-  public filteredGames = this.games.filter(
-    (g) => g.category === this.categories[0]
+  public filteredGames = this.games.filter((g) =>
+    g.category.includes(this.categories[this.selectedCategoryIndex])
   );
 
   public isGameRunning = false; // 是否正在运行游戏
@@ -92,19 +164,23 @@ export class AppComponent implements OnInit {
         const leftStickY = gp.axes[1];
 
         if (gp.buttons[14].pressed || leftStickX < -0.5) {
+          // ←
           this.changeGame(this.activeGameIndex - 1);
           this.lastPressTime = now;
         }
         if (gp.buttons[15].pressed || leftStickX > 0.5) {
+          // →
           this.changeGame(this.activeGameIndex + 1);
           this.lastPressTime = now;
         }
         if (gp.buttons[12].pressed || leftStickY < -0.5) {
-          this.changeGame(this.activeGameIndex - 1);
+          // ↑
+          this.changeGame(this.activeGameIndex - 6);
           this.lastPressTime = now;
         }
         if (gp.buttons[13].pressed || leftStickY > 0.5) {
-          this.changeGame(this.activeGameIndex + 1);
+          // ↓
+          this.changeGame(this.activeGameIndex + 6);
           this.lastPressTime = now;
         }
 
@@ -146,15 +222,20 @@ export class AppComponent implements OnInit {
   public changeCategory(index: number) {
     this.selectedCategoryIndex =
       (index + this.categories.length) % this.categories.length;
-    this.filteredGames = this.games.filter(
-      (g) => g.category === this.categories[this.selectedCategoryIndex]
+    this.filteredGames = this.games.filter((g) =>
+      g.category.includes(this.categories[this.selectedCategoryIndex])
     );
     this.activeGameIndex = 0;
   }
 
-  public changeGame(index: number) {
-    this.activeGameIndex =
-      (index + this.filteredGames.length) % this.filteredGames.length;
+  public changeGame(newIndex: number) {
+    const maxIndex = this.filteredGames.length;
+
+    // 确保 index 循环合法
+    if (newIndex < 0) newIndex = maxIndex - 1;
+    if (newIndex >= maxIndex) newIndex = 0;
+
+    this.activeGameIndex = newIndex;
   }
 
   public launchGame() {
