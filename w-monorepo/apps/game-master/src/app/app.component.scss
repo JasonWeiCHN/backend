@@ -72,3 +72,12 @@
   border-radius: 8px;
   text-align: center;
 }
+
+@media (max-width: 1280px) {
+}
+
+@media (max-width: 768px) {
+  .game-detail-panel {
+    display: none;
+  }
+}

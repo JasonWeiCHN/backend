@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { GamepadService } from './shared/services/gamepad.service';
 import { CommonModule } from '@angular/common';
@@ -19,79 +19,61 @@ import { GameListComponent } from './shared/components/game-list/game-list.compo
   providers: [GamepadService],
 })
 export class AppComponent implements OnInit {
-  public categories = ['店长推荐', 'PS5', 'SWITCH', 'STEAM'];
+  private mode: 'view' | 'play' = 'view';
+  public categories = [
+    '店长推荐',
+    '双人',
+    '亲子',
+    '剧情',
+    '困难',
+    'PS5',
+    'SWITCH',
+    'STEAM',
+  ];
   public games = [
     {
-      name: '真三国无双起源1',
-      image: 'assets/F_1qug5y.png',
-      category: ['店长推荐'],
-      path: 'D:\\SANGUO\\SANGUO-ORIGINS\\DWORIGINS.exe',
-      releaseDate: '2023-05-10',
-      type: '动作冒险',
-      description: '《塞尔达传说》是任天堂开发的动作角色扮演游戏系列...',
+      name: '双影奇境',
+      image: 'assets/game-images/双影奇境.png',
+      category: ['店长推荐', '双人', '亲子', 'PS5'],
+      path: '',
+      releaseDate: '2023-03-07',
+      type: '双人',
+      description:
+        '深入《双影奇境》的多重世界，体验惊心动魄的时刻，完成突破边界的合作冒险。',
+      video: 'assets/game-videos/双影奇境.mp4',
     },
     {
-      name: '真三国无双起源2',
-      image: 'assets/F_1qug5y.png',
-      category: ['店长推荐'],
-      path: 'D:\\SANGUO\\SANGUO-ORIGINS\\DWORIGINS.exe',
-      releaseDate: '2023-05-10',
-      type: '动作冒险',
-      description: '《塞尔达传说》是任天堂开发的动作角色扮演游戏系列...',
+      name: '双人成行',
+      image: 'assets/game-images/双人成行.png',
+      category: ['店长推荐', '双人', '亲子', 'PS5', 'SWITCH'],
+      path: '',
+      releaseDate: '2021-03-26',
+      type: '双人',
+      description:
+        '游玩《双人成行》，踏上生命中最疯狂的旅程，扮演相互看不顺眼的科迪和小梅夫妇，这两个人被魔咒变成了玩偶。他们一起被困在一个奇幻世界里，每个角落都隐藏着意想不到的东西，他们不得不一起克服挑战，同时挽救他们破裂的关系。',
+      video: 'assets/game-videos/双人成行.webm',
     },
     {
-      name: '真三国无双起源3',
-      image: 'assets/F_1qug5y.png',
-      category: ['店长推荐'],
-      path: 'D:\\SANGUO\\SANGUO-ORIGINS\\DWORIGINS.exe',
-      releaseDate: '2023-05-10',
-      type: '动作冒险',
-      description: '《塞尔达传说》是任天堂开发的动作角色扮演游戏系列...',
+      name: '怪物猎人·荒野',
+      image: 'assets/game-images/怪物猎人·荒野.png',
+      category: ['店长推荐', '困难', 'PS5', 'SWITCH'],
+      path: '',
+      releaseDate: '2025-02-28',
+      type: '狩猎',
+      description:
+        '狂野凶猛的大自然，袭来。 时刻都在动态变化的原野。 这是个关于生活在具有两面性的世界中的怪物与人们的故事。 进化的狩猎动作，寻求连续不断的沉浸感，究极的狩猎体验正等待你的到来。',
+      video: 'assets/game-videos/怪物猎人·荒野.mp4',
     },
     {
-      name: '真三国无双起源4',
-      image: 'assets/F_1qug5y.png',
-      category: ['店长推荐'],
-      path: 'D:\\SANGUO\\SANGUO-ORIGINS\\DWORIGINS.exe',
-      releaseDate: '2023-05-10',
-      type: '动作冒险',
-      description: '《塞尔达传说》是任天堂开发的动作角色扮演游戏系列...',
-    },
-    {
-      name: '真三国无双起源5',
-      image: 'assets/F_1qug5y.png',
-      category: ['店长推荐'],
-      path: 'D:\\SANGUO\\SANGUO-ORIGINS\\DWORIGINS.exe',
-      releaseDate: '2023-05-10',
-      type: '动作冒险',
-      description: '《塞尔达传说》是任天堂开发的动作角色扮演游戏系列...',
-    },
-    {
-      name: '真三国无双起源6',
-      image: 'assets/F_1qug5y.png',
-      category: ['店长推荐'],
-      path: 'D:\\SANGUO\\SANGUO-ORIGINS\\DWORIGINS.exe',
-      releaseDate: '2023-05-10',
-      type: '动作冒险',
-      description: '《塞尔达传说》是任天堂开发的动作角色扮演游戏系列...',
-    },
-    {
-      name: '真三国无双起源7',
-      image: 'assets/F_1qug5y.png',
-      category: ['店长推荐'],
-      path: 'D:\\SANGUO\\SANGUO-ORIGINS\\DWORIGINS.exe',
-      releaseDate: '2023-05-10',
-      type: '动作冒险',
-      description: '《塞尔达传说》是任天堂开发的动作角色扮演游戏系列...',
-    },
-    {
-      name: '店长推荐',
-      image: 'assets/1058553_front.jpg',
-      category: ['店长推荐', 'PS5'],
-      path: 'F:\\BaiduNetdiskDownload\\雨魂\\app.exe',
-      releaseDate: '2023-05-10',
-      type: '动作冒险',
-      description: '《塞尔达传说》是任天堂开发的动作角色扮演游戏系列...',
+      name: '真·三国无双 起源',
+      image: 'assets/game-images/真·三国无双 起源.png',
+      category: ['店长推荐', '困难', 'PS5'],
+      path: '',
+      releaseDate: '2025-01-17',
+      type: '动作',
+      description:
+        '如临真实战场，畅享爽快的一骑当千动作！无名英雄闯荡三国乱世的“真・三国无双”系列新作。',
+      video: 'assets/game-videos/真·三国无双 起源.mp4',
     },
     {
       name: '图片',
@@ -101,6 +83,7 @@ export class AppComponent implements OnInit {
       releaseDate: '2023-05-10',
       type: '动作冒险',
       description: '《塞尔达传说》是任天堂开发的动作角色扮演游戏系列...',
+      video: '',
     },
     {
       name: '街机',
@@ -110,6 +93,7 @@ export class AppComponent implements OnInit {
       releaseDate: '2023-05-10',
       type: '动作冒险',
       description: '《塞尔达传说》是任天堂开发的动作角色扮演游戏系列...',
+      video: '',
     },
     {
       name: 'CS:GO',
@@ -119,6 +103,7 @@ export class AppComponent implements OnInit {
       releaseDate: '2023-05-10',
       type: '动作冒险',
       description: '《塞尔达传说》是任天堂开发的动作角色扮演游戏系列...',
+      video: '',
     },
     {
       name: '塞尔达',
@@ -128,6 +113,7 @@ export class AppComponent implements OnInit {
       releaseDate: '2023-05-10',
       type: '动作冒险',
       description: '《塞尔达传说》是任天堂开发的动作角色扮演游戏系列...',
+      video: '',
     },
   ];
 
@@ -145,7 +131,9 @@ export class AppComponent implements OnInit {
 
   public constructor(private gamepadService: GamepadService) {}
 
-  public ngOnInit() {
+  public ngOnInit(): void {
+    this.updateGridColumnCount(); // 初始化列数
+
     this.gamepadService.getGamepadState().subscribe((gp) => {
       if (gp && !this.isGameRunning) {
         const now = Date.now();
@@ -162,6 +150,7 @@ export class AppComponent implements OnInit {
 
         const leftStickX = gp.axes[0];
         const leftStickY = gp.axes[1];
+        const colCount = this.gridColumnCount;
 
         if (gp.buttons[14].pressed || leftStickX < -0.5) {
           // ←
@@ -175,12 +164,12 @@ export class AppComponent implements OnInit {
         }
         if (gp.buttons[12].pressed || leftStickY < -0.5) {
           // ↑
-          this.changeGame(this.activeGameIndex - 6);
+          this.changeGame(this.activeGameIndex - colCount);
           this.lastPressTime = now;
         }
         if (gp.buttons[13].pressed || leftStickY > 0.5) {
           // ↓
-          this.changeGame(this.activeGameIndex + 6);
+          this.changeGame(this.activeGameIndex + colCount);
           this.lastPressTime = now;
         }
 
@@ -239,7 +228,18 @@ export class AppComponent implements OnInit {
   }
 
   public launchGame() {
+    if (this.mode === 'view') {
+      console.log(`查看模式，游戏无法运行！`);
+      return;
+    }
+
     const game = this.filteredGames[this.activeGameIndex];
+
+    if (!game.path) {
+      console.log(`路径未配置，游戏无法运行！`);
+      return;
+    }
+
     console.log(`正在启动游戏：${game.name}`);
 
     this.isGameRunning = true;
@@ -249,6 +249,25 @@ export class AppComponent implements OnInit {
       (window as any).electron.launchGame(game.path);
     } else {
       console.warn('Electron 未找到');
+    }
+  }
+
+  // 🧠 用于响应式支持的列数计算逻辑
+  public gridColumnCount = 6;
+
+  @HostListener('window:resize')
+  public onResize() {
+    this.updateGridColumnCount();
+  }
+
+  private updateGridColumnCount() {
+    const width = window.innerWidth;
+    if (width <= 768) {
+      this.gridColumnCount = 2;
+    } else if (width <= 1280) {
+      this.gridColumnCount = 4;
+    } else {
+      this.gridColumnCount = 6;
     }
   }
 }

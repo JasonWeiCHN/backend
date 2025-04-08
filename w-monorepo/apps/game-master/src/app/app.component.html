@@ -13,17 +13,28 @@
   </div>
 
   <!-- 右边：游戏详情 -->
-  <div class="game-detail-panel" *ngIf="filteredGames[activeGameIndex]">
-    <img [src]="filteredGames[activeGameIndex].image" alt="游戏封面" />
-    <h3>{{ filteredGames[activeGameIndex].name }}</h3>
-    <p>
-      <strong>类型:</strong> {{ filteredGames[activeGameIndex].type || '未知' }}
-    </p>
+  <div
+    class="game-detail-panel"
+    *ngIf="filteredGames[activeGameIndex] as activeGame"
+  >
+    <img [src]="activeGame.image" alt="游戏封面" />
+    <h3>{{ activeGame.name }}</h3>
+    <p><strong>类型:</strong> {{ activeGame.type || '未知' }}</p>
     <p>
       <strong>发行日期:</strong>
-      {{ filteredGames[activeGameIndex].releaseDate || '暂无' }}
+      {{ activeGame.releaseDate || '暂无' }}
     </p>
-    <p>{{ filteredGames[activeGameIndex].description || '暂无介绍' }}</p>
+    <p>{{ activeGame.description || '暂无介绍' }}</p>
+    <!-- 视频播放：如果 video 属性存在则显示 -->
+    <video
+      *ngIf="activeGame.video"
+      [src]="activeGame.video"
+      controls
+      autoplay
+      muted
+      playsinline
+      style="width: 100%; border-radius: 8px; margin-top: 16px"
+    ></video>
   </div>
 </div>
 
