@@ -1,6 +1,7 @@
 <div class="game-list">
   <app-game-card
     *ngFor="let game of games; let i = index"
+    [id]="'game-card-' + i"
     [game]="game"
     [isActive]="i === activeIndex"
   >

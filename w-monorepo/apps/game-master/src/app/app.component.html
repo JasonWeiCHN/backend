@@ -1,13 +1,15 @@
+<div class="nav-container">
+  <app-category-nav
+    [categories]="categories"
+    [selectedIndex]="selectedCategoryIndex"
+    (categoryChanged)="changeCategory($event)"
+  >
+  </app-category-nav>
+</div>
+
 <div class="main-layout">
   <!-- 左边：游戏卡片 -->
   <div class="game-grid-panel">
-    <app-category-nav
-      [categories]="categories"
-      [selectedIndex]="selectedCategoryIndex"
-      (categoryChanged)="changeCategory($event)"
-    >
-    </app-category-nav>
-
     <app-game-list [games]="filteredGames" [activeIndex]="activeGameIndex">
     </app-game-list>
   </div>
