@@ -27,7 +27,7 @@
     <p>{{ activeGame.description || '暂无介绍' }}</p>
     <!-- 视频播放：如果 video 属性存在则显示 -->
     <video
-      *ngIf="activeGame.video"
+      *ngIf="activeGame.video && !isVideoPlaying"
       [src]="activeGame.video"
       controls
       autoplay
@@ -44,3 +44,20 @@
     <h2>{{ runningGameName }} 正在运行...</h2>
   </div>
 </div>
+
+<!-- 全屏播放 -->
+<video
+  id="game-video"
+  *ngIf="isVideoPlaying"
+  [src]="currentVideoUrl"
+  style="
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    background: black;
+  "
+  controls
+></video>
