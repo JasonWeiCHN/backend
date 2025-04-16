@@ -1,0 +1,30 @@
+<view class="container">
+  <!-- 标题区域 -->
+  <view class="title-wrapper">
+    <rich-text class="title-line title-line-1" animation="{{titleAnimation1}}" nodes="{{titleNodes1}}"></rich-text>
+    <text class="title-line title-line-2" animation="{{titleAnimation2}}">PS5 / SWITCH / 主机游戏</text>
+  </view>
+
+  <!-- 轮播图 -->
+  <view class="game-swiper">
+    <swiper autoplay
+            interval="3000"
+            circular
+            previous-margin="30rpx"
+            next-margin="30rpx">
+      <block wx:for="{{swiperImages}}" wx:key="index">
+        <swiper-item>
+          <image src="{{item}}" class="swiper-image" mode="aspectFill"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <text class="title-line title-line-2" animation="{{titleAnimation2}}">PS5 / SWITCH / 主机游戏</text>
+  </view>
+
+
+  <!-- 按钮区域 -->
+  <view class="button-group" animation="{{buttonAnimation}}">
+    <button class="custom-button" bindtap="viewAllGames">查看全部游戏</button>
+    <button class="custom-button primary" bindtap="bookNow">立刻预约</button>
+  </view>
+</view>
