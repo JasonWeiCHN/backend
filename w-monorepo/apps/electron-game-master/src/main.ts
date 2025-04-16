@@ -10,15 +10,18 @@ let gameProcess: any = null; // 存储游戏进程
 // 创建窗口
 function createWindow() {
   win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    fullscreen: true, // ✅ 全屏模式
+    frame: false, // ✅ 去除窗口边框（包括顶部栏）
+    // width: 1200,
+    // height: 800,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       nodeIntegration: true,
     },
   });
 
-  win.loadURL('http://localhost:4200');
+  win.loadURL('http://localhost:4200'); // develop
+  // win.loadFile(path.join(__dirname, '../dist/game-master/index.html')); // production
 }
 
 // 启动应用时

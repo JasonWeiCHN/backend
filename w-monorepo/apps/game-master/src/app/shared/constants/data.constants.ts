@@ -5,6 +5,7 @@ export const CATEGORIES: string[] = [
   '双人',
   '亲子',
   '剧情',
+  '开放世界',
   '体育',
   '战争',
   '困难',
@@ -39,7 +40,7 @@ export const GAMES: IGame[] = [
   {
     name: '怪物猎人·荒野',
     image: 'assets/game-images/怪物猎人·荒野.png',
-    category: ['店长推荐', '困难', 'PS5', 'SWITCH'],
+    category: ['店长推荐', '困难', '开放世界', 'PS5'],
     path: '',
     releaseDate: '2025-02-28',
     type: '狩猎',
@@ -50,7 +51,7 @@ export const GAMES: IGame[] = [
   {
     name: '真·三国无双 起源',
     image: 'assets/game-images/真·三国无双 起源.png',
-    category: ['店长推荐', '困难', 'PS5'],
+    category: ['店长推荐', '困难', '开放世界', 'PS5'],
     path: '',
     releaseDate: '2025-01-17',
     type: '动作',
@@ -71,7 +72,7 @@ export const GAMES: IGame[] = [
   {
     name: '刺客信条·影',
     image: 'assets/game-images/刺客信条·影.png',
-    category: ['店长推荐', '剧情', 'PS5'],
+    category: ['店长推荐', '剧情', '开放世界', 'PS5'],
     path: '',
     releaseDate: '2025-03-20',
     type: '刺杀 冒险 潜行',
@@ -82,13 +83,45 @@ export const GAMES: IGame[] = [
   {
     name: '对马岛之魂',
     image: 'assets/game-images/对马岛之魂.png',
-    category: ['店长推荐', '困难', '剧情', 'PS5'],
+    category: ['店长推荐', '困难', '剧情', '开放世界', 'PS5'],
     path: '',
     releaseDate: '2024-05-16',
     type: '刺杀 冒险 潜行',
     description:
       '13世纪末，蒙古帝国东征，铁蹄所到之处皆成焦土。残暴狡诈的蒙军统帅赫通汗率领舰队大举入侵，对马岛是横亘在侵略者与日本本土之间的最后一道防线。',
     video: 'assets/game-videos/对马岛之魂.mp4',
+  },
+  {
+    name: '任天堂明星大乱斗',
+    image: 'assets/game-images/任天堂明星大乱斗.png',
+    category: ['店长推荐', '双人', '亲子', 'SWITCH'],
+    path: '',
+    releaseDate: '2018-12-07',
+    type: '大乱斗',
+    description:
+      '游戏特色在于使用“击飞值”替代传统生命数，通过增加击飞值使对手更容易被击出场外。玩家可以选择来自任天堂多个经典游戏系列的角色，如马里奥、林克等，进行爽快且夸张的战斗。',
+    video: 'assets/game-videos/任天堂明星大乱斗.mp4',
+  },
+  {
+    name: '塞尔达传说·旷野之息',
+    image: 'assets/game-images/塞尔达传说·旷野之息.png',
+    category: ['店长推荐', '开放世界', 'SWITCH'],
+    path: '',
+    releaseDate: '2017-03-03',
+    type: '开放世界 神作 动作冒险',
+    description:
+      '故事发生在海拉鲁王国灭亡的100年后，曾经一场大灾难袭击了海拉鲁王国使之灭亡，主角林克在地下遗迹苏醒，他追寻着不可思议的声音并开始了冒险之旅。',
+    video: 'assets/game-videos/塞尔达传说·旷野之息.mp4',
+  },
+  {
+    name: '塞尔达传说·王国之泪',
+    image: 'assets/game-images/塞尔达传说·王国之泪.png',
+    category: ['店长推荐', '开放世界', 'SWITCH'],
+    path: '',
+    releaseDate: '2023-05-12',
+    type: '开放世界 神作 动作冒险',
+    description: '不可思议冒险之旅继续着······',
+    video: 'assets/game-videos/塞尔达传说·王国之泪.mp4',
   },
   {
     name: '魂斗罗·加鲁加行动',
@@ -158,7 +191,7 @@ export const GAMES: IGame[] = [
   {
     name: '艾尔登法环',
     image: 'assets/game-images/艾尔登法环.png',
-    category: ['困难', '剧情', 'PS5', 'PS4', 'STEAM'],
+    category: ['困难', '开放世界', 'PS5', 'PS4', 'STEAM'],
     path: '',
     releaseDate: '2022-02-25',
     type: '魂 困难',
@@ -191,7 +224,7 @@ export const GAMES: IGame[] = [
   {
     name: '饥荒',
     image: 'assets/game-images/饥荒.png',
-    category: ['店长推荐', '双人', 'STEAM'],
+    category: ['店长推荐', '开放世界', '双人', 'STEAM'],
     path: '',
     releaseDate: '2013-04-24',
     type: '生存',
@@ -310,5 +343,38 @@ export const GAMES: IGame[] = [
     description:
       '围攻是一款物理建造游戏，你需要在此建造战争机器以破坏安宁的村庄、歼灭军队并摧毁城堡。',
     video: 'assets/game-videos/围攻.webm',
+  },
+  {
+    name: '巫师3·狂猎',
+    image: 'assets/game-images/巫师3·狂猎.png',
+    category: ['店长推荐', '开放世界', '剧情', 'STEAM'],
+    path: '',
+    releaseDate: '2015-05-18',
+    type: '角色扮演 开放世界 剧情丰富',
+    description:
+      '您是利维亚的杰洛特，收钱办事的怪物杀手。您可以在眼前这片怪物横行、饱受战火摧残的土地上尽情探索。您手上的委托？追踪预言之子——希里，一件足以改变世界面貌的活生生的武器。',
+    video: 'assets/game-videos/巫师3.mp4',
+  },
+  {
+    name: '真·三国无双7',
+    image: 'assets/game-images/真·三国无双7.png',
+    category: ['店长推荐', 'STEAM'],
+    path: '',
+    releaseDate: '2014-05-13',
+    type: '动作',
+    description:
+      '一次就能畅享一骑当千的爽快动作『真‧三国无双７』与新增丰富要素的『猛将传』两款游戏！',
+    video: 'assets/game-videos/真·三国无双7.mp4',
+  },
+  {
+    name: '帝国时代3 决定版',
+    image: 'assets/game-images/帝国时代3·决定版.png',
+    category: ['店长推荐', '战争', 'STEAM'],
+    path: '',
+    releaseDate: '2020-10-15',
+    type: '策略 即时战略',
+    description:
+      '《帝国时代 III：决定版》为玩家提供了这款具有历史背景的单人和多人实时战略游戏的试玩体验。玩家可以体验多样化的文明、合作历史战役、令人惊艳的 4K 超高清画面以及充满现代感的游戏玩法。',
+    video: 'assets/game-videos/帝国时代3·决定版.webm',
   },
 ];
