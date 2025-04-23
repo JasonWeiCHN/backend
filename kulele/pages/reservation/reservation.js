@@ -3,50 +3,35 @@ const gameMap = require('../../data/games.js');
 Page({
     data: {
         gameId: null,
+        gameName: "任意游戏",
         hourOptions: [],
         endHourOptions: [],
+        timeSlots: [],
         selectedSlot: null,
         selectedSlotIndex: null,
         customStart: "12:00",
         customEnd: "14:00",
-        startIndex: 4,
-        endIndex: 6,
         area: "hall",
         price: 0,
-        gameName: "任意游戏",
         dateOption: "today",
-        selectedDate: "",      // yyyy-mm-dd
-        minDate: "",           // 今天，用于限制 picker
+        selectedDate: "",
+        minDate: "",
         displayDate: "",
+        timeMode: "slot", // slot 或 custom
+        activeTab: "form" // tab 状态
     },
 
     onLoad(options) {
         this.initTodayDate();
-
         if (options.id) {
             const id = options.id;
-            const game = gameMap[id] || null;
+            const game = gameMap[id];
             if (game) {
-                this.setData({
-                    gameId: id,
-                    gameName: game.name
-                });
+                this.setData({ gameId: id, gameName: game.name });
             }
         }
-        this.generateTimeSlots();
         this.generateHourOptions();
-    },
-
-    getFormData() {
-        return {
-            gameId: this.data.gameId || null,
-            gameName: this.data.gameName,
-            date: this.data.selectedDate,
-            startTime: this.data.customStart,
-            endTime: this.data.customEnd,
-            area: this.data.area,
-            price: this.data.price
-        };
+        this.generateTimeSlots(true);
     },
 
     initTodayDate() {
@@ -58,13 +43,6 @@ Page({
         });
     },
 
-    submitAppointment() {
-        const data = this.getFormData();
-        console.log("提交数据：", data);
-
-        // TODO: 调用你自己的 API 提交 data
-    },
-
     formatDate(date) {
         const y = date.getFullYear();
         const m = (date.getMonth() + 1).toString().padStart(2, '0');
@@ -72,15 +50,31 @@ Page({
         return `${y}-${m}-${d}`;
     },
 
+    formatHour(h) {
+        return `${h.toString().padStart(2, '0')}:00`;
+    },
+
+    formatTime(date) {
+        const h = date.getHours().toString().padStart(2, '0');
+        const m = date.getMinutes().toString().padStart(2, '0');
+        return `${h}:${m}`;
+    },
+
+    switchTab(e) {
+        this.setData({ activeTab: e.currentTarget.dataset.tab });
+    },
+
     onDateOptionChange(e) {
         const val = e.detail.value;
         let selected = this.data.selectedDate;
+        let isToday = false;
 
         if (val === "today") {
             selected = this.formatDate(new Date());
-        } else if (val === "tomorrow") {
+            isToday = true;
+        } else {
             const t = new Date();
-            t.setDate(t.getDate() + 1);
+            if (val === "tomorrow") t.setDate(t.getDate() + 1);
             selected = this.formatDate(t);
         }
 
@@ -89,6 +83,8 @@ Page({
             selectedDate: selected,
             displayDate: selected
         });
+
+        this.generateTimeSlots(isToday);
     },
 
     onDatePickerChange(e) {
@@ -97,7 +93,17 @@ Page({
             selectedDate: val,
             displayDate: val
         });
+        this.generateTimeSlots(false);
     },
+
+    onTimeModeChange(e) {
+        this.setData({
+            timeMode: e.detail.value,
+            selectedSlotIndex: null
+        });
+        if (e.detail.value === "custom") this.calculatePrice();
+    },
+
     generateHourOptions() {
         const hours = [];
         for (let i = 8; i <= 22; i++) {
@@ -105,71 +111,51 @@ Page({
         }
         this.setData({
             hourOptions: hours,
-            endHourOptions: hours.slice(1) // 默认结束时间比开始时间晚
+            endHourOptions: hours.slice(1)
         });
     },
 
-    formatHour(h) {
-        return `${h.toString().padStart(2, '0')}:00`;
-    },
-
-    onStartHourChange(e) {
-        const index = e.detail.value;
-        const start = this.data.hourOptions[index];
-        const endOptions = this.data.hourOptions.slice(index + 1); // 更晚的整点
-        const end = endOptions[0] || ""; // 如果没有可选项
-
-        this.setData({
-            startIndex: index,
-            customStart: start,
-            endHourOptions: endOptions,
-            customEnd: end,
-            selectedSlotIndex: null
-        }, () => {
-            if (end) this.calculatePrice();
-            else this.setData({ price: 0 }); // 没有可选结束时间就不算价格
-        });
-    },
-
-    onEndHourChange(e) {
-        const index = e.detail.value;
-        const end = this.data.endHourOptions[index];
-        this.setData({
-            customEnd: end,
-            selectedSlotIndex: null
-        }, this.calculatePrice);
-    },
-
-    generateTimeSlots() {
-        const now = new Date();
-        now.setMinutes(0, 0, 0);
-        if (new Date().getMinutes() > 0) {
-            now.setHours(now.getHours() + 1);
-        }
-
+    generateTimeSlots(isToday = true) {
         const slots = [];
-        for (let i = 0; i < 4; i++) {
-            const start = new Date(now.getTime() + i * 2 * 60 * 60 * 1000);
-            const end = new Date(start.getTime() + 2 * 60 * 60 * 1000);
+        let startHour = isToday ? new Date().getHours() + (new Date().getMinutes() > 0 ? 1 : 0) : 8;
+        startHour = Math.max(8, startHour);
+
+        for (let h = startHour; h < 22; h += 2) {
             slots.push({
-                start: this.formatTime(start),
-                end: this.formatTime(end)
+                start: this.formatHour(h),
+                end: this.formatHour(h + 2)
             });
         }
 
         this.setData({ timeSlots: slots });
     },
 
+    onStartHourChange(e) {
+        const index = e.detail.value;
+        const start = this.data.hourOptions[index];
+        const endOptions = this.data.hourOptions.slice(index + 1);
+        const end = endOptions[0] || "";
 
-    formatTime(date) {
-        const h = date.getHours().toString().padStart(2, '0');
-        const m = date.getMinutes().toString().padStart(2, '0');
-        return `${h}:${m}`;
+        this.setData({
+            customStart: start,
+            endHourOptions: endOptions,
+            customEnd: end,
+            selectedSlotIndex: null
+        }, () => {
+            if (end) this.calculatePrice();
+            else this.setData({ price: 0 });
+        });
+    },
+
+    onEndHourChange(e) {
+        const end = this.data.endHourOptions[e.detail.value];
+        this.setData({ customEnd: end, selectedSlotIndex: null }, this.calculatePrice);
     },
 
     selectTimeSlot(e) {
         const slot = e.currentTarget.dataset.slot;
         const index = e.currentTarget.dataset.index;
+
         this.setData({
             customStart: slot.start,
             customEnd: slot.end,
@@ -186,22 +172,30 @@ Page({
         const [endHour] = this.data.customEnd.split(':').map(Number);
 
         const start = new Date();
-        start.setHours(startHour, 0, 0, 0);
-
         const end = new Date();
-        if (endHour <= startHour) {
-            end.setDate(end.getDate() + 1); // 到第二天
-        }
+
+        start.setHours(startHour, 0, 0, 0);
         end.setHours(endHour, 0, 0, 0);
+        if (endHour <= startHour) end.setDate(end.getDate() + 1);
 
-        let duration = (end - start) / (1000 * 60 * 60); // 小时
-
-        if (duration <= 0) {
-            this.setData({ price: 0 });
-            return;
-        }
+        const duration = (end - start) / (1000 * 60 * 60);
+        if (duration <= 0) return this.setData({ price: 0 });
 
         const rate = this.data.area === 'hall' ? 20 : 40;
         this.setData({ price: Math.ceil(duration) * rate });
+    },
+
+    submitAppointment() {
+        const data = {
+            gameId: this.data.gameId,
+            gameName: this.data.gameName,
+            date: this.data.selectedDate,
+            startTime: this.data.customStart,
+            endTime: this.data.customEnd,
+            area: this.data.area,
+            price: this.data.price
+        };
+        console.log("提交数据：", data);
+        // TODO: 提交 data 到你的后台
     }
 });

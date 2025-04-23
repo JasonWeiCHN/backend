@@ -1,63 +1,92 @@
 <view class="container">
-    <view class="header">
-        当前游戏：{{ gameName }}
+    <!-- 顶部 Tab 切换 -->
+    <view class="tabs">
+        <view class="tab-item {{activeTab === 'form' ? 'active' : ''}}" bindtap="switchTab" data-tab="form">表格预约</view>
+        <view class="tab-item {{activeTab === 'contact' ? 'active' : ''}}" bindtap="switchTab" data-tab="contact">联系预约</view>
     </view>
 
-    <view class="section">
-        <text>请选择预约日期：</text>
-        <radio-group bindchange="onDateOptionChange">
-            <label><radio value="today" checked /> 今天</label>
-            <label><radio value="tomorrow" /> 明天</label>
-            <label><radio value="other" /> 其他日期</label>
-        </radio-group>
+    <!-- 表格预约 -->
+    <view wx:if="{{activeTab === 'form'}}">
 
-        <view wx:if="{{dateOption === 'other'}}">
-            <picker mode="date" value="{{selectedDate}}" bindchange="onDatePickerChange" start="{{minDate}}">
-                <view class="picker">选择日期：{{selectedDate}}</view>
+        <view class="header">
+            当前游戏：{{ gameName }}
+        </view>
+
+        <view class="section">
+            <text>请选择预约日期：</text>
+            <radio-group bindchange="onDateOptionChange">
+                <label><radio value="today" checked="{{dateOption === 'today'}}" /> 今天</label>
+                <label><radio value="tomorrow" checked="{{dateOption === 'tomorrow'}}" /> 明天</label>
+                <label><radio value="other" checked="{{dateOption === 'other'}}" /> 其他日期</label>
+            </radio-group>
+
+            <view wx:if="{{dateOption === 'other'}}">
+                <picker mode="date" value="{{selectedDate}}" bindchange="onDatePickerChange" start="{{minDate}}">
+                    <view class="picker">选择日期：{{selectedDate}}</view>
+                </picker>
+            </view>
+
+            <view class="summary">
+                已选日期：{{displayDate}}
+            </view>
+        </view>
+
+        <!-- 时间方式选择 -->
+        <view class="section">
+            <text>请选择时间方式：</text>
+            <radio-group bindchange="onTimeModeChange">
+                <label><radio value="slot" checked="{{timeMode === 'slot'}}" /> 选择时间段</label>
+                <label><radio value="custom" checked="{{timeMode === 'custom'}}" /> 自定义时间段</label>
+            </radio-group>
+        </view>
+
+        <!-- 选择时间段 -->
+        <view wx:if="{{timeMode === 'slot'}}" class="section">
+            <text>请选择时间段：</text>
+            <block wx:for="{{timeSlots}}" wx:key="index">
+                <view class="time-slot {{selectedSlotIndex === index ? 'selected' : ''}}"
+                      bindtap="selectTimeSlot"
+                      data-slot="{{item}}"
+                      data-index="{{index}}">
+                    {{item.start}} - {{item.end}}
+                </view>
+            </block>
+        </view>
+
+        <!-- 自定义时间段 -->
+        <view wx:if="{{timeMode === 'custom'}}" class="section">
+            <text>自定义时间段：</text>
+            <picker mode="selector" range="{{hourOptions}}" bindchange="onStartHourChange">
+                <view class="picker">开始时间：{{customStart}}</view>
+            </picker>
+            <picker mode="selector" range="{{endHourOptions}}" bindchange="onEndHourChange">
+                <view class="picker">结束时间：{{customEnd}}</view>
             </picker>
         </view>
 
-        <view class="summary">
-            已选日期：{{displayDate}}
+        <!-- 区域选择 -->
+        <view class="section">
+            <text>请选择区域：</text>
+            <radio-group bindchange="onAreaChange">
+                <label><radio value="hall" checked="{{area === 'hall'}}" /> 大厅</label>
+                <label><radio value="room" checked="{{area === 'room'}}" /> 包房</label>
+            </radio-group>
+        </view>
+
+        <view class="section">
+            <text>预计价格：￥{{price}}</text>
+        </view>
+
+        <!-- 提交按钮 -->
+        <view class="button-group">
+            <button class="custom-button primary" bindtap="submitAppointment">确认预约</button>
         </view>
     </view>
 
-    <view class="section">
-        <text>请选择时间段：</text>
-        <block wx:for="{{timeSlots}}" wx:key="index">
-            <view class="time-slot {{selectedSlotIndex === index ? 'selected' : ''}}"
-                  bindtap="selectTimeSlot"
-                  data-slot="{{item}}"
-                  data-index="{{index}}">
-                {{item.start}} - {{item.end}}
-            </view>
-        </block>
-    </view>
-
-    <view class="section">
-        <text>自定义时间段：</text>
-        <picker mode="selector" range="{{hourOptions}}" bindchange="onStartHourChange">
-            <view class="picker">开始时间：{{customStart}}</view>
-        </picker>
-        <picker mode="selector" range="{{endHourOptions}}" bindchange="onEndHourChange">
-            <view class="picker">结束时间：{{customEnd}}</view>
-        </picker>
-    </view>
-
-    <view class="section">
-        <text>请选择区域：</text>
-        <radio-group bindchange="onAreaChange">
-            <label><radio value="hall" checked /> 大厅</label>
-            <label><radio value="room" /> 包房</label>
-        </radio-group>
-    </view>
-
-    <view class="section">
-        <text>预计价格：￥{{price}}</text>
-    </view>
-
-    <!-- 按钮区域 -->
-    <view class="button-group">
-        <button class="custom-button primary" bindtap="submitAppointment">确认预约</button>
+    <!-- 联系预约 -->
+    <view wx:if="{{activeTab === 'contact'}}" class="contact-section">
+        <view>微信号：WeChat123</view>
+        <view>手机号：138-0000-0000</view>
+        <image src="http://111.230.29.99:5001/assets/kulele/双影奇境S.png" mode="widthFix" style="width: 300rpx;" />
     </view>
 </view>
