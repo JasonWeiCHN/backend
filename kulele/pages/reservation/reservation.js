@@ -200,11 +200,14 @@ Page({
     onStartHourChange(e) {
         const index = e.detail.value;
         const start = this.data.customHourOptions[index];
-        const endOptions = this.data.customHourOptions.slice(index + 1);
+
+        // 找到对应的新结束时间选项
+        const startIndex = this.data.customHourOptions.indexOf(start);
+        const endOptions = this.data.customHourOptions.slice(startIndex + 1);
         const end = endOptions.length > 0 ? endOptions[0] : "";
 
         this.setData({
-            startIndex: index,
+            startIndex,
             customStart: start,
             customEndHourOptions: endOptions,
             customEnd: end,
@@ -219,8 +222,12 @@ Page({
     },
 
     onEndHourChange(e) {
-        const end = this.data.endHourOptions[e.detail.value];
-        this.setData({ customEnd: end, selectedSlotIndex: null }, this.calculatePrice);
+        const index = e.detail.value;
+        const end = this.data.customEndHourOptions[index];
+        this.setData({
+            customEnd: end,
+            selectedSlotIndex: null
+        }, this.calculatePrice);
     },
 
     selectTimeSlot(e) {
