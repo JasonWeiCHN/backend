@@ -18,7 +18,10 @@ Page({
         minDate: "",
         displayDate: "",
         timeMode: "slot", // slot 或 custom
-        activeTab: "form" // tab 状态
+        activeTab: "form",// tab 状态
+        customHourOptions: [],     // 自定义用的开始时间数组
+        customEndHourOptions: [],  // 自定义用的结束时间数组
+
     },
 
     onLoad(options) {
@@ -64,6 +67,18 @@ Page({
         this.setData({ activeTab: e.currentTarget.dataset.tab });
     },
 
+    getDefaultCustomTimes(isToday) {
+        let startHour = isToday ? new Date().getHours() + 1 : 8;
+        if (startHour > 22) startHour = 22; // 最晚起始时间限制
+        const endHour = Math.min(startHour + 2, 23); // 最多到23点
+
+        return {
+            customStart: this.formatHour(startHour),
+            customEnd: this.formatHour(endHour)
+        };
+    },
+
+
     onDateOptionChange(e) {
         const val = e.detail.value;
         let selected = this.data.selectedDate;
@@ -84,7 +99,17 @@ Page({
             displayDate: selected
         });
 
-        this.generateTimeSlots(isToday);
+        this.generateTimeSlots(isToday);         // 更新选择时间段的候选
+        this.generateCustomTimeOptions(isToday); // 更新自定义时间段的候选
+
+        // 如果当前是选择的自定义时间段模式，就主动重设当前时间值
+        if (this.data.timeMode === 'custom') {
+            const { customStart, customEnd } = this.getDefaultCustomTimes(isToday);
+            this.setData({
+                customStart,
+                customEnd
+            }, this.calculatePrice);
+        }
     },
 
     onDatePickerChange(e) {
@@ -96,24 +121,46 @@ Page({
         this.generateTimeSlots(false);
     },
 
+    getStartHourForCustomTime() {
+        const now = new Date();
+        if (this.data.dateOption === "today") {
+            let hour = now.getHours() + (now.getMinutes() > 0 ? 1 : 0);
+            return Math.min(Math.max(hour, 8), 21); // 限制范围
+        }
+        return 8;
+    },
+
+    generateCustomTimeOptions(isToday) {
+        const hours = [];
+        let startHour = isToday ? new Date().getHours() + 1 : 8;  // 今天是下一个小时，其他日期是8:00
+
+        for (let i = startHour; i <= 22; i++) {
+            hours.push(this.formatHour(i));
+        }
+
+        this.setData({
+            customHourOptions: hours,
+            customEndHourOptions: hours.slice(1)
+        });
+    },
+
     onTimeModeChange(e) {
         const mode = e.detail.value;
         if (mode === "custom") {
-            const now = new Date();
-            let hour = now.getHours() + (now.getMinutes() > 0 ? 1 : 0);
-            hour = Math.max(8, Math.min(hour, 21)); // 限制范围，避免超出结束时间
+            this.generateCustomTimeOptions();
+            const startHour = this.getStartHourForCustomTime();
+            const customStart = this.formatHour(startHour);
+            const customEnd = this.formatHour(Math.min(startHour + 2, 22));
 
-            const customStart = this.formatHour(hour);
-            const customEnd = this.formatHour(Math.min(hour + 2, 22)); // 最多到 22:00
-
-            const startIndex = this.data.hourOptions.indexOf(customStart);
-            const endOptions = this.data.hourOptions.slice(startIndex + 1);
+            const startIndex = this.data.customHourOptions.indexOf(customStart);
+            const endOptions = this.data.customHourOptions.slice(startIndex + 1);
 
             this.setData({
                 timeMode: mode,
                 customStart,
                 customEnd,
-                endHourOptions: endOptions,
+                startIndex,
+                customEndHourOptions: endOptions,
                 selectedSlotIndex: null
             }, this.calculatePrice);
         } else {
@@ -152,18 +199,22 @@ Page({
 
     onStartHourChange(e) {
         const index = e.detail.value;
-        const start = this.data.hourOptions[index];
-        const endOptions = this.data.hourOptions.slice(index + 1);
-        const end = endOptions[0] || "";
+        const start = this.data.customHourOptions[index];
+        const endOptions = this.data.customHourOptions.slice(index + 1);
+        const end = endOptions.length > 0 ? endOptions[0] : "";
 
         this.setData({
+            startIndex: index,
             customStart: start,
-            endHourOptions: endOptions,
+            customEndHourOptions: endOptions,
             customEnd: end,
             selectedSlotIndex: null
         }, () => {
-            if (end) this.calculatePrice();
-            else this.setData({ price: 0 });
+            if (end) {
+                this.calculatePrice();
+            } else {
+                this.setData({ price: 0 });
+            }
         });
     },
 

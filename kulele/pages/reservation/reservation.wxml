@@ -56,10 +56,10 @@
         <!-- 自定义时间段 -->
         <view wx:if="{{timeMode === 'custom'}}" class="section">
             <text>自定义时间段：</text>
-            <picker mode="selector" range="{{hourOptions}}" bindchange="onStartHourChange">
+            <picker mode="selector" range="{{customHourOptions}}" bindchange="onStartHourChange">
                 <view class="picker">开始时间：{{customStart}}</view>
             </picker>
-            <picker mode="selector" range="{{endHourOptions}}" bindchange="onEndHourChange">
+            <picker mode="selector" range="{{customEndHourOptions}}" bindchange="onEndHourChange">
                 <view class="picker">结束时间：{{customEnd}}</view>
             </picker>
         </view>
