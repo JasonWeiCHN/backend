@@ -97,11 +97,31 @@ Page({
     },
 
     onTimeModeChange(e) {
-        this.setData({
-            timeMode: e.detail.value,
-            selectedSlotIndex: null
-        });
-        if (e.detail.value === "custom") this.calculatePrice();
+        const mode = e.detail.value;
+        if (mode === "custom") {
+            const now = new Date();
+            let hour = now.getHours() + (now.getMinutes() > 0 ? 1 : 0);
+            hour = Math.max(8, Math.min(hour, 21)); // 限制范围，避免超出结束时间
+
+            const customStart = this.formatHour(hour);
+            const customEnd = this.formatHour(Math.min(hour + 2, 22)); // 最多到 22:00
+
+            const startIndex = this.data.hourOptions.indexOf(customStart);
+            const endOptions = this.data.hourOptions.slice(startIndex + 1);
+
+            this.setData({
+                timeMode: mode,
+                customStart,
+                customEnd,
+                endHourOptions: endOptions,
+                selectedSlotIndex: null
+            }, this.calculatePrice);
+        } else {
+            this.setData({
+                timeMode: mode,
+                selectedSlotIndex: null
+            });
+        }
     },
 
     generateHourOptions() {
