@@ -1,0 +1,63 @@
+.games-container {
+    padding: 0 24rpx;
+}
+
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10rpx;
+}
+
+.card {
+    width: 25%; /* 一行 4 个 */
+    padding: 10rpx;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.thumb {
+    width: 100%;
+    height: 200rpx;
+    border-radius: 10rpx;
+    background-color: #f0f0f0;
+}
+
+.title {
+    text-align: center;
+    margin-top: 10rpx;
+    font-size: 24rpx;
+}
+
+.search-bar {
+    padding: 20rpx;
+    background-color: #ffffff;
+}
+
+.search-input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 65rpx;
+    padding: 2rpx;
+    border: 1px solid #cccccc;
+    border-radius: 10rpx;
+}
+
+.filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+.filter-btn {
+    margin: 6rpx;
+    padding: 10rpx 20rpx;
+    font-size: 16rpx;
+    border-radius: 24rpx;
+}
+
+.filter-btn.active {
+    background-color: #007aff;
+    color: white;
+}
+

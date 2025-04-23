@@ -12,7 +12,7 @@ OUTPUT_FOLDER = r"F:/biliGet/newest-game"  # 修改为你的输出目录
 # 全局开关
 DOWNLOAD_SCREENSHOTS = True
 DOWNLOAD_MOVIES = True
-APP_ID = 601150
+APP_ID = 2001120
 
 lastTime = time.time()
 waitTime = 5 * 60.0 / 195

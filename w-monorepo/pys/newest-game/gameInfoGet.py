@@ -50,7 +50,7 @@ def getDetail(appid):
         return None
 
 def main():
-    detail = getDetail(1868140)
+    detail = getDetail(2001120)
     print(detail)
 
 if __name__ == '__main__':

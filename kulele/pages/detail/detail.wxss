@@ -1,0 +1,52 @@
+.detail-container {
+    padding: 0 24rpx;
+}
+
+.detail-section {
+    padding: 0 24rpx;
+    margin-bottom: 40rpx;
+}
+
+.game-title {
+    font-size: 40rpx;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 20rpx;
+}
+
+.game-description {
+    font-size: 32rpx;
+    color: #444;
+    margin-bottom: 16rpx;
+    line-height: 1.6;
+}
+
+.game-meta {
+    font-size: 28rpx;
+    color: #666;
+    margin-bottom: 10rpx;
+}
+
+/* 按钮区域 */
+.button-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40rpx;
+}
+
+.custom-button {
+    width: 80%;
+    padding: 20rpx 0;
+    font-size: 36rpx;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background-color: #333333;
+    border-radius: 10rpx;
+    margin: 10rpx 0;
+}
+
+.primary {
+    background-color: orange;
+}

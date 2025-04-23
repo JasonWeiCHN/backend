@@ -2,6 +2,7 @@ Page({
   data: {
     titleAnimation1: {},
     titleAnimation2: {},
+    titleAnimation3: {},
     buttonAnimation: {}, // 新增按钮动画
     swiperImages: [
       "https://cdn.midjourney.com/f35e0a99-7899-4726-a75c-d540ef091834/0_0.png",
@@ -31,12 +32,20 @@ Page({
       timingFunction: 'ease-in-out'
     });
 
+    const animation3= wx.createAnimation({
+      duration: 1000,
+      delay: 300,
+      timingFunction: 'ease-in-out'
+    });
+
     animation1.translateX(0).opacity(1).step();
     animation2.translateX(0).opacity(1).step();
+    animation3.translateX(0).opacity(1).step();
 
     this.setData({
       titleAnimation1: animation1.export(),
-      titleAnimation2: animation2.export()
+      titleAnimation2: animation2.export(),
+      titleAnimation3: animation3.export()
     });
   },
 
@@ -57,9 +66,15 @@ Page({
 
   viewAllGames() {
     wx.showToast({ title: "查看全部游戏", icon: "none" });
+    wx.navigateTo({
+      url: '/pages/games/games'
+    })
   },
 
   bookNow() {
     wx.showToast({ title: "立刻预约", icon: "success" });
+    wx.navigateTo({
+      url: '/pages/reservation/reservation'
+    })
   }
 });

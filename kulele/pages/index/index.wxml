@@ -6,8 +6,9 @@
   </view>
 
   <!-- 轮播图 -->
-  <view class="game-swiper">
-    <swiper autoplay
+  <view class="game-swiper-container">
+    <swiper class="game-swiper"
+            autoplay
             interval="3000"
             circular
             previous-margin="30rpx"
@@ -18,8 +19,8 @@
         </swiper-item>
       </block>
     </swiper>
-    <text class="title-line title-line-2" animation="{{titleAnimation2}}">PS5 / SWITCH / 主机游戏</text>
   </view>
+  <text class="title-line title-line-3" animation="{{titleAnimation3}}">店长推荐（好游戏、新游戏）</text>
 
 
   <!-- 按钮区域 -->

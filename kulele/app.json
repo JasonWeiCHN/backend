@@ -1,6 +1,9 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/games/games",
+    "pages/detail/detail",
+    "pages/reservation/reservation",
     "pages/logs/logs"
   ],
   "window": {
