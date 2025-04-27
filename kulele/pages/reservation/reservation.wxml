@@ -1,7 +1,7 @@
 <view class="container">
     <!-- 顶部 Tab 切换 -->
     <view class="tabs">
-        <view class="tab-item {{activeTab === 'form' ? 'active' : ''}}" bindtap="switchTab" data-tab="form">表格预约</view>
+        <view class="tab-item {{activeTab === 'form' ? 'active' : ''}}" bindtap="switchTab" data-tab="form">下单预约</view>
         <view class="tab-item {{activeTab === 'contact' ? 'active' : ''}}" bindtap="switchTab" data-tab="contact">联系预约</view>
     </view>
 

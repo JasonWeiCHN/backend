@@ -147,7 +147,10 @@ Page({
     onTimeModeChange(e) {
         const mode = e.detail.value;
         if (mode === "custom") {
-            this.generateCustomTimeOptions();
+            const isToday = this.data.dateOption === "today"; // ✅ 判断是否是今天
+
+            this.generateCustomTimeOptions(isToday); // ✅ 传入 isToday 参数
+
             const startHour = this.getStartHourForCustomTime();
             const customStart = this.formatHour(startHour);
             const customEnd = this.formatHour(Math.min(startHour + 2, 22));
