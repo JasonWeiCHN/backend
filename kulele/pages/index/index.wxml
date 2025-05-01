@@ -1,8 +1,13 @@
 <view class="container">
+  <view>
+    <text>欢迎你，{{userInfo.nickName}}</text>
+    <image class="user-avatar" src="{{userInfo.avatarUrl}}" mode="aspectFill" />
+  </view>
+
   <!-- 标题区域 -->
   <view class="title-wrapper">
     <rich-text class="title-line title-line-1" animation="{{titleAnimation1}}" nodes="{{titleNodes1}}"></rich-text>
-    <text class="title-line title-line-2" animation="{{titleAnimation2}}">PS5 / SWITCH / 主机游戏</text>
+    <text class="title-line title-line-2" animation="{{titleAnimation2}}">PS5 / SWITCH / 主机游戏 / 怀旧游戏</text>
   </view>
 
   <!-- 轮播图 -->
@@ -22,10 +27,16 @@
   </view>
   <text class="title-line title-line-3" animation="{{titleAnimation3}}">店长推荐（好游戏、新游戏）</text>
 
+  <!-- 状态提示区域 -->
+  <view class="status-box">
+    <text class="status-text">{{statusText}}</text>
+    <text class="countdown-text">{{countdownText}}</text>
+    <button wx:if="{{showStartButton}}" class="custom-button start-button" bindtap="startGame">开始游戏</button>
+  </view>
 
   <!-- 按钮区域 -->
   <view class="button-group" animation="{{buttonAnimation}}">
-    <button class="custom-button" bindtap="viewAllGames">查看全部游戏</button>
+    <button class="custom-button" bindtap="viewAllGames">查看游戏</button>
     <button class="custom-button primary" bindtap="bookNow">立刻预约</button>
   </view>
 </view>

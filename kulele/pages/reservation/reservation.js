@@ -276,7 +276,28 @@ Page({
             area: this.data.area,
             price: this.data.price
         };
-        console.log("提交数据：", data);
-        // TODO: 提交 data 到你的后台
+
+        wx.request({
+            url: 'http://127.0.0.1:5000/appointment',  // 注意换成你的局域网IP或者127.0.0.1
+            method: 'POST',
+            data,
+            header: {
+                'content-type': 'application/json'
+            },
+            success: (res) => {
+                console.log("预约成功：", res.data);
+                wx.showToast({
+                    title: '预约成功！',
+                    icon: 'success'
+                });
+            },
+            fail: (err) => {
+                console.error("预约失败：", err);
+                wx.showToast({
+                    title: '预约失败',
+                    icon: 'error'
+                });
+            }
+        });
     }
 });
