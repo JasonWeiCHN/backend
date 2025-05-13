@@ -7,9 +7,16 @@ Page({
     titleAnimation3: {},
     buttonAnimation: {}, // 新增按钮动画
     swiperImages: [
-      "https://cdn.midjourney.com/f35e0a99-7899-4726-a75c-d540ef091834/0_0.png",
-      "https://cdn.midjourney.com/def300bf-8287-46fe-b47c-f7f9b7aa10e6/0_0.png",
-      "https://cdn.midjourney.com/2c8191c9-91f4-42e9-9be9-beed7b62853e/0_2.png"
+      "https://i0.hdslb.com/bfs/new_dyn/a6d9efc3a58268cee2fa1b07aa95ff751526890437.jpg@1192w.avif",
+      "https://i0.hdslb.com/bfs/new_dyn/abefc6e1f05354282f06a82917e809431526890437.jpg@1192w.avif",
+      "https://i0.hdslb.com/bfs/new_dyn/4897b15dee07ad36dbc3f03cc7df4ba61526890437.jpg@1192w.avif",
+      "https://i0.hdslb.com/bfs/new_dyn/3eae66dfdc9434dce13c8a886d85dd341526890437.jpg@1192w.avif",
+      "https://i0.hdslb.com/bfs/new_dyn/bd8e432bbcb0c99f8f7fb6663bf8464f1526890437.jpg@1192w.avif",
+      "https://i0.hdslb.com/bfs/new_dyn/0ca7695b018e3dc9d51dd56bc81a450e1526890437.png@1192w.avif",
+      "https://i0.hdslb.com/bfs/new_dyn/c320227b24b19de32aa44e77f34c2f641526890437.jpg@1192w.avif",
+      "https://i0.hdslb.com/bfs/new_dyn/d0f8e8640ff2e130dfde88107bffabe61526890437.jpg@1192w.avif",
+      "https://i0.hdslb.com/bfs/new_dyn/80a7809c2c0661f2e0378189294fb8fe1526890437.jpg@1192w.avif",
+      "https://i0.hdslb.com/bfs/new_dyn/9e6800e15f7b4ef69ebf81335a8672df1526890437.jpg@1192w.avif",
     ],
     titleNodes1: [
       { name: 'span', attrs: { style: 'color: white;' }, children: [{ type: 'text', text: '酷乐乐' }] },
@@ -23,8 +30,8 @@ Page({
   },
 
   onLoad() {
-    this.loginAndGetUserInfoTest(); // test
-    // this.loginAndGetUserInfo();
+    // this.loginAndGetUserInfoTest(); // test
+    this.getUserInfo();
     this.animateTitle();
     this.animateButton(); // 页面加载时触发按钮动画
 
@@ -32,6 +39,55 @@ Page({
     setTimeout(() => {
       this.getUserStatus();
     }, 1000);
+  },
+  // 分享给朋友
+  onShareAppMessage() {
+    const promise = new Promise(resolve => {
+      setTimeout(() => {
+        resolve({
+          userName: 'gh_c8a85b176e81',
+          path: 'pages/index/index',
+          title: '酷乐乐游戏馆',
+          imagePath: '/pages/kll.png',
+          webpageUrl: '',
+          withShareTicket: true,
+          miniprogramType: 0,
+          scene: 0,
+        })
+      }, 2000)
+    })
+    return {
+      userName: 'gh_c8a85b176e81',
+      path: 'pages/index/index',
+      title: '酷乐乐游戏馆',
+      imagePath: '/pages/kll.png',
+      webpageUrl: '',
+      withShareTicket: true,
+      miniprogramType: 0,
+      scene: 0,
+      promise
+    }
+  },
+  // 分享到朋友圈
+  onShareTimeLine() {
+    return {
+      title: '酷乐乐游戏馆',
+      imagePath: '/pages/kll.png',
+    }
+  },
+
+  getUserInfo() {
+    wx.getUserInfo({
+      success: (userRes) => {
+        console.log(userRes)
+        this.setData({
+          userInfo: userRes.userInfo,
+        });
+      },
+      fail: (err) => {
+        console.error('获取用户信息失败！', err);
+      }
+    });
   },
 
   loginAndGetUserInfoTest() {
@@ -107,7 +163,7 @@ Page({
           });
         } else if (status === "playing") {
           this.setData({
-            statusText: `游戏中，结束时间：${endTime}`,
+            statusText: `正在游戏中，结束时间：${endTime}`,
             showStartButton: false,
             endTime: endTime
           });

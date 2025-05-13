@@ -18,10 +18,56 @@ Page({
         minDate: "",
         displayDate: "",
         timeMode: "slot", // slot 或 custom
-        activeTab: "form",// tab 状态
+        activeTab: "contact",// tab 状态
         customHourOptions: [],     // 自定义用的开始时间数组
         customEndHourOptions: [],  // 自定义用的结束时间数组
-
+        // 地图相关
+        shopLatitude: 22.547341,     // 替换成你店铺的纬度
+        shopLongitude: 114.139556,   // 替换成你店铺的经度
+        mapMarkers: [{
+            id: 1,
+            latitude: 22.547341,
+            longitude: 114.139556,
+            title: '酷乐乐游戏馆（经泽大厦）',
+            iconPath: '/assets/location.png', // 可选，自定义 marker 图标
+            width: 32,
+            height: 32
+        }],
+    },
+    // 分享给朋友
+    onShareAppMessage() {
+        const promise = new Promise(resolve => {
+            setTimeout(() => {
+                resolve({
+                    userName: 'gh_c8a85b176e81',
+                    path: 'pages/reservation/reservation',
+                    title: '酷乐乐游戏馆',
+                    imagePath: '/pages/kll.png',
+                    webpageUrl: '',
+                    withShareTicket: true,
+                    miniprogramType: 0,
+                    scene: 0,
+                })
+            }, 2000)
+        })
+        return {
+            userName: 'gh_c8a85b176e81',
+            path: 'pages/games/games',
+            title: '酷乐乐游戏馆',
+            imagePath: '/pages/kll.png',
+            webpageUrl: '',
+            withShareTicket: true,
+            miniprogramType: 0,
+            scene: 0,
+            promise
+        }
+    },
+    // 分享到朋友圈
+    onShareTimeLine() {
+        return {
+            title: '酷乐乐游戏馆',
+            imagePath: '/pages/kll.png',
+        }
     },
 
     onLoad(options) {
@@ -298,6 +344,37 @@ Page({
                     icon: 'error'
                 });
             }
+        });
+    },
+
+    makePhoneCall() {
+        wx.makePhoneCall({
+            phoneNumber: '19926427299'
+        });
+    },
+
+    copyWeChat() {
+        wx.setClipboardData({
+            data: '19926427299',
+            success(res) {
+                wx.showToast({
+                    title: '微信号已复制',
+                    icon: 'success'
+                });
+            }
+        });
+    },
+
+    onMarkerTap(e) {
+        const latitude = this.data.shopLatitude;
+        const longitude = this.data.shopLongitude;
+
+        wx.openLocation({
+            latitude,
+            longitude,
+            scale: 16,
+            name: '本店位置',
+            address: '请输入你的店铺地址' // 你可以自定义显示地址
         });
     }
 });

@@ -281,3 +281,28 @@ nohup python3 statistics.py > flask.log &
 cd /var/www/web-files/
 nohup python3 web.py > nohup.out 2>&1 &
 ```
+
+## 实用指令
+
+```
+找出所有监听 4011 的配置:
+grep -rn "4011" /etc/nginx/
+```
+
+## Nginx 服务器 配置 SSL
+
+```
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        # SSL configuration
+        listen 443 ssl;
+        server_name pet6688.com;
+        ssl_certificate /etc/nginx/ssl/pet6688.com_bundle.crt;
+        ssl_certificate_key /etc/nginx/ssl/pet6688.com.key;
+        ssl_session_timeout 5m;
+        ssl_protocols TLSv1.2 TLSv1.3;
+        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;
+        ssl_prefer_server_ciphers on;
+```

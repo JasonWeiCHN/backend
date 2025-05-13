@@ -24,6 +24,13 @@
     margin: 20rpx 0;
     text-align: center;
 }
+
+.sub-header {
+    font-size: 32rpx;
+    margin: 20rpx 0;
+    text-align: center;
+}
+
 .section {
     margin-bottom: 30rpx;
 }
@@ -67,5 +74,11 @@
 }
 .contact-section view {
     font-size: 30rpx;
-    margin-bottom: 20rpx;
+    margin: 20rpx 0;
+}
+
+.contact-section .button-group {
+    margin-top: 20rpx;
+    display: flex;
+    gap: 20rpx;
 }

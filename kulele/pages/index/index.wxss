@@ -3,7 +3,7 @@ page {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('https://cdn.midjourney.com/64e7bac2-ac97-43b1-b907-715c70f1818f/0_0.png'); /* 替换为你的背景图URL */
+  background-image: url('https://i0.hdslb.com/bfs/new_dyn/a74f60c1d8420c46db53dd4799baaa071526890437.png@1192w_1192h.avif'); /* 替换为你的背景图URL */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -11,6 +11,13 @@ page {
 
 .container {
   width: 100%;
+}
+
+.user-container {
+  position: absolute;
+  top: 16%;
+  text-align: center;
+  color: #ffffff;
 }
 
 .user-avatar {

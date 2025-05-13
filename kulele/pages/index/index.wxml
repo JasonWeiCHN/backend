@@ -1,7 +1,7 @@
 <view class="container">
-  <view>
+  <view class="user-container">
     <text>欢迎你，{{userInfo.nickName}}</text>
-    <image class="user-avatar" src="{{userInfo.avatarUrl}}" mode="aspectFill" />
+<!--    <image class="user-avatar" src="{{userInfo.avatarUrl}}" mode="aspectFill" />-->
   </view>
 
   <!-- 标题区域 -->
