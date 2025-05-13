@@ -52,7 +52,7 @@ Page({
         })
         return {
             userName: 'gh_c8a85b176e81',
-            path: 'pages/games/games',
+            path: 'pages/reservation/reservation',
             title: '酷乐乐游戏馆',
             imagePath: '/pages/kll.png',
             webpageUrl: '',
@@ -63,7 +63,7 @@ Page({
         }
     },
     // 分享到朋友圈
-    onShareTimeLine() {
+    onShareTimeline() {
         return {
             title: '酷乐乐游戏馆',
             imagePath: '/pages/kll.png',
@@ -374,7 +374,7 @@ Page({
             longitude,
             scale: 16,
             name: '本店位置',
-            address: '请输入你的店铺地址' // 你可以自定义显示地址
+            address: '黄贝岭·经泽大厦·7B12（7楼）' // 你可以自定义显示地址
         });
     }
 });

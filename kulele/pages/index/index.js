@@ -69,7 +69,7 @@ Page({
     }
   },
   // 分享到朋友圈
-  onShareTimeLine() {
+  onShareTimeline() {
     return {
       title: '酷乐乐游戏馆',
       imagePath: '/pages/kll.png',

@@ -29,7 +29,7 @@ Page({
             setTimeout(() => {
                 resolve({
                     userName: 'gh_c8a85b176e81',
-                    path: 'pages/index/index',
+                    path: 'pages/games/games',
                     title: '酷乐乐游戏馆',
                     imagePath: '/pages/kll.png',
                     webpageUrl: '',
@@ -52,7 +52,7 @@ Page({
         }
     },
     // 分享到朋友圈
-    onShareTimeLine() {
+    onShareTimeline() {
         return {
             title: '酷乐乐游戏馆',
             imagePath: '/pages/kll.png',
@@ -83,11 +83,27 @@ Page({
     // 筛选游戏
     filterGames() {
         const { games, searchKeyword, selectedCategory } = this.data;
+        const keyword = searchKeyword ? searchKeyword.toLowerCase() : '';
+        const category = selectedCategory ? selectedCategory.toLowerCase() : '';
+
         const filtered = games.filter(game => {
-            const matchesCategory = !selectedCategory || game.type.includes(selectedCategory);
-            const matchesSearch = !searchKeyword || game.search.includes(searchKeyword);
+            // 处理 type（可能是字符串或数组）
+            let gameTypes = [];
+            if (Array.isArray(game.type)) {
+                gameTypes = game.type.map(type => String(type).toLowerCase());
+            } else if (game.type) {
+                gameTypes = [String(game.type).toLowerCase()];
+            }
+
+            // 处理 search（确保是字符串）
+            const gameSearch = game.search ? String(game.search).toLowerCase() : '';
+
+            const matchesCategory = !category || gameTypes.some(type => type.includes(category));
+            const matchesSearch = !keyword || gameSearch.includes(keyword);
+
             return matchesCategory && matchesSearch;
         });
+
         this.setData({
             filteredGames: filtered
         });
