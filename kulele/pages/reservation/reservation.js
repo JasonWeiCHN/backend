@@ -29,7 +29,7 @@ Page({
             latitude: 22.547341,
             longitude: 114.139556,
             title: '酷乐乐游戏馆（经泽大厦）',
-            iconPath: '/assets/location.png', // 可选，自定义 marker 图标
+            // iconPath: '/assets/location.png', // 可选，自定义 marker 图标
             width: 32,
             height: 32
         }],
