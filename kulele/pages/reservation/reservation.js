@@ -1,5 +1,3 @@
-const gameMap = require('../../data/games.js');
-
 Page({
     data: {
         gameId: null,
@@ -73,11 +71,7 @@ Page({
     onLoad(options) {
         this.initTodayDate();
         if (options.id) {
-            const id = options.id;
-            const game = gameMap[id];
-            if (game) {
-                this.setData({ gameId: id, gameName: game.name });
-            }
+            this.initGame(options.id);
         }
         this.generateHourOptions();
         this.generateTimeSlots(true);
@@ -89,6 +83,22 @@ Page({
             minDate: today,
             selectedDate: today,
             displayDate: today
+        });
+    },
+
+    initGame(id) {
+        wx.request({
+            url: `https://kulele.club/api/game_detail?id=${id}`, // 注意替换成你实际的后端地址
+            method: 'GET',
+            success: (res) => {
+                const game = res.data.game;
+                if (game) {
+                    this.setData({ gameId: id, gameName: game.name });
+                }
+            },
+            fail: () => {
+                wx.showToast({ title: '获取游戏数据失败', icon: 'none' });
+            }
         });
     },
 
