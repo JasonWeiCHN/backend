@@ -282,6 +282,13 @@ cd /var/www/web-files/
 nohup python3 web.py > nohup.out 2>&1 &
 ```
 
+## 酷乐乐后台运行指令
+
+```
+cd /var/www/
+nohup python3 server.py > ~/server.log 2>&1 &
+```
+
 ## 实用指令
 
 ```

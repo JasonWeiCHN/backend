@@ -6,18 +6,7 @@ Page({
     titleAnimation2: {},
     titleAnimation3: {},
     buttonAnimation: {}, // 新增按钮动画
-    swiperImages: [
-      "https://i0.hdslb.com/bfs/new_dyn/a6d9efc3a58268cee2fa1b07aa95ff751526890437.jpg@1192w.avif",
-      "https://i0.hdslb.com/bfs/new_dyn/abefc6e1f05354282f06a82917e809431526890437.jpg@1192w.avif",
-      "https://i0.hdslb.com/bfs/new_dyn/4897b15dee07ad36dbc3f03cc7df4ba61526890437.jpg@1192w.avif",
-      "https://i0.hdslb.com/bfs/new_dyn/3eae66dfdc9434dce13c8a886d85dd341526890437.jpg@1192w.avif",
-      "https://i0.hdslb.com/bfs/new_dyn/bd8e432bbcb0c99f8f7fb6663bf8464f1526890437.jpg@1192w.avif",
-      "https://i0.hdslb.com/bfs/new_dyn/0ca7695b018e3dc9d51dd56bc81a450e1526890437.png@1192w.avif",
-      "https://i0.hdslb.com/bfs/new_dyn/c320227b24b19de32aa44e77f34c2f641526890437.jpg@1192w.avif",
-      "https://i0.hdslb.com/bfs/new_dyn/d0f8e8640ff2e130dfde88107bffabe61526890437.jpg@1192w.avif",
-      "https://i0.hdslb.com/bfs/new_dyn/80a7809c2c0661f2e0378189294fb8fe1526890437.jpg@1192w.avif",
-      "https://i0.hdslb.com/bfs/new_dyn/9e6800e15f7b4ef69ebf81335a8672df1526890437.jpg@1192w.avif",
-    ],
+    swiperImages: [],
     titleNodes1: [
       { name: 'span', attrs: { style: 'color: white;' }, children: [{ type: 'text', text: '酷乐乐' }] },
       { name: 'span', attrs: { style: 'color: white;' }, children: [{ type: 'text', text: ' 游戏馆' }] }
@@ -34,11 +23,24 @@ Page({
     this.getUserInfo();
     this.animateTitle();
     this.animateButton(); // 页面加载时触发按钮动画
+    // 获取轮播图图片
+    this.fetchSwiperImages();
 
     // 延迟确保 userInfo 拿到后才请求状态
     setTimeout(() => {
       this.getUserStatus();
     }, 1000);
+
+    wx.request({
+      url: 'https://kulele.club/api/hello',
+      method: 'GET',
+      success: (res) => {
+        console.log(res);
+      },
+      fail: (err) => {
+        console.error("hello world 失败", err);
+      }
+    });
   },
   // 分享给朋友
   onShareAppMessage() {
@@ -76,6 +78,23 @@ Page({
     }
   },
 
+  fetchSwiperImages() {
+    wx.request({
+      url: 'https://kulele.club/api/get_swiper_images',
+      method: 'GET',
+      success: (res) => {
+        if (res.data && res.data.images) {
+          this.setData({
+            swiperImages: res.data.images
+          });
+        }
+      },
+      fail: (err) => {
+        console.error("获取轮播图失败", err);
+      }
+    });
+  },
+
   getUserInfo() {
     wx.getUserInfo({
       success: (userRes) => {
@@ -102,7 +121,6 @@ Page({
       openid: 'test_openid_123456'
     });
   },
-
 
   loginAndGetUserInfo() {
     wx.login({

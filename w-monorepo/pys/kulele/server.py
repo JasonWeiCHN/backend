@@ -2,12 +2,21 @@
 from flask import Flask, request, jsonify
 from datetime import datetime, timedelta
 import requests
+import json
+import os
+
+DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 app = Flask(__name__)
 
 # 你小程序的 appid 和 appsecret
 APPID = 'wxb43b9c9b4e4bdedc'
 APPSECRET = '904096d46da12dd4a9d398a97e8a9a7f'
+
+def load_json_file(filename):
+    path = os.path.join(DATA_DIR, filename)
+    with open(path, 'r', encoding='utf-8') as f:
+        return json.load(f)
 
 @app.route('/login', methods=['POST'])
 def login():
@@ -96,5 +105,33 @@ def start_game():
         'endTime': end_time.strftime("%Y-%m-%d %H:%M:%S")
     })
 
+@app.route('/get_swiper_images', methods=['GET'])
+def get_swiper_images():
+    images = load_json_file('swiper_images.json')
+    return jsonify({'images': images})
+
+@app.route('/games_and_categories', methods=['GET'])
+def get_games_and_categories():
+    categories = load_json_file('categories.json')
+    games = load_json_file('games.json')
+    return jsonify({
+        "categories": categories,
+        "games": games
+    })
+
+@app.route('/game_detail', methods=['GET'])
+def get_game_detail():
+    game_id = request.args.get('id')
+    if not game_id:
+        return jsonify({'error': 'Missing id'}), 400
+
+    games = load_json_file('games_map.json')
+    game = games.get(game_id)
+
+    if not game:
+        return jsonify({'error': 'Game not found'}), 404
+
+    return jsonify({'game': game})
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='127.0.0.1', port=5004, debug=True)

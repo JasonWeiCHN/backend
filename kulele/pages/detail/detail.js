@@ -1,6 +1,3 @@
-// 假设你有 data/gameMap.js 管理本地游戏数据
-const gameMap = require('../../data/games.js');
-
 Page({
     data: {
         id: null,
@@ -10,13 +7,22 @@ Page({
 
     onLoad(options) {
         const id = options.id;
-        const game = gameMap[id];
-        const genreList = game.genres.map(g => g.description).join(' / ');
+        this.setData({ id });
 
-        this.setData({
-            id,
-            game,
-            genreList
+        wx.request({
+            url: `https://kulele.club/api/game_detail?id=${id}`, // 注意替换成你实际的后端地址
+            method: 'GET',
+            success: (res) => {
+                const game = res.data.game;
+                const genreList = game.genres.map(g => g.description).join(' / ');
+                this.setData({
+                    game,
+                    genreList
+                });
+            },
+            fail: () => {
+                wx.showToast({ title: '获取游戏数据失败', icon: 'none' });
+            }
         });
     },
 
