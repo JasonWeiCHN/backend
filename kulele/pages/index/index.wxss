@@ -63,12 +63,12 @@ page {
 /* 轮播图 */
 .game-swiper-container {
   width: 100%;
-  margin-top: 120rpx;
+  margin-top: 160rpx;
 }
 
 .game-swiper {
   width: 100%;
-  height: 320rpx;
+  height: 360rpx;
 }
 
 /* 轮播图项 */

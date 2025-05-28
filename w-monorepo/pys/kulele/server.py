@@ -21,7 +21,6 @@ def load_json_file(filename):
 @app.route('/login', methods=['POST'])
 def login():
     code = request.json.get('code')
-    user_info = request.json.get('userInfo')  # 前端传来的 userInfo
 
     if not code:
         return jsonify({'error': 'Missing code'}), 400
@@ -35,13 +34,38 @@ def login():
     if not openid:
         return jsonify({'error': 'Failed to get openid'}), 400
 
-    # 保存用户数据，例如保存到数据库
-    # 假设你已经保存了 user_info 和 openid
+    # 当前时间
+    timestamp = datetime.now().isoformat()
 
-    # 这里不再返回 userInfo，只返回 openid
+    # 保存用户数据到本地 JSON 文件
+    user_data = {
+        'openid': openid,
+        'timestamp': timestamp  # 添加写入时间
+    }
+
+    # 文件路径
+    file_path = 'user_data.json'
+
+    # 如果文件存在，先读取已有数据
+    if os.path.exists(file_path):
+        with open(file_path, 'r', encoding='utf-8') as f:
+            try:
+                existing_data = json.load(f)
+            except json.JSONDecodeError:
+                existing_data = []
+    else:
+        existing_data = []
+
+    # 添加当前用户数据
+    existing_data.append(user_data)
+
+    # 写入更新后的数据
+    with open(file_path, 'w', encoding='utf-8') as f:
+        json.dump(existing_data, f, ensure_ascii=False, indent=2)
+
     return jsonify({
         'openid': openid,
-        'msg': 'User data received successfully'  # 可选的返回信息
+        'msg': 'User data received and saved locally with timestamp'
     })
 
 @app.route('/appointment', methods=['POST'])

@@ -19,8 +19,7 @@ Page({
   },
 
   onLoad() {
-    // this.loginAndGetUserInfoTest(); // test
-    this.getUserInfo();
+    this.loginAndGetUserInfo();
     this.animateTitle();
     this.animateButton(); // 页面加载时触发按钮动画
     // 获取轮播图图片
@@ -30,17 +29,6 @@ Page({
     setTimeout(() => {
       this.getUserStatus();
     }, 1000);
-
-    wx.request({
-      url: 'https://kulele.club/api/hello',
-      method: 'GET',
-      success: (res) => {
-        console.log(res);
-      },
-      fail: (err) => {
-        console.error("hello world 失败", err);
-      }
-    });
   },
   // 分享给朋友
   onShareAppMessage() {
@@ -95,59 +83,20 @@ Page({
     });
   },
 
-  getUserInfo() {
-    wx.getUserInfo({
-      success: (userRes) => {
-        console.log(userRes)
-        this.setData({
-          userInfo: userRes.userInfo,
-        });
-      },
-      fail: (err) => {
-        console.error('获取用户信息失败！', err);
-      }
-    });
-  },
-
-  loginAndGetUserInfoTest() {
-    // 模拟登录逻辑
-    const fakeUserInfo = {
-      nickName: '测试用户',
-      avatarUrl: 'https://example.com/avatar.png'
-    };
-
-    this.setData({
-      userInfo: fakeUserInfo,
-      openid: 'test_openid_123456'
-    });
-  },
-
   loginAndGetUserInfo() {
     wx.login({
       success: (res) => {
         console.log('登录成功！临时code:', res.code);
 
-        // 获取用户信息
-        wx.getUserInfo({
-          success: (userRes) => {
-            console.log('用户信息：', userRes.userInfo);
-
-            // 把 code 和 userInfo 发送到后台
-            wx.request({
-              url: 'http://127.0.0.1:5000/login',
-              method: 'POST',
-              data: {
-                code: res.code,
-                userInfo: userRes.userInfo  // 直接传递用户信息
-              },
-              success: (response) => {
-                console.log('后台返回结果：', response.data);
-                // 后续处理...
-              }
-            });
+        wx.request({
+          url: 'https://kulele.club/api/login',
+          method: 'POST',
+          data: {
+            code: res.code,
           },
-          fail: (err) => {
-            console.error('获取用户信息失败！', err);
+          success: (response) => {
+            console.log('后台返回结果：', response.data);
+            // 后续处理...
           }
         });
       },
@@ -161,7 +110,7 @@ Page({
     if (!this.data.userInfo) return;
 
     wx.request({
-      url: 'http://127.0.0.1:5000/get_user_status',
+      url: 'https://kulele.club/api/get_user_status',
       method: 'GET',
       data: { openid: this.data.openid },
       success: (res) => {
@@ -196,7 +145,7 @@ Page({
 
   startGame() {
     wx.request({
-      url: 'http://127.0.0.1:5000/start_game',
+      url: 'https://kulele.club/api/start_game',
       method: 'POST',
       data: { openid: this.data.openid },
       success: (res) => {

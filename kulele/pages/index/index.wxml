@@ -1,7 +1,6 @@
 <view class="container">
   <view class="user-container">
-    <text>欢迎你，{{userInfo.nickName}}</text>
-<!--    <image class="user-avatar" src="{{userInfo.avatarUrl}}" mode="aspectFill" />-->
+    <text>欢迎你，尊贵的玩家！</text>
   </view>
 
   <!-- 标题区域 -->

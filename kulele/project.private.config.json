@@ -3,7 +3,7 @@
   "projectname": "kulele",
   "setting": {
     "compileHotReLoad": true,
-    "urlCheck": false
+    "urlCheck": true
   },
   "libVersion": "trial"
 }
