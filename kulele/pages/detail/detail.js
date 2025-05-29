@@ -62,7 +62,7 @@ Page({
 
     goBilibili(bvid) {
         const timestamp = new Date().getTime();
-        const path = `pages/video/video?avid=${bvid}`;
+        const path = `pages/video/video?bvid=${bvid}`;
 
         wx.navigateToMiniProgram({
             appId: 'wx7564fd5313d24844', // Bilibili 小程序的 appId
