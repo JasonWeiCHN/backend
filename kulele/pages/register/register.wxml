@@ -1,0 +1,21 @@
+<view class="container">
+    <view class="form-section">
+        <radio-group bindchange="onRegisterTypeChange">
+            <label><radio value="wechat" checked="{{registerType === 'wechat'}}"/> 微信</label>
+            <label><radio value="phone" checked="{{registerType === 'phone'}}"/> 手机号</label>
+        </radio-group>
+
+        <input class="input-box"
+               placeholder="{{registerType === 'wechat' ? '请输入微信号' : '请输入手机号'}}"
+               bindinput="onAccountInput"
+               value="{{account}}" />
+
+        <input class="input-box"
+               placeholder="请输入昵称（最多8个字）"
+               maxlength="8"
+               bindinput="onNicknameInput"
+               value="{{nickname}}" />
+
+        <button class="custom-button primary" bindtap="submitRegister">提交注册</button>
+    </view>
+</view>

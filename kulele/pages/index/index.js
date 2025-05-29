@@ -1,7 +1,8 @@
 Page({
   data: {
-    userInfo: null,
+    nickname: '尊贵的玩家',
     openid: null, // null
+    isRegistered: false,
     titleAnimation1: {},
     titleAnimation2: {},
     titleAnimation3: {},
@@ -30,6 +31,13 @@ Page({
       this.getUserStatus();
     }, 1000);
   },
+
+  onShow() {
+    this.setData({
+      showRegisterButton: !getApp().globalData.isRegistered
+    });
+  },
+
   // 分享给朋友
   onShareAppMessage() {
     const promise = new Promise(resolve => {
@@ -87,21 +95,29 @@ Page({
     wx.login({
       success: (res) => {
         console.log('登录成功！临时code:', res.code);
-
         wx.request({
           url: 'https://kulele.club/api/login',
           method: 'POST',
-          data: {
-            code: res.code,
-          },
+          data: { code: res.code },
           success: (response) => {
-            console.log('后台返回结果：', response.data);
-            // 后续处理...
+            const { openid, isRegistered, nickname } = response.data;
+
+            this.setData({ openid, isRegistered }); // 页面状态
+            if(nickname) {
+              this.setData({ nickname });
+            }
+            const app = getApp();
+            app.globalData.openid = openid;
+            app.globalData.isRegistered = isRegistered;
+            app.globalData.nickname = nickname || null;
+          },
+          fail: (err) => {
+            console.error("登录失败：", err);
           }
         });
       },
       fail: (err) => {
-        console.error('登录失败！', err);
+        console.error("wx.login 失败：", err);
       }
     });
   },
@@ -250,6 +266,12 @@ Page({
     wx.showToast({ title: "立刻预约", icon: "success" });
     wx.navigateTo({
       url: '/pages/reservation/reservation'
+    })
+  },
+
+  goToRegister() {
+    wx.navigateTo({
+      url: '/pages/register/register' // 确保路径正确
     })
   },
 

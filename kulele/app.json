@@ -4,7 +4,8 @@
     "pages/games/games",
     "pages/detail/detail",
     "pages/reservation/reservation",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/register/register"
   ],
   "window": {
     "navigationBarTextStyle": "black",

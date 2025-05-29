@@ -14,6 +14,8 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    openid: null,
+    isRegistered: false,
+    nickname: null,
   }
 })

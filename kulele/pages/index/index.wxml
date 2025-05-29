@@ -1,6 +1,6 @@
 <view class="container">
   <view class="user-container">
-    <text>欢迎你，尊贵的玩家！</text>
+    <text>欢迎你，{{nickname}}！</text>
   </view>
 
   <!-- 标题区域 -->
@@ -37,5 +37,8 @@
   <view class="button-group" animation="{{buttonAnimation}}">
     <button class="custom-button" bindtap="viewAllGames">查看游戏</button>
     <button class="custom-button primary" bindtap="bookNow">立刻预约</button>
+    <view wx:if="{{showRegisterButton && !isRegistered}}">
+      <button class="custom-button" bindtap="goToRegister">会员注册</button> <!-- 新增按钮 -->
+    </view>
   </view>
 </view>

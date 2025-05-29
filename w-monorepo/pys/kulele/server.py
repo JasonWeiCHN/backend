@@ -37,16 +37,12 @@ def login():
     # 当前时间
     timestamp = datetime.now().isoformat()
 
-    # 保存用户数据到本地 JSON 文件
+    # 保存用户数据到本地 JSON 文件（user_data.json）
     user_data = {
         'openid': openid,
-        'timestamp': timestamp  # 添加写入时间
+        'timestamp': timestamp
     }
-
-    # 文件路径
     file_path = 'user_data.json'
-
-    # 如果文件存在，先读取已有数据
     if os.path.exists(file_path):
         with open(file_path, 'r', encoding='utf-8') as f:
             try:
@@ -56,17 +52,82 @@ def login():
     else:
         existing_data = []
 
-    # 添加当前用户数据
     existing_data.append(user_data)
-
-    # 写入更新后的数据
     with open(file_path, 'w', encoding='utf-8') as f:
         json.dump(existing_data, f, ensure_ascii=False, indent=2)
 
+    # ✅ 读取 user_register.json 判断是否已注册
+    register_file = 'user_register.json'
+    is_registered = False
+    nickname = None
+
+    if os.path.exists(register_file):
+        with open(register_file, 'r', encoding='utf-8') as f:
+            try:
+                register_data = json.load(f)
+            except json.JSONDecodeError:
+                register_data = []
+        for user in register_data:
+            if user.get('openid') == openid:
+                is_registered = True
+                nickname = user.get('nickname')
+                break
+
     return jsonify({
         'openid': openid,
-        'msg': 'User data received and saved locally with timestamp'
+        'isRegistered': is_registered,
+        'nickname': nickname
     })
+
+@app.route('/register', methods=['POST'])
+def register():
+    data = request.get_json()
+    openid = data.get('openid')
+    register_type = data.get('registerType')
+    account = data.get('account')
+    nickname = data.get('nickname')
+
+    if not openid or not register_type or not account or not nickname:
+        return jsonify({'error': 'missing_fields', 'msg': 'Missing required fields'}), 400
+
+    file_path = 'user_register.json'
+    if os.path.exists(file_path):
+        with open(file_path, 'r', encoding='utf-8') as f:
+            try:
+                existing_data = json.load(f)
+            except json.JSONDecodeError:
+                existing_data = []
+    else:
+        existing_data = []
+
+    if any(user.get('openid') == openid for user in existing_data):
+        return jsonify({'error': 'already_registered', 'msg': 'User already registered'}), 400
+
+    # 校验
+    if register_type == 'phone':
+        import re
+        if not re.match(r'^1[3-9]\d{9}$', account):
+            return jsonify({'error': 'invalid_phone_format', 'msg': 'Invalid phone number format'}), 400
+    elif register_type == 'wechat':
+        if not (4 <= len(account) <= 20):
+            return jsonify({'error': 'invalid_wechat_format', 'msg': 'WeChat ID must be 4-20 characters'}), 400
+
+    if len(nickname) > 8:
+        return jsonify({'error': 'nickname_too_long', 'msg': 'Nickname too long'}), 400
+
+    # 添加注册记录
+    existing_data.append({
+        'openid': openid,
+        'register_type': register_type,
+        'account': account,
+        'nickname': nickname,
+        'timestamp': datetime.now().isoformat()
+    })
+
+    with open(file_path, 'w', encoding='utf-8') as f:
+        json.dump(existing_data, f, ensure_ascii=False, indent=2)
+
+    return jsonify({'msg': 'Registration successful'})
 
 @app.route('/appointment', methods=['POST'])
 def appointment():
