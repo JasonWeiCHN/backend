@@ -2,7 +2,8 @@ Page({
     data: {
         id: null,
         game: {},
-        genreList: ''
+        genreList: '',
+        guides: []
     },
 
     onLoad(options) {
@@ -15,9 +16,14 @@ Page({
             success: (res) => {
                 const game = res.data.game;
                 const genreList = game.genres.map(g => g.description).join(' / ');
+
+                // 攻略数据（假设接口里 guides 是数组）
+                const guides = game.guides || [];
+
                 this.setData({
                     game,
-                    genreList
+                    genreList,
+                    guides
                 });
             },
             fail: () => {
@@ -33,5 +39,41 @@ Page({
                 url: `/pages/reservation/reservation?id=${this.data.id}`
             });
         }, 500);
+    },
+
+    openGuide(e) {
+        const url = e.currentTarget.dataset.url;
+        console.log("打开链接：", url);
+
+        // 判断是否是 bilibili 自定义链接，如 bilibili/KxvgR7vRlrdRWAp
+        const bilibiliCustomPattern = /^bilibili\/([\w\d]+)/;
+
+        const match = url.match(bilibiliCustomPattern);
+        if (match) {
+            const aid = match[1]; // 提取 avid 或 BV号
+            this.goBilibili(aid); // 跳转 bilibili 小程序
+        } else {
+            // 非 bilibili 链接，走 webview
+            wx.navigateTo({
+                url: `/pages/webview/webview?url=${encodeURIComponent(url)}`
+            });
+        }
+    },
+
+    goBilibili(aid) {
+        const timestamp = new Date().getTime();
+        const path = `pages/video/video?avid=${aid}`;
+
+        wx.navigateToMiniProgram({
+            appId: 'wx7564fd5313d24844', // Bilibili 小程序的 appId
+            path,
+            success: res => {
+                console.log('跳转 bilibili 小程序成功');
+            },
+            fail: err => {
+                console.error('跳转 bilibili 小程序失败', err);
+            }
+        });
     }
+
 });

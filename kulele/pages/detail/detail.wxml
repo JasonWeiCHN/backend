@@ -7,6 +7,22 @@
         <view class="game-meta">发售日期：{{ game.release_date.date }}</view>
     </view>
 
+    <!-- 游戏攻略 -->
+    <view wx:if="{{guides.length}}" class="detail-section">
+        <view class="section-title">游戏攻略</view>
+        <block wx:for="{{ guides }}" wx:key="index">
+            <view class="guide-item" bindtap="openGuide" data-url="{{ item.sourceUrl }}">
+                <!-- 缩略图，默认隐藏，可通过注释取消展示 -->
+                <!-- <image class="guide-thumb" src="{{ item.thumbnailUrl }}" mode="aspectFill" /> -->
+                <view class="guide-content">
+                    <view class="guide-title">{{ item.title }}</view>
+                    <view class="guide-desc">{{ item.description }}</view>
+                    <view class="guide-author">作者：{{ item.author }}</view>
+                </view>
+            </view>
+        </block>
+    </view>
+
     <!-- 按钮区域 -->
     <view class="button-group">
         <button class="custom-button primary" bindtap="bookNow">立刻预约</button>
