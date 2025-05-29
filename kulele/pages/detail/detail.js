@@ -50,8 +50,8 @@ Page({
 
         const match = url.match(bilibiliCustomPattern);
         if (match) {
-            const aid = match[1]; // 提取 avid 或 BV号
-            this.goBilibili(aid); // 跳转 bilibili 小程序
+            const bvid = match[1]; // 提取 avid 或 BV号
+            this.goBilibili(bvid); // 跳转 bilibili 小程序
         } else {
             // 非 bilibili 链接，走 webview
             wx.navigateTo({
@@ -60,9 +60,9 @@ Page({
         }
     },
 
-    goBilibili(aid) {
+    goBilibili(bvid) {
         const timestamp = new Date().getTime();
-        const path = `pages/video/video?bvid=BV1AX4y1g79E`;
+        const path = `pages/video/video?avid=${bvid}`;
 
         wx.navigateToMiniProgram({
             appId: 'wx7564fd5313d24844', // Bilibili 小程序的 appId
