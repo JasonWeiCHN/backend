@@ -1,0 +1,27 @@
+package com.wei.accounting.request;
+
+import lombok.Data;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.util.List;
+
+@Data
+public class AddAccountingRecordRequest {
+
+    private LocalDateTime startDateTime;
+    private LocalDateTime endDateTime;
+    private BigDecimal duration;
+
+    private String consoleType;
+    private List<String> gameNames;
+
+    private String customerType;
+    private Boolean isReturning;
+
+    private BigDecimal actualAmount;
+    private String platform;
+
+    private String contactType;
+    private String contactValue;
+}

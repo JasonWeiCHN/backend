@@ -1,0 +1,40 @@
+<div class="accounting-list">
+  <h2>记账记录列表</h2>
+  <button class="add-button" [routerLink]="['/accounting/new']">
+    ➕ 新增记录
+  </button>
+
+  <table class="record-table">
+    <thead>
+      <tr>
+        <th>单号</th>
+        <th>时间段</th>
+        <th>时长</th>
+        <th>游戏机</th>
+        <th>游戏名</th>
+        <th>客户类型</th>
+        <th>回头客</th>
+        <th>实收金额</th>
+        <th>平台</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let record of records">
+        <td>{{ record.id }}</td>
+        <td>{{ formatTimeRange(record.startDateTime, record.endDateTime) }}</td>
+        <td>{{ record.duration }}</td>
+        <td>{{ record.consoleType }}</td>
+        <td>{{ record.gameNames.join('; ') }}</td>
+        <td>{{ record.customerType }}</td>
+        <td>{{ record.isReturning ? '是' : '否' }}</td>
+        <td>{{ record.actualAmount }}</td>
+        <td>{{ record.platform }}</td>
+        <td>
+          <button [routerLink]="['/accounting/edit', record.id]">编辑</button>
+          <button (click)="delete(record.id)">删除</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

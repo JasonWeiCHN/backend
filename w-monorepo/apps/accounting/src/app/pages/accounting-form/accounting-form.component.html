@@ -1,0 +1,114 @@
+<div class="accounting-form">
+  <h2>{{ isEditMode ? '编辑' : '新增' }}记账记录</h2>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label>
+      开始时间：
+      <input
+        type="datetime-local"
+        formControlName="startDateTime"
+        (focus)="openDatePicker($event)"
+      />
+    </label>
+
+    <label>
+      结束时间：
+      <input
+        type="datetime-local"
+        formControlName="endDateTime"
+        (focus)="openDatePicker($event)"
+      />
+    </label>
+
+    <label>
+      时长（小时）：
+      <input type="number" [value]="form.get('duration')?.value" readonly />
+    </label>
+
+    <label>
+      游戏机类型：
+      <select formControlName="consoleType">
+        <option value="" disabled selected>请选择游戏机类型</option>
+        <option *ngFor="let console of consoleOptions" [value]="console">
+          {{ console }}
+        </option>
+      </select>
+    </label>
+
+    <label>
+      游戏名：
+      <input
+        type="text"
+        [formControl]="searchControl"
+        (focus)="showSuggestions = true"
+        (blur)="onBlur()"
+        placeholder="输入关键词搜索游戏"
+      />
+    </label>
+
+    <div class="game-select">
+      <!-- 搜索建议列表 -->
+      <ul
+        *ngIf="showSuggestions && filteredSuggestions.length > 0"
+        class="suggestions"
+      >
+        <li
+          *ngFor="let suggestion of filteredSuggestions"
+          (mousedown)="selectGame(suggestion)"
+        >
+          {{ suggestion.name }}
+        </li>
+      </ul>
+
+      <!-- 已选游戏 -->
+      <div class="selected-games">
+        <span *ngFor="let game of selectedGames" class="chip">
+          {{ game }}
+          <button type="button" (click)="removeGame(game)">×</button>
+        </span>
+      </div>
+    </div>
+
+    <label>
+      客户类型：
+      <input formControlName="customerType" />
+    </label>
+
+    <label>
+      是否回头客：
+      <input type="checkbox" formControlName="isReturning" />
+    </label>
+
+    <label>
+      实收金额：
+      <input type="number" formControlName="actualAmount" />
+    </label>
+
+    <label>
+      平台：
+      <select formControlName="platform">
+        <option *ngFor="let p of platforms" [value]="p">{{ p }}</option>
+      </select>
+    </label>
+
+    <label>
+      联系方式类型（可选）：
+      <select formControlName="contactType">
+        <option *ngFor="let c of contactTypes" [value]="c">{{ c }}</option>
+      </select>
+    </label>
+
+    <label>
+      联系方式（可选）：
+      <input formControlName="contactValue" />
+    </label>
+
+    <div class="actions">
+      <button type="submit" [disabled]="form.invalid">
+        {{ isEditMode ? '保存修改' : '提交' }}
+      </button>
+      <button type="button" (click)="router.navigate(['/accounting'])">
+        取消
+      </button>
+    </div>
+  </form>
+</div>
