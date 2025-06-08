@@ -1,0 +1,31 @@
+<div class="game-list">
+  <button class="add-button" [routerLink]="['/game/new']">➕ 新增游戏</button>
+
+  <table class="game-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>游戏名</th>
+        <th>标签</th>
+        <th>描述</th>
+        <th>视频</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let game of games">
+        <td>{{ game.id }}</td>
+        <td>{{ game.name }}</td>
+        <td>{{ game.tags?.join(', ') }}</td>
+        <td>{{ game.description || '—' }}</td>
+        <td>
+          <a *ngIf="game.video" [href]="game.video" target="_blank">查看</a>
+        </td>
+        <td>
+          <button [routerLink]="['/game/edit', game.id]">编辑</button>
+          <button (click)="deleteGame(game.id)">删除</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
