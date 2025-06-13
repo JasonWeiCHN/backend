@@ -5,29 +5,147 @@
     margin-bottom: 20px;
   }
 
-  .add-button {
+  .top-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     margin-bottom: 12px;
-    padding: 6px 12px;
-    background-color: #eeeeee;
-    color: #333333;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
 
-    &:hover {
-      background-color: #20409f;
-      color: #ffffff;
+    .add-button {
+      padding: 0 12px; // 上下padding改为0，左右保持12px
+      height: 36px; // 设定固定高度
+      line-height: 36px; // 文字垂直居中
+      background-color: #eeeeee;
+      color: #333333;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px; // 统一字体大小
+
+      &:hover {
+        background-color: #20409f;
+        color: #ffffff;
+      }
+    }
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+
+      /* 整体边框和背景，颜色和新增按钮一致 */
+      border: 1px solid #eeeeee;
+      border-radius: 4px;
+      background-color: #eeeeee;
+      padding: 0 8px; // 上下padding改为0，左右保持8px
+      height: 36px; // 设定统一高度
+
+      select, input {
+        border: none;
+        outline: none;
+        background: transparent;
+        padding: 0 6px; // 上下padding改为0，左右6px
+        font-size: 14px;
+        color: #333;
+        height: 28px; // 适当高度，垂直居中
+      }
+
+      select {
+        border-right: 1px solid #ccc;
+        margin-right: 8px;
+      }
+
+      input {
+        height: 28px;
+        background: #ffffff;
+        flex-grow: 1;
+      }
+
+      button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        color: #333333;
+        padding: 0 6px;
+        height: 28px;
+
+        &:hover {
+          color: #20409f;
+        }
+      }
     }
   }
 
   .record-table {
     width: 100%;
     border-collapse: collapse;
+    table-layout: fixed; // ✨确保列宽和省略号生效
 
     th, td {
       border: 1px solid #ccc;
       padding: 8px;
       text-align: center;
+      line-height: 1.2;
+      height: 36px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    // 设置每一列的宽度
+    th:nth-child(1), td:nth-child(1) {
+      width: 50px;
+    }
+
+    // 单号
+    th:nth-child(2), td:nth-child(2) {
+      width: 240px;
+    }
+
+    // 时间段
+    th:nth-child(3), td:nth-child(3) {
+      width: 60px;
+    }
+
+    // 时长
+    th:nth-child(4), td:nth-child(4) {
+      width: 85px;
+    }
+
+    // 机型
+    th:nth-child(5), td:nth-child(5) {
+      width: 200px;
+    }
+
+    // 游戏名
+    th:nth-child(6), td:nth-child(6) {
+      width: 120px;
+    }
+
+    // 客户类型（省略号）
+    th:nth-child(7), td:nth-child(7) {
+      width: 80px;
+    }
+
+    // 回头客
+    th:nth-child(8), td:nth-child(8) {
+      width: 100px;
+    }
+
+    // 实收金额
+    th:nth-child(9), td:nth-child(9) {
+      width: 160px;
+    }
+
+    // 备注（可省略号）
+    th:nth-child(10), td:nth-child(10) {
+      width: 120px;
+    }
+
+    // 平台
+    th:nth-child(11), td:nth-child(11) {
+      width: 180px;
+      white-space: nowrap;
     }
 
     th {
@@ -40,8 +158,32 @@
 
     button {
       margin: 0 4px;
-      padding: 4px 8px;
+      padding: 4px 6px;
+      font-size: 14px;
       cursor: pointer;
     }
   }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+    gap: 12px;
+
+    button {
+      padding: 4px 10px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &:disabled {
+        color: #999;
+        background-color: #eee;
+        cursor: not-allowed;
+      }
+    }
+  }
+
 }

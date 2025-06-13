@@ -1,0 +1,720 @@
+{
+  "20250404": {
+    "orders": [
+      {
+        "orderNumber": 1,
+        "time": "17:30",
+        "customer": "情侣",
+        "remarks": "已核销",
+        "game": "双影奇境"
+      }
+    ]
+  },
+  "20250405": {
+    "orders": [
+      {
+        "orderNumber": 2,
+        "time": "14:30-17:30",
+        "customer": "王主任",
+        "remarks": "结账",
+        "game": "双影奇境"
+      },
+      {
+        "orderNumber": 3,
+        "time": "14:40-16:40",
+        "customer": "三人组",
+        "remarks": "结账",
+        "game": "双人成行"
+      },
+      {
+        "orderNumber": 4,
+        "time": "15:30-18:30",
+        "customer": "4人组",
+        "remarks": "包双座 两座",
+        "game": "双人成行"
+      },
+      {
+        "orderNumber": 5,
+        "time": "20:10-22:10",
+        "customer": "2人组",
+        "remarks": "情侣",
+        "game": "双人成行"
+      }
+    ]
+  },
+  "20250406": {
+    "orders": [
+      {
+        "orderNumber": 6,
+        "time": "10:55-12:55",
+        "customer": "母子",
+        "remarks": "",
+        "game": "任天堂全明星大乱斗"
+      },
+      {
+        "orderNumber": 7,
+        "time": "13:40",
+        "customer": "情侣",
+        "remarks": "",
+        "game": "双影奇境"
+      }
+    ]
+  },
+  "20250411": {
+    "orders": [
+      {
+        "orderNumber": 8,
+        "time": "15:30-18:30",
+        "customer": "",
+        "remarks": "",
+        "game": "双影奇境"
+      },
+      {
+        "orderNumber": 9,
+        "time": "19:40-23:10",
+        "customer": "",
+        "remarks": "+1.5H 30元",
+        "game": "双人成行"
+      }
+    ]
+  },
+  "20250413": {
+    "orders": [
+      {
+        "orderNumber": 10,
+        "time": "13:10-15:10",
+        "customer": "情侣+爸爸",
+        "remarks": "SWITCH 游戏 30元 微信转账",
+        "game": ""
+      },
+      {
+        "orderNumber": 11,
+        "time": "15:00-17:00",
+        "customer": "",
+        "remarks": "",
+        "game": "双人成行"
+      },
+      {
+        "orderNumber": 12,
+        "time": "17:40-19:40",
+        "customer": "情侣",
+        "remarks": "SWITCH 下了亲子票",
+        "game": ""
+      }
+    ]
+  },
+  "20250414": {
+    "orders": [
+      {
+        "orderNumber": 13,
+        "time": "13:20-15:20",
+        "customer": "情侣",
+        "remarks": "",
+        "game": "双影奇境"
+      }
+    ]
+  },
+  "20250416": {
+    "orders": [
+      {
+        "orderNumber": 14,
+        "time": "15:30-17:00",
+        "customer": "",
+        "remarks": "刺客信条·影 8小时 80元 按时间计费 mmm 1.5h",
+        "game": ""
+      },
+      {
+        "orderNumber": 15,
+        "time": "19:20-21:35",
+        "customer": "",
+        "remarks": "兄弟：双子传说（没完成 注意 这不是双人游戏！） 改玩 茶杯头",
+        "game": ""
+      },
+      {
+        "orderNumber": 16,
+        "time": "21:30-23:00",
+        "customer": "",
+        "remarks": "刺客信条·影 8小时 80元 按时间计费 mmm 1h40min",
+        "game": ""
+      }
+    ]
+  },
+  "20250417": {
+    "orders": [
+      {
+        "orderNumber": 17,
+        "time": "21:30-23:00",
+        "customer": "",
+        "remarks": "刺客信条·影 8小时 80元 按时间计费 mmm",
+        "game": ""
+      }
+    ]
+  },
+  "20250418": {
+    "orders": [
+      {
+        "orderNumber": 18,
+        "time": "15:20-17:50",
+        "customer": "",
+        "remarks": "刺客信条·影 8小时 80元 按时间计费 mmm",
+        "game": ""
+      }
+    ]
+  },
+  "20250419": {
+    "orders": [
+      {
+        "orderNumber": 19,
+        "time": "10:15-12:15",
+        "customer": "爸爸带双胞胎",
+        "remarks": "我的世界 地下城 亲子票",
+        "game": ""
+      },
+      {
+        "orderNumber": 20,
+        "time": "14:30-16:30",
+        "customer": "爸爸带两个孩子",
+        "remarks": "我的世界 地下城 80元",
+        "game": ""
+      }
+    ]
+  },
+  "20250420": {
+    "orders": [
+      {
+        "orderNumber": 21,
+        "time": "14:00-16:00",
+        "customer": "情侣",
+        "remarks": "SWITCH 又开了亲子票 提醒重下单",
+        "game": ""
+      }
+    ]
+  },
+  "20250421": {
+    "orders": [
+      {
+        "orderNumber": 22,
+        "time": "13:30-16:30",
+        "customer": "情侣",
+        "remarks": "SWITCH 马里奥赛车 回头客 转账 45",
+        "game": ""
+      },
+      {
+        "orderNumber": 23,
+        "time": "16:30-19:30",
+        "customer": "两广东基友",
+        "remarks": "FC2025 新客户 加时间 20/小时 加1小时",
+        "game": ""
+      },
+      {
+        "orderNumber": null,
+        "time": "18:00-19:00",
+        "customer": "情侣",
+        "remarks": "免费试玩 SWITCH",
+        "game": ""
+      },
+      {
+        "orderNumber": 24,
+        "time": "19:00-21:00",
+        "customer": "",
+        "remarks": "双人成行 需要查下通关记录",
+        "game": ""
+      }
+    ]
+  },
+  "20250422": {
+    "orders": [
+      {
+        "orderNumber": 25,
+        "time": "19:30-21:30",
+        "customer": "",
+        "remarks": "双人成行 回头客",
+        "game": ""
+      }
+    ]
+  },
+  "20250423": {
+    "orders": [
+      {
+        "orderNumber": null,
+        "time": "5:45-",
+        "customer": "女家长带男孩子",
+        "remarks": "免费试玩 SWITCH 我的世界 地下城",
+        "game": ""
+      },
+      {
+        "orderNumber": 26,
+        "time": "20:40-22:40",
+        "customer": "情侣",
+        "remarks": "双人成行",
+        "game": ""
+      }
+    ]
+  },
+  "20250424": {
+    "orders": [
+      {
+        "orderNumber": null,
+        "time": "2:40-3:40",
+        "customer": "",
+        "remarks": "免费试玩 四 鬼泣5 秋天的狐狸",
+        "game": ""
+      },
+      {
+        "orderNumber": null,
+        "time": "17:30",
+        "customer": "爸爸带孩子",
+        "remarks": "免费试玩 三 我的世界地下城",
+        "game": ""
+      },
+      {
+        "orderNumber": null,
+        "time": null,
+        "customer": "",
+        "remarks": "抖音探店二 一鸣（天乐）",
+        "game": ""
+      }
+    ]
+  },
+  "20250425": {
+    "orders": [
+      {
+        "orderNumber": 27,
+        "time": "19:00-21:00",
+        "customer": "学生情侣",
+        "remarks": "",
+        "game": "双影奇境"
+      },
+      {
+        "orderNumber": 28,
+        "time": "21:50-23:50",
+        "customer": "两兄弟（广东的）",
+        "remarks": "",
+        "game": "黑神话"
+      }
+    ]
+  },
+  "20250426": {
+    "orders": [
+      {
+        "orderNumber": 29,
+        "time": "10:30-12:30",
+        "customer": "爸爸带双胞胎",
+        "remarks": "我的世界 地下城 亲子票 回头客",
+        "game": ""
+      },
+      {
+        "orderNumber": 30,
+        "time": "14:50-16:50",
+        "customer": "",
+        "remarks": "双人成行",
+        "game": ""
+      },
+      {
+        "orderNumber": 31,
+        "time": "15:25-16:50",
+        "customer": "本层的孩子们",
+        "remarks": "",
+        "game": ""
+      },
+      {
+        "orderNumber": null,
+        "time": "15:08-17:08",
+        "customer": "抖音达人 肖婷婷",
+        "remarks": "",
+        "game": ""
+      },
+      {
+        "orderNumber": null,
+        "time": "15:56-17:56",
+        "customer": "抖音达人 JAY JAY JAY",
+        "remarks": "",
+        "game": ""
+      }
+    ]
+  },
+  "20250427": {
+    "orders": [
+      {
+        "orderNumber": 32,
+        "time": "15:10-17:10",
+        "customer": "高达达人",
+        "remarks": "高达破坏者 高达无双 鬼武者 SWITCH",
+        "game": ""
+      },
+      {
+        "orderNumber": 33,
+        "time": null,
+        "customer": "四人厅 两兄弟->四兄弟",
+        "remarks": "黑神话 双影奇境 黑神话 回头客",
+        "game": "",
+        "extra": [
+          {
+            "time": "23:30-1:50",
+            "price": 50
+          },
+          {
+            "time": "23:30-2:30",
+            "price": 60
+          }
+        ]
+      }
+    ]
+  },
+  "20250428": {
+    "orders": [
+      {
+        "orderNumber": 34,
+        "time": "14:50-18:50",
+        "customer": "情侣（附近）",
+        "remarks": "4小时",
+        "game": "双人成行"
+      },
+      {
+        "orderNumber": 35,
+        "time": "15:40-16:40",
+        "customer": "情侣（抖音）",
+        "remarks": "1小时40元",
+        "game": "双人成行"
+      }
+    ]
+  },
+  "20250430": {
+    "orders": [
+      {
+        "orderNumber": null,
+        "time": "18:07-19:07",
+        "customer": "屌丝男女 1120 粉丝 男屌丝一个",
+        "remarks": "大众点评0元探店（维度）",
+        "game": "双影奇境"
+      }
+    ]
+  },
+  "20250501": {
+    "orders": [
+      {
+        "orderNumber": 36,
+        "time": "13:15-15:15",
+        "customer": "情侣",
+        "remarks": "2小时",
+        "game": "双影奇境"
+      },
+      {
+        "orderNumber": 35,
+        "time": "14:55-16:55",
+        "customer": "两个情侣",
+        "remarks": "双影奇境 + 双人成行 四人大厅 2小时 抖音",
+        "game": ""
+      },
+      {
+        "orderNumber": 36,
+        "time": "15:06-16:06",
+        "customer": "情侣",
+        "remarks": "1小时 美团",
+        "game": "双人成行"
+      },
+      {
+        "orderNumber": 37,
+        "time": "15:23-17:23",
+        "customer": "情侣",
+        "remarks": "2小时 美团",
+        "game": "双影奇境"
+      },
+      {
+        "orderNumber": 38,
+        "time": "17:30-19:30",
+        "customer": "闺蜜",
+        "remarks": "2小时 美团",
+        "game": "双人成行"
+      },
+      {
+        "orderNumber": 39,
+        "time": "17:30-19:30",
+        "customer": "情侣",
+        "remarks": "2小时 美团",
+        "game": "双影奇境"
+      },
+      {
+        "orderNumber": 40,
+        "time": "18:31-19:31",
+        "customer": "姐弟",
+        "remarks": "1小时 探店 大众点评",
+        "game": "switch"
+      }
+    ]
+  },
+  "20250502": {
+    "orders": [
+      {
+        "orderNumber": 41,
+        "time": "14:10-16:15",
+        "customer": "闺蜜",
+        "remarks": "2小时 美团",
+        "game": "胡闹厨房"
+      },
+      {
+        "orderNumber": 42,
+        "time": "19:30-21:30",
+        "customer": "基友",
+        "remarks": "2小时 抖音",
+        "game": "双影奇境"
+      }
+    ]
+  },
+  "20250503": {
+    "orders": [
+      {
+        "orderNumber": 43,
+        "time": "05:40-8:40",
+        "customer": "情侣",
+        "remarks": "睡觉 3小时 微信转账 120 已结",
+        "game": ""
+      },
+      {
+        "orderNumber": 44,
+        "time": "14:05-16:05",
+        "customer": "闺蜜",
+        "remarks": "2小时 大众点评 72 已结",
+        "game": "双影奇境"
+      },
+      {
+        "orderNumber": 45,
+        "time": "14:10-16:10",
+        "customer": "情侣",
+        "remarks": "switch游戏 2小时 美团 72 已结",
+        "game": ""
+      },
+      {
+        "orderNumber": 46,
+        "time": "14:40-17:40",
+        "customer": "闺蜜",
+        "remarks": "双影奇境 3小时 美团 120 已结",
+        "game": ""
+      },
+      {
+        "orderNumber": 47,
+        "time": "15:30-16:30",
+        "customer": "兄弟",
+        "remarks": "PS4游戏 1小时 抖音 80 已结（提前走 退30元）",
+        "game": ""
+      },
+      {
+        "orderNumber": 48,
+        "time": "16:20-18:20",
+        "customer": "",
+        "remarks": "switch游戏 2小时 美团 72 已结",
+        "game": ""
+      },
+      {
+        "orderNumber": 49,
+        "time": "16:30-17:30",
+        "customer": "",
+        "remarks": "双人成行 1小时 美团 40 已结",
+        "game": ""
+      },
+      {
+        "orderNumber": 50,
+        "time": "18:30-19:30",
+        "customer": "兄弟",
+        "remarks": "街霸6 1小时 美图",
+        "game": ""
+      }
+    ]
+  },
+  "20250504": {
+    "orders": [
+      {
+        "orderNumber": 51,
+        "time": "15:00-17:00",
+        "customer": "兄弟（河南老乡）",
+        "remarks": "2小时 美团 72 已结",
+        "game": "双影奇境"
+      },
+      {
+        "orderNumber": 52,
+        "time": "15:00-16:00",
+        "customer": "情侣",
+        "remarks": "1小时 美团 40 已结",
+        "game": "小霸王-魂斗罗"
+      },
+      {
+        "orderNumber": 53,
+        "time": "15:10-18:10",
+        "customer": "亲子（老客户 哥哥+妹妹 翠园学校）",
+        "remarks": "3小时（2小时+1小时熟客价） 美团 72+30",
+        "game": "switch-任天堂大乱斗"
+      },
+      {
+        "orderNumber": 54,
+        "time": "15:30-17:30",
+        "customer": "情侣",
+        "remarks": "2小时 美团 72",
+        "game": "PS4-双人成行"
+      },
+      {
+        "orderNumber": 55,
+        "time": "15:40-17:40",
+        "customer": "情侣",
+        "remarks": "2小时 美团 72",
+        "game": "PS5-双人成行"
+      },
+      {
+        "orderNumber": 56,
+        "time": "17:40-19:40",
+        "customer": "闺蜜",
+        "remarks": "2小时 美团 72",
+        "game": "PS4-胡闹厨房+大富翁"
+      },
+      {
+        "orderNumber": null,
+        "time": "21:10-22:10",
+        "customer": "兄弟",
+        "remarks": "大众点评0元探店（维度）",
+        "game": "PS5-双影奇境"
+      },
+      {
+        "orderNumber": 57,
+        "time": "21:30-10:30",
+        "customer": "情侣",
+        "remarks": "1小时 美团 40",
+        "game": "PS5-黑神话"
+      }
+    ]
+  },
+  "20250505": {
+    "orders": [
+      {
+        "orderNumber": 58,
+        "time": "13:50-15:50",
+        "customer": "爸爸带双胞胎",
+        "remarks": "亲子票 回头客 两台机 160",
+        "game": "PS5-疯狂兔子+SWITCH"
+      },
+      {
+        "orderNumber": 59,
+        "time": "14:30-16:30",
+        "customer": "亲子（香港妈妈+孩子）",
+        "remarks": "美团 72",
+        "game": "PS5-魂斗罗"
+      }
+    ]
+  },
+  "20250506": {
+    "orders": [
+      {
+        "orderNumber": 60,
+        "time": "20:40-21:40",
+        "customer": "闺蜜",
+        "remarks": "抖音 38+20",
+        "game": "双人成行"
+      }
+    ]
+  },
+  "20250507": {
+    "orders": [
+      {
+        "orderNumber": 61,
+        "time": "17:00-20:00",
+        "customer": "兄弟（回头客）",
+        "remarks": "美团 80+40",
+        "game": "PS5-FC2025"
+      }
+    ]
+  },
+  "20250508": {
+    "orders": [
+      {
+        "orderNumber": null,
+        "time": "17:20-18:40",
+        "customer": "妈妈带儿子",
+        "remarks": "大众点评免费试-super饭（写好评，要草莓熊和水，还加时间）",
+        "game": null
+      },
+      {
+        "orderNumber": null,
+        "time": "17:40-18:20",
+        "customer": "中年男人",
+        "remarks": "大众点评免费试-VNS，玩黑猴+FC2025 玩不动了",
+        "game": null
+      },
+      {
+        "orderNumber": 62,
+        "time": "19:00-21:00",
+        "customer": "情侣（回头客）",
+        "remarks": "美团 80",
+        "game": "PS5-双影奇境"
+      }
+    ]
+  },
+  "20250509": {
+    "orders": [
+      {
+        "orderNumber": null,
+        "time": "16:25-17:25",
+        "customer": null,
+        "remarks": "大众点评免费试-大反派，PS5租的机器",
+        "game": null
+      },
+      {
+        "orderNumber": 63,
+        "time": "17:00-19:00",
+        "customer": "闺蜜",
+        "remarks": "抖音 76",
+        "game": "PS5-双影奇境"
+      }
+    ]
+  },
+  "20250510": {
+    "orders": [
+      {
+        "orderNumber": 64,
+        "time": "10:30-12:00",
+        "customer": "双胞胎爸爸",
+        "remarks": "收 120 已结",
+        "game": "PS5-双人成行 + SWITCH-宝可梦 阿尔萨斯"
+      },
+      {
+        "orderNumber": 65,
+        "time": "10:50-12:50",
+        "customer": "情侣（回头客）",
+        "remarks": "美团 80",
+        "game": "PS5-双影奇境"
+      },
+      {
+        "orderNumber": 66,
+        "time": "12:30-15:30",
+        "customer": "情侣",
+        "remarks": "美团 120",
+        "game": "PS5-双影奇境"
+      },
+      {
+        "orderNumber": 67,
+        "time": "16:10-18:10",
+        "customer": "情侣",
+        "remarks": "美团 80",
+        "game": "PS5-双影奇境"
+      },
+      {
+        "orderNumber": null,
+        "time": "17:30-18:30",
+        "customer": null,
+        "remarks": "大众点评0元探店",
+        "game": "星之卡比"
+      },
+      {
+        "orderNumber": 70,
+        "time": "18:00-20:30",
+        "customer": "漂亮妈妈+孩子+她的两个弟弟",
+        "remarks": "订了两个双人大厅 60+60+30",
+        "game": null
+      },
+      {
+        "orderNumber": 71,
+        "time": "19:30-21:30",
+        "customer": "闺蜜",
+        "remarks": "美团",
+        "game": "PS5-双人成行"
+      }
+    ]
+  }
+}

@@ -1,0 +1,538 @@
+{
+  "20250511": {
+    "orders": [
+      {
+        "orderNumber": 72,
+        "time": "16:45-17:45",
+        "customer": "情侣（两人都用了券）",
+        "remarks": "大众点评免费试",
+        "game": "模拟器游戏"
+      },
+      {
+        "orderNumber": 72,
+        "time": "20:45-21:45",
+        "customer": "漂亮妈妈+孩子+孩子他爸",
+        "remarks": "",
+        "game": "PS5-双人成行"
+      }
+    ]
+  },
+  "20250514": {
+    "orders": [
+      {
+        "orderNumber": null,
+        "time": "17:50-18:50",
+        "customer": "来过的妈妈",
+        "remarks": "大众点评免费试",
+        "game": "黑神话·悟空"
+      },
+      {
+        "orderNumber": 73,
+        "time": "23:50-02:50",
+        "customer": "基友",
+        "remarks": "",
+        "game": "PS5-FC25"
+      }
+    ]
+  },
+  "20250515": {
+    "orders": [
+      {
+        "orderNumber": 74,
+        "time": "19:00-09:10",
+        "customer": "情侣（回头客）",
+        "remarks": "",
+        "game": "PS5-双影奇境"
+      }
+    ]
+  },
+  "20250516": {
+    "orders": [
+      {
+        "orderNumber": null,
+        "time": "13:15-14:15",
+        "customer": "中年口吃男",
+        "remarks": "大众点评免费试",
+        "game": ""
+      },
+      {
+        "orderNumber": 75,
+        "time": "17:50-19:50",
+        "customer": "漂亮小姨+孩子+男朋友",
+        "remarks": "",
+        "game": "PS5-双人成行"
+      },
+      {
+        "orderNumber": 76,
+        "time": "18:40-19:40",
+        "customer": "",
+        "remarks": "玩了半小时",
+        "game": "PS5-对马岛之魂"
+      },
+      {
+        "orderNumber": 77,
+        "time": "20:00-24:00",
+        "customer": "四人大厅",
+        "remarks": "",
+        "game": "PS5-FC25/街机"
+      },
+      {
+        "orderNumber": null,
+        "time": "20:51-21:51",
+        "customer": "爸爸带儿子",
+        "remarks": "大众点评免费试",
+        "game": ""
+      },
+      {
+        "orderNumber": 78,
+        "time": "21:30-23:30",
+        "customer": "",
+        "remarks": "",
+        "game": "PS5-双影奇境"
+      }
+    ]
+  },
+  "20250517": {
+    "orders": [
+      {
+        "orderNumber": 79,
+        "time": "10:30-",
+        "customer": "爸爸带双胞胎(回头客)",
+        "remarks": "两台机",
+        "game": ""
+      },
+      {
+        "orderNumber": 80,
+        "time": "11:15-14:15",
+        "customer": "闺蜜",
+        "remarks": "3小时",
+        "game": "PS5-双影奇境"
+      },
+      {
+        "orderNumber": 81,
+        "time": "14:50-15:50",
+        "customer": "",
+        "remarks": "8.5小时充值(8小时)",
+        "game": "mmm"
+      },
+      {
+        "orderNumber": 82,
+        "time": "14:50-16:50",
+        "customer": "父母带孩子",
+        "remarks": "2小时",
+        "game": "SWITCH-双人成行"
+      },
+      {
+        "orderNumber": 83,
+        "time": "17:50-19:50",
+        "customer": "漂亮小姨+孩子+男朋友",
+        "remarks": "",
+        "game": "PS5-双人成行"
+      }
+    ]
+  },
+  "20250518": {
+    "orders": [
+      {
+        "orderNumber": 84,
+        "time": "13:30-15:30",
+        "customer": "爸爸带儿子",
+        "remarks": "2小时",
+        "game": "SWITCH"
+      },
+      {
+        "orderNumber": null,
+        "time": "15:11-17:11",
+        "customer": "两人",
+        "remarks": "大众点评免费试，两小时",
+        "game": "PS5-双影奇境"
+      },
+      {
+        "orderNumber": null,
+        "time": "17:00-18:00",
+        "customer": "爸爸带儿子",
+        "remarks": "大众点评免费试",
+        "game": "模拟器"
+      },
+      {
+        "orderNumber": 85,
+        "time": "19:30-21:30",
+        "customer": "漂亮妈妈小姨+弟弟+孩子",
+        "remarks": "",
+        "game": "PS5-双人成行"
+      }
+    ]
+  },
+  "20250519": {
+    "orders": [
+      {
+        "orderNumber": null,
+        "time": "晚上10点",
+        "customer": "",
+        "remarks": "要玩双影奇境，没做",
+        "game": ""
+      }
+    ]
+  },
+  "20250520": {
+    "orders": [
+      {
+        "orderNumber": null,
+        "time": "18:48-19:48",
+        "customer": "爸爸带儿子",
+        "remarks": "大众点评免费试",
+        "game": "月光宝盒"
+      },
+      {
+        "orderNumber": 86,
+        "time": "20:10-22:10",
+        "customer": "",
+        "remarks": "2小时",
+        "game": "PS5-双影奇境"
+      },
+      {
+        "orderNumber": null,
+        "time": "22:00-23:00",
+        "customer": "失眠医生",
+        "remarks": "大众点评免费试",
+        "game": "SWITCH-星之卡比"
+      }
+    ]
+  },
+  "20250521": {
+    "orders": [
+      {
+        "orderNumber": 87,
+        "time": "16:00-19:00",
+        "customer": "",
+        "remarks": "2小时",
+        "game": "PS5-魂斗罗"
+      },
+      {
+        "orderNumber": 88,
+        "time": "18:40-20:40",
+        "customer": "",
+        "remarks": "2小时",
+        "game": "SWITCH-人类一败涂地&胡闹厨房"
+      }
+    ]
+  },
+  "20250522": {
+    "orders": [
+      {
+        "orderNumber": null,
+        "time": "15:20-16:20",
+        "customer": "",
+        "remarks": "大众点评0元探店",
+        "game": "PS5-FC2025"
+      },
+      {
+        "orderNumber": 89,
+        "time": "20:43-22:43",
+        "customer": "情侣",
+        "remarks": "抖音，2小时",
+        "game": "SWITCH-我的世界·地下城"
+      }
+    ]
+  },
+  "20250523": {
+    "orders": [
+      {
+        "orderNumber": null,
+        "time": "15:45-16:45",
+        "customer": "女美术生",
+        "remarks": "大众点评0元探店",
+        "game": "PS5自选"
+      },
+      {
+        "orderNumber": null,
+        "time": "16:27-17:27",
+        "customer": "附近女生（单人）",
+        "remarks": "大众点评0元探店",
+        "game": "SWITCH-星之卡比"
+      },
+      {
+        "orderNumber": null,
+        "time": "17:36-18:36",
+        "customer": "母女",
+        "remarks": "大众点评0元探店",
+        "game": "SWITCH-星之卡比"
+      }
+    ]
+  },
+  "20250524": {
+    "orders": [
+      {
+        "orderNumber": 90,
+        "time": "10:20-12:13",
+        "customer": "爸爸带双胞胎(回头客)",
+        "remarks": "两台机",
+        "game": ""
+      },
+      {
+        "orderNumber": 91,
+        "time": "14:00-16:00",
+        "customer": "情侣（回头客）",
+        "remarks": "",
+        "game": "SWITCH-马里奥赛车"
+      },
+      {
+        "orderNumber": 92,
+        "time": "14:20-16:50",
+        "customer": "情侣",
+        "remarks": "",
+        "game": "PS5-双影奇境"
+      },
+      {
+        "orderNumber": 93,
+        "time": "16:20-18:50",
+        "customer": "情侣（回头客）",
+        "remarks": "送半小时 未付钱",
+        "game": "PS5-双影奇境"
+      },
+      {
+        "orderNumber": 94,
+        "time": "18:10-19:10",
+        "customer": "情侣（中学生）",
+        "remarks": "",
+        "game": "PS5-双影奇境"
+      },
+      {
+        "orderNumber": 95,
+        "time": "20:00-22:00",
+        "customer": "情侣",
+        "remarks": "",
+        "game": "SWITCH-毛线小精灵"
+      }
+    ]
+  },
+  "20250525": {
+    "orders": [
+      {
+        "orderNumber": 96,
+        "time": "10:30-12:30",
+        "customer": "父子（回头客）",
+        "remarks": "自由休息",
+        "game": ""
+      },
+      {
+        "orderNumber": 97,
+        "time": "16:50-17:50",
+        "customer": "",
+        "remarks": "",
+        "game": "PS5-疯狂兔子:奇遇派对"
+      },
+      {
+        "orderNumber": 98,
+        "time": "17:20-20:00",
+        "customer": "父亲两个儿子",
+        "remarks": "",
+        "game": "PS5-双影奇境"
+      }
+    ]
+  },
+  "20250526": {
+    "orders": [
+      {
+        "orderNumber": 99,
+        "time": "16:00-19:00",
+        "customer": "情侣",
+        "remarks": "",
+        "game": "PS5-双影奇境"
+      }
+    ]
+  },
+  "20250527": {
+    "orders": [
+      {
+        "orderNumber": 100,
+        "time": "19:43-22:43",
+        "customer": "五个人（回头客）",
+        "remarks": "",
+        "game": "PS5-FC25-四人厅"
+      }
+    ]
+  },
+  "20250528": {
+    "orders": [
+      {
+        "orderNumber": 101,
+        "time": "12:00-15:00",
+        "customer": "附近基友",
+        "remarks": "",
+        "game": "PS5-FC25"
+      }
+    ]
+  },
+  "20250531": {
+    "orders": [
+      {
+        "orderNumber": 102,
+        "time": "11:00-12:00",
+        "customer": "基友",
+        "remarks": "美团",
+        "game": "SWITCH-大头盔英雄+我的世界·地下城"
+      },
+      {
+        "orderNumber": 103,
+        "time": "13:20-16:20",
+        "customer": "情侣",
+        "remarks": "美团",
+        "game": "PS5-双人成行"
+      },
+      {
+        "orderNumber": 104,
+        "time": "16:00-19:00",
+        "customer": "父亲带两个儿子",
+        "remarks": "抖音 + 40（加了一小时）",
+        "game": "PS5-黑神话"
+      },
+      {
+        "orderNumber": 105,
+        "time": "16:10-19:10",
+        "customer": "情侣",
+        "remarks": "美团",
+        "game": "PS5-双人成行"
+      },
+      {
+        "orderNumber": 106,
+        "time": "19:10-22:40",
+        "customer": "冼先生夫妻带两个儿子",
+        "remarks": "3.5小时，回头客",
+        "game": "PS5-双影奇境"
+      }
+    ]
+  },
+  "20250601": {
+    "orders": [
+      {
+        "orderNumber": 107,
+        "time": "10:00-14:00",
+        "customer": "闺蜜（回头客）",
+        "remarks": "114 美团",
+        "game": "PS5-双影奇境"
+      },
+      {
+        "orderNumber": 108,
+        "time": "16:50-18:50",
+        "customer": "情侣",
+        "remarks": "80 18826249052（女客电话）",
+        "game": "PS5-双人成行"
+      },
+      {
+        "orderNumber": 109,
+        "time": "17:20-20:20",
+        "customer": "情侣",
+        "remarks": "",
+        "game": "PS5-双影奇境"
+      },
+      {
+        "orderNumber": 110,
+        "time": "17:50-18:50",
+        "customer": "情侣",
+        "remarks": "",
+        "game": "SWITCH"
+      },
+      {
+        "orderNumber": 111,
+        "time": "19:30-21:30",
+        "customer": "",
+        "remarks": "",
+        "game": "PS5-双影奇境"
+      }
+    ]
+  },
+  "20250602": {
+    "orders": [
+      {
+        "orderNumber": 112,
+        "time": "11:00-13:00",
+        "customer": "",
+        "remarks": "54 美团",
+        "game": "SWITCH-大头盔英雄"
+      },
+      {
+        "orderNumber": 113,
+        "time": "15:00-17:00",
+        "customer": "",
+        "remarks": "80 门市",
+        "game": "PS5-黑神话+街霸"
+      }
+    ]
+  },
+  "20250603": {
+    "orders": [
+      {
+        "orderNumber": 114,
+        "time": "15:00-17:00",
+        "customer": "",
+        "remarks": "美团",
+        "game": "PS5-FC2025"
+      },
+      {
+        "orderNumber": 115,
+        "time": "17:20-20:20",
+        "customer": "",
+        "remarks": "门市",
+        "game": "PS5-双影奇境"
+      }
+    ]
+  },
+  "20250606": {
+    "orders": [
+      {
+        "orderNumber": 116,
+        "time": "20:20-22:20",
+        "customer": "",
+        "remarks": "80 美团 问我工作日包天多少钱",
+        "game": "PS5-双影奇境"
+      }
+    ]
+  },
+  "20250607": {
+    "orders": [
+      {
+        "orderNumber": 117,
+        "time": "11:00-12:00",
+        "customer": "爸爸带双胞胎(回头客)",
+        "remarks": "40 门市",
+        "game": "SWITCH-大头盔英雄"
+      },
+      {
+        "orderNumber": 118,
+        "time": "14:25-17:25",
+        "customer": "情侣",
+        "remarks": "17798337808 120 美团",
+        "game": "PS5-双影奇境"
+      },
+      {
+        "orderNumber": 119,
+        "time": "14:25-16:25",
+        "customer": "闺蜜",
+        "remarks": "80 美团",
+        "game": "PS5-双影奇境"
+      },
+      {
+        "orderNumber": 120,
+        "time": "15:20-18:20",
+        "customer": "闺蜜",
+        "remarks": "120 美团 15016645343",
+        "game": "PS5-双影奇境"
+      },
+      {
+        "orderNumber": 121,
+        "time": "18:50-20:50",
+        "customer": "情侣",
+        "remarks": "抖音",
+        "game": "SWITCH"
+      },
+      {
+        "orderNumber": 122,
+        "time": "19:20-21:20",
+        "customer": "情侣",
+        "remarks": "80 美团",
+        "game": "PS5-双影奇境"
+      }
+    ]
+  }
+}

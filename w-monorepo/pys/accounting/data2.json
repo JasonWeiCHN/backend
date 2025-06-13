@@ -1,0 +1,88 @@
+{
+  "20250608": {
+    "orders": [
+      {
+        "orderNumber": 123,
+        "time": "13:00-15:00",
+        "customer": "爸爸带双胞胎(回头客)",
+        "remarks": "门市",
+        "game": "SWITCH-大头盔英雄"
+      },
+      {
+        "orderNumber": 124,
+        "time": "16:40-18:40",
+        "customer": "情侣（13713826407）",
+        "remarks": "美团",
+        "game": "SWITCH-路易吉洋馆3"
+      },
+      {
+        "orderNumber": 125,
+        "time": "16:55-19:30",
+        "customer": "情侣(回头客)",
+        "remarks": "门市",
+        "game": "PS5-双影奇境"
+      }
+    ]
+  },
+  "20250609": {
+    "orders": [
+      {
+        "orderNumber": 126,
+        "time": "17:10-20:10",
+        "customer": "闺蜜（单人）",
+        "remarks": "美团",
+        "game": "PS5-真·三国无双"
+      },
+      {
+        "orderNumber": 127,
+        "time": "18:50-20:50",
+        "customer": "闺蜜（单人）",
+        "remarks": "美团",
+        "game": "SWITCH-风花雪月"
+      }
+    ]
+  },
+  "20250611": {
+    "orders": [
+      {
+        "orderNumber": 128,
+        "time": "13:25-15:25",
+        "customer": "情侣",
+        "remarks": "美团",
+        "game": "PS5-双影奇境"
+      },
+      {
+        "orderNumber": 129,
+        "time": "16:10-17:10",
+        "customer": "情侣",
+        "remarks": "美团",
+        "game": "PS5-双影奇境"
+      },
+      {
+        "orderNumber": 130,
+        "time": "19:47-21:47",
+        "customer": "闺蜜",
+        "remarks": "美团",
+        "game": "SWITCH"
+      },
+      {
+        "orderNumber": 131,
+        "time": "20:33-21:33",
+        "customer": "",
+        "remarks": "大众点评",
+        "game": "PS5-FC25"
+      }
+    ]
+  },
+  "20250612": {
+    "orders": [
+      {
+        "orderNumber": 132,
+        "time": "15:56-17:56",
+        "customer": "情侣",
+        "remarks": "美团",
+        "game": "PS5-双人成行"
+      }
+    ]
+  }
+}

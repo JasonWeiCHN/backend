@@ -24,4 +24,6 @@ public class AddAccountingRecordRequest {
 
     private String contactType;
     private String contactValue;
+
+    private String remark;
 }

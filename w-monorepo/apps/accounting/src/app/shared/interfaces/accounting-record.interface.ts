@@ -11,4 +11,5 @@ export interface IAccountingRecord {
   platform: '美团' | '抖音' | '门市' | '小红书' | string;
   contactType?: string | null;
   contactValue?: string | null;
+  remark?: string;
 }

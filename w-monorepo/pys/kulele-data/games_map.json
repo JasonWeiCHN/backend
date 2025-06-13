@@ -1,0 +1,284 @@
+{
+  "1": {
+    "name": "双影奇境",
+    "short_description": "可能是现在最好玩的双人合作游戏。米欧和佐伊是两位风格截然不同的作家，她们一个擅长科幻小说，另一个专注于奇幻题材。被骗进入一台意在窃取创意的机器后，她们陷入了自己创作的故事之中。",
+    "genres": [
+      {
+        "id": "1",
+        "description": "动作"
+      },
+      {
+        "id": "25",
+        "description": "冒险"
+      }
+    ],
+    "release_date": {
+      "date": "2025 年 3 月 6 日"
+    },
+    "guides": [
+      {
+        "title": "全剧情流程通关攻略",
+        "description": "全任务 全收集",
+        "author": "11的游戏世界",
+        "sourceUrl": "bilibili/BV1AmRKYBEXQ"
+      }
+    ]
+  },
+  "2": {
+    "name": "双人成行",
+    "short_description": "在这款游戏中，两位玩家将扮演小梅和科迪这两位感情濒临破裂的中年夫妻。缩小后变成Q版的3D角色，在奇幻而且梦幻化的场景中，开始一段精彩纷呈、惊心动魄、激动人心的大冒险。游戏一共有7个章节，分别是棚屋、大树、罗斯的房间、布谷鸟钟、雪景球、花园、阁楼！每个章节都有独特的玩法，人物拥有不同的能力，需要互相配合，渡过难关！",
+    "genres": [
+      {
+        "id": "1",
+        "description": "动作"
+      },
+      {
+        "id": "25",
+        "description": "冒险"
+      }
+    ],
+    "release_date": {
+      "date": "2021 年 3 月 25 日"
+    },
+    "guides": [
+      {
+        "title": "100%全流程全收集全成就攻略解说",
+        "description": "正常路线非逃课打法",
+        "author": "好吃的香草雪球",
+        "sourceUrl": "bilibili/BV1AX4y1g79E"
+      }
+    ]
+  },
+  "3": {
+    "name": "Street Fighter 6",
+    "short_description": "系列最新作《Street Fighter 6》将于2023年6月2日发售！ 本作以RE ENGINE开发，并由系列前所未有的大型模式“环球游历”、“斗技战场”以及“格斗中心”构成。新的“Street Fighter”和前所未有的全新体验正在等待着你的到来。",
+    "genres": [
+      {
+        "id": "1",
+        "description": "动作"
+      },
+      {
+        "id": "25",
+        "description": "冒险"
+      }
+    ],
+    "release_date": {
+      "date": "2023 年 6 月 1 日"
+    }
+  },
+  "4": {
+    "name": "THE KING OF FIGHTERS XV",
+    "short_description": "粉碎！突破想象 突破一切的新生『15』！",
+    "genres": [
+      {
+        "id": "1",
+        "description": "动作"
+      }
+    ],
+    "release_date": {
+      "date": "2024 年 12 月 12 日"
+    }
+  },
+  "5": {
+    "name": "《EA SPORTS FC™ 25》",
+    "short_description": "《EA SPORTS FC™ 25》将为您带来更多为俱乐部奋勇争胜的方式。在您最喜爱的模式中通过全新 5 对 5 Rush 与好友并肩作战，借助 FC IQ 以前所未有的强大战术掌控力引领您的俱乐部走向胜利。",
+    "genres": [
+      {
+        "id": "28",
+        "description": "模拟"
+      },
+      {
+        "id": "18",
+        "description": "体育"
+      }
+    ],
+    "release_date": {
+      "date": "2024 年 9 月 26 日"
+    }
+  },
+  "6": {
+    "name": "疯狂兔子·传奇派对",
+    "short_description": "合家欢大快活游戏",
+    "genres": [
+      {
+        "id": "",
+        "description": "派对"
+      },
+      {
+        "id": "",
+        "description": "多人合作"
+      }
+    ],
+    "release_date": {
+      "date": "2022 年 6 月 30 日"
+    }
+  },
+  "7": {
+    "name": "大富翁10 (RichMan 10)",
+    "short_description": "《大富翁10》是一款经典的强手棋类游戏，玩家通过运气（投骰子）及策略（买地买卡片）赚取金钱，打败其他玩家。美术采用纯3D的Q版萌系画风。游戏模式包括：故事模式、传记模式、多人热座模式、联网模式。《大富翁10》是由软星科技（北京）有限公司研发，也是《大富翁》系列游戏的第十部作品。",
+    "genres": [
+      {
+        "id": "4",
+        "description": "休闲"
+      },
+      {
+        "id": "2",
+        "description": "策略"
+      }
+    ],
+    "release_date": {
+      "date": "2019 年 10 月 24 日"
+    }
+  },
+  "8": {
+    "name": "Contra: Operation Galuga",
+    "short_description": "经典魂斗罗系列的最新作品终于登场了！ 本作品是1980年代一经发售就获得广大支持的初代【魂斗罗】的完全重制版。 通过强化武器系统、增加游戏机制、加入新的敌人和关卡等一系列的升级，使经典的魂斗罗释放出更有魅力的光彩。 快来更广阔的『魂斗罗世界』中展开的新剧情吧！ 经典的正统魂斗罗，登场！！",
+    "genres": [
+      {
+        "id": "1",
+        "description": "动作"
+      }
+    ],
+    "release_date": {
+      "date": "2024 年 3 月 12 日"
+    }
+  },
+  "9": {
+    "name": "任天堂明星大乱斗",
+    "short_description": "《任天堂明星大乱斗》为爽快、夸张到极限的多人派对风格，游戏最多支持四人同时组队对战（SSB4forWiiU版最多可支持8人对战），游戏中除了传统的“生命数”血槽以外，还有一项特别的参数“击飞值”，当对手的击飞值达到100%以上时，当你使用必杀技时，伴着魄力满点的特写，对手便被远远的轰出场外，这种爽快感确实无与伦比。",
+    "genres": [
+      {
+        "id": "",
+        "description": "动作"
+      },
+      {
+        "id": "",
+        "description": "对战"
+      }
+    ],
+    "release_date": {
+      "date": "2018 年 12 月 7 日"
+    }
+  },
+  "10": {
+    "name": "刺客信条：影",
+    "short_description": "在日本战国背景下，体验史诗般的动作冒险故事！变身夺命忍者刺客，化为强大传奇武士，在一片混沌的时代，进入美丽的开放世界进行探索！",
+    "genres": [
+      {
+        "id": "1",
+        "description": "动作"
+      },
+      {
+        "id": "25",
+        "description": "冒险"
+      },
+      {
+        "id": "3",
+        "description": "角色扮演"
+      }
+    ],
+    "release_date": {
+      "date": "2025 年 3 月 19 日"
+    }
+  },
+  "11": {
+    "name": "Monster Hunter Wilds",
+    "short_description": "狂野凶猛的大自然，袭来。 时刻都在动态变化的原野。 这是个关于生活在具有两面性的世界中的怪物与人们的故事。 进化的狩猎动作，寻求连续不断的沉浸感，究极的狩猎体验正等待你的到来。",
+    "genres": [
+      {
+        "id": "1",
+        "description": "动作"
+      },
+      {
+        "id": "25",
+        "description": "冒险"
+      },
+      {
+        "id": "3",
+        "description": "角色扮演"
+      }
+    ],
+    "release_date": {
+      "date": "2025 年 2 月 27 日"
+    }
+  },
+  "12": {
+    "name": "黑神话：悟空",
+    "short_description": "《黑神话：悟空》是一款以中国神话为背景的动作角色扮演游戏。你将扮演一位“天命人”，为了探寻昔日传说的真相，踏上一条充满危险与惊奇的西游之路。",
+    "genres": [
+      {
+        "id": "1",
+        "description": "动作"
+      },
+      {
+        "id": "25",
+        "description": "冒险"
+      },
+      {
+        "id": "3",
+        "description": "角色扮演"
+      }
+    ],
+    "release_date": {
+      "date": "2024 年 8 月 19 日"
+    }
+  },
+  "13": {
+    "name": "真・三国无双 起源",
+    "short_description": "如临真实战场，畅享爽快的一骑当千动作！无名英雄闯荡三国乱世的“真・三国无双”系列新作。",
+    "genres": [
+      {
+        "id": "1",
+        "description": "动作"
+      },
+      {
+        "id": "3",
+        "description": "角色扮演"
+      },
+      {
+        "id": "2",
+        "description": "策略"
+      }
+    ],
+    "release_date": {
+      "coming_soon": false,
+      "date": "2025 年 1 月 16 日"
+    }
+  },
+  "14": {
+    "name": "Ghost of Tsushima 导演剪辑版",
+    "short_description": "风暴将至，在PC上体验完整的《Ghost of Tsushima导演剪辑版》，在这场开放世界动作冒险中开辟自己的道路，发现隐藏的奇景。本游戏由Sucker Punch Productions、Nixxes Software和PlayStation Studios为您呈现。",
+    "genres": [
+      {
+        "id": "1",
+        "description": "动作"
+      },
+      {
+        "id": "25",
+        "description": "冒险"
+      }
+    ],
+    "release_date": {
+      "coming_soon": false,
+      "date": "2024 年 5 月 16 日"
+    }
+  },
+  "15": {
+    "name": "艾尔登法环",
+    "short_description": "艾尔登法环是以正统黑暗奇幻世界为舞台的动作RPG游戏。 走进辽阔的场景与地下迷宫探索未知，挑战困难重重的险境，享受克服困境时的成就感吧。 不仅如此，登场角色之间的利害关系谱成的群像剧，更是不容错过。",
+    "genres": [
+      {
+        "id": "1",
+        "description": "动作"
+      },
+      {
+        "id": "3",
+        "description": "角色扮演"
+      }
+    ],
+    "release_date": {
+      "coming_soon": false,
+      "date": "2022 年 2 月 24 日"
+    }
+  }
+}

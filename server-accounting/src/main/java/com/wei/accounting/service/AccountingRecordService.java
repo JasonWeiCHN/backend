@@ -52,5 +52,6 @@ public class AccountingRecordService {
         record.setPlatform(request.getPlatform());
         record.setContactType(request.getContactType());
         record.setContactValue(request.getContactValue());
+        record.setRemark(request.getRemark());
     }
 }

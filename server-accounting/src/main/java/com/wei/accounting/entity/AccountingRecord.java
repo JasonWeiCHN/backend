@@ -54,4 +54,7 @@ public class AccountingRecord {
 
     @Column(name = "contact_value")
     private String contactValue;
+
+    @Column(name = "remark")
+    private String remark;
 }

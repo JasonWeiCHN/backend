@@ -1,5 +1,6 @@
 package com.wei.games.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 
 import java.util.List;
@@ -14,6 +15,8 @@ public abstract class BaseGameRequest {
     private String releaseDate;
     private String description;
     private String video;
-    private List<GenreDTO> genres;
+    // 改为只传 genre id 字符串列表
+    private List<String> genres;
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private List<GameGuideDTO> guides;
 }

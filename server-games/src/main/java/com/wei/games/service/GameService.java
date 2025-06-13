@@ -5,6 +5,7 @@ import com.wei.games.entity.Game;
 import com.wei.games.entity.GameGuide;
 import com.wei.games.entity.Genre;
 import com.wei.games.repository.GameRepository;
+import com.wei.games.repository.GenreRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
@@ -16,9 +17,11 @@ import java.util.stream.Collectors;
 public class GameService {
 
     private final GameRepository gameRepository;
+    private final GenreRepository genreRepository;
 
-    public GameService(GameRepository gameRepository) {
+    public GameService(GameRepository gameRepository, GenreRepository genreRepository) {
         this.gameRepository = gameRepository;
+        this.genreRepository = genreRepository;
     }
 
     public GameResponse create(AddGameRequest request) {
@@ -74,14 +77,13 @@ public class GameService {
         game.setDescription(request.getDescription());
         game.setVideo(request.getVideo());
 
-        game.setGenres(request.getGenres() != null ?
-                request.getGenres().stream().map(dto -> {
-                    Genre genre = new Genre();
-                    genre.setId(dto.getId());
-                    genre.setName(dto.getName());
-                    genre.setDescription(dto.getDescription());
-                    return genre;
-                }).collect(Collectors.toList()) : null);
+        if (request.getGenres() != null && !request.getGenres().isEmpty()) {
+            // 根据 genre id 列表查实体，设置到 game
+            List<Genre> genres = genreRepository.findAllById(request.getGenres());
+            game.setGenres(genres);
+        } else {
+            game.setGenres(null);
+        }
 
         game.setGuides(request.getGuides() != null ?
                 request.getGuides().stream().map(dto -> {

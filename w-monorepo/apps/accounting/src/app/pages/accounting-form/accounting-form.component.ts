@@ -160,7 +160,12 @@ export class AccountingFormComponent implements OnInit {
   }
 
   onSubmit(): void {
-    if (this.form.invalid) return;
+    console.log('onSubmit！');
+
+    if (this.form.invalid) {
+      console.log('表单验证不通过！');
+      return;
+    }
 
     const raw = this.form.getRawValue();
     const record: IAccountingRecord = {

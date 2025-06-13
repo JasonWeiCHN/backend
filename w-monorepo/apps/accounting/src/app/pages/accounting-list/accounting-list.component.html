@@ -1,8 +1,21 @@
 <div class="accounting-list">
-  <h2>记账记录列表</h2>
-  <button class="add-button" [routerLink]="['/accounting/new']">
-    ➕ 新增记录
-  </button>
+  <div class="top-bar">
+    <button class="add-button" [routerLink]="['/accounting/new']">
+      ➕ 新增记录
+    </button>
+
+    <!-- 搜索组合 -->
+    <div class="search-bar">
+      <select [(ngModel)]="searchField">
+        <option value="gameNames">游戏名</option>
+        <option value="customerType">客户类型</option>
+        <option value="platform">平台</option>
+        <option value="remark">备注</option>
+      </select>
+      <input [(ngModel)]="searchKeyword" placeholder="请输入搜索关键字" />
+      <button (click)="search()">🔍 搜索</button>
+    </div>
+  </div>
 
   <table class="record-table">
     <thead>
@@ -10,26 +23,34 @@
         <th>单号</th>
         <th>时间段</th>
         <th>时长</th>
-        <th>游戏机</th>
+        <th>机型</th>
         <th>游戏名</th>
         <th>客户类型</th>
         <th>回头客</th>
         <th>实收金额</th>
+        <th>备注</th>
         <th>平台</th>
         <th>操作</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let record of records">
-        <td>{{ record.id }}</td>
-        <td>{{ formatTimeRange(record.startDateTime, record.endDateTime) }}</td>
-        <td>{{ record.duration }}</td>
-        <td>{{ record.consoleType }}</td>
-        <td>{{ record.gameNames.join('; ') }}</td>
-        <td>{{ record.customerType }}</td>
-        <td>{{ record.isReturning ? '是' : '否' }}</td>
-        <td>{{ record.actualAmount }}</td>
-        <td>{{ record.platform }}</td>
+      <tr *ngFor="let record of pagedRecords">
+        <td [title]="record.id">{{ record.id }}</td>
+        <td [title]="formatTimeRange(record.startDateTime, record.endDateTime)">
+          {{ formatTimeRange(record.startDateTime, record.endDateTime) }}
+        </td>
+        <td [title]="record.duration">{{ record.duration }}</td>
+        <td [title]="record.consoleType">{{ record.consoleType }}</td>
+        <td [title]="record.gameNames.join('; ')">
+          {{ record.gameNames.join('; ') }}
+        </td>
+        <td [title]="record.customerType">{{ record.customerType }}</td>
+        <td [title]="record.isReturning ? '是' : '否'">
+          {{ record.isReturning ? '是' : '否' }}
+        </td>
+        <td [title]="record.actualAmount">{{ record.actualAmount }}</td>
+        <td [title]="record.remark">{{ record.remark }}</td>
+        <td [title]="record.platform">{{ record.platform }}</td>
         <td>
           <button [routerLink]="['/accounting/edit', record.id]">编辑</button>
           <button (click)="delete(record.id)">删除</button>
@@ -37,4 +58,14 @@
       </tr>
     </tbody>
   </table>
+
+  <!-- 分页控件 + 统计 -->
+  <div class="pagination">
+    <button (click)="prevPage()" [disabled]="currentPage === 1">上一页</button>
+    <span>第 {{ currentPage }} 页 / 共 {{ totalPages }} 页</span>
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">
+      下一页
+    </button>
+    <span class="total-count">共 {{ records.length }} 条数据</span>
+  </div>
 </div>
