@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { IAccountingRecord } from '../../shared/interfaces/accounting-record.interface';
 import { AccountingHttpService } from '../../shared/services/accounting.http.service';
 import { FormsModule } from '@angular/forms';
+import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'app-accounting-list',
@@ -24,6 +25,9 @@ export class AccountingListComponent {
   pageSize = 50;
   currentPage = 4;
   totalPages = 1;
+
+  showReminder = false;
+  reminderRecord: IAccountingRecord | null = null;
 
   constructor() {
     this.loadRecords();
@@ -154,5 +158,35 @@ export class AccountingListComponent {
       .catch((error) => {
         alert('导出失败：' + error.message);
       });
+  }
+
+  openReminderModal(record: IAccountingRecord): void {
+    this.reminderRecord = record;
+    this.showReminder = true;
+  }
+
+  closeReminderModal(): void {
+    this.showReminder = false;
+    this.reminderRecord = null;
+  }
+
+  formatDate(dateStr: string): string {
+    const date = new Date(dateStr);
+    const pad = (n: number) => n.toString().padStart(2, '0');
+    return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(
+      date.getDate()
+    )} ${pad(date.getHours())}:${pad(date.getMinutes())}`;
+  }
+
+  exportReminderAsImage(): void {
+    const card = document.querySelector('.reminder-card') as HTMLElement;
+    if (!card) return;
+
+    html2canvas(card, { backgroundColor: '#ffffff' }).then((canvas) => {
+      const link = document.createElement('a');
+      link.href = canvas.toDataURL('image/png');
+      link.download = '游戏提醒卡片.png';
+      link.click();
+    });
   }
 }

@@ -59,6 +59,7 @@
         <td>
           <button [routerLink]="['/accounting/edit', record.id]">编辑</button>
           <button (click)="delete(record.id)">删除</button>
+          <button (click)="openReminderModal(record)">提醒</button>
         </td>
       </tr>
     </tbody>
@@ -72,5 +73,26 @@
       下一页
     </button>
     <span class="total-count">共 {{ records.length }} 条数据</span>
+  </div>
+</div>
+
+<div class="reminder-modal" *ngIf="showReminder">
+  <div class="reminder-wrapper">
+    <div class="reminder-card" #reminderCard>
+      <h3>尊敬的玩家！</h3>
+      <p>游戏开始时间：{{ formatDate(reminderRecord?.startDateTime!) }}</p>
+      <p>游玩时长：{{ reminderRecord?.duration }} 小时</p>
+      <p>
+        结束时间：<span class="end-date-time">{{
+          formatDate(reminderRecord?.endDateTime!)
+        }}</span>
+      </p>
+      <p class="greeting">酷乐乐游戏，祝您游戏愉快！</p>
+    </div>
+
+    <div class="buttons">
+      <button (click)="closeReminderModal()">关闭</button>
+      <button (click)="exportReminderAsImage()">生成图片</button>
+    </div>
   </div>
 </div>
