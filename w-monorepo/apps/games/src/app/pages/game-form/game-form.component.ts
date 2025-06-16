@@ -9,8 +9,8 @@ import {
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IGame } from '../../shared/interfaces/game.interface';
 import { GameHttpService } from '../../shared/services/game.http.service';
+import { IGame } from '../../shared/interfaces/game.interface';
 
 @Component({
   selector: 'app-game-form',
@@ -34,13 +34,13 @@ export class GameFormComponent implements OnInit {
     this.form = this.fb.group({
       name: ['', Validators.required],
       image: ['', Validators.required],
-      tags: ['', Validators.required],
+      tags: [''],
       searchKeywords: [''],
       path: [''],
       releaseDate: [''],
       description: [''],
       video: [''],
-      genres: this.fb.array([]),
+      genreIds: [''], // ← 新增字段（用字符串输入 ID 列表）
       guides: this.fb.array([]),
     });
 
@@ -54,26 +54,8 @@ export class GameFormComponent implements OnInit {
     }
   }
 
-  get genres(): FormArray {
-    return this.form.get('genres') as FormArray;
-  }
-
   get guides(): FormArray {
     return this.form.get('guides') as FormArray;
-  }
-
-  addGenre(): void {
-    this.genres.push(
-      this.fb.group({
-        id: [''],
-        name: [''],
-        description: [''],
-      })
-    );
-  }
-
-  removeGenre(index: number): void {
-    this.genres.removeAt(index);
   }
 
   addGuide(): void {
@@ -95,27 +77,49 @@ export class GameFormComponent implements OnInit {
     this.form.patchValue({
       name: game.name,
       image: game.image,
-      tags: game.tags || [],
+      tags: (game.tags || []).join(','),
       searchKeywords: game.searchKeywords || '',
       path: game.path || '',
       releaseDate: game.releaseDate || '',
       description: game.description || '',
       video: game.video || '',
+      genreIds: (game.genres || []).join(','), // 用 genre 字符串列表填入
     });
 
-    (game.genres || []).forEach((g) => this.genres.push(this.fb.group(g)));
     (game.guides || []).forEach((gd) => this.guides.push(this.fb.group(gd)));
   }
 
   onSubmit(): void {
     if (this.form.invalid) return;
 
-    const game: IGame = this.form.value;
+    const rawValue = this.form.value;
+
+    const payload = {
+      name: rawValue.name,
+      image: rawValue.image,
+      tags: rawValue.tags
+        ? rawValue.tags.split(',').map((t: string) => t.trim())
+        : [],
+      searchKeywords: rawValue.searchKeywords,
+      path: rawValue.path,
+      releaseDate: rawValue.releaseDate,
+      description: rawValue.description,
+      video: rawValue.video,
+      genres: rawValue.genreIds
+        ? rawValue.genreIds.split(',').map((g: string) => g.trim())
+        : [],
+      guides: rawValue.guides,
+    };
 
     const request$ = this.isEditMode
-      ? this.gameService.updateGame(this.gameId!, game)
-      : this.gameService.createGame(game);
+      ? this.gameService.updateGame(this.gameId!, payload)
+      : this.gameService.createGame(payload);
 
-    request$.subscribe(() => this.router.navigate(['/games']));
+    request$.subscribe({
+      next: () => this.router.navigate(['/games']),
+      error: (err) => {
+        alert('提交失败：' + (err.error || '未知错误'));
+      },
+    });
   }
 }

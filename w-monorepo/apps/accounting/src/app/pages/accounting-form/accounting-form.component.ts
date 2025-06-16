@@ -32,7 +32,15 @@ export class AccountingFormComponent implements OnInit {
   recordId?: number;
 
   platforms = ['美团', '抖音', '门市', '小红书'];
-  consoleOptions = ['PS5', 'SWITCH', 'PS4', '小霸王', '月光宝盒', '游戏盒子'];
+  consoleOptions = [
+    'PS5',
+    'SWITCH',
+    'PS4',
+    'STEAM',
+    '小霸王',
+    '月光宝盒',
+    '游戏盒子',
+  ];
   contactTypes = ['电话', '微信'];
 
   searchControl = new FormControl('');
@@ -54,6 +62,7 @@ export class AccountingFormComponent implements OnInit {
       isReturning: [false],
       actualAmount: [0, [Validators.required, Validators.min(0)]],
       platform: ['', Validators.required],
+      remark: [''],
       contactType: [''],
       contactValue: [''],
     });
@@ -103,6 +112,7 @@ export class AccountingFormComponent implements OnInit {
             isReturning: record.isReturning,
             actualAmount: record.actualAmount,
             platform: record.platform,
+            remark: record.remark || '',
             contactType: record.contactType,
             contactValue: record.contactValue,
           });
@@ -179,6 +189,7 @@ export class AccountingFormComponent implements OnInit {
       isReturning: raw.isReturning,
       actualAmount: raw.actualAmount,
       platform: raw.platform,
+      remark: raw.remark || '',
       contactType: raw.contactType || null,
       contactValue: raw.contactValue || null,
     };

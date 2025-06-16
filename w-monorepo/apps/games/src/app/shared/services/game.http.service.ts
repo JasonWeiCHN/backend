@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { IGame } from '../interfaces/game.interface';
+import { IAddGameRequest, IGame } from '../interfaces/game.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -22,12 +22,12 @@ export class GameHttpService {
   }
 
   /** 创建新游戏 */
-  createGame(game: IGame): Observable<IGame> {
+  createGame(game: IAddGameRequest): Observable<IGame> {
     return this.http.post<IGame>(this.gameUrl, game);
   }
 
   /** 更新游戏 */
-  updateGame(id: number, game: IGame): Observable<IGame> {
+  updateGame(id: number, game: IAddGameRequest): Observable<IGame> {
     return this.http.put<IGame>(`${this.gameUrl}/${id}`, game);
   }
 

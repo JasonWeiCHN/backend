@@ -21,8 +21,8 @@ export class AccountingListComponent {
   searchField = 'gameNames';
   searchKeyword = '';
 
-  pageSize = 16;
-  currentPage = 1;
+  pageSize = 50;
+  currentPage = 4;
   totalPages = 1;
 
   constructor() {
@@ -130,5 +130,29 @@ export class AccountingListComponent {
     } else {
       return `${startDateStr} ${startTimeStr} - ${endDateStr} ${endTimeStr}`;
     }
+  }
+
+  downloadTxt(): void {
+    const apiUrl = 'http://localhost:8080/api/accounting/export-txt';
+
+    // 创建隐藏的链接来触发下载
+    fetch(apiUrl)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('下载失败');
+        }
+        return response.blob();
+      })
+      .then((blob) => {
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = '账单统计.txt';
+        a.click();
+        window.URL.revokeObjectURL(url);
+      })
+      .catch((error) => {
+        alert('导出失败：' + error.message);
+      });
   }
 }

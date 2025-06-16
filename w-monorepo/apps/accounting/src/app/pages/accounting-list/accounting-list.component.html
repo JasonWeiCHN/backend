@@ -4,6 +4,11 @@
       ➕ 新增记录
     </button>
 
+    <!-- ✅ 新增导出按钮 -->
+    <button class="export-button" (click)="downloadTxt()">
+      📥 导出账单统计
+    </button>
+
     <!-- 搜索组合 -->
     <div class="search-bar">
       <select [(ngModel)]="searchField">

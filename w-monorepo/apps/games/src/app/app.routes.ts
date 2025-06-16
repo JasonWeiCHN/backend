@@ -7,6 +7,10 @@ export const appRoutes: Route[] = [
     component: GameListComponent,
   },
   {
+    path: 'games',
+    component: GameListComponent,
+  },
+  {
     path: 'game/new',
     loadComponent: () =>
       import('./pages/game-form/game-form.component').then(

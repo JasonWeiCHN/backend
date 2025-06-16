@@ -11,7 +11,7 @@
     gap: 12px;
     margin-bottom: 12px;
 
-    .add-button {
+    .add-button, .export-button {
       padding: 0 12px; // 上下padding改为0，左右保持12px
       height: 36px; // 设定固定高度
       line-height: 36px; // 文字垂直居中
@@ -83,10 +83,10 @@
 
     th, td {
       border: 1px solid #ccc;
-      padding: 8px;
+      padding: 4px;
       text-align: center;
-      line-height: 1.2;
-      height: 36px;
+      line-height: 1;
+      height: 32px;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;

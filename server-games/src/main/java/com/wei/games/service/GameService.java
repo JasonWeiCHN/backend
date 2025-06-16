@@ -4,6 +4,8 @@ import com.wei.games.dto.*;
 import com.wei.games.entity.Game;
 import com.wei.games.entity.GameGuide;
 import com.wei.games.entity.Genre;
+import com.wei.games.exception.DuplicateGameNameException;
+import com.wei.games.exception.GameAlreadyExistsException;
 import com.wei.games.repository.GameRepository;
 import com.wei.games.repository.GenreRepository;
 import org.springframework.beans.BeanUtils;
@@ -25,6 +27,15 @@ public class GameService {
     }
 
     public GameResponse create(AddGameRequest request) {
+        // 判断是否存在同名游戏（不区分大小写）
+        List<Game> existing = gameRepository.findAll().stream()
+                .filter(g -> g.getName().equalsIgnoreCase(request.getName()))
+                .toList();
+
+        if (!existing.isEmpty()) {
+            throw new DuplicateGameNameException("已存在同名游戏！");
+        }
+
         Game game = new Game();
         copyFromRequest(game, request);
         return toResponse(gameRepository.save(game));

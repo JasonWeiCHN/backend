@@ -91,6 +91,15 @@
     </label>
 
     <label>
+      备注（可选）：
+      <textarea
+        formControlName="remark"
+        rows="5"
+        placeholder="请输入备注内容"
+      ></textarea>
+    </label>
+
+    <label>
       联系方式类型（可选）：
       <select formControlName="contactType">
         <option *ngFor="let c of contactTypes" [value]="c">{{ c }}</option>

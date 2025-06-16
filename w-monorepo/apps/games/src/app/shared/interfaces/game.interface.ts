@@ -24,3 +24,21 @@ export interface IGame {
   guides?: IGameGuide[];
   video?: string; // 视频地址
 }
+
+export interface IAddGameRequest {
+  name: string;
+  image: string;
+  tags: string[];
+  searchKeywords?: string;
+  path?: string;
+  releaseDate?: string;
+  description?: string;
+  video?: string;
+  genres: string[]; // genre id list
+  guides?: {
+    title: string;
+    description?: string;
+    author?: string;
+    sourceUrl: string;
+  }[];
+}
