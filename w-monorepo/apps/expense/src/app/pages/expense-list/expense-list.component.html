@@ -1,0 +1,47 @@
+<div class="expense-list">
+  <div class="top-bar">
+    <button class="add-button" [routerLink]="['/expense/new']">
+      ➕ 新增支出
+    </button>
+
+    <div class="search-bar">
+      <input [(ngModel)]="searchKeyword" placeholder="搜索类别或描述" />
+      <button (click)="search()">🔍 搜索</button>
+    </div>
+  </div>
+
+  <table class="record-table">
+    <thead>
+      <tr>
+        <th>编号</th>
+        <th>时间</th>
+        <th>类别</th>
+        <th>描述</th>
+        <th>金额</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let record of pagedRecords">
+        <td>{{ record.id }}</td>
+        <td>{{ formatDate(record.dateTime) }}</td>
+        <td>{{ record.category }}</td>
+        <td>{{ record.description }}</td>
+        <td>{{ record.amount }}</td>
+        <td>
+          <button [routerLink]="['/expense/edit', record.id]">编辑</button>
+          <button (click)="delete(record.id)">删除</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="pagination">
+    <button (click)="prevPage()" [disabled]="currentPage === 1">上一页</button>
+    <span>第 {{ currentPage }} 页 / 共 {{ totalPages }} 页</span>
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">
+      下一页
+    </button>
+    <span class="total-count">共 {{ records.length }} 条支出</span>
+  </div>
+</div>

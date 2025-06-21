@@ -1,0 +1,31 @@
+<div class="expense-form">
+  <h2>{{ isEditMode ? '编辑支出' : '新增支出' }}</h2>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label>
+      时间：
+      <input type="datetime-local" formControlName="dateTime" required />
+    </label>
+
+    <label>
+      类别：
+      <input type="text" formControlName="category" required />
+    </label>
+
+    <label>
+      描述信息：
+      <textarea formControlName="description" rows="3"></textarea>
+    </label>
+
+    <label>
+      金额：
+      <input type="number" formControlName="amount" required />
+    </label>
+
+    <div class="actions">
+      <button type="submit">提交</button>
+      <button type="button" (click)="router.navigate(['/expenses'])">
+        取消
+      </button>
+    </div>
+  </form>
+</div>
