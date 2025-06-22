@@ -48,4 +48,19 @@ public class GameController {
         gameService.delete(id);
         return ResponseEntity.noContent().build();
     }
+
+    // 获取游戏的攻略列表
+    @GetMapping("/{id}/guides")
+    public ResponseEntity<List<GameGuideDTO>> getGuidesByGameId(@PathVariable Long id) {
+        return ResponseEntity.ok(gameService.getGuidesByGameId(id));
+    }
+
+    // 修改游戏的攻略（覆盖式更新）
+    @PutMapping("/{id}/guides")
+    public ResponseEntity<List<GameGuideDTO>> updateGuidesByGameId(
+            @PathVariable Long id,
+            @RequestBody UpdateGameGuideRequest request
+    ) {
+        return ResponseEntity.ok(gameService.updateGuidesByGameId(id, request.getGuides()));
+    }
 }

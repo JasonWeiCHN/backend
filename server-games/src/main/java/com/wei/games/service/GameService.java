@@ -129,4 +129,38 @@ public class GameService {
 
         return resp;
     }
+
+    public List<GameGuideDTO> getGuidesByGameId(Long id) {
+        Game game = gameRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Game not found"));
+        return game.getGuides().stream().map(guide -> {
+            GameGuideDTO dto = new GameGuideDTO();
+            BeanUtils.copyProperties(guide, dto);
+            return dto;
+        }).collect(Collectors.toList());
+    }
+
+    public List<GameGuideDTO> updateGuidesByGameId(Long id, List<GameGuideDTO> guideDTOs) {
+        Game game = gameRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Game not found"));
+
+        // 替换旧攻略
+        if (guideDTOs != null) {
+            List<GameGuide> guides = guideDTOs.stream().map(dto -> {
+                GameGuide guide = new GameGuide();
+                guide.setTitle(dto.getTitle());
+                guide.setDescription(dto.getDescription());
+                guide.setAuthor(dto.getAuthor());
+                guide.setSourceUrl(dto.getSourceUrl());
+                return guide;
+            }).collect(Collectors.toList());
+            game.setGuides(guides);
+        } else {
+            game.setGuides(null);
+        }
+
+        gameRepository.save(game);
+
+        return guideDTOs;
+    }
 }

@@ -15,13 +15,15 @@
     <tbody>
       <tr *ngFor="let game of games">
         <td>{{ game.id }}</td>
-        <td>{{ game.name }}</td>
+        <td [title]="game.name">{{ game.name }}</td>
         <td>{{ game.tags?.join(', ') }}</td>
-        <td>{{ game.description || '—' }}</td>
+        <td [title]="game.description">{{ game.description || '—' }}</td>
         <td>
           <a *ngIf="game.video" [href]="game.video" target="_blank">查看</a>
         </td>
         <td>
+          <button [routerLink]="['/game/view', game.id]">查看</button>
+          <button [routerLink]="['/game/guides', game.id]">攻略</button>
           <button [routerLink]="['/game/edit', game.id]">编辑</button>
           <button (click)="deleteGame(game.id)">删除</button>
         </td>

@@ -1,6 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
 import {
-  FormArray,
   FormBuilder,
   FormGroup,
   FormsModule,
@@ -40,8 +39,8 @@ export class GameFormComponent implements OnInit {
       releaseDate: [''],
       description: [''],
       video: [''],
-      genreIds: [''], // ← 新增字段（用字符串输入 ID 列表）
-      guides: this.fb.array([]),
+      genreIds: [''],
+      guides: this.fb.array([]), // ⚠️ 仍然需要留空数组以传空值给后端
     });
 
     const idParam = this.route.snapshot.paramMap.get('id');
@@ -54,25 +53,6 @@ export class GameFormComponent implements OnInit {
     }
   }
 
-  get guides(): FormArray {
-    return this.form.get('guides') as FormArray;
-  }
-
-  addGuide(): void {
-    this.guides.push(
-      this.fb.group({
-        title: ['', Validators.required],
-        description: [''],
-        author: [''],
-        sourceUrl: ['', Validators.required],
-      })
-    );
-  }
-
-  removeGuide(index: number): void {
-    this.guides.removeAt(index);
-  }
-
   populateForm(game: IGame): void {
     this.form.patchValue({
       name: game.name,
@@ -83,10 +63,8 @@ export class GameFormComponent implements OnInit {
       releaseDate: game.releaseDate || '',
       description: game.description || '',
       video: game.video || '',
-      genreIds: (game.genres || []).join(','), // 用 genre 字符串列表填入
+      genreIds: (game.genres || []).join(','),
     });
-
-    (game.guides || []).forEach((gd) => this.guides.push(this.fb.group(gd)));
   }
 
   onSubmit(): void {
@@ -108,7 +86,7 @@ export class GameFormComponent implements OnInit {
       genres: rawValue.genreIds
         ? rawValue.genreIds.split(',').map((g: string) => g.trim())
         : [],
-      guides: rawValue.guides,
+      guides: [], // ✅ 始终传空数组
     };
 
     const request$ = this.isEditMode

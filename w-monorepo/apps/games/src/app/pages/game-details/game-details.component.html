@@ -1,0 +1,37 @@
+<div *ngIf="game" class="game-details">
+  <h1>{{ game.name }}</h1>
+
+  <img [src]="game.image" [alt]="game.name" class="game-image" />
+
+  <div class="tags" *ngIf="game.tags?.length">
+    <span *ngFor="let tag of game.tags!" class="tag">{{ tag }}</span>
+  </div>
+
+  <p class="search-keywords">关键词：{{ game.searchKeywords }}</p>
+  <p class="release-date" *ngIf="game.releaseDate">
+    发布日期：{{ game.releaseDate }}
+  </p>
+
+  <p class="description">{{ game.description }}</p>
+
+  <div class="genres" *ngIf="game.genres?.length">
+    <h3>类型：</h3>
+    <ul>
+      <li *ngFor="let genre of game.genres">{{ genre.name }}</li>
+    </ul>
+  </div>
+
+  <div class="video" *ngIf="game.video">
+    <p>视频地址：{{ game.video }}</p>
+  </div>
+
+  <div class="guides" *ngIf="game.guides?.length">
+    <h3>攻略：</h3>
+    <div *ngFor="let guide of game.guides" class="guide-card">
+      <h4>{{ guide.title }}</h4>
+      <p>{{ guide.description }}</p>
+      <p>作者：{{ guide.author }}</p>
+      <button (click)="openGuide(guide.sourceUrl)">查看攻略</button>
+    </div>
+  </div>
+</div>

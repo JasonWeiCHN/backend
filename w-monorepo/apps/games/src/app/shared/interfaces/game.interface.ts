@@ -35,10 +35,5 @@ export interface IAddGameRequest {
   description?: string;
   video?: string;
   genres: string[]; // genre id list
-  guides?: {
-    title: string;
-    description?: string;
-    author?: string;
-    sourceUrl: string;
-  }[];
+  guides: IGameGuide[]; // ✅ 强制要求为数组，便于总是传空数组 []
 }

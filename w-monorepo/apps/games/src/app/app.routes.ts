@@ -24,4 +24,18 @@ export const appRoutes: Route[] = [
         (m) => m.GameFormComponent
       ),
   },
+  {
+    path: 'game/view/:id',
+    loadComponent: () =>
+      import('./pages/game-details/game-details.component').then(
+        (m) => m.GameDetailsComponent
+      ),
+  },
+  {
+    path: 'game/guides/:id',
+    loadComponent: () =>
+      import('./pages/game-guides/game-guides.component').then(
+        (m) => m.GameGuidesComponent
+      ),
+  },
 ];

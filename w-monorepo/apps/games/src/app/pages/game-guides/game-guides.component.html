@@ -1,0 +1,28 @@
+<div class="game-guides">
+  <h2>管理游戏攻略</h2>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div formArrayName="guides">
+      <div
+        *ngFor="let guide of guides.controls; let i = index"
+        [formGroupName]="i"
+        class="guide-item"
+      >
+        <input formControlName="title" placeholder="标题" required />
+        <input formControlName="description" placeholder="描述" />
+        <input formControlName="author" placeholder="作者" />
+        <input formControlName="sourceUrl" placeholder="来源链接" required />
+
+        <button type="button" (click)="removeGuide(i)">删除</button>
+      </div>
+    </div>
+
+    <button type="button" (click)="addGuide()">添加攻略</button>
+
+    <div class="actions">
+      <button type="submit" [disabled]="loading">更新攻略</button>
+      <button type="button" (click)="router.navigate(['/games'])">
+        返回列表
+      </button>
+    </div>
+  </form>
+</div>
