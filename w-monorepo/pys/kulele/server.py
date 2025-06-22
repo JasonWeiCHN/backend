@@ -210,8 +210,13 @@ def get_game_detail():
     if not game_id:
         return jsonify({'error': 'Missing id'}), 400
 
-    games = load_json_file('games_map.json')
-    game = games.get(game_id)
+    try:
+        game_id = int(game_id)
+    except ValueError:
+        return jsonify({'error': 'Invalid id'}), 400
+
+    games = load_json_file('games.json')
+    game = next((g for g in games if g.get("id") == game_id), None)
 
     if not game:
         return jsonify({'error': 'Game not found'}), 404

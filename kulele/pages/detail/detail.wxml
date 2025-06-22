@@ -2,9 +2,9 @@
     <!-- 游戏基本信息 -->
     <view class="detail-section">
         <view class="game-title">{{ game.name }}</view>
-        <view class="game-description">{{ game.short_description }}</view>
+        <view class="game-description">{{ game.description }}</view>
         <view class="game-meta">类型：{{ genreList }}</view>
-        <view class="game-meta">发售日期：{{ game.release_date.date }}</view>
+        <view class="game-meta">发售日期：{{ game.releaseDate || '未公布' }}</view>
     </view>
 
     <!-- 游戏攻略 -->

@@ -84,18 +84,12 @@ Page({
         const category = selectedCategory ? selectedCategory.toLowerCase() : '';
 
         const filtered = games.filter(game => {
-            // 处理 type（可能是字符串或数组）
-            let gameTypes = [];
-            if (Array.isArray(game.type)) {
-                gameTypes = game.type.map(type => String(type).toLowerCase());
-            } else if (game.type) {
-                gameTypes = [String(game.type).toLowerCase()];
-            }
+            // 替换 game.tags
+            let gameTags = Array.isArray(game.tags) ? game.tags.map(tag => String(tag).toLowerCase()) : [];
 
-            // 处理 search（确保是字符串）
-            const gameSearch = game.search ? String(game.search).toLowerCase() : '';
+            const gameSearch = game.searchKeywords ? game.searchKeywords.toLowerCase() : '';
 
-            const matchesCategory = !category || gameTypes.some(type => type.includes(category));
+            const matchesCategory = !category || gameTags.some(tag => tag.includes(category));
             const matchesSearch = !keyword || gameSearch.includes(keyword);
 
             return matchesCategory && matchesSearch;

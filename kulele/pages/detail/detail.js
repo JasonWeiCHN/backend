@@ -15,7 +15,7 @@ Page({
             method: 'GET',
             success: (res) => {
                 const game = res.data.game;
-                const genreList = game.genres.map(g => g.description).join(' / ');
+                const genreList = (game.genres || []).map(g => g.name).join(' / ');
 
                 // 攻略数据（假设接口里 guides 是数组）
                 const guides = game.guides || [];
