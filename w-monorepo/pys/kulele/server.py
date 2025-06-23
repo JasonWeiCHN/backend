@@ -79,6 +79,17 @@ def login():
         'nickname': nickname
     })
 
+@app.route('/register_instructions', methods=['GET'])
+def get_register_instructions():
+    try:
+        instructions = load_json_file('register_instructions.json')
+        if isinstance(instructions, list):
+            return jsonify({'instructions': instructions})
+        else:
+            return jsonify({'error': 'Invalid format'}), 500
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
 @app.route('/register', methods=['POST'])
 def register():
     data = request.get_json()

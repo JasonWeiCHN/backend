@@ -3,7 +3,8 @@ Page({
         registerType: 'wechat', // 初始选择
         account: '',
         nickname: '',
-        openid: '' // 新增字段
+        openid: '',
+        registerInstructions: [] // 注册说明数组
     },
 
     onLoad() {
@@ -13,7 +14,24 @@ Page({
         } else {
             wx.showToast({ title: '未登录', icon: 'none' });
             wx.navigateBack();
+            return;
         }
+
+        // 获取注册说明
+        wx.request({
+            url: 'https://kulele.club/api/register_instructions',
+            method: 'GET',
+            success: res => {
+                if (res.data.instructions) {
+                    this.setData({
+                        registerInstructions: res.data.instructions
+                    });
+                }
+            },
+            fail: () => {
+                wx.showToast({ title: '无法加载注册说明', icon: 'none' });
+            }
+        });
     },
 
     onRegisterTypeChange(e) {

@@ -1,4 +1,11 @@
 <view class="container">
+    <!-- 注册说明 -->
+    <view class="register-instructions">
+        <block wx:for="{{registerInstructions}}" wx:key="index">
+            <view class="instruction-line">{{item}}</view>
+        </block>
+    </view>
+
     <view class="form-section">
         <radio-group bindchange="onRegisterTypeChange">
             <label><radio value="wechat" checked="{{registerType === 'wechat'}}"/> 微信</label>
