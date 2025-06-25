@@ -1,0 +1,38 @@
+.product-form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    label {
+      display: flex;
+      flex-direction: column;
+      font-weight: bold;
+    }
+
+    input,
+    textarea {
+      padding: 6px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 100%;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+
+      button {
+        padding: 6px 12px;
+        cursor: pointer;
+      }
+    }
+  }
+}

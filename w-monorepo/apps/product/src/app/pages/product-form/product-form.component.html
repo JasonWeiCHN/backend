@@ -1,0 +1,56 @@
+<div class="product-form">
+  <h2>{{ isEditMode ? '编辑商品' : '新增商品' }}</h2>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label>
+      商品名称：
+      <input type="text" formControlName="productName" required />
+    </label>
+
+    <label>
+      商品类型：
+      <input type="text" formControlName="productCategory" required />
+    </label>
+
+    <label>
+      商品编号：
+      <input type="text" formControlName="productCode" required />
+    </label>
+
+    <label>
+      进货价格（¥）：
+      <input
+        type="number"
+        formControlName="purchasePrice"
+        step="0.01"
+        required
+      />
+    </label>
+
+    <label>
+      销售价格（¥）：
+      <input
+        type="number"
+        formControlName="sellingPrice"
+        step="0.01"
+        required
+      />
+    </label>
+
+    <label>
+      库存数量：
+      <input type="number" formControlName="inventory" required />
+    </label>
+
+    <label>
+      商品说明：
+      <textarea formControlName="description" rows="3"></textarea>
+    </label>
+
+    <div class="actions">
+      <button type="submit">提交</button>
+      <button type="button" (click)="router.navigate(['/product'])">
+        取消
+      </button>
+    </div>
+  </form>
+</div>

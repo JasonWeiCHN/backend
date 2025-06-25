@@ -1,0 +1,107 @@
+.product-list {
+  padding: 16px;
+
+  .top-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+
+    .add-button {
+      padding: 0 12px;
+      height: 36px;
+      background-color: #eeeeee;
+      border-radius: 4px;
+      font-size: 14px;
+      cursor: pointer;
+      border: none;
+
+      &:hover {
+        background-color: #20409f;
+        color: #ffffff;
+      }
+    }
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+      background-color: #eeeeee;
+      padding: 0 8px;
+      border-radius: 4px;
+      height: 36px;
+
+      input {
+        border: none;
+        background: #ffffff;
+        padding: 0 6px;
+        font-size: 14px;
+        flex-grow: 1;
+      }
+
+      button {
+        border: none;
+        background: transparent;
+        font-size: 16px;
+        cursor: pointer;
+
+        &:hover {
+          color: #20409f;
+        }
+      }
+    }
+  }
+
+  .record-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 4px;
+      text-align: center;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    th {
+      background-color: #f0f0f0;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    button {
+      margin: 0 4px;
+      padding: 4px 6px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+    gap: 12px;
+
+    button {
+      padding: 4px 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &:disabled {
+        color: #999;
+        background-color: #eee;
+        cursor: not-allowed;
+      }
+    }
+
+    .total-count {
+      margin-left: 16px;
+      color: #666;
+    }
+  }
+}
