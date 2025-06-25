@@ -1,4 +1,3 @@
-// src/app/appointment-list/appointment-list.component.scss
 .appointment-list {
   padding: 16px;
 
@@ -106,7 +105,7 @@
     }
 
     th:nth-child(6), td:nth-child(6) {
-      width: 120px;
+      width: 160px;
     }
 
     button {
@@ -144,3 +143,76 @@
     }
   }
 }
+
+.reminder-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+
+  .reminder-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 12px;
+    background: #fff;
+    border-radius: 4px;
+  }
+
+  .reminder-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 24px;
+    width: 320px;
+    background: linear-gradient(180deg, #ffffff, #f9f9f9);
+    font-family: 'Arial', sans-serif;
+
+    h3 {
+      font-size: 16px;
+      margin-bottom: 12px;
+      color: #20409f;
+    }
+
+    p {
+      margin: 4px 0;
+      font-size: 14px;
+    }
+
+    .greeting {
+      margin-top: 14px;
+      font-size: 15px;
+      color: #20409f;
+    }
+  }
+
+  .buttons {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 320px;
+
+    button {
+      flex: 1;
+      margin: 0 6px;
+      padding: 8px 12px;
+      border: none;
+      background-color: #20409f;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+
+      &:hover {
+        background-color: #3c5bdc;
+      }
+    }
+  }
+}
+

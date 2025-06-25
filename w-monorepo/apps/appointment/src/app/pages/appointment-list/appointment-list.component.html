@@ -32,6 +32,7 @@
         <td>{{ record.contactType }}：{{ record.contactValue }}</td>
         <td>{{ record.description }}</td>
         <td>
+          <button (click)="openReminderModal(record)">提醒</button>
           <button [routerLink]="['/appointment/edit', record.id]">编辑</button>
           <button (click)="delete(record.id)">删除</button>
         </td>
@@ -46,5 +47,28 @@
       下一页
     </button>
     <span class="total-count">共 {{ appointments.length }} 条预约</span>
+  </div>
+</div>
+
+<div class="reminder-modal" *ngIf="showReminder">
+  <div class="reminder-wrapper">
+    <div class="reminder-card" #reminderCard>
+      <h3>亲爱的顾客！</h3>
+      <p>预约时间：{{ formatDate(reminderRecord?.dateTime!) }}</p>
+      <p>联系人：{{ reminderRecord?.name }}</p>
+      <!--
+      <p>
+        联系方式：{{ reminderRecord?.contactType }}：{{
+          reminderRecord?.contactValue
+        }}
+      </p>
+      -->
+      <p class="greeting">酷乐乐游戏，期待您的到来！</p>
+    </div>
+
+    <div class="buttons">
+      <button (click)="closeReminderModal()">关闭</button>
+      <button (click)="exportReminderAsImage()">生成图片</button>
+    </div>
   </div>
 </div>

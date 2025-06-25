@@ -1,4 +1,3 @@
-// src/app/appointment-list/appointment-list.component.ts
 import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
@@ -24,6 +23,9 @@ export class AppointmentListComponent implements OnInit {
   currentPage = 1;
   pageSize = 10;
   totalPages = 1;
+
+  showReminder = false;
+  reminderRecord: IAppointment | null = null;
 
   ngOnInit(): void {
     this.load();
@@ -79,5 +81,31 @@ export class AppointmentListComponent implements OnInit {
   formatDate(dateTime: string): string {
     const date = new Date(dateTime);
     return date.toLocaleString();
+  }
+
+  openReminderModal(record: IAppointment): void {
+    this.reminderRecord = record;
+    this.showReminder = true;
+  }
+
+  closeReminderModal(): void {
+    this.showReminder = false;
+    this.reminderRecord = null;
+  }
+
+  exportReminderAsImage(): void {
+    const card = document.querySelector('.reminder-card') as HTMLElement;
+    if (!card) return;
+
+    import('html2canvas').then((html2canvas) => {
+      html2canvas
+        .default(card, { backgroundColor: '#ffffff' })
+        .then((canvas) => {
+          const link = document.createElement('a');
+          link.href = canvas.toDataURL('image/png');
+          link.download = '预约提醒卡片.png';
+          link.click();
+        });
+    });
   }
 }
