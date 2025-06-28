@@ -9,6 +9,11 @@
       📥 导出账单统计
     </button>
 
+    <!-- ✅ 导出指定时间段 -->
+    <button class="export-button" (click)="openExportRangeModal()">
+      📤 导出指定账单
+    </button>
+
     <!-- 搜索组合 -->
     <div class="search-bar">
       <select [(ngModel)]="searchField">
@@ -93,6 +98,29 @@
     <div class="buttons">
       <button (click)="closeReminderModal()">关闭</button>
       <button (click)="exportReminderAsImage()">生成图片</button>
+    </div>
+  </div>
+</div>
+
+<!-- ✅ 弹窗：导出时间段选择 -->
+<div class="reminder-modal" *ngIf="showExportRangeModal">
+  <div class="reminder-wrapper">
+    <div class="reminder-card">
+      <h3>导出账单（时间段）</h3>
+
+      <p>
+        开始时间：
+        <input type="datetime-local" [(ngModel)]="exportStartDateTime" />
+      </p>
+      <p>
+        结束时间：
+        <input type="datetime-local" [(ngModel)]="exportEndDateTime" />
+      </p>
+
+      <div class="buttons">
+        <button (click)="closeExportRangeModal()">取消</button>
+        <button (click)="downloadRangeTxt()">下载 TXT</button>
+      </div>
     </div>
   </div>
 </div>

@@ -29,6 +29,10 @@ export class AccountingListComponent {
   showReminder = false;
   reminderRecord: IAccountingRecord | null = null;
 
+  showExportRangeModal = false;
+  exportStartDateTime = '';
+  exportEndDateTime = '';
+
   constructor() {
     this.loadRecords();
   }
@@ -188,5 +192,49 @@ export class AccountingListComponent {
       link.download = '游戏提醒卡片.png';
       link.click();
     });
+  }
+
+  openExportRangeModal(): void {
+    this.exportStartDateTime = '';
+    this.exportEndDateTime = '';
+    this.showExportRangeModal = true;
+  }
+
+  closeExportRangeModal(): void {
+    this.showExportRangeModal = false;
+  }
+
+  downloadRangeTxt(): void {
+    if (!this.exportStartDateTime || !this.exportEndDateTime) {
+      alert('请填写完整的开始和结束时间');
+      return;
+    }
+
+    const params = new URLSearchParams({
+      startDateTime: this.exportStartDateTime,
+      endDateTime: this.exportEndDateTime,
+    });
+
+    const url = `http://localhost:8080/api/accounting/export-txt-by-range?${params.toString()}`;
+
+    fetch(url)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('下载失败');
+        }
+        return response.blob();
+      })
+      .then((blob) => {
+        const a = document.createElement('a');
+        const blobUrl = window.URL.createObjectURL(blob);
+        a.href = blobUrl;
+        a.download = `账单明细_${this.exportStartDateTime}_to_${this.exportEndDateTime}.txt`;
+        a.click();
+        window.URL.revokeObjectURL(blobUrl);
+        this.closeExportRangeModal();
+      })
+      .catch((error) => {
+        alert('导出失败：' + error.message);
+      });
   }
 }
