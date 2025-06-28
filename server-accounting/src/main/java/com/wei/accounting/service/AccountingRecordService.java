@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -105,4 +106,52 @@ public class AccountingRecordService {
 
         return content.toString();
     }
+
+    public String generateAccountingTxtContentByRange(LocalDateTime start, LocalDateTime end) {
+        List<AccountingRecord> records = repository.findByStartDateTimeBetween(start, end);
+
+        BigDecimal totalAmount = BigDecimal.ZERO;
+        BigDecimal totalDuration = BigDecimal.ZERO;
+        int totalRecords = records.size();
+
+        StringBuilder content = new StringBuilder();
+
+        for (AccountingRecord record : records) {
+            totalAmount = totalAmount.add(record.getActualAmount());
+            totalDuration = totalDuration.add(record.getDuration());
+        }
+
+        content.append("指定时间段账单明细\n");
+        content.append("时间范围：").append(start).append(" 到 ").append(end).append("\n");
+        content.append("总实收金额: ").append(totalAmount).append(" 元\n");
+        content.append("总游戏时长: ").append(totalDuration).append(" 小时\n");
+        content.append("总记录数: ").append(totalRecords).append(" 条\n");
+        content.append("\n详细记录如下：\n");
+
+        for (AccountingRecord record : records) {
+            String date = record.getStartDateTime().toLocalDate().toString();
+
+            List<String> gameNamesList = record.getGameNames();
+            String gameNames;
+            if (gameNamesList == null || gameNamesList.isEmpty()) {
+                gameNames = "未知游戏";
+            } else {
+                List<String> filteredNames = gameNamesList.stream()
+                        .filter(name -> name != null && !name.trim().isEmpty())
+                        .toList();
+                gameNames = filteredNames.isEmpty() ? "未知游戏" : String.join(",", filteredNames);
+            }
+
+            content.append(date).append(" ")
+                    .append(gameNames).append(" ")
+                    .append(record.getDuration()).append("小时 ")
+                    .append(record.getActualAmount()).append("元 ")
+                    .append(record.getCustomerType()).append(" ")
+                    .append(record.getPlatform())
+                    .append("\n");
+        }
+
+        return content.toString();
+    }
+
 }

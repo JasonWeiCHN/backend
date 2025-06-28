@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.*;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 @RestController
 @RequestMapping("/api/accounting")
 public class AccountingRecordController {
@@ -51,6 +54,25 @@ public class AccountingRecordController {
 
         return ResponseEntity.ok()
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=accounting_records.txt")
+                .contentType(MediaType.TEXT_PLAIN)
+                .body(fileBytes);
+    }
+
+    @GetMapping("/export-txt-by-range")
+    public ResponseEntity<byte[]> exportAccountingRecordsByRange(
+            @RequestParam String startDateTime,
+            @RequestParam String endDateTime) {
+
+        // 字符串转 LocalDateTime
+        DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
+        LocalDateTime start = LocalDateTime.parse(startDateTime, formatter);
+        LocalDateTime end = LocalDateTime.parse(endDateTime, formatter);
+
+        String content = service.generateAccountingTxtContentByRange(start, end);
+        byte[] fileBytes = content.getBytes(StandardCharsets.UTF_8);
+
+        return ResponseEntity.ok()
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=accounting_records_range.txt")
                 .contentType(MediaType.TEXT_PLAIN)
                 .body(fileBytes);
     }
