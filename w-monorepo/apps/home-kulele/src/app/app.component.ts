@@ -38,6 +38,11 @@ export class AppComponent {
       description: '管理所有游戏信息',
       link: 'http://localhost:4204',
     },
+    {
+      title: '商品管理',
+      description: '管理所有游戏信息',
+      link: 'http://localhost:4205',
+    },
   ];
 
   openLink(link: string): void {

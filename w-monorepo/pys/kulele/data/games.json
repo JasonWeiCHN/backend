@@ -546,5 +546,26 @@
       }
     ],
     "video": null
+  },
+  {
+    "id": 28,
+    "name": "马里奥派对",
+    "image": "https://i0.hdslb.com/bfs/archive/3e80b76b8449c1e1f7dc1746187bf08db976a367.jpg@672w_378h_1c_!web-search-common-cover.avif",
+    "tags": [
+      "SWITCH"
+    ],
+    "searchKeywords": "马里奥派对 MLAPD",
+    "path": "https://www.bilibili.com/video/BV1UPUqY1Erd",
+    "releaseDate": null,
+    "description": "为朋友聚会而生的休闲游戏，游戏支持双机四人同时联机，包含各种各样的迷你游戏，例如坦克大战、大富翁，捕鱼等等。",
+    "genres": [
+      {
+        "id": "4",
+        "name": "休闲",
+        "description": ""
+      }
+    ],
+    "guides": [],
+    "video": "https://www.bilibili.com/video/BV1UPUqY1Erd"
   }
 ]
