@@ -8,7 +8,7 @@ from datetime import datetime
 
 DETAIL_URL = "http://store.steampowered.com/api/appdetails/?appids={0}&cc=cn&l=schinese"
 OUTPUT_FOLDER = r"F:/steam-game-info/"
-APP_ID = 2400430
+APP_ID = 1599660
 
 lastTime = time.time()
 waitTime = 5 * 60.0 / 195

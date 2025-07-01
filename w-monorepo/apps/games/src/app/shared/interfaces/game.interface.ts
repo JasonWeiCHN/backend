@@ -1,3 +1,6 @@
+import { ITag } from '@w-monorepo/ui';
+import { IGenre } from './genre.interface';
+
 export interface IGameGuide {
   title: string;
   description?: string;
@@ -5,17 +8,11 @@ export interface IGameGuide {
   sourceUrl: string;
 }
 
-export interface IGenre {
-  id: string;
-  name: string;
-  description?: string;
-}
-
 export interface IGame {
   id?: number;
   name: string;
   image: string;
-  tags?: string[]; // 如 ['双人', '亲子', 'PS5']
+  tags?: ITag[]; // 如 ['双人', '亲子', 'PS5']
   searchKeywords?: string; // 如 "双影奇境 SYQJ"
   path?: string; // 页面路径
   releaseDate?: string; // ISO 日期字符串
@@ -28,7 +25,7 @@ export interface IGame {
 export interface IAddGameRequest {
   name: string;
   image: string;
-  tags: string[];
+  tags: string[]; // tag id list
   searchKeywords?: string;
   path?: string;
   releaseDate?: string;

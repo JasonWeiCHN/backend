@@ -1,5 +1,26 @@
 <div class="game-list">
-  <button class="add-button" [routerLink]="['/game/new']">➕ 新增游戏</button>
+  <div class="top-bar">
+    <button class="add-button" [routerLink]="['/game/new']">➕ 新增游戏</button>
+
+    <div
+      class="search-bar"
+      style="
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-left: 20px;
+      "
+    >
+      <select [(ngModel)]="searchField">
+        <option value="name">游戏名</option>
+        <option value="tags">标签</option>
+        <option value="description">描述</option>
+      </select>
+      <input [(ngModel)]="searchKeyword" placeholder="请输入搜索关键字" />
+      <button (click)="search()">🔍 搜索</button>
+      <button (click)="clearSearch()" *ngIf="searchKeyword">✖ 清除</button>
+    </div>
+  </div>
 
   <table class="game-table">
     <thead>
@@ -13,10 +34,14 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let game of games">
+      <tr *ngFor="let game of pagedGames">
         <td>{{ game.id }}</td>
         <td [title]="game.name">{{ game.name }}</td>
-        <td>{{ game.tags?.join(', ') }}</td>
+        <td>
+          <span *ngFor="let tag of game.tags ?? []; let last = last">
+            {{ tag.name }}<span *ngIf="!last">, </span>
+          </span>
+        </td>
         <td [title]="game.description">{{ game.description || '—' }}</td>
         <td>
           <a *ngIf="game.video" [href]="game.video" target="_blank">查看</a>
@@ -30,4 +55,13 @@
       </tr>
     </tbody>
   </table>
+
+  <div class="pagination">
+    <button (click)="prevPage()" [disabled]="currentPage === 1">上一页</button>
+    <span>第 {{ currentPage }} 页 / 共 {{ totalPages }} 页</span>
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">
+      下一页
+    </button>
+    <span class="total-count">共 {{ games.length }} 条数据</span>
+  </div>
 </div>

@@ -1,32 +1,5 @@
 [
   {
-    "id": 3,
-    "name": "街霸6",
-    "image": "https://i0.hdslb.com/bfs/new_dyn/c0b1878dcce89c89e080a306452978473546592604850316.png@380w_480h.avif",
-    "tags": [
-      "双人",
-      "PS5"
-    ],
-    "searchKeywords": "街霸6 JB6",
-    "path": null,
-    "releaseDate": null,
-    "description": "系列最新作《Street Fighter 6》将于2023年6月2日发售！ 本作以RE ENGINE开发，并由系列前所未有的大型模式“环球游历”、“斗技战场”以及“格斗中心”构成。新的“Street Fighter”和前所未有的全新体验正在等待着你的到来。",
-    "genres": [
-      {
-        "id": "1",
-        "name": "动作",
-        "description": ""
-      },
-      {
-        "id": "25",
-        "name": "冒险",
-        "description": ""
-      }
-    ],
-    "guides": [],
-    "video": null
-  },
-  {
     "id": 4,
     "name": "拳皇15",
     "image": "https://i0.hdslb.com/bfs/new_dyn/887ff05d6977af88602f645ff05c48783546592604850316.png@380w_480h.avif",
@@ -36,39 +9,12 @@
     ],
     "searchKeywords": "拳皇15 QH15",
     "path": null,
-    "releaseDate": null,
+    "releaseDate": "2024-12-12",
     "description": "粉碎！突破想象 突破一切的新生『15』！",
     "genres": [
       {
         "id": "1",
         "name": "动作",
-        "description": ""
-      }
-    ],
-    "guides": [],
-    "video": null
-  },
-  {
-    "id": 5,
-    "name": "FC25",
-    "image": "https://i0.hdslb.com/bfs/new_dyn/6ab2beb1233e7669281705150991c61c3546592604850316.png@380w_480h.avif",
-    "tags": [
-      "双人",
-      "PS5"
-    ],
-    "searchKeywords": "FC25",
-    "path": null,
-    "releaseDate": null,
-    "description": "《EA SPORTS FC™ 25》将为您带来更多为俱乐部奋勇争胜的方式。在您最喜爱的模式中通过全新 5 对 5 Rush 与好友并肩作战，借助 FC IQ 以前所未有的强大战术掌控力引领您的俱乐部走向胜利。",
-    "genres": [
-      {
-        "id": "28",
-        "name": "模拟",
-        "description": ""
-      },
-      {
-        "id": "18",
-        "name": "体育",
         "description": ""
       }
     ],
@@ -86,7 +32,7 @@
     ],
     "searchKeywords": "疯狂兔子：传奇派对 FKTZ CQPD",
     "path": null,
-    "releaseDate": null,
+    "releaseDate": "2022-06-30",
     "description": "合家欢大快活游戏",
     "genres": [],
     "guides": [],
@@ -102,7 +48,7 @@
     ],
     "searchKeywords": "大富翁10 DFW10",
     "path": null,
-    "releaseDate": null,
+    "releaseDate": "2019-10-24",
     "description": "《大富翁10》是一款经典的强手棋类游戏，玩家通过运气（投骰子）及策略（买地买卡片）赚取金钱，打败其他玩家。美术采用纯3D的Q版萌系画风。游戏模式包括：故事模式、传记模式、多人热座模式、联网模式。《大富翁10》是由软星科技（北京）有限公司研发，也是《大富翁》系列游戏的第十部作品。",
     "genres": [
       {
@@ -129,7 +75,7 @@
     ],
     "searchKeywords": "魂斗罗·加鲁加行动 HDL JLJXD",
     "path": null,
-    "releaseDate": null,
+    "releaseDate": "2024-03-12",
     "description": "经典魂斗罗系列的最新作品终于登场了！ 本作品是1980年代一经发售就获得广大支持的初代【魂斗罗】的完全重制版。 通过强化武器系统、增加游戏机制、加入新的敌人和关卡等一系列的升级，使经典的魂斗罗释放出更有魅力的光彩。 快来更广阔的『魂斗罗世界』中展开的新剧情吧！ 经典的正统魂斗罗，登场！！",
     "genres": [
       {
@@ -151,7 +97,7 @@
     ],
     "searchKeywords": "任天堂明星大乱斗 RTTMXDLD",
     "path": null,
-    "releaseDate": null,
+    "releaseDate": "2018-12-07",
     "description": "《任天堂明星大乱斗》为爽快、夸张到极限的多人派对风格，游戏最多支持四人同时组队对战（SSB4forWiiU版最多可支持8人对战），游戏中除了传统的“生命数”血槽以外，还有一项特别的参数“击飞值”，当对手的击飞值达到100%以上时，当你使用必杀技时，伴着魄力满点的特写，对手便被远远的轰出场外，这种爽快感确实无与伦比。",
     "genres": [
       {
@@ -173,7 +119,7 @@
     ],
     "searchKeywords": "刺客信条·影 CKXTY",
     "path": null,
-    "releaseDate": null,
+    "releaseDate": "2025-03-19",
     "description": "在日本战国背景下，体验史诗般的动作冒险故事！变身夺命忍者刺客，化为强大传奇武士，在一片混沌的时代，进入美丽的开放世界进行探索！",
     "genres": [
       {
@@ -204,39 +150,8 @@
     ],
     "searchKeywords": "怪物猎人·荒野 GWLRHY",
     "path": null,
-    "releaseDate": null,
+    "releaseDate": "2025-02-27",
     "description": "狂野凶猛的大自然，袭来。 时刻都在动态变化的原野。 这是个关于生活在具有两面性的世界中的怪物与人们的故事。 进化的狩猎动作，寻求连续不断的沉浸感，究极的狩猎体验正等待你的到来。",
-    "genres": [
-      {
-        "id": "1",
-        "name": "动作",
-        "description": ""
-      },
-      {
-        "id": "25",
-        "name": "冒险",
-        "description": ""
-      },
-      {
-        "id": "3",
-        "name": "角色扮演",
-        "description": ""
-      }
-    ],
-    "guides": [],
-    "video": null
-  },
-  {
-    "id": 12,
-    "name": "黑神话·悟空",
-    "image": "https://i0.hdslb.com/bfs/new_dyn/7b31335b4b28a87bff765e2108c553ac3546592604850316.png@380w_480h.avif",
-    "tags": [
-      "PS5"
-    ],
-    "searchKeywords": "黑神话·悟空 HSHWK",
-    "path": null,
-    "releaseDate": null,
-    "description": "《黑神话：悟空》是一款以中国神话为背景的动作角色扮演游戏。你将扮演一位“天命人”，为了探寻昔日传说的真相，踏上一条充满危险与惊奇的西游之路。",
     "genres": [
       {
         "id": "1",
@@ -266,7 +181,7 @@
     ],
     "searchKeywords": "真·三国无双 起源 ZSGWSQY",
     "path": null,
-    "releaseDate": null,
+    "releaseDate": "2025-01-16",
     "description": "如临真实战场，畅享爽快的一骑当千动作！无名英雄闯荡三国乱世的“真・三国无双”系列新作。",
     "genres": [
       {
@@ -289,32 +204,6 @@
     "video": null
   },
   {
-    "id": 14,
-    "name": "对马岛之魂",
-    "image": "https://i0.hdslb.com/bfs/new_dyn/55da3afdf5ba70495a3a478497b8fb423546592604850316.png@380w_480h.avif",
-    "tags": [
-      "PS5"
-    ],
-    "searchKeywords": "对马岛之魂 DMDZH",
-    "path": null,
-    "releaseDate": null,
-    "description": "风暴将至，在PC上体验完整的《Ghost of Tsushima导演剪辑版》，在这场开放世界动作冒险中开辟自己的道路，发现隐藏的奇景。本游戏由Sucker Punch Productions、Nixxes Software和PlayStation Studios为您呈现。",
-    "genres": [
-      {
-        "id": "1",
-        "name": "动作",
-        "description": ""
-      },
-      {
-        "id": "25",
-        "name": "冒险",
-        "description": ""
-      }
-    ],
-    "guides": [],
-    "video": null
-  },
-  {
     "id": 15,
     "name": "艾尔登法环",
     "image": "https://i0.hdslb.com/bfs/new_dyn/bfdbe1efaaf07531ba252693b39922bc3546592604850316.png@380w_480h.avif",
@@ -324,7 +213,7 @@
     ],
     "searchKeywords": "艾尔登法环 AEDFH",
     "path": null,
-    "releaseDate": null,
+    "releaseDate": "2022-02-24",
     "description": "艾尔登法环是以正统黑暗奇幻世界为舞台的动作RPG游戏。 走进辽阔的场景与地下迷宫探索未知，挑战困难重重的险境，享受克服困境时的成就感吧。 不仅如此，登场角色之间的利害关系谱成的群像剧，更是不容错过。",
     "genres": [
       {
@@ -350,7 +239,7 @@
     ],
     "searchKeywords": "马里奥赛车8 MLASC8",
     "path": "",
-    "releaseDate": null,
+    "releaseDate": "2014-05-29",
     "description": "欢快有趣的赛车竞速游戏，赛道丰富",
     "genres": [
       {
@@ -371,7 +260,7 @@
     ],
     "searchKeywords": "我的世界地下城 WDSJDXC",
     "path": "",
-    "releaseDate": null,
+    "releaseDate": "2020-05-26",
     "description": "我的世界元素，地下城刷宝探险游戏",
     "genres": [
       {
@@ -384,22 +273,50 @@
     "video": "https://www.bilibili.com/video/BV1jt4y1C7cA"
   },
   {
+    "id": 12,
+    "name": "黑神话·悟空",
+    "image": "https://i0.hdslb.com/bfs/new_dyn/7b31335b4b28a87bff765e2108c553ac3546592604850316.png@380w_480h.avif",
+    "tags": [
+      "PS5",
+      "热门"
+    ],
+    "searchKeywords": "黑神话·悟空 HSHWK",
+    "path": "https://www.bilibili.com/video/BV1AE4m1d7XT",
+    "releaseDate": "2024-08-19",
+    "description": "《黑神话：悟空》是一款以中国神话为背景的动作角色扮演游戏。你将扮演一位“天命人”，为了探寻昔日传说的真相，踏上一条充满危险与惊奇的西游之路。",
+    "genres": [
+      {
+        "id": "1",
+        "name": "动作",
+        "description": ""
+      },
+      {
+        "id": "25",
+        "name": "冒险",
+        "description": ""
+      },
+      {
+        "id": "3",
+        "name": "角色扮演",
+        "description": ""
+      }
+    ],
+    "guides": [],
+    "video": "https://www.bilibili.com/video/BV1AE4m1d7XT"
+  },
+  {
     "id": 24,
-    "name": "胡闹厨房",
+    "name": "胡闹厨房 全都好吃",
     "image": "https://i0.hdslb.com/bfs/archive/01259b582ae4e447613a4a40c3525b779d6bc7a6.jpg@672w_378h_1c_!web-search-common-cover.avif",
     "tags": [
+      "双人",
       "SWITCH"
     ],
     "searchKeywords": "胡闹厨房 HNCF",
     "path": "https://www.bilibili.com/video/BV1TU4y1K7fq",
-    "releaseDate": null,
+    "releaseDate": "2021-04-22",
     "description": "合作烹饪游戏，欢乐无穷",
     "genres": [
-      {
-        "id": "28",
-        "name": "模拟",
-        "description": ""
-      },
       {
         "id": "4",
         "name": "休闲",
@@ -410,17 +327,69 @@
     "video": "https://www.bilibili.com/video/BV1TU4y1K7fq"
   },
   {
-    "id": 2,
-    "name": "双人成行",
-    "image": "https://i0.hdslb.com/bfs/new_dyn/d55d80c4d831309776a18fd559a350a93546592604850316.png@380w_480h.avif",
+    "id": 14,
+    "name": "对马岛之魂",
+    "image": "https://i0.hdslb.com/bfs/new_dyn/55da3afdf5ba70495a3a478497b8fb423546592604850316.png@380w_480h.avif",
+    "tags": [
+      "PS5",
+      "开放世界",
+      "动作"
+    ],
+    "searchKeywords": "对马岛之魂 DMDZH",
+    "path": "https://www.bilibili.com/video/BV1j5411e7bC",
+    "releaseDate": "2020-07-17",
+    "description": "故事发生在1274年，那时的日本武士是日本强力的守护者，而蒙古人此时通过对马岛大举入侵日本。玩家们扮演的主角境井仁是一位镰仓幕府的武士，这位武士要竭尽所能从蒙古帝国手中保卫自己的祖国。",
+    "genres": [
+      {
+        "id": "1",
+        "name": "动作",
+        "description": ""
+      }
+    ],
+    "guides": [],
+    "video": "https://www.bilibili.com/video/BV1j5411e7bC"
+  },
+  {
+    "id": 5,
+    "name": "FC25",
+    "image": "https://i0.hdslb.com/bfs/new_dyn/6ab2beb1233e7669281705150991c61c3546592604850316.png@380w_480h.avif",
     "tags": [
       "双人",
-      "PS4"
+      "PS5",
+      "热门"
     ],
-    "searchKeywords": "双人成行 SRCX",
-    "path": null,
-    "releaseDate": null,
-    "description": "在这款游戏中，两位玩家将扮演小梅和科迪这两位感情濒临破裂的中年夫妻。缩小后变成Q版的3D角色，在奇幻而且梦幻化的场景中，开始一段精彩纷呈、惊心动魄、激动人心的大冒险。游戏一共有7个章节，分别是棚屋、大树、罗斯的房间、布谷鸟钟、雪景球、花园、阁楼！每个章节都有独特的玩法，人物拥有不同的能力，需要互相配合，渡过难关！",
+    "searchKeywords": "FC25",
+    "path": "https://www.bilibili.com/video/BV1B2tQe6Et4",
+    "releaseDate": "2024-09-26",
+    "description": "《EA SPORTS FC™ 25》将为您带来更多为俱乐部奋勇争胜的方式。在您最喜爱的模式中通过全新 5 对 5 Rush 与好友并肩作战，借助 FC IQ 以前所未有的强大战术掌控力引领您的俱乐部走向胜利。",
+    "genres": [
+      {
+        "id": "28",
+        "name": "模拟",
+        "description": ""
+      },
+      {
+        "id": "18",
+        "name": "体育",
+        "description": ""
+      }
+    ],
+    "guides": [],
+    "video": "https://www.bilibili.com/video/BV1B2tQe6Et4"
+  },
+  {
+    "id": 3,
+    "name": "街霸6",
+    "image": "https://i0.hdslb.com/bfs/new_dyn/c0b1878dcce89c89e080a306452978473546592604850316.png@380w_480h.avif",
+    "tags": [
+      "双人",
+      "PS5",
+      "热门"
+    ],
+    "searchKeywords": "街霸6 JB6",
+    "path": "https://www.bilibili.com/video/BV15N411b7C1",
+    "releaseDate": "2023-06-01",
+    "description": "系列最新作《Street Fighter 6》将于2023年6月2日发售！ 本作以RE ENGINE开发，并由系列前所未有的大型模式“环球游历”、“斗技战场”以及“格斗中心”构成。新的“Street Fighter”和前所未有的全新体验正在等待着你的到来。",
     "genres": [
       {
         "id": "1",
@@ -433,15 +402,8 @@
         "description": ""
       }
     ],
-    "guides": [
-      {
-        "title": "100%全流程全收集全成就攻略解说",
-        "description": "正常路线非逃课打法",
-        "author": "好吃的香草雪球",
-        "sourceUrl": "bilibili/BV1AX4y1g79E"
-      }
-    ],
-    "video": null
+    "guides": [],
+    "video": "https://www.bilibili.com/video/BV15N411b7C1"
   },
   {
     "id": 25,
@@ -452,7 +414,7 @@
     ],
     "searchKeywords": "星之卡比·探索发现 XZKBTSFX",
     "path": "https://www.bilibili.com/video/BV1UY411E79S",
-    "releaseDate": null,
+    "releaseDate": "2022-03-25",
     "description": "可爱变身动作冒险游戏",
     "genres": [
       {
@@ -479,7 +441,7 @@
     ],
     "searchKeywords": "大头盔英雄 DTKYX",
     "path": "https://www.bilibili.com/video/BV1ChNNeRETi",
-    "releaseDate": null,
+    "releaseDate": "2025-02-05",
     "description": "双人闯关游戏，角色超多",
     "genres": [
       {
@@ -501,7 +463,7 @@
     ],
     "searchKeywords": "捣蛋鹅 大鹅模拟器 DDE DEMNQ",
     "path": "https://www.bilibili.com/video/BV1PSMvzLE8X",
-    "releaseDate": null,
+    "releaseDate": "2020-09-23",
     "description": "扮演鹅来作恶的游戏",
     "genres": [
       {
@@ -519,11 +481,12 @@
     "image": "https://i0.hdslb.com/bfs/new_dyn/8cb754f9e413a0bb718513df63338a663546592604850316.png@380w_480h.avif",
     "tags": [
       "双人",
-      "PS5"
+      "PS5",
+      "热门"
     ],
     "searchKeywords": "双影奇境 SYQJ",
-    "path": null,
-    "releaseDate": null,
+    "path": "https://www.bilibili.com/video/BV1AmRKYBEXQ",
+    "releaseDate": "2025-03-06",
     "description": "可能是现在最好玩的双人合作游戏。米欧和佐伊是两位风格截然不同的作家，她们一个擅长科幻小说，另一个专注于奇幻题材。被骗进入一台意在窃取创意的机器后，她们陷入了自己创作的故事之中。",
     "genres": [
       {
@@ -539,13 +502,19 @@
     ],
     "guides": [
       {
-        "title": "全剧情流程通关攻略",
-        "description": "全任务 全收集",
+        "title": "【双影奇境】4K 全任务 全收集 全剧情",
+        "description": "流程通关攻略",
         "author": "11的游戏世界",
         "sourceUrl": "bilibili/BV1AmRKYBEXQ"
+      },
+      {
+        "title": "4K全主线全支线全流程",
+        "description": "《双影奇境》紫雨&蕾雅双人联机",
+        "author": "紫雨carol",
+        "sourceUrl": "bilibili/BV1HFRFYLE1c"
       }
     ],
-    "video": null
+    "video": "https://www.bilibili.com/video/BV1AmRKYBEXQ"
   },
   {
     "id": 28,
@@ -556,7 +525,7 @@
     ],
     "searchKeywords": "马里奥派对 MLAPD",
     "path": "https://www.bilibili.com/video/BV1UPUqY1Erd",
-    "releaseDate": null,
+    "releaseDate": "2018-10-05",
     "description": "为朋友聚会而生的休闲游戏，游戏支持双机四人同时联机，包含各种各样的迷你游戏，例如坦克大战、大富翁，捕鱼等等。",
     "genres": [
       {
@@ -567,5 +536,335 @@
     ],
     "guides": [],
     "video": "https://www.bilibili.com/video/BV1UPUqY1Erd"
+  },
+  {
+    "id": 29,
+    "name": "NBA 2K25",
+    "image": "https://i2.hdslb.com/bfs/archive/7cb1bb1b1e340336779deda5c9bb210039161c3f.jpg@672w_378h_1c_!web-search-common-cover.avif",
+    "tags": [
+      "双人",
+      "体育"
+    ],
+    "searchKeywords": "NBA 2K25",
+    "path": "https://www.bilibili.com/video/BV1U9pceNEZg",
+    "releaseDate": "2024-09-06",
+    "description": "NBA 2K25是2K公司开发的一款篮球模拟游戏，内容主题是NBA和WNBA的篮球赛事，玩法包括MyTEAM模式和增强的ProPLAY技术。",
+    "genres": [
+      {
+        "id": "18",
+        "name": "体育",
+        "description": ""
+      }
+    ],
+    "guides": [],
+    "video": "https://www.bilibili.com/video/BV1U9pceNEZg"
+  },
+  {
+    "id": 31,
+    "name": "仁王2",
+    "image": "https://i2.hdslb.com/bfs/archive/b05ae01df2b96bce788cf4010b216b28096b5f7c.png@672w_378h_1c_!web-search-common-cover.avif",
+    "tags": [
+      "动作"
+    ],
+    "searchKeywords": "仁王2 RW2",
+    "path": "https://www.bilibili.com/video/BV16E411F7Lp",
+    "releaseDate": "2020-03-12",
+    "description": "本作是一款以恶贼嚣张跋扈、妖怪四处作乱的战国时代为舞台展开的黑暗战国动作角色扮演游戏。 加入全新的战斗方式“妖怪化”、外形邪恶丑陋的各路妖怪以及 由妖怪产生的“常暗”世界等众多新要素，使游玩的体验和成就感达到前所未有的高度。 敬请享受完全进化的“战国受死游戏”。",
+    "genres": [
+      {
+        "id": "1",
+        "name": "动作",
+        "description": ""
+      }
+    ],
+    "guides": [],
+    "video": "https://www.bilibili.com/video/BV16E411F7Lp"
+  },
+  {
+    "id": 35,
+    "name": "雪人兄弟",
+    "image": "https://i0.hdslb.com/bfs/archive/7afa44d56079791080a760e12cdccc6283597348.jpg@308w_174h",
+    "tags": [
+      "SWITCH",
+      "休闲",
+      "双人"
+    ],
+    "searchKeywords": "雪人兄弟 XRXD",
+    "path": "https://www.bilibili.com/video/BV19gN7zTE9L",
+    "releaseDate": "2022-05-19",
+    "description": "《雪人兄弟特别版》是由DAEWON MEDIA GAME LAB与CRT Games合作开发的经典街机游戏重制作品，2022年5月19日率先登陆Nintendo Switch平台。游戏在保留原版核心玩法的基础上新增30个关卡、全新BOSS怪物设计及\"怪物挑战\"模式，支持双人合作玩法。",
+    "genres": [
+      {
+        "id": "1",
+        "name": "动作",
+        "description": ""
+      },
+      {
+        "id": "4",
+        "name": "休闲",
+        "description": ""
+      }
+    ],
+    "guides": [
+      {
+        "title": "雪人兄弟·实机演示",
+        "description": "快乐双人用雪球打怪物",
+        "author": "酷乐乐游戏",
+        "sourceUrl": "bilibili/BV19gN7zTE9L"
+      }
+    ],
+    "video": "https://www.bilibili.com/video/BV19gN7zTE9L"
+  },
+  {
+    "id": 30,
+    "name": "仁王",
+    "image": "https://i2.hdslb.com/bfs/archive/1b5170b92ba5abde81e6aa1a34b958c3839fb463.png@672w_378h_1c_!web-search-common-cover.avif",
+    "tags": [
+      "动作"
+    ],
+    "searchKeywords": "仁王 RW",
+    "path": "https://www.bilibili.com/video/BV1Bt411W72p",
+    "releaseDate": "2017-02-09",
+    "description": "以贼人嚣张跋扈，妖怪四处蠢动的幽玄日本战国时代为舞台的黑暗风格战国动作RPG，史实人物「三浦按针」为蓝本的金发碧眼武士「威廉」以及历经几番死斗的故事。除战国时代末期史实为基础外，实际存在的武将也将登场，深奥札实的故事，紧张感与极高的成就感，足以称之为「战国殊死游戏」。",
+    "genres": [
+      {
+        "id": "1",
+        "name": "动作",
+        "description": ""
+      }
+    ],
+    "guides": [],
+    "video": "https://www.bilibili.com/video/BV1Bt411W72p"
+  },
+  {
+    "id": 32,
+    "name": "恶魔之魂：重制版",
+    "image": "https://i2.hdslb.com/bfs/archive/1e390023002f050e97fed4997025765b02da666a.jpg@672w_378h_1c_!web-search-common-cover.avif",
+    "tags": [
+      "动作",
+      "类魂"
+    ],
+    "searchKeywords": "恶魔之魂 EMZH",
+    "path": "https://www.bilibili.com/video/BV1vA411W7cW",
+    "releaseDate": "2020-11-12",
+    "description": "《恶魔之魂：重制版》为Bluepoint Games制作的一款动作角色扮演游戏，于2020年11月12日在PS5平台独占发售，为《恶魔之魂》的重制版。游戏以多年前因不慎唤醒“古老魔兽”而被浓雾与恶魔所隔绝的战士之国柏雷塔尼亚为背景，玩家需要扮演自创的冒险者分身，深入神秘的柏雷塔尼亚，寻找救世的最后希望。",
+    "genres": [
+      {
+        "id": "1",
+        "name": "动作",
+        "description": ""
+      }
+    ],
+    "guides": [],
+    "video": "https://www.bilibili.com/video/BV1vA411W7cW"
+  },
+  {
+    "id": 33,
+    "name": "黑暗之魂：重制版",
+    "image": "https://i2.hdslb.com/bfs/archive/9632dbd7197ca5d45041ff36add11e25016e0d98.png@672w_378h_1c_!web-search-common-cover.avif",
+    "tags": [
+      "PS5",
+      "动作",
+      "类魂"
+    ],
+    "searchKeywords": "黑暗之魂：重制版 HAZH",
+    "path": "https://www.bilibili.com/video/BV1KW411w7LX",
+    "releaseDate": "2018-05-25",
+    "description": "有一天，燃起了第一团火。 重新体验话题性、代表性十足的经典游戏。 经过画质提升，将以惊艳的60fps形式呈现，做好重返罗德兰的准备吧。 黑暗灵魂 Remastered包含游戏本体，以及DLC《Artorias of the Abyss》。",
+    "genres": [
+      {
+        "id": "1",
+        "name": "动作",
+        "description": ""
+      }
+    ],
+    "guides": [],
+    "video": "https://www.bilibili.com/video/BV1KW411w7LX"
+  },
+  {
+    "id": 36,
+    "name": "UFC5",
+    "image": "https://i2.hdslb.com/bfs/archive/1009f35f9bb6eb8945571c024254ab2f245a28f9.jpg@672w_378h_1c.avif",
+    "tags": [
+      "体育",
+      "PS5"
+    ],
+    "searchKeywords": "UFC5",
+    "path": "https://www.bilibili.com/video/BV1mHj9zRED4",
+    "releaseDate": "2023-10-27",
+    "description": "一款备受瞩目的综合格斗游戏",
+    "genres": [
+      {
+        "id": "18",
+        "name": "体育",
+        "description": ""
+      }
+    ],
+    "guides": [
+      {
+        "title": "UFC5·实机演示",
+        "description": "拳拳到肉",
+        "author": "酷乐乐游戏",
+        "sourceUrl": "bilibili/BV1mHj9zRED4"
+      }
+    ],
+    "video": "https://www.bilibili.com/video/BV1mHj9zRED4"
+  },
+  {
+    "id": 38,
+    "name": "小丑牌",
+    "image": "https://i2.hdslb.com/bfs/archive/7a742f2a045e90971aa3369331f7b0db2d7e1e7d.jpg@672w_378h_1c_!web-search-common-cover.avif",
+    "tags": [
+      "体育"
+    ],
+    "searchKeywords": "小丑牌 XCP",
+    "path": "https://www.bilibili.com/video/BV1Mnj9z4E8w",
+    "releaseDate": "2024-02-20",
+    "description": "Balatro是一场循环不息的扑克之旅。在这款令人陶醉的策略构建游戏中，你将参与到非法牌局，发掘能够改变局势的小丑牌，引爆一系列令人血脉喷张、疯狂迸发的连锁效应。",
+    "genres": [
+      {
+        "id": "4",
+        "name": "休闲",
+        "description": ""
+      },
+      {
+        "id": "2",
+        "name": "策略",
+        "description": ""
+      },
+      {
+        "id": "23",
+        "name": "独立",
+        "description": ""
+      }
+    ],
+    "guides": [
+      {
+        "title": "小丑牌",
+        "description": "第一次玩实况",
+        "author": "酷乐乐游戏",
+        "sourceUrl": "bilibili/BV1Mnj9z4E8w"
+      }
+    ],
+    "video": "https://www.bilibili.com/video/BV1Mnj9z4E8w"
+  },
+  {
+    "id": 37,
+    "name": "只只大冒险",
+    "image": "https://i2.hdslb.com/bfs/archive/4b3bec28d67e5867c0b342622e8d379aee0cfd53.jpg@672w_378h_1c_!web-search-common-cover.avif",
+    "tags": [
+      "双人",
+      "动作"
+    ],
+    "searchKeywords": "只只大冒险 ZZDMX",
+    "path": "https://www.bilibili.com/video/BV1QVj9zcEQy",
+    "releaseDate": "2020-07-02",
+    "description": "玩家操控两个小机器人“阿古”和“茜拉”，在多彩星球上展开冒险。游戏特色在于物理引擎驱动的合作机制，玩家需协同伙伴，通过操作角色的特殊能力，解决机关谜题，穿越八个风格迥异的关卡。",
+    "genres": [
+      {
+        "id": "1",
+        "name": "动作",
+        "description": ""
+      },
+      {
+        "id": "25",
+        "name": "冒险",
+        "description": ""
+      }
+    ],
+    "guides": [
+      {
+        "title": "只只大冒险",
+        "description": "开场动画",
+        "author": "酷乐乐游戏",
+        "sourceUrl": "bilibili/BV1QVj9zcEQy"
+      }
+    ],
+    "video": "https://www.bilibili.com/video/BV1QVj9zcEQy"
+  },
+  {
+    "id": 39,
+    "name": "麻布仔大冒险",
+    "image": "https://i2.hdslb.com/bfs/archive/ed6edcc721ad329a7eb3f210a75b728a973bbd20.jpg@672w_378h_1c_!web-search-common-cover.avif",
+    "tags": [
+      "双人"
+    ],
+    "searchKeywords": "麻布仔大冒险 MBZDMX",
+    "path": "https://www.bilibili.com/video/BV13W7nzuE66",
+    "releaseDate": "2020-11-12",
+    "description": "《麻布仔大冒险》是一款由Sumo Digital制作的3D平台跳跃游戏。如其游戏名，玩家将扮演一只“麻布仔”，并通过跳跃、奔跑、攻击等方式躲避敌人（或是击败敌人）。本作拥有多人游戏模式，最多支持4名玩家一起游戏。",
+    "genres": [
+      {
+        "id": "25",
+        "name": "冒险",
+        "description": ""
+      }
+    ],
+    "guides": [
+      {
+        "title": "麻布仔大冒险 Sackboy: A Big Adventure",
+        "description": "实机演示",
+        "author": "酷乐乐游戏",
+        "sourceUrl": "bilibili/BV13W7nzuE66"
+      }
+    ],
+    "video": "https://www.bilibili.com/video/BV13W7nzuE66"
+  },
+  {
+    "id": 34,
+    "name": "黑暗之魂2",
+    "image": "https://i2.hdslb.com/bfs/archive/09ade469a0db773e8f1c2a39196869642df7b877.png@672w_378h_1c_!web-search-common-cover.avif",
+    "tags": [
+      "动作",
+      "类魂"
+    ],
+    "searchKeywords": "黑暗之魂2 HAZH2",
+    "path": "https://www.bilibili.com/video/BV1e4411M7Fd",
+    "releaseDate": "2015-04-02",
+    "description": "FROM SOFTWARE 重磅呈现——继 2011 年《DARK SOULS™》之后，万众瞩目的系列续作《DARK SOULS™ II》正式登场！\n延续独特的动作 RPG 玩法，融合超越常理的高难度挑战，《DARK SOULS™ II》将引领玩家踏入一个充满黑暗与绝望的世界，带来前所未有的震撼体验。\n本作继承系列一贯灰暗、晦涩的叙事风格，在单人剧情与多人联机中加入更多创新元素，构筑出一段更为紧张、深刻的游戏旅程。\n\n一场充满磨难的试炼即将展开。加入这场黑暗的征程，直面前所未有的强大敌人与无处不在的致命陷阱，挑战 FROM SOFTWARE 为你精心打造的极限考验！\n\n",
+    "genres": [
+      {
+        "id": "1",
+        "name": "动作",
+        "description": ""
+      }
+    ],
+    "guides": [],
+    "video": "https://www.bilibili.com/video/BV1e4411M7Fd"
+  },
+  {
+    "id": 2,
+    "name": "双人成行",
+    "image": "https://i0.hdslb.com/bfs/new_dyn/d55d80c4d831309776a18fd559a350a93546592604850316.png@380w_480h.avif",
+    "tags": [
+      "双人",
+      "PS4",
+      "热门"
+    ],
+    "searchKeywords": "双人成行 SRCX",
+    "path": "https://www.bilibili.com/video/BV1JU411o7eY",
+    "releaseDate": "2021-03-25",
+    "description": "在这款游戏中，两位玩家将扮演小梅和科迪这两位感情濒临破裂的中年夫妻。缩小后变成Q版的3D角色，在奇幻而且梦幻化的场景中，开始一段精彩纷呈、惊心动魄、激动人心的大冒险。游戏一共有7个章节，分别是棚屋、大树、罗斯的房间、布谷鸟钟、雪景球、花园、阁楼！每个章节都有独特的玩法，人物拥有不同的能力，需要互相配合，渡过难关！",
+    "genres": [
+      {
+        "id": "1",
+        "name": "动作",
+        "description": ""
+      },
+      {
+        "id": "25",
+        "name": "冒险",
+        "description": ""
+      }
+    ],
+    "guides": [
+      {
+        "title": "100%全流程全收集全成就攻略解说",
+        "description": "正常路线非逃课打法",
+        "author": " 好吃的香草雪球",
+        "sourceUrl": "bilibili/BV1AX4y1g79E"
+      }
+    ],
+    "video": "https://www.bilibili.com/video/BV1JU411o7eY"
   }
 ]

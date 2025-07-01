@@ -47,4 +47,10 @@ export class GameDetailsComponent implements OnInit {
       window.open(url, '_blank');
     }
   }
+
+  getSafeImageUrl(url: string): string {
+    console.log(url);
+    // 如果结尾是 .avif 或 @xxxx 之类的参数，尝试去掉
+    return url?.split('@')[0] ?? '';
+  }
 }

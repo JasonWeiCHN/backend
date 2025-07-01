@@ -8,7 +8,7 @@ public class GameResponse {
     private Long id;
     private String name;
     private String image;
-    private List<String> tags;
+    private List<TagDTO> tags;
     private String searchKeywords;
     private String path;
     private String releaseDate;

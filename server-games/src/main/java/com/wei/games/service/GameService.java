@@ -4,10 +4,11 @@ import com.wei.games.dto.*;
 import com.wei.games.entity.Game;
 import com.wei.games.entity.GameGuide;
 import com.wei.games.entity.Genre;
+import com.wei.games.entity.Tag;
 import com.wei.games.exception.DuplicateGameNameException;
-import com.wei.games.exception.GameAlreadyExistsException;
 import com.wei.games.repository.GameRepository;
 import com.wei.games.repository.GenreRepository;
+import com.wei.games.repository.TagRepository;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
@@ -20,10 +21,12 @@ public class GameService {
 
     private final GameRepository gameRepository;
     private final GenreRepository genreRepository;
+    private final TagRepository tagRepository;
 
-    public GameService(GameRepository gameRepository, GenreRepository genreRepository) {
+    public GameService(GameRepository gameRepository, GenreRepository genreRepository, TagRepository tagRepository) {
         this.gameRepository = gameRepository;
         this.genreRepository = genreRepository;
+        this.tagRepository = tagRepository;
     }
 
     public GameResponse create(AddGameRequest request) {
@@ -79,7 +82,12 @@ public class GameService {
     private void applyRequestFields(Game game, BaseGameRequest request) {
         game.setName(request.getName());
         game.setImage(request.getImage());
-        game.setTags(request.getTags());
+        if (request.getTags() != null && !request.getTags().isEmpty()) {
+            List<Tag> tags = tagRepository.findAllById(request.getTags());
+            game.setTags(tags);
+        } else {
+            game.setTags(null);
+        }
         game.setSearchKeywords(request.getSearchKeywords());
         game.setPath(request.getPath());
         if (request.getReleaseDate() != null) {
@@ -111,6 +119,11 @@ public class GameService {
         GameResponse resp = new GameResponse();
         BeanUtils.copyProperties(game, resp);
 
+        // releaseDate 转换
+        if (game.getReleaseDate() != null) {
+            resp.setReleaseDate(game.getReleaseDate().toString()); // 或 format
+        }
+
         if (game.getGenres() != null) {
             resp.setGenres(game.getGenres().stream().map(g -> {
                 GenreDTO dto = new GenreDTO();
@@ -125,6 +138,14 @@ public class GameService {
                 BeanUtils.copyProperties(g, dto);
                 return dto;
             }).collect(Collectors.toList()));
+        }
+
+        if (game.getTags() != null) {
+            resp.setTags(game.getTags().stream().map(t -> {
+                TagDTO dto = new TagDTO();
+                BeanUtils.copyProperties(t, dto);
+                return dto;
+            }).toList());
         }
 
         return resp;

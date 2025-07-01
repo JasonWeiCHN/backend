@@ -10,7 +10,6 @@ import java.util.List;
 @Entity
 @Table(name = "game")
 public class Game {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -25,17 +24,22 @@ public class Game {
     @Column(nullable = false)
     private String image;
 
-    @ElementCollection
-    @CollectionTable(name = "game_tags", joinColumns = @JoinColumn(name = "game_id"))
-    @Column(name = "tag")
-    private List<String> tags;
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "game_tag",
+            joinColumns = @JoinColumn(name = "game_id"),
+            inverseJoinColumns = @JoinColumn(name = "tag_id")
+    )
+    private List<Tag> tags;
 
     @Column(name = "search_keywords")
     private String searchKeywords;
 
+    // 跳转链接/源链接
     @Column
     private String path;
 
+    // 发布时间
     @Column(name = "release_date")
     private LocalDate releaseDate;
 
@@ -56,6 +60,7 @@ public class Game {
     @CollectionTable(name = "game_guides", joinColumns = @JoinColumn(name = "game_id"))
     private List<GameGuide> guides;
 
+    // 视频链接
     @Column
     private String video;
 }

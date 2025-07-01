@@ -1,10 +1,14 @@
 <div *ngIf="game" class="game-details">
   <h1>{{ game.name }}</h1>
 
-  <img [src]="game.image" [alt]="game.name" class="game-image" />
+  <img
+    [src]="getSafeImageUrl(game.image)"
+    [alt]="game.name"
+    class="game-image"
+  />
 
   <div class="tags" *ngIf="game.tags?.length">
-    <span *ngFor="let tag of game.tags!" class="tag">{{ tag }}</span>
+    <span *ngFor="let tag of game.tags!" class="tag">{{ tag.name }}</span>
   </div>
 
   <p class="search-keywords">关键词：{{ game.searchKeywords }}</p>

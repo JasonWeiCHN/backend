@@ -5,18 +5,73 @@
     margin-bottom: 20px;
   }
 
-  .add-button {
+  .top-bar {
+    display: flex;
+    align-items: center; // 垂直居中
+    gap: 12px;
     margin-bottom: 12px;
-    padding: 6px 12px;
-    background-color: #eeeeee;
-    color: #333333;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
 
-    &:hover {
-      background-color: #20409f;
-      color: #ffffff;
+    .add-button {
+      padding: 0 12px;
+      height: 36px;
+      line-height: 36px;
+      background-color: #eeeeee;
+      color: #333333;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+
+      &:hover {
+        background-color: #20409f;
+        color: #ffffff;
+      }
+    }
+
+    .search-bar {
+      display: flex; // 用 flex 布局
+      align-items: center; // 垂直居中
+      gap: 8px;
+      margin-left: 20px;
+      height: 36px;
+      padding: 0 8px;
+      border: 1px solid #eeeeee;
+      border-radius: 4px;
+      background-color: #eeeeee;
+
+      select, input, button {
+        height: 36px; // 统一高度
+        font-size: 14px;
+        border: none;
+        outline: none;
+        background: transparent;
+        padding: 0 10px;
+        line-height: 36px;
+        box-sizing: border-box;
+        color: #333333;
+      }
+
+      select, input {
+        background-color: #fff; // 白色背景
+        border-top: 1px solid #eeeeee;
+        border-bottom: 1px solid #eeeeee;
+        padding: 0 10px;
+        height: 36px;
+        font-size: 14px;
+        color: #333;
+        outline: none;
+      }
+
+      button {
+        background-color: transparent;
+        cursor: pointer;
+        font-size: 16px;
+        color: #333;
+
+        &:hover {
+          color: #20409f;
+        }
+      }
     }
   }
 
@@ -77,6 +132,28 @@
       margin: 0 4px;
       padding: 4px 8px;
       cursor: pointer;
+    }
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+    gap: 12px;
+
+    button {
+      padding: 4px 10px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &:disabled {
+        color: #999;
+        background-color: #eee;
+        cursor: not-allowed;
+      }
     }
   }
 }
