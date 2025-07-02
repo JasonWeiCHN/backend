@@ -23,15 +23,17 @@ export class AccountingListComponent {
   searchKeyword = '';
 
   pageSize = 50;
-  currentPage = 4;
+  currentPage = 5;
   totalPages = 1;
 
   showReminder = false;
   reminderRecord: IAccountingRecord | null = null;
 
-  showExportRangeModal = false;
+  showExportModal = false;
   exportStartDateTime = '';
   exportEndDateTime = '';
+  exportMode: 'all' | 'range' = 'all'; // 新增导出模式
+  exportFormat: 'txt' | 'excel' | 'pdf' | 'csv' = 'txt';
 
   constructor() {
     this.loadRecords();
@@ -194,44 +196,71 @@ export class AccountingListComponent {
     });
   }
 
-  openExportRangeModal(): void {
+  openExportModal(): void {
+    this.exportMode = 'all';
+    this.exportFormat = 'txt';
     this.exportStartDateTime = '';
     this.exportEndDateTime = '';
-    this.showExportRangeModal = true;
+    this.showExportModal = true;
   }
 
-  closeExportRangeModal(): void {
-    this.showExportRangeModal = false;
+  closeExportModal(): void {
+    this.showExportModal = false;
   }
 
-  downloadRangeTxt(): void {
-    if (!this.exportStartDateTime || !this.exportEndDateTime) {
-      alert('请填写完整的开始和结束时间');
-      return;
+  downloadExport(): void {
+    let formatSuffix: string;
+    switch (this.exportFormat) {
+      case 'txt':
+        formatSuffix = 'txt';
+        break;
+      case 'excel':
+        formatSuffix = 'xlsx';
+        break;
+      case 'pdf':
+        formatSuffix = 'pdf';
+        break;
+      case 'csv':
+        formatSuffix = 'csv';
+        break;
+      default:
+        formatSuffix = 'txt';
     }
 
-    const params = new URLSearchParams({
-      startDateTime: this.exportStartDateTime,
-      endDateTime: this.exportEndDateTime,
-    });
+    if (this.exportMode === 'all') {
+      const url = `http://localhost:8080/api/accounting/export-${formatSuffix}`;
+      this.triggerDownload(url, `账单统计.${formatSuffix}`);
+    } else {
+      if (!this.exportStartDateTime || !this.exportEndDateTime) {
+        alert('请填写完整的开始和结束时间');
+        return;
+      }
 
-    const url = `http://localhost:8080/api/accounting/export-txt-by-range?${params.toString()}`;
+      const params = new URLSearchParams({
+        startDateTime: this.exportStartDateTime,
+        endDateTime: this.exportEndDateTime,
+      });
 
+      const url = `http://localhost:8080/api/accounting/export-${formatSuffix}-by-range?${params}`;
+      const filename = `账单明细_${this.exportStartDateTime}_to_${this.exportEndDateTime}.${formatSuffix}`;
+      this.triggerDownload(url, filename);
+    }
+  }
+
+  private triggerDownload(url: string, filename: string): void {
     fetch(url)
       .then((response) => {
-        if (!response.ok) {
-          throw new Error('下载失败');
-        }
+        if (!response.ok) throw new Error('下载失败');
         return response.blob();
       })
       .then((blob) => {
-        const a = document.createElement('a');
         const blobUrl = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
         a.href = blobUrl;
-        a.download = `账单明细_${this.exportStartDateTime}_to_${this.exportEndDateTime}.txt`;
+        a.download = filename;
         a.click();
         window.URL.revokeObjectURL(blobUrl);
-        this.closeExportRangeModal();
+        this.closeExportModal();
       })
       .catch((error) => {
         alert('导出失败：' + error.message);
