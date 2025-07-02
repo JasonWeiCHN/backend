@@ -342,6 +342,7 @@ public class AccountingRecordService {
             PdfDocument pdfDoc = new PdfDocument(writer);
             Document document = new Document(pdfDoc);
 
+            // 加载中文字体（资源路径和文件名根据实际调整）
             ClassPathResource fontResource = new ClassPathResource("fonts/NotoSansSC-VariableFont_wght.ttf");
             byte[] fontBytes = fontResource.getInputStream().readAllBytes();
             FontProgram fontProgram = FontProgramFactory.createFont(fontBytes);
@@ -350,44 +351,60 @@ public class AccountingRecordService {
             document.setFont(font);
 
             // 标题
-            Paragraph header = new Paragraph(title)
+            document.add(new Paragraph(title)
                     .setFontSize(18)
                     .setBold()
                     .setTextAlignment(TextAlignment.CENTER)
-                    .setMarginBottom(20);
-            document.add(header);
+                    .setMarginBottom(20));
 
             // 表头和列宽
             String[] headers = {
                     "编号", "开始时间", "结束时间", "游戏名", "时长",
                     "金额", "客户类型", "平台", "备注"
             };
-            float[] columnWidths = {40F, 100F, 100F, 120F, 40F, 60F, 60F, 60F, 100F};
+            float[] columnWidths = {40F, 100F, 100F, 120F, 40F, 60F, 60F, 60F, 120F};
             Table table = new Table(columnWidths).useAllAvailableWidth();
 
-            // 添加表头，必须用 addHeaderCell 才会生效
+            // 表头样式
             for (String h : headers) {
                 Cell headerCell = new Cell()
                         .add(new Paragraph(h))
                         .setBackgroundColor(new DeviceGray(0.85f))
                         .setBold()
-                        .setTextAlignment(TextAlignment.CENTER);
+                        .setTextAlignment(TextAlignment.CENTER)
+                        .setPadding(5);
                 table.addHeaderCell(headerCell);
             }
 
             BigDecimal totalAmount = BigDecimal.ZERO;
             BigDecimal totalDuration = BigDecimal.ZERO;
 
+            int rowIndex = 0;
             if (records.isEmpty()) {
                 Cell noDataCell = new Cell(1, headers.length)
                         .add(new Paragraph("⚠ 无数据记录"))
                         .setTextAlignment(TextAlignment.CENTER);
                 table.addCell(noDataCell);
             } else {
+                java.time.format.DateTimeFormatter dtf = java.time.format.DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+
                 for (AccountingRecord record : records) {
-                    table.addCell(safeStr(record.getId()));
-                    table.addCell(safeStr(record.getStartDateTime()));
-                    table.addCell(safeStr(record.getEndDateTime()));
+                    // 交替背景色
+                    DeviceGray bgColor = (rowIndex % 2 == 0) ? new DeviceGray(0.98f) : DeviceGray.WHITE;
+
+                    table.addCell(new Cell().add(new Paragraph(safeStr(record.getId())))
+                            .setBackgroundColor(bgColor)
+                            .setTextAlignment(TextAlignment.CENTER));
+
+                    table.addCell(new Cell().add(new Paragraph(
+                                    record.getStartDateTime() != null ? record.getStartDateTime().format(dtf) : ""))
+                            .setBackgroundColor(bgColor)
+                            .setTextAlignment(TextAlignment.CENTER));
+
+                    table.addCell(new Cell().add(new Paragraph(
+                                    record.getEndDateTime() != null ? record.getEndDateTime().format(dtf) : ""))
+                            .setBackgroundColor(bgColor)
+                            .setTextAlignment(TextAlignment.CENTER));
 
                     String gameNames = "未知游戏";
                     if (record.getGameNames() != null && !record.getGameNames().isEmpty()) {
@@ -398,38 +415,66 @@ public class AccountingRecordService {
                             gameNames = "未知游戏";
                         }
                     }
-                    table.addCell(gameNames);
+                    table.addCell(new Cell().add(new Paragraph(gameNames))
+                            .setBackgroundColor(bgColor)
+                            .setTextAlignment(TextAlignment.LEFT));
 
-                    table.addCell(safeStr(record.getDuration()));
-                    table.addCell(record.getActualAmount() != null ? record.getActualAmount().toString() : "");
-                    table.addCell(safeStr(record.getCustomerType()));
-                    table.addCell(safeStr(record.getPlatform()));
-                    table.addCell(safeStr(record.getRemark()));
+                    table.addCell(new Cell().add(new Paragraph(safeStr(record.getDuration())))
+                            .setBackgroundColor(bgColor)
+                            .setTextAlignment(TextAlignment.RIGHT));
+
+                    table.addCell(new Cell().add(new Paragraph(
+                                    record.getActualAmount() != null ? record.getActualAmount().toString() : ""))
+                            .setBackgroundColor(bgColor)
+                            .setTextAlignment(TextAlignment.RIGHT));
+
+                    table.addCell(new Cell().add(new Paragraph(safeStr(record.getCustomerType())))
+                            .setBackgroundColor(bgColor)
+                            .setTextAlignment(TextAlignment.CENTER));
+
+                    table.addCell(new Cell().add(new Paragraph(safeStr(record.getPlatform())))
+                            .setBackgroundColor(bgColor)
+                            .setTextAlignment(TextAlignment.CENTER));
+
+                    table.addCell(new Cell().add(new Paragraph(safeStr(record.getRemark())))
+                            .setBackgroundColor(bgColor)
+                            .setTextAlignment(TextAlignment.LEFT)
+                            .setKeepTogether(true)
+                            .setPadding(3)
+                            .setHeight(40)); // 给备注行高度，支持换行
 
                     totalAmount = totalAmount.add(record.getActualAmount() != null ? record.getActualAmount() : BigDecimal.ZERO);
                     totalDuration = totalDuration.add(record.getDuration() != null ? record.getDuration() : BigDecimal.ZERO);
+
+                    rowIndex++;
                 }
 
+                // 汇总行
                 Cell summaryCell = new Cell(1, 4)
                         .add(new Paragraph("汇总"))
                         .setBold()
-                        .setTextAlignment(TextAlignment.CENTER);
+                        .setTextAlignment(TextAlignment.CENTER)
+                        .setBackgroundColor(new DeviceGray(0.9f));
                 table.addCell(summaryCell);
 
                 Cell totalDurationCell = new Cell()
                         .add(new Paragraph(totalDuration.toString()))
                         .setBold()
-                        .setTextAlignment(TextAlignment.CENTER);
+                        .setTextAlignment(TextAlignment.RIGHT)
+                        .setBackgroundColor(new DeviceGray(0.9f));
                 table.addCell(totalDurationCell);
 
                 Cell totalAmountCell = new Cell()
                         .add(new Paragraph(totalAmount.toString()))
                         .setBold()
-                        .setTextAlignment(TextAlignment.CENTER);
+                        .setTextAlignment(TextAlignment.RIGHT)
+                        .setBackgroundColor(new DeviceGray(0.9f));
                 table.addCell(totalAmountCell);
 
-                table.addCell("");
-                table.addCell("");
+                // 剩余空单元格
+                table.addCell(new Cell().setBackgroundColor(new DeviceGray(0.9f)));
+                table.addCell(new Cell().setBackgroundColor(new DeviceGray(0.9f)));
+                table.addCell(new Cell().setBackgroundColor(new DeviceGray(0.9f)));
             }
 
             document.add(table);
