@@ -1,15 +1,36 @@
 package com.wei.accounting.service;
 
+import com.itextpdf.layout.properties.UnitValue;
 import com.wei.accounting.entity.AccountingRecord;
 import com.wei.accounting.repositories.AccountingRecordRepository;
 import com.wei.accounting.request.AddAccountingRecordRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.math.BigDecimal;
+import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
+
+import java.io.ByteArrayOutputStream;
+import java.util.stream.Collectors;
+
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import com.itextpdf.io.font.constants.StandardFonts;
+import com.itextpdf.kernel.colors.DeviceGray;
+import com.itextpdf.kernel.font.PdfFont;
+import com.itextpdf.kernel.font.PdfFontFactory;
+import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.layout.Document;
+import com.itextpdf.layout.element.Cell;
+import com.itextpdf.layout.element.Paragraph;
+import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.properties.TextAlignment;
 
 @Service
 public class AccountingRecordService {
@@ -154,4 +175,266 @@ public class AccountingRecordService {
         return content.toString();
     }
 
+    public byte[] generateAccountingExcelContent() {
+        List<AccountingRecord> records = getAll();
+        return generateExcel(records, "全部账单明细");
+    }
+
+    public byte[] generateAccountingExcelContentByRange(LocalDateTime start, LocalDateTime end) {
+        List<AccountingRecord> records = repository.findByStartDateTimeBetween(start, end);
+        return generateExcel(records, "指定时间段账单明细");
+    }
+
+    private byte[] generateExcel(List<AccountingRecord> records, String sheetTitle) {
+        try (Workbook workbook = new XSSFWorkbook();
+             ByteArrayOutputStream out = new ByteArrayOutputStream()) {
+
+            Sheet sheet = workbook.createSheet(sheetTitle);
+            String[] headers = {"编号", "开始时间", "结束时间", "游戏名", "时长", "金额", "客户类型", "平台", "备注"};
+
+            // 样式（加粗）
+            CellStyle headerStyle = workbook.createCellStyle();
+            Font headerFont = workbook.createFont();
+            headerFont.setBold(true);
+            headerStyle.setFont(headerFont);
+
+            // 创建表头
+            Row header = sheet.createRow(0);
+            for (int i = 0; i < headers.length; i++) {
+                org.apache.poi.ss.usermodel.Cell cell = header.createCell(i);
+                cell.setCellValue(headers[i]);
+                cell.setCellStyle(headerStyle);
+            }
+
+            // 内容行
+            int rowIdx = 1;
+            BigDecimal totalAmount = BigDecimal.ZERO;
+            BigDecimal totalDuration = BigDecimal.ZERO;
+
+            for (AccountingRecord record : records) {
+                Row row = sheet.createRow(rowIdx++);
+
+                row.createCell(0).setCellValue(record.getId());
+                row.createCell(1).setCellValue(record.getStartDateTime().toString());
+                row.createCell(2).setCellValue(record.getEndDateTime().toString());
+
+                List<String> gameNames = record.getGameNames();
+                String joinedNames = (gameNames == null || gameNames.isEmpty())
+                        ? "未知游戏"
+                        : gameNames.stream().filter(n -> n != null && !n.trim().isEmpty())
+                        .reduce((a, b) -> a + ", " + b).orElse("未知游戏");
+
+                row.createCell(3).setCellValue(joinedNames);
+                row.createCell(4).setCellValue(record.getDuration().doubleValue());
+                row.createCell(5).setCellValue(record.getActualAmount().doubleValue());
+                row.createCell(6).setCellValue(record.getCustomerType());
+                row.createCell(7).setCellValue(record.getPlatform());
+                row.createCell(8).setCellValue(record.getRemark());
+
+                totalAmount = totalAmount.add(record.getActualAmount());
+                totalDuration = totalDuration.add(record.getDuration());
+            }
+
+            // 空数据提示
+            if (records.isEmpty()) {
+                Row emptyRow = sheet.createRow(rowIdx++);
+                emptyRow.createCell(0).setCellValue("⚠ 无数据记录");
+            } else {
+                // 汇总行（加粗样式）
+                Row summaryRow = sheet.createRow(rowIdx++);
+                CellStyle boldStyle = workbook.createCellStyle();
+                Font boldFont = workbook.createFont();
+                boldFont.setBold(true);
+                boldStyle.setFont(boldFont);
+
+                org.apache.poi.ss.usermodel.Cell summaryLabelCell = summaryRow.createCell(0);
+                summaryLabelCell.setCellValue("汇总");
+                summaryLabelCell.setCellStyle(boldStyle);
+
+                org.apache.poi.ss.usermodel.Cell durationCell = summaryRow.createCell(4);
+                durationCell.setCellValue(totalDuration.doubleValue());
+                durationCell.setCellStyle(boldStyle);
+
+                org.apache.poi.ss.usermodel.Cell amountCell = summaryRow.createCell(5);
+                amountCell.setCellValue(totalAmount.doubleValue());
+                amountCell.setCellStyle(boldStyle);
+            }
+
+            // 自动列宽
+            for (int i = 0; i < headers.length; i++) {
+                sheet.autoSizeColumn(i);
+            }
+
+            workbook.write(out);
+            return out.toByteArray();
+
+        } catch (Exception e) {
+            throw new RuntimeException("生成 Excel 文件失败", e);
+        }
+    }
+
+    public byte[] generateAccountingCsv() {
+        List<AccountingRecord> records = getAll();
+        return toCsvBytes(records);
+    }
+
+    public byte[] generateAccountingCsvByRange(LocalDateTime start, LocalDateTime end) {
+        List<AccountingRecord> records = repository.findByStartDateTimeBetween(start, end);
+        return toCsvBytes(records);
+    }
+
+    private byte[] toCsvBytes(List<AccountingRecord> records) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("日期,游戏名,时长,金额,客户类型,平台\n");
+
+        for (AccountingRecord record : records) {
+            String date = record.getStartDateTime().toLocalDate().toString();
+            String gameNames = (record.getGameNames() == null || record.getGameNames().isEmpty())
+                    ? "未知游戏"
+                    : record.getGameNames().stream()
+                    .filter(name -> name != null && !name.trim().isEmpty())
+                    .map(name -> name.contains(",") ? "\"" + name + "\"" : name)  // 防止游戏名中有逗号
+                    .collect(Collectors.joining(";"));
+
+            sb.append(String.format("%s,%s,%s,%s,%s,%s\n",
+                    date,
+                    gameNames,
+                    record.getDuration(),
+                    record.getActualAmount(),
+                    record.getCustomerType(),
+                    record.getPlatform()));
+        }
+
+        // 加 BOM 防止 Excel 打开乱码
+        byte[] bom = new byte[]{(byte) 0xEF, (byte) 0xBB, (byte) 0xBF};
+        byte[] contentBytes = sb.toString().getBytes(StandardCharsets.UTF_8);
+
+        ByteArrayOutputStream output = new ByteArrayOutputStream();
+        try {
+            output.write(bom);
+            output.write(contentBytes);
+        } catch (IOException e) {
+            throw new RuntimeException("CSV导出失败", e);
+        }
+
+        return output.toByteArray();
+    }
+
+    public byte[] generateAccountingPdf() {
+        List<AccountingRecord> records = getAll();
+        return generatePdf(records, "全部账单明细");
+    }
+
+    public byte[] generateAccountingPdfByRange(LocalDateTime start, LocalDateTime end) {
+        List<AccountingRecord> records = repository.findByStartDateTimeBetween(start, end);
+        return generatePdf(records, "指定时间段账单明细");
+    }
+
+    private String safeStr(Object obj) {
+        return obj == null ? "" : obj.toString();
+    }
+
+    private byte[] generatePdf(List<AccountingRecord> records, String title) {
+        try (ByteArrayOutputStream baos = new ByteArrayOutputStream()) {
+            PdfWriter writer = new PdfWriter(baos);
+            PdfDocument pdfDoc = new PdfDocument(writer);
+            Document document = new Document(pdfDoc);
+
+            // 设置字体（使用标准字体）
+            PdfFont font = PdfFontFactory.createFont(StandardFonts.HELVETICA);
+            document.setFont(font);
+
+            // 标题
+            Paragraph header = new Paragraph(title)
+                    .setFontSize(18)
+                    .setBold()
+                    .setTextAlignment(TextAlignment.CENTER)
+                    .setMarginBottom(20);
+            document.add(header);
+
+            // 表头和列宽，参考Excel列宽及顺序
+            String[] headers = {
+                    "编号", "开始时间", "结束时间", "游戏名", "时长",
+                    "金额", "客户类型", "平台", "备注"
+            };
+            float[] columnWidths = {40F, 100F, 100F, 100F, 40F, 60F, 60F, 60F, 100F};
+            Table table = new Table(columnWidths);
+            table.setWidth(UnitValue.createPercentValue(100));
+
+            // 表头行（用 addCell，不用 addHeaderCell，确保第一页显示）
+            for (String h : headers) {
+                Cell headerCell = new Cell()
+                        .add(new Paragraph(h))
+                        .setBold()
+                        .setBackgroundColor(new DeviceGray(0.85f))
+                        .setTextAlignment(TextAlignment.CENTER);
+                table.addCell(headerCell);
+            }
+
+            BigDecimal totalAmount = BigDecimal.ZERO;
+            BigDecimal totalDuration = BigDecimal.ZERO;
+
+            if (records.isEmpty()) {
+                Cell noDataCell = new Cell(1, headers.length)
+                        .add(new Paragraph("⚠ 无数据记录"))
+                        .setTextAlignment(TextAlignment.CENTER);
+                table.addCell(noDataCell);
+            } else {
+                // 数据行
+                for (AccountingRecord record : records) {
+                    table.addCell(safeStr(record.getId()));
+                    table.addCell(safeStr(record.getStartDateTime()));
+                    table.addCell(safeStr(record.getEndDateTime()));
+
+                    String gameNames = (record.getGameNames() == null || record.getGameNames().isEmpty())
+                            ? "未知游戏"
+                            : record.getGameNames().stream()
+                            .filter(n -> n != null && !n.trim().isEmpty())
+                            .collect(Collectors.joining("; "));
+                    table.addCell(gameNames);
+
+                    table.addCell(safeStr(record.getDuration()));
+                    table.addCell(safeStr(record.getActualAmount()));
+                    table.addCell(safeStr(record.getCustomerType()));
+                    table.addCell(safeStr(record.getPlatform()));
+                    table.addCell(safeStr(record.getRemark()));
+
+                    totalAmount = totalAmount.add(record.getActualAmount() != null ? record.getActualAmount() : BigDecimal.ZERO);
+                    totalDuration = totalDuration.add(record.getDuration() != null ? record.getDuration() : BigDecimal.ZERO);
+                }
+
+                // 汇总行
+                Cell summaryLabelCell = new Cell(1, 4)
+                        .add(new Paragraph("汇总"))
+                        .setBold()
+                        .setTextAlignment(TextAlignment.CENTER);
+                table.addCell(summaryLabelCell);
+
+                // 总时长
+                Cell totalDurationCell = new Cell()
+                        .add(new Paragraph(totalDuration.toString()))
+                        .setBold()
+                        .setTextAlignment(TextAlignment.CENTER);
+                table.addCell(totalDurationCell);
+
+                // 总金额
+                Cell totalAmountCell = new Cell()
+                        .add(new Paragraph(totalAmount.toString()))
+                        .setBold()
+                        .setTextAlignment(TextAlignment.CENTER);
+                table.addCell(totalAmountCell);
+
+                // 汇总行最后两个空白单元格
+                table.addCell("");
+                table.addCell("");
+            }
+
+            document.add(table);
+            document.close();
+            return baos.toByteArray();
+
+        } catch (IOException e) {
+            throw new RuntimeException("生成 PDF 文件失败", e);
+        }
+    }
 }

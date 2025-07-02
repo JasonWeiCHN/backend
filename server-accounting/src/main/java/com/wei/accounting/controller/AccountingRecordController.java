@@ -76,4 +76,77 @@ public class AccountingRecordController {
                 .contentType(MediaType.TEXT_PLAIN)
                 .body(fileBytes);
     }
+
+    @GetMapping("/export-xlsx")
+    public ResponseEntity<byte[]> exportAccountingRecordsExcel() {
+        byte[] bytes = service.generateAccountingExcelContent();
+        return ResponseEntity.ok()
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=accounting_records.xlsx")
+                .contentType(MediaType.APPLICATION_OCTET_STREAM)
+                .body(bytes);
+    }
+
+    @GetMapping("/export-xlsx-by-range")
+    public ResponseEntity<byte[]> exportAccountingRecordsExcelByRange(
+            @RequestParam String startDateTime,
+            @RequestParam String endDateTime) {
+        DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
+        LocalDateTime start = LocalDateTime.parse(startDateTime, formatter);
+        LocalDateTime end = LocalDateTime.parse(endDateTime, formatter);
+
+        byte[] bytes = service.generateAccountingExcelContentByRange(start, end);
+        return ResponseEntity.ok()
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=accounting_records_range.xlsx")
+                .contentType(MediaType.APPLICATION_OCTET_STREAM)
+                .body(bytes);
+    }
+
+    @GetMapping("/export-pdf")
+    public ResponseEntity<byte[]> exportAccountingRecordsPdf() {
+        byte[] pdfBytes = service.generateAccountingPdf();
+        return ResponseEntity.ok()
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=accounting_records.pdf")
+                .contentType(MediaType.APPLICATION_PDF)
+                .body(pdfBytes);
+    }
+
+    @GetMapping("/export-pdf-by-range")
+    public ResponseEntity<byte[]> exportAccountingRecordsPdfByRange(
+            @RequestParam String startDateTime,
+            @RequestParam String endDateTime) {
+
+        LocalDateTime start = LocalDateTime.parse(startDateTime);
+        LocalDateTime end = LocalDateTime.parse(endDateTime);
+        byte[] pdfBytes = service.generateAccountingPdfByRange(start, end);
+
+        return ResponseEntity.ok()
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=accounting_records_range.pdf")
+                .contentType(MediaType.APPLICATION_PDF)
+                .body(pdfBytes);
+    }
+
+    @GetMapping("/export-csv")
+    public ResponseEntity<byte[]> exportAccountingRecordsCsv() {
+        byte[] csvBytes = service.generateAccountingCsv();
+        return ResponseEntity.ok()
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=accounting_records.csv")
+                .contentType(MediaType.TEXT_PLAIN)
+                .body(csvBytes);
+    }
+
+    @GetMapping("/export-csv-by-range")
+    public ResponseEntity<byte[]> exportAccountingRecordsCsvByRange(
+            @RequestParam String startDateTime,
+            @RequestParam String endDateTime) {
+
+        LocalDateTime start = LocalDateTime.parse(startDateTime);
+        LocalDateTime end = LocalDateTime.parse(endDateTime);
+        byte[] csvBytes = service.generateAccountingCsvByRange(start, end);
+
+        return ResponseEntity.ok()
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=accounting_records_range.csv")
+                .contentType(MediaType.TEXT_PLAIN)
+                .body(csvBytes);
+    }
+
 }
