@@ -1,10 +1,13 @@
 package com.wei.accounting.service;
 
-import com.itextpdf.layout.properties.UnitValue;
+import com.itextpdf.io.font.FontProgram;
+import com.itextpdf.io.font.FontProgramFactory;
+import com.itextpdf.io.font.PdfEncodings;
 import com.wei.accounting.entity.AccountingRecord;
 import com.wei.accounting.repositories.AccountingRecordRepository;
 import com.wei.accounting.request.AddAccountingRecordRequest;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -20,7 +23,6 @@ import java.util.stream.Collectors;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import com.itextpdf.io.font.constants.StandardFonts;
 import com.itextpdf.kernel.colors.DeviceGray;
 import com.itextpdf.kernel.font.PdfFont;
 import com.itextpdf.kernel.font.PdfFontFactory;
@@ -340,8 +342,11 @@ public class AccountingRecordService {
             PdfDocument pdfDoc = new PdfDocument(writer);
             Document document = new Document(pdfDoc);
 
-            // 设置字体（使用标准字体）
-            PdfFont font = PdfFontFactory.createFont(StandardFonts.HELVETICA);
+            ClassPathResource fontResource = new ClassPathResource("fonts/NotoSansSC-VariableFont_wght.ttf");
+            byte[] fontBytes = fontResource.getInputStream().readAllBytes();
+            FontProgram fontProgram = FontProgramFactory.createFont(fontBytes);
+            PdfFont font = PdfFontFactory.createFont(fontProgram, PdfEncodings.IDENTITY_H);
+
             document.setFont(font);
 
             // 标题
@@ -352,23 +357,22 @@ public class AccountingRecordService {
                     .setMarginBottom(20);
             document.add(header);
 
-            // 表头和列宽，参考Excel列宽及顺序
+            // 表头和列宽
             String[] headers = {
                     "编号", "开始时间", "结束时间", "游戏名", "时长",
                     "金额", "客户类型", "平台", "备注"
             };
-            float[] columnWidths = {40F, 100F, 100F, 100F, 40F, 60F, 60F, 60F, 100F};
-            Table table = new Table(columnWidths);
-            table.setWidth(UnitValue.createPercentValue(100));
+            float[] columnWidths = {40F, 100F, 100F, 120F, 40F, 60F, 60F, 60F, 100F};
+            Table table = new Table(columnWidths).useAllAvailableWidth();
 
-            // 表头行（用 addCell，不用 addHeaderCell，确保第一页显示）
+            // 添加表头，必须用 addHeaderCell 才会生效
             for (String h : headers) {
                 Cell headerCell = new Cell()
                         .add(new Paragraph(h))
-                        .setBold()
                         .setBackgroundColor(new DeviceGray(0.85f))
+                        .setBold()
                         .setTextAlignment(TextAlignment.CENTER);
-                table.addCell(headerCell);
+                table.addHeaderCell(headerCell);
             }
 
             BigDecimal totalAmount = BigDecimal.ZERO;
@@ -380,21 +384,24 @@ public class AccountingRecordService {
                         .setTextAlignment(TextAlignment.CENTER);
                 table.addCell(noDataCell);
             } else {
-                // 数据行
                 for (AccountingRecord record : records) {
                     table.addCell(safeStr(record.getId()));
                     table.addCell(safeStr(record.getStartDateTime()));
                     table.addCell(safeStr(record.getEndDateTime()));
 
-                    String gameNames = (record.getGameNames() == null || record.getGameNames().isEmpty())
-                            ? "未知游戏"
-                            : record.getGameNames().stream()
-                            .filter(n -> n != null && !n.trim().isEmpty())
-                            .collect(Collectors.joining("; "));
+                    String gameNames = "未知游戏";
+                    if (record.getGameNames() != null && !record.getGameNames().isEmpty()) {
+                        gameNames = record.getGameNames().stream()
+                                .filter(name -> name != null && !name.trim().isEmpty())
+                                .collect(Collectors.joining("; "));
+                        if (gameNames.isEmpty()) {
+                            gameNames = "未知游戏";
+                        }
+                    }
                     table.addCell(gameNames);
 
                     table.addCell(safeStr(record.getDuration()));
-                    table.addCell(safeStr(record.getActualAmount()));
+                    table.addCell(record.getActualAmount() != null ? record.getActualAmount().toString() : "");
                     table.addCell(safeStr(record.getCustomerType()));
                     table.addCell(safeStr(record.getPlatform()));
                     table.addCell(safeStr(record.getRemark()));
@@ -403,28 +410,24 @@ public class AccountingRecordService {
                     totalDuration = totalDuration.add(record.getDuration() != null ? record.getDuration() : BigDecimal.ZERO);
                 }
 
-                // 汇总行
-                Cell summaryLabelCell = new Cell(1, 4)
+                Cell summaryCell = new Cell(1, 4)
                         .add(new Paragraph("汇总"))
                         .setBold()
                         .setTextAlignment(TextAlignment.CENTER);
-                table.addCell(summaryLabelCell);
+                table.addCell(summaryCell);
 
-                // 总时长
                 Cell totalDurationCell = new Cell()
                         .add(new Paragraph(totalDuration.toString()))
                         .setBold()
                         .setTextAlignment(TextAlignment.CENTER);
                 table.addCell(totalDurationCell);
 
-                // 总金额
                 Cell totalAmountCell = new Cell()
                         .add(new Paragraph(totalAmount.toString()))
                         .setBold()
                         .setTextAlignment(TextAlignment.CENTER);
                 table.addCell(totalAmountCell);
 
-                // 汇总行最后两个空白单元格
                 table.addCell("");
                 table.addCell("");
             }
