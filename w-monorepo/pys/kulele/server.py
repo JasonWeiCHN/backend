@@ -5,6 +5,13 @@ import requests
 import json
 import os
 
+import time
+import uuid
+from Crypto.Signature import pkcs1_15
+from Crypto.Hash import SHA256
+from Crypto.PublicKey import RSA
+import base64
+
 DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
 
 app = Flask(__name__)
@@ -12,11 +19,60 @@ app = Flask(__name__)
 # 你小程序的 appid 和 appsecret
 APPID = 'wxb43b9c9b4e4bdedc'
 APPSECRET = '904096d46da12dd4a9d398a97e8a9a7f'
+MCHID = '1721560524'
+# API_V3_KEY = '你的APIv3密钥'
+PRIVATE_KEY_PATH = './apiclient_key.pem'  # 私钥路径
+SERIAL_NO = '46BD36449B394C61AA5A65E82E5FCC0855F025BF'
+NOTIFY_URL = 'https://kulele.club/api/wxpay_notify'
 
 def load_json_file(filename):
     path = os.path.join(DATA_DIR, filename)
     with open(path, 'r', encoding='utf-8') as f:
         return json.load(f)
+
+def load_private_key():
+    with open(PRIVATE_KEY_PATH, 'rb') as f:
+        return RSA.import_key(f.read())
+
+def generate_pay_sign(prepay_id):
+    timestamp = str(int(time.time()))
+    nonce_str = str(uuid.uuid4()).replace('-', '')
+    package = f"prepay_id={prepay_id}"
+    sign_type = "RSA"
+
+    message = f"{APPID}\n{timestamp}\n{nonce_str}\n{package}\n"
+
+    private_key = load_private_key()  # 你已有此函数，加载私钥
+    h = SHA256.new(message.encode('utf-8'))
+    signature = pkcs1_15.new(private_key).sign(h)
+    pay_sign = base64.b64encode(signature).decode()
+
+    return {
+        "timeStamp": timestamp,
+        "nonceStr": nonce_str,
+        "package": package,
+        "signType": sign_type,
+        "paySign": pay_sign
+    }
+
+def generate_signature(method, url_path, body):
+    timestamp = str(int(time.time()))
+    nonce_str = str(uuid.uuid4()).replace('-', '')
+    message = f"{method}\n{url_path}\n{timestamp}\n{nonce_str}\n{body}\n"
+
+    key = load_private_key()
+    h = SHA256.new(message.encode('utf-8'))
+    signature = pkcs1_15.new(key).sign(h)
+    signature_base64 = base64.b64encode(signature).decode()
+
+    authorization = (
+        f'WECHATPAY2-SHA256-RSA2048 mchid="{MCHID}",'
+        f'serial_no="{SERIAL_NO}",'
+        f'nonce_str="{nonce_str}",'
+        f'timestamp="{timestamp}",'
+        f'signature="{signature_base64}"'
+    )
+    return authorization
 
 @app.route('/login', methods=['POST'])
 def login():
@@ -262,28 +318,65 @@ def get_member_articles():
 def recharge():
     data = request.get_json()
     openid = data.get('openid')
-    amount = data.get('amount')
+    amount = data.get('amount')  # 单位：分
 
-    if not openid or not isinstance(amount, (int, float)) or amount <= 0:
-        return jsonify({'success': False, 'msg': '无效的参数'}), 400
+    if not openid or not amount:
+        return jsonify({'error': 'Missing openid or amount'}), 400
 
-    balance_file = os.path.join(DATA_DIR, 'user_balance.json')
-    if os.path.exists(balance_file):
-        with open(balance_file, 'r', encoding='utf-8') as f:
-            try:
-                balances = json.load(f)
-            except json.JSONDecodeError:
-                balances = {}
+    out_trade_no = uuid.uuid4().hex[:32]
+    url_path = '/v3/pay/transactions/jsapi'
+    url = f'https://api.mch.weixin.qq.com{url_path}'
+
+    payload = {
+        "appid": APPID,
+        "mchid": MCHID,
+        "description": "酷乐乐游戏馆会员充值",
+        "out_trade_no": out_trade_no,
+        "notify_url": NOTIFY_URL,
+        "amount": {
+            "total": int(amount),
+            "currency": "CNY"
+        },
+        "payer": {
+            "openid": openid
+        }
+    }
+
+    headers = {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization': generate_signature('POST', url_path, json.dumps(payload))
+    }
+
+    response = requests.post(url, headers=headers, json=payload)
+    if response.status_code in (200, 201):
+        res_json = response.json()
+        prepay_id = res_json.get("prepay_id")
+        if not prepay_id:
+            return jsonify({'error': '缺少prepay_id', 'detail': res_json}), 500
+
+        pay_params = generate_pay_sign(prepay_id)
+        pay_params['prepay_id'] = prepay_id  # 返回给前端方便调试
+
+        return jsonify(pay_params)
     else:
-        balances = {}
+        return jsonify({'error': '支付下单失败', 'detail': response.text}), 500
 
-    previous = balances.get(openid, 0.0)
-    balances[openid] = round(previous + float(amount), 2)
+@app.route('/wxpay_notify', methods=['POST'])
+def wxpay_notify():
+    try:
+        notify_data = request.json
+        print("收到微信支付回调通知：", json.dumps(notify_data, indent=2))
 
-    with open(balance_file, 'w', encoding='utf-8') as f:
-        json.dump(balances, f, ensure_ascii=False, indent=2)
+        # 实际应用中应解密 resource.ciphertext，获取订单信息
 
-    return jsonify({'success': True, 'newBalance': balances[openid]})
+        # TODO: 解密并确认支付成功后更新余额
+        # 这里只是演示，模拟写入 user_balance.json
+
+        return '', 204
+    except Exception as e:
+        print("处理回调失败：", str(e))
+        return '', 500
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=5004, debug=True)

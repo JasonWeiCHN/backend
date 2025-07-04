@@ -34,14 +34,31 @@ Page({
             return;
         }
 
+        // 微信支付要求 amount 单位为分，确保传整数分
+        const amountInFen = Math.floor(amount * 100);
+
         wx.request({
             url: 'https://kulele.club/api/recharge',
             method: 'POST',
-            data: { openid, amount },
+            data: { openid, amount: amountInFen },
             success: (res) => {
-                if (res.data && res.data.success) {
-                    wx.showToast({ title: '充值成功', icon: 'success' });
-                    wx.navigateBack(); // 返回会员中心页
+                if (res.statusCode === 200 && res.data.prepay_id) {
+                    // 调用微信支付接口
+                    wx.requestPayment({
+                        timeStamp: res.data.timeStamp,
+                        nonceStr: res.data.nonceStr,
+                        package: res.data.package,
+                        signType: res.data.signType,
+                        paySign: res.data.paySign,
+                        success: () => {
+                            wx.showToast({ title: '充值成功', icon: 'success' });
+                            wx.navigateBack(); // 返回会员中心页
+                        },
+                        fail: (err) => {
+                            console.error('支付失败:', err);
+                            wx.showToast({ title: '支付失败', icon: 'none' });
+                        }
+                    });
                 } else {
                     wx.showToast({ title: res.data.msg || '充值失败', icon: 'none' });
                 }
