@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "title": "会员福利大揭秘",
+    "tag": "福利",
+    "date": "2025-07-01",
+    "linkType": "internal",
+    "url": ""
+  },
+  {
+    "id": 2,
+    "title": "夏日活动上线",
+    "tag": "活动",
+    "date": "2025-06-25",
+    "linkType": "external",
+    "url": "https://example.com/summer-event"
+  }
+]

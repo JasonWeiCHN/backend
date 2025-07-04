@@ -234,5 +234,56 @@ def get_game_detail():
 
     return jsonify({'game': game})
 
+@app.route('/user_balance', methods=['GET'])
+def get_user_balance():
+    openid = request.args.get('openid')
+    if not openid:
+        return jsonify({'error': 'Missing openid'}), 400
+
+    try:
+        balance_data = load_json_file('user_balance.json')
+        user = next((u for u in balance_data if u['openid'] == openid), None)
+        if user:
+            return jsonify({'balance': user['balance']})
+        else:
+            return jsonify({'balance': 0.00})  # 默认余额为0
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/member_articles', methods=['GET'])
+def get_member_articles():
+    try:
+        articles = load_json_file('member_articles.json')
+        return jsonify({'articles': articles})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/recharge', methods=['POST'])
+def recharge():
+    data = request.get_json()
+    openid = data.get('openid')
+    amount = data.get('amount')
+
+    if not openid or not isinstance(amount, (int, float)) or amount <= 0:
+        return jsonify({'success': False, 'msg': '无效的参数'}), 400
+
+    balance_file = os.path.join(DATA_DIR, 'user_balance.json')
+    if os.path.exists(balance_file):
+        with open(balance_file, 'r', encoding='utf-8') as f:
+            try:
+                balances = json.load(f)
+            except json.JSONDecodeError:
+                balances = {}
+    else:
+        balances = {}
+
+    previous = balances.get(openid, 0.0)
+    balances[openid] = round(previous + float(amount), 2)
+
+    with open(balance_file, 'w', encoding='utf-8') as f:
+        json.dump(balances, f, ensure_ascii=False, indent=2)
+
+    return jsonify({'success': True, 'newBalance': balances[openid]})
+
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=5004, debug=True)

@@ -20,7 +20,7 @@ Page({
   },
 
   onLoad() {
-    this.loginAndGetUserInfo();
+    // this.loginAndGetUserInfo();
     this.animateTitle();
     this.animateButton(); // 页面加载时触发按钮动画
     // 获取轮播图图片
@@ -33,9 +33,7 @@ Page({
   },
 
   onShow() {
-    this.setData({
-      showRegisterButton: !getApp().globalData.isRegistered
-    });
+    this.loginAndGetUserInfo(); // 每次页面显示时都重新获取用户状态
   },
 
   // 分享给朋友
@@ -102,10 +100,14 @@ Page({
           success: (response) => {
             const { openid, isRegistered, nickname } = response.data;
 
-            this.setData({ openid, isRegistered }); // 页面状态
-            if(nickname) {
-              this.setData({ nickname });
-            }
+            this.setData({
+              openid,
+              isRegistered,
+              nickname: nickname || '尊贵的玩家',
+              showRegisterButton: true // ✅ 强制设置为 true，让按钮逻辑控制显示谁
+            });
+
+            // 全局变量也要更新（以备后续使用）
             const app = getApp();
             app.globalData.openid = openid;
             app.globalData.isRegistered = isRegistered;
@@ -273,6 +275,12 @@ Page({
     wx.navigateTo({
       url: '/pages/register/register' // 确保路径正确
     })
+  },
+
+  goToMemberCenter() {
+    wx.navigateTo({
+      url: '/pages/member-center/member-center' // 确保这个页面已创建并正确注册
+    });
   },
 
   onUnload() {

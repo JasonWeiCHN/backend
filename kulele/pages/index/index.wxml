@@ -37,8 +37,12 @@
   <view class="button-group" animation="{{buttonAnimation}}">
     <button class="custom-button" bindtap="viewAllGames">查看游戏</button>
     <button class="custom-button primary" bindtap="bookNow">立刻预约</button>
+    <!-- 显示注册或会员中心 -->
     <view wx:if="{{showRegisterButton && !isRegistered}}">
-      <button class="custom-button" bindtap="goToRegister">会员注册</button> <!-- 新增按钮 -->
+      <button class="custom-button" bindtap="goToRegister">会员注册</button>
+    </view>
+    <view wx:if="{{showRegisterButton && isRegistered}}">
+      <button class="custom-button" bindtap="goToMemberCenter">会员中心</button>
     </view>
   </view>
 </view>

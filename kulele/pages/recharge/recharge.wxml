@@ -1,0 +1,21 @@
+<view class="recharge-container">
+    <view class="title">请选择充值金额</view>
+
+    <view class="amount-grid">
+        <block wx:for="{{presetAmounts}}" wx:key="amount">
+            <button
+                    class="amount-button {{selectedAmount === item ? 'selected' : ''}}"
+                    bindtap="selectAmount"
+                    data-amount="{{item}}"
+            >
+                ¥{{item}}
+            </button>
+        </block>
+    </view>
+
+    <view class="custom-input">
+        <input type="number" placeholder="自定义金额" value="{{customAmount}}" bindinput="onCustomInput" />
+    </view>
+
+    <button class="confirm-button" bindtap="submitRecharge">确认充值</button>
+</view>

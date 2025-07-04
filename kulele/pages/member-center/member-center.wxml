@@ -1,0 +1,26 @@
+<view class="member-container">
+    <!-- 顶部余额区域 -->
+    <view class="balance-section">
+        <view class="balance-left">
+            <text class="balance-label">当前余额</text>
+            <text class="balance-amount">¥{{balance}}</text>
+        </view>
+        <view class="balance-right">
+            <button class="action-button" bindtap="goToRecharge">现在充值</button>
+            <button class="action-button secondary" bindtap="viewHistory">查看明细</button>
+        </view>
+    </view>
+
+    <!-- 文章列表 -->
+    <view class="article-list">
+        <block wx:for="{{articles}}" wx:key="id">
+            <view class="article-item" bindtap="onArticleTap" data-article="{{item}}">
+                <view class="article-title">{{item.title}}</view>
+                <view class="article-meta">
+                    <text class="article-tag">{{item.tag}}</text>
+                    <text class="article-date">{{item.date}}</text>
+                </view>
+            </view>
+        </block>
+    </view>
+</view>
