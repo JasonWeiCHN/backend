@@ -1,0 +1,36 @@
+<div class="accounting-form">
+  <h2>{{ isLoginMode ? '商户登录' : '注册新商户' }}</h2>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label>
+      用户名：
+      <input formControlName="username" />
+    </label>
+
+    <label>
+      密码：
+      <input type="password" formControlName="password" />
+    </label>
+
+    <ng-container *ngIf="!isLoginMode">
+      <label>
+        商户名称：
+        <input formControlName="name" />
+      </label>
+
+      <label>
+        租户数据库名：
+        <input formControlName="databaseName" />
+      </label>
+    </ng-container>
+
+    <div class="actions">
+      <button type="submit">
+        {{ isLoginMode ? '登录' : '注册' }}
+      </button>
+      <button type="button" (click)="toggleMode()">
+        {{ isLoginMode ? '切换到注册' : '已有账号？点此登录' }}
+      </button>
+    </div>
+  </form>
+</div>

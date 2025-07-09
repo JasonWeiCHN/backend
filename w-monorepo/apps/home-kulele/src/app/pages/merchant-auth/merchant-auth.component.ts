@@ -1,0 +1,76 @@
+import { Component, inject } from '@angular/core';
+import {
+  FormBuilder,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
+import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { MerchantHttpService } from '../../shared/services/merchant.http.service';
+
+@Component({
+  selector: 'app-merchant-auth',
+  standalone: true,
+  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  templateUrl: './merchant-auth.component.html',
+  styleUrl: './merchant-auth.component.scss',
+  providers: [MerchantHttpService],
+})
+export class MerchantAuthComponent {
+  private fb = inject(FormBuilder);
+  private merchantService = inject(MerchantHttpService);
+  protected router = inject(Router);
+
+  isLoginMode = true;
+  form: FormGroup = this.fb.group({
+    name: [''],
+    username: ['', [Validators.required]],
+    password: ['', [Validators.required]],
+    databaseName: [''],
+  });
+
+  toggleMode(): void {
+    this.isLoginMode = !this.isLoginMode;
+
+    // 清空表单
+    this.form.reset();
+  }
+
+  onSubmit(): void {
+    if (this.form.invalid) {
+      console.log('表单验证失败');
+      return;
+    }
+
+    const value = this.form.value;
+
+    if (this.isLoginMode) {
+      this.merchantService.login(value.username, value.password).subscribe({
+        next: (res) => {
+          console.log('登录成功:', res);
+
+          localStorage.setItem('tenantId', res.tenantId); // ✅ 保存租户信息
+          this.router.navigate(['/dashboard']); // ✅ 登录后跳转到首页（或你想跳转的页面）
+        },
+        error: (err) => alert('登录失败：' + err.error?.message || err.message),
+      });
+    } else {
+      const registerDto = {
+        name: value.name,
+        username: value.username,
+        password: value.password,
+        databaseName: value.databaseName,
+      };
+
+      this.merchantService.register(registerDto).subscribe({
+        next: () => {
+          alert('注册成功！请登录');
+          this.toggleMode();
+        },
+        error: (err) => alert('注册失败：' + err.error?.message || err.message),
+      });
+    }
+  }
+}

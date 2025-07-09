@@ -1,0 +1,33 @@
+spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: P@ssw0rd11
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      idle-timeout: 60000
+      max-lifetime: 60000
+      connection-timeout: 10000
+      validation-timeout: 3000
+      login-timeout: 5
+
+  jackson:
+    time-zone: GMT+8
+
+  jpa:
+    hibernate:
+      ddl-auto: none  # ⚠️ 多数据源模式，建议关闭自动建表，用 Flyway 或 liquibase 管理
+    database: postgresql
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        show_sql: false
+        format_sql: true
+        temp:
+          use_jdbc_metadata_defaults: false
