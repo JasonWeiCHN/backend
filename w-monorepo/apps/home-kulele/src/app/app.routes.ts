@@ -1,10 +1,17 @@
 import { Route } from '@angular/router';
-import { AppComponent } from './app.component';
+import { MerchantAuthComponent } from './pages/merchant-auth/merchant-auth.component';
 
 export const appRoutes: Route[] = [
   {
+    path: '',
+    component: MerchantAuthComponent,
+  },
+  {
     path: 'dashboard',
-    component: AppComponent,
+    loadComponent: () =>
+      import('./pages/dashboard/dashboard.component').then(
+        (m) => m.DashboardComponent
+      ),
   },
   {
     path: 'merchant-auth',

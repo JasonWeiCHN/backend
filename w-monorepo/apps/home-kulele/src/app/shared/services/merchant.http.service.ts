@@ -10,7 +10,7 @@ export interface MerchantRegisterRequest {
 }
 
 export interface LoginResponse {
-  tenantId: string;
+  token: string;
 }
 
 @Injectable({

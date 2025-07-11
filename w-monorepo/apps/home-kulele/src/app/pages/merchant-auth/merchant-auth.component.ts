@@ -8,7 +8,10 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { MerchantHttpService } from '../../shared/services/merchant.http.service';
+import {
+  LoginResponse,
+  MerchantHttpService,
+} from '../../shared/services/merchant.http.service';
 
 @Component({
   selector: 'app-merchant-auth',
@@ -48,11 +51,11 @@ export class MerchantAuthComponent {
 
     if (this.isLoginMode) {
       this.merchantService.login(value.username, value.password).subscribe({
-        next: (res) => {
+        next: (res: LoginResponse) => {
           console.log('登录成功:', res);
 
-          localStorage.setItem('tenantId', res.tenantId); // ✅ 保存租户信息
-          this.router.navigate(['/dashboard']); // ✅ 登录后跳转到首页（或你想跳转的页面）
+          localStorage.setItem('token', res.token); // ✅ 保存 token
+          this.router.navigate(['/dashboard']); // 跳转到门户页
         },
         error: (err) => alert('登录失败：' + err.error?.message || err.message),
       });

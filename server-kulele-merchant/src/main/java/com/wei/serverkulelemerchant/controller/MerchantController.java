@@ -5,6 +5,7 @@ import com.wei.serverkulelemerchant.response.LoginResponse;
 import com.wei.serverkulelemerchant.response.SimpleResponse;
 import com.wei.serverkulelemerchant.service.MerchantService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -21,7 +22,7 @@ public class MerchantController {
     }
 
     @PostMapping("/login")
-    public LoginResponse login(@RequestBody MerchantLoginRequest req) {
-        return merchantService.login(req);
+    public ResponseEntity<LoginResponse> login(@RequestBody MerchantLoginRequest request) {
+        return ResponseEntity.ok(merchantService.login(request));
     }
 }

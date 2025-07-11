@@ -6,12 +6,14 @@ import com.wei.serverkulelemerchant.request.MerchantRegisterRequest;
 import com.wei.serverkulelemerchant.response.LoginResponse;
 import javax.sql.DataSource;
 
+import com.wei.serverkulelemerchant.util.JwtUtil;
 import org.flywaydb.core.Flyway;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Service
 public class MerchantService {
@@ -33,6 +35,8 @@ public class MerchantService {
         merchant.setPassword(req.getPassword()); // 建议后期加密
         merchant.setDatabaseName(req.getDatabaseName());
         merchant.setCreatedAt(LocalDateTime.now());
+        // 在注册商户时生成一个唯一的 tenantId
+        merchant.setTenantId(UUID.randomUUID().toString());
 
         merchantRepository.save(merchant);
 
@@ -47,7 +51,9 @@ public class MerchantService {
             throw new RuntimeException("密码错误");
         }
 
-        return new LoginResponse(merchant.getDatabaseName());
+        String token = JwtUtil.generateToken(merchant.getTenantId(), merchant.getUsername());
+
+        return new LoginResponse(token); // token 中包含 tenantId，供前端跳转后传给其他系统
     }
 
     private void createDatabase(String dbName) {

@@ -18,6 +18,7 @@ public class Merchant {
     private String password;     // 明文或加密密码
     @Column(name = "database_name", unique = true)
     private String databaseName; // SaaS系统中对应的租户数据库名
-
+    @Column(name = "tenant_id", unique = true, nullable = false)
+    private String tenantId;
     private LocalDateTime createdAt;
 }
