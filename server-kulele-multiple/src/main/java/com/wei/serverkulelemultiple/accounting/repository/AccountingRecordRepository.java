@@ -1,6 +1,6 @@
-package com.wei.serverkulelemultiple.repositories;
+package com.wei.serverkulelemultiple.accounting.repository;
 
-import com.wei.serverkulelemultiple.entity.AccountingRecord;
+import com.wei.serverkulelemultiple.accounting.entity.AccountingRecord;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.time.LocalDateTime;

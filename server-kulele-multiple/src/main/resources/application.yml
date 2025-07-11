@@ -7,17 +7,33 @@ spring:
       max-request-size: 10MB
 
   datasource:
-    driver-class-name: org.postgresql.Driver
-    username: postgres
-    password: P@ssw0rd11
-    hikari:
-      maximum-pool-size: 10
-      minimum-idle: 5
-      idle-timeout: 60000
-      max-lifetime: 60000
-      connection-timeout: 10000
-      validation-timeout: 3000
-      login-timeout: 5
+    master:
+      url: jdbc:postgresql://localhost:5432/merchant
+      username: postgres
+      password: 'P@ssw0rd11'
+      driver-class-name: org.postgresql.Driver
+      hikari:
+        maximum-pool-size: 10
+        minimum-idle: 5
+        idle-timeout: 60000
+        max-lifetime: 60000
+        connection-timeout: 10000
+        validation-timeout: 3000
+        login-timeout: 5
+
+    default:
+      url: jdbc:postgresql://localhost:5432/default
+      username: postgres
+      password: 'P@ssw0rd11'
+      driver-class-name: org.postgresql.Driver
+      hikari:
+        maximum-pool-size: 10
+        minimum-idle: 5
+        idle-timeout: 60000
+        max-lifetime: 60000
+        connection-timeout: 10000
+        validation-timeout: 3000
+        login-timeout: 5
 
   jackson:
     time-zone: GMT+8

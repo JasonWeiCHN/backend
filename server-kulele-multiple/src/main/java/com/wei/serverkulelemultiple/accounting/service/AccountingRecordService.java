@@ -1,4 +1,4 @@
-package com.wei.serverkulelemultiple.service;
+package com.wei.serverkulelemultiple.accounting.service;
 
 import com.itextpdf.io.font.FontProgram;
 import com.itextpdf.io.font.FontProgramFactory;
@@ -13,9 +13,9 @@ import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.properties.TextAlignment;
-import com.wei.serverkulelemultiple.entity.AccountingRecord;
-import com.wei.serverkulelemultiple.repositories.AccountingRecordRepository;
-import com.wei.serverkulelemultiple.request.AddAccountingRecordRequest;
+import com.wei.serverkulelemultiple.accounting.entity.AccountingRecord;
+import com.wei.serverkulelemultiple.accounting.repository.AccountingRecordRepository;
+import com.wei.serverkulelemultiple.accounting.request.AddAccountingRecordRequest;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;

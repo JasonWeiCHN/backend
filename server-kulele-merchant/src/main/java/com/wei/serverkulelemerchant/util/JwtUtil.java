@@ -8,7 +8,7 @@ import java.security.Key;
 import java.util.Date;
 
 public class JwtUtil {
-    private static final String SECRET = "my-secret-key-which-is-long-enough-12345678"; // 至少 32 字节
+    private static final String SECRET = "myS3cr3tKeyForJWT_TokenAuthSystem2025!"; // 至少 32 字节
     private static final Key KEY = Keys.hmacShaKeyFor(SECRET.getBytes());
 
     private static final long EXPIRATION_TIME = 86400000L; // 1天（毫秒）

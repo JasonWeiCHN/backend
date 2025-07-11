@@ -1,4 +1,4 @@
-package com.wei.serverkulelemultiple.request;
+package com.wei.serverkulelemultiple.accounting.request;
 
 import lombok.Data;
 

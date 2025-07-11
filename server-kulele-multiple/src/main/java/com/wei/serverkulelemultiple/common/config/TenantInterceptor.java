@@ -1,6 +1,6 @@
-package com.wei.serverkulelemultiple.config;
+package com.wei.serverkulelemultiple.common.config;
 
-import com.wei.serverkulelemultiple.context.TenantContext;
+import com.wei.serverkulelemultiple.common.context.TenantContext;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Component;

@@ -1,8 +1,8 @@
-package com.wei.serverkulelemultiple.controller;
+package com.wei.serverkulelemultiple.accounting.controller;
 
-import com.wei.serverkulelemultiple.entity.AccountingRecord;
-import com.wei.serverkulelemultiple.request.AddAccountingRecordRequest;
-import com.wei.serverkulelemultiple.service.AccountingRecordService;
+import com.wei.serverkulelemultiple.accounting.entity.AccountingRecord;
+import com.wei.serverkulelemultiple.accounting.request.AddAccountingRecordRequest;
+import com.wei.serverkulelemultiple.accounting.service.AccountingRecordService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
