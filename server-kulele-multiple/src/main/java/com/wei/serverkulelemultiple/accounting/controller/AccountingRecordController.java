@@ -1,5 +1,6 @@
 package com.wei.serverkulelemultiple.accounting.controller;
 
+import com.wei.serverkulelemultiple.accounting.dto.AccountingRecordDTO;
 import com.wei.serverkulelemultiple.accounting.entity.AccountingRecord;
 import com.wei.serverkulelemultiple.accounting.request.AddAccountingRecordRequest;
 import com.wei.serverkulelemultiple.accounting.service.AccountingRecordService;
@@ -22,23 +23,24 @@ public class AccountingRecordController {
     private AccountingRecordService service;
 
     @GetMapping
-    public List<AccountingRecord> getAllRecords() {
+    public List<AccountingRecordDTO> getAllRecords() {
         return service.getAll();
     }
 
     @GetMapping("/{id}")
-    public AccountingRecord getRecordById(@PathVariable Long id) {
-        return service.getById(id).orElseThrow(() -> new RuntimeException("Record not found"));
+    public AccountingRecordDTO getRecordById(@PathVariable Long id) {
+        return service.getById(id)
+                .orElseThrow(() -> new RuntimeException("Record not found"));
     }
 
     @PostMapping
-    public AccountingRecord createRecord(@RequestBody AddAccountingRecordRequest record) {
-        return service.create(record);
+    public AccountingRecordDTO createRecord(@RequestBody AddAccountingRecordRequest record) {
+        return service.create(record); // ✅ 已改为返回 DTO
     }
 
     @PutMapping("/{id}")
-    public AccountingRecord updateRecord(@PathVariable Long id, @RequestBody AddAccountingRecordRequest record) {
-        return service.update(id, record);
+    public AccountingRecordDTO updateRecord(@PathVariable Long id, @RequestBody AddAccountingRecordRequest record) {
+        return service.update(id, record); // ✅ 返回 DTO
     }
 
     @DeleteMapping("/{id}")

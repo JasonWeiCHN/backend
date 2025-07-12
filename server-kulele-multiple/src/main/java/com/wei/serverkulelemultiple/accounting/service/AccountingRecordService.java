@@ -13,6 +13,7 @@ import com.itextpdf.layout.element.Cell;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.properties.TextAlignment;
+import com.wei.serverkulelemultiple.accounting.dto.AccountingRecordDTO;
 import com.wei.serverkulelemultiple.accounting.entity.AccountingRecord;
 import com.wei.serverkulelemultiple.accounting.repository.AccountingRecordRepository;
 import com.wei.serverkulelemultiple.accounting.request.AddAccountingRecordRequest;
@@ -37,29 +38,68 @@ public class AccountingRecordService {
     @Autowired
     private AccountingRecordRepository repository;
 
-    public List<AccountingRecord> getAll() {
-        return repository.findAll();
+    public List<AccountingRecordDTO> getAll() {
+        List<AccountingRecord> records = repository.findAllWithGameNames();
+        return records.stream()
+                .map(this::toDTO)
+                .toList();
     }
 
-    public Optional<AccountingRecord> getById(Long id) {
-        return repository.findById(id);
+    public Optional<AccountingRecordDTO> getById(Long id) {
+        // 推荐：手动 fetch One 时也预加载 gameNames
+        return repository.findById(id)
+                .map(record -> {
+                    // 手动初始化懒加载字段，避免懒加载异常
+                    record.getGameNames().size(); // 触发加载
+                    return toDTO(record);
+                });
     }
 
-    public AccountingRecord create(AddAccountingRecordRequest request) {
+    public AccountingRecordDTO create(AddAccountingRecordRequest request) {
         AccountingRecord record = new AccountingRecord();
         copyProperties(record, request);
-        return repository.save(record);
+        AccountingRecord saved = repository.save(record);
+
+        // 手动加载懒加载字段，防止 LazyInitializationException
+        saved.getGameNames().size();
+
+        return toDTO(saved);
     }
 
-    public AccountingRecord update(Long id, AddAccountingRecordRequest request) {
+    public AccountingRecordDTO update(Long id, AddAccountingRecordRequest request) {
         AccountingRecord record = repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("记录未找到: id=" + id));
         copyProperties(record, request);
-        return repository.save(record);
+        AccountingRecord saved = repository.save(record);
+
+        saved.getGameNames().size(); // 手动触发懒加载字段
+
+        return toDTO(saved);
     }
 
     public void delete(Long id) {
         repository.deleteById(id);
+    }
+
+    public AccountingRecordDTO toDTO(AccountingRecord record) {
+        AccountingRecordDTO dto = new AccountingRecordDTO();
+        dto.setId(record.getId());
+        dto.setStartDateTime(record.getStartDateTime());
+        dto.setEndDateTime(record.getEndDateTime());
+        dto.setDuration(record.getDuration());
+        dto.setConsoleType(record.getConsoleType());
+
+        // 强制初始化懒加载的 gameNames
+        dto.setGameNames(record.getGameNames() != null ? List.copyOf(record.getGameNames()) : List.of());
+
+        dto.setCustomerType(record.getCustomerType());
+        dto.setIsReturning(record.getIsReturning());
+        dto.setActualAmount(record.getActualAmount());
+        dto.setPlatform(record.getPlatform());
+        dto.setContactType(record.getContactType());
+        dto.setContactValue(record.getContactValue());
+        dto.setRemark(record.getRemark());
+        return dto;
     }
 
     private void copyProperties(AccountingRecord record, AddAccountingRecordRequest request) {
@@ -78,7 +118,7 @@ public class AccountingRecordService {
     }
 
     public String generateAccountingTxtContent() {
-        List<AccountingRecord> records = getAll();
+        List<AccountingRecordDTO> records = getAll();
 
         BigDecimal totalAmount = BigDecimal.ZERO;
         BigDecimal totalDuration = BigDecimal.ZERO;
@@ -86,34 +126,26 @@ public class AccountingRecordService {
 
         StringBuilder content = new StringBuilder();
 
-        for (AccountingRecord record : records) {
+        for (AccountingRecordDTO record : records) {
             totalAmount = totalAmount.add(record.getActualAmount());
             totalDuration = totalDuration.add(record.getDuration());
         }
 
-        // 汇总信息
         content.append("记账单统计\n");
         content.append("总实收金额: ").append(totalAmount).append(" 元\n");
         content.append("总游戏时长: ").append(totalDuration).append(" 小时\n");
         content.append("总记录数: ").append(totalRecords).append(" 条\n");
         content.append("\n详细记录如下：\n");
 
-        // 明细记录
-        for (AccountingRecord record : records) {
+        for (AccountingRecordDTO record : records) {
             String date = record.getStartDateTime().toLocalDate().toString();
 
-            // 处理游戏名，替换空字符串或空集合为 "未知游戏"
             List<String> gameNamesList = record.getGameNames();
-            String gameNames;
-            if (gameNamesList == null || gameNamesList.isEmpty()) {
-                gameNames = "未知游戏";
-            } else {
-                // 过滤掉空字符串，再判断
-                List<String> filteredNames = gameNamesList.stream()
-                        .filter(name -> name != null && !name.trim().isEmpty())
-                        .toList();
-                gameNames = filteredNames.isEmpty() ? "未知游戏" : String.join(",", filteredNames);
-            }
+            String gameNames = (gameNamesList == null || gameNamesList.isEmpty()) ? "未知游戏"
+                    : gameNamesList.stream()
+                    .filter(name -> name != null && !name.trim().isEmpty())
+                    .collect(Collectors.joining(","));
+            if (gameNames.isEmpty()) gameNames = "未知游戏";
 
             content.append(date).append(" ")
                     .append(gameNames).append(" ")
@@ -175,16 +207,19 @@ public class AccountingRecordService {
     }
 
     public byte[] generateAccountingExcelContent() {
-        List<AccountingRecord> records = getAll();
+        List<AccountingRecordDTO> records = getAll();
         return generateExcel(records, "全部账单明细");
     }
 
     public byte[] generateAccountingExcelContentByRange(LocalDateTime start, LocalDateTime end) {
         List<AccountingRecord> records = repository.findByStartDateTimeBetween(start, end);
-        return generateExcel(records, "指定时间段账单明细");
+        List<AccountingRecordDTO> dtos = records.stream()
+                .map(this::toDTO)
+                .toList();
+        return generateExcel(dtos, "指定时间段账单明细");
     }
 
-    private byte[] generateExcel(List<AccountingRecord> records, String sheetTitle) {
+    private byte[] generateExcel(List<AccountingRecordDTO> records, String sheetTitle) {
         try (Workbook workbook = new XSSFWorkbook();
              ByteArrayOutputStream out = new ByteArrayOutputStream()) {
 
@@ -210,7 +245,7 @@ public class AccountingRecordService {
             BigDecimal totalAmount = BigDecimal.ZERO;
             BigDecimal totalDuration = BigDecimal.ZERO;
 
-            for (AccountingRecord record : records) {
+            for (AccountingRecordDTO record : records) {
                 Row row = sheet.createRow(rowIdx++);
 
                 row.createCell(0).setCellValue(record.getId());
@@ -273,20 +308,23 @@ public class AccountingRecordService {
     }
 
     public byte[] generateAccountingCsv() {
-        List<AccountingRecord> records = getAll();
+        List<AccountingRecordDTO> records = getAll();
         return toCsvBytes(records);
     }
 
     public byte[] generateAccountingCsvByRange(LocalDateTime start, LocalDateTime end) {
         List<AccountingRecord> records = repository.findByStartDateTimeBetween(start, end);
-        return toCsvBytes(records);
+        List<AccountingRecordDTO> dtos = records.stream()
+                .map(this::toDTO)
+                .toList();
+        return toCsvBytes(dtos);
     }
 
-    private byte[] toCsvBytes(List<AccountingRecord> records) {
+    private byte[] toCsvBytes(List<AccountingRecordDTO> records) {
         StringBuilder sb = new StringBuilder();
         sb.append("日期,游戏名,时长,金额,客户类型,平台\n");
 
-        for (AccountingRecord record : records) {
+        for (AccountingRecordDTO record : records) {
             String date = record.getStartDateTime().toLocalDate().toString();
             String gameNames = (record.getGameNames() == null || record.getGameNames().isEmpty())
                     ? "未知游戏"
@@ -320,20 +358,24 @@ public class AccountingRecordService {
     }
 
     public byte[] generateAccountingPdf() {
-        List<AccountingRecord> records = getAll();
+        List<AccountingRecordDTO> records = getAll();
         return generatePdf(records, "全部账单明细");
     }
 
     public byte[] generateAccountingPdfByRange(LocalDateTime start, LocalDateTime end) {
         List<AccountingRecord> records = repository.findByStartDateTimeBetween(start, end);
-        return generatePdf(records, "指定时间段账单明细");
+        // 转成 DTO
+        List<AccountingRecordDTO> dtos = records.stream()
+                .map(this::toDTO)
+                .toList();
+        return generatePdf(dtos, "指定时间段账单明细");
     }
 
     private String safeStr(Object obj) {
         return obj == null ? "" : obj.toString();
     }
 
-    private byte[] generatePdf(List<AccountingRecord> records, String title) {
+    private byte[] generatePdf(List<AccountingRecordDTO> records, String title) {
         try (ByteArrayOutputStream baos = new ByteArrayOutputStream()) {
             PdfWriter writer = new PdfWriter(baos);
             PdfDocument pdfDoc = new PdfDocument(writer);
@@ -385,7 +427,7 @@ public class AccountingRecordService {
             } else {
                 java.time.format.DateTimeFormatter dtf = java.time.format.DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
 
-                for (AccountingRecord record : records) {
+                for (AccountingRecordDTO record : records) {
                     // 交替背景色
                     DeviceGray bgColor = (rowIndex % 2 == 0) ? new DeviceGray(0.98f) : DeviceGray.WHITE;
 
