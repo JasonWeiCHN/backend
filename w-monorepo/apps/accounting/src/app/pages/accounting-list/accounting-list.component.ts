@@ -23,7 +23,7 @@ export class AccountingListComponent {
   searchKeyword = '';
 
   pageSize = 50;
-  currentPage = 1;
+  currentPage = 5;
   totalPages = 1;
 
   showReminder = false;

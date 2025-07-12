@@ -8,7 +8,7 @@ import { IGame } from '../interfaces/game.interface';
   providedIn: 'root',
 })
 export class AccountingHttpService {
-  private accountingUrl = 'http://localhost:8086/api/accounting'; // 替换为你的后端地址 酷乐乐单体 8080  酷乐乐multiple 8086
+  private accountingUrl = 'http://localhost:8080/api/accounting'; // 替换为你的后端地址 酷乐乐单体 8080  酷乐乐multiple 8086
   private gameUrl = 'http://localhost:8081/api/games';
 
   constructor(private http: HttpClient) {}
