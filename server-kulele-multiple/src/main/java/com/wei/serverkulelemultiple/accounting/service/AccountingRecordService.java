@@ -22,6 +22,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -159,6 +160,7 @@ public class AccountingRecordService {
         return content.toString();
     }
 
+    @Transactional(transactionManager = "tenantTransactionManager", readOnly = true)
     public String generateAccountingTxtContentByRange(LocalDateTime start, LocalDateTime end) {
         List<AccountingRecord> records = repository.findByStartDateTimeBetween(start, end);
 
@@ -211,6 +213,7 @@ public class AccountingRecordService {
         return generateExcel(records, "全部账单明细");
     }
 
+    @Transactional(transactionManager = "tenantTransactionManager", readOnly = true)
     public byte[] generateAccountingExcelContentByRange(LocalDateTime start, LocalDateTime end) {
         List<AccountingRecord> records = repository.findByStartDateTimeBetween(start, end);
         List<AccountingRecordDTO> dtos = records.stream()
@@ -312,6 +315,7 @@ public class AccountingRecordService {
         return toCsvBytes(records);
     }
 
+    @Transactional(transactionManager = "tenantTransactionManager", readOnly = true)
     public byte[] generateAccountingCsvByRange(LocalDateTime start, LocalDateTime end) {
         List<AccountingRecord> records = repository.findByStartDateTimeBetween(start, end);
         List<AccountingRecordDTO> dtos = records.stream()
@@ -362,6 +366,7 @@ public class AccountingRecordService {
         return generatePdf(records, "全部账单明细");
     }
 
+    @Transactional(transactionManager = "tenantTransactionManager", readOnly = true)
     public byte[] generateAccountingPdfByRange(LocalDateTime start, LocalDateTime end) {
         List<AccountingRecord> records = repository.findByStartDateTimeBetween(start, end);
         // 转成 DTO

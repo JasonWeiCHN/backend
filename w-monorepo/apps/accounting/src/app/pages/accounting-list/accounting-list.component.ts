@@ -23,7 +23,7 @@ export class AccountingListComponent {
   searchKeyword = '';
 
   pageSize = 50;
-  currentPage = 5;
+  currentPage = 1;
   totalPages = 1;
 
   showReminder = false;
@@ -142,30 +142,6 @@ export class AccountingListComponent {
     }
   }
 
-  downloadTxt(): void {
-    const apiUrl = 'http://localhost:8080/api/accounting/export-txt';
-
-    // 创建隐藏的链接来触发下载
-    fetch(apiUrl)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('下载失败');
-        }
-        return response.blob();
-      })
-      .then((blob) => {
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = '账单统计.txt';
-        a.click();
-        window.URL.revokeObjectURL(url);
-      })
-      .catch((error) => {
-        alert('导出失败：' + error.message);
-      });
-  }
-
   openReminderModal(record: IAccountingRecord): void {
     this.reminderRecord = record;
     this.showReminder = true;
@@ -228,7 +204,7 @@ export class AccountingListComponent {
     }
 
     if (this.exportMode === 'all') {
-      const url = `http://localhost:8080/api/accounting/export-${formatSuffix}`;
+      const url = `http://localhost:8086/api/accounting/export-${formatSuffix}`;
       this.triggerDownload(url, `账单统计.${formatSuffix}`);
     } else {
       if (!this.exportStartDateTime || !this.exportEndDateTime) {
@@ -241,7 +217,7 @@ export class AccountingListComponent {
         endDateTime: this.exportEndDateTime,
       });
 
-      const url = `http://localhost:8080/api/accounting/export-${formatSuffix}-by-range?${params}`;
+      const url = `http://localhost:8086/api/accounting/export-${formatSuffix}-by-range?${params}`;
       const filename = `账单明细_${this.exportStartDateTime}_to_${this.exportEndDateTime}.${formatSuffix}`;
       this.triggerDownload(url, filename);
     }
