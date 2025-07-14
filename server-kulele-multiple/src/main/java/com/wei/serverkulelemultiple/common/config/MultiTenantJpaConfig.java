@@ -18,8 +18,8 @@ import javax.sql.DataSource;
         basePackages = {
                 "com.wei.serverkulelemultiple.accounting.repository",
                 "com.wei.serverkulelemultiple.appointment.repository",
-                "com.wei.serverkulelemultiple.expense.repository"
-                // "com.wei.serverkulelemultiple.product.repository",
+                "com.wei.serverkulelemultiple.expense.repository",
+                "com.wei.serverkulelemultiple.product.repository"
                 // "com.wei.serverkulelemultiple.game.repository"
         },
         entityManagerFactoryRef = "tenantEntityManagerFactory",
@@ -41,7 +41,8 @@ public class MultiTenantJpaConfig {
         emf.setPackagesToScan(
                 "com.wei.serverkulelemultiple.accounting.entity",
                 "com.wei.serverkulelemultiple.appointment.entity",
-                "com.wei.serverkulelemultiple.expense.entity"
+                "com.wei.serverkulelemultiple.expense.entity",
+                "com.wei.serverkulelemultiple.product.entity"
                 // 其他包名...
         );
         emf.setJpaVendorAdapter(vendorAdapter);
