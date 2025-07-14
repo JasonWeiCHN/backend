@@ -23,7 +23,7 @@ export class AccountingListComponent {
   searchKeyword = '';
 
   pageSize = 50;
-  currentPage = 1;
+  currentPage = 6;
   totalPages = 1;
 
   showReminder = false;
@@ -204,7 +204,7 @@ export class AccountingListComponent {
     }
 
     if (this.exportMode === 'all') {
-      const url = `http://localhost:8086/api/accounting/export-${formatSuffix}`;
+      const url = `http://localhost:8080/api/accounting/export-${formatSuffix}`;
       this.triggerDownload(url, `账单统计.${formatSuffix}`);
     } else {
       if (!this.exportStartDateTime || !this.exportEndDateTime) {
@@ -217,7 +217,7 @@ export class AccountingListComponent {
         endDateTime: this.exportEndDateTime,
       });
 
-      const url = `http://localhost:8086/api/accounting/export-${formatSuffix}-by-range?${params}`;
+      const url = `http://localhost:8080/api/accounting/export-${formatSuffix}-by-range?${params}`;
       const filename = `账单明细_${this.exportStartDateTime}_to_${this.exportEndDateTime}.${formatSuffix}`;
       this.triggerDownload(url, filename);
     }

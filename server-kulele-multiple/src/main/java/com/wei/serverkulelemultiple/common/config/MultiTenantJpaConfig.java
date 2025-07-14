@@ -1,6 +1,5 @@
 package com.wei.serverkulelemultiple.common.config;
 
-import com.wei.serverkulelemultiple.common.datasource.MultiTenantDataSource;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,7 +17,8 @@ import javax.sql.DataSource;
 @EnableJpaRepositories(
         basePackages = {
                 "com.wei.serverkulelemultiple.accounting.repository",
-                // "com.wei.serverkulelemultiple.appointment.repository",
+                "com.wei.serverkulelemultiple.appointment.repository",
+                "com.wei.serverkulelemultiple.expense.repository"
                 // "com.wei.serverkulelemultiple.product.repository",
                 // "com.wei.serverkulelemultiple.game.repository"
         },
@@ -39,7 +39,9 @@ public class MultiTenantJpaConfig {
         LocalContainerEntityManagerFactoryBean emf = new LocalContainerEntityManagerFactoryBean();
         emf.setDataSource(dataSource);
         emf.setPackagesToScan(
-                "com.wei.serverkulelemultiple.accounting.entity"
+                "com.wei.serverkulelemultiple.accounting.entity",
+                "com.wei.serverkulelemultiple.appointment.entity",
+                "com.wei.serverkulelemultiple.expense.entity"
                 // 其他包名...
         );
         emf.setJpaVendorAdapter(vendorAdapter);
