@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 interface NavItem {
   title: string;
@@ -15,6 +16,9 @@ interface NavItem {
   styleUrl: './dashboard.component.scss',
 })
 export class DashboardComponent {
+  title = '酷乐乐游戏管理系统';
+  subtitle = '恭喜发财，生意兴隆';
+
   navItems: NavItem[] = [
     {
       title: '记账系统',
@@ -48,6 +52,8 @@ export class DashboardComponent {
     },
   ];
 
+  constructor(private router: Router) {}
+
   openLink(link: string): void {
     const token = localStorage.getItem('token');
 
@@ -57,5 +63,11 @@ export class DashboardComponent {
     } else {
       alert('未登录，token 缺失');
     }
+  }
+
+  logout(): void {
+    localStorage.removeItem('token');
+    localStorage.removeItem('tenantId');
+    this.router.navigate(['/merchant-auth']);
   }
 }

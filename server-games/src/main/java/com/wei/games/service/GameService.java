@@ -184,4 +184,10 @@ public class GameService {
 
         return guideDTOs;
     }
+
+    public List<GameResponse> getGamesByIds(List<Long> ids) {
+        return gameRepository.findAllById(ids).stream()
+                .map(this::toResponse)
+                .collect(Collectors.toList());
+    }
 }

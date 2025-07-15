@@ -1,34 +1,51 @@
 <div class="game-list">
   <div class="top-bar">
-    <button class="add-button" routerLink="/game/add">新增</button>
+    <button class="add-button" routerLink="/game/add">➕ 新增游戏</button>
 
     <div class="search-bar">
       <input [(ngModel)]="keyword" placeholder="输入游戏ID或备注搜索" />
-      <button (click)="search()">搜索</button>
+      <button (click)="search()">🔍 搜索</button>
+      <button *ngIf="keyword" (click)="clearSearch()">✖ 清除</button>
     </div>
   </div>
 
-  <table class="record-table">
+  <table class="game-table">
     <thead>
       <tr>
         <th>ID</th>
-        <th>游戏ID</th>
-        <th>添加时间</th>
-        <th>备注</th>
+        <th>游戏名</th>
+        <th>标签</th>
+        <th>描述</th>
+        <th>视频</th>
         <th>操作</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let g of records">
-        <td>{{ g.id }}</td>
-        <td>{{ g.gameId }}</td>
-        <td>{{ format(g.addedAt) }}</td>
-        <td>{{ g.note }}</td>
+      <tr *ngFor="let game of pagedGames">
+        <td>{{ game.id }}</td>
+        <td>{{ game.name }}</td>
         <td>
-          <button [routerLink]="['/game/edit', g.id]">编辑</button>
-          <button (click)="delete(g.id)">删除</button>
+          <span *ngFor="let tag of game.tags ?? []; let last = last">
+            {{ tag.name }}<span *ngIf="!last">, </span>
+          </span>
+        </td>
+        <td>{{ game.description || '—' }}</td>
+        <td>
+          <a *ngIf="game.video" [href]="game.video" target="_blank">查看</a>
+        </td>
+        <td>
+          <button [routerLink]="['/game/view', game.id]">查看</button>
         </td>
       </tr>
     </tbody>
   </table>
+
+  <div class="pagination">
+    <button (click)="prevPage()" [disabled]="currentPage === 1">上一页</button>
+    <span>第 {{ currentPage }} 页 / 共 {{ totalPages }} 页</span>
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">
+      下一页
+    </button>
+    <span class="total-count">共 {{ games.length }} 条数据</span>
+  </div>
 </div>

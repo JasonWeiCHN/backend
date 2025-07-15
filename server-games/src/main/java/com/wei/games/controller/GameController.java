@@ -55,5 +55,10 @@ public class GameController {
     ) {
         return ResponseEntity.ok(gameService.updateGuidesByGameId(id, request.getGuides()));
     }
+
+    @PostMapping("/batch")
+    public ResponseEntity<List<GameResponse>> getGamesByIds(@RequestBody List<Long> ids) {
+        return ResponseEntity.ok(gameService.getGamesByIds(ids));
+    }
 }
 

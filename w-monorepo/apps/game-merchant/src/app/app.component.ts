@@ -11,4 +11,17 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class AppComponent {
   title = 'game-merchant';
+
+  ngOnInit(): void {
+    const params = new URLSearchParams(window.location.search);
+    const token = params.get('token');
+
+    if (token) {
+      localStorage.setItem('token', token);
+
+      // 清理 URL，防止泄露
+      const cleanUrl = window.location.origin + window.location.pathname;
+      window.history.replaceState({}, document.title, cleanUrl);
+    }
+  }
 }

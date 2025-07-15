@@ -27,20 +27,22 @@
     .search-bar {
       display: flex;
       align-items: center;
+      gap: 8px;
+      margin-left: 20px;
+      height: 36px;
+      padding: 0 8px;
       border: 1px solid #eeeeee;
       border-radius: 4px;
       background-color: #eeeeee;
-      padding: 0 8px;
-      height: 36px;
 
       input {
+        background-color: #fff;
         border: none;
         outline: none;
-        background: #ffffff;
-        padding: 0 6px;
+        height: 28px;
+        padding: 0 8px;
         font-size: 14px;
         color: #333;
-        height: 28px;
         flex-grow: 1;
       }
 
@@ -49,9 +51,7 @@
         border: none;
         cursor: pointer;
         font-size: 16px;
-        color: #333333;
-        padding: 0 6px;
-        height: 28px;
+        color: #333;
 
         &:hover {
           color: #20409f;
@@ -60,7 +60,7 @@
     }
   }
 
-  .record-table {
+  .game-table {
     width: 100%;
     border-collapse: collapse;
     table-layout: fixed;
@@ -76,6 +76,30 @@
       white-space: nowrap;
     }
 
+    th:nth-child(1), td:nth-child(1) {
+      width: 50px;
+    }
+
+    th:nth-child(2), td:nth-child(2) {
+      width: 200px;
+    }
+
+    th:nth-child(3), td:nth-child(3) {
+      width: 120px;
+    }
+
+    th:nth-child(4), td:nth-child(4) {
+      width: 300px;
+    }
+
+    th:nth-child(5), td:nth-child(5) {
+      width: 80px;
+    }
+
+    th:nth-child(6), td:nth-child(6) {
+      width: 120px;
+    }
+
     th {
       background-color: #f0f0f0;
     }
@@ -84,29 +108,18 @@
       background-color: #f9f9f9;
     }
 
-    th:nth-child(1), td:nth-child(1) {
-      width: 60px; // ID
-    }
+    a {
+      color: #20409f;
+      text-decoration: underline;
 
-    th:nth-child(2), td:nth-child(2) {
-      width: 120px; // 游戏ID
-    }
-
-    th:nth-child(3), td:nth-child(3) {
-      width: 200px; // 添加时间
-    }
-
-    th:nth-child(4), td:nth-child(4) {
-      width: 240px; // 备注
-    }
-
-    th:nth-child(5), td:nth-child(5) {
-      width: 120px; // 操作按钮
+      &:hover {
+        color: #102080;
+      }
     }
 
     button {
       margin: 0 4px;
-      padding: 4px 6px;
+      padding: 4px 8px;
       font-size: 14px;
       cursor: pointer;
       border: 1px solid #ccc;
@@ -117,6 +130,33 @@
         background-color: #20409f;
         color: #ffffff;
       }
+    }
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+    gap: 12px;
+
+    button {
+      padding: 4px 10px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &:disabled {
+        color: #999;
+        background-color: #eee;
+        cursor: not-allowed;
+      }
+    }
+
+    .total-count {
+      color: #555;
+      font-size: 14px;
     }
   }
 }

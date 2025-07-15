@@ -20,6 +20,10 @@ export class GameHttpService {
     return this.http.get<IGame[]>(this.gameUrl);
   }
 
+  getGamesByIds(ids: number[]): Observable<IGame[]> {
+    return this.http.post<IGame[]>(`${this.gameUrl}/batch`, ids);
+  }
+
   /** 根据 ID 获取游戏 */
   getGameById(id: number): Observable<IGame> {
     return this.http.get<IGame>(`${this.gameUrl}/${id}`);
