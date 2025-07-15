@@ -1,0 +1,35 @@
+<div class="game-form">
+  <h2>{{ isEdit ? '编辑游戏关联' : '新增游戏关联' }}</h2>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label>
+      游戏名称（搜索选择）：
+      <input
+        type="text"
+        [(ngModel)]="gameSearchKeyword"
+        (ngModelChange)="onSearchChange()"
+        placeholder="请输入游戏名"
+        [ngModelOptions]="{ standalone: true }"
+      />
+      <ul *ngIf="filteredGames.length && gameSearchKeyword" class="suggestions">
+        <li
+          *ngFor="let game of filteredGames"
+          (click)="selectGame(game)"
+          [title]="game.name"
+        >
+          {{ game.name }}
+        </li>
+      </ul>
+    </label>
+
+    <label>
+      备注：
+      <textarea rows="3" formControlName="note"></textarea>
+    </label>
+
+    <div class="actions">
+      <button type="submit">提交</button>
+      <button type="button" (click)="router.navigate(['/game'])">取消</button>
+    </div>
+  </form>
+</div>

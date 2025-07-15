@@ -1,6 +1,6 @@
 package com.wei.serverkulelemerchant.service;
 import com.wei.serverkulelemerchant.entity.Merchant;
-import com.wei.serverkulelemerchant.repositories.MerchantRepository;
+import com.wei.serverkulelemerchant.repository.MerchantRepository;
 import com.wei.serverkulelemerchant.request.MerchantLoginRequest;
 import com.wei.serverkulelemerchant.request.MerchantRegisterRequest;
 import com.wei.serverkulelemerchant.response.LoginResponse;

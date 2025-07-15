@@ -1,0 +1,122 @@
+.game-list {
+  padding: 16px;
+
+  .top-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+
+    .add-button {
+      padding: 0 12px;
+      height: 36px;
+      line-height: 36px;
+      background-color: #eeeeee;
+      color: #333333;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+
+      &:hover {
+        background-color: #20409f;
+        color: #ffffff;
+      }
+    }
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+      border: 1px solid #eeeeee;
+      border-radius: 4px;
+      background-color: #eeeeee;
+      padding: 0 8px;
+      height: 36px;
+
+      input {
+        border: none;
+        outline: none;
+        background: #ffffff;
+        padding: 0 6px;
+        font-size: 14px;
+        color: #333;
+        height: 28px;
+        flex-grow: 1;
+      }
+
+      button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        color: #333333;
+        padding: 0 6px;
+        height: 28px;
+
+        &:hover {
+          color: #20409f;
+        }
+      }
+    }
+  }
+
+  .record-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 4px;
+      text-align: center;
+      line-height: 1;
+      height: 32px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    th {
+      background-color: #f0f0f0;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    th:nth-child(1), td:nth-child(1) {
+      width: 60px; // ID
+    }
+
+    th:nth-child(2), td:nth-child(2) {
+      width: 120px; // 游戏ID
+    }
+
+    th:nth-child(3), td:nth-child(3) {
+      width: 200px; // 添加时间
+    }
+
+    th:nth-child(4), td:nth-child(4) {
+      width: 240px; // 备注
+    }
+
+    th:nth-child(5), td:nth-child(5) {
+      width: 120px; // 操作按钮
+    }
+
+    button {
+      margin: 0 4px;
+      padding: 4px 6px;
+      font-size: 14px;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      background-color: #eeeeee;
+      border-radius: 4px;
+
+      &:hover {
+        background-color: #20409f;
+        color: #ffffff;
+      }
+    }
+  }
+}

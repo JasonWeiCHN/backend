@@ -1,4 +1,4 @@
-package com.wei.serverkulelemerchant.repositories;
+package com.wei.serverkulelemerchant.repository;
 
 import com.wei.serverkulelemerchant.entity.Merchant;
 import org.springframework.data.jpa.repository.JpaRepository;

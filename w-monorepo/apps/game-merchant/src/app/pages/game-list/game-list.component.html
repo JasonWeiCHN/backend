@@ -1,0 +1,34 @@
+<div class="game-list">
+  <div class="top-bar">
+    <button class="add-button" routerLink="/game/add">新增</button>
+
+    <div class="search-bar">
+      <input [(ngModel)]="keyword" placeholder="输入游戏ID或备注搜索" />
+      <button (click)="search()">搜索</button>
+    </div>
+  </div>
+
+  <table class="record-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>游戏ID</th>
+        <th>添加时间</th>
+        <th>备注</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let g of records">
+        <td>{{ g.id }}</td>
+        <td>{{ g.gameId }}</td>
+        <td>{{ format(g.addedAt) }}</td>
+        <td>{{ g.note }}</td>
+        <td>
+          <button [routerLink]="['/game/edit', g.id]">编辑</button>
+          <button (click)="delete(g.id)">删除</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

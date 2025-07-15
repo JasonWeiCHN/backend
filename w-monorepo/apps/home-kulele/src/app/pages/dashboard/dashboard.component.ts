@@ -32,9 +32,14 @@ export class DashboardComponent {
       link: 'http://localhost:4203',
     },
     {
-      title: '游戏库',
+      title: '游戏库（公共）',
       description: '管理所有游戏信息',
       link: 'http://localhost:4204',
+    },
+    {
+      title: '游戏库（商户）',
+      description: '管理商户游戏信息',
+      link: 'http://localhost:4206',
     },
     {
       title: '商品管理',

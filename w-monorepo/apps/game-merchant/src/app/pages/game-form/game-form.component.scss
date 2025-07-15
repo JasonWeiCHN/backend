@@ -1,0 +1,90 @@
+.game-form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  h2 {
+    text-align: center;
+    color: #333;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    label {
+      display: flex;
+      flex-direction: column;
+      font-weight: bold;
+      font-size: 14px;
+      color: #444;
+      position: relative; // ✅ 必须加上，让 suggestions 绝对定位时基于 label
+
+      input,
+      textarea {
+        padding: 6px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 100%;
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 60px;
+      }
+
+      .suggestions {
+        list-style: none;
+        padding: 0;
+        margin: 4px 0 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: white;
+        max-height: 200px;
+        overflow-y: auto;
+        z-index: 10;
+        position: absolute;
+        top: 100%; // ✅ 出现在 input 下方
+        left: 0; // ✅ 左对齐
+        width: 100%; // ✅ 等宽
+
+        li {
+          padding: 6px;
+          cursor: pointer;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+
+          &:hover {
+            background-color: #20409f;
+            color: white;
+          }
+        }
+      }
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+
+      button {
+        padding: 6px 12px;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #eeeeee;
+        font-size: 14px;
+
+        &:hover {
+          background-color: #20409f;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
