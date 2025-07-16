@@ -46,14 +46,10 @@ public class AccountingRecordService {
                 .toList();
     }
 
+    @Transactional(transactionManager = "tenantTransactionManager", readOnly = true)
     public Optional<AccountingRecordDTO> getById(Long id) {
-        // 推荐：手动 fetch One 时也预加载 gameNames
-        return repository.findById(id)
-                .map(record -> {
-                    // 手动初始化懒加载字段，避免懒加载异常
-                    record.getGameNames().size(); // 触发加载
-                    return toDTO(record);
-                });
+        return repository.findByIdWithGameNames(id)
+                .map(this::toDTO);
     }
 
     public AccountingRecordDTO create(AddAccountingRecordRequest request) {

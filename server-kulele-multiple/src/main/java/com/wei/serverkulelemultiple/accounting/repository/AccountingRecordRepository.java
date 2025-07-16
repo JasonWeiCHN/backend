@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 public interface AccountingRecordRepository extends JpaRepository<AccountingRecord, Long> {
 
@@ -14,4 +15,7 @@ public interface AccountingRecordRepository extends JpaRepository<AccountingReco
     // ✅ 新增：预加载 gameNames，避免 LazyInitializationException
     @Query("SELECT a FROM AccountingRecord a LEFT JOIN FETCH a.gameNames")
     List<AccountingRecord> findAllWithGameNames();
+
+    @Query("SELECT a FROM AccountingRecord a LEFT JOIN FETCH a.gameNames WHERE a.id = :id")
+    Optional<AccountingRecord> findByIdWithGameNames(Long id);
 }

@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ServerKuleleMultipleApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ServerKuleleMultipleApplication.class, args);
+        SpringApplication.                           run(ServerKuleleMultipleApplication.class, args);
     }
 
 }
