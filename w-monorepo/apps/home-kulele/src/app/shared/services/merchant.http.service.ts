@@ -17,7 +17,7 @@ export interface LoginResponse {
   providedIn: 'root',
 })
 export class MerchantHttpService {
-  private baseUrl = 'http://localhost:8085/api/merchants';
+  private baseUrl = 'http://111.230.29.99:8080/merchant/api/merchant'; // http://111.230.29.99:8080/merchant/api/merchant http://localhost:8085/api/merchant
 
   constructor(private http: HttpClient) {}
 

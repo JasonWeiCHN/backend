@@ -7,7 +7,10 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class AppointmentHttpService {
-  private baseUrl = 'http://localhost:8086/api/appointments'; // 替换为你的后端地址 酷乐乐单体 8083  酷乐乐multiple 8086
+  // http://localhost:8083/api/accounting 酷乐乐单体
+  // http://localhost:8086/api/accounting 酷乐乐multiple
+  // http://111.230.29.99:8080/multiple/api/appointments SASS
+  private baseUrl = 'http://111.230.29.99:8080/multiple/api/appointments';
 
   constructor(private http: HttpClient) {}
 

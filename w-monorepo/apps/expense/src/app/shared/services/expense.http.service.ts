@@ -7,7 +7,10 @@ import { Observable } from 'rxjs'; // 导入 of
   providedIn: 'root',
 })
 export class ExpenseHttpService {
-  private baseUrl = 'http://localhost:8086/api/expenses'; // 替换为你的后端地址 酷乐乐单体 8082  酷乐乐multiple 8086
+  // http://localhost:8082/api/expenses 酷乐乐单体
+  // http://localhost:8086/api/expenses 酷乐乐multiple
+  // http://111.230.29.99:8080/multiple/api/expenses SASS
+  private baseUrl = 'http://111.230.29.99:8080/multiple/api/expenses';
 
   constructor(private http: HttpClient) {}
 
