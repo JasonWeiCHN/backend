@@ -58,7 +58,7 @@ public class MultiTenantDataSource extends AbstractRoutingDataSource {
     private DataSource createDataSource(String dbName) {
         HikariDataSource ds = new HikariDataSource();
         ds.setJdbcUrl("jdbc:postgresql://localhost:5432/" + dbName);
-        ds.setUsername("postgres");
+        ds.setUsername("kulele");
         ds.setPassword("P@ssw0rd11");
         ds.setDriverClassName("org.postgresql.Driver");
         return ds;

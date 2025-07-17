@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ProductHttpService {
-  private baseUrl = 'http://localhost:8084/api/products';
+  private baseUrl = 'http://localhost:8086/api/products'; // 替换为你的后端地址 酷乐乐单体 8084  酷乐乐multiple 8086
 
   constructor(private http: HttpClient) {}
 

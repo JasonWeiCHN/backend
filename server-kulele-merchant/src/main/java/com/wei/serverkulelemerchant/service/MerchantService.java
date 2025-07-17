@@ -64,7 +64,7 @@ public class MerchantService {
         String jdbcUrl = "jdbc:postgresql://localhost:5432/" + dbName;
 
         Flyway flyway = Flyway.configure()
-                .dataSource(jdbcUrl, "postgres", "P@ssw0rd11") // 建议密码放到配置或加密
+                .dataSource(jdbcUrl, "kulele", "P@ssw0rd11") // 建议密码放到配置或加密
                 .locations("classpath:db/migration")
                 .baselineOnMigrate(true)
                 .load();

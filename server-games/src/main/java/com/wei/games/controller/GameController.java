@@ -17,6 +17,11 @@ public class GameController {
         this.gameService = gameService;
     }
 
+    @GetMapping("/test")
+    public String test() {
+        return "Game API is running";
+    }
+
     @GetMapping
     public ResponseEntity<List<GameResponse>> getAllGames() {
         return ResponseEntity.ok(gameService.getAll());
