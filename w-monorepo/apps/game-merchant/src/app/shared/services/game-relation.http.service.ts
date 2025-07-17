@@ -5,7 +5,9 @@ import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class GameRelationHttpService {
-  private baseUrl = 'http://localhost:8086/api/games'; // 按需替换
+  // http://localhost:8086/api/games 酷乐乐单体
+  // http://111.230.29.99:8080/multiple/api/games SASS
+  private baseUrl = 'http://111.230.29.99:8080/multiple/api/games'; // 按需替换
 
   constructor(private http: HttpClient) {}
 

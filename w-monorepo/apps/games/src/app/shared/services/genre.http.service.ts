@@ -7,7 +7,9 @@ import { IGenre } from '../interfaces/genre.interface';
   providedIn: 'root',
 })
 export class GenreHttpService {
-  private genreUrl = 'http://localhost:8081/api/genres';
+  // http://localhost:8081/api/genres 酷乐乐单体
+  // http://111.230.29.99:8080/games/api/genres SASS
+  private genreUrl = 'http://111.230.29.99:8080/games/api/genres';
 
   constructor(private http: HttpClient) {}
 

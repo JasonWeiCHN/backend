@@ -7,7 +7,9 @@ import { ITag } from '../interfaces/tag.interface';
   providedIn: 'root',
 })
 export class TagHttpService {
-  private tagUrl = 'http://localhost:8081/api/tags';
+  // http://localhost:8081/api/tags 酷乐乐单体
+  // http://111.230.29.99:8080/games/api/tags SASS
+  private tagUrl = 'http://111.230.29.99:8080/games/api/tags';
 
   constructor(private http: HttpClient) {}
 
