@@ -11,9 +11,7 @@ import {
   providedIn: 'root',
 })
 export class GameHttpService {
-  // http://localhost:8081/api/accounting 酷乐乐单体
-  // http://111.230.29.99:8080/games/api/games SASS
-  private gameUrl = 'http://111.230.29.99:8080/games/api/games';
+  C;
 
   constructor(private http: HttpClient) {}
 

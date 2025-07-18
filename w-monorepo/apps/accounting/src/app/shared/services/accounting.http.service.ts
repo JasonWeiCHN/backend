@@ -12,7 +12,9 @@ export class AccountingHttpService {
   // http://localhost:8086/api/accounting 酷乐乐multiple
   // http://111.230.29.99:8080/multiple/api/accounting SASS
   private accountingUrl = 'http://111.230.29.99:8080/multiple/api/accounting';
-  private gameUrl = 'http://localhost:8081/api/games';
+  // http://localhost:8081/api/accounting 酷乐乐单体
+  // http://111.230.29.99:8080/games/api/games SASS
+  private gameUrl = 'http://111.230.29.99:8080/games/api/games';
 
   constructor(private http: HttpClient) {}
 
