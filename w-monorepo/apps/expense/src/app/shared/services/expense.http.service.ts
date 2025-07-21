@@ -10,7 +10,8 @@ export class ExpenseHttpService {
   // http://localhost:8082/api/expenses 酷乐乐单体
   // http://localhost:8086/api/expenses 酷乐乐multiple
   // http://111.230.29.99:8080/multiple/api/expenses SASS
-  private baseUrl = 'http://111.230.29.99:8080/multiple/api/expenses';
+  // https://kulele.club/sass/api/multiple/api/expenses
+  private baseUrl = 'https://kulele.club/sass/api/multiple/api/expenses';
 
   constructor(private http: HttpClient) {}
 

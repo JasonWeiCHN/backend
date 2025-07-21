@@ -17,7 +17,10 @@ export interface LoginResponse {
   providedIn: 'root',
 })
 export class MerchantHttpService {
-  private baseUrl = 'http://111.230.29.99:8080/merchant/api/merchant'; // http://111.230.29.99:8080/merchant/api/merchant http://localhost:8085/api/merchant
+  // http://localhost:8085/api/merchant
+  // http://111.230.29.99:8080/merchant/api/merchant
+  // https://kulele.club/sass/api/merchant/api/merchant
+  private baseUrl = 'https://kulele.club/sass/api/merchant/api/merchant';
 
   constructor(private http: HttpClient) {}
 

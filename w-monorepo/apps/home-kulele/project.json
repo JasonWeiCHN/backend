@@ -8,23 +8,30 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
-        "outputPath": "dist/apps/home-kulele",
+        "outputPath": "dist/apps/kulele-home",
         "index": "apps/home-kulele/src/index.html",
         "main": "apps/home-kulele/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "apps/home-kulele/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
           "apps/home-kulele/src/favicon.ico",
           "apps/home-kulele/src/assets"
         ],
-        "styles": ["apps/home-kulele/src/styles.scss"],
+        "styles": [
+          "apps/home-kulele/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
         "production": {
+          "baseHref": "/home/",
           "budgets": [
             {
               "type": "initial",
@@ -73,7 +80,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
         "jestConfig": "apps/home-kulele/jest.config.ts"
       }

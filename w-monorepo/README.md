@@ -99,6 +99,12 @@ nx g @nx/angular:component article-card --directory=libs/shared/ui/src/lib/artic
 npx nx g @nx/angular:setup-tailwind my-project
 ```
 
+### 打包
+
+```
+npx nx build home-kulele --configuration=production --skip-nx-cache
+```
+
 ## 数据导出 与 导入 postgre
 
 ### 导出

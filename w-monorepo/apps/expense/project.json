@@ -8,20 +8,30 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
-        "outputPath": "dist/apps/expense",
+        "outputPath": "dist/apps/kulele-expense",
         "index": "apps/expense/src/index.html",
         "main": "apps/expense/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "apps/expense/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/expense/src/favicon.ico", "apps/expense/src/assets"],
-        "styles": ["apps/expense/src/styles.scss"],
+        "assets": [
+          "apps/expense/src/favicon.ico",
+          "apps/expense/src/assets"
+        ],
+        "styles": [
+          "apps/expense/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
         "production": {
+          "baseHref": "/expense/",
           "budgets": [
             {
               "type": "initial",
@@ -70,7 +80,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
         "jestConfig": "apps/expense/jest.config.ts"
       }

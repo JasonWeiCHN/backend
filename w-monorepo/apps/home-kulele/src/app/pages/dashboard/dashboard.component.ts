@@ -23,32 +23,32 @@ export class DashboardComponent {
     {
       title: '记账系统',
       description: '记录和统计每笔账单',
-      link: 'http://localhost:4201',
+      link: 'https://kulele.club/accounting/', // http://localhost:4201 https://kulele.club/accounting/
     },
     {
       title: '预约系统',
       description: '管理用户预约信息',
-      link: 'http://localhost:4202',
+      link: 'https://kulele.club/appointment/', // http://localhost:4202 https://kulele.club/appointment/
     },
     {
       title: '支出记录',
       description: '记录每笔花销',
-      link: 'http://localhost:4203',
+      link: 'https://kulele.club/expense/', // http://localhost:4203 https://kulele.club/expense/
     },
     {
       title: '游戏库（公共）',
       description: '管理所有游戏信息',
-      link: 'http://localhost:4204',
+      link: 'https://kulele.club/games/', // http://localhost:4204 https://kulele.club/games/
     },
     {
       title: '游戏库（商户）',
       description: '管理商户游戏信息',
-      link: 'http://localhost:4206',
+      link: 'https://kulele.club/merchant-games/', // http://localhost:4206 https://kulele.club/merchant-games/
     },
     {
       title: '商品管理',
       description: '管理所有游戏信息',
-      link: 'http://localhost:4205',
+      link: 'https://kulele.club/product/', // http://localhost:4205 https://kulele.club/product/
     },
   ];
 

@@ -10,7 +10,8 @@ export class ProductHttpService {
   // http://localhost:8084/api/products 酷乐乐单体
   // http://localhost:8086/api/products 酷乐乐multiple
   // http://111.230.29.99:8080/multiple/api/products SASS
-  private baseUrl = 'http://111.230.29.99:8080/multiple/api/products';
+  // https://kulele.club/sass/api/multiple/api/products
+  private baseUrl = 'https://kulele.club/sass/api/multiple/api/products';
 
   constructor(private http: HttpClient) {}
 

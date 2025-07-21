@@ -11,7 +11,10 @@ import {
   providedIn: 'root',
 })
 export class GameHttpService {
-  C;
+  // http://localhost:8081/api/accounting 酷乐乐单体
+  // http://111.230.29.99:8080/games/api/games SASS
+  // https://kulele.club/sass/api/games/api/games
+  private gameUrl = 'https://kulele.club/sass/api/games/api/games';
 
   constructor(private http: HttpClient) {}
 

@@ -41,7 +41,7 @@ export class AccountingListComponent {
 
   loadRecords(): void {
     this.accountingService.getAllRecords().subscribe((data) => {
-      this.records = data.sort((a, b) => a.id - b.id);
+      this.records = data;
       this.totalPages = Math.ceil(this.records.length / this.pageSize);
       this.updatePagedRecords();
     });
@@ -206,7 +206,8 @@ export class AccountingListComponent {
     if (this.exportMode === 'all') {
       // http://localhost:8080/api/accounting
       // http://111.230.29.99:8080/multiple/api/accounting
-      const url = `http://111.230.29.99:8080/multiple/api/accounting/export-${formatSuffix}`;
+      // https://kulele.club/sass/api/multiple/api/accounting
+      const url = `https://kulele.club/sass/api/multiple/api/accounting/export-${formatSuffix}`;
       this.triggerDownload(url, `账单统计.${formatSuffix}`);
     } else {
       if (!this.exportStartDateTime || !this.exportEndDateTime) {
@@ -221,14 +222,21 @@ export class AccountingListComponent {
 
       // http://localhost:8080/api/accounting
       // http://111.230.29.99:8080/multiple/api/accounting
-      const url = `http://111.230.29.99:8080/multiple/api/accounting/export-${formatSuffix}-by-range?${params}`;
+      // https://kulele.club/sass/api/multiple/api/accounting
+      const url = `https://kulele.club/sass/api/multiple/api/accounting/export-${formatSuffix}-by-range?${params}`;
       const filename = `账单明细_${this.exportStartDateTime}_to_${this.exportEndDateTime}.${formatSuffix}`;
       this.triggerDownload(url, filename);
     }
   }
 
   private triggerDownload(url: string, filename: string): void {
-    fetch(url)
+    const token = localStorage.getItem('token'); // ✅ 读取 token
+
+    fetch(url, {
+      headers: {
+        Authorization: `Bearer ${token}`, // ✅ 手动加 token
+      },
+    })
       .then((response) => {
         if (!response.ok) throw new Error('下载失败');
         return response.blob();

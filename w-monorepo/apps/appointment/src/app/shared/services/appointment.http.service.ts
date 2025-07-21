@@ -10,7 +10,8 @@ export class AppointmentHttpService {
   // http://localhost:8083/api/accounting 酷乐乐单体
   // http://localhost:8086/api/accounting 酷乐乐multiple
   // http://111.230.29.99:8080/multiple/api/appointments SASS
-  private baseUrl = 'http://111.230.29.99:8080/multiple/api/appointments';
+  // https://kulele.club/sass/api/multiple/api/appointments
+  private baseUrl = 'https://kulele.club/sass/api/multiple/api/appointments';
 
   constructor(private http: HttpClient) {}
 

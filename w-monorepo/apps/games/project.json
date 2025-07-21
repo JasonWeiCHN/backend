@@ -8,20 +8,30 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
-        "outputPath": "dist/apps/games",
+        "outputPath": "dist/apps/kulele-games",
         "index": "apps/games/src/index.html",
         "main": "apps/games/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "apps/games/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/games/src/favicon.ico", "apps/games/src/assets"],
-        "styles": ["apps/games/src/styles.scss"],
+        "assets": [
+          "apps/games/src/favicon.ico",
+          "apps/games/src/assets"
+        ],
+        "styles": [
+          "apps/games/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
         "production": {
+          "baseHref": "/games/",
           "budgets": [
             {
               "type": "initial",
@@ -70,7 +80,9 @@
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
         "jestConfig": "apps/games/jest.config.ts"
       }
