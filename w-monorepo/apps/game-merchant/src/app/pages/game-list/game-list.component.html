@@ -40,6 +40,27 @@
     </tbody>
   </table>
 
+  <!-- ✅ 移动端卡片视图 -->
+  <div class="game-cards">
+    <div class="game-card" *ngFor="let game of pagedGames">
+      <div><strong>ID：</strong>{{ game.id }}</div>
+      <div><strong>游戏名：</strong>{{ game.name }}</div>
+      <div>
+        <strong>标签：</strong>
+        <span *ngFor="let tag of game.tags ?? []; let last = last">
+          {{ tag.name }}<span *ngIf="!last">, </span>
+        </span>
+      </div>
+      <div><strong>描述：</strong>{{ game.description || '—' }}</div>
+      <div *ngIf="game.video">
+        <strong>视频：</strong><a [href]="game.video" target="_blank">查看</a>
+      </div>
+      <div class="card-actions">
+        <button [routerLink]="['/game/view', game.id]">查看</button>
+      </div>
+    </div>
+  </div>
+
   <div class="pagination">
     <button (click)="prevPage()" [disabled]="currentPage === 1">上一页</button>
     <span>第 {{ currentPage }} 页 / 共 {{ totalPages }} 页</span>
