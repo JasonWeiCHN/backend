@@ -26,8 +26,10 @@ export class GameListComponent {
   pageSize = 30;
   currentPage = 1;
   totalPages = 1;
+  isSuperAdmin = false;
 
   constructor() {
+    this.isSuperAdmin = localStorage.getItem('isSuperAdmin') === 'true';
     this.loadGames();
   }
 
