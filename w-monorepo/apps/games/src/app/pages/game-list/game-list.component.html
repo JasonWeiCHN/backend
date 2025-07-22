@@ -2,15 +2,7 @@
   <div class="top-bar">
     <button class="add-button" [routerLink]="['/game/new']">➕ 新增游戏</button>
 
-    <div
-      class="search-bar"
-      style="
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        margin-left: 20px;
-      "
-    >
+    <div class="search-bar">
       <select [(ngModel)]="searchField">
         <option value="name">游戏名</option>
         <option value="tags">标签</option>
@@ -55,6 +47,30 @@
       </tr>
     </tbody>
   </table>
+
+  <!-- ✅ 移动端卡片视图 -->
+  <div class="game-cards">
+    <div class="game-card" *ngFor="let game of pagedGames">
+      <div><strong>ID：</strong>{{ game.id }}</div>
+      <div><strong>游戏名：</strong>{{ game.name }}</div>
+      <div>
+        <strong>标签：</strong>
+        <span *ngFor="let tag of game.tags ?? []; let last = last">
+          {{ tag.name }}<span *ngIf="!last">, </span>
+        </span>
+      </div>
+      <div><strong>描述：</strong>{{ game.description || '—' }}</div>
+      <div *ngIf="game.video">
+        <strong>视频：</strong><a [href]="game.video" target="_blank">查看</a>
+      </div>
+      <div class="card-actions">
+        <button [routerLink]="['/game/view', game.id]">查看</button>
+        <button [routerLink]="['/game/guides', game.id]">攻略</button>
+        <button [routerLink]="['/game/edit', game.id]">编辑</button>
+        <button (click)="deleteGame(game.id)">删除</button>
+      </div>
+    </div>
+  </div>
 
   <div class="pagination">
     <button (click)="prevPage()" [disabled]="currentPage === 1">上一页</button>
