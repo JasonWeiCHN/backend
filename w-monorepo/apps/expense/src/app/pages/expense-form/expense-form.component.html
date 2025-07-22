@@ -13,7 +13,12 @@
 
     <label>
       类别：
-      <input type="text" formControlName="category" required />
+      <select formControlName="category">
+        <option value="" disabled selected>请支出类型</option>
+        <option *ngFor="let type of categoryTypes" [value]="type">
+          {{ type }}
+        </option>
+      </select>
     </label>
 
     <label>

@@ -27,6 +27,19 @@ export class ExpenseFormComponent implements OnInit {
   form!: FormGroup;
   isEditMode = false;
   expenseId?: number;
+  categoryTypes = [
+    '游戏',
+    '游戏机',
+    '装修',
+    '设备',
+    '消耗品',
+    '工具',
+    '服务',
+    '玩具/摆件',
+    '电脑及配件',
+    '食品/饮料',
+    '其他',
+  ];
 
   ngOnInit(): void {
     this.form = this.fb.group({
