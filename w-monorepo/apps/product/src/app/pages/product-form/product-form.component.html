@@ -8,7 +8,12 @@
 
     <label>
       商品类型：
-      <input type="text" formControlName="productCategory" required />
+      <select formControlName="productCategory">
+        <option value="" disabled selected>请选择商品类型</option>
+        <option *ngFor="let item of productCategories" [value]="item">
+          {{ item }}
+        </option>
+      </select>
     </label>
 
     <label>

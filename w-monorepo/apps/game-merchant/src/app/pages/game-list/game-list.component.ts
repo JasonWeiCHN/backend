@@ -46,6 +46,14 @@ export class GameListComponent {
     });
   }
 
+  deleteGame(id?: number): void {
+    if (!id) return;
+
+    if (confirm('确定要删除这个游戏吗？')) {
+      this.relationService.delete(id).subscribe(() => this.loadGames());
+    }
+  }
+
   updatePagedGames(): void {
     const start = (this.currentPage - 1) * this.pageSize;
     const end = start + this.pageSize;

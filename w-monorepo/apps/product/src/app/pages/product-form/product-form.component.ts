@@ -28,7 +28,8 @@ export class ProductFormComponent implements OnInit {
   isEditMode = false;
   productId?: number;
   submitting = false; // ✅ 防止重复点击用这个
-  errorMessage = '';  // ✅ 显示错误信息用这个
+  errorMessage = ''; // ✅ 显示错误信息用这个
+  productCategories = ['游戏', '游戏机', '电脑及配件', '食品/饮料', '其他'];
 
   ngOnInit(): void {
     this.form = this.fb.group({

@@ -45,6 +45,24 @@
     </tbody>
   </table>
 
+  <!-- 移动端卡片 -->
+  <div class="record-cards">
+    <div class="record-card" *ngFor="let item of pagedProducts">
+      <div><strong>编号：</strong>{{ item.id }}</div>
+      <div><strong>名称：</strong>{{ item.productName }}</div>
+      <div><strong>类型：</strong>{{ item.productCategory }}</div>
+      <div><strong>商品码：</strong>{{ item.productCode }}</div>
+      <div><strong>进货价：</strong>¥{{ item.purchasePrice }}</div>
+      <div><strong>销售价：</strong>¥{{ item.sellingPrice }}</div>
+      <div><strong>库存：</strong>{{ item.inventory }}</div>
+      <div><strong>说明：</strong>{{ item.description || '-' }}</div>
+      <div class="card-actions">
+        <button [routerLink]="['/products/edit', item.id]">编辑</button>
+        <button (click)="delete(item.id)">删除</button>
+      </div>
+    </div>
+  </div>
+
   <div class="pagination">
     <button (click)="prevPage()" [disabled]="currentPage === 1">上一页</button>
     <span>第 {{ currentPage }} 页 / 共 {{ totalPages }} 页</span>
