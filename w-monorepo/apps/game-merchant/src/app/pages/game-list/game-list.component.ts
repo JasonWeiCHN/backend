@@ -46,11 +46,32 @@ export class GameListComponent {
     });
   }
 
-  deleteGame(id?: number): void {
-    if (!id) return;
+  deleteGame(gameId?: number): void {
+    if (!gameId) return;
+
+    const relation = this.relations.find((r) => r.gameId === gameId);
+    if (!relation) {
+      alert('找不到对应的游戏关联关系，无法删除。');
+      return;
+    }
 
     if (confirm('确定要删除这个游戏吗？')) {
-      this.relationService.delete(id).subscribe(() => this.loadGames());
+      this.relationService
+        .delete(relation.id)
+        .subscribe(() => this.loadGames());
+    }
+  }
+
+  openGameLink(link: string): void {
+    const token = localStorage.getItem('token');
+
+    if (token) {
+      const urlWithToken = `https://kulele.club/games${link}?token=${encodeURIComponent(
+        token
+      )}`;
+      window.open(urlWithToken, '_blank');
+    } else {
+      alert('未登录，token 缺失');
     }
   }
 
