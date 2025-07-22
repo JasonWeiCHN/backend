@@ -1,31 +1,38 @@
 .merchant-form {
   max-width: 600px;
   margin: 0 auto;
+  padding: 16px;
   display: flex;
   flex-direction: column;
   gap: 16px;
+
+  h2 {
+    text-align: center;
+    font-size: 24px;
+  }
 
   form {
     display: flex;
     flex-direction: column;
     gap: 12px;
 
-
     label {
       display: flex;
       flex-direction: column;
       font-weight: bold;
+      font-size: 16px;
     }
 
     input,
     select,
     textarea {
-      padding: 6px;
-      font-size: 14px;
-      border: 1px solid #ccc; // ✅ 灰色边框
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
       border-radius: 4px;
       background-color: #fff;
       width: 100%;
+      box-sizing: border-box;
     }
 
     input[readonly] {
@@ -36,71 +43,60 @@
       margin-top: 12px;
       display: flex;
       gap: 10px;
-
-      button {
-        padding: 6px 12px;
-        cursor: pointer;
-      }
-    }
-  }
-
-  .game-select {
-    position: relative;
-
-    /* 搜索建议列表 */
-    .suggestions {
-      position: absolute;
-      z-index: 1000;
-      background: #fff;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      list-style: none;
-      padding: 0;
-      margin-top: 0;
-      width: 100%;
-      max-height: 200px;
-      overflow-y: auto;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-
-      li {
-        padding: 8px 12px;
-        cursor: pointer;
-
-        &:hover {
-          background-color: #f0f0f0;
-        }
-      }
-    }
-
-    /* 已选游戏标签 */
-    .selected-games {
-      display: flex;
       flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .chip {
-      background-color: #e0f0ff;
-      border: 1px solid #90caf9;
-      border-radius: 16px;
-      padding: 4px 8px;
-      font-size: 13px;
-      display: inline-flex;
-      align-items: center;
 
       button {
-        background: none;
-        border: none;
-        color: #555;
-        margin-left: 4px;
+        flex: 1;
+        padding: 10px;
+        font-size: 16px;
         cursor: pointer;
-        font-weight: bold;
+        border: none;
+        border-radius: 4px;
+        background-color: #2196f3;
+        color: white;
+        transition: background-color 0.3s ease;
 
         &:hover {
-          color: #d32f2f;
+          background-color: #1976d2;
+        }
+      }
+
+      // ✅ 只有一个按钮时独占整行
+      &.single-button {
+        button {
+          width: 100%;
         }
       }
     }
   }
 
+  @media (max-width: 600px) {
+    padding: 12px;
+
+    h2 {
+      font-size: 20px;
+    }
+
+    form {
+      label {
+        font-size: 14px;
+      }
+
+      input,
+      select,
+      textarea {
+        font-size: 14px;
+        padding: 8px;
+      }
+
+      .actions {
+        flex-direction: column;
+
+        button {
+          width: 100%;
+          font-size: 15px;
+        }
+      }
+    }
+  }
 }

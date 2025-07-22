@@ -27,6 +27,8 @@ export class MerchantAuthComponent {
   protected router = inject(Router);
 
   isLoginMode = true;
+  showToggleButton = false; // 控制是否显示“切换到注册”
+
   form: FormGroup = this.fb.group({
     name: [''],
     username: ['', [Validators.required]],
@@ -34,10 +36,13 @@ export class MerchantAuthComponent {
     databaseName: [''],
   });
 
+  constructor() {
+    // 初始化时从 localStorage 判断是否显示注册切换按钮
+    this.showToggleButton = localStorage.getItem('isSuperAdmin') === 'true';
+  }
+
   toggleMode(): void {
     this.isLoginMode = !this.isLoginMode;
-
-    // 清空表单
     this.form.reset();
   }
 
@@ -53,7 +58,6 @@ export class MerchantAuthComponent {
       this.merchantService.login(value.username, value.password).subscribe({
         next: (res: LoginResponse) => {
           console.log('登录成功:', res);
-
           localStorage.setItem('token', res.token); // ✅ 保存 token
           this.router.navigate(['/dashboard']); // 跳转到门户页
         },

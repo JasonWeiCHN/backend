@@ -42,6 +42,7 @@ export class AccountingFormComponent implements OnInit {
     '游戏盒子',
   ];
   contactTypes = ['电话', '微信'];
+  customerTypes = ['情侣', '基友', '闺蜜', '单人', '家庭', '朋友', '其他'];
 
   searchControl = new FormControl('');
   searchInput = '';

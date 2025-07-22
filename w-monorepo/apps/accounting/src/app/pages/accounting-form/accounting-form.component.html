@@ -70,7 +70,12 @@
 
     <label>
       客户类型：
-      <input formControlName="customerType" />
+      <select formControlName="customerType">
+        <option value="" disabled selected>请选择客户类型</option>
+        <option *ngFor="let type of customerTypes" [value]="type">
+          {{ type }}
+        </option>
+      </select>
     </label>
 
     <label>

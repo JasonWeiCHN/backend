@@ -320,3 +320,11 @@ server {
         ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE;
         ssl_prefer_server_ciphers on;
 ```
+
+## 酷乐乐SASS 运行说明
+
+### 如何进入 超级管理员 模式 可以看到 注册按钮
+
+```
+localStorage.setItem('isSuperAdmin', 'true')
+```

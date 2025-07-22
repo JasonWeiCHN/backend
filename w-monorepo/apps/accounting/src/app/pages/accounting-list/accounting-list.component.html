@@ -65,6 +65,30 @@
     </tbody>
   </table>
 
+  <!-- ✅ 移动端卡片列表 -->
+  <div class="record-cards">
+    <div class="record-card" *ngFor="let record of pagedRecords">
+      <div><strong>单号：</strong>{{ record.id }}</div>
+      <div>
+        <strong>时间段：</strong
+        >{{ formatTimeRange(record.startDateTime, record.endDateTime) }}
+      </div>
+      <div><strong>时长：</strong>{{ record.duration }}</div>
+      <div><strong>机型：</strong>{{ record.consoleType }}</div>
+      <div><strong>游戏名：</strong>{{ record.gameNames.join('; ') }}</div>
+      <div><strong>客户类型：</strong>{{ record.customerType }}</div>
+      <div><strong>回头客：</strong>{{ record.isReturning ? '是' : '否' }}</div>
+      <div><strong>实收金额：</strong>{{ record.actualAmount }}</div>
+      <div><strong>备注：</strong>{{ record.remark }}</div>
+      <div><strong>平台：</strong>{{ record.platform }}</div>
+      <div class="card-actions">
+        <button [routerLink]="['/accounting/edit', record.id]">编辑</button>
+        <button (click)="delete(record.id)">删除</button>
+        <button (click)="openReminderModal(record)">提醒</button>
+      </div>
+    </div>
+  </div>
+
   <!-- 分页控件 + 统计 -->
   <div class="pagination">
     <button (click)="prevPage()" [disabled]="currentPage === 1">上一页</button>

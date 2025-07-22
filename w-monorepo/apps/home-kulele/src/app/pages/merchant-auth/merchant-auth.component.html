@@ -24,11 +24,13 @@
       </label>
     </ng-container>
 
-    <div class="actions">
+    <div class="actions" [class.single-button]="!showToggleButton">
       <button type="submit">
         {{ isLoginMode ? '登录' : '注册' }}
       </button>
-      <button type="button" (click)="toggleMode()">
+
+      <!-- 只有本地存了 isSuperAdmin 才显示这个按钮 -->
+      <button *ngIf="showToggleButton" type="button" (click)="toggleMode()">
         {{ isLoginMode ? '切换到注册' : '已有账号？点此登录' }}
       </button>
     </div>
