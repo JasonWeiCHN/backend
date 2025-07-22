@@ -65,4 +65,11 @@ export class ExpenseFormComponent implements OnInit {
 
     save$.subscribe(() => this.router.navigate(['/expense']));
   }
+
+  openDatePicker(event: FocusEvent): void {
+    const input = event.target as HTMLInputElement;
+    if (input && 'showPicker' in input) {
+      input.showPicker(); // Chrome、Edge 支持
+    }
+  }
 }

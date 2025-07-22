@@ -61,7 +61,9 @@ export class AppointmentListComponent implements OnInit {
   }
 
   delete(id: number): void {
-    this.service.deleteAppointment(id).subscribe(() => this.load());
+    if (confirm('确定要删除这条记录吗？')) {
+      this.service.deleteAppointment(id).subscribe(() => this.load());
+    }
   }
 
   prevPage(): void {

@@ -3,7 +3,12 @@
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <label>
       时间：
-      <input type="datetime-local" formControlName="dateTime" required />
+      <input
+        type="datetime-local"
+        formControlName="dateTime"
+        (focus)="openDatePicker($event)"
+        required
+      />
     </label>
 
     <label>

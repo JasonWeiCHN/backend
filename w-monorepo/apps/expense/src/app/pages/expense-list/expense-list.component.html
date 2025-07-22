@@ -36,6 +36,21 @@
     </tbody>
   </table>
 
+  <!-- ✅ 移动端卡片视图 -->
+  <div class="record-cards">
+    <div class="record-card" *ngFor="let record of pagedRecords">
+      <div><strong>编号：</strong>{{ record.id }}</div>
+      <div><strong>时间：</strong>{{ formatDate(record.dateTime) }}</div>
+      <div><strong>类别：</strong>{{ record.category }}</div>
+      <div><strong>描述：</strong>{{ record.description }}</div>
+      <div><strong>金额：</strong>{{ record.amount }}</div>
+      <div class="card-actions">
+        <button [routerLink]="['/expense/edit', record.id]">编辑</button>
+        <button (click)="delete(record.id)">删除</button>
+      </div>
+    </div>
+  </div>
+
   <div class="pagination">
     <button (click)="prevPage()" [disabled]="currentPage === 1">上一页</button>
     <span>第 {{ currentPage }} 页 / 共 {{ totalPages }} 页</span>
