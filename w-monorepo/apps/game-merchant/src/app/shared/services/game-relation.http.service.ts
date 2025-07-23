@@ -36,4 +36,10 @@ export class GameRelationHttpService {
   delete(id: number): Observable<void> {
     return this.http.delete<void>(`${this.baseUrl}/${id}`);
   }
+
+  createBatch(
+    data: { gameId: number; note?: string }[]
+  ): Observable<IGameRelation[]> {
+    return this.http.post<IGameRelation[]>(`${this.baseUrl}/batch`, data);
+  }
 }

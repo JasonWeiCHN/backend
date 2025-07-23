@@ -2,6 +2,9 @@
   <div class="top-bar">
     <button class="add-button" routerLink="/game/add">➕ 新增游戏</button>
 
+    <!-- 新增“全部同步”按钮 -->
+    <button class="sync-button" (click)="syncAllGames()">🔄 全部同步</button>
+
     <div class="search-bar">
       <input [(ngModel)]="keyword" placeholder="输入游戏ID或备注搜索" />
       <button (click)="search()">🔍 搜索</button>

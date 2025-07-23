@@ -81,6 +81,37 @@ export class GameListComponent {
     this.pagedGames = this.games.slice(start, end);
   }
 
+  syncAllGames(): void {
+    if (!confirm('是否要将主游戏库中所有游戏同步到本商户？')) return;
+
+    this.gameService.getAllGames().subscribe((allGames) => {
+      const existingGameIds = this.relations.map((r) => r.gameId);
+      const newGames = allGames.filter(
+        (game) => game.id !== undefined && !existingGameIds.includes(game.id)
+      );
+
+      if (newGames.length === 0) {
+        alert('所有游戏都已同步，无需操作。');
+        return;
+      }
+
+      const requests = newGames.map((game) => ({
+        gameId: game.id ?? 0, // 如果万一 undefined，用 0（视后台是否允许）
+        note: '',
+      }));
+
+      this.relationService.createBatch(requests).subscribe({
+        next: () => {
+          alert(`已成功同步 ${requests.length} 条游戏`);
+          this.loadGames();
+        },
+        error: () => {
+          alert('同步失败，请稍后重试');
+        },
+      });
+    });
+  }
+
   search(): void {
     const kw = this.keyword.trim().toLowerCase();
     if (!kw) return this.loadGames();
