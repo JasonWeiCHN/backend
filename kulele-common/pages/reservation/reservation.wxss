@@ -1,0 +1,84 @@
+.container {
+    padding: 20rpx;
+}
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 30rpx;
+}
+.tab-item {
+    padding: 20rpx 0;
+    width: 45%;
+    text-align: center;
+    border-bottom: 4rpx solid transparent;
+    font-weight: bold;
+}
+.tab-item.active {
+    border-color: orange;
+    color: orange;
+}
+.header {
+    font-size: 32rpx;
+    font-weight: bold;
+    margin: 20rpx 0;
+    text-align: center;
+}
+
+.sub-header {
+    font-size: 32rpx;
+    margin: 20rpx 0;
+    text-align: center;
+}
+
+.section {
+    margin-bottom: 30rpx;
+}
+.time-slot {
+    background: #f0f0f0;
+    padding: 20rpx;
+    margin: 10rpx 0;
+    border-radius: 12rpx;
+    text-align: center;
+}
+.time-slot.selected {
+    background: orange;
+    color: white;
+    font-weight: bold;
+}
+.picker {
+    background: #ffffff;
+    padding: 10rpx;
+    border: 1px solid #ccc;
+    margin: 10rpx 0;
+}
+.button-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40rpx;
+}
+.custom-button {
+    width: 80%;
+    padding: 20rpx 0;
+    font-size: 36rpx;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background-color: #333333;
+    border-radius: 10rpx;
+    margin: 10rpx 0;
+}
+.primary {
+    background-color: orange;
+}
+.contact-section view {
+    font-size: 30rpx;
+    margin: 20rpx 0;
+}
+
+.contact-section .button-group {
+    margin-top: 20rpx;
+    display: flex;
+    gap: 20rpx;
+}

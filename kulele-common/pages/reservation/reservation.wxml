@@ -1,0 +1,22 @@
+<view class="container">
+    <!-- 店铺地图 -->
+    <view class="sub-header">店铺地址</view>
+    <map
+        latitude="{{shopLatitude}}"
+        longitude="{{shopLongitude}}"
+        scale="16"
+        markers="{{mapMarkers}}"
+        style="width: 100%; height: 300rpx; border-radius: 16rpx; margin-bottom: 20rpx;"
+        show-location="true"
+        bindmarkertap="onMarkerTap"
+    />
+
+    <!-- 联系预约 -->
+    <view wx:if="{{activeTab === 'contact'}}" class="contact-section">
+        <view>微信号 / 手机号：19926427299</view>
+        <view class="button-group">
+            <button type="primary" bindtap="makePhoneCall">电话联系</button>
+            <button type="default" bindtap="copyWeChat">微信联系</button>
+        </view>
+    </view>
+</view>
