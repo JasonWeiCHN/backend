@@ -84,6 +84,11 @@ export class GameFormComponent implements OnInit {
       ? this.gameRelationService.update(this.gameId!, this.form.value)
       : this.gameRelationService.create(this.form.value);
 
-    save$.subscribe(() => this.router.navigate(['/game']));
+    save$.subscribe({
+      next: () => this.router.navigate(['/game']),
+      error: (err) => {
+        alert(err.error || '提交失败，请稍后重试');
+      },
+    });
   }
 }

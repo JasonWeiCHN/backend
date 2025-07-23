@@ -25,6 +25,10 @@ public class GameRelationService {
     }
 
     public GameRelation create(AddGameRelationRequest request) {
+        if (repository.existsByGameId(request.getGameId())) {
+            throw new IllegalArgumentException("该游戏已经添加，不能重复添加！");
+        }
+
         GameRelation game = new GameRelation();
         game.setGameId(request.getGameId());
         game.setNote(request.getNote());
