@@ -39,4 +39,9 @@ public class GameRelationController {
     public void delete(@PathVariable Long id) {
         service.delete(id);
     }
+
+    @PostMapping("/batch")
+    public List<GameRelation> createBatch(@RequestBody List<AddGameRelationRequest> requests) {
+        return service.createBatch(requests);
+    }
 }

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
+import java.util.ArrayList;
 
 @Service
 public class GameRelationService {
@@ -46,5 +47,24 @@ public class GameRelationService {
 
     public void delete(Long id) {
         repository.deleteById(id);
+    }
+
+    public List<GameRelation> createBatch(List<AddGameRelationRequest> requests) {
+        List<GameRelation> result = new ArrayList<>();
+
+        for (AddGameRelationRequest request : requests) {
+            // 避免重复添加
+            if (repository.existsByGameId(request.getGameId())) {
+                continue;
+            }
+
+            GameRelation relation = new GameRelation();
+            relation.setGameId(request.getGameId());
+            relation.setNote(request.getNote());
+            relation.setAddedAt(LocalDateTime.now());
+            result.add(relation);
+        }
+
+        return repository.saveAll(result); // 一次性插入所有新关系
     }
 }
