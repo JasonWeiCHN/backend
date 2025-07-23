@@ -2,6 +2,7 @@ const config = require('../../data/config.js');
 
 Page({
   data: {
+    backgroundStyle: '', // 动态背景样式
     welcomeText: config.welcomeText,
     subTitle: config.subTitle,
     titleAnimation1: {},
@@ -15,6 +16,9 @@ Page({
   },
 
   onLoad() {
+    this.setData({
+      backgroundStyle: `background-image: url('${config.indexBackgroundImage}'); background-size: cover; background-position: center; background-repeat: no-repeat;`
+    });
     this.animateTitle();
     this.animateButton(); // 页面加载时触发按钮动画
   },
@@ -24,7 +28,7 @@ Page({
     const promise = new Promise(resolve => {
       setTimeout(() => {
         resolve({
-          userName: 'gh_c8a85b176e81',
+          userName: config.shareAppUserName,
           path: 'pages/index/index',
           title: config.title,
           imagePath: '/pages/kll.jpg',
@@ -36,7 +40,7 @@ Page({
       }, 2000)
     })
     return {
-      userName: 'gh_c8a85b176e81',
+      userName: config.shareAppUserName,
       path: 'pages/index/index',
       title: config.title,
       imagePath: '/pages/kll.jpg',

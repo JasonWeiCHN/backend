@@ -21,7 +21,7 @@ Page({
         const promise = new Promise(resolve => {
             setTimeout(() => {
                 resolve({
-                    userName: 'gh_c8a85b176e81',
+                    userName: config.shareAppUserName,
                     path: 'pages/reservation/reservation',
                     title: config.title,
                     imagePath: '/pages/kll.jpg',
@@ -33,7 +33,7 @@ Page({
             }, 2000)
         })
         return {
-            userName: 'gh_c8a85b176e81',
+            userName: config.shareAppUserName,
             path: 'pages/reservation/reservation',
             title: config.title,
             imagePath: '/pages/kll.jpg',

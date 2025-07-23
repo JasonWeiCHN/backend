@@ -1,13 +1,26 @@
 module.exports = {
+    // AppID(小程序ID)
     appId: 'wxc3770703be272ff8',
-    title: 'FW潮玩局', // 店铺名
-    subTitle: 'PS5 / SWITCH / 主机游戏 / 怀旧游戏', // 次级标题，展示在首页
-    welcomeText: '欢迎您，尊贵的玩家！', // 欢迎标语，展示在首页
-    phoneNumber: '19926427299', // 联系电话 - 商家
-    weChatNumber: '19926427299', // 微信 - 商家
-    shopLatitude: 24.653466, // 店铺的纬度 - 地图导航使用
-    shopLongitude: 102.594211, // 店铺的经度 - 地图导航使用
-    swiperImages: [ // 轮播图 - 首页
+    // 微信小程序后台 - 账号设置 - 基本设置 - 账号信息 - 原始ID
+    shareAppUserName: 'gh_9dd1b8b41f03',
+    // 店铺名
+    title: 'FW潮玩局',
+    // 次级标题，展示在首页
+    subTitle: 'PS5 / SWITCH / 主机游戏 / 怀旧游戏',
+    // 欢迎标语，展示在首页
+    welcomeText: '欢迎您，尊贵的玩家！',
+    // 联系电话 - 商家
+    phoneNumber: '15559856858',
+    // 微信 - 商家
+    weChatNumber: 'FWchaowanju',
+    // 店铺的纬度 - 地图导航使用
+    shopLatitude: 24.653466,
+    // 店铺的经度 - 地图导航使用
+    shopLongitude: 102.594211,
+    // 首页的背景图
+    indexBackgroundImage: 'https://i0.hdslb.com/bfs/new_dyn/a74f60c1d8420c46db53dd4799baaa071526890437.png@1192w_1192h.avif',
+    // 轮播图 - 首页
+    swiperImages: [
         "https://i0.hdslb.com/bfs/new_dyn/a6d9efc3a58268cee2fa1b07aa95ff751526890437.jpg@1192w.avif",
         "https://i0.hdslb.com/bfs/new_dyn/abefc6e1f05354282f06a82917e809431526890437.jpg@1192w.avif",
         "https://i0.hdslb.com/bfs/new_dyn/4897b15dee07ad36dbc3f03cc7df4ba61526890437.jpg@1192w.avif",
