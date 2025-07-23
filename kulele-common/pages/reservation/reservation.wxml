@@ -12,8 +12,8 @@
     />
 
     <!-- 联系预约 -->
-    <view wx:if="{{activeTab === 'contact'}}" class="contact-section">
-        <view>微信号 / 手机号：19926427299</view>
+    <view class="contact-section">
+        <view>微信号 / 手机号：{{ phoneNumber }}</view>
         <view class="button-group">
             <button type="primary" bindtap="makePhoneCall">电话联系</button>
             <button type="default" bindtap="copyWeChat">微信联系</button>

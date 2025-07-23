@@ -2,13 +2,14 @@ const config = require('../../data/config.js');
 
 Page({
     data: {
+        phoneNumber: config.phoneNumber,
         // 地图相关
-        shopLatitude: 22.547341,     // 替换成你店铺的纬度
-        shopLongitude: 114.139556,   // 替换成你店铺的经度
+        shopLatitude: config.shopLatitude,     // 替换成你店铺的纬度
+        shopLongitude: config.shopLongitude,   // 替换成你店铺的经度
         mapMarkers: [{
             id: 1,
-            latitude: 22.547341,
-            longitude: 114.139556,
+            latitude: config.shopLatitude,
+            longitude: config.shopLongitude,
             title: config.title,
             // iconPath: '/assets/location.png', // 可选，自定义 marker 图标
             width: 32,
@@ -53,13 +54,13 @@ Page({
 
     makePhoneCall() {
         wx.makePhoneCall({
-            phoneNumber: '19926427299'
+            phoneNumber: config.phoneNumber
         });
     },
 
     copyWeChat() {
         wx.setClipboardData({
-            data: '19926427299',
+            data: config.weChatNumber,
             success(res) {
                 wx.showToast({
                     title: '微信号已复制',

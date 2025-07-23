@@ -1,10 +1,13 @@
 module.exports = {
-    title: 'FW潮玩局',
-    subTitle: 'PS5 / SWITCH / 主机游戏 / 怀旧游戏',
-    welcomeText: '欢迎您，尊贵的玩家！',
-    phoneNumber: '19926427299',
-    weChatNumber: '19926427299',
-    swiperImages: [
+    appId: 'wxc3770703be272ff8',
+    title: 'FW潮玩局', // 店铺名
+    subTitle: 'PS5 / SWITCH / 主机游戏 / 怀旧游戏', // 次级标题，展示在首页
+    welcomeText: '欢迎您，尊贵的玩家！', // 欢迎标语，展示在首页
+    phoneNumber: '19926427299', // 联系电话 - 商家
+    weChatNumber: '19926427299', // 微信 - 商家
+    shopLatitude: 24.653466, // 店铺的纬度 - 地图导航使用
+    shopLongitude: 102.594211, // 店铺的经度 - 地图导航使用
+    swiperImages: [ // 轮播图 - 首页
         "https://i0.hdslb.com/bfs/new_dyn/a6d9efc3a58268cee2fa1b07aa95ff751526890437.jpg@1192w.avif",
         "https://i0.hdslb.com/bfs/new_dyn/abefc6e1f05354282f06a82917e809431526890437.jpg@1192w.avif",
         "https://i0.hdslb.com/bfs/new_dyn/4897b15dee07ad36dbc3f03cc7df4ba61526890437.jpg@1192w.avif",
