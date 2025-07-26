@@ -26,4 +26,5 @@ public class AddAccountingRecordRequest {
     private String contactValue;
 
     private String remark;
+    private Long roomId;
 }

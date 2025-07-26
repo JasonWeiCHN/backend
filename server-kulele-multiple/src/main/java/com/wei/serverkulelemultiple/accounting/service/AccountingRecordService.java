@@ -96,6 +96,7 @@ public class AccountingRecordService {
         dto.setContactType(record.getContactType());
         dto.setContactValue(record.getContactValue());
         dto.setRemark(record.getRemark());
+        dto.setRoomId(record.getRoomId());
         return dto;
     }
 
@@ -112,6 +113,7 @@ public class AccountingRecordService {
         record.setContactType(request.getContactType());
         record.setContactValue(request.getContactValue());
         record.setRemark(request.getRemark());
+        record.setRoomId(request.getRoomId());
     }
 
     public String generateAccountingTxtContent() {

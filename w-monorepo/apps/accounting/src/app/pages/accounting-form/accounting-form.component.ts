@@ -192,6 +192,7 @@ export class AccountingFormComponent implements OnInit {
     }
 
     const raw = this.form.getRawValue();
+    console.log(raw);
     const record: IAccountingRecord = {
       id: this.recordId ?? Date.now(), // 临时 ID
       startDateTime: raw.startDateTime,
