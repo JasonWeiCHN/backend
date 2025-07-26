@@ -1,68 +1,109 @@
 .room-list {
-  padding: 20px;
+  padding: 16px;
 
   .top-bar {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: 16px;
+    gap: 12px;
+    margin-bottom: 12px;
 
-    .actions {
+    .add-button {
+      padding: 0 12px;
+      height: 36px;
+      line-height: 36px;
+      background-color: #eeeeee;
+      color: #333333;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+
+      &:hover {
+        background-color: #20409f;
+        color: #ffffff;
+      }
+    }
+
+    .search-bar {
       display: flex;
-      gap: 10px;
+      align-items: center;
+      border: 1px solid #eeeeee;
+      border-radius: 4px;
+      background-color: #eeeeee;
+      padding: 0 8px;
+      height: 36px;
+
+      select, input {
+        border: none;
+        outline: none;
+        background: transparent;
+        padding: 0 6px;
+        font-size: 14px;
+        color: #333;
+        height: 28px;
+      }
+
+      select {
+        border-right: 1px solid #ccc;
+        margin-right: 8px;
+      }
 
       input {
-        padding: 6px 10px;
-        font-size: 14px;
-        width: 200px;
+        height: 28px;
+        background: #ffffff;
+        flex-grow: 1;
       }
 
       button {
-        padding: 6px 12px;
-        background-color: #409eff;
-        color: white;
+        background-color: transparent;
         border: none;
-        border-radius: 4px;
         cursor: pointer;
+        font-size: 16px;
+        color: #333333;
+        padding: 0 6px;
+        height: 28px;
 
         &:hover {
-          background-color: #66b1ff;
+          color: #20409f;
         }
       }
     }
   }
 
-  table {
+  .record-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 14px;
+    table-layout: fixed;
 
     th, td {
-      padding: 10px;
-      border: 1px solid #eaeaea;
+      border: 1px solid #ccc;
+      padding: 4px;
       text-align: center;
+      line-height: 1;
+      height: 32px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
     th {
-      background-color: #f5f7fa;
+      background-color: #f0f0f0;
     }
 
-    td a {
-      margin: 0 6px;
-      color: #409eff;
-      text-decoration: none;
-      cursor: pointer;
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
 
-      &:hover {
-        text-decoration: underline;
-      }
+    button {
+      margin: 0 4px;
+      padding: 4px 6px;
+      font-size: 14px;
+      cursor: pointer;
     }
   }
 
-  .no-data {
-    text-align: center;
-    margin-top: 20px;
-    color: #999;
+  .record-cards {
+    display: none;
   }
 
   .pagination {
@@ -74,14 +115,113 @@
 
     button {
       padding: 4px 10px;
-      border-radius: 4px;
+      background-color: #f0f0f0;
       border: 1px solid #ccc;
-      background-color: #f5f5f5;
+      border-radius: 4px;
       cursor: pointer;
 
       &:disabled {
-        opacity: 0.5;
+        color: #999;
+        background-color: #eee;
         cursor: not-allowed;
+      }
+    }
+
+    .total-count {
+      font-size: 13px;
+      color: #555;
+    }
+  }
+
+  .no-data {
+    text-align: center;
+    margin-top: 20px;
+    color: #999;
+  }
+}
+
+@media (max-width: 768px) {
+  .room-list {
+    .top-bar {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 8px;
+
+      .search-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+        height: auto;
+
+        select, input, button {
+          width: 100%;
+          height: 36px;
+        }
+
+        select {
+          margin-right: 0;
+          border-right: none;
+          border-bottom: 1px solid #ccc;
+        }
+
+        input {
+          background-color: #fff;
+        }
+      }
+    }
+
+    .record-table {
+      display: none;
+    }
+
+    .record-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      .record-card {
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        padding: 12px;
+        background-color: #fff;
+        font-size: 14px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+
+        > div {
+          margin-bottom: 4px;
+          line-height: 1.4;
+        }
+
+        .card-actions {
+          display: flex;
+          gap: 8px;
+          margin-top: 8px;
+
+          button {
+            flex: 1;
+            padding: 6px;
+            font-size: 13px;
+            border-radius: 4px;
+            border: none;
+            background-color: #20409f;
+            color: white;
+            cursor: pointer;
+
+            &:hover {
+              background-color: #3c5bdc;
+            }
+          }
+        }
+      }
+    }
+
+    .pagination {
+      flex-direction: column;
+      gap: 6px;
+
+      button {
+        padding: 6px 10px;
+        font-size: 13px;
       }
     }
   }

@@ -1,32 +1,38 @@
 .room-form {
-  max-width: 500px;
+  max-width: 600px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 
   h2 {
     text-align: center;
-    margin-bottom: 20px;
+    font-size: 24px;
   }
 
   form {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
 
     label {
       display: flex;
       flex-direction: column;
-      font-size: 14px;
-      color: #333;
+      font-weight: bold;
+      font-size: 16px;
+      color: #333333;
 
       input,
       select,
       textarea {
-        margin-top: 6px;
-        padding: 8px;
-        font-size: 14px;
+        padding: 10px;
+        font-size: 16px;
         border: 1px solid #ccc;
         border-radius: 4px;
+        background-color: #fff;
+        width: 100%;
+        box-sizing: border-box;
       }
 
       textarea {
@@ -59,4 +65,36 @@
       }
     }
   }
+
+
+  @media (max-width: 600px) {
+    padding: 12px;
+
+    h2 {
+      font-size: 20px;
+    }
+
+    form {
+      label {
+        font-size: 14px;
+      }
+
+      input,
+      select,
+      textarea {
+        font-size: 14px;
+        padding: 8px;
+      }
+
+      .actions {
+        flex-direction: column;
+
+        button {
+          width: 100%;
+          font-size: 15px;
+        }
+      }
+    }
+  }
 }
+

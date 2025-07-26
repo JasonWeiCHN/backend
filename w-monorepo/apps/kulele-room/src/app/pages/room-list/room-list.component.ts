@@ -20,6 +20,7 @@ export class RoomListComponent {
   pageSize = 50;
   currentPage = 1;
   totalPages = 1;
+  searchField = 'roomNumber'; // 可选字段：roomNumber, roomType, description
   searchKeyword = '';
 
   constructor() {
@@ -36,18 +37,34 @@ export class RoomListComponent {
 
   search(): void {
     const keyword = this.searchKeyword.trim().toLowerCase();
-    if (!keyword) return this.loadRecords();
+
+    if (!keyword) {
+      this.loadRecords();
+      return;
+    }
 
     this.roomService.getAllRooms().subscribe((data) => {
-      this.records = data.filter((r) =>
-        [r.roomNumber, r.roomType, r.description].some((f) =>
-          f?.toLowerCase().includes(keyword)
-        )
-      );
+      this.records = data.filter((record) => {
+        const value = this.getSearchableValue(record, this.searchField);
+        return value.includes(keyword);
+      });
       this.currentPage = 1;
       this.totalPages = Math.ceil(this.records.length / this.pageSize);
       this.updatePagedRecords();
     });
+  }
+
+  private getSearchableValue(record: IRoom, field: string): string {
+    switch (field) {
+      case 'roomNumber':
+        return record.roomNumber?.toLowerCase() || '';
+      case 'roomType':
+        return record.roomType?.toLowerCase() || '';
+      case 'description':
+        return record.description?.toLowerCase() || '';
+      default:
+        return '';
+    }
   }
 
   updatePagedRecords(): void {

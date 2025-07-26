@@ -1,14 +1,19 @@
 <div class="room-list">
   <div class="top-bar">
-    <h2>包房列表</h2>
-    <div class="actions">
-      <input type="text" [(ngModel)]="searchKeyword" placeholder="搜索包房…" />
-      <button (click)="search()">搜索</button>
-      <button [routerLink]="['/room/new']">新增包房</button>
+    <button class="add-button" [routerLink]="['/room/new']">➕ 新增包房</button>
+
+    <div class="search-bar">
+      <select [(ngModel)]="searchField">
+        <option value="roomNumber">房号</option>
+        <option value="roomType">类型</option>
+        <option value="status">状态</option>
+      </select>
+      <input [(ngModel)]="searchKeyword" placeholder="请输入关键字" />
+      <button (click)="search()">🔍 搜索</button>
     </div>
   </div>
 
-  <table *ngIf="pagedRecords.length > 0">
+  <table class="record-table" *ngIf="pagedRecords.length > 0">
     <thead>
       <tr>
         <th>ID</th>
@@ -29,20 +34,38 @@
         <td>¥{{ room.pricePerHour | number : '1.2-2' }}</td>
         <td>{{ room.status }}</td>
         <td>
-          <a [routerLink]="['/room/edit', room.id]">编辑</a>
-          <a href="#" (click)="delete(room.id)">删除</a>
+          <button [routerLink]="['/room/edit', room.id]">编辑</button>
+          <button (click)="delete(room.id)">删除</button>
         </td>
       </tr>
     </tbody>
   </table>
 
-  <div *ngIf="pagedRecords.length === 0" class="no-data">暂无数据</div>
+  <div class="record-cards" *ngIf="pagedRecords.length > 0">
+    <div class="record-card" *ngFor="let room of pagedRecords">
+      <div><strong>ID：</strong>{{ room.id }}</div>
+      <div><strong>房号：</strong>{{ room.roomNumber }}</div>
+      <div><strong>类型：</strong>{{ room.roomType || '-' }}</div>
+      <div><strong>容量：</strong>{{ room.capacity }}</div>
+      <div>
+        <strong>价格：</strong>¥{{ room.pricePerHour | number : '1.2-2' }}
+      </div>
+      <div><strong>状态：</strong>{{ room.status }}</div>
+      <div class="card-actions">
+        <button [routerLink]="['/room/edit', room.id]">编辑</button>
+        <button (click)="delete(room.id)">删除</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="no-data" *ngIf="pagedRecords.length === 0">暂无数据</div>
 
   <div class="pagination" *ngIf="totalPages > 1">
     <button (click)="prevPage()" [disabled]="currentPage === 1">上一页</button>
-    <span>第 {{ currentPage }} / {{ totalPages }} 页</span>
+    <span>第 {{ currentPage }} 页 / 共 {{ totalPages }} 页</span>
     <button (click)="nextPage()" [disabled]="currentPage === totalPages">
       下一页
     </button>
+    <span class="total-count">共 {{ records.length }} 条数据</span>
   </div>
 </div>
