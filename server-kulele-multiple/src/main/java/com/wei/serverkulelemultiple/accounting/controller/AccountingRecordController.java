@@ -1,7 +1,6 @@
 package com.wei.serverkulelemultiple.accounting.controller;
 
 import com.wei.serverkulelemultiple.accounting.dto.AccountingRecordDTO;
-import com.wei.serverkulelemultiple.accounting.entity.AccountingRecord;
 import com.wei.serverkulelemultiple.accounting.request.AddAccountingRecordRequest;
 import com.wei.serverkulelemultiple.accounting.service.AccountingRecordService;
 import org.springframework.beans.factory.annotation.Autowired;

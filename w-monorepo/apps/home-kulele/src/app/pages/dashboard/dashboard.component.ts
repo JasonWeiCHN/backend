@@ -23,7 +23,7 @@ export class DashboardComponent {
     {
       title: '开台记账（表单）',
       description: '开台和记录每笔账单',
-      link: 'https://kulele.club/accounting/', // http://localhost:4201 https://kulele.club/accounting/
+      link: 'http://localhost:4201', // http://localhost:4201 https://kulele.club/accounting/
     },
     {
       title: '预约系统',

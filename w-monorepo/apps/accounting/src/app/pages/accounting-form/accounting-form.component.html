@@ -25,6 +25,16 @@
     </label>
 
     <label>
+      包房选择：
+      <select formControlName="roomId">
+        <option [ngValue]="null">无（不选包房）</option>
+        <option *ngFor="let room of roomList" [ngValue]="room.id">
+          {{ room.roomNumber }}
+        </option>
+      </select>
+    </label>
+
+    <label>
       游戏机类型：
       <select formControlName="consoleType">
         <option value="" disabled selected>请选择游戏机类型</option>

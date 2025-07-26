@@ -57,4 +57,7 @@ public class AccountingRecord {
 
     @Column(name = "remark")
     private String remark;
+
+    @Column(name = "room_id", nullable = true)
+    private Long roomId;
 }

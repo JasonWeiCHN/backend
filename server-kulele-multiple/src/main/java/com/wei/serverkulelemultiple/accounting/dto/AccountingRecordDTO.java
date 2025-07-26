@@ -21,4 +21,5 @@ public class AccountingRecordDTO {
     private String contactType;
     private String contactValue;
     private String remark;
+    private Long roomId;
 }

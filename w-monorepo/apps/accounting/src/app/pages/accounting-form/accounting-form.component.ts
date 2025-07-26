@@ -12,6 +12,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AccountingHttpService } from '../../shared/services/accounting.http.service';
 import { IAccountingRecord } from '../../shared/interfaces/accounting-record.interface';
 import { IGame } from '../../shared/interfaces/game.interface';
+import { IRoom } from '../../shared/interfaces/room.interface';
 
 @Component({
   selector: 'app-accounting-form',
@@ -50,6 +51,7 @@ export class AccountingFormComponent implements OnInit {
   allGames: IGame[] = [];
   filteredSuggestions: IGame[] = [];
   selectedGames: string[] = [];
+  roomList: IRoom[] = [];
 
   ngOnInit(): void {
     // 初始化表单
@@ -66,6 +68,7 @@ export class AccountingFormComponent implements OnInit {
       remark: [''],
       contactType: [''],
       contactValue: [''],
+      roomId: [null],
     });
 
     // 自动计算时长
@@ -116,9 +119,19 @@ export class AccountingFormComponent implements OnInit {
             remark: record.remark || '',
             contactType: record.contactType,
             contactValue: record.contactValue,
+            roomId: record.roomId ?? null,
           });
         });
     }
+
+    // 获取包房数量
+    this.accountingService.getAllRooms().subscribe({
+      next: (rooms) => (this.roomList = rooms),
+      error: (err) => {
+        console.error('获取包房列表失败', err);
+        this.roomList = [];
+      },
+    });
   }
 
   updateDuration(): void {
@@ -193,6 +206,7 @@ export class AccountingFormComponent implements OnInit {
       remark: raw.remark || '',
       contactType: raw.contactType || null,
       contactValue: raw.contactValue || null,
+      roomId: raw.roomId ?? null,
     };
 
     const save$ = this.isEditMode
