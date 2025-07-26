@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "build-electron-game-master": "cd ./apps/electron-game-master && npm run build",
-    "start:kulele-frontend": "concurrently \"nx run home-kulele:serve:development --port=4200\" \"nx run accounting:serve:development --port=4201\" \"nx run appointment:serve:development --port=4202\" \"nx run expense:serve:development --port=4203\" \"nx run games:serve:development --port=4204\" \"nx run product:serve:development --port=4205\" \"nx run game-merchant:serve:development --port=4206\""
+    "start:kulele-frontend": "concurrently \"nx run home-kulele:serve:development --port=4200\" \"nx run accounting:serve:development --port=4201\" \"nx run appointment:serve:development --port=4202\" \"nx run expense:serve:development --port=4203\" \"nx run games:serve:development --port=4204\" \"nx run product:serve:development --port=4205\" \"nx run game-merchant:serve:development --port=4206\" \"nx run kulele-room:serve:development --port=4207\""
   },
   "private": true,
   "dependencies": {

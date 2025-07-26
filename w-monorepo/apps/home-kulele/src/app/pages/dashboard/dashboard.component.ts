@@ -21,8 +21,8 @@ export class DashboardComponent {
 
   navItems: NavItem[] = [
     {
-      title: '记账系统',
-      description: '记录和统计每笔账单',
+      title: '开台记账（表单）',
+      description: '开台和记录每笔账单',
       link: 'https://kulele.club/accounting/', // http://localhost:4201 https://kulele.club/accounting/
     },
     {
@@ -49,6 +49,11 @@ export class DashboardComponent {
       title: '商品管理',
       description: '管理所有游戏信息',
       link: 'https://kulele.club/product/', // http://localhost:4205 https://kulele.club/product/
+    },
+    {
+      title: '包房管理',
+      description: '管理所有包房信息',
+      link: 'http://localhost:4207', // http://localhost:4207 https://kulele.club/room/
     },
   ];
 

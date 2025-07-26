@@ -20,7 +20,8 @@ import javax.sql.DataSource;
                 "com.wei.serverkulelemultiple.appointment.repository",
                 "com.wei.serverkulelemultiple.expense.repository",
                 "com.wei.serverkulelemultiple.product.repository",
-                "com.wei.serverkulelemultiple.game.repository"
+                "com.wei.serverkulelemultiple.game.repository",
+                "com.wei.serverkulelemultiple.room.repository"
         },
         entityManagerFactoryRef = "tenantEntityManagerFactory",
         transactionManagerRef = "tenantTransactionManager"
@@ -43,7 +44,8 @@ public class MultiTenantJpaConfig {
                 "com.wei.serverkulelemultiple.appointment.entity",
                 "com.wei.serverkulelemultiple.expense.entity",
                 "com.wei.serverkulelemultiple.product.entity",
-                "com.wei.serverkulelemultiple.game.entity"
+                "com.wei.serverkulelemultiple.game.entity",
+                "com.wei.serverkulelemultiple.room.entity"
 
         );
         emf.setJpaVendorAdapter(vendorAdapter);

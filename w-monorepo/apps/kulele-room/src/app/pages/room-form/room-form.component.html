@@ -1,0 +1,48 @@
+<div class="room-form">
+  <h2>{{ isEditMode ? '编辑包房' : '新增包房' }}</h2>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label>
+      房间编号：
+      <input type="text" formControlName="roomNumber" required />
+    </label>
+
+    <label>
+      房间类型：
+      <input type="text" formControlName="roomType" />
+    </label>
+
+    <label>
+      容纳人数：
+      <input type="number" formControlName="capacity" required min="1" />
+    </label>
+
+    <label>
+      每小时价格：
+      <input
+        type="number"
+        formControlName="pricePerHour"
+        required
+        min="0"
+        step="0.1"
+      />
+    </label>
+
+    <label>
+      状态：
+      <select formControlName="status">
+        <option *ngFor="let s of statusOptions" [value]="s">{{ s }}</option>
+      </select>
+    </label>
+
+    <label>
+      描述：
+      <textarea formControlName="description"></textarea>
+    </label>
+
+    <div class="form-actions">
+      <button type="submit">{{ isEditMode ? '保存修改' : '添加包房' }}</button>
+      <button type="button" (click)="router.navigate(['/room'])">取消</button>
+    </div>
+  </form>
+</div>

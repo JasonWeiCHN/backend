@@ -1,0 +1,48 @@
+<div class="room-list">
+  <div class="top-bar">
+    <h2>包房列表</h2>
+    <div class="actions">
+      <input type="text" [(ngModel)]="searchKeyword" placeholder="搜索包房…" />
+      <button (click)="search()">搜索</button>
+      <button [routerLink]="['/room/new']">新增包房</button>
+    </div>
+  </div>
+
+  <table *ngIf="pagedRecords.length > 0">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>房号</th>
+        <th>类型</th>
+        <th>容量</th>
+        <th>价格（每小时）</th>
+        <th>状态</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let room of pagedRecords">
+        <td>{{ room.id }}</td>
+        <td>{{ room.roomNumber }}</td>
+        <td>{{ room.roomType || '-' }}</td>
+        <td>{{ room.capacity }}</td>
+        <td>¥{{ room.pricePerHour | number : '1.2-2' }}</td>
+        <td>{{ room.status }}</td>
+        <td>
+          <a [routerLink]="['/room/edit', room.id]">编辑</a>
+          <a href="#" (click)="delete(room.id)">删除</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="pagedRecords.length === 0" class="no-data">暂无数据</div>
+
+  <div class="pagination" *ngIf="totalPages > 1">
+    <button (click)="prevPage()" [disabled]="currentPage === 1">上一页</button>
+    <span>第 {{ currentPage }} / {{ totalPages }} 页</span>
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">
+      下一页
+    </button>
+  </div>
+</div>
