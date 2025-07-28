@@ -28,9 +28,9 @@
             </view>
         </block>
     </view>
+</view>
 
-    <!-- 按钮区域 -->
-    <view class="button-group">
-        <button class="custom-button primary" bindtap="bookNow">立刻预约</button>
-    </view>
+        <!-- 固定底部按钮区域，移出容器外 -->
+<view class="button-group-fixed">
+    <button class="custom-button primary" bindtap="bookNow">立刻预约</button>
 </view>

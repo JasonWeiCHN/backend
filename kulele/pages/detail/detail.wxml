@@ -3,6 +3,12 @@
     <view class="detail-section">
         <view class="game-title">{{ game.name }}</view>
         <view class="game-description">{{ game.description }}</view>
+        <!-- 游戏详情图展示区域：垂直排列 -->
+        <view wx:if="{{ game.imagesForDetail && game.imagesForDetail.length }}" class="detail-images">
+            <block wx:for="{{ game.imagesForDetail }}" wx:key="index">
+                <image class="detail-image" src="{{ item }}" mode="widthFix" />
+            </block>
+        </view>
         <view class="game-meta">类型：{{ genreList }}</view>
         <view class="game-meta">发售日期：{{ game.releaseDate || '未公布' }}</view>
     </view>
@@ -22,9 +28,9 @@
             </view>
         </block>
     </view>
+</view>
 
-    <!-- 按钮区域 -->
-    <view class="button-group">
-        <button class="custom-button primary" bindtap="bookNow">立刻预约</button>
-    </view>
+        <!-- 固定底部按钮区域，移出容器外 -->
+<view class="button-group-fixed">
+    <button class="custom-button primary" bindtap="bookNow">立刻预约</button>
 </view>

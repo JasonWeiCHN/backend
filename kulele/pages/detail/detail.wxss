@@ -1,5 +1,5 @@
 .detail-container {
-    padding: 0 24rpx;
+    padding: 0 24rpx 160rpx;
 }
 
 .detail-section {
@@ -70,16 +70,32 @@
     color: #999999;
 }
 
-/* 按钮区域 */
-.button-group {
+.detail-images {
+    margin-top: 20rpx;
+}
+
+.section-title {
+    font-weight: bold;
+    font-size: 30rpx;
+    margin-bottom: 10rpx;
+    color: #333;
+}
+
+.detail-image {
+    width: 100%;
+    border-radius: 8rpx;
+    margin-bottom: 20rpx;
+}
+
+.button-group-fixed {
     position: fixed;
-    bottom: 120rpx;
+    bottom: 40rpx;
     left: 0;
     right: 0;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 40rpx;
+    justify-content: center;
+    z-index: 999;
+    background: transparent;
 }
 
 .custom-button {

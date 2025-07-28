@@ -60,7 +60,7 @@ Page({
         const path = `pages/video/video?bvid=${bvid}`;
 
         wx.navigateToMiniProgram({
-            appId: appConfig.appId,
+            appId: 'wx7564fd5313d24844',
             path,
             success: res => {
                 console.log('跳转 bilibili 小程序成功');
