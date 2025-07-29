@@ -5,6 +5,7 @@ import com.wei.serverkulelemultiple.accounting.repository.AccountingRecordReposi
 import com.wei.serverkulelemultiple.room.dto.AddRoomRequest;
 import com.wei.serverkulelemultiple.room.dto.RoomStatusDTO;
 import com.wei.serverkulelemultiple.room.entity.Room;
+import com.wei.serverkulelemultiple.room.enums.RoomStatus;
 import com.wei.serverkulelemultiple.room.repository.RoomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -61,8 +62,8 @@ public class RoomService {
             dto.setRoomType(room.getRoomType());
 
             // 停用状态优先
-            if ("停用".equals(room.getStatus())) {
-                dto.setStatus("停用");
+            if (RoomStatus.DISABLED.equals(room.getStatus())) {
+                dto.setStatus(RoomStatus.DISABLED);
                 return dto;
             }
 
@@ -71,7 +72,7 @@ public class RoomService {
 
             if (!activeRecords.isEmpty()) {
                 AccountingRecord record = activeRecords.get(0); // 理论上只会有一个
-                dto.setStatus("使用中");
+                dto.setStatus(RoomStatus.OCCUPIED);
                 dto.setStartTime(record.getStartDateTime());
                 dto.setEndTime(record.getEndDateTime());
                 dto.setAccountingId(record.getId());
@@ -81,7 +82,7 @@ public class RoomService {
                 dto.setContactValue(record.getContactValue());
                 dto.setRemark(record.getRemark());
             } else {
-                dto.setStatus("空闲");
+                dto.setStatus(RoomStatus.AVAILABLE);
             }
 
             return dto;

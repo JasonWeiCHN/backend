@@ -1,5 +1,6 @@
 package com.wei.serverkulelemultiple.room.dto;
 
+import com.wei.serverkulelemultiple.room.enums.RoomStatus;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -9,7 +10,7 @@ public class RoomStatusDTO {
     private Long id;
     private String roomNumber;
     private String roomType;
-    private String status; // 空闲、使用中、停用
+    private RoomStatus status; // 空闲、使用中、停用
 
     // 如果使用中，填充以下字段
     private LocalDateTime startTime;

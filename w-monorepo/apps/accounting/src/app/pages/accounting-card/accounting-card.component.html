@@ -1,36 +1,38 @@
 <div class="accounting-card">
-  <div
-    *ngFor="let room of rooms"
-    [ngClass]="getRoomClass(room)"
-    class="room-card"
-  >
+  <div *ngFor="let room of rooms" [ngClass]="room.status" class="room-card">
     <h3>{{ room.roomNumber }}</h3>
 
-    <ng-container [ngSwitch]="room.status">
-      <p *ngSwitchCase="'空闲'">空闲</p>
-      <p *ngSwitchCase="'使用中'">
+    <p>{{ getStatusLabel(room.status) }}</p>
+
+    <ng-container *ngIf="room.status === ERoomStatus.OCCUPIED">
+      <p>
         {{ room.startTime }} - {{ room.endTime }}<br />
         倒计时：{{ room.remainingTime }}
       </p>
-      <p *ngSwitchCase="'停用'">已停用</p>
     </ng-container>
 
     <div class="actions">
-      <button *ngIf="room.status === '空闲'" (click)="openStartForm(room)">
+      <button
+        *ngIf="room.status === ERoomStatus.AVAILABLE"
+        (click)="openStartForm(room)"
+      >
         开台
       </button>
       <button
-        *ngIf="room.status === '空闲'"
-        (click)="setRoomStatus(room, '停用')"
+        *ngIf="room.status === ERoomStatus.AVAILABLE"
+        (click)="setRoomStatus(room, ERoomStatus.DISABLED)"
       >
         停用
       </button>
-      <button *ngIf="room.status === '使用中'" (click)="endRoomUsage(room)">
+      <button
+        *ngIf="room.status === ERoomStatus.OCCUPIED"
+        (click)="endRoomUsage(room)"
+      >
         结束使用
       </button>
       <button
-        *ngIf="room.status === '停用'"
-        (click)="setRoomStatus(room, '空闲')"
+        *ngIf="room.status === ERoomStatus.DISABLED"
+        (click)="setRoomStatus(room, ERoomStatus.AVAILABLE)"
       >
         启用
       </button>

@@ -1,5 +1,6 @@
 package com.wei.serverkulelemultiple.room.entity;
 
+import com.wei.serverkulelemultiple.room.enums.RoomStatus;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -34,7 +35,8 @@ public class Room {
     private String description;
 
     @Column(nullable = false)
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private RoomStatus status = RoomStatus.AVAILABLE;
 
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt = LocalDateTime.now();

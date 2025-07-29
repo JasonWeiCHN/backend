@@ -31,7 +31,9 @@
     <label>
       状态：
       <select formControlName="status">
-        <option *ngFor="let s of statusOptions" [value]="s">{{ s }}</option>
+        <option *ngFor="let s of statusOptions" [value]="s.value">
+          {{ s.label }}
+        </option>
       </select>
     </label>
 

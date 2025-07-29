@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RoomHttpService } from '../../shared/services/room.http.service';
 import { IRoom } from '../../shared/interfaces/room.interface';
+import { ERoomStatus } from '../../shared/enums/room-status.enum';
 
 @Component({
   selector: 'app-room-form',
@@ -26,7 +27,11 @@ export class RoomFormComponent implements OnInit {
   form!: FormGroup;
   isEditMode = false;
   roomId?: number;
-  statusOptions = ['AVAILABLE', 'OCCUPIED', 'MAINTENANCE'];
+  statusOptions = [
+    { value: ERoomStatus.AVAILABLE, label: '空闲' },
+    { value: ERoomStatus.OCCUPIED, label: '使用中' },
+    { value: ERoomStatus.DISABLED, label: '停用' },
+  ];
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -35,7 +40,7 @@ export class RoomFormComponent implements OnInit {
       capacity: [1, [Validators.required, Validators.min(1)]],
       pricePerHour: [0, [Validators.required, Validators.min(0)]],
       description: [''],
-      status: ['AVAILABLE', Validators.required],
+      status: [ERoomStatus.AVAILABLE, Validators.required],
     });
 
     const idParam = this.route.snapshot.paramMap.get('id');

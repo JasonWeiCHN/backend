@@ -12,16 +12,16 @@
   text-align: center;
   transition: background-color 0.3s ease;
 
-  &.空闲 {
-    background-color: #4caf50;
+  &.AVAILABLE {
+    background-color: #4caf50; // 绿色 - 空闲
   }
 
-  &.使用中 {
-    background-color: #f44336;
+  &.OCCUPIED {
+    background-color: #f44336; // 红色 - 使用中
   }
 
-  &.停用 {
-    background-color: #9e9e9e;
+  &.DISABLED {
+    background-color: #9e9e9e; // 灰色 - 停用
   }
 
   h3 {

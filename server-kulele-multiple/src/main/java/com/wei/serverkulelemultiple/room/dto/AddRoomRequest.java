@@ -1,5 +1,6 @@
 package com.wei.serverkulelemultiple.room.dto;
 
+import com.wei.serverkulelemultiple.room.enums.RoomStatus;
 import lombok.Data;
 
 import java.math.BigDecimal;
@@ -11,5 +12,5 @@ public class AddRoomRequest {
     private Integer capacity;
     private BigDecimal pricePerHour;
     private String description;
-    private String status; // 例如 "AVAILABLE"、"OCCUPIED"、"MAINTENANCE"
+    private RoomStatus status; // 例如 "AVAILABLE"、"OCCUPIED"、"MAINTENANCE"
 }

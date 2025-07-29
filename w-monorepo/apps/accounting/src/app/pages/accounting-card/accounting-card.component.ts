@@ -3,6 +3,10 @@ import { CommonModule } from '@angular/common';
 import { AccountingHttpService } from '../../shared/services/accounting.http.service';
 import { Router } from '@angular/router';
 import { IRoomStatus } from '../../shared/interfaces/room.interface';
+import {
+  ERoomStatus,
+  RoomStatusLabelMap,
+} from '../../shared/enums/room-status.enum';
 
 @Component({
   selector: 'app-accounting-card',
@@ -14,6 +18,7 @@ import { IRoomStatus } from '../../shared/interfaces/room.interface';
 export class AccountingCardComponent implements OnInit {
   rooms: IRoomStatus[] = [];
   selectedRoom: IRoomStatus | null = null;
+  ERoomStatus = ERoomStatus; // 供模板中使用
 
   constructor(
     private accountingService: AccountingHttpService,
@@ -30,7 +35,7 @@ export class AccountingCardComponent implements OnInit {
 
     setInterval(() => {
       this.rooms.forEach((room) => {
-        if (room.status === '使用中' && room.endTime) {
+        if (room.status === ERoomStatus.OCCUPIED && room.endTime) {
           const now = new Date().getTime();
           const end = new Date(room.endTime).getTime();
           const diff = Math.max(end - now, 0);
@@ -47,9 +52,12 @@ export class AccountingCardComponent implements OnInit {
     });
   }
 
-  setRoomStatus(room: IRoomStatus, status: '空闲' | '停用'): void {
+  setRoomStatus(
+    room: IRoomStatus,
+    status: ERoomStatus.AVAILABLE | ERoomStatus.DISABLED
+  ): void {
     room.status = status;
-    if (status === '空闲') {
+    if (status === ERoomStatus.AVAILABLE) {
       room.startTime = undefined;
       room.endTime = undefined;
       room.remainingTime = undefined;
@@ -57,7 +65,7 @@ export class AccountingCardComponent implements OnInit {
   }
 
   endRoomUsage(room: IRoomStatus): void {
-    room.status = '空闲';
+    room.status = ERoomStatus.AVAILABLE;
     room.startTime = undefined;
     room.endTime = undefined;
     room.remainingTime = undefined;
@@ -71,8 +79,8 @@ export class AccountingCardComponent implements OnInit {
     return `${h}h ${m}m ${s}s`;
   }
 
-  getRoomClass(room: IRoomStatus): string {
-    return room.status;
+  getStatusLabel(status: ERoomStatus): string {
+    return RoomStatusLabelMap[status] || status;
   }
 
   private calculateRemainingTime(endTime?: string): string | undefined {

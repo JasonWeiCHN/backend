@@ -1,3 +1,5 @@
+import { ERoomStatus } from '../enums/room-status.enum';
+
 export interface IRoom {
   id: number;
   roomNumber: string;
@@ -11,7 +13,7 @@ export interface IRoomStatus {
   id: number;
   roomNumber: string;
   roomType: string;
-  status: '空闲' | '使用中' | '停用';
+  status: ERoomStatus;
   startTime?: string;
   endTime?: string;
   accountingId?: number;
