@@ -14,8 +14,11 @@ export class AccountingHttpService {
   // http://localhost:8086/api/accounting 酷乐乐multiple
   // http://111.230.29.99:8080/multiple/api/accounting SASS
   // https://kulele.club/sass/api/multiple/api/accounting
-  private accountingUrl = 'http://localhost:8086/api/accounting';
-  private roomUrl = 'http://localhost:8086/api/room';
+  private accountingUrl =
+    'https://kulele.club/sass/api/multiple/api/accounting';
+  // http://localhost:8086/api/room
+  // https://kulele.club/sass/api/multiple/api/room
+  private roomUrl = 'https://kulele.club/sass/api/multiple/api/room';
   // http://localhost:8081/api/accounting 酷乐乐单体
   // http://111.230.29.99:8080/games/api/games SASS
   // https://kulele.club/sass/api/games/api/games
