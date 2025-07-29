@@ -1,1 +1,19 @@
+<header class="top-nav">
+  <nav>
+    <a [class.active]="current === 'card'" (click)="navigateTo('card')"
+      >包房开台</a
+    >
+    <a [class.active]="current === 'form'" (click)="navigateTo('form')"
+      >填表开台</a
+    >
+    <a [class.active]="current === 'list'" (click)="navigateTo('list')"
+      >开台记录</a
+    >
+  </nav>
+</header>
+
+<router-outlet></router-outlet>
+
+<router-outlet></router-outlet>
+
 <router-outlet></router-outlet>

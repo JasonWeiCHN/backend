@@ -32,6 +32,12 @@
           {{ room.roomNumber }}
         </option>
       </select>
+      <small
+        class="selected-room-tip"
+        *ngIf="roomIdFromQuery && selectedRoomNumber"
+      >
+        已自动选择包房：{{ selectedRoomNumber }}
+      </small>
     </label>
 
     <label>

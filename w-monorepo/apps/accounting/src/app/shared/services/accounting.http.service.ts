@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { IAccountingRecord } from '../interfaces/accounting-record.interface';
 import { IGame } from '../interfaces/game.interface';
-import { IRoom } from '../interfaces/room.interface';
+import { IRoom, IRoomStatus } from '../interfaces/room.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -55,5 +55,9 @@ export class AccountingHttpService {
 
   getAllRooms(): Observable<IRoom[]> {
     return this.http.get<IRoom[]>(this.roomUrl);
+  }
+
+  getRoomStatusList(): Observable<IRoomStatus[]> {
+    return this.http.get<IRoomStatus[]>(`${this.roomUrl}/with-status`);
   }
 }

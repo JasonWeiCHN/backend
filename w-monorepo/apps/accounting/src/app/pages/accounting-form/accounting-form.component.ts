@@ -53,6 +53,9 @@ export class AccountingFormComponent implements OnInit {
   selectedGames: string[] = [];
   roomList: IRoom[] = [];
 
+  roomIdFromQuery: number | null = null;
+  selectedRoomNumber: string | null = null;
+
   ngOnInit(): void {
     // 初始化表单
     this.form = this.fb.group({
@@ -126,7 +129,20 @@ export class AccountingFormComponent implements OnInit {
 
     // 获取包房数量
     this.accountingService.getAllRooms().subscribe({
-      next: (rooms) => (this.roomList = rooms),
+      next: (rooms) => {
+        this.roomList = rooms;
+
+        const roomIdParam = this.route.snapshot.queryParamMap.get('roomId');
+        if (roomIdParam && !this.isEditMode) {
+          const roomId = +roomIdParam;
+          this.roomIdFromQuery = roomId;
+          this.form.patchValue({ roomId });
+
+          // 查找房号用于显示提示
+          const matchedRoom = rooms.find((r) => r.id === roomId);
+          this.selectedRoomNumber = matchedRoom?.roomNumber ?? null;
+        }
+      },
       error: (err) => {
         console.error('获取包房列表失败', err);
         this.roomList = [];
@@ -214,6 +230,6 @@ export class AccountingFormComponent implements OnInit {
       ? this.accountingService.updateRecord(record.id, record)
       : this.accountingService.createRecord(record);
 
-    save$.subscribe(() => this.router.navigate(['/accounting']));
+    save$.subscribe(() => this.router.navigate(['/accounting-card']));
   }
 }

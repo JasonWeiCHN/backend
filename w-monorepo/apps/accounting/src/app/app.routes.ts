@@ -1,20 +1,27 @@
 import { Route } from '@angular/router';
-import { AccountingListComponent } from './pages/accounting-list/accounting-list.component';
+import { AccountingCardComponent } from './pages/accounting-card/accounting-card.component';
 
 export const appRoutes: Route[] = [
   {
     path: '',
-    component: AccountingListComponent,
+    component: AccountingCardComponent,
   },
   {
-    path: 'accounting',
+    path: 'accounting-card', // 包房开台
+    loadComponent: () =>
+      import('./pages/accounting-card/accounting-card.component').then(
+        (m) => m.AccountingCardComponent
+      ),
+  },
+  {
+    path: 'accounting-list', // 开台记录
     loadComponent: () =>
       import('./pages/accounting-list/accounting-list.component').then(
         (m) => m.AccountingListComponent
       ),
   },
   {
-    path: 'accounting/new',
+    path: 'accounting/new', // 填表开台
     loadComponent: () =>
       import('./pages/accounting-form/accounting-form.component').then(
         (m) => m.AccountingFormComponent

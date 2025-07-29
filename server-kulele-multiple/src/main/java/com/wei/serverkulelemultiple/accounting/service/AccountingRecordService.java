@@ -17,6 +17,8 @@ import com.wei.serverkulelemultiple.accounting.dto.AccountingRecordDTO;
 import com.wei.serverkulelemultiple.accounting.entity.AccountingRecord;
 import com.wei.serverkulelemultiple.accounting.repository.AccountingRecordRepository;
 import com.wei.serverkulelemultiple.accounting.request.AddAccountingRecordRequest;
+import com.wei.serverkulelemultiple.room.entity.Room;
+import com.wei.serverkulelemultiple.room.repository.RoomRepository;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +40,9 @@ public class AccountingRecordService {
 
     @Autowired
     private AccountingRecordRepository repository;
+
+    @Autowired
+    private RoomRepository roomRepository;
 
     public List<AccountingRecordDTO> getAll() {
         List<AccountingRecord> records = repository.findAllWithGameNames();
@@ -96,7 +101,7 @@ public class AccountingRecordService {
         dto.setContactType(record.getContactType());
         dto.setContactValue(record.getContactValue());
         dto.setRemark(record.getRemark());
-        dto.setRoomId(record.getRoomId());
+        dto.setRoomId(record.getRoom() != null ? record.getRoom().getId() : null);
         return dto;
     }
 
@@ -113,7 +118,14 @@ public class AccountingRecordService {
         record.setContactType(request.getContactType());
         record.setContactValue(request.getContactValue());
         record.setRemark(request.getRemark());
-        record.setRoomId(request.getRoomId());
+        // 你需要先拿到 Room 实体，比如通过 RoomRepository 查找 Room
+        if (request.getRoomId() != null) {
+            Room room = roomRepository.findById(request.getRoomId())
+                    .orElseThrow(() -> new RuntimeException("房间不存在 id=" + request.getRoomId()));
+            record.setRoom(room);
+        } else {
+            record.setRoom(null);
+        }
     }
 
     public String generateAccountingTxtContent() {

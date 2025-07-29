@@ -1,6 +1,7 @@
 package com.wei.serverkulelemultiple.room.controller;
 
 import com.wei.serverkulelemultiple.room.dto.AddRoomRequest;
+import com.wei.serverkulelemultiple.room.dto.RoomStatusDTO;
 import com.wei.serverkulelemultiple.room.entity.Room;
 import com.wei.serverkulelemultiple.room.service.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,5 +39,10 @@ public class RoomController {
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
         service.delete(id);
+    }
+
+    @GetMapping("/with-status")
+    public List<RoomStatusDTO> getRoomsWithStatus() {
+        return service.getRoomStatusList();
     }
 }

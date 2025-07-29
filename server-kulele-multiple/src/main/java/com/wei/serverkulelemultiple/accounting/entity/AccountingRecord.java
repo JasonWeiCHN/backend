@@ -1,5 +1,6 @@
 package com.wei.serverkulelemultiple.accounting.entity;
 
+import com.wei.serverkulelemultiple.room.entity.Room;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -58,6 +59,7 @@ public class AccountingRecord {
     @Column(name = "remark")
     private String remark;
 
-    @Column(name = "room_id", nullable = true)
-    private Long roomId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "room_id", nullable = true)
+    private Room room;
 }
