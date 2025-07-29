@@ -97,4 +97,11 @@ public class RoomService {
         room.setDescription(request.getDescription());
         room.setStatus(request.getStatus());
     }
+
+    public Room changeStatus(Long roomId, RoomStatus newStatus) {
+        Room room = roomRepository.findById(roomId)
+                .orElseThrow(() -> new RuntimeException("包房不存在"));
+        room.setStatus(newStatus);
+        return roomRepository.save(room);
+    }
 }

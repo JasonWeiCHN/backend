@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { IAccountingRecord } from '../interfaces/accounting-record.interface';
 import { IGame } from '../interfaces/game.interface';
 import { IRoom, IRoomStatus } from '../interfaces/room.interface';
+import { ERoomStatus } from '../enums/room-status.enum';
 
 @Injectable({
   providedIn: 'root',
@@ -59,5 +60,9 @@ export class AccountingHttpService {
 
   getRoomStatusList(): Observable<IRoomStatus[]> {
     return this.http.get<IRoomStatus[]>(`${this.roomUrl}/with-status`);
+  }
+
+  updateRoomStatus(roomId: number, status: ERoomStatus) {
+    return this.http.put(`${this.roomUrl}/${roomId}/status`, { status });
   }
 }

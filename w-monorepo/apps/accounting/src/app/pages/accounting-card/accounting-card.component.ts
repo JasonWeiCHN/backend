@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AccountingHttpService } from '../../shared/services/accounting.http.service';
 import { Router } from '@angular/router';
-import { IRoomStatus } from '../../shared/interfaces/room.interface';
+import {
+  IRoomStatus,
+  TRoomWithLoading,
+} from '../../shared/interfaces/room.interface';
 import {
   ERoomStatus,
   RoomStatusLabelMap,
@@ -16,7 +19,7 @@ import {
   styleUrls: ['./accounting-card.component.scss'],
 })
 export class AccountingCardComponent implements OnInit {
-  rooms: IRoomStatus[] = [];
+  rooms: TRoomWithLoading[] = [];
   selectedRoom: IRoomStatus | null = null;
   ERoomStatus = ERoomStatus; // 供模板中使用
 
@@ -30,6 +33,7 @@ export class AccountingCardComponent implements OnInit {
       this.rooms = rooms.map((room) => ({
         ...room,
         remainingTime: this.calculateRemainingTime(room.endTime),
+        loading: false, // 初始为 false
       }));
     });
 
@@ -53,22 +57,46 @@ export class AccountingCardComponent implements OnInit {
   }
 
   setRoomStatus(
-    room: IRoomStatus,
+    room: TRoomWithLoading,
     status: ERoomStatus.AVAILABLE | ERoomStatus.DISABLED
   ): void {
-    room.status = status;
-    if (status === ERoomStatus.AVAILABLE) {
-      room.startTime = undefined;
-      room.endTime = undefined;
-      room.remainingTime = undefined;
-    }
+    room.loading = true; // 开始 loading
+    this.accountingService.updateRoomStatus(room.id, status).subscribe({
+      next: () => {
+        room.status = status;
+        if (status === ERoomStatus.AVAILABLE) {
+          room.startTime = undefined;
+          room.endTime = undefined;
+          room.remainingTime = undefined;
+        }
+      },
+      error: () => {
+        alert('状态更新失败');
+      },
+      complete: () => {
+        room.loading = false; // 结束 loading
+      },
+    });
   }
 
-  endRoomUsage(room: IRoomStatus): void {
-    room.status = ERoomStatus.AVAILABLE;
-    room.startTime = undefined;
-    room.endTime = undefined;
-    room.remainingTime = undefined;
+  endRoomUsage(room: TRoomWithLoading): void {
+    room.loading = true;
+    this.accountingService
+      .updateRoomStatus(room.id, ERoomStatus.AVAILABLE)
+      .subscribe({
+        next: () => {
+          room.status = ERoomStatus.AVAILABLE;
+          room.startTime = undefined;
+          room.endTime = undefined;
+          room.remainingTime = undefined;
+        },
+        error: () => {
+          alert('结束使用失败');
+        },
+        complete: () => {
+          room.loading = false;
+        },
+      });
   }
 
   formatCountdown(ms: number): string {

@@ -56,3 +56,14 @@
     }
   }
 }
+
+.room-card[ng-reflect-ng-class][class*="AVAILABLE"],
+.room-card[ng-reflect-ng-class][class*="DISABLED"],
+.room-card[ng-reflect-ng-class][class*="OCCUPIED"] {
+  position: relative;
+}
+
+.room-card p:only-child {
+  font-style: italic;
+  opacity: 0.7;
+}

@@ -21,3 +21,5 @@ export interface IRoomStatus {
   customerPhone?: string;
   remainingTime?: string;
 }
+
+export type TRoomWithLoading = IRoomStatus & { loading?: boolean };
