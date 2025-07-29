@@ -57,6 +57,9 @@ export class AccountingFormComponent implements OnInit {
   selectedRoomNumber: string | null = null;
 
   ngOnInit(): void {
+    const roomIdParam = this.route.snapshot.queryParamMap.get('roomId');
+    const initialRoomId = roomIdParam && !this.isEditMode ? +roomIdParam : null;
+
     // 初始化表单
     this.form = this.fb.group({
       startDateTime: ['', Validators.required],
@@ -71,7 +74,7 @@ export class AccountingFormComponent implements OnInit {
       remark: [''],
       contactType: [''],
       contactValue: [''],
-      roomId: [null],
+      roomId: [initialRoomId],
     });
 
     // 自动计算时长

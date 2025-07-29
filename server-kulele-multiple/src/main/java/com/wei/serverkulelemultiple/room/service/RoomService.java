@@ -51,8 +51,6 @@ public class RoomService {
 
     public List<RoomStatusDTO> getRoomStatusList() {
         List<Room> rooms = roomRepository.findAll();
-
-        // 当前时间
         LocalDateTime now = LocalDateTime.now();
 
         return rooms.stream().map(room -> {
@@ -61,30 +59,33 @@ public class RoomService {
             dto.setRoomNumber(room.getRoomNumber());
             dto.setRoomType(room.getRoomType());
 
-            // 停用状态优先
-            if (RoomStatus.DISABLED.equals(room.getStatus())) {
+            RoomStatus roomStatus = room.getStatus();
+
+            // 停用状态直接返回
+            if (roomStatus == RoomStatus.DISABLED) {
                 dto.setStatus(RoomStatus.DISABLED);
                 return dto;
             }
 
-            // 查找是否存在有效的订单（当前时间在范围内）
-            List<AccountingRecord> activeRecords = recordRepository.findActiveByRoom(room.getId(), now);
+            // 仅对空闲状态的房间判断是否有活跃记录
+            if (roomStatus == RoomStatus.AVAILABLE) {
+                List<AccountingRecord> activeRecords = recordRepository.findActiveByRoom(room.getId(), now);
+                if (!activeRecords.isEmpty()) {
+                    AccountingRecord record = activeRecords.get(0); // 理论上只会有一个
+                    dto.setStatus(RoomStatus.OCCUPIED);
+                    dto.setStartTime(record.getStartDateTime());
+                    dto.setEndTime(record.getEndDateTime());
+                    dto.setAccountingId(record.getId());
 
-            if (!activeRecords.isEmpty()) {
-                AccountingRecord record = activeRecords.get(0); // 理论上只会有一个
-                dto.setStatus(RoomStatus.OCCUPIED);
-                dto.setStartTime(record.getStartDateTime());
-                dto.setEndTime(record.getEndDateTime());
-                dto.setAccountingId(record.getId());
-
-                // 可选：添加客户信息
-                dto.setContactType(record.getContactType());
-                dto.setContactValue(record.getContactValue());
-                dto.setRemark(record.getRemark());
-            } else {
-                dto.setStatus(RoomStatus.AVAILABLE);
+                    dto.setContactType(record.getContactType());
+                    dto.setContactValue(record.getContactValue());
+                    dto.setRemark(record.getRemark());
+                    return dto;
+                }
             }
 
+            // 仍为 AVAILABLE 且无记录
+            dto.setStatus(roomStatus);
             return dto;
         }).collect(Collectors.toList());
     }

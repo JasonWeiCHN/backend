@@ -12,12 +12,18 @@ public class AccountingRecordMapper {
         dto.setId(record.getId());
         dto.setStartDateTime(record.getStartDateTime());
         dto.setEndDateTime(record.getEndDateTime());
+        dto.setConsoleType(record.getConsoleType());
         dto.setGameNames(record.getGameNames());
         dto.setDuration(record.getDuration());
         dto.setActualAmount(record.getActualAmount());
         dto.setCustomerType(record.getCustomerType());
         dto.setPlatform(record.getPlatform());
         dto.setRemark(record.getRemark());
+        dto.setIsReturning(record.getIsReturning());
+
+        // ✅ 防止空指针异常
+        dto.setRoomId(record.getRoom() != null ? record.getRoom().getId() : null);
+
         return dto;
     }
 }
