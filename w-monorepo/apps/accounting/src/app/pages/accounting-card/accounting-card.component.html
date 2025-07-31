@@ -1,15 +1,19 @@
 <div class="accounting-card">
   <div *ngFor="let room of rooms" [ngClass]="room.status" class="room-card">
-    <h3>{{ room.roomNumber }}</h3>
+    <h3>包间：{{ room.roomNumber }}</h3>
+    <p *ngIf="room.roomType">类型：{{ room.roomType }}</p>
 
     <p *ngIf="!room.loading">{{ getStatusLabel(room.status) }}</p>
     <p *ngIf="room.loading">状态切换中...</p>
 
     <ng-container *ngIf="room.status === ERoomStatus.OCCUPIED && !room.loading">
-      <p>
-        {{ room.startTime }} - {{ room.endTime }}<br />
-        倒计时：{{ room.remainingTime }}
-      </p>
+      <div class="time-block">
+        <div class="date">{{ formatDate(room.startTime) }}</div>
+        <div class="time-range">
+          {{ formatTime(room.startTime) }} - {{ formatTime(room.endTime) }}
+        </div>
+        <div class="countdown">倒计时：{{ room.remainingTime }}</div>
+      </div>
     </ng-container>
 
     <div class="actions">
@@ -29,10 +33,10 @@
       </button>
       <button
         *ngIf="room.status === ERoomStatus.OCCUPIED"
-        (click)="endRoomUsage(room)"
+        (click)="editRoom(room)"
         [disabled]="room.loading"
       >
-        结束使用
+        信息修改
       </button>
       <button
         *ngIf="room.status === ERoomStatus.DISABLED"

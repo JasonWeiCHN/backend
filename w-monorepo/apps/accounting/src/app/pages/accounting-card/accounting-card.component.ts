@@ -118,4 +118,24 @@ export class AccountingCardComponent implements OnInit {
     const diff = Math.max(end - now, 0);
     return this.formatCountdown(diff);
   }
+
+  protected formatDate(dateStr?: string): string {
+    if (!dateStr) return '';
+    const date = new Date(dateStr);
+    return date.toISOString().split('T')[0]; // yyyy-mm-dd
+  }
+
+  protected formatTime(dateStr?: string): string {
+    if (!dateStr) return '';
+    const date = new Date(dateStr);
+    return date.toTimeString().split(' ')[0]; // HH:mm:ss
+  }
+
+  protected editRoom(room: TRoomWithLoading): void {
+    if (!room.accountingId) {
+      alert('找不到对应的记录 ID');
+      return;
+    }
+    this.router.navigate(['/accounting/edit', room.accountingId]);
+  }
 }

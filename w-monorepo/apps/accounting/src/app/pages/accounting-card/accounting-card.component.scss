@@ -25,12 +25,12 @@
   }
 
   h3 {
-    margin-bottom: 8px;
-    font-size: 20px;
+    margin-bottom: 2px;
+    font-size: 18px;
   }
 
   p {
-    margin: 8px 0;
+    margin: 2px 0;
   }
 
   .actions {
@@ -66,4 +66,26 @@
 .room-card p:only-child {
   font-style: italic;
   opacity: 0.7;
+}
+
+.time-block {
+  margin-top: 8px;
+
+  .date {
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.2;
+  }
+
+  .time-range {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.4;
+  }
+
+  .countdown {
+    margin-top: 4px;
+    font-size: 14px;
+    color: #fff8dc;
+  }
 }
