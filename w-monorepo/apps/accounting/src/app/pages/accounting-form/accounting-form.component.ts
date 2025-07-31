@@ -206,7 +206,8 @@ export class AccountingFormComponent implements OnInit {
     console.log('onSubmit！');
 
     if (this.form.invalid) {
-      console.log('表单验证不通过！');
+      this.form.markAllAsTouched(); // ★ 关键：触发所有字段显示错误
+      alert('表单未填写完整，请查看红字提示并补充内容后再提交。');
       return;
     }
 

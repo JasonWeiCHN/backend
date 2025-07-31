@@ -8,6 +8,15 @@
         formControlName="startDateTime"
         (focus)="openDatePicker($event)"
       />
+      <div
+        class="error"
+        *ngIf="
+          form.get('startDateTime')?.touched &&
+          form.get('startDateTime')?.hasError('required')
+        "
+      >
+        开始时间为必填项
+      </div>
     </label>
 
     <label>
@@ -17,6 +26,15 @@
         formControlName="endDateTime"
         (focus)="openDatePicker($event)"
       />
+      <div
+        class="error"
+        *ngIf="
+          form.get('endDateTime')?.touched &&
+          form.get('endDateTime')?.hasError('required')
+        "
+      >
+        结束时间为必填项
+      </div>
     </label>
 
     <label>
@@ -43,11 +61,20 @@
     <label>
       游戏机类型：
       <select formControlName="consoleType">
-        <option value="" disabled selected>请选择游戏机类型</option>
+        <option value="" disabled>请选择游戏机类型</option>
         <option *ngFor="let console of consoleOptions" [value]="console">
           {{ console }}
         </option>
       </select>
+      <div
+        class="error"
+        *ngIf="
+          form.get('consoleType')?.touched &&
+          form.get('consoleType')?.hasError('required')
+        "
+      >
+        游戏机类型为必选项
+      </div>
     </label>
 
     <label>
@@ -62,7 +89,6 @@
     </label>
 
     <div class="game-select">
-      <!-- 搜索建议列表 -->
       <ul
         *ngIf="showSuggestions && filteredSuggestions.length > 0"
         class="suggestions"
@@ -87,11 +113,20 @@
     <label>
       客户类型：
       <select formControlName="customerType">
-        <option value="" disabled selected>请选择客户类型</option>
+        <option value="" disabled>请选择客户类型</option>
         <option *ngFor="let type of customerTypes" [value]="type">
           {{ type }}
         </option>
       </select>
+      <div
+        class="error"
+        *ngIf="
+          form.get('customerType')?.touched &&
+          form.get('customerType')?.hasError('required')
+        "
+      >
+        客户类型为必选项
+      </div>
     </label>
 
     <label>
@@ -102,13 +137,31 @@
     <label>
       实收金额：
       <input type="number" formControlName="actualAmount" />
+      <div class="error" *ngIf="form.get('actualAmount')?.touched">
+        <span *ngIf="form.get('actualAmount')?.hasError('required')"
+          >实收金额为必填项</span
+        >
+        <span *ngIf="form.get('actualAmount')?.hasError('min')"
+          >实收金额不能小于 0</span
+        >
+      </div>
     </label>
 
     <label>
       平台：
       <select formControlName="platform">
+        <option value="" disabled>请选择平台</option>
         <option *ngFor="let p of platforms" [value]="p">{{ p }}</option>
       </select>
+      <div
+        class="error"
+        *ngIf="
+          form.get('platform')?.touched &&
+          form.get('platform')?.hasError('required')
+        "
+      >
+        平台为必选项
+      </div>
     </label>
 
     <label>
@@ -133,9 +186,7 @@
     </label>
 
     <div class="actions">
-      <button type="submit">
-        {{ isEditMode ? '保存修改' : '提交' }}
-      </button>
+      <button type="submit">{{ isEditMode ? '保存修改' : '提交' }}</button>
       <button type="button" (click)="router.navigate(['/accounting-card'])">
         取消
       </button>

@@ -6,6 +6,9 @@
 }
 
 .room-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 16px;
   border-radius: 12px;
   color: white;
