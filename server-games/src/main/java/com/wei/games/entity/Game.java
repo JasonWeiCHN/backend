@@ -60,7 +60,15 @@ public class Game {
     @CollectionTable(name = "game_guides", joinColumns = @JoinColumn(name = "game_id"))
     private List<GameGuide> guides;
 
+    // 新增 detail 图片数组
+    @ElementCollection
+    @CollectionTable(name = "game_images_for_detail", joinColumns = @JoinColumn(name = "game_id"))
+    @Column(name = "image_url")
+    private List<String> imagesForDetail;
+
     // 视频链接
-    @Column
-    private String video;
+    @ElementCollection
+    @CollectionTable(name = "game_videos", joinColumns = @JoinColumn(name = "game_id"))
+    @Column(name = "video_url")
+    private List<String> videos;
 }

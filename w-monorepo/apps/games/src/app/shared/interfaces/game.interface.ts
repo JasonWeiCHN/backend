@@ -19,7 +19,8 @@ export interface IGame {
   description?: string;
   genres?: IGenre[]; // 游戏类型
   guides?: IGameGuide[];
-  video?: string; // 视频地址
+  videos?: string[];
+  imagesForDetail?: string[];
 }
 
 export interface IAddGameRequest {
@@ -30,7 +31,8 @@ export interface IAddGameRequest {
   path?: string;
   releaseDate?: string;
   description?: string;
-  video?: string;
+  videos?: string[];
+  imagesForDetail?: string[];
   genres: string[]; // genre id list
   guides: IGameGuide[]; // ✅ 强制要求为数组，便于总是传空数组 []
 }

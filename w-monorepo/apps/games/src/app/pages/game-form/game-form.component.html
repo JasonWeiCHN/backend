@@ -13,7 +13,47 @@
     <label>搜索词：<input formControlName="searchKeywords" /></label>
     <label>源路径（可选）：<input formControlName="path" /></label>
     <label>发布日期：<input type="date" formControlName="releaseDate" /></label>
-    <label>视频地址（可选）：<input formControlName="video" /></label>
+
+    <div class="section-title">视频地址列表</div>
+    <div class="form-section">
+      <div formArrayName="videos">
+        <div
+          *ngFor="let videoCtrl of videos.controls; let i = index"
+          class="array-item"
+        >
+          <input [formControlName]="i" placeholder="视频链接" />
+          <button type="button" (click)="removeVideo(i)">删除</button>
+        </div>
+        <button
+          *ngIf="videos.controls.length <= 4"
+          type="button"
+          (click)="addVideo()"
+        >
+          + 添加视频
+        </button>
+      </div>
+    </div>
+
+    <div class="section-title">详情图地址列表</div>
+    <div class="form-section">
+      <div formArrayName="imagesForDetail">
+        <div
+          *ngFor="let imgCtrl of imagesForDetail.controls; let i = index"
+          class="array-item"
+        >
+          <input [formControlName]="i" placeholder="图片链接" />
+          <button type="button" (click)="removeImage(i)">删除</button>
+        </div>
+        <button
+          *ngIf="imagesForDetail.controls.length <= 4"
+          type="button"
+          (click)="addImage()"
+        >
+          + 添加图片
+        </button>
+      </div>
+    </div>
+
     <label>描述：<textarea formControlName="description"></textarea></label>
 
     <h3>类型 ID 列表（英文逗号分隔）</h3>

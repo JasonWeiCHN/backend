@@ -10,7 +10,7 @@ export class TagHttpService {
   // http://localhost:8081/api/tags 酷乐乐单体
   // http://111.230.29.99:8080/games/api/tags SASS
   // https://kulele.club/sass/api/games/api/tags
-  private tagUrl = 'https://kulele.club/sass/api/games/api/tags';
+  private tagUrl = 'http://localhost:8081/api/tags';
 
   constructor(private http: HttpClient) {}
 

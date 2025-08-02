@@ -1,5 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import {
+  FormArray,
   FormBuilder,
   FormGroup,
   FormsModule,
@@ -53,7 +54,8 @@ export class GameFormComponent implements OnInit {
       path: [''],
       releaseDate: [''],
       description: [''],
-      video: [''],
+      videos: this.fb.array([]),
+      imagesForDetail: this.fb.array([]),
       genres: [[]], // 改成 genres，和 populateForm 及模板保持一致
       guides: this.fb.array([]), // 保留空数组传给后端
     });
@@ -68,6 +70,30 @@ export class GameFormComponent implements OnInit {
         .getGameById(this.gameId)
         .subscribe((game) => this.populateForm(game));
     }
+  }
+
+  get videos() {
+    return this.form.get('videos') as FormArray;
+  }
+
+  get imagesForDetail() {
+    return this.form.get('imagesForDetail') as FormArray;
+  }
+
+  addVideo(): void {
+    this.videos.push(this.fb.control(''));
+  }
+
+  removeVideo(index: number): void {
+    this.videos.removeAt(index);
+  }
+
+  addImage(): void {
+    this.imagesForDetail.push(this.fb.control(''));
+  }
+
+  removeImage(index: number): void {
+    this.imagesForDetail.removeAt(index);
   }
 
   loadGenresAndTags(): void {
@@ -87,8 +113,15 @@ export class GameFormComponent implements OnInit {
       path: game.path || '',
       releaseDate: game.releaseDate || '',
       description: game.description || '',
-      video: game.video || '',
     });
+
+    this.videos.clear();
+    (game.videos || []).forEach((v) => this.videos.push(this.fb.control(v)));
+
+    this.imagesForDetail.clear();
+    (game.imagesForDetail || []).forEach((img) =>
+      this.imagesForDetail.push(this.fb.control(img))
+    );
   }
 
   onSubmit(): void {
@@ -103,7 +136,8 @@ export class GameFormComponent implements OnInit {
       path: rawValue.path,
       releaseDate: rawValue.releaseDate,
       description: rawValue.description,
-      video: rawValue.video,
+      videos: this.videos.value,
+      imagesForDetail: this.imagesForDetail.value,
       genres: (rawValue.genres || []).map((g: IGenre) => g.id),
       guides: [],
     };

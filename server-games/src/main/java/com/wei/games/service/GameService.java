@@ -94,7 +94,8 @@ public class GameService {
             game.setReleaseDate(LocalDate.parse(request.getReleaseDate()));
         }
         game.setDescription(request.getDescription());
-        game.setVideo(request.getVideo());
+        game.setVideos(request.getVideos());
+        game.setImagesForDetail(request.getImagesForDetail());
 
         if (request.getGenres() != null && !request.getGenres().isEmpty()) {
             // 根据 genre id 列表查实体，设置到 game

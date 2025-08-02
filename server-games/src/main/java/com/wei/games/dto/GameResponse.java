@@ -15,5 +15,6 @@ public class GameResponse {
     private String description;
     private List<GenreDTO> genres;
     private List<GameGuideDTO> guides;
-    private String video;
+    private List<String> videos;
+    private List<String> imagesForDetail;
 }

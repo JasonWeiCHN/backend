@@ -25,8 +25,24 @@
     </ul>
   </div>
 
-  <div class="video" *ngIf="game.video">
-    <p>视频地址：{{ game.video }}</p>
+  <div class="detail-images" *ngIf="game.imagesForDetail?.length">
+    <h3>游戏详情图：</h3>
+    <div class="image-grid">
+      <img
+        *ngFor="let img of game.imagesForDetail"
+        [src]="getSafeImageUrl(img)"
+        alt="游戏详情图"
+      />
+    </div>
+  </div>
+
+  <div class="video" *ngIf="game.videos?.length">
+    <h3>视频地址：</h3>
+    <ul>
+      <li *ngFor="let video of game.videos; let i = index">
+        <a [href]="video" target="_blank">视频 {{ i + 1 }}</a>
+      </li>
+    </ul>
   </div>
 
   <div class="guides" *ngIf="game.guides?.length">

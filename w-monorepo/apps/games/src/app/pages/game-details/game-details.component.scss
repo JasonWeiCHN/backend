@@ -70,4 +70,55 @@
       }
     }
   }
+
+  .video {
+    margin-top: 1rem;
+
+    h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+      color: #222;
+    }
+
+    ul {
+      padding-left: 1rem;
+
+      li {
+        margin-bottom: 0.3rem;
+
+        a {
+          color: #3498db;
+          text-decoration: underline;
+
+          &:hover {
+            color: #1d6fa5;
+          }
+        }
+      }
+    }
+  }
+
+  .detail-images {
+    margin-top: 2rem;
+
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: #222;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 6px;
+        object-fit: cover;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
 }

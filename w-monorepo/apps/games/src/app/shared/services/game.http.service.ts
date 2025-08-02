@@ -14,7 +14,7 @@ export class GameHttpService {
   // http://localhost:8081/api/games 酷乐乐单体
   // http://111.230.29.99:8080/games/api/games SASS
   // https://kulele.club/sass/api/games/api/games
-  private gameUrl = 'https://kulele.club/sass/api/games/api/games';
+  private gameUrl = 'http://localhost:8081/api/games';
 
   constructor(private http: HttpClient) {}
 

@@ -19,6 +19,8 @@ public class AccountingRecordMapper {
         dto.setCustomerType(record.getCustomerType());
         dto.setPlatform(record.getPlatform());
         dto.setRemark(record.getRemark());
+        dto.setContactType(record.getContactType() != null ? record.getContactType() : null);
+        dto.setContactValue(record.getContactValue() != null ? record.getContactValue() : null);
         dto.setIsReturning(record.getIsReturning());
 
         // ✅ 防止空指针异常

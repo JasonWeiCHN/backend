@@ -42,7 +42,9 @@
         </td>
         <td [title]="game.description">{{ game.description || '—' }}</td>
         <td>
-          <a *ngIf="game.video" [href]="game.video" target="_blank">查看</a>
+          <ng-container *ngIf="game.videos?.length">
+            <a [href]="game.videos?.[0]" target="_blank">查看</a>
+          </ng-container>
         </td>
         <td>
           <button [routerLink]="['/game/view', game.id]">查看</button>
@@ -72,8 +74,9 @@
         </span>
       </div>
       <div><strong>描述：</strong>{{ game.description || '—' }}</div>
-      <div *ngIf="game.video">
-        <strong>视频：</strong><a [href]="game.video" target="_blank">查看</a>
+      <div *ngIf="game.videos && game.videos.length > 0">
+        <strong>描述：</strong
+        ><a [href]="game.videos[0]" target="_blank">查看</a>
       </div>
       <div class="card-actions">
         <button [routerLink]="['/game/view', game.id]">查看</button>
