@@ -8,11 +8,11 @@ from datetime import datetime
 
 # l=schinese 简体中文 l=tchinese 繁体中文 l=japanese 日语
 DETAIL_URL = "http://store.steampowered.com/api/appdetails/?appids={0}&cc=cn&l=schinese"
-OUTPUT_FOLDER = r"F:/biliGet/newest-game"  # 修改为你的输出目录
+OUTPUT_FOLDER = r"F:/steamGet"  # 修改为你的输出目录
 # 全局开关
 DOWNLOAD_SCREENSHOTS = True
 DOWNLOAD_MOVIES = True
-APP_ID = 2001120
+APP_ID = 3769130
 
 lastTime = time.time()
 waitTime = 5 * 60.0 / 195
