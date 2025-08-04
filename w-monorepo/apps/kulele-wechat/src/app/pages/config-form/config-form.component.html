@@ -1,1 +1,75 @@
-<p>config-form works!</p>
+<h2>上传配置文件</h2>
+<div class="form-container">
+  <label>
+    选择文件：
+    <input type="file" (change)="onFileSelected($event)" />
+  </label>
+
+  <ng-container *ngIf="config">
+    <h3>基础信息</h3>
+
+    <label>
+      AppID：
+      <input [(ngModel)]="config.appId" />
+    </label>
+
+    <label>
+      小程序原始ID：
+      <input [(ngModel)]="config.shareAppUserName" />
+    </label>
+
+    <label>
+      店铺名：
+      <input [(ngModel)]="config.title" />
+    </label>
+
+    <label>
+      次级标题：
+      <input [(ngModel)]="config.subTitle" />
+    </label>
+
+    <label>
+      欢迎标语：
+      <input [(ngModel)]="config.welcomeText" />
+    </label>
+
+    <label>
+      电话：
+      <input [(ngModel)]="config.phoneNumber" />
+    </label>
+
+    <label>
+      微信号：
+      <input [(ngModel)]="config.weChatNumber" />
+    </label>
+
+    <label>
+      纬度：
+      <input type="number" [(ngModel)]="config.shopLatitude" />
+    </label>
+
+    <label>
+      经度：
+      <input type="number" [(ngModel)]="config.shopLongitude" />
+    </label>
+
+    <label>
+      首页背景图：
+      <input [(ngModel)]="config.indexBackgroundImage" />
+    </label>
+
+    <h3>轮播图</h3>
+    <div
+      *ngFor="let img of config.swiperImages; let i = index"
+      class="swiper-item"
+    >
+      <input [(ngModel)]="config.swiperImages[i]" />
+      <button type="button" (click)="removeSwiperImage(i)">删除</button>
+    </div>
+    <button type="button" (click)="addSwiperImage()">添加轮播图</button>
+
+    <hr />
+
+    <button type="button" (click)="download()">下载为 config.js</button>
+  </ng-container>
+</div>

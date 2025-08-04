@@ -1,1 +1,12 @@
+<header class="top-nav">
+  <nav>
+    <a [class.active]="current === 'config'" (click)="navigateTo('config')"
+      >配置管理</a
+    >
+    <a [class.active]="current === 'games'" (click)="navigateTo('games')"
+      >游戏管理</a
+    >
+  </nav>
+</header>
+
 <router-outlet></router-outlet>

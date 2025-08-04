@@ -1,0 +1,41 @@
+.top-nav {
+  padding: 12px 16px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  nav {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap; // 手机端自动换行
+
+    a {
+      font-size: 16px;
+      color: #666;
+      text-decoration: none;
+      cursor: pointer;
+      transition: color 0.2s;
+
+      &:hover {
+        color: #000;
+      }
+
+      &.active {
+        color: #2196f3;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+// 可选：为更小屏幕设置字体更小或上下排列
+@media (max-width: 600px) {
+  .top-nav nav {
+    align-items: flex-start;
+    gap: 8px;
+
+    a {
+      font-size: 16px;
+    }
+  }
+}
