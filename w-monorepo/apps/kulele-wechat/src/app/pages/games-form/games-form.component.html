@@ -68,7 +68,7 @@
               class="swiper-item"
             >
               <input [(ngModel)]="selectedGame.videos[vi]" />
-              <button (click)="removeVideo(vi)">删除</button>
+              <button class="btn-delete" (click)="removeVideo(vi)">删除</button>
             </div>
             <button (click)="addVideo()">添加视频</button>
           </div>
@@ -102,7 +102,12 @@
               class="swiper-item"
             >
               <input [(ngModel)]="selectedGame.imagesForDetail[ii]" />
-              <button (click)="removeImage(selectedGame, ii)">删除</button>
+              <button
+                class="btn-delete"
+                (click)="removeImage(selectedGame, ii)"
+              >
+                删除
+              </button>
             </div>
             <button (click)="addImage(selectedGame)">添加详情图</button>
           </div>
@@ -116,7 +121,9 @@
               class="swiper-item"
             >
               <input [(ngModel)]="selectedGame.tags[ti]" />
-              <button (click)="removeTag(selectedGame, ti)">删除</button>
+              <button class="btn-delete" (click)="removeTag(selectedGame, ti)">
+                删除
+              </button>
             </div>
             <button (click)="addTag(selectedGame)">添加标签</button>
           </div>
@@ -139,7 +146,9 @@
             <span class="form-label">描述：</span>
             <input [(ngModel)]="genre.description" />
           </label>
-          <button (click)="removeGenre(selectedGame, gi)">删除类型</button>
+          <button class="btn-delete" (click)="removeGenre(selectedGame, gi)">
+            删除类型
+          </button>
         </div>
         <button (click)="addGenre(selectedGame)">添加类型</button>
 
@@ -164,16 +173,19 @@
             <span class="form-label">链接：</span>
             <input [(ngModel)]="guide.sourceUrl" />
           </label>
-          <button (click)="removeGuide(selectedGame, gui)">删除攻略</button>
+          <button class="btn-delete" (click)="removeGuide(selectedGame, gui)">
+            删除攻略
+          </button>
         </div>
         <button (click)="addGuide(selectedGame)">添加攻略</button>
 
-        <button
-          (click)="deleteSelectedGame()"
-          style="margin-left: 12px; background-color: #dc3545"
-        >
-          删除此游戏
-        </button>
+        <hr />
+
+        <div style="margin-top: 12px">
+          <button class="btn-delete" (click)="deleteSelectedGame()">
+            删除此游戏
+          </button>
+        </div>
       </div>
 
       <button (click)="addGame()">添加新游戏</button>

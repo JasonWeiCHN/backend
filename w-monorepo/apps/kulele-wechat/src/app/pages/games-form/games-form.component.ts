@@ -69,6 +69,12 @@ export class GamesFormComponent {
 
   deleteSelectedGame() {
     if (!this.selectedGame) return;
+
+    const confirmed = confirm(
+      `确定要删除游戏 "${this.selectedGame.name}" 吗？此操作将把游戏从您的游戏库移除！`
+    );
+    if (!confirmed) return;
+
     const index = this.data.games.findIndex(
       (g: any) => g.id === this.selectedGame.id
     );
