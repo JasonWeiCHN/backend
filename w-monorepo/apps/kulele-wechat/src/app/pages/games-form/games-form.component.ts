@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 export class GamesFormComponent {
   data: any = null;
   selectedGame: any = null;
+  activeTab: 'category' | 'game' = 'category';
   gameSearch = '';
 
   // 读取并解析 games.js
@@ -60,17 +61,22 @@ export class GamesFormComponent {
       description: '',
       genres: [],
       guides: [],
-      video: '',
+      videos: [], // 改为数组
     };
     this.data?.games.push(newGame);
     this.selectedGame = newGame;
   }
 
-  removeGame(i: number) {
-    if (this.data?.games[i] === this.selectedGame) {
+  deleteSelectedGame() {
+    if (!this.selectedGame) return;
+    const index = this.data.games.findIndex(
+      (g: any) => g.id === this.selectedGame.id
+    );
+    if (index >= 0) {
+      this.data.games.splice(index, 1);
       this.selectedGame = null;
+      this.gameSearch = '';
     }
-    this.data?.games.splice(i, 1);
   }
 
   // 编辑支持的数组字段
@@ -80,6 +86,15 @@ export class GamesFormComponent {
 
   removeImage(game: any, index: number) {
     game.imagesForDetail.splice(index, 1);
+  }
+
+  addVideo() {
+    if (!this.selectedGame.videos) this.selectedGame.videos = [];
+    this.selectedGame.videos.push('');
+  }
+
+  removeVideo(index: number) {
+    this.selectedGame.videos.splice(index, 1);
   }
 
   addGenre(game: any) {
@@ -107,14 +122,21 @@ export class GamesFormComponent {
   }
 
   // 搜索过滤
-  filteredGames() {
-    if (!this.gameSearch?.trim()) return this.data?.games || [];
-    const keyword = this.gameSearch.toLowerCase();
-    return this.data.games.filter(
+  searchGame() {
+    if (!this.data?.games) return;
+
+    const keyword = this.gameSearch?.toLowerCase().trim();
+    if (!keyword) {
+      this.selectedGame = null;
+      return;
+    }
+
+    const result = this.data.games.find(
       (g: any) =>
         g.name?.toLowerCase().includes(keyword) ||
         g.searchKeywords?.toLowerCase().includes(keyword)
     );
+    this.selectedGame = result || null;
   }
 
   // 下载为 JS
