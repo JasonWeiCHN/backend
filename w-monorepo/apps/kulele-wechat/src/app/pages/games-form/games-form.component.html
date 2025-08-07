@@ -1,8 +1,8 @@
 <h2>上传游戏配置文件</h2>
 
 <div class="form-container">
-  <label>
-    选择文件：
+  <label class="form-line">
+    <span class="form-label">选择文件：</span>
     <input type="file" (change)="onFileSelected($event)" />
   </label>
 
@@ -41,67 +41,104 @@
       <h3>游戏列表</h3>
 
       <div class="search-game">
-        <input [(ngModel)]="gameSearch" placeholder="搜索游戏（支持关键字）" />
+        <input
+          [(ngModel)]="gameSearch"
+          (keydown.enter)="searchGame()"
+          placeholder="搜索游戏（支持关键字）"
+        />
         <button (click)="searchGame()">搜索</button>
       </div>
 
-      <!-- 只渲染 selectedGame -->
       <div *ngIf="selectedGame" class="game-card">
-        <label>游戏名：<input [(ngModel)]="selectedGame.name" /></label>
-        <label>封面图：<input [(ngModel)]="selectedGame.image" /></label>
+        <label class="form-line">
+          <span class="form-label">游戏名：</span>
+          <input [(ngModel)]="selectedGame.name" />
+        </label>
 
-        <label>视频地址列表：</label>
-        <div
-          *ngFor="let vid of selectedGame.videos; let vi = index"
-          class="swiper-item"
-        >
-          <input [(ngModel)]="selectedGame.videos[vi]" />
-          <button (click)="removeVideo(vi)">删除</button>
+        <label class="form-line">
+          <span class="form-label">封面图：</span>
+          <input [(ngModel)]="selectedGame.image" />
+        </label>
+
+        <div class="form-line">
+          <span class="form-label">视频地址：</span>
+          <div class="form-block">
+            <div
+              *ngFor="let vid of selectedGame.videos; let vi = index"
+              class="swiper-item"
+            >
+              <input [(ngModel)]="selectedGame.videos[vi]" />
+              <button (click)="removeVideo(vi)">删除</button>
+            </div>
+            <button (click)="addVideo()">添加视频</button>
+          </div>
         </div>
-        <button (click)="addVideo()">添加视频</button>
 
-        <label
-          >关键字：<input [(ngModel)]="selectedGame.searchKeywords"
-        /></label>
-        <label>跳转链接：<input [(ngModel)]="selectedGame.path" /></label>
-        <label
-          >发布日期：<input type="date" [(ngModel)]="selectedGame.releaseDate"
-        /></label>
-        <label>描述：</label>
-        <textarea
-          [(ngModel)]="selectedGame.description"
-          rows="3"
-          style="width: 100%"
-        ></textarea>
+        <label class="form-line">
+          <span class="form-label">关键字：</span>
+          <input [(ngModel)]="selectedGame.searchKeywords" />
+        </label>
 
-        <h4>详情图</h4>
-        <div
-          *ngFor="let img of selectedGame.imagesForDetail; let ii = index"
-          class="swiper-item"
-        >
-          <input [(ngModel)]="selectedGame.imagesForDetail[ii]" />
-          <button (click)="removeImage(selectedGame, ii)">删除</button>
+        <label class="form-line">
+          <span class="form-label">跳转链接：</span>
+          <input [(ngModel)]="selectedGame.path" />
+        </label>
+
+        <label class="form-line">
+          <span class="form-label">发布日期：</span>
+          <input type="date" [(ngModel)]="selectedGame.releaseDate" />
+        </label>
+
+        <label class="form-line">
+          <span class="form-label">描述：</span>
+          <textarea [(ngModel)]="selectedGame.description" rows="3"></textarea>
+        </label>
+
+        <div class="form-line">
+          <span class="form-label">详情图：</span>
+          <div class="form-block">
+            <div
+              *ngFor="let img of selectedGame.imagesForDetail; let ii = index"
+              class="swiper-item"
+            >
+              <input [(ngModel)]="selectedGame.imagesForDetail[ii]" />
+              <button (click)="removeImage(selectedGame, ii)">删除</button>
+            </div>
+            <button (click)="addImage(selectedGame)">添加详情图</button>
+          </div>
         </div>
-        <button (click)="addImage(selectedGame)">添加详情图</button>
 
-        <h4>标签</h4>
-        <div
-          *ngFor="let tag of selectedGame.tags; let ti = index"
-          class="swiper-item"
-        >
-          <input [(ngModel)]="selectedGame.tags[ti]" />
-          <button (click)="removeTag(selectedGame, ti)">删除</button>
+        <div class="form-line">
+          <span class="form-label">标签：</span>
+          <div class="form-block">
+            <div
+              *ngFor="let tag of selectedGame.tags; let ti = index"
+              class="swiper-item"
+            >
+              <input [(ngModel)]="selectedGame.tags[ti]" />
+              <button (click)="removeTag(selectedGame, ti)">删除</button>
+            </div>
+            <button (click)="addTag(selectedGame)">添加标签</button>
+          </div>
         </div>
-        <button (click)="addTag(selectedGame)">添加标签</button>
 
         <h4>类型</h4>
         <div
           *ngFor="let genre of selectedGame.genres; let gi = index"
           class="genre-item"
         >
-          <label>ID：<input [(ngModel)]="genre.id" /></label>
-          <label>名称：<input [(ngModel)]="genre.name" /></label>
-          <label>描述：<input [(ngModel)]="genre.description" /></label>
+          <label class="form-line">
+            <span class="form-label">ID：</span>
+            <input [(ngModel)]="genre.id" />
+          </label>
+          <label class="form-line">
+            <span class="form-label">名称：</span>
+            <input [(ngModel)]="genre.name" />
+          </label>
+          <label class="form-line">
+            <span class="form-label">描述：</span>
+            <input [(ngModel)]="genre.description" />
+          </label>
           <button (click)="removeGenre(selectedGame, gi)">删除类型</button>
         </div>
         <button (click)="addGenre(selectedGame)">添加类型</button>
@@ -111,17 +148,29 @@
           *ngFor="let guide of selectedGame.guides; let gui = index"
           class="genre-item"
         >
-          <label>标题：<input [(ngModel)]="guide.title" /></label>
-          <label>描述：<input [(ngModel)]="guide.description" /></label>
-          <label>作者：<input [(ngModel)]="guide.author" /></label>
-          <label>链接：<input [(ngModel)]="guide.sourceUrl" /></label>
+          <label class="form-line">
+            <span class="form-label">标题：</span>
+            <input [(ngModel)]="guide.title" />
+          </label>
+          <label class="form-line">
+            <span class="form-label">描述：</span>
+            <input [(ngModel)]="guide.description" />
+          </label>
+          <label class="form-line">
+            <span class="form-label">作者：</span>
+            <input [(ngModel)]="guide.author" />
+          </label>
+          <label class="form-line">
+            <span class="form-label">链接：</span>
+            <input [(ngModel)]="guide.sourceUrl" />
+          </label>
           <button (click)="removeGuide(selectedGame, gui)">删除攻略</button>
         </div>
         <button (click)="addGuide(selectedGame)">添加攻略</button>
 
         <button
           (click)="deleteSelectedGame()"
-          style="background-color: #dc3545"
+          style="margin-left: 12px; background-color: #dc3545"
         >
           删除此游戏
         </button>
@@ -129,7 +178,7 @@
 
       <button (click)="addGame()">添加新游戏</button>
     </div>
-    
+
     <hr />
     <button (click)="download()">下载为 games.js</button>
   </ng-container>

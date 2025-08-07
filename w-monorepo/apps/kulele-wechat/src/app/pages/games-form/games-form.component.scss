@@ -4,7 +4,6 @@
   background: #ffffff;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -12,17 +11,17 @@
   .tab-header {
     display: flex;
     gap: 16px;
-    margin-bottom: 12px;
+    flex-wrap: wrap;
 
     button {
-      padding: 2px 12px;
+      padding: 4px 12px;
       border-bottom: 2px solid transparent;
+      border-radius: 0;
       background: none;
       cursor: pointer;
       font-weight: bold;
       font-size: 15px;
       color: #666;
-      border-radius: 0;
 
       &.active {
         border-bottom-color: #007bff;
@@ -42,16 +41,19 @@
     font-weight: 500;
     color: #333;
     width: 100%;
-    max-width: 600px;
+    flex-wrap: wrap;
   }
 
-  input {
+  input,
+  textarea {
     flex: 1;
     padding: 8px 12px;
     font-size: 14px;
     border: 1px solid #ccc;
     border-radius: 6px;
     transition: border-color 0.2s, box-shadow 0.2s;
+    width: 100%;
+    max-width: 100%;
 
     &:hover {
       border-color: #888;
@@ -68,6 +70,7 @@
     display: flex;
     align-items: center;
     gap: 8px;
+    flex-wrap: wrap;
 
     input {
       flex: 1;
@@ -109,7 +112,6 @@
   }
 
   h3 {
-    margin-top: 24px;
     margin-bottom: 8px;
     font-size: 16px;
     color: #444;
@@ -117,11 +119,13 @@
 
   .search-game {
     display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
     margin-bottom: 12px;
 
     input {
-      margin-right: 12px;
-      max-width: 300px;
+      flex: 1;
+      min-width: 200px;
       padding: 6px 12px;
     }
   }
@@ -133,8 +137,36 @@
     border-radius: 10px;
     background: #f9f9f9;
 
-    label, textarea, .swiper-item {
+    label,
+    textarea,
+    .swiper-item {
       margin-bottom: 12px;
+    }
+
+    .form-line {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 12px;
+      width: 100%;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+
+    .form-label {
+      width: 100px;
+      font-weight: 500;
+      color: #333;
+      line-height: 32px;
+      flex-shrink: 0;
+    }
+
+    .form-block {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 100%;
     }
   }
 
@@ -149,50 +181,57 @@
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    max-width: 600px;
-  }
+    max-width: 100%;
 
-  .category-item {
-    display: flex;
-    align-items: center;
-    background: #f1f1f1;
-    border-radius: 6px;
-    padding: 4px 8px;
+    .category-item {
+      display: flex;
+      align-items: center;
+      background: #f1f1f1;
+      border-radius: 6px;
+      padding: 4px 8px;
 
-    input {
-      width: 80px;
-      border: none;
-      background: transparent;
-      padding: 4px;
-      font-size: 14px;
-    }
+      input {
+        width: 80px;
+        border: none;
+        background: transparent;
+        padding: 4px;
+        font-size: 14px;
+      }
 
-    .delete-btn {
-      margin-left: 4px;
-      cursor: pointer;
-      color: #ff4d4f;
-      font-weight: bold;
-      font-size: 16px;
-      user-select: none;
-    }
+      .delete-btn {
+        margin-left: 4px;
+        cursor: pointer;
+        color: #ff4d4f;
+        font-size: 16px;
+        user-select: none;
+      }
 
-    input:focus {
-      outline: none;
-      background: #fff;
+      .delete-btn:hover {
+        font-weight: bolder;
+        text-decoration: underline;
+      }
+
+      input:focus {
+        outline: none;
+        background: #fff;
+      }
     }
   }
 }
 
+/* ✅ 响应式调整 */
 @media (max-width: 600px) {
   .form-container {
     padding: 16px;
 
+    .form-line,
     label {
       flex-direction: column;
       align-items: flex-start;
     }
 
-    input {
+    .form-line input,
+    textarea {
       width: 100%;
     }
 
@@ -204,6 +243,27 @@
         align-self: flex-end;
         margin-top: 4px;
       }
+    }
+
+    .search-game {
+      flex-direction: column;
+
+      input {
+        width: 100%;
+        margin-right: 0;
+      }
+
+      button {
+        align-self: flex-start;
+      }
+    }
+
+    .tab-header {
+      flex-direction: column;
+    }
+
+    .form-label {
+      width: 100%;
     }
   }
 }
