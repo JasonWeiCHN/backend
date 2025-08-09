@@ -12,8 +12,11 @@ import { FormsModule } from '@angular/forms';
 export class GamesFormComponent {
   data: any = null;
   selectedGame: any = null;
-  activeTab: 'category' | 'game' = 'category';
+  activeTab: 'category' | 'editGame' | 'allGames' = 'editGame';
   gameSearch = '';
+  searchResults: any[] = [];
+  allGamesFilter = ''; // 全部模式下的过滤关键字
+  filteredAllGames: any[] = []; // 全部模式下的过滤结果
 
   // 读取并解析 games.js
   onFileSelected(event: any) {
@@ -127,22 +130,64 @@ export class GamesFormComponent {
     game.tags.splice(index, 1);
   }
 
+  viewAllGames() {
+    if (!this.data?.games) return;
+    this.activeTab = 'allGames';
+    this.allGamesFilter = '';
+    this.filteredAllGames = [...this.data.games];
+  }
+
+  // 全部模式过滤
+  filterAllGames() {
+    const keyword = this.allGamesFilter.toLowerCase().trim();
+    if (!keyword) {
+      this.filteredAllGames = [...this.data.games];
+    } else {
+      this.filteredAllGames = this.data.games.filter(
+        (g: any) =>
+          g.name?.toLowerCase().includes(keyword) ||
+          g.searchKeywords?.toLowerCase().includes(keyword)
+      );
+    }
+  }
+
+  // 点击选择某个游戏（从全部列表）
+  selectFromAll(game: any) {
+    this.selectedGame = game;
+    this.activeTab = 'editGame';
+  }
+
   // 搜索过滤
   searchGame() {
     if (!this.data?.games) return;
 
     const keyword = this.gameSearch?.toLowerCase().trim();
     if (!keyword) {
+      this.searchResults = [];
       this.selectedGame = null;
       return;
     }
 
-    const result = this.data.games.find(
+    // ✅ 获取所有匹配项
+    this.searchResults = this.data.games.filter(
       (g: any) =>
         g.name?.toLowerCase().includes(keyword) ||
         g.searchKeywords?.toLowerCase().includes(keyword)
     );
-    this.selectedGame = result || null;
+
+    // 如果只有一个匹配项，直接选中
+    if (this.searchResults.length === 1) {
+      this.selectedGame = this.searchResults[0];
+    } else {
+      this.selectedGame = null; // 让用户自己点击选择
+    }
+  }
+
+  // 用户点击某个搜索结果
+  selectGame(game: any) {
+    this.selectedGame = game;
+    this.searchResults = []; // 选中后清空结果列表
+    this.gameSearch = game.name; // 把输入框改成已选游戏名
   }
 
   // 下载为 JS

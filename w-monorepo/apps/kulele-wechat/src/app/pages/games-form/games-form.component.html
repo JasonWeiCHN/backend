@@ -10,16 +10,22 @@
     <!-- tab header -->
     <div class="tab-header">
       <button
+        [class.active]="activeTab === 'editGame'"
+        (click)="activeTab = 'editGame'"
+      >
+        游戏编辑
+      </button>
+      <button
         [class.active]="activeTab === 'category'"
         (click)="activeTab = 'category'"
       >
         分类管理
       </button>
       <button
-        [class.active]="activeTab === 'game'"
-        (click)="activeTab = 'game'"
+        [class.active]="activeTab === 'allGames'"
+        (click)="viewAllGames()"
       >
-        游戏编辑
+        全部游戏
       </button>
     </div>
 
@@ -37,8 +43,15 @@
       </div>
     </div>
 
-    <div *ngIf="activeTab === 'game'">
-      <h3>游戏列表</h3>
+    <div *ngIf="activeTab === 'editGame'">
+      <div class="game-buttons">
+        <button style="margin-right: 12px" (click)="addGame()">
+          添加新游戏
+        </button>
+        <button (click)="viewAllGames()">
+          查看全部游戏（共{{ data.games.length }}个）
+        </button>
+      </div>
 
       <div class="search-game">
         <input
@@ -48,6 +61,16 @@
         />
         <button (click)="searchGame()">搜索</button>
       </div>
+      <!-- ✅ 搜索结果下拉列表 -->
+      <ul *ngIf="searchResults.length > 1" class="search-results">
+        <li
+          *ngFor="let g of searchResults"
+          (click)="selectGame(g)"
+          class="result-item"
+        >
+          {{ g.name }}
+        </li>
+      </ul>
 
       <div *ngIf="selectedGame" class="game-card">
         <label class="form-line">
@@ -187,8 +210,25 @@
           </button>
         </div>
       </div>
+    </div>
 
-      <button (click)="addGame()">添加新游戏</button>
+    <div *ngIf="activeTab === 'allGames'">
+      <div class="search-game">
+        <input
+          [(ngModel)]="allGamesFilter"
+          (input)="filterAllGames()"
+          placeholder="过滤全部游戏（输入关键字）"
+        />
+      </div>
+      <ul class="all-games-list">
+        <li
+          *ngFor="let g of filteredAllGames"
+          (click)="selectFromAll(g)"
+          class="all-game-item"
+        >
+          {{ g.name }}
+        </li>
+      </ul>
     </div>
 
     <hr />
