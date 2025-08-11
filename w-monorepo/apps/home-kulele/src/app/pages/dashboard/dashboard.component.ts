@@ -55,6 +55,11 @@ export class DashboardComponent {
       description: '管理所有包房信息',
       link: 'https://kulele.club/room/', // http://localhost:4207 https://kulele.club/room/
     },
+    {
+      title: '小程序管理',
+      description: '管理小程序配置和数据',
+      link: 'https://kulele.club/wechat/', // http://localhost:4208 https://kulele.club/wechat/
+    },
   ];
 
   constructor(private router: Router) {}
