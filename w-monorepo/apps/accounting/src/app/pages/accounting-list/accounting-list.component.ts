@@ -32,7 +32,8 @@ export class AccountingListComponent {
   showExportModal = false;
   exportStartDateTime = '';
   exportEndDateTime = '';
-  exportMode: 'all' | 'range' = 'all'; // 新增导出模式
+  exportDay = ''; // 新增：按天导出的日期
+  exportMode: 'all' | 'range' | 'day' = 'all'; // 新增导出模式
   exportFormat: 'txt' | 'excel' | 'pdf' | 'csv' = 'txt';
 
   constructor() {
@@ -161,7 +162,7 @@ export class AccountingListComponent {
   }
 
   exportReminderAsImage(): void {
-    const card = document.querySelector('.reminder-card') as HTMLElement;
+    const card = document.querySelector('.export-card') as HTMLElement;
     if (!card) return;
 
     html2canvas(card, { backgroundColor: '#ffffff' }).then((canvas) => {
@@ -182,6 +183,14 @@ export class AccountingListComponent {
 
   closeExportModal(): void {
     this.showExportModal = false;
+  }
+
+  setDayRange(): void {
+    if (!this.exportDay) return;
+
+    // 拼接成当日的 00:00 和 23:59
+    this.exportStartDateTime = `${this.exportDay}T00:00`;
+    this.exportEndDateTime = `${this.exportDay}T23:59`;
   }
 
   downloadExport(): void {
@@ -209,7 +218,7 @@ export class AccountingListComponent {
       // https://kulele.club/sass/api/multiple/api/accounting
       const url = `https://kulele.club/sass/api/multiple/api/accounting/export-${formatSuffix}`;
       this.triggerDownload(url, `账单统计.${formatSuffix}`);
-    } else {
+    } else if (this.exportMode === 'range' || this.exportMode === 'day') {
       if (!this.exportStartDateTime || !this.exportEndDateTime) {
         alert('请填写完整的开始和结束时间');
         return;

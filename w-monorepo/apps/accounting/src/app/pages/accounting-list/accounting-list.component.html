@@ -100,9 +100,9 @@
   </div>
 </div>
 
-<div class="reminder-modal" *ngIf="showReminder">
-  <div class="reminder-wrapper">
-    <div class="reminder-card" #reminderCard>
+<div class="export-modal" *ngIf="showReminder">
+  <div class="export-wrapper">
+    <div class="export-card" #reminderCard>
       <h3>尊敬的玩家！</h3>
       <p>游戏开始时间：{{ formatDate(reminderRecord?.startDateTime!) }}</p>
       <p>游玩时长：{{ reminderRecord?.duration }} 小时</p>
@@ -122,14 +122,14 @@
 </div>
 
 <!-- ✅ 统一导出弹窗 -->
-<div class="reminder-modal" *ngIf="showExportModal">
-  <div class="reminder-wrapper">
-    <div class="reminder-card">
+<div class="export-modal" *ngIf="showExportModal">
+  <div class="export-wrapper">
+    <div class="export-card">
       <h3>导出账单</h3>
 
-      <p>
-        <label
-          ><input
+      <div class="export-radios">
+        <label>
+          <input
             type="radio"
             name="exportMode"
             [(ngModel)]="exportMode"
@@ -137,8 +137,8 @@
           />
           全部导出</label
         >
-        <label style="margin-left: 16px"
-          ><input
+        <label>
+          <input
             type="radio"
             name="exportMode"
             [(ngModel)]="exportMode"
@@ -146,7 +146,16 @@
           />
           按时间段导出</label
         >
-      </p>
+        <label>
+          <input
+            type="radio"
+            name="exportMode"
+            [(ngModel)]="exportMode"
+            value="day"
+          />
+          按天导出
+        </label>
+      </div>
 
       <div *ngIf="exportMode === 'range'">
         <p>
@@ -156,6 +165,14 @@
         <p>
           结束时间：
           <input type="datetime-local" [(ngModel)]="exportEndDateTime" />
+        </p>
+      </div>
+
+      <!-- 按天 -->
+      <div *ngIf="exportMode === 'day'">
+        <p>
+          选择日期：
+          <input type="date" [(ngModel)]="exportDay" (change)="setDayRange()" />
         </p>
       </div>
 
