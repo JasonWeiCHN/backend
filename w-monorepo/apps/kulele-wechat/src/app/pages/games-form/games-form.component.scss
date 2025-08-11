@@ -72,6 +72,12 @@
     gap: 8px;
     flex-wrap: wrap;
 
+    select {
+      border: 1px solid #dbdbdb;
+      height: 32px;
+      border-radius: 4px;
+    }
+
     input {
       flex: 1;
     }
@@ -112,6 +118,7 @@
   }
 
   .btn-delete {
+    align-self: center;
     background-color: #ff4d4f;
     color: white;
     border: none;
@@ -183,7 +190,8 @@
 
     label,
     textarea,
-    .swiper-item {
+    .swiper-item,
+    .genre-item {
       margin-bottom: 12px;
     }
 
@@ -211,13 +219,6 @@
       flex-direction: column;
       width: 100%;
     }
-  }
-
-  .genre-item {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    margin-bottom: 12px;
   }
 
   .category-list {

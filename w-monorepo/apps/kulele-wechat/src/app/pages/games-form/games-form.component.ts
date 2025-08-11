@@ -18,6 +18,34 @@ export class GamesFormComponent {
   allGamesFilter = ''; // 全部模式下的过滤关键字
   filteredAllGames: any[] = []; // 全部模式下的过滤结果
 
+  tagOptions = [
+    { id: '1', name: 'PS4' },
+    { id: '10', name: '类魂' },
+    { id: '11', name: '赛车' },
+    { id: '12', name: '热门' },
+    { id: '13', name: '亲子' },
+    { id: '14', name: '解谜' },
+    { id: '2', name: 'PS5' },
+    { id: '3', name: 'SWITCH' },
+    { id: '4', name: '剧情' },
+    { id: '5', name: '体育' },
+    { id: '6', name: '动作' },
+    { id: '7', name: '休闲' },
+    { id: '8', name: '双人' },
+    { id: '9', name: '开放世界' },
+  ];
+
+  genreOptions = [
+    { id: '1', name: '动作' },
+    { id: '2', name: '休闲' },
+    { id: '3', name: '体育' },
+    { id: '4', name: '策略' },
+    { id: '5', name: '独立' },
+    { id: '6', name: '冒险' },
+    { id: '7', name: '模拟' },
+    { id: '8', name: '角色扮演' },
+  ];
+
   // 读取并解析 games.js
   onFileSelected(event: any) {
     const file = event.target.files[0];
@@ -31,6 +59,16 @@ export class GamesFormComponent {
         try {
           const objStr = match[1];
           this.data = new Function('return ' + objStr)();
+
+          // 导入解析完成后，做数据清洗
+          this.data.games.forEach((game: any) => {
+            game.tags = game.tags.map((t: any) => {
+              const found = this.tagOptions.find(
+                (opt) => opt.id === t || opt.name === t
+              );
+              return found ? found.id : t;
+            });
+          });
         } catch (err) {
           alert('解析失败，文件格式错误');
         }
@@ -90,6 +128,10 @@ export class GamesFormComponent {
 
   // 编辑支持的数组字段
   addImage(game: any) {
+    if (!game.imagesForDetail) {
+      game.imagesForDetail = [];
+    }
+
     game.imagesForDetail.push('');
   }
 
@@ -112,6 +154,15 @@ export class GamesFormComponent {
 
   removeGenre(game: any, index: number) {
     game.genres.splice(index, 1);
+  }
+
+  updateGenreName(genre: any) {
+    const found = this.genreOptions.find((g) => g.id === genre.id);
+    if (found) {
+      genre.name = found.name;
+    } else {
+      genre.name = '';
+    }
   }
 
   addGuide(game: any) {

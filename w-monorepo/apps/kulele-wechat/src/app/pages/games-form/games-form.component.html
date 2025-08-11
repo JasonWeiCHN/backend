@@ -143,7 +143,11 @@
               *ngFor="let tag of selectedGame.tags; let ti = index"
               class="swiper-item"
             >
-              <input [(ngModel)]="selectedGame.tags[ti]" />
+              <select [(ngModel)]="selectedGame.tags[ti].id">
+                <option *ngFor="let opt of tagOptions" [value]="opt.id">
+                  {{ opt.name }}
+                </option>
+              </select>
               <button class="btn-delete" (click)="removeTag(selectedGame, ti)">
                 删除
               </button>
@@ -152,28 +156,28 @@
           </div>
         </div>
 
-        <h4>类型</h4>
-        <div
-          *ngFor="let genre of selectedGame.genres; let gi = index"
-          class="genre-item"
-        >
-          <label class="form-line">
-            <span class="form-label">ID：</span>
-            <input [(ngModel)]="genre.id" />
-          </label>
-          <label class="form-line">
-            <span class="form-label">名称：</span>
-            <input [(ngModel)]="genre.name" />
-          </label>
-          <label class="form-line">
-            <span class="form-label">描述：</span>
-            <input [(ngModel)]="genre.description" />
-          </label>
-          <button class="btn-delete" (click)="removeGenre(selectedGame, gi)">
-            删除类型
-          </button>
+        <div class="form-line">
+          <span class="form-label">类型：</span>
+          <div class="form-block">
+            <div
+              *ngFor="let genre of selectedGame.genres; let gi = index"
+              class="swiper-item"
+            >
+              <select [(ngModel)]="genre.id" (change)="updateGenreName(genre)">
+                <option *ngFor="let opt of genreOptions" [value]="opt.id">
+                  {{ opt.name }}
+                </option>
+              </select>
+              <button
+                class="btn-delete"
+                (click)="removeGenre(selectedGame, gi)"
+              >
+                删除
+              </button>
+            </div>
+            <button (click)="addGenre(selectedGame)">添加类型</button>
+          </div>
         </div>
-        <button (click)="addGenre(selectedGame)">添加类型</button>
 
         <h4>攻略</h4>
         <div
