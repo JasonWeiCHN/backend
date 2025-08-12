@@ -41,10 +41,8 @@
     <view wx:if="{{showRegisterButton && !isRegistered}}">
       <button class="custom-button" bindtap="goToRegister">会员注册</button>
     </view>
-    <!--
     <view wx:if="{{showRegisterButton && isRegistered}}">
       <button class="custom-button" bindtap="goToMemberCenter">会员中心</button>
     </view>
-    -->
   </view>
 </view>

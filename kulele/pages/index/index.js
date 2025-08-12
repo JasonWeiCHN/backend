@@ -20,7 +20,7 @@ Page({
   },
 
   onLoad() {
-    // this.loginAndGetUserInfo();
+    this.loginAndGetUserInfo();
     this.animateTitle();
     this.animateButton(); // 页面加载时触发按钮动画
     // 获取轮播图图片

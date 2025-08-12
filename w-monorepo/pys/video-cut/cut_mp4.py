@@ -36,9 +36,9 @@ def cut_mp4(input_file, start_time, end_time, output_file):
 
 if __name__ == "__main__":
     # 示例用法
-    input_path = "D:\HTemp\已阅未DP\MIDV-878.mp4"
-    output_path = "6540-6590.mp4"
-    start = 6540.0  # 起始时间（秒）
-    end = 6590.0    # 结束时间（秒）
+    input_path = "D:\HTemp\已阅未DP\START-293.mp4"
+    output_path = "7623-7665.mp4"
+    start = 7623.0  # 起始时间（秒）
+    end = 7665.0    # 结束时间（秒）
 
     cut_mp4(input_path, start, end, output_path)
