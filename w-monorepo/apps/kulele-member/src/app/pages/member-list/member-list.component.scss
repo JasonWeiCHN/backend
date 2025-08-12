@@ -1,0 +1,255 @@
+.member-list {
+  padding: 16px;
+
+  .top-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+
+    .add-button {
+      padding: 0 12px;
+      height: 36px;
+      background-color: #eeeeee;
+      color: #333333;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+
+      &:hover {
+        background-color: #20409f;
+        color: #ffffff;
+      }
+    }
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+      border: 1px solid #eeeeee;
+      border-radius: 4px;
+      background-color: #eeeeee;
+      padding: 0 8px;
+      height: 36px;
+
+      input {
+        border: none;
+        outline: none;
+        background: #ffffff;
+        padding: 0 6px;
+        font-size: 14px;
+        height: 28px;
+        flex-grow: 1;
+      }
+
+      button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        padding: 0 6px;
+        height: 28px;
+
+        &:hover {
+          color: #20409f;
+        }
+      }
+    }
+  }
+
+  .record-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 4px;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    th {
+      background-color: #f0f0f0;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    button {
+      margin: 0 4px;
+      padding: 4px 6px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+  }
+
+  .record-cards {
+    display: none;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+    gap: 12px;
+
+    button {
+      padding: 4px 10px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &:disabled {
+        color: #999;
+        background-color: #eee;
+      }
+    }
+
+    .total-count {
+      margin-left: 16px;
+      color: #666;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .member-list {
+    .top-bar {
+      flex-direction: column;
+      gap: 8px;
+
+      .add-button {
+        width: 100%;
+      }
+
+      .search-bar {
+        flex-direction: column;
+        gap: 6px;
+
+        input,
+        button {
+          width: 100%;
+          height: 36px;
+        }
+      }
+    }
+
+    .record-table {
+      display: none;
+    }
+
+    .record-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      .record-card {
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        padding: 12px;
+        background-color: #fff;
+        font-size: 14px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+
+        > div {
+          margin-bottom: 4px;
+        }
+
+        .card-actions {
+          display: flex;
+          gap: 8px;
+          margin-top: 8px;
+
+          button {
+            flex: 1;
+            padding: 6px;
+            font-size: 13px;
+            border-radius: 4px;
+            border: none;
+            background-color: #20409f;
+            color: white;
+
+            &:hover {
+              background-color: #3c5bdc;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.reminder-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+
+  .reminder-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 12px;
+    background: #fff;
+    border-radius: 4px;
+  }
+
+  .reminder-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 24px;
+    width: 320px;
+    background: linear-gradient(180deg, #ffffff, #f9f9f9);
+
+    h3 {
+      font-size: 16px;
+      margin-bottom: 12px;
+      color: #20409f;
+    }
+
+    p {
+      margin: 4px 0;
+      font-size: 14px;
+    }
+
+    .greeting {
+      margin-top: 14px;
+      font-size: 15px;
+      color: #20409f;
+    }
+  }
+
+  .buttons {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 320px;
+
+    button {
+      flex: 1;
+      margin: 0 6px;
+      padding: 8px 12px;
+      border: none;
+      background-color: #20409f;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #3c5bdc;
+      }
+    }
+  }
+}

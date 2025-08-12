@@ -1,0 +1,85 @@
+<div class="member-list">
+  <div class="top-bar">
+    <button class="add-button" [routerLink]="['/member/new']">
+      ➕ 新增会员
+    </button>
+
+    <div class="search-bar">
+      <input
+        [(ngModel)]="searchKeyword"
+        placeholder="搜索姓名、联系方式或备注"
+      />
+      <button (click)="search()">🔍 搜索</button>
+    </div>
+  </div>
+
+  <!-- 桌面端表格 -->
+  <table class="record-table">
+    <thead>
+      <tr>
+        <th>编号</th>
+        <th>加入时间</th>
+        <th>姓名</th>
+        <th>联系方式</th>
+        <th>备注</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let record of pagedMembers">
+        <td>{{ record.id }}</td>
+        <td>{{ formatDate(record.createdAt) }}</td>
+        <td>{{ record.name }}</td>
+        <td>{{ record.phone }}</td>
+        <td>{{ record.remark }}</td>
+        <td>
+          <button (click)="openReminderModal(record)">提醒</button>
+          <button [routerLink]="['/member/edit', record.id]">编辑</button>
+          <button (click)="delete(record.id)">删除</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 移动端卡片视图 -->
+  <div class="record-cards">
+    <div class="record-card" *ngFor="let record of pagedMembers">
+      <div><strong>编号：</strong>{{ record.id }}</div>
+      <div><strong>加入时间：</strong>{{ formatDate(record.createdAt) }}</div>
+      <div><strong>姓名：</strong>{{ record.name }}</div>
+      <div><strong>联系方式：</strong>{{ record.phone }}</div>
+      <div><strong>备注：</strong>{{ record.remark }}</div>
+      <div class="card-actions">
+        <button (click)="openReminderModal(record)">提醒</button>
+        <button [routerLink]="['/member/edit', record.id]">编辑</button>
+        <button (click)="delete(record.id)">删除</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 分页 -->
+  <div class="pagination">
+    <button (click)="prevPage()" [disabled]="currentPage === 1">上一页</button>
+    <span>第 {{ currentPage }} 页 / 共 {{ totalPages }} 页</span>
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">
+      下一页
+    </button>
+    <span class="total-count">共 {{ members.length }} 位会员</span>
+  </div>
+</div>
+
+<!-- 提醒模态框 -->
+<div class="reminder-modal" *ngIf="showReminder">
+  <div class="reminder-wrapper">
+    <div class="reminder-card">
+      <h3>亲爱的 {{ reminderRecord?.name }}！</h3>
+      <p>加入时间：{{ formatDate(reminderRecord?.createdAt!) }}</p>
+      <p class="greeting">酷乐乐游戏，感谢您的支持！</p>
+    </div>
+
+    <div class="buttons">
+      <button (click)="closeReminderModal()">关闭</button>
+      <button (click)="exportReminderAsImage()">生成图片</button>
+    </div>
+  </div>
+</div>

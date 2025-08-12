@@ -1,0 +1,37 @@
+<div class="member-form">
+  <h2>{{ isEditMode ? '编辑会员' : '新增会员' }}</h2>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label>
+      姓名：
+      <input type="text" formControlName="name" required />
+    </label>
+
+    <label>
+      联系方式类型：
+      <select formControlName="contactType">
+        <option value="微信">微信</option>
+        <option value="电话">电话</option>
+      </select>
+    </label>
+
+    <label>
+      联系方式：
+      <input type="text" formControlName="contactValue" required />
+    </label>
+
+    <label>
+      加入时间：
+      <input type="datetime-local" formControlName="joinDate" required />
+    </label>
+
+    <label>
+      备注：
+      <textarea formControlName="note" rows="3"></textarea>
+    </label>
+
+    <div class="actions">
+      <button type="submit">提交</button>
+      <button type="button" (click)="router.navigate(['/member'])">取消</button>
+    </div>
+  </form>
+</div>
