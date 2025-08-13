@@ -61,6 +61,14 @@ public class MultiTenantDataSource extends AbstractRoutingDataSource {
         ds.setUsername("kulele");
         ds.setPassword("P@ssw0rd11");
         ds.setDriverClassName("org.postgresql.Driver");
+
+        // 限制连接池大小
+        ds.setMaximumPoolSize(2);
+        ds.setMinimumIdle(1);
+        ds.setIdleTimeout(60000);
+        ds.setMaxLifetime(60000);
+        ds.setConnectionTimeout(10000);
+
         return ds;
     }
 }
