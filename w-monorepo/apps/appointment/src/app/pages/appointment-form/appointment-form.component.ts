@@ -55,7 +55,7 @@ export class AppointmentFormComponent implements OnInit {
 
   onSubmit(): void {
     if (this.form.invalid) {
-      console.log('表单验证失败');
+      alert('信息填写有误！');
       return;
     }
 
