@@ -42,6 +42,6 @@ public class MemberService {
     private void copyProperties(Member m, AddMemberRequest r) {
         m.setName(r.getName());
         m.setPhone(r.getPhone());
-        m.setTotalPlayTime(r.getTotalPlayTime());
+        m.setRemark(r.getRemark());
     }
 }

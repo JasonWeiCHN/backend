@@ -22,6 +22,9 @@ public class Member {
     @Column(nullable = false)
     private String phone;
 
+    @Column(name = "remark")
+    private String remark;
+
     @Column(name = "total_play_time", nullable = false)
     private Integer totalPlayTime; // 单位分钟
 
@@ -30,6 +33,7 @@ public class Member {
 
     @PrePersist
     public void prePersist() {
+        this.totalPlayTime = 0;
         this.createdAt = LocalDateTime.now();
     }
 }

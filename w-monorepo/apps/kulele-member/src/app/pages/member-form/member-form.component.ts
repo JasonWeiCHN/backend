@@ -31,10 +31,8 @@ export class MemberFormComponent implements OnInit {
   ngOnInit(): void {
     this.form = this.fb.group({
       name: ['', Validators.required],
-      contactType: ['微信', Validators.required],
-      contactValue: ['', Validators.required],
-      joinDate: ['', Validators.required],
-      note: [''],
+      phone: ['', Validators.required],
+      remark: [''],
     });
 
     const idParam = this.route.snapshot.paramMap.get('id');
@@ -50,7 +48,10 @@ export class MemberFormComponent implements OnInit {
   }
 
   onSubmit(): void {
-    if (this.form.invalid) return;
+    if (this.form.invalid) {
+      alert('信息填写有误！');
+      return;
+    }
 
     const data: IMember = {
       id: this.memberId ?? Date.now(),
@@ -62,5 +63,12 @@ export class MemberFormComponent implements OnInit {
       : this.memberService.createMember(data);
 
     save$.subscribe(() => this.router.navigate(['/member']));
+  }
+
+  openDatePicker(event: FocusEvent): void {
+    const input = event.target as HTMLInputElement;
+    if (input && 'showPicker' in input) {
+      input.showPicker(); // Chrome、Edge 支持
+    }
   }
 }

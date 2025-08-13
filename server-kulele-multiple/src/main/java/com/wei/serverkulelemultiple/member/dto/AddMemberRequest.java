@@ -6,5 +6,5 @@ import lombok.Data;
 public class AddMemberRequest {
     private String name;
     private String phone;
-    private Integer totalPlayTime;
+    private String remark;
 }
