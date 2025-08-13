@@ -60,6 +60,11 @@ export class DashboardComponent {
       description: '管理小程序配置和数据',
       link: 'https://kulele.club/wechat/', // http://localhost:4208 https://kulele.club/wechat/
     },
+    {
+      title: '会员管理',
+      description: '管理会员数据',
+      link: 'http://localhost:4209', // http://localhost:4209 https://kulele.club/member/
+    },
   ];
 
   constructor(private router: Router) {}
