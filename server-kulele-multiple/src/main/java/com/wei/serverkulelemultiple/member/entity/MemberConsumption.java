@@ -23,9 +23,12 @@ public class MemberConsumption {
     @Column(nullable = false)
     private Double amount; // 消费金额
 
-    @Column(name = "order_id", nullable = false)
-    private Long orderId; // 关联订单
+    @Column(name = "remark")
+    private String remark;
 
     @Column(name = "consumption_time", nullable = false)
     private LocalDateTime consumptionTime;
+
+    @OneToOne(mappedBy = "consumption", cascade = CascadeType.ALL)
+    private MemberOrder memberOrder;
 }

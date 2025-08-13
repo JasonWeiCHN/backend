@@ -78,6 +78,36 @@
       background-color: #f9f9f9;
     }
 
+    // 设置每一列的宽度
+    th:nth-child(1), td:nth-child(1) {
+      width: 50px;
+    }
+
+    // 时间段
+    th:nth-child(2), td:nth-child(2) {
+      width: 240px;
+    }
+
+    // 姓名
+    th:nth-child(3), td:nth-child(3) {
+      width: 120px;
+    }
+
+    // 联系方式
+    th:nth-child(4), td:nth-child(4) {
+      width: 120px;
+    }
+
+    // 时长
+    th:nth-child(5), td:nth-child(5) {
+      width: 80px;
+    }
+
+    // 操作
+    th:nth-child(7), td:nth-child(7) {
+      width: 240px;
+    }
+
     button {
       margin: 0 4px;
       padding: 4px 6px;

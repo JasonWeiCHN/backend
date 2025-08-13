@@ -5,7 +5,11 @@
     </button>
 
     <div class="search-bar">
-      <input [(ngModel)]="searchKeyword" placeholder="搜索类别或描述" />
+      <input
+        [(ngModel)]="searchKeyword"
+        (keydown.enter)="search()"
+        placeholder="搜索类别或描述"
+      />
       <button (click)="search()">🔍 搜索</button>
     </div>
   </div>

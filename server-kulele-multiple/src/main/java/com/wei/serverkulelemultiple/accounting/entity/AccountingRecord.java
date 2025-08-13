@@ -1,5 +1,7 @@
 package com.wei.serverkulelemultiple.accounting.entity;
 
+import com.wei.serverkulelemultiple.member.entity.Member;
+import com.wei.serverkulelemultiple.member.entity.MemberOrder;
 import com.wei.serverkulelemultiple.room.entity.Room;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -62,4 +64,11 @@ public class AccountingRecord {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "room_id", nullable = true)
     private Room room;
+
+    @ManyToOne
+    @JoinColumn(name = "member_id") // 允许 null
+    private Member member;
+
+    @OneToOne(mappedBy = "accountingRecord", cascade = CascadeType.ALL)
+    private MemberOrder memberOrder;
 }

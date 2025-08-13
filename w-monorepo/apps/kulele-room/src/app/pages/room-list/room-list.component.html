@@ -8,7 +8,11 @@
         <option value="roomType">类型</option>
         <option value="status">状态</option>
       </select>
-      <input [(ngModel)]="searchKeyword" placeholder="请输入关键字" />
+      <input
+        [(ngModel)]="searchKeyword"
+        (keydown.enter)="search()"
+        placeholder="请输入关键字"
+      />
       <button (click)="search()">🔍 搜索</button>
     </div>
   </div>

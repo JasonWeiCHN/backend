@@ -25,15 +25,11 @@ public class Member {
     @Column(name = "remark")
     private String remark;
 
-    @Column(name = "total_play_time", nullable = false)
-    private Integer totalPlayTime; // 单位分钟
-
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
     @PrePersist
     public void prePersist() {
-        this.totalPlayTime = 0;
         this.createdAt = LocalDateTime.now();
     }
 }

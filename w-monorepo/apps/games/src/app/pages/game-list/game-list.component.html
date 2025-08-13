@@ -14,7 +14,7 @@
         <option value="tags">标签</option>
         <option value="description">描述</option>
       </select>
-      <input [(ngModel)]="searchKeyword" placeholder="请输入搜索关键字" />
+      <input [(ngModel)]="searchKeyword" (keydown.enter)="search()" placeholder="请输入搜索关键字" />
       <button (click)="search()">🔍 搜索</button>
       <button (click)="clearSearch()" *ngIf="searchKeyword">✖ 清除</button>
     </div>
