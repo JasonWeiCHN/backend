@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Service
 public class MemberTransactionService {
@@ -68,5 +69,13 @@ public class MemberTransactionService {
         orderRepository.save(order);
 
         return consumption;
+    }
+
+    public List<MemberRecharge> getRechargesByMember(Long memberId) {
+        return rechargeRepository.findByMemberIdOrderByRechargeTimeDesc(memberId);
+    }
+
+    public List<MemberConsumption> getConsumptionsByMember(Long memberId) {
+        return consumptionRepository.findByMemberIdOrderByConsumptionTimeDesc(memberId);
     }
 }

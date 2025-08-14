@@ -1,0 +1,47 @@
+<div class="member-details" *ngIf="memberDetails">
+  <div class="card">
+    <div class="card-header">
+      <h2>{{ memberDetails.name }}</h2>
+      <span class="join-date"
+        >注册时间:
+        {{ memberDetails.createdAt | date : 'yyyy-MM-dd HH:mm' }}</span
+      >
+    </div>
+    <div class="card-body">
+      <p><strong>电话：</strong>{{ memberDetails.phone }}</p>
+      <p><strong>备注：</strong>{{ memberDetails.remark || '无' }}</p>
+      <div class="stats">
+        <div class="stat-item">
+          <label>余额</label>
+          <span>{{ memberDetails.balance | number : '1.2-2' }}</span>
+        </div>
+        <div class="stat-item">
+          <label>总游玩时长</label>
+          <span>{{ memberDetails.totalPlayTime }} 分钟</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="orders-card">
+    <h3>订单列表</h3>
+    <div style="overflow-x: auto">
+      <table class="orders-table">
+        <thead>
+          <tr>
+            <th>订单类型</th>
+            <th>金额</th>
+            <th>创建时间</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let order of memberDetails.orders">
+            <td>{{ order.orderType }}</td>
+            <td>{{ order.amount | number : '1.2-2' }}</td>
+            <td>{{ order.createdAt | date : 'yyyy-MM-dd HH:mm' }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

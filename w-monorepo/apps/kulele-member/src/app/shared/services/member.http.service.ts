@@ -32,4 +32,8 @@ export class MemberHttpService {
   deleteMember(id: number): Observable<void> {
     return this.http.delete<void>(`${this.baseUrl}/${id}`);
   }
+
+  getMemberDetails(id: number): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/details/${id}`);
+  }
 }

@@ -8,6 +8,8 @@ import com.wei.serverkulelemultiple.member.service.MemberTransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/member-transactions")
 public class MemberTransactionController {
@@ -23,5 +25,15 @@ public class MemberTransactionController {
     @PostMapping("/consume")
     public MemberConsumption consume(@RequestBody MemberConsumptionRequest request) {
         return transactionService.consume(request);
+    }
+
+    @GetMapping("/recharges/{memberId}")
+    public List<MemberRecharge> getRechargesByMember(@PathVariable Long memberId) {
+        return transactionService.getRechargesByMember(memberId);
+    }
+
+    @GetMapping("/consumptions/{memberId}")
+    public List<MemberConsumption> getConsumptionsByMember(@PathVariable Long memberId) {
+        return transactionService.getConsumptionsByMember(memberId);
     }
 }

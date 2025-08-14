@@ -24,9 +24,6 @@ export class MemberListComponent implements OnInit {
   pageSize = 10;
   totalPages = 1;
 
-  showReminder = false;
-  reminderRecord: IMember | null = null;
-
   ngOnInit(): void {
     this.load();
   }
@@ -83,31 +80,5 @@ export class MemberListComponent implements OnInit {
   formatDate(dateTime: string): string {
     const date = new Date(dateTime);
     return date.toLocaleString();
-  }
-
-  openReminderModal(record: IMember): void {
-    this.reminderRecord = record;
-    this.showReminder = true;
-  }
-
-  closeReminderModal(): void {
-    this.showReminder = false;
-    this.reminderRecord = null;
-  }
-
-  exportReminderAsImage(): void {
-    const card = document.querySelector('.reminder-card') as HTMLElement;
-    if (!card) return;
-
-    import('html2canvas').then((html2canvas) => {
-      html2canvas
-        .default(card, { backgroundColor: '#ffffff' })
-        .then((canvas) => {
-          const link = document.createElement('a');
-          link.href = canvas.toDataURL('image/png');
-          link.download = '会员提醒卡片.png';
-          link.click();
-        });
-    });
   }
 }

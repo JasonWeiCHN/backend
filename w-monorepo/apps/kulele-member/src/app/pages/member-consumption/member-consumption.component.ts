@@ -25,6 +25,7 @@ export class MemberConsumptionComponent implements OnInit {
 
   form!: FormGroup;
   memberId!: number;
+  records: any[] = [];
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -33,6 +34,13 @@ export class MemberConsumptionComponent implements OnInit {
     });
 
     this.memberId = Number(this.route.snapshot.paramMap.get('id'));
+    this.loadRecords();
+  }
+
+  loadRecords() {
+    this.txService.getConsumptions(this.memberId).subscribe((res) => {
+      this.records = res;
+    });
   }
 
   onSubmit(): void {
@@ -48,7 +56,7 @@ export class MemberConsumptionComponent implements OnInit {
       })
       .subscribe(() => {
         alert('消费成功');
-        this.router.navigate(['/member']);
+        this.loadRecords();
       });
   }
 }

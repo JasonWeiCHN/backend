@@ -16,4 +16,12 @@
       <button type="button" (click)="router.navigate(['/member'])">取消</button>
     </div>
   </form>
+
+  <h3>消费记录</h3>
+  <ul>
+    <li *ngFor="let r of records">
+      {{ r.consumptionTime | date : 'yyyy-MM-dd HH:mm' }} - 金额:
+      {{ r.amount }} - 备注: {{ r.remark || '无' }}
+    </li>
+  </ul>
 </div>

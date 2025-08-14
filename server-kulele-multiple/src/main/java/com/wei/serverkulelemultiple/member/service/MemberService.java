@@ -1,7 +1,11 @@
 package com.wei.serverkulelemultiple.member.service;
 
+import com.wei.serverkulelemultiple.accounting.repository.AccountingRecordRepository;
 import com.wei.serverkulelemultiple.member.dto.AddMemberRequest;
+import com.wei.serverkulelemultiple.member.dto.MemberDetailsDTO;
 import com.wei.serverkulelemultiple.member.entity.Member;
+import com.wei.serverkulelemultiple.member.entity.MemberOrder;
+import com.wei.serverkulelemultiple.member.repository.MemberOrderRepository;
 import com.wei.serverkulelemultiple.member.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,6 +17,12 @@ public class MemberService {
 
     @Autowired
     private MemberRepository repository;
+
+    @Autowired
+    private MemberOrderRepository memberOrderRepository;
+
+    @Autowired
+    private AccountingRecordRepository accountingRecordRepository;
 
     public List<Member> getAll() {
         return repository.findAll();
@@ -37,6 +47,47 @@ public class MemberService {
 
     public void delete(Long id) {
         repository.deleteById(id);
+    }
+
+    public MemberDetailsDTO getMemberDetails(Long id) {
+        Member member = repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("未找到会员"));
+
+        List<MemberOrder> orders = memberOrderRepository.findByMemberId(id);
+
+        double totalRecharge = orders.stream()
+                .filter(o -> o.getOrderType() == MemberOrder.OrderType.RECHARGE)
+                .mapToDouble(MemberOrder::getAmount)
+                .sum();
+
+        double totalConsumption = orders.stream()
+                .filter(o -> o.getOrderType() == MemberOrder.OrderType.CONSUMPTION)
+                .mapToDouble(MemberOrder::getAmount)
+                .sum();
+
+        double balance = totalRecharge - totalConsumption;
+
+        List<Long> roomRecordIds = orders.stream()
+                .filter(o -> o.getOrderType() == MemberOrder.OrderType.ROOM)
+                .map(MemberOrder::getRelatedId)
+                .toList();
+
+        double totalPlayTime = accountingRecordRepository.findAllById(roomRecordIds)
+                .stream()
+                .mapToDouble(record -> record.getDuration().doubleValue())
+                .sum();
+
+        MemberDetailsDTO dto = new MemberDetailsDTO();
+        dto.setId(member.getId());
+        dto.setName(member.getName());
+        dto.setPhone(member.getPhone());
+        dto.setRemark(member.getRemark());
+        dto.setCreatedAt(member.getCreatedAt());
+        dto.setOrders(orders);
+        dto.setBalance(balance);
+        dto.setTotalPlayTime(totalPlayTime);
+
+        return dto;
     }
 
     private void copyProperties(Member m, AddMemberRequest r) {

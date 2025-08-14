@@ -17,4 +17,12 @@ export class MemberTransactionHttpService {
   consume(data: any): Observable<any> {
     return this.http.post(`${this.baseUrl}/consume`, data);
   }
+
+  getRecharges(memberId: number) {
+    return this.http.get<any[]>(`${this.baseUrl}/recharges/${memberId}`);
+  }
+
+  getConsumptions(memberId: number) {
+    return this.http.get<any[]>(`${this.baseUrl}/consumptions/${memberId}`);
+  }
 }

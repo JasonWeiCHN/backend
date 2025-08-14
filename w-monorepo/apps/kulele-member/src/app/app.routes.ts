@@ -21,6 +21,13 @@ export const appRoutes: Route[] = [
       ),
   },
   {
+    path: 'member/details/:id',
+    loadComponent: () =>
+      import('./pages/member-details/member-details.component').then(
+        (m) => m.MemberDetailsComponent
+      ),
+  },
+  {
     path: 'member/edit/:id',
     loadComponent: () =>
       import('./pages/member-form/member-form.component').then(

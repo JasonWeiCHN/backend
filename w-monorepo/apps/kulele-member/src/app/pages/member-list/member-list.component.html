@@ -34,7 +34,7 @@
         <td>{{ record.phone }}</td>
         <td>{{ record.remark }}</td>
         <td>
-          <button (click)="openReminderModal(record)">提醒</button>
+          <button [routerLink]="['/member/details', record.id]">查询</button>
           <button [routerLink]="['/member/edit', record.id]">编辑</button>
           <button [routerLink]="['/member/recharge', record.id]">充值</button>
           <button [routerLink]="['/member/consumption', record.id]">
@@ -56,7 +56,7 @@
       <div><strong>备注：</strong>{{ record.remark }}</div>
       <div class="card-actions">
         <td>
-          <button (click)="openReminderModal(record)">提醒</button>
+          <button [routerLink]="['/member/details', record.id]">查询</button>
           <button [routerLink]="['/member/edit', record.id]">编辑</button>
           <button [routerLink]="['/member/recharge', record.id]">充值</button>
           <button [routerLink]="['/member/consumption', record.id]">
@@ -76,21 +76,5 @@
       下一页
     </button>
     <span class="total-count">共 {{ members.length }} 位会员</span>
-  </div>
-</div>
-
-<!-- 提醒模态框 -->
-<div class="reminder-modal" *ngIf="showReminder">
-  <div class="reminder-wrapper">
-    <div class="reminder-card">
-      <h3>亲爱的 {{ reminderRecord?.name }}！</h3>
-      <p>加入时间：{{ formatDate(reminderRecord?.createdAt!) }}</p>
-      <p class="greeting">酷乐乐游戏，感谢您的支持！</p>
-    </div>
-
-    <div class="buttons">
-      <button (click)="closeReminderModal()">关闭</button>
-      <button (click)="exportReminderAsImage()">生成图片</button>
-    </div>
   </div>
 </div>
