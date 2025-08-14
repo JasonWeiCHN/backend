@@ -27,4 +27,18 @@ export const appRoutes: Route[] = [
         (m) => m.MemberFormComponent
       ),
   },
+  {
+    path: 'member/recharge/:id',
+    loadComponent: () =>
+      import('./pages/member-recharge/member-recharge.component').then(
+        (m) => m.MemberRechargeComponent
+      ),
+  },
+  {
+    path: 'member/consumption/:id',
+    loadComponent: () =>
+      import('./pages/member-consumption/member-consumption.component').then(
+        (m) => m.MemberConsumptionComponent
+      ),
+  },
 ];

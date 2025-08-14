@@ -1,9 +1,11 @@
 package com.wei.serverkulelemultiple.member.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.time.LocalDateTime;
 
+@Data
 @Entity
 @Table(name = "member_order")
 public class MemberOrder {

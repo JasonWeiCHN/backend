@@ -1,0 +1,7 @@
+<div class="member-form">
+  <h2>会员充值</h2>
+  <label>充值金额：<input type="number" [(ngModel)]="amount" /></label>
+  <label>赠送金额：<input type="number" [(ngModel)]="bonusAmount" /></label>
+  <button (click)="submit()">提交</button>
+  <button (click)="router.navigate(['/member'])">取消</button>
+</div>

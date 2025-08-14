@@ -38,6 +38,10 @@
         <td>
           <button (click)="openReminderModal(record)">提醒</button>
           <button [routerLink]="['/member/edit', record.id]">编辑</button>
+          <button [routerLink]="['/member/recharge', record.id]">充值</button>
+          <button [routerLink]="['/member/consumption', record.id]">
+            消费
+          </button>
           <button (click)="delete(record.id)">删除</button>
         </td>
       </tr>
@@ -54,9 +58,15 @@
       <div><strong>游戏时长：</strong>{{ record.totalPlayTime }}</div>
       <div><strong>备注：</strong>{{ record.remark }}</div>
       <div class="card-actions">
-        <button (click)="openReminderModal(record)">提醒</button>
-        <button [routerLink]="['/member/edit', record.id]">编辑</button>
-        <button (click)="delete(record.id)">删除</button>
+        <td>
+          <button (click)="openReminderModal(record)">提醒</button>
+          <button [routerLink]="['/member/edit', record.id]">编辑</button>
+          <button [routerLink]="['/member/recharge', record.id]">充值</button>
+          <button [routerLink]="['/member/consumption', record.id]">
+            消费
+          </button>
+          <button (click)="delete(record.id)">删除</button>
+        </td>
       </div>
     </div>
   </div>

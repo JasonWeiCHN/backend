@@ -68,7 +68,4 @@ public class AccountingRecord {
     @ManyToOne
     @JoinColumn(name = "member_id") // 允许 null
     private Member member;
-
-    @OneToOne(mappedBy = "accountingRecord", cascade = CascadeType.ALL)
-    private MemberOrder memberOrder;
 }

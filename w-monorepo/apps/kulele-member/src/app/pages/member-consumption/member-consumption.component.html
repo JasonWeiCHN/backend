@@ -1,0 +1,7 @@
+<div class="member-form">
+  <h2>会员消费</h2>
+  <label>消费金额：<input type="number" [(ngModel)]="amount" /></label>
+  <label>备注：<input type="text" [(ngModel)]="remark" /></label>
+  <button (click)="submit()">提交</button>
+  <button (click)="router.navigate(['/member'])">取消</button>
+</div>

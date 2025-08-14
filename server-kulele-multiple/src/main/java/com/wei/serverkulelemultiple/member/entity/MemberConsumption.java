@@ -28,7 +28,4 @@ public class MemberConsumption {
 
     @Column(name = "consumption_time", nullable = false)
     private LocalDateTime consumptionTime;
-
-    @OneToOne(mappedBy = "consumption", cascade = CascadeType.ALL)
-    private MemberOrder memberOrder;
 }

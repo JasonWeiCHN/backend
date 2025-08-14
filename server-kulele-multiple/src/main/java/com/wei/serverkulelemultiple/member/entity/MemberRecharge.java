@@ -28,7 +28,4 @@ public class MemberRecharge {
 
     @Column(name = "recharge_time", nullable = false)
     private LocalDateTime rechargeTime;
-
-    @OneToOne(mappedBy = "recharge", cascade = CascadeType.ALL)
-    private MemberOrder memberOrder; // 充值对应的会员订单
 }
