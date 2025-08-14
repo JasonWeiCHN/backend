@@ -1,7 +1,19 @@
 <div class="member-form">
   <h2>会员消费</h2>
-  <label>消费金额：<input type="number" [(ngModel)]="amount" /></label>
-  <label>备注：<input type="text" [(ngModel)]="remark" /></label>
-  <button (click)="submit()">提交</button>
-  <button (click)="router.navigate(['/member'])">取消</button>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <label>
+      消费金额：
+      <input type="number" formControlName="amount" step="0.01" required />
+    </label>
+
+    <label>
+      备注：
+      <textarea formControlName="remark" rows="3"></textarea>
+    </label>
+
+    <div class="actions">
+      <button type="submit">提交</button>
+      <button type="button" (click)="router.navigate(['/member'])">取消</button>
+    </div>
+  </form>
 </div>

@@ -78,7 +78,7 @@
       background-color: #f9f9f9;
     }
 
-    // 设置每一列的宽度
+    // 序号
     th:nth-child(1), td:nth-child(1) {
       width: 50px;
     }
@@ -98,13 +98,8 @@
       width: 120px;
     }
 
-    // 时长
-    th:nth-child(5), td:nth-child(5) {
-      width: 80px;
-    }
-
     // 操作
-    th:nth-child(7), td:nth-child(7) {
+    th:nth-child(6), td:nth-child(6) {
       width: 240px;
     }
 

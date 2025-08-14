@@ -64,11 +64,4 @@ export class MemberFormComponent implements OnInit {
 
     save$.subscribe(() => this.router.navigate(['/member']));
   }
-
-  openDatePicker(event: FocusEvent): void {
-    const input = event.target as HTMLInputElement;
-    if (input && 'showPicker' in input) {
-      input.showPicker(); // Chrome、Edge 支持
-    }
-  }
 }
