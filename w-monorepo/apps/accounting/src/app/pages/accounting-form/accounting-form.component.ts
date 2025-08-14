@@ -13,6 +13,7 @@ import { AccountingHttpService } from '../../shared/services/accounting.http.ser
 import { IAccountingRecord } from '../../shared/interfaces/accounting-record.interface';
 import { IGame } from '../../shared/interfaces/game.interface';
 import { IRoom } from '../../shared/interfaces/room.interface';
+import { IMember } from '../../shared/interfaces/member.interface';
 
 @Component({
   selector: 'app-accounting-form',
@@ -32,6 +33,10 @@ export class AccountingFormComponent implements OnInit {
   isEditMode = false;
   recordId?: number;
 
+  members: IMember[] = [];
+  memberSearchResults: IMember[] = [];
+  selectedMemberId: number | null = null;
+
   platforms = ['美团', '抖音', '门市', '小红书'];
   consoleOptions = [
     'PS5',
@@ -43,7 +48,16 @@ export class AccountingFormComponent implements OnInit {
     '游戏盒子',
   ];
   contactTypes = ['电话', '微信'];
-  customerTypes = ['情侣', '基友', '闺蜜', '单人', '家庭', '朋友', '其他'];
+  customerTypes = [
+    '会员',
+    '情侣',
+    '基友',
+    '闺蜜',
+    '单人',
+    '家庭',
+    '朋友',
+    '其他',
+  ];
 
   searchControl = new FormControl('');
   searchInput = '';
@@ -75,6 +89,23 @@ export class AccountingFormComponent implements OnInit {
       contactType: [''],
       contactValue: [''],
       roomId: [initialRoomId],
+    });
+
+    // 监听客户类型变化
+    this.form.get('customerType')!.valueChanges.subscribe((type) => {
+      if (type === '会员') {
+        this.form.get('isReturning')?.setValue(true);
+        this.form.get('remark')?.disable();
+        this.form.get('contactType')?.disable();
+        this.form.get('contactValue')?.disable();
+        this.form.get('platform')?.setValue('门市');
+      } else {
+        this.form.get('isReturning')?.setValue(false);
+        this.form.get('remark')?.enable();
+        this.form.get('contactType')?.enable();
+        this.form.get('contactValue')?.enable();
+        this.selectedMemberId = null;
+      }
     });
 
     // 自动计算时长
@@ -200,6 +231,31 @@ export class AccountingFormComponent implements OnInit {
 
   onBlur(): void {
     setTimeout(() => (this.showSuggestions = false), 200); // 延迟关闭，避免点击触发 blur 时丢失选择
+  }
+
+  // 会员搜索
+  searchMember(keyword: string) {
+    if (!keyword) {
+      this.memberSearchResults = [];
+      return;
+    }
+    this.accountingService.searchMembers(keyword).subscribe((res) => {
+      this.memberSearchResults = res;
+    });
+  }
+
+  selectMember(member: { id: number; name: string; phone: string }) {
+    this.selectedMemberId = member.id;
+    this.form.patchValue({
+      contactValue: member.phone,
+      remark: '',
+    });
+    this.memberSearchResults = [];
+  }
+
+  onMemberInput(event: Event) {
+    const value = (event.target as HTMLInputElement).value;
+    this.searchMember(value);
   }
 
   onSubmit(): void {

@@ -44,4 +44,10 @@ public class MemberController {
     public MemberDetailsDTO getMemberDetails(@PathVariable Long id) {
         return service.getMemberDetails(id);
     }
+
+    // 会员搜索接口
+    @GetMapping("/search")
+    public List<Member> searchMembers(@RequestParam String keyword) {
+        return service.searchMembers(keyword);
+    }
 }

@@ -90,6 +90,10 @@ public class MemberService {
         return dto;
     }
 
+    public List<Member> searchMembers(String keyword) {
+        return repository.findByNameContainingIgnoreCaseOrPhoneContainingIgnoreCase(keyword, keyword);
+    }
+
     private void copyProperties(Member m, AddMemberRequest r) {
         m.setName(r.getName());
         m.setPhone(r.getPhone());

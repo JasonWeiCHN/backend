@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { IAccountingRecord } from '../interfaces/accounting-record.interface';
 import { IGame } from '../interfaces/game.interface';
 import { IRoom, IRoomStatus } from '../interfaces/room.interface';
 import { ERoomStatus } from '../enums/room-status.enum';
+import { IMember } from '../interfaces/member.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -14,15 +15,17 @@ export class AccountingHttpService {
   // http://localhost:8086/api/accounting 酷乐乐multiple
   // http://111.230.29.99:8080/multiple/api/accounting SASS
   // https://kulele.club/sass/api/multiple/api/accounting
-  private accountingUrl =
-    'https://kulele.club/sass/api/multiple/api/accounting';
+  private accountingUrl = 'http://localhost:8086/api/accounting';
   // http://localhost:8086/api/room
   // https://kulele.club/sass/api/multiple/api/room
-  private roomUrl = 'https://kulele.club/sass/api/multiple/api/room';
+  private roomUrl = 'http://localhost:8086/api/room';
   // http://localhost:8081/api/accounting 酷乐乐单体
   // http://111.230.29.99:8080/games/api/games SASS
   // https://kulele.club/sass/api/games/api/games
   private gameUrl = 'https://kulele.club/sass/api/games/api/games';
+  // http://localhost:8086/api/members SASS
+  // https://kulele.club/sass/api/multiple/api/members
+  private memberUrl = 'http://localhost:8086/api/members';
 
   constructor(private http: HttpClient) {}
 
@@ -67,5 +70,10 @@ export class AccountingHttpService {
 
   updateRoomStatus(roomId: number, status: ERoomStatus) {
     return this.http.put(`${this.roomUrl}/${roomId}/status`, { status });
+  }
+
+  searchMembers(keyword: string): Observable<IMember[]> {
+    const params = new HttpParams().set('keyword', keyword);
+    return this.http.get<IMember[]>(`${this.memberUrl}/search`, { params });
   }
 }
