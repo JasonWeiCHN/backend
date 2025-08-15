@@ -137,25 +137,38 @@
     </label>
 
     <!-- 是否会员 -->
-    <div *ngIf="form.get('customerType')?.value === '会员'">
-      <!-- 会员搜索 -->
+    <div
+      *ngIf="form.get('customerType')?.value === '会员'"
+      class="member-search-wrapper"
+    >
       <label>
         会员搜索：
         <input
           type="text"
-          (input)="onMemberInput($event)"
+          formControlName="memberSearchInput"
+          (input)="onMemberInput()"
           placeholder="按姓名或手机号搜索"
+          autocomplete="off"
         />
       </label>
+
+      <!-- 搜索结果列表 -->
       <ul *ngIf="memberSearchResults.length > 0" class="suggestions">
         <li *ngFor="let m of memberSearchResults" (click)="selectMember(m)">
-          {{ m.name }} - {{ m.phone }}
+          <strong>{{ m.name }}</strong> - {{ m.phone }}
         </li>
       </ul>
+
+      <!-- 已选会员显示 -->
+      <div *ngIf="selectedMemberId" class="selected-member">
+        已选择会员：
+        <span>{{ selectedMemberName }}</span>
+        <button type="button" (click)="clearSelectedMember()">×</button>
+      </div>
     </div>
 
     <!-- 是否回头客 -->
-    <label *ngIf="form.get('customerType')?.value === '会员'">
+    <label *ngIf="form.get('customerType')?.value !== '会员'">
       是否回头客：
       <input type="checkbox" formControlName="isReturning" />
     </label>
@@ -175,7 +188,7 @@
     </label>
 
     <!-- 平台 -->
-    <label *ngIf="form.get('customerType')?.value === '会员'">
+    <label *ngIf="form.get('customerType')?.value !== '会员'">
       平台：
       <select formControlName="platform">
         <option value="" disabled>请选择平台</option>

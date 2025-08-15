@@ -103,6 +103,70 @@
       }
     }
 
+    .member-search-wrapper {
+      position: relative;
+
+      label {
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+      }
+
+      input {
+        padding: 8px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .suggestions {
+        position: absolute;
+        z-index: 1000;
+        background: #fff;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 100%;
+        max-height: 180px;
+        overflow-y: auto;
+        margin-top: 4px;
+        list-style: none;
+        padding: 0;
+
+        li {
+          padding: 6px 10px;
+          cursor: pointer;
+
+          &:hover {
+            background-color: #f0f0f0;
+          }
+        }
+      }
+
+      .selected-member {
+        margin-top: 6px;
+        background-color: #e0f7fa;
+        padding: 4px 8px;
+        border-radius: 4px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+
+        button {
+          border: none;
+          background: none;
+          cursor: pointer;
+          font-weight: bold;
+          color: #d32f2f;
+
+          &:hover {
+            color: #f44336;
+          }
+        }
+      }
+    }
+
     .actions {
       margin-top: 12px;
       display: flex;

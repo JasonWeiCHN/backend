@@ -27,4 +27,6 @@ public class AddAccountingRecordRequest {
 
     private String remark;
     private Long roomId;
+
+    private Long memberId;
 }

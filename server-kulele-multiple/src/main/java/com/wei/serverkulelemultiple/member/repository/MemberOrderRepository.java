@@ -4,8 +4,10 @@ import com.wei.serverkulelemultiple.member.entity.MemberOrder;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface MemberOrderRepository extends JpaRepository<MemberOrder, Long> {
     // 按会员ID查所有订单
     List<MemberOrder> findByMemberId(Long memberId);
+    Optional<MemberOrder> findByMemberIdAndRelatedIdAndOrderType(Long memberId, Long relatedId, MemberOrder.OrderType type);
 }

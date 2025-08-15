@@ -33,9 +33,10 @@ export class AccountingFormComponent implements OnInit {
   isEditMode = false;
   recordId?: number;
 
-  members: IMember[] = [];
+  memberSearchInput = '';
   memberSearchResults: IMember[] = [];
   selectedMemberId: number | null = null;
+  selectedMemberName: string | null = null;
 
   platforms = ['美团', '抖音', '门市', '小红书'];
   consoleOptions = [
@@ -89,6 +90,8 @@ export class AccountingFormComponent implements OnInit {
       contactType: [''],
       contactValue: [''],
       roomId: [initialRoomId],
+      memberId: [null],
+      memberSearchInput: [''],
     });
 
     // 监听客户类型变化
@@ -233,29 +236,48 @@ export class AccountingFormComponent implements OnInit {
     setTimeout(() => (this.showSuggestions = false), 200); // 延迟关闭，避免点击触发 blur 时丢失选择
   }
 
+  // 会员搜索输入触发
+  onMemberInput() {
+    const keyword = this.form.get('memberSearchInput')?.value || '';
+    this.searchMember(keyword);
+  }
+
   // 会员搜索
   searchMember(keyword: string) {
-    if (!keyword) {
+    if (!keyword.trim()) {
       this.memberSearchResults = [];
       return;
     }
-    this.accountingService.searchMembers(keyword).subscribe((res) => {
+    this.accountingService.searchMembers(keyword.trim()).subscribe((res) => {
       this.memberSearchResults = res;
     });
   }
 
-  selectMember(member: { id: number; name: string; phone: string }) {
+  // 选择会员
+  selectMember(member: IMember) {
     this.selectedMemberId = member.id;
+    this.selectedMemberName = member.name;
+
     this.form.patchValue({
+      memberId: member.id,
       contactValue: member.phone,
       remark: '',
+      memberSearchInput: '', // 清空搜索输入
     });
     this.memberSearchResults = [];
   }
 
-  onMemberInput(event: Event) {
-    const value = (event.target as HTMLInputElement).value;
-    this.searchMember(value);
+  // 清空选择
+  clearSelectedMember() {
+    this.selectedMemberId = null;
+    this.selectedMemberName = null;
+
+    this.form.patchValue({
+      memberId: null,
+      contactValue: '',
+      remark: '',
+      memberSearchInput: '', // 清空搜索输入
+    });
   }
 
   onSubmit(): void {
@@ -284,6 +306,7 @@ export class AccountingFormComponent implements OnInit {
       contactType: raw.contactType || null,
       contactValue: raw.contactValue || null,
       roomId: raw.roomId ?? null,
+      memberId: raw.memberId ?? null,
     };
 
     const save$ = this.isEditMode
