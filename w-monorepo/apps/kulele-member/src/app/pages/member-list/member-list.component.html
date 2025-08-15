@@ -33,7 +33,7 @@
         <td>{{ formatDate(record.createdAt) }}</td>
         <td>{{ record.name }}</td>
         <td>{{ record.phone }}</td>
-        <td>{{ record.balance }}</td>
+        <td>{{ record.balance | currency : '' : '' : '1.2-2' }}</td>
         <td>{{ record.remark }}</td>
         <td>
           <button [routerLink]="['/member/details', record.id]">查询</button>
@@ -55,7 +55,10 @@
       <div><strong>加入时间：</strong>{{ formatDate(record.createdAt) }}</div>
       <div><strong>姓名：</strong>{{ record.name }}</div>
       <div><strong>电话：</strong>{{ record.phone }}</div>
-      <div><strong>余额：</strong>{{ record.balance }}</div>
+      <div>
+        <strong>余额：</strong
+        >{{ record.balance | currency : '' : '' : '1.2-2' }}
+      </div>
       <div><strong>备注：</strong>{{ record.remark }}</div>
       <div class="card-actions">
         <td>

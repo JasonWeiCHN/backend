@@ -18,7 +18,9 @@ export class MemberHttpService {
   }
 
   getAllMembersWithBalance(): Observable<IMerberWithBalance[]> {
-    return this.http.get<IMerberWithBalance[]>(this.baseUrl);
+    return this.http.get<IMerberWithBalance[]>(
+      `${this.baseUrl}/allWithBalance`
+    );
   }
 
   getMemberById(id: number): Observable<IMember> {
