@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { MemberHttpService } from '../../shared/services/member.http.service';
-import { IMember } from '../../shared/interfaces/member.interface';
+import { IMerberWithBalance } from '../../shared/interfaces/member.interface';
 
 @Component({
   selector: 'app-member-list',
@@ -17,8 +17,8 @@ export class MemberListComponent implements OnInit {
   private service = inject(MemberHttpService);
   protected router = inject(Router);
 
-  members: IMember[] = [];
-  pagedMembers: IMember[] = [];
+  members: IMerberWithBalance[] = [];
+  pagedMembers: IMerberWithBalance[] = [];
   searchKeyword = '';
   currentPage = 1;
   pageSize = 10;
@@ -29,7 +29,7 @@ export class MemberListComponent implements OnInit {
   }
 
   load(): void {
-    this.service.getAllMembers().subscribe((data) => {
+    this.service.getAllMembersWithBalance().subscribe((data) => {
       this.members = data;
       this.applyFilter();
     });

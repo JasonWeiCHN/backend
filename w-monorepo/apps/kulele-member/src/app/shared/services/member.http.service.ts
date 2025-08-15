@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IMember } from '../interfaces/member.interface';
+import { IMember, IMerberWithBalance } from '../interfaces/member.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -15,6 +15,10 @@ export class MemberHttpService {
 
   getAllMembers(): Observable<IMember[]> {
     return this.http.get<IMember[]>(this.baseUrl);
+  }
+
+  getAllMembersWithBalance(): Observable<IMerberWithBalance[]> {
+    return this.http.get<IMerberWithBalance[]>(this.baseUrl);
   }
 
   getMemberById(id: number): Observable<IMember> {

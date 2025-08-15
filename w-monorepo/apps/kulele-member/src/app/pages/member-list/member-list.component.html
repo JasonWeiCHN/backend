@@ -21,7 +21,8 @@
         <th>编号</th>
         <th>加入时间</th>
         <th>姓名</th>
-        <th>联系方式</th>
+        <th>电话</th>
+        <th>余额</th>
         <th>备注</th>
         <th>操作</th>
       </tr>
@@ -32,6 +33,7 @@
         <td>{{ formatDate(record.createdAt) }}</td>
         <td>{{ record.name }}</td>
         <td>{{ record.phone }}</td>
+        <td>{{ record.balance }}</td>
         <td>{{ record.remark }}</td>
         <td>
           <button [routerLink]="['/member/details', record.id]">查询</button>
@@ -52,7 +54,8 @@
       <div><strong>编号：</strong>{{ record.id }}</div>
       <div><strong>加入时间：</strong>{{ formatDate(record.createdAt) }}</div>
       <div><strong>姓名：</strong>{{ record.name }}</div>
-      <div><strong>联系方式：</strong>{{ record.phone }}</div>
+      <div><strong>电话：</strong>{{ record.phone }}</div>
+      <div><strong>余额：</strong>{{ record.balance }}</div>
       <div><strong>备注：</strong>{{ record.remark }}</div>
       <div class="card-actions">
         <td>

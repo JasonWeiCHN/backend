@@ -8,6 +8,10 @@ export interface IMember {
   createdAt: string; // 创建时间（ISO 格式）
 }
 
+export interface IMerberWithBalance extends IMember {
+  balance: number;
+}
+
 // 单笔充值记录
 export interface IMemberRecharge {
   id: number;
