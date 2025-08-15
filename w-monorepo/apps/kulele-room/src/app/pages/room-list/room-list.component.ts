@@ -96,4 +96,13 @@ export class RoomListComponent {
       });
     }
   }
+
+  roomTypeLabel(type: string): string {
+    const map: Record<string, string> = {
+      AVAILABLE: '空闲',
+      OCCUPIED: '使用中',
+      MAINTENANCE: '维护中',
+    };
+    return map[type] || type;
+  }
 }

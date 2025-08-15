@@ -23,7 +23,7 @@ export class DashboardComponent {
     {
       title: '开台记账',
       description: '开台和记录每笔账单',
-      link: 'http://localhost:4201', // http://localhost:4201 https://kulele.club/accounting/
+      link: 'https://kulele.club/accounting/', // http://localhost:4201 https://kulele.club/accounting/
     },
     {
       title: '预约系统',
@@ -53,7 +53,7 @@ export class DashboardComponent {
     {
       title: '包房管理',
       description: '管理所有包房信息',
-      link: 'http://localhost:4207', // http://localhost:4207 https://kulele.club/room/
+      link: 'https://kulele.club/room/', // http://localhost:4207 https://kulele.club/room/
     },
     {
       title: '小程序管理',
@@ -63,7 +63,7 @@ export class DashboardComponent {
     {
       title: '会员管理',
       description: '管理会员数据',
-      link: 'http://localhost:4209', // http://localhost:4209 https://kulele.club/member/
+      link: 'https://kulele.club/member/', // http://localhost:4209 https://kulele.club/member/
     },
   ];
 

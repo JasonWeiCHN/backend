@@ -36,7 +36,7 @@
         <td>{{ room.roomType || '-' }}</td>
         <td>{{ room.capacity }}</td>
         <td>¥{{ room.pricePerHour | number : '1.2-2' }}</td>
-        <td>{{ room.status }}</td>
+        <td>{{ roomTypeLabel(room.status) }}</td>
         <td>
           <button [routerLink]="['/room/edit', room.id]">编辑</button>
           <button (click)="delete(room.id)">删除</button>
@@ -54,7 +54,7 @@
       <div>
         <strong>价格：</strong>¥{{ room.pricePerHour | number : '1.2-2' }}
       </div>
-      <div><strong>状态：</strong>{{ room.status }}</div>
+      <div><strong>状态：</strong>{{ roomTypeLabel(room.status) }}</div>
       <div class="card-actions">
         <button [routerLink]="['/room/edit', room.id]">编辑</button>
         <button (click)="delete(room.id)">删除</button>

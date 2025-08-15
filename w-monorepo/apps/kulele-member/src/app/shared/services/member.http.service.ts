@@ -9,7 +9,7 @@ import { IMember } from '../interfaces/member.interface';
 export class MemberHttpService {
   // http://localhost:8086/api/members 酷乐乐multiple
   // https://kulele.club/sass/api/multiple/api/members
-  private baseUrl = 'http://localhost:8086/api/members';
+  private baseUrl = 'https://kulele.club/sass/api/multiple/api/members';
 
   constructor(private http: HttpClient) {}
 

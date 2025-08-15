@@ -25,4 +25,13 @@ export class MemberDetailsComponent implements OnInit {
       .getMemberDetails(this.memberId)
       .subscribe((data: any) => (this.memberDetails = data));
   }
+
+  orderTypeLabel(type: string): string {
+    const map: Record<string, string> = {
+      RECHARGE: '充值',
+      CONSUMPTION: '消费',
+      ROOM: '开台',
+    };
+    return map[type] || type;
+  }
 }

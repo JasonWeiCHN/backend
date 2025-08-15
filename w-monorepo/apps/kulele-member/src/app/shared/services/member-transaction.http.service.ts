@@ -6,7 +6,8 @@ import { Observable } from 'rxjs';
 export class MemberTransactionHttpService {
   // http://localhost:8086/api/member-transactions 酷乐乐multiple
   // https://kulele.club/sass/api/multiple/api/member-transactions
-  private baseUrl = 'http://localhost:8086/api/member-transactions';
+  private baseUrl =
+    'https://kulele.club/sass/api/multiple/api/member-transactions';
 
   constructor(private http: HttpClient) {}
 

@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class RoomHttpService {
   // http://localhost:8086/api/room 酷乐乐multiple - local
   // https://kulele.club/sass/api/multiple/api/room 酷乐乐multiple - sass
-  private baseUrl = 'http://localhost:8086/api/room';
+  private baseUrl = 'https://kulele.club/sass/api/multiple/api/room';
 
   constructor(private http: HttpClient) {}
 
