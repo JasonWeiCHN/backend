@@ -160,7 +160,14 @@ export class AccountingFormComponent implements OnInit {
             contactType: record.contactType,
             contactValue: record.contactValue,
             roomId: record.roomId ?? null,
+            memberId: record.memberId ?? null,
           });
+
+          // 如果是会员，还要显示已选会员
+          if (record.customerType === '会员' && record.memberId) {
+            this.selectedMemberId = record.memberId;
+            this.selectedMemberName = record.memberName || ''; // 后台要返回 memberName
+          }
         });
     }
 

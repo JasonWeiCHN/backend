@@ -63,7 +63,7 @@ public class AccountingRecordService {
             order.setMember(record.getMember());
             order.setOrderType(MemberOrder.OrderType.ROOM);
             order.setRelatedId(saved.getId()); // 指向 accounting_record id
-            order.setAmount(request.getActualAmount().doubleValue());
+            order.setAmount(-request.getActualAmount().doubleValue()); // 负数金额
             memberOrderRepository.save(order);
         }
 
@@ -101,7 +101,7 @@ public class AccountingRecordService {
                         newOrder.setRelatedId(saved.getId());
                         return newOrder;
                     });
-            order.setAmount(request.getActualAmount().doubleValue());
+            order.setAmount(-request.getActualAmount().doubleValue()); // 负数金额
             memberOrderRepository.save(order);
         }
 

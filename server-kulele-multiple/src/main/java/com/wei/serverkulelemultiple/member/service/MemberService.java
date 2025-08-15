@@ -3,6 +3,7 @@ package com.wei.serverkulelemultiple.member.service;
 import com.wei.serverkulelemultiple.accounting.repository.AccountingRecordRepository;
 import com.wei.serverkulelemultiple.member.dto.AddMemberRequest;
 import com.wei.serverkulelemultiple.member.dto.MemberDetailsDTO;
+import com.wei.serverkulelemultiple.member.dto.MemberListDTO;
 import com.wei.serverkulelemultiple.member.entity.Member;
 import com.wei.serverkulelemultiple.member.entity.MemberOrder;
 import com.wei.serverkulelemultiple.member.repository.MemberOrderRepository;
@@ -55,18 +56,12 @@ public class MemberService {
 
         List<MemberOrder> orders = memberOrderRepository.findByMemberId(id);
 
-        double totalRecharge = orders.stream()
-                .filter(o -> o.getOrderType() == MemberOrder.OrderType.RECHARGE)
+        // 直接通过 amount 求和计算余额
+        double balance = orders.stream()
                 .mapToDouble(MemberOrder::getAmount)
                 .sum();
 
-        double totalConsumption = orders.stream()
-                .filter(o -> o.getOrderType() == MemberOrder.OrderType.CONSUMPTION)
-                .mapToDouble(MemberOrder::getAmount)
-                .sum();
-
-        double balance = totalRecharge - totalConsumption;
-
+        // 找出房间类订单的关联记录 ID
         List<Long> roomRecordIds = orders.stream()
                 .filter(o -> o.getOrderType() == MemberOrder.OrderType.ROOM)
                 .map(MemberOrder::getRelatedId)
@@ -92,6 +87,10 @@ public class MemberService {
 
     public List<Member> searchMembers(String keyword) {
         return repository.findByNameContainingIgnoreCaseOrPhoneContainingIgnoreCase(keyword, keyword);
+    }
+
+    public List<MemberListDTO> getAllMembersWithBalance() {
+        return repository.findAllWithBalance();
     }
 
     private void copyProperties(Member m, AddMemberRequest r) {

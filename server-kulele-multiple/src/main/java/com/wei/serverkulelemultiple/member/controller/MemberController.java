@@ -2,6 +2,7 @@ package com.wei.serverkulelemultiple.member.controller;
 
 import com.wei.serverkulelemultiple.member.dto.AddMemberRequest;
 import com.wei.serverkulelemultiple.member.dto.MemberDetailsDTO;
+import com.wei.serverkulelemultiple.member.dto.MemberListDTO;
 import com.wei.serverkulelemultiple.member.entity.Member;
 import com.wei.serverkulelemultiple.member.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,11 @@ public class MemberController {
     @GetMapping
     public List<Member> getAll() {
         return service.getAll();
+    }
+
+    @GetMapping("/allWithBalance")
+    public List<MemberListDTO> allWithBalance() {
+        return service.getAllMembersWithBalance();
     }
 
     @GetMapping("/{id}")
