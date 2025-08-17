@@ -24,6 +24,9 @@ export class MemberListComponent implements OnInit {
   pageSize = 30;
   totalPages = 1;
 
+  showExportModal = false;
+  exportFormat: 'txt' | 'excel' | 'pdf' | 'csv' = 'txt';
+
   ngOnInit(): void {
     this.load();
   }
@@ -80,5 +83,69 @@ export class MemberListComponent implements OnInit {
   formatDate(dateTime: string): string {
     const date = new Date(dateTime);
     return date.toLocaleString();
+  }
+
+  openExportModal(): void {
+    this.exportFormat = 'txt';
+    this.showExportModal = true;
+  }
+
+  closeExportModal(): void {
+    this.showExportModal = false;
+  }
+
+  downloadExport(): void {
+    let formatSuffix: string;
+    switch (this.exportFormat) {
+      case 'txt':
+        formatSuffix = 'txt';
+        break;
+      case 'excel':
+        formatSuffix = 'xlsx';
+        break;
+      case 'pdf':
+        formatSuffix = 'pdf';
+        break;
+      case 'csv':
+        formatSuffix = 'csv';
+        break;
+      default:
+        formatSuffix = 'txt';
+    }
+
+    // http://localhost:8086/api/members
+    // http://111.230.29.99:8080/multiple/api/members
+    // https://kulele.club/sass/api/multiple/api/members
+    const url = `https://kulele.club/sass/api/multiple/api/members/export-${formatSuffix}`;
+    const filename = `会员列表.${formatSuffix}`;
+
+    this.triggerDownload(url, filename);
+  }
+
+  /** ✅ 与 accounting 一致：手动加 token，blob 下载 */
+  private triggerDownload(url: string, filename: string): void {
+    const token = localStorage.getItem('token');
+
+    fetch(url, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((response) => {
+        if (!response.ok) throw new Error('下载失败');
+        return response.blob();
+      })
+      .then((blob) => {
+        const blobUrl = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = blobUrl;
+        a.download = filename;
+        a.click();
+        window.URL.revokeObjectURL(blobUrl);
+        this.closeExportModal();
+      })
+      .catch((error) => {
+        alert('导出失败：' + error.message);
+      });
   }
 }

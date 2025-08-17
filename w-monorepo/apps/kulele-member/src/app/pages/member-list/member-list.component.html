@@ -4,6 +4,11 @@
       ➕ 新增会员
     </button>
 
+    <!-- ✅ 新增导出按钮（全部导出 + 格式选择） -->
+    <button class="export-button" (click)="openExportModal()">
+      📥 导出会员
+    </button>
+
     <div class="search-bar">
       <input
         [(ngModel)]="searchKeyword"
@@ -82,5 +87,60 @@
       下一页
     </button>
     <span class="total-count">共 {{ members.length }} 位会员</span>
+  </div>
+
+  <div class="export-modal" *ngIf="showExportModal">
+    <div class="export-wrapper">
+      <div class="export-card">
+        <h3>导出会员</h3>
+
+        <p style="margin-bottom: 8px">导出范围：<strong>全部会员</strong></p>
+
+        <p>
+          导出格式：
+          <label>
+            <input
+              type="radio"
+              name="exportFormat"
+              [(ngModel)]="exportFormat"
+              value="txt"
+            />
+            TXT
+          </label>
+          <label style="margin-left: 16px">
+            <input
+              type="radio"
+              name="exportFormat"
+              [(ngModel)]="exportFormat"
+              value="excel"
+            />
+            Excel
+          </label>
+          <label style="margin-left: 16px">
+            <input
+              type="radio"
+              name="exportFormat"
+              [(ngModel)]="exportFormat"
+              value="pdf"
+            />
+            PDF
+          </label>
+          <label style="margin-left: 16px">
+            <input
+              type="radio"
+              name="exportFormat"
+              [(ngModel)]="exportFormat"
+              value="csv"
+            />
+            CSV
+          </label>
+        </p>
+
+        <div class="buttons">
+          <button (click)="closeExportModal()">取消</button>
+          <button (click)="downloadExport()">导出</button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
