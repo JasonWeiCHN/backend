@@ -63,7 +63,7 @@ export class DashboardComponent {
     {
       title: '会员管理',
       description: '管理会员数据',
-      link: 'https://kulele.club/member/', // http://localhost:4209 https://kulele.club/member/
+      link: 'http://localhost:4209', // http://localhost:4209 https://kulele.club/member/
     },
   ];
 

@@ -30,13 +30,8 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static com.wei.serverkulelemultiple.accounting.util.AccountingRecordMapper.toDTO;
-
 @Service
-public class ExportService {
-
-    @Autowired
-    private AccountingRecordService accountingService; // 用于 getAll() 和 toDTO 等
+public class AccountingExportService {
 
     @Autowired
     private AccountingRecordRepository repository;

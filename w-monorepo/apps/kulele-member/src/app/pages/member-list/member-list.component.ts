@@ -21,7 +21,7 @@ export class MemberListComponent implements OnInit {
   pagedMembers: IMerberWithBalance[] = [];
   searchKeyword = '';
   currentPage = 1;
-  pageSize = 10;
+  pageSize = 30;
   totalPages = 1;
 
   ngOnInit(): void {

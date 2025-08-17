@@ -1,6 +1,6 @@
 package com.wei.serverkulelemultiple.accounting.controller;
 
-import com.wei.serverkulelemultiple.accounting.service.ExportService;
+import com.wei.serverkulelemultiple.accounting.service.AccountingExportService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -12,10 +12,10 @@ import java.time.LocalDateTime;
 
 @RestController
 @RequestMapping("/api/accounting")
-public class ExportController {
+public class AccountingExportController {
 
     @Autowired
-    private ExportService exportService;
+    private AccountingExportService exportService;
 
     @GetMapping("/export-txt")
     public ResponseEntity<byte[]> exportTxt() {

@@ -289,7 +289,7 @@ cd /var/www/web-files/
 nohup python3 web.py > nohup.out 2>&1 &
 
 酷乐乐小程序后台重启
-cd /var/www/
+cd /var/www/kulele/
 nohup python3 server.py > ~/server.log 2>&1 &
 
 酷乐乐后台系统重启
