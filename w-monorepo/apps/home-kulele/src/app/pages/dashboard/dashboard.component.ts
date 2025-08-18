@@ -80,6 +80,10 @@ export class DashboardComponent {
     }
   }
 
+  openReleaseNotes(): void {
+    this.router.navigate(['/release-notes']);
+  }
+
   logout(): void {
     localStorage.removeItem('token');
     localStorage.removeItem('tenantId');

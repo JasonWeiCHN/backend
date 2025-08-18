@@ -1,0 +1,55 @@
+.release-notes {
+  padding: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .release-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+
+    .release-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+
+      .version {
+        font-weight: bold;
+        color: #007aff;
+      }
+
+      .date {
+        color: #888;
+        font-size: 0.9rem;
+      }
+    }
+
+    ul {
+      padding-left: 20px;
+      margin: 0;
+
+      li {
+        margin: 4px 0;
+        line-height: 1.4;
+      }
+    }
+  }
+}
+
+/* ✅ 移动端优化 */
+@media (max-width: 600px) {
+  .release-notes {
+    padding: 10px;
+
+    .release-card {
+      padding: 12px;
+    }
+  }
+}

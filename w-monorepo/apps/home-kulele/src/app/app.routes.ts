@@ -20,4 +20,11 @@ export const appRoutes: Route[] = [
         (m) => m.MerchantAuthComponent
       ),
   },
+  {
+    path: 'release-notes',
+    loadComponent: () =>
+      import('./pages/release-notes/release-notes.component').then(
+        (m) => m.ReleaseNotesComponent
+      ),
+  },
 ];

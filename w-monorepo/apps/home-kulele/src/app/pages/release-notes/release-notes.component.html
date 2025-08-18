@@ -1,0 +1,13 @@
+<div class="release-notes">
+  <h2>📌 更新日志</h2>
+
+  <div *ngFor="let note of notes" class="release-card">
+    <div class="release-header">
+      <span class="version">{{ note.version }}</span>
+      <span class="date">{{ note.date }}</span>
+    </div>
+    <ul>
+      <li *ngFor="let change of note.changes">{{ change }}</li>
+    </ul>
+  </div>
+</div>
