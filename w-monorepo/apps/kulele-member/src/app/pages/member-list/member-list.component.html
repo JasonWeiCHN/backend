@@ -9,6 +9,11 @@
       📥 导出会员
     </button>
 
+    <!-- ✅ 新增导出充值按钮 -->
+    <button class="export-button" (click)="openRechargeExportModal()">
+      📥 导出充值
+    </button>
+
     <div class="search-bar">
       <input
         [(ngModel)]="searchKeyword"
@@ -87,6 +92,65 @@
       下一页
     </button>
     <span class="total-count">共 {{ members.length }} 位会员</span>
+  </div>
+
+  <!-- ✅ 充值导出弹窗 -->
+  <div class="export-modal" *ngIf="showRechargeExportModal">
+    <div class="export-wrapper">
+      <div class="export-card">
+        <h3>导出充值明细</h3>
+
+        <p>
+          选择日期：
+          <input type="date" [(ngModel)]="rechargeExportDate" />
+        </p>
+
+        <p>
+          导出格式：
+          <label>
+            <input
+              type="radio"
+              name="rechargeExportFormat"
+              [(ngModel)]="rechargeExportFormat"
+              value="txt"
+            />
+            TXT
+          </label>
+          <label style="margin-left: 16px">
+            <input
+              type="radio"
+              name="rechargeExportFormat"
+              [(ngModel)]="rechargeExportFormat"
+              value="excel"
+            />
+            Excel
+          </label>
+          <label style="margin-left: 16px">
+            <input
+              type="radio"
+              name="rechargeExportFormat"
+              [(ngModel)]="rechargeExportFormat"
+              value="pdf"
+            />
+            PDF
+          </label>
+          <label style="margin-left: 16px">
+            <input
+              type="radio"
+              name="rechargeExportFormat"
+              [(ngModel)]="rechargeExportFormat"
+              value="csv"
+            />
+            CSV
+          </label>
+        </p>
+
+        <div class="buttons">
+          <button (click)="closeRechargeExportModal()">取消</button>
+          <button (click)="downloadRechargeExport()">导出</button>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="export-modal" *ngIf="showExportModal">

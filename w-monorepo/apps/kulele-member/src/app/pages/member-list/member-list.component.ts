@@ -27,6 +27,11 @@ export class MemberListComponent implements OnInit {
   showExportModal = false;
   exportFormat: 'txt' | 'excel' | 'pdf' | 'csv' = 'txt';
 
+  // 充值导出
+  showRechargeExportModal = false;
+  rechargeExportFormat: 'txt' | 'excel' | 'pdf' | 'csv' = 'txt';
+  rechargeExportDate: string = new Date().toISOString().substring(0, 10); // 默认今天
+
   ngOnInit(): void {
     this.load();
   }
@@ -120,6 +125,50 @@ export class MemberListComponent implements OnInit {
     const filename = `会员列表.${formatSuffix}`;
 
     this.triggerDownload(url, filename);
+  }
+
+  openRechargeExportModal(): void {
+    this.rechargeExportFormat = 'txt';
+    this.rechargeExportDate = new Date().toISOString().substring(0, 10);
+    this.showRechargeExportModal = true;
+  }
+
+  closeRechargeExportModal(): void {
+    this.showRechargeExportModal = false;
+  }
+
+  downloadRechargeExport(): void {
+    if (!this.rechargeExportDate) {
+      alert('请选择日期！');
+      return;
+    }
+
+    let formatSuffix: string;
+    switch (this.rechargeExportFormat) {
+      case 'txt':
+        formatSuffix = 'txt';
+        break;
+      case 'excel':
+        formatSuffix = 'xlsx';
+        break;
+      case 'pdf':
+        formatSuffix = 'pdf';
+        break;
+      case 'csv':
+        formatSuffix = 'csv';
+        break;
+      default:
+        formatSuffix = 'txt';
+    }
+
+    // http://localhost:8086/api/members/recharge
+    // http://111.230.29.99:8080/multiple/api/members/recharge
+    // https://kulele.club/sass/api/multiple/api/members/recharge
+    const url = `https://kulele.club/sass/api/multiple/api/members/recharge/export/${formatSuffix}?date=${this.rechargeExportDate}`;
+    const filename = `充值明细_${this.rechargeExportDate}.${formatSuffix}`;
+
+    this.triggerDownload(url, filename);
+    this.closeRechargeExportModal();
   }
 
   /** ✅ 与 accounting 一致：手动加 token，blob 下载 */
