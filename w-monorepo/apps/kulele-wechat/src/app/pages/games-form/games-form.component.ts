@@ -248,7 +248,7 @@ export class GamesFormComponent {
     const text = JSON.stringify(this.data, null, 2)
       .replace(/"([^"]+)":/g, '$1:')
       .replace(/"/g, `'`);
-    const finalText = `module.exports = ${text};\n`;
+    const finalText = `module.exports = ${text}\n`;
 
     const blob = new Blob([finalText], { type: 'application/javascript' });
     const url = URL.createObjectURL(blob);

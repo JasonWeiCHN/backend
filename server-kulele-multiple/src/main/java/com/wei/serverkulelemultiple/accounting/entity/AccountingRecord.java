@@ -1,7 +1,6 @@
 package com.wei.serverkulelemultiple.accounting.entity;
 
 import com.wei.serverkulelemultiple.member.entity.Member;
-import com.wei.serverkulelemultiple.member.entity.MemberOrder;
 import com.wei.serverkulelemultiple.room.entity.Room;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -69,3 +68,5 @@ public class AccountingRecord {
     @JoinColumn(name = "member_id") // 允许 null
     private Member member;
 }
+
+17688088291

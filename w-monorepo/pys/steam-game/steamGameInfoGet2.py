@@ -12,7 +12,7 @@ OUTPUT_FOLDER = r"F:/steamGet"  # 修改为你的输出目录
 # 全局开关
 DOWNLOAD_SCREENSHOTS = True
 DOWNLOAD_MOVIES = True
-APP_ID = 2807960
+APP_ID = 2627260
 
 lastTime = time.time()
 waitTime = 5 * 60.0 / 195
