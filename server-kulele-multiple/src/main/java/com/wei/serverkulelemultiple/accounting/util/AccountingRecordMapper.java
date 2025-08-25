@@ -24,6 +24,10 @@ public class AccountingRecordMapper {
         dto.setIsReturning(record.getIsReturning());
 
         // ✅ 防止空指针异常
+        if (record.getRoom() != null) {
+            dto.setRoomId(record.getRoom().getId());
+            dto.setRoomNumber(record.getRoom().getRoomNumber());
+        }
         dto.setRoomId(record.getRoom() != null ? record.getRoom().getId() : null);
 
         // 新增：会员信息

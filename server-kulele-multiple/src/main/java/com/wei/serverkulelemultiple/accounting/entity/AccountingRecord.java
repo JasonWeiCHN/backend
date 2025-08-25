@@ -68,5 +68,3 @@ public class AccountingRecord {
     @JoinColumn(name = "member_id") // 允许 null
     private Member member;
 }
-
-17688088291
