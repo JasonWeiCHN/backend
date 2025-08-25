@@ -32,6 +32,7 @@
         <th>单号</th>
         <th>时间段</th>
         <th>时长</th>
+        <th>房间号码</th>
         <th>机型</th>
         <th>游戏名</th>
         <th>客户类型</th>
@@ -49,6 +50,7 @@
           {{ formatTimeRange(record.startDateTime, record.endDateTime) }}
         </td>
         <td [title]="record.duration">{{ record.duration }}</td>
+        <td [title]="record.roomNumber">{{ record.roomNumber ?? '' }}</td>
         <td [title]="record.consoleType">{{ record.consoleType }}</td>
         <td [title]="record.gameNames.join('; ')">
           {{ record.gameNames.join('; ') }}
@@ -78,6 +80,7 @@
         >{{ formatTimeRange(record.startDateTime, record.endDateTime) }}
       </div>
       <div><strong>时长：</strong>{{ record.duration }}</div>
+      <div><strong>房间名：</strong>{{ record.roomNumber ?? '' }}</div>
       <div><strong>机型：</strong>{{ record.consoleType }}</div>
       <div><strong>游戏名：</strong>{{ record.gameNames.join('; ') }}</div>
       <div><strong>客户类型：</strong>{{ record.customerType }}</div>

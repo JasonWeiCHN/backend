@@ -92,60 +92,59 @@
       white-space: nowrap;
     }
 
-    // 设置每一列的宽度
+    // 单号
     th:nth-child(1), td:nth-child(1) {
       width: 50px;
     }
 
-    // 单号
+    // 时间段
     th:nth-child(2), td:nth-child(2) {
       width: 240px;
     }
 
-    // 时间段
+    // 时长
     th:nth-child(3), td:nth-child(3) {
       width: 60px;
     }
 
-    // 时长
+    // 房间号码
     th:nth-child(4), td:nth-child(4) {
       width: 85px;
     }
 
     // 机型
     th:nth-child(5), td:nth-child(5) {
-      width: 200px;
+      width: 100px;
     }
 
     // 游戏名
     th:nth-child(6), td:nth-child(6) {
-      width: 120px;
+      width: 200px;
     }
 
-    // 客户类型（省略号）
+    // 客户类型
     th:nth-child(7), td:nth-child(7) {
-      width: 80px;
+      width: 100px;
     }
 
-    // 回头客
+    // 是否回头客
     th:nth-child(8), td:nth-child(8) {
-      width: 100px;
+      width: 60px;
     }
 
     // 实收金额
     th:nth-child(9), td:nth-child(9) {
-      width: 160px;
-    }
-
-    // 备注（可省略号）
-    th:nth-child(10), td:nth-child(10) {
-      width: 120px;
+      width: 100px;
     }
 
     // 平台
     th:nth-child(11), td:nth-child(11) {
-      width: 180px;
-      white-space: nowrap;
+      width: 80px;
+    }
+
+    // 平台
+    th:nth-child(12), td:nth-child(12) {
+      width: 200px;
     }
 
     th {

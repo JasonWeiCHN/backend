@@ -12,7 +12,8 @@ export interface IAccountingRecord {
   contactType?: string | null;
   contactValue?: string | null;
   remark?: string;
-  roomId?: number | null; // 明确可空
+  roomId?: number | null; // 可空
+  roomNumber?: string | null; // 可空
   memberId?: number | null;
   memberName?: string | null;
 }

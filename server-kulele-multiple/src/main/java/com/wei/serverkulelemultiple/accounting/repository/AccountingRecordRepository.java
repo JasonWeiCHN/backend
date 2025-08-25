@@ -14,11 +14,17 @@ public interface AccountingRecordRepository extends JpaRepository<AccountingReco
     List<AccountingRecord> findByStartDateTimeBetween(LocalDateTime start, LocalDateTime end);
 
     // ✅ 新增：预加载 gameNames，避免 LazyInitializationException
-    @Query("SELECT a FROM AccountingRecord a LEFT JOIN FETCH a.gameNames ORDER BY a.startDateTime DESC")
+    @Query("SELECT DISTINCT a FROM AccountingRecord a " +
+            "LEFT JOIN FETCH a.gameNames " +
+            "LEFT JOIN FETCH a.room " +
+            "ORDER BY a.startDateTime DESC")
     List<AccountingRecord> findAllWithGameNames();
 
-    @Query("SELECT a FROM AccountingRecord a LEFT JOIN FETCH a.gameNames WHERE a.id = :id")
-    Optional<AccountingRecord> findByIdWithGameNames(Long id);
+    @Query("SELECT a FROM AccountingRecord a " +
+            "LEFT JOIN FETCH a.gameNames " +
+            "LEFT JOIN FETCH a.room " +
+            "WHERE a.id = :id")
+    Optional<AccountingRecord> findByIdWithGameNames(@Param("id") Long id);
 
     @Query("SELECT a FROM AccountingRecord a WHERE a.room.id = :roomId AND a.startDateTime < :now AND a.endDateTime > :now")
     List<AccountingRecord> findActiveByRoom(@Param("roomId") Long roomId, @Param("now") LocalDateTime now);
